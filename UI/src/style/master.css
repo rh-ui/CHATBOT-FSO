@@ -1,0 +1,12 @@
+.bg-img {
+    background-image: url('@/assets/info_sec.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-footer {
+    background-image: url('@/assets/footerBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
