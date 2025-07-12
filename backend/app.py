@@ -4,6 +4,26 @@ from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from opensearchpy import OpenSearch, exceptions
 import logging
+from langdetect import detect
+
+
+
+
+# Mapping from langdetect language codes to your custom codes
+LANG_MAP = {
+    'fr': 'fr',
+    'en': 'en',
+    'ar': 'ar',    
+    'amz': 'amz',
+}
+
+def detect_custom_language(text):
+    try:
+        lang = detect(text)
+        return LANG_MAP.get(lang, 'unknown')
+    except Exception:
+        return 'unknown'
+    
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -22,12 +42,14 @@ app.add_middleware(
 
 
 
+# Configuration avec gestion d'erreur améliorée
 try:
     client = OpenSearch(
         hosts=[{"host": "localhost", "port": 9200}],
         http_compress=True,
         timeout=30
     )
+    # Test la connexion immédiatement
     if not client.ping():
         raise HTTPException(status_code=500, detail="Impossible de se connecter à OpenSearch")
 except Exception as e:
@@ -48,13 +70,13 @@ class Query(BaseModel):
 
 @app.post("/search")
 def search(query: Query):
+    lang = detect_custom_language(query.question) or query.lang or "fr"  # Utiliser la langue détectée, celle fournie, ou 'fr' par défaut
     try:
         if not query.question.strip():
             raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
         
         embedding = model.encode(query.question).tolist()
         
-       
         query_body = {
             "query": {
                 "bool": {
@@ -62,7 +84,7 @@ def search(query: Query):
                         {"knn": {"embedding": {"vector": embedding, "k": query.k}}},
                         {"match": {"question": {"query": query.question, "fuzziness": "AUTO"}}}
                     ],
-                    "filter": [{"term": {"lang": query.lang}}] if query.lang else []
+                    "filter": [{"term": {"lang": lang}}] if lang else []
                 }
             },
             "size": query.k
@@ -72,6 +94,7 @@ def search(query: Query):
         hits = [hit for hit in response["hits"]["hits"] if hit["_score"] >= query.score_threshold]
         
         return {
+            "detected_lang": lang,  # Ajouter la langue détectée à la réponse
             "results": [
                 {
                     "question": hit["_source"]["question"],
