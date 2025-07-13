@@ -9,7 +9,7 @@ from langdetect import detect
 
 
 
-# Mapping from langdetect language codes to your custom codes
+
 LANG_MAP = {
     'fr': 'fr',
     'en': 'en',
@@ -67,6 +67,7 @@ class Query(BaseModel):
     lang: str = "fr"
     k: int = 3
     score_threshold: float = 0.5
+
 
 @app.post("/search")
 def search(query: Query):
