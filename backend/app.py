@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from opensearchpy import OpenSearch, exceptions
 import logging
+from polite import is_not_defined
+
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -47,6 +49,7 @@ class Query(BaseModel):
     score_threshold: float = 0.5
 
 @app.post("/search")
+
 def search(query: Query):
     try:
         if not query.question.strip():
@@ -70,9 +73,8 @@ def search(query: Query):
 
         response = client.search(index="faq", body=query_body)
         hits = [hit for hit in response["hits"]["hits"] if hit["_score"] >= query.score_threshold]
-        
-        return {
-            "results": [
+        if hits:
+            results = [
                 {
                     "question": hit["_source"]["question"],
                     "answer": hit["_source"]["answer"],
@@ -81,6 +83,20 @@ def search(query: Query):
                 }
                 for hit in hits
             ]
+        else:
+            message = is_not_defined(query.lang)
+
+            results = [
+                {
+                    "question": None,
+                    "answer": message,
+                    "score": 1.0,
+                    "meta": None,
+                }
+            ]
+
+        return {
+             "results": results
         }
 
     except exceptions.NotFoundError:
@@ -90,6 +106,7 @@ def search(query: Query):
         raise HTTPException(status_code=500, detail=f"Erreur interne: {str(e)}")
 
 @app.get("/health")
+
 def health_check():
     return {
         "opensearch": client.ping(),
