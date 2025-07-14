@@ -5,11 +5,11 @@ from sentence_transformers import SentenceTransformer
 from opensearchpy import OpenSearch, exceptions
 import logging
 from langdetect import detect
+from polite import is_not_defined
 
 
 
 
-# Mapping from langdetect language codes to your custom codes
 LANG_MAP = {
     'fr': 'fr',
     'en': 'en',
@@ -68,9 +68,11 @@ class Query(BaseModel):
     k: int = 3
     score_threshold: float = 0.5
 
+
 @app.post("/search")
+
 def search(query: Query):
-    lang = detect_custom_language(query.question) or query.lang or "fr"  # Utiliser la langue détectée, celle fournie, ou 'fr' par défaut
+    lang = detect_custom_language(query.question) or query.lang or "fr" 
     try:
         if not query.question.strip():
             raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
@@ -93,9 +95,8 @@ def search(query: Query):
         response = client.search(index="faq", body=query_body)
         hits = [hit for hit in response["hits"]["hits"] if hit["_score"] >= query.score_threshold]
         
-        return {
-            "detected_lang": lang,  # Ajouter la langue détectée à la réponse
-            "results": [
+        if hits:
+            results = [
                 {
                     "question": hit["_source"]["question"],
                     "answer": hit["_source"]["answer"],
@@ -104,6 +105,21 @@ def search(query: Query):
                 }
                 for hit in hits
             ]
+        else:
+            message = is_not_defined(query.lang)
+
+            results = [
+                {
+                    "question": None,
+                    "answer": message,
+                    "score": 1.0,
+                    "meta": None,
+                }
+            ]
+
+        return {
+            "detected_lang": lang,
+             "results": results
         }
 
     except exceptions.NotFoundError:
@@ -113,6 +129,7 @@ def search(query: Query):
         raise HTTPException(status_code=500, detail=f"Erreur interne: {str(e)}")
 
 @app.get("/health")
+
 def health_check():
     return {
         "opensearch": client.ping(),
