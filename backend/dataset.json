@@ -1,5 +1,52 @@
 [
   {
+    "intent": "fso doyen nom mot-du-doyen",
+    "question": {
+      "fr": [
+        "Qui est le doyen de la faculté des Sciences de l'Université Mohammed Premier?",
+        "Qui est le doyen de FSO ?",
+        "le nom de doyen fso"
+      ],
+      "en": [
+        "What is the name of dean of Faculty of Science at Mohammed Premier University?",
+        "Information about dean of Faculty of Science",
+        "who is dean of the Faculty of Science?"
+      ],
+      "ar": [
+        "ما هو اسم عميد كلية العلوم بجامعة محمد الأول؟",
+        "معلومات عن عميد كلية العلوم",
+        "من هو عميد كلية العلوم؟"
+      ],
+      "amz": [
+        "Mani tga amenzu n doyen n Tussna?",
+        "Talɣut ɣef doyen n Tussna",
+        "Anwa i d doyen n Tussna?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le doyen de la faculté des Sciences de l'Université Mohammed Premier est le Professeur MAAROUF EL BEKKAYE.",
+        "Le doyen de FSO est le Professeur MAAROUF EL BEKKAYE.",
+        "Le nom du doyen de FSO est le Professeur MAAROUF EL BEKKAYE."
+      ],
+      "en": [
+        "The dean of the Faculty of Science at Mohammed Premier University is Professor MAAROUF EL BEKKAYE.",
+        "The dean of FSO is Professor MAAROUF EL BEKKAYE.",
+        "The name of the dean of FSO is Professor MAAROUF EL BEKKAYE."
+      ],
+      "ar": [
+        "عميد كلية العلوم بجامعة محمد الأول هو الأستاذ معروف البكاي.",
+        "عميد كلية العلوم هو الأستاذ معروف البكاي.",
+        "اسم عميد كلية العلوم هو الأستاذ معروف البكاي."
+      ],
+      "amz": [
+        "Doyen n Tussna di Université Mohammed Premier d Professor MAAROUF EL BEKKAYE.",
+        "Doyen n FSO d Professor MAAROUF EL BEKKAYE.",
+        "Ism n doyen n FSO d Professor MAAROUF EL BEKKAYE."
+      ]
+    }
+  },
+  {
     "intent": "faculty_general_info",
     "question": {
       "fr": [
@@ -5985,6 +6032,67 @@
     }
   },
   {
+    "intent": "la date de nomination du doyen FSO",
+    "question": {
+      "fr": [
+        "Quelle est la date de nomination du doyen de la Faculté des Sciences d'Oujda ?",
+        "Quand a été nommé le doyen actuel de la FSO ?",
+        "À quelle date a été désigné le doyen de la Faculté des Sciences de l’Université Mohammed Premier ?"
+      ],
+      "en": [
+        "What is the appointment date of the Dean of the Faculty of Science in Oujda?",
+        "When was the current Dean of FSO appointed?",
+        "On what date was the Dean of the Faculty of Sciences at Mohammed Premier University designated?"
+      ],
+      "ar": [
+        "ما هو تاريخ تعيين عميد كلية العلوم بوجدة؟",
+        "متى تم تعيين العميد الحالي لكلية العلوم؟",
+        "في أي تاريخ تم تعيين عميد كلية العلوم بجامعة محمد الأول؟"
+      ],
+      "amz": [
+        "Ma yella ass n uselkim n doyen n Fakulté des Sciences n Ujda?",
+        "Melmi yettwaselkem doyen amaynut n FSO?",
+        "Amedya yella ass n uselkim n doyen n Fakulté des Sciences n Université Mohammed Premier?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Jeudi 13 mars 2025.",
+        "Le doyen actuel a été nommé le 13 mars 2025.",
+        "La nomination du doyen a eu lieu le jeudi 13 mars 2025."
+      ],
+      "en": [
+        "Thursday, March 13, 2025.",
+        "The current dean was appointed on March 13, 2025.",
+        "The dean's appointment took place on Thursday, March 13, 2025."
+      ],
+      "ar": [
+        "الخميس 13 مارس 2025.",
+        "تم تعيين العميد الحالي في 13 مارس 2025.",
+        "تمت تسمية العميد يوم الخميس 13 مارس 2025."
+      ],
+      "amz": [
+        "Aceres 13 mars 2025.",
+        "Doyen amaynut yettwaselkem deg 13 mars 2025.",
+        "Uselkim n doyen yella deg acerres 13 mars 2025."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "https://www.cg.gov.ma/fr/node/12254"
+      ],
+      "en": [
+        "https://www.cg.gov.ma/en/node/12254"
+      ],
+      "ar": [
+        "https://www.cg.gov.ma/ar/node/12254"
+      ],
+      "amz": [
+        "https://www.cg.gov.ma/amz/node/12254"
+      ]
+    }
+  },
+  {
     "intent": "life_sciences_info",
     "question": {
       "fr": [
@@ -10560,167 +10668,374 @@
     }
   },
   {
-    "intent": "program_fond_sma",
+    "intent": "programme_licence_fondamentale_sma_modules_s6",
     "question": {
       "fr": [
-        "Quel est le programme de Licence Fondamentale SMA ?",
-        "Que comprend le parcours Mathématiques Appliquées ?",
-        "Je cherche les modules de la Licence SMA"
+        "Quels sont les modules du semestre 6 en Licence Fondamentale SMA ?",
+        "Modules S6 en SMA",
+        "Que va-t-on étudier au S6 de la Licence SMA ?"
       ],
       "en": [
-        "What is the Fundamental SMA Bachelor's program?",
-        "What does the Applied Mathematics track include?",
-        "I'm looking for the SMA program modules"
+        "What are the S6 modules in the Fundamental SMA License?",
+        "Modules for semester 6 in SMA",
+        "What will we study in semester 6 of the SMA program?"
       ],
       "ar": [
-        "ما هو برنامج الإجازة الأساسية في الرياضيات التطبيقية؟",
-        "ماذا يشمل مسار الرياضيات التطبيقية؟",
-        "أبحث عن وحدات برنامج SMA"
-      ],
-      "amz": [
-        "Mani amahil n tɣawsa Licence Fondamentale SMA?",
-        "D acu i yegber abrid Mathématiques Appliquées?",
-        "Lɣiɣ tigawsiwin n umahil SMA"
+        "ما هي وحدات الفصل السادس في الإجازة الأساسية في SMA؟",
+        "وحدات S6 في SMA",
+        "ماذا سندرس في الفصل السادس من برنامج SMA؟"
       ]
     },
     "reponse": {
       "fr": [
-        "La Licence Fondamentale SMA comprend :",
-        "En 3ème année (S6) : Probabilité, Analyse fonctionnelle, Complément d'Algèbre, Equation et Géométrie Différentielles, Projet 1, Projet 2",
-        "En 3ème année (S5) : Topologie, Intégration, Calcul différentiel, Programmation Mathématique, Analyse numérique 2, Programmation orientée objet",
-        "En 2ème année (S4) : Analyse6, Algèbre5, Algèbre6, Analyse Numérique 1, Physique 6, Informatique4",
-        "En 2ème année (S3) : Analyse4, Analyse5, Algèbre4, Probabilité-Statistique, Physique 5, Informatique3"
+        "En 3ème année (S6) de la Licence Fondamentale SMA, les modules sont : Probabilité, Analyse fonctionnelle, Complément d'Algèbre, Équation et Géométrie Différentielles, Projet 1 et Projet 2."
       ],
       "en": [
-        "The Fundamental SMA Bachelor's program includes:",
-        "In 3rd year (S6): Probability, Functional analysis, Algebra supplement, Differential equations and geometry, Project 1, Project 2",
-        "In 3rd year (S5): Topology, Integration, Differential calculus, Mathematical programming, Numerical analysis 2, Object-oriented programming",
-        "In 2nd year (S4): Analysis6, Algebra5, Algebra6, Numerical analysis 1, Physics 6, Computer science4",
-        "In 2nd year (S3): Analysis4, Analysis5, Algebra4, Probability-Statistics, Physics 5, Computer science3"
+        "In the 3rd year (S6) of the Fundamental SMA License, the modules are: Probability, Functional Analysis, Algebra Supplement, Differential Equations and Geometry, Project 1 and Project 2."
       ],
       "ar": [
-        "تتضمن الإجازة الأساسية في الرياضيات التطبيقية:",
-        "في السنة الثالثة (S6): الاحتمالات، التحليل الدالي، مكمل الجبر، المعادلات والهندسة التفاضلية، المشروع 1، المشروع 2",
-        "في السنة الثالثة (S5): الطوبولوجيا، التكامل، حساب التفاضل، البرمجة الرياضية، التحليل العددي 2، البرمجة الموجهة للكائنات",
-        "في السنة الثانية (S4): التحليل6، الجبر5، الجبر6، التحليل العددي 1، الفيزياء6، المعلوماتية4",
-        "في السنة الثانية (S3): التحليل4، التحليل5، الجبر4، الاحتمالات والإحصاء، الفيزياء5، المعلوماتية3"
-      ],
-      "amz": [
-        "Tɣawsa Licence Fondamentale SMA tegbber:",
-        "Deg useggas wis 3 (S6): Probabilité, Analyse fonctionnelle, Complément d'Algèbre, Equation d Géométrie Différentielles, Projet 1, Projet 2",
-        "Deg useggas wis 3 (S5): Topologie, Intégration, Calcul différentiel, Programmation Mathématique, Analyse numérique 2, Programmation orientée objet",
-        "Deg useggas wis 2 (S4): Analyse6, Algèbre5, Algèbre6, Analyse Numérique 1, Physique 6, Informatique4",
-        "Deg useggas wis 2 (S3): Analyse4, Analyse5, Algèbre4, Probabilité-Statistique, Physique 5, Informatique3"
+        "في السنة الثالثة (S6) من الإجازة الأساسية في SMA، تشمل الوحدات: الاحتمالات، التحليل الدالي، مكمل الجبر، المعادلات والهندسة التفاضلية، المشروع 1 والمشروع 2."
       ]
     }
   },
   {
-    "intent": "program_fond_smc",
+    "intent": "programme_licence_fondamentale_sma_modules_s5",
     "question": {
       "fr": [
-        "Quel est le programme de Licence Fondamentale SMC ?",
-        "Que comprend le parcours Chimie ?",
-        "Je cherche les modules de la Licence SMC"
+        "Quels sont les modules du semestre 5 en Licence Fondamentale SMA ?",
+        "Modules S5 en SMA",
+        "Que va-t-on étudier au S5 de la Licence SMA ?"
       ],
       "en": [
-        "What is the Fundamental SMC Bachelor's program?",
-        "What does the Chemistry track include?",
-        "I'm looking for the SMC program modules"
+        "What are the S5 modules in the Fundamental SMA License?",
+        "Modules for semester 5 in SMA",
+        "What will we study in semester 5 of the SMA program?"
       ],
       "ar": [
-        "ما هو برنامج الإجازة الأساسية في الكيمياء؟",
-        "ماذا يشمل مسار الكيمياء؟",
-        "أبحث عن وحدات برنامج SMC"
-      ],
-      "amz": [
-        "Mani amahil n tɣawsa Licence Fondamentale SMC?",
-        "D acu i yegber abrid Chimie?",
-        "Lɣiɣ tigawsiwin n umahil SMC"
+        "ما هي وحدات الفصل الخامس في الإجازة الأساسية في SMA؟",
+        "وحدات S5 في SMA",
+        "ماذا سندرس في الفصل الخامس من برنامج SMA؟"
       ]
     },
     "reponse": {
       "fr": [
-        "La Licence Fondamentale SMC comprend :",
-        "En 3ème année (S6) : Les grandes classes des réactions organiques, Chimie descriptive 2 et chimie de coordination, Techniques de séparation, Module Option Semestre6 Module4, Projet 1, Projet 2",
-        "En 3ème année (S5) : Chimie organique fonctionnelle, Radiocristallographie et cristallochimie 2, Cinétique et catalyse, Chimie théorique, Electrochimie, Techniques spectroscopiques",
-        "En 2ème année (S4) : Hydrocarbures et fonctions monovalentes, Cristallographie géométrique et cristallochimie 1, Thermodynamique chimique, Mécanique quantique, Informatique, Probabilités Statistiques",
-        "En 2ème année (S3) : Chimie organique générale, Chimie descriptive et diagrammes de phases, Electromagnétisme, Chimie expérimentale, Chimie des électrolytes, Mathématiques pour la chimie"
+        "En 3ème année (S5) de la Licence Fondamentale SMA, les modules sont : Topologie, Intégration, Calcul différentiel, Programmation Mathématique, Analyse numérique 2 et Programmation orientée objet."
       ],
       "en": [
-        "The Fundamental SMC Bachelor's program includes:",
-        "In 3rd year (S6): Major classes of organic reactions, Descriptive chemistry 2 and coordination chemistry, Separation techniques, Optional module S6 Module4, Project 1, Project 2",
-        "In 3rd year (S5): Functional organic chemistry, Radiocrystallography and crystallochemistry 2, Kinetics and catalysis, Theoretical chemistry, Electrochemistry, Spectroscopic techniques",
-        "In 2nd year (S4): Hydrocarbons and monovalent functions, Geometric crystallography and crystallochemistry 1, Chemical thermodynamics, Quantum mechanics, Computer science, Probability Statistics",
-        "In 2nd year (S3): General organic chemistry, Descriptive chemistry and phase diagrams, Electromagnetism, Experimental chemistry, Electrolyte chemistry, Mathematics for chemistry"
+        "In the 3rd year (S5) of the Fundamental SMA License, the modules are: Topology, Integration, Differential Calculus, Mathematical Programming, Numerical Analysis 2 and Object-Oriented Programming."
       ],
       "ar": [
-        "تتضمن الإجازة الأساسية في الكيمياء:",
-        "في السنة الثالثة (S6): الفئات الرئيسية للتفاعلات العضوية، الكيمياء الوصفية 2 وكيمياء التنسيق، تقنيات الفصل، الوحدة الاختيارية الفصل6 الوحدة4، المشروع 1، المشروع 2",
-        "في السنة الثالثة (S5): الكيمياء العضوية الوظيفية، علم البلورات الإشعاعي والكيمياء البلورية 2، الحركية والحفز، الكيمياء النظرية، الكيمياء الكهربائية، التقنيات الطيفية",
-        "في السنة الثانية (S4): الهيدروكربونات والوظائف أحادية التكافؤ، علم البلورات الهندسية والكيمياء البلورية 1، الديناميكا الحرارية الكيميائية، ميكانيكا الكم، المعلوماتية، الإحصاء الاحتمالي",
-        "في السنة الثانية (S3): الكيمياء العضوية العامة، الكيمياء الوصفية ومخططات الطور، الكهرومغناطيسية، الكيمياء التجريبية، كيمياء الإلكتروليت، الرياضيات للكيمياء"
-      ],
-      "amz": [
-        "Tɣawsa Licence Fondamentale SMC tegbber:",
-        "Deg useggas wis 3 (S6): Les grandes classes des réactions organiques, Chimie descriptive 2 d chimie de coordination, Techniques de séparation, Module Option Semestre6 Module4, Projet 1, Projet 2",
-        "Deg useggas wis 3 (S5): Chimie organique fonctionnelle, Radiocristallographie d cristallochimie 2, Cinétique d catalyse, Chimie théorique, Electrochimie, Techniques spectroscopiques",
-        "Deg useggas wis 2 (S4): Hydrocarbures d fonctions monovalentes, Cristallographie géométrique d cristallochimie 1, Thermodynamique chimique, Mécanique quantique, Informatique, Probabilités Statistiques",
-        "Deg useggas wis 2 (S3): Chimie organique générale, Chimie descriptive d diagrammes de phases, Electromagnétisme, Chimie expérimentale, Chimie des électrolytes, Mathématiques pour la chimie"
+        "في السنة الثالثة (S5) من الإجازة الأساسية في SMA، تشمل الوحدات: الطوبولوجيا، التكامل، حساب التفاضل، البرمجة الرياضية، التحليل العددي 2 والبرمجة الموجهة للكائنات."
       ]
     }
   },
   {
-    "intent": "program_fond_smp",
+    "intent": "programme_licence_fondamentale_sma_modules_s4",
     "question": {
       "fr": [
-        "Quel est le programme de Licence Fondamentale SMP ?",
-        "Que comprend le parcours Physique ?",
-        "Je cherche les modules de la Licence SMP"
+        "Quels sont les modules du semestre 4 en Licence Fondamentale SMA ?",
+        "Modules S4 en SMA",
+        "Que va-t-on étudier au S4 de la Licence SMA ?"
       ],
       "en": [
-        "What is the Fundamental SMP Bachelor's program?",
-        "What does the Physics track include?",
-        "I'm looking for the SMP program modules"
+        "What are the S4 modules in the Fundamental SMA License?",
+        "Modules for semester 4 in SMA",
+        "What will we study in semester 4 of the SMA program?"
       ],
       "ar": [
-        "ما هو برنامج الإجازة الأساسية في الفيزياء؟",
-        "ماذا يشمل مسار الفيزياء؟",
-        "أبحث عن وحدات برنامج SMP"
-      ],
-      "amz": [
-        "Mani amahil n tɣawsa Licence Fondamentale SMP?",
-        "D acu i yegber abrid Physique?",
-        "Lɣiɣ tigawsiwin n umahil SMP"
+        "ما هي وحدات الفصل الرابع في الإجازة الأساسية في SMA؟",
+        "وحدات S4 في SMA",
+        "ماذا سندرس في الفصل الرابع من برنامج SMA؟"
       ]
     },
     "reponse": {
       "fr": [
-        "La Licence Fondamentale SMP comprend :",
-        "En 3ème année (S6) : Mecanique des fluides, Detection et mesure de rayonnement, Ondes et vibrations, Physique subatomique, Projet 1, Projet 2",
-        "En 3ème année (S5) : Electronique analogique, Mécanique analytique et vibrations, Physique nucléaire, Physique des matériaux, Physique quantique, Physique statistique",
-        "En 2ème année (S4) : Electronique de base, Optique Physique, Electricité 3, Mécanique quantique, Cristallographie géométrique et cristallochimie, Informatique",
-        "En 2ème année (S3) : Mécanique du solide, Thermodynamique 2, Electromagnétisme dans le vide, Chimie organique générale, Analyse 3, Analyse numérique et algorithme"
+        "En 2ème année (S4) de la Licence Fondamentale SMA, les modules sont : Analyse 6, Algèbre 5, Algèbre 6, Analyse Numérique 1, Physique 6 et Informatique 4."
       ],
       "en": [
-        "The Fundamental SMP Bachelor's program includes:",
-        "In 3rd year (S6): Fluid mechanics, Radiation detection and measurement, Waves and vibrations, Subatomic physics, Project 1, Project 2",
-        "In 3rd year (S5): Analog electronics, Analytical mechanics and vibrations, Nuclear physics, Materials physics, Quantum physics, Statistical physics",
-        "In 2nd year (S4): Basic electronics, Physical optics, Electricity 3, Quantum mechanics, Geometric crystallography and crystallochemistry, Computer science",
-        "In 2nd year (S3): Solid mechanics, Thermodynamics 2, Electromagnetism in vacuum, General organic chemistry, Analysis 3, Numerical analysis and algorithm"
+        "In the 2nd year (S4) of the Fundamental SMA License, the modules are: Analysis 6, Algebra 5, Algebra 6, Numerical Analysis 1, Physics 6 and Computer Science 4."
       ],
       "ar": [
-        "تتضمن الإجازة الأساسية في الفيزياء:",
-        "في السنة الثالثة (S6): ميكانيكا الموائع، الكشف عن الإشعاع وقياسه، الموجات والاهتزازات، الفيزياء دون الذرية، المشروع 1، المشروع 2",
-        "في السنة الثالثة (S5): الإلكترونيات التناظرية، الميكانيكا التحليلية والاهتزازات، الفيزياء النووية، فيزياء المواد، الفيزياء الكمية، الفيزياء الإحصائية",
-        "في السنة الثانية (S4): الإلكترونيات الأساسية، البصريات الفيزيائية، الكهرباء3، ميكانيكا الكم، علم البلورات الهندسية والكيمياء البلورية، المعلوماتية",
-        "في السنة الثانية (S3): ميكانيكا المواد الصلبة، الديناميكا الحرارية2، الكهرومغناطيسية في الفراغ، الكيمياء العضوية العامة، التحليل3، التحليل العددي والخوارزميات"
+        "في السنة الثانية (S4) من الإجازة الأساسية في SMA، تشمل الوحدات: التحليل 6، الجبر 5، الجبر 6، التحليل العددي 1، الفيزياء 6 والمعلوماتية 4."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_sma_modules_s3",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 3 en Licence Fondamentale SMA ?",
+        "Modules S3 en SMA",
+        "Que va-t-on étudier au S3 de la Licence SMA ?"
       ],
-      "amz": [
-        "Tɣawsa Licence Fondamentale SMP tegbber:",
-        "Deg useggas wis 3 (S6): Mecanique des fluides, Detection d mesure de rayonnement, Ondes d vibrations, Physique subatomique, Projet 1, Projet 2",
-        "Deg useggas wis 3 (S5): Electronique analogique, Mécanique analytique d vibrations, Physique nucléaire, Physique des matériaux, Physique quantique, Physique statistique",
-        "Deg useggas wis 2 (S4): Electronique de base, Optique Physique, Electricité 3, Mécanique quantique, Cristallographie géométrique d cristallochimie, Informatique",
-        "Deg useggas wis 2 (S3): Mécanique du solide, Thermodynamique 2, Electromagnétisme dans le vide, Chimie organique générale, Analyse 3, Analyse numérique d algorithme"
+      "en": [
+        "What are the S3 modules in the Fundamental SMA License?",
+        "Modules for semester 3 in SMA",
+        "What will we study in semester 3 of the SMA program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل الثالث في الإجازة الأساسية في SMA؟",
+        "وحدات S3 في SMA",
+        "ماذا سندرس في الفصل الثالث من برنامج SMA؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 2ème année (S3) de la Licence Fondamentale SMA, les modules sont : Analyse 4, Analyse 5, Algèbre 4, Probabilité-Statistique, Physique 5 et Informatique 3."
+      ],
+      "en": [
+        "In the 2nd year (S3) of the Fundamental SMA License, the modules are: Analysis 4, Analysis 5, Algebra 4, Probability and Statistics, Physics 5 and Computer Science 3."
+      ],
+      "ar": [
+        "في السنة الثانية (S3) من الإجازة الأساسية في SMA، تشمل الوحدات: التحليل 4، التحليل 5، الجبر 4، الاحتمالات والإحصاء، الفيزياء 5 والمعلوماتية 3."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smc_modules_s6",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 6 en Licence Fondamentale SMC ?",
+        "Modules S6 en SMC",
+        "Que va-t-on étudier au S6 de la Licence SMC ?"
+      ],
+      "en": [
+        "What are the S6 modules in the Fundamental SMC License?",
+        "Modules for semester 6 in SMC",
+        "What will we study in semester 6 of the SMC program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل السادس في الإجازة الأساسية في SMC؟",
+        "وحدات S6 في SMC",
+        "ماذا سندرس في الفصل السادس من برنامج SMC؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 3ème année (S6) de la Licence Fondamentale SMC, les modules sont : Les grandes classes des réactions organiques, Chimie descriptive 2 et chimie de coordination, Techniques de séparation, Module optionnel S6 Module4, Projet 1 et Projet 2."
+      ],
+      "en": [
+        "In the 3rd year (S6) of the Fundamental SMC License, the modules are: Major classes of organic reactions, Descriptive chemistry 2 and coordination chemistry, Separation techniques, Optional module S6 Module4, Project 1 and Project 2."
+      ],
+      "ar": [
+        "في السنة الثالثة (S6) من الإجازة الأساسية في SMC، تشمل الوحدات: الفئات الرئيسية للتفاعلات العضوية، الكيمياء الوصفية 2 وكيمياء التنسيق، تقنيات الفصل، الوحدة الاختيارية S6 Module4، المشروع 1 والمشروع 2."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smc_modules_s5",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 5 en Licence Fondamentale SMC ?",
+        "Modules S5 en SMC",
+        "Que va-t-on étudier au S5 de la Licence SMC ?"
+      ],
+      "en": [
+        "What are the S5 modules in the Fundamental SMC License?",
+        "Modules for semester 5 in SMC",
+        "What will we study in semester 5 of the SMC program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل الخامس في الإجازة الأساسية في SMC؟",
+        "وحدات S5 في SMC",
+        "ماذا سندرس في الفصل الخامس من برنامج SMC؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 3ème année (S5) de la Licence Fondamentale SMC, les modules sont : Chimie organique fonctionnelle, Radiocristallographie et cristallochimie 2, Cinétique et catalyse, Chimie théorique, Electrochimie et Techniques spectroscopiques."
+      ],
+      "en": [
+        "In the 3rd year (S5) of the Fundamental SMC License, the modules are: Functional organic chemistry, Radiocrystallography and crystallochemistry 2, Kinetics and catalysis, Theoretical chemistry, Electrochemistry and Spectroscopic techniques."
+      ],
+      "ar": [
+        "في السنة الثالثة (S5) من الإجازة الأساسية في SMC، تشمل الوحدات: الكيمياء العضوية الوظيفية، علم البلورات الإشعاعي والكيمياء البلورية 2، الحركية والحفز، الكيمياء النظرية، الكيمياء الكهربائية والتقنيات الطيفية."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smc_modules_s4",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 4 en Licence Fondamentale SMC ?",
+        "Modules S4 en SMC",
+        "Que va-t-on étudier au S4 de la Licence SMC ?"
+      ],
+      "en": [
+        "What are the S4 modules in the Fundamental SMC License?",
+        "Modules for semester 4 in SMC",
+        "What will we study in semester 4 of the SMC program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل الرابع في الإجازة الأساسية في SMC؟",
+        "وحدات S4 في SMC",
+        "ماذا سندرس في الفصل الرابع من برنامج SMC؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 2ème année (S4) de la Licence Fondamentale SMC, les modules sont : Hydrocarbures et fonctions monovalentes, Cristallographie géométrique et cristallochimie 1, Thermodynamique chimique, Mécanique quantique, Informatique et Probabilités Statistiques."
+      ],
+      "en": [
+        "In the 2nd year (S4) of the Fundamental SMC License, the modules are: Hydrocarbons and monovalent functions, Geometric crystallography and crystallochemistry 1, Chemical thermodynamics, Quantum mechanics, Computer science and Probability Statistics."
+      ],
+      "ar": [
+        "في السنة الثانية (S4) من الإجازة الأساسية في SMC، تشمل الوحدات: الهيدروكربونات والوظائف أحادية التكافؤ، علم البلورات الهندسية والكيمياء البلورية 1، الديناميكا الحرارية الكيميائية، ميكانيكا الكم، المعلوماتية والإحصاء الاحتمالي."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smc_modules_s3",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 3 en Licence Fondamentale SMC ?",
+        "Modules S3 en SMC",
+        "Que va-t-on étudier au S3 de la Licence SMC ?"
+      ],
+      "en": [
+        "What are the S3 modules in the Fundamental SMC License?",
+        "Modules for semester 3 in SMC",
+        "What will we study in semester 3 of the SMC program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل الثالث في الإجازة الأساسية في SMC؟",
+        "وحدات S3 في SMC",
+        "ماذا سندرس في الفصل الثالث من برنامج SMC؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 2ème année (S3) de la Licence Fondamentale SMC, les modules sont : Chimie organique générale, Chimie descriptive et diagrammes de phases, Electromagnétisme, Chimie expérimentale, Chimie des électrolytes et Mathématiques pour la chimie."
+      ],
+      "en": [
+        "In the 2nd year (S3) of the Fundamental SMC License, the modules are: General organic chemistry, Descriptive chemistry and phase diagrams, Electromagnetism, Experimental chemistry, Electrolyte chemistry and Mathematics for chemistry."
+      ],
+      "ar": [
+        "في السنة الثانية (S3) من الإجازة الأساسية في SMC، تشمل الوحدات: الكيمياء العضوية العامة، الكيمياء الوصفية ومخططات الطور، الكهرومغناطيسية، الكيمياء التجريبية، كيمياء الإلكتروليت والرياضيات للكيمياء."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smp_modules_s6",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 6 en Licence Fondamentale SMP ?",
+        "Modules S6 en SMP",
+        "Que va-t-on étudier au S6 de la Licence SMP ?"
+      ],
+      "en": [
+        "What are the S6 modules in the Fundamental SMP License?",
+        "Modules for semester 6 in SMP",
+        "What will we study in semester 6 of the SMP program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل السادس في الإجازة الأساسية في SMP؟",
+        "وحدات S6 في SMP",
+        "ماذا سندرس في الفصل السادس من برنامج SMP؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 3ème année (S6) de la Licence Fondamentale SMP, les modules sont : Mécanique des fluides, Détection et mesure de rayonnement, Ondes et vibrations, Physique subatomique, Projet 1 et Projet 2."
+      ],
+      "en": [
+        "In the 3rd year (S6) of the Fundamental SMP License, the modules are: Fluid mechanics, Radiation detection and measurement, Waves and vibrations, Subatomic physics, Project 1 and Project 2."
+      ],
+      "ar": [
+        "في السنة الثالثة (S6) من الإجازة الأساسية في SMP، تشمل الوحدات: ميكانيكا الموائع، الكشف عن الإشعاع وقياسه، الموجات والاهتزازات، الفيزياء دون الذرية، المشروع 1 والمشروع 2."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smp_modules_s5",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 5 en Licence Fondamentale SMP ?",
+        "Modules S5 en SMP",
+        "Que va-t-on étudier au S5 de la Licence SMP ?"
+      ],
+      "en": [
+        "What are the S5 modules in the Fundamental SMP License?",
+        "Modules for semester 5 in SMP",
+        "What will we study in semester 5 of the SMP program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل الخامس في الإجازة الأساسية في SMP؟",
+        "وحدات S5 في SMP",
+        "ماذا سندرس في الفصل الخامس من برنامج SMP؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 3ème année (S5) de la Licence Fondamentale SMP, les modules sont : Électronique analogique, Mécanique analytique et vibrations, Physique nucléaire, Physique des matériaux, Physique quantique et Physique statistique."
+      ],
+      "en": [
+        "In the 3rd year (S5) of the Fundamental SMP License, the modules are: Analog electronics, Analytical mechanics and vibrations, Nuclear physics, Materials physics, Quantum physics and Statistical physics."
+      ],
+      "ar": [
+        "في السنة الثالثة (S5) من الإجازة الأساسية في SMP، تشمل الوحدات: الإلكترونيات التناظرية، الميكانيكا التحليلية والاهتزازات، الفيزياء النووية، فيزياء المواد، الفيزياء الكمية والفيزياء الإحصائية."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smp_modules_s4",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 4 en Licence Fondamentale SMP ?",
+        "Modules S4 en SMP",
+        "Que va-t-on étudier au S4 de la Licence SMP ?"
+      ],
+      "en": [
+        "What are the S4 modules in the Fundamental SMP License?",
+        "Modules for semester 4 in SMP",
+        "What will we study in semester 4 of the SMP program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل الرابع في الإجازة الأساسية في SMP؟",
+        "وحدات S4 في SMP",
+        "ماذا سندرس في الفصل الرابع من برنامج SMP؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 2ème année (S4) de la Licence Fondamentale SMP, les modules sont : Électronique de base, Optique physique, Électricité 3, Mécanique quantique, Cristallographie géométrique et cristallochimie, et Informatique."
+      ],
+      "en": [
+        "In the 2nd year (S4) of the Fundamental SMP License, the modules are: Basic electronics, Physical optics, Electricity 3, Quantum mechanics, Geometric crystallography and crystallochemistry, and Computer science."
+      ],
+      "ar": [
+        "في السنة الثانية (S4) من الإجازة الأساسية في SMP، تشمل الوحدات: الإلكترونيات الأساسية، البصريات الفيزيائية، الكهرباء 3، ميكانيكا الكم، علم البلورات الهندسية والكيمياء البلورية والمعلوماتية."
+      ]
+    }
+  },
+  {
+    "intent": "programme_licence_fondamentale_smp_modules_s3",
+    "question": {
+      "fr": [
+        "Quels sont les modules du semestre 3 en Licence Fondamentale SMP ?",
+        "Modules S3 en SMP",
+        "Que va-t-on étudier au S3 de la Licence SMP ?"
+      ],
+      "en": [
+        "What are the S3 modules in the Fundamental SMP License?",
+        "Modules for semester 3 in SMP",
+        "What will we study in semester 3 of the SMP program?"
+      ],
+      "ar": [
+        "ما هي وحدات الفصل الثالث في الإجازة الأساسية في SMP؟",
+        "وحدات S3 في SMP",
+        "ماذا سندرس في الفصل الثالث من برنامج SMP؟"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "En 2ème année (S3) de la Licence Fondamentale SMP, les modules sont : Mécanique du solide, Thermodynamique 2, Électromagnétisme dans le vide, Chimie organique générale, Analyse 3 et Analyse numérique et algorithme."
+      ],
+      "en": [
+        "In the 2nd year (S3) of the Fundamental SMP License, the modules are: Solid mechanics, Thermodynamics 2, Electromagnetism in vacuum, General organic chemistry, Analysis 3 and Numerical analysis and algorithm."
+      ],
+      "ar": [
+        "في السنة الثانية (S3) من الإجازة الأساسية في SMP، تشمل الوحدات: ميكانيكا المواد الصلبة، الديناميكا الحرارية 2، الكهرومغناطيسية في الفراغ، الكيمياء العضوية العامة، التحليل 3، والتحليل العددي والخوارزميات."
       ]
     }
   },

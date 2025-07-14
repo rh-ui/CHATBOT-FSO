@@ -7,6 +7,47 @@ import CPU_AVATAR from '@/assets/Cpu.png';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 
+
+import React, { Suspense, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+
+import * as THREE from 'three';
+
+function Model() {
+  const gltf = useGLTF('/models/file.glb');
+  const ref = useRef<THREE.Object3D>(null);
+  
+  useFrame((state) => {
+    const { mouse } = state;
+    // Make model rotate slowly based on mouse X/Y position
+    if (ref.current) {
+      ref.current.rotation.y = mouse.x * Math.PI;    // left/right
+      ref.current.rotation.x = -mouse.y * Math.PI * 0.2; // up/down, smaller effect
+    }
+  });
+  
+  return <primitive ref={ref} object={gltf.scene} />;
+}
+
+// Preload the model
+useGLTF.preload('/models/file.glb');
+
+function GLBViewer() {
+  return (
+    <Canvas camera={{ position: [0, 1, 3], fov: 45 }}>
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <Suspense fallback={null}>
+          <Model />
+        </Suspense>
+        <OrbitControls enablePan={false} enableZoom={false} enableRotate={false} />
+      </Canvas>
+  );
+}
+
+
+
 interface Message {
   id: string;
   text: string;
@@ -109,7 +150,7 @@ export default function MSOChatUI() {
           timestamp: new Date()
         }];
 
-  
+
       setMessages(prev => [...prev.filter(msg => msg.id !== tempResponse.id), ...botResponses]);
     } catch (error) {
       setMessages(prev => prev.map(msg =>
@@ -148,14 +189,17 @@ export default function MSOChatUI() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* AI Icon Button */}
-      <button
-        onClick={toggleChat}
-        className="fixed bottom-3 right-0 bg-transparent z-50"
-      >
-        {splineScene && <Spline scene={splineScene} className='noWaterMark' />}
-      </button>
+      <div className="">
+        <button
+          onClick={toggleChat}
+          className="fixed bottom-3 right-0 bg-transparent z-50  "
+        >
+          {/* {splineScene && <Spline scene={splineScene} className='' />} */}
+          <GLBViewer />
+        </button>
+      </div>
 
       {/* Chat Interface */}
       {isVisible && (
@@ -193,8 +237,8 @@ export default function MSOChatUI() {
                 )}
 
                 <div className={`rounded-2xl p-4 max-w-xs shadow-sm ${msg.isUser
-                    ? 'bg-blue-500 text-white rounded-tr-md'
-                    : 'bg-white text-gray-800 rounded-tl-md'
+                  ? 'bg-blue-500 text-white rounded-tr-md'
+                  : 'bg-white text-gray-800 rounded-tl-md'
                   }`}>
                   {msg.text.includes('\n\n') && !msg.isUser ? (
                     <>
