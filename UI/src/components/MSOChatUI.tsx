@@ -12,9 +12,11 @@ import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
+import * as THREE from 'three';
+
 function Model() {
   const gltf = useGLTF('/models/file.glb');
-  const ref = useRef();
+  const ref = useRef<THREE.Object3D>(null);
   
   useFrame((state) => {
     const { mouse } = state;
