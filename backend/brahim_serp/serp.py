@@ -30,7 +30,7 @@ use :
 | Récupération de PDF | `PyMuPDF`, `pdfplumber`, `unstructured`                                                                 |
 """
 
-def google_search_and_check(query, keyword="fatna taoufiq"):
+def google_search_and_check(query, keyword="Maarouf"):
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=False,
@@ -43,7 +43,7 @@ def google_search_and_check(query, keyword="fatna taoufiq"):
                 '--no-first-run',
                 '--disable-default-apps',
                 '--disable-features=TranslateUI',
-                '--disable-ipc-flooding-protection'
+                '--disable-ipc-flooding-protectio n'
             ]
         )
         
@@ -265,5 +265,5 @@ def google_search_and_check(query, keyword="fatna taoufiq"):
         browser.close()
 
 if __name__ == "__main__":
-    search_query = "fatna taoufiq"
+    search_query = "date de nomination du doyen de la FSO?"
     google_search_and_check(search_query)
