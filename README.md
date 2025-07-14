@@ -1,13 +1,5 @@
 
 # 🎓 M'SO - Assistant Virtuel de la Faculté des Sciences d'Oujda
-
-<div align="center">
-  <img src="https://img.shields.io/badge/React-18.2.0-blue?logo=react" alt="React">
-  <img src="https://img.shields.io/badge/FastAPI-0.95.2-green?logo=fastapi" alt="FastAPI">
-  <img src="https://img.shields.io/badge/OpenSearch-2.11.1-orange?logo=opensearch" alt="OpenSearch">
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
-</div>
-
 ---
 
 **M'SO** est un assistant virtuel multilingue intelligent développé pour la Faculté des Sciences d'Oujda (Université Mohammed Premier).  
@@ -110,7 +102,6 @@ fso-chatbot/
 
 - Université Mohammed Premier – FSO
 - OpenSearch & FastAPI Community
-- OpenAI – GPT API
 - Contributeurs open source ❤️
 
 ---
