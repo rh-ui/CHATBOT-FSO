@@ -5,6 +5,7 @@ from pydantic import BaseModel
 import json
 import os
 from datetime import datetime
+from polite import is_not_defined
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -15,7 +16,7 @@ class LLMService:
         # Configuration pour GitHub Models
         self.client = openai.OpenAI(
             base_url="https://models.github.ai/inference",
-            api_key=""
+            api_key="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"
         )
         
         self.model_name = "openai/gpt-4.1" 
@@ -147,16 +148,12 @@ class LLMService:
             }
         }
         
-        
-        self.no_results_messages = {
-            'fr': "Je suis l'assistant virtuel de la Faculté des Sciences d'Oujda. Je n'ai pas trouvé d'informations spécifiques à votre question dans notre base de données. Pour plus d'informations, veuillez contacter les services administratifs de la FSO ou consulter le site web officiel.",
-            'en': "I am the virtual assistant of the Faculty of Sciences of Oujda. I couldn't find specific information about your question in our database. For more information, please contact the FSO administrative services or visit the official website.",
-            'ar': "أنا المساعد الافتراضي لكلية العلوم بوجدة. لم أتمكن من العثور على معلومات محددة حول سؤالك في قاعدة البيانات. للمزيد من المعلومات، يرجى الاتصال بالخدمات الإدارية للكلية أو زيارة الموقع الرسمي.",
-            'amz': "Nekk d amellal ufrawan n tesnawalt n tussniwin n Wujda. Ur ufiɣ ara talɣut tazribt ɣef usqsi-nnek deg taffa n yisefka. I wugar n telɣut, nermes tanbaḍt taneggarut n tesnawalt neɣ rzu asmel unṣib."
-        }
+
 
     def format_search_results_for_structuring(self, results: List[Dict[str, Any]]) -> str:
+
         """Formate tous les résultats pour permettre au LLM de les structurer"""
+        
         if not results:
             return "Aucun résultat trouvé."
         
@@ -186,7 +183,7 @@ class LLMService:
             
             if not valid_results:
                 return {
-                    'response': self.no_results_messages.get(lang, self.no_results_messages['fr']),
+                    'response': is_not_defined(lang),
                     'confidence': 0.0,
                     'sources_used': 0,
                     'processing_time': 0,
@@ -239,7 +236,7 @@ class LLMService:
         except Exception as e:
             logger.error(f"Erreur lors de la génération de la réponse structurée: {str(e)}")
             return {
-                'response': self.no_results_messages.get(lang, self.no_results_messages['fr']),
+                'response': is_not_defined(lang),
                 'confidence': 0.0,
                 'sources_used': 0,
                 'processing_time': 0,
