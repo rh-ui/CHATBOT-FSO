@@ -15,7 +15,7 @@ class LLMService:
         # Configuration pour GitHub Models
         self.client = openai.OpenAI(
             base_url="https://models.github.ai/inference",
-            api_key="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"
+            api_key=""
         )
         
         self.model_name = "openai/gpt-4.1" 
@@ -208,7 +208,7 @@ class LLMService:
                 )}
             ]
             
-            # Appeler l'API OpenAI pour structurer la réponse
+            
             response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=messages,
@@ -221,7 +221,7 @@ class LLMService:
             
             processing_time = (datetime.now() - start_time).total_seconds()
             
-            # Extraire la réponse structurée
+
             structured_response = response.choices[0].message.content.strip()
             
             # Calculer la confiance basée sur le nombre et la qualité des résultats
@@ -252,13 +252,12 @@ class LLMService:
         if not results:
             return 0.0
         
-        # Normaliser les scores entre 0 et 1 si nécessaire
+        
         scores = []
         for r in results:
             score = r.get('score', 0)
-            # Si les scores sont élevés (comme dans votre exemple 23.21), normalisez-les
             if score > 1.0:
-                score = score / 100  # Ajustez ce facteur selon votre échelle de score
+                score = score / 100
             scores.append(score)
         
         avg_score = sum(scores) / len(scores)
@@ -333,7 +332,6 @@ class LLMService:
             
         except Exception as e:
             logger.error(f"Erreur lors de l'amélioration avec contexte: {str(e)}")
-            return response  # Retourner la réponse originale en cas d'erreur
+            return response
 
-# Instance globale du service
 llm_service = LLMService()
