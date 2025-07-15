@@ -6,9 +6,8 @@ from opensearchpy import OpenSearch, exceptions
 import logging
 from langdetect import detect
 from polite import is_not_defined
-
-
-
+from LLMService import llm_service  # Import du service LLM
+from typing import Optional
 
 LANG_MAP = {
     'fr': 'fr',
@@ -23,7 +22,6 @@ def detect_custom_language(text):
         return LANG_MAP.get(lang, 'unknown')
     except Exception:
         return 'unknown'
-    
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -39,8 +37,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
 
 # Configuration avec gestion d'erreur améliorée
 try:
@@ -66,13 +62,14 @@ class Query(BaseModel):
     question: str
     lang: str = "fr"
     k: int = 3
-    score_threshold: float = 0.5
-
+    score_threshold: float = 0.9
+    use_llm: bool = True  
+    context: Optional[dict] = None
 
 @app.post("/search")
-
 def search(query: Query):
-    lang = detect_custom_language(query.question) or query.lang or "fr" 
+    lang = detect_custom_language(query.question) or query.lang or "fr"
+    
     try:
         if not query.question.strip():
             raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
@@ -105,22 +102,70 @@ def search(query: Query):
                 }
                 for hit in hits
             ]
-        else:
-            message = is_not_defined(query.lang)
-
-            results = [
-                {
-                    "question": None,
-                    "answer": message,
-                    "score": 1.0,
-                    "meta": None,
+            
+            
+            if query.use_llm:
+                llm_response = llm_service.generate_structured_response(
+                    question=query.question,
+                    search_results=results,
+                    lang=lang
+                )
+                
+                if query.context and llm_response.get('response'):
+                    enhanced_response = llm_service.enhance_response_with_context(
+                        llm_response['response'],
+                        query.context,
+                        lang
+                    )
+                    llm_response['response'] = enhanced_response
+                
+                return {
+                    "detected_lang": lang,
+                    "raw_results": results,
+                    "structured_response": llm_response['response'],
+                    "confidence": llm_response['confidence'],
+                    "sources_used": llm_response['sources_used'],
+                    "processing_time": llm_response['processing_time'],
+                    "llm_used": True
                 }
-            ]
-
-        return {
-            "detected_lang": lang,
-             "results": results
-        }
+            else:
+                return {
+                    "detected_lang": lang,
+                    "results": results,
+                    "llm_used": False
+                }
+        else:
+            if query.use_llm:
+                llm_response = llm_service.generate_structured_response(
+                    question=query.question,
+                    search_results=[],
+                    lang=lang
+                )
+                
+                return {
+                    "detected_lang": lang,
+                    "structured_response": llm_response['response'],
+                    "confidence": 0.0,
+                    "sources_used": 0,
+                    "processing_time": llm_response['processing_time'],
+                    "llm_used": True
+                }
+            else:
+                message = is_not_defined(lang)
+                results = [
+                    {
+                        "question": None,
+                        "answer": message,
+                        "score": 1.0,
+                        "meta": None,
+                    }
+                ]
+                
+                return {
+                    "detected_lang": lang,
+                    "results": results,
+                    "llm_used": False
+                }
 
     except exceptions.NotFoundError:
         raise HTTPException(status_code=404, detail="Index 'faq' non trouvé")
@@ -128,10 +173,44 @@ def search(query: Query):
         logger.error(f"Erreur lors de la recherche: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Erreur interne: {str(e)}")
 
-@app.get("/health")
+@app.post("/chat")
+def chat_with_llm(query: Query):
+    """Endpoint dédié pour le chat avec LLM (toujours activé)"""
+    query.use_llm = True
+    return search(query)
 
+@app.get("/health")
 def health_check():
-    return {
+    """Vérification de l'état de santé avec test du LLM"""
+    health_status = {
         "opensearch": client.ping(),
-        "model_loaded": True
+        "model_loaded": True,
+        "llm_service": False
+    }
+    
+    
+    try:
+        test_response = llm_service.generate_structured_response(
+            question="Test de santé",
+            search_results=[],
+            lang="fr"
+        )
+        health_status["llm_service"] = True
+    except Exception as e:
+        logger.error(f"Erreur test LLM: {str(e)}")
+        health_status["llm_service"] = False
+    
+    return health_status
+
+@app.get("/")
+def root():
+    """Endpoint racine avec information sur l'API"""
+    return {
+        "message": "API Chatbot FAQ avec LLM",
+        "version": "2.0",
+        "endpoints": {
+            "/search": "Recherche FAQ avec option LLM",
+            "/chat": "Chat avec LLM activé",
+            "/health": "Vérification de santé"
+        }
     }
