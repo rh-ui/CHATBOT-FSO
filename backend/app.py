@@ -83,17 +83,16 @@ def search(query: Query):
             "size": query.k,
             "query": {
                 "bool": {
-                    "must": [
+                    "should": [
                         {
                             "knn": {
                                 "embedding": {
                                     "vector": embedding,
-                                    "k": query.k * 2
+                                    "k": 50,
+                                    "boost": 0.7  # Higher boost for semantic matches
                                 }
                             }
-                        }
-                    ],
-                    "should": [
+                        },
                         {
                             "match": {
                                 "question": {

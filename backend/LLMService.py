@@ -1,3 +1,4 @@
+import time
 import openai
 import logging
 from typing import List, Dict, Any
@@ -6,20 +7,25 @@ import json
 import os
 from datetime import datetime
 from polite import is_not_defined
+import requests
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class LLMService:
-    def __init__(self):
-        # Configuration pour GitHub Models
-        self.client = openai.OpenAI(
-            base_url="https://models.github.ai/inference",
-            api_key="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"
-        )
+    def __init__(self, model_name: str = "llama3:8b", base_url: str = "http://localhost:11434"):
+        self.model_name = model_name
+        self.base_url = base_url
+        self.api_url = f"{base_url}/api/generate"
+        self.chat_url = f"{base_url}/api/chat"
         
-        self.model_name = "openai/gpt-4.1" 
+        # Test de connexion à Ollama
+        try:
+            self._test_connection()
+            logger.info(f"Connexion réussie à Ollama avec le modèle {model_name}")
+        except Exception as e:
+            logger.error(f"Erreur de connexion à Ollama: {str(e)}")
         
         # Prompts optimisés pour la structuration de réponses
         self.prompts = {
@@ -147,11 +153,94 @@ class LLMService:
                 Ttxil-k snulfu-d tiririt tettusbeḍ u teǧǧa s useqdec n telɣut-a. Sbedd-itt s tarrayt tusnakt u gani asniles."""
             }
         }
-        
 
+    def _test_connection(self):
+        """Test la connexion à Ollama"""
+        try:
+            response = requests.get(f"{self.base_url}/api/tags", timeout=5)
+            response.raise_for_status()
+            tags = response.json()
+            
+            # Vérifier si le modèle est disponible
+            available_models = [model['name'] for model in tags.get('models', [])]
+            if self.model_name not in available_models:
+                logger.warning(f"Modèle {self.model_name} non trouvé. Modèles disponibles: {available_models}")
+                
+        except Exception as e:
+            raise Exception(f"Impossible de se connecter à Ollama: {str(e)}")
+
+    def _call_ollama_chat(self, messages: List[Dict[str, str]], temperature: float = 0.1, max_tokens: int = 1200) -> Dict[str, Any]:
+        """
+        Appel à l'API chat d'Ollama avec gestion d'erreurs
+        """
+        try:
+            payload = {
+                "model": self.model_name,
+                "messages": messages,
+                "stream": False,
+                "options": {
+                    "temperature": temperature,
+                    "num_predict": max_tokens,
+                    "top_p": 0.9,
+                    "frequency_penalty": 0.3,
+                    "presence_penalty": 0.2
+                }
+            }
+            
+            response = requests.post(
+                self.chat_url,
+                json=payload,
+                timeout=60,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            response.raise_for_status()
+            result = response.json()
+            
+            return {
+                "success": True,
+                "response": result.get("message", {}).get("content", ""),
+                "model": result.get("model", self.model_name),
+                "done": result.get("done", False)
+            }
+            
+        except requests.exceptions.Timeout:
+            logger.error("Timeout lors de l'appel à Ollama")
+            return {
+                "success": False,
+                "error": "Timeout - le modèle met trop de temps à répondre",
+                "response": ""
+            }
+        except requests.exceptions.ConnectionError:
+            logger.error("Erreur de connexion à Ollama")
+            return {
+                "success": False,
+                "error": "Impossible de se connecter à Ollama - vérifiez que le service est démarré",
+                "response": ""
+            }
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Erreur HTTP Ollama: {str(e)}")
+            return {
+                "success": False,
+                "error": f"Erreur HTTP: {str(e)}",
+                "response": ""
+            }
+        except json.JSONDecodeError as e:
+            logger.error(f"Erreur JSON: {str(e)}")
+            return {
+                "success": False,
+                "error": f"Erreur de décodage JSON: {str(e)}",
+                "response": ""
+            }
+        except Exception as e:
+            logger.error(f"Erreur inattendue: {str(e)}")
+            return {
+                "success": False,
+                "error": f"Erreur inattendue: {str(e)}",
+                "response": ""
+            }
 
     def format_search_results_for_structuring(self, results: List[Dict[str, Any]]) -> str:
-
         """Formate tous les résultats pour permettre au LLM de les structurer"""
         
         if not results:
@@ -177,7 +266,7 @@ class LLMService:
         """Génère une réponse structurée à partir de TOUS les résultats trouvés"""
         
         try:
-            start_time = datetime.now()
+            start_time = time.time()
            
             valid_results = [r for r in search_results if r.get('answer')]
             
@@ -196,7 +285,7 @@ class LLMService:
             # Formatter TOUS les résultats pour le LLM
             formatted_results = self.format_search_results_for_structuring(valid_results)
             
-            # Créer les messages pour l'API
+            # Créer les messages pour l'API Ollama
             messages = [
                 {"role": "system", "content": prompt_config['system']},
                 {"role": "user", "content": prompt_config['user'].format(
@@ -205,21 +294,23 @@ class LLMService:
                 )}
             ]
             
+            # Appeler Ollama
+            ollama_response = self._call_ollama_chat(messages, temperature=0.1, max_tokens=1200)
             
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=messages,
-                max_tokens=1200,
-                temperature=0.1,
-                top_p=0.9,
-                frequency_penalty=0.3,
-                presence_penalty=0.2
-            )
+            processing_time = time.time() - start_time
             
-            processing_time = (datetime.now() - start_time).total_seconds()
+            if not ollama_response['success']:
+                logger.error(f"Erreur Ollama: {ollama_response.get('error', 'Unknown error')}")
+                return {
+                    'response': is_not_defined(lang),
+                    'confidence': 0.0,
+                    'sources_used': 0,
+                    'processing_time': processing_time,
+                    'error': ollama_response.get('error', 'Unknown error'),
+                    'scope': 'error'
+                }
             
-
-            structured_response = response.choices[0].message.content.strip()
+            structured_response = ollama_response['response'].strip()
             
             # Calculer la confiance basée sur le nombre et la qualité des résultats
             confidence = self._calculate_confidence(valid_results)
@@ -248,7 +339,6 @@ class LLMService:
         """Calcule un score de confiance basé sur les résultats"""
         if not results:
             return 0.0
-        
         
         scores = []
         for r in results:
@@ -283,52 +373,52 @@ class LLMService:
 
                         Améliore la réponse en intégrant naturellement le contexte, mais garde toutes les informations factuelles intactes.""",
                                         
-                                        'en': f"""You are the FSO assistant. Enhance this response by adding relevant context WITHOUT changing factual information:
+                'en': f"""You are the FSO assistant. Enhance this response by adding relevant context WITHOUT changing factual information:
 
-                                        Current response:
-                                        {response}
+                        Current response:
+                        {response}
 
-                                        Additional context:
-                                        {json.dumps(context, ensure_ascii=False, indent=2)}
+                        Additional context:
+                        {json.dumps(context, ensure_ascii=False, indent=2)}
 
-                                        Enhance the response by naturally integrating the context, but keep all factual information intact.""",
+                        Enhance the response by naturally integrating the context, but keep all factual information intact.""",
                                                         
-                                        'ar': f"""أنت مساعد كلية العلوم. حسّن هذه الإجابة بإضافة السياق المناسب دون تغيير المعلومات الواقعية:
+                'ar': f"""أنت مساعد كلية العلوم. حسّن هذه الإجابة بإضافة السياق المناسب دون تغيير المعلومات الواقعية:
 
-                                        الإجابة الحالية:
-                                        {response}
+                        الإجابة الحالية:
+                        {response}
 
-                                        السياق الإضافي:
-                                        {json.dumps(context, ensure_ascii=False, indent=2)}
+                        السياق الإضافي:
+                        {json.dumps(context, ensure_ascii=False, indent=2)}
 
-                                        حسّن الإجابة بدمج السياق بطريقة طبيعية، ولكن احتفظ بجميع المعلومات الواقعية سليمة.""",
+                        حسّن الإجابة بدمج السياق بطريقة طبيعية، ولكن احتفظ بجميع المعلومات الواقعية سليمة.""",
                                                         
-                                        'amz': f"""Anta d amellal n tesnawalt. Seǧhed tiririt-a s tmerna n umnaḍ ifaqen ur d-tbeddel ara tilɣa n tidet:
+                'amz': f"""Anta d amellal n tesnawalt. Seǧhed tiririt-a s tmerna n umnaḍ ifaqen ur d-tbeddel ara tilɣa n tidet:
 
-                                        Tiririt n tura:
-                                        {response}
+                        Tiririt n tura:
+                        {response}
 
-                                        Amnaḍ nniḍen:
-                                        {json.dumps(context, ensure_ascii=False, indent=2)}
+                        Amnaḍ nniḍen:
+                        {json.dumps(context, ensure_ascii=False, indent=2)}
 
-                                        Seǧhed tiririt s usdukkel n umnaḍ s tarrayt tagamant, maca eǧǧ akk tilɣa n tidet."""
+                        Seǧhed tiririt s usdukkel n umnaḍ s tarrayt tagamant, maca eǧǧ akk tilɣa n tidet."""
             }
             
             messages = [
                 {"role": "user", "content": context_prompts.get(lang, context_prompts['fr'])}
             ]
             
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=messages,
-                max_tokens=1400,
-                temperature=0.2
-            )
+            ollama_response = self._call_ollama_chat(messages, temperature=0.2, max_tokens=1400)
             
-            return response.choices[0].message.content.strip()
+            if ollama_response['success']:
+                return ollama_response['response'].strip()
+            else:
+                logger.error(f"Erreur lors de l'amélioration avec contexte: {ollama_response.get('error')}")
+                return response
             
         except Exception as e:
             logger.error(f"Erreur lors de l'amélioration avec contexte: {str(e)}")
             return response
 
+# Instance globale
 llm_service = LLMService()
