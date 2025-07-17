@@ -1,7 +1,7 @@
 import json
 import uuid
 import sys
-from opensearchpy import OpenSearch
+from opensearchpy import OpenSearch, logger
 from sentence_transformers import SentenceTransformer
 
 
@@ -93,6 +93,55 @@ def index_faq_data(file_path):
                 total += 1
 
     print(f"Indexed {total} questions into OpenSearch.")
+    
+    
+def add_single_entry(entry_data):
+    """Ajoute une seule entrée à la base de données"""
+    try:
+        questions = entry_data.get("question", {})
+        reponses = entry_data.get("reponse", {})
+        metas = entry_data.get("meta", {})
+
+        added_count = 0
+        
+        for lang in questions:
+            for question in questions[lang]:
+                if lang not in reponses or not reponses[lang]:
+                    continue
+                    
+                answer = reponses[lang][0]
+                embedding = model.encode(question).tolist()
+
+                doc = {
+                    "question": question,
+                    "answer": answer,
+                    "lang": lang,
+                    "embedding": embedding
+                }
+
+                if metas and lang in metas and metas[lang]:
+                    doc["meta"] = metas[lang][0]
+
+                doc_id = str(uuid.uuid4())
+                client.index(index=INDEX_NAME, id=doc_id, body=doc)
+                added_count += 1
+                
+                logger.info(f"Nouvelle entrée ajoutée: {question[:50]}... (ID: {doc_id})")
+
+        return {
+            "success": True,
+            "added_count": added_count,
+            "message": f"Ajouté {added_count} question(s) à la base de données"
+        }
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de l'ajout d'entrée: {str(e)}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": "Erreur lors de l'ajout à la base de données"
+        }
+        
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -111,6 +160,17 @@ if __name__ == "__main__":
             delete_index()
         elif cmd == "help":
             print_help()
+        elif cmd == "add":
+            if len(sys.argv) < 3:
+                print("Usage: python indexer.py add <json_data>")
+            else:
+                import json
+                try:
+                    entry_data = json.loads(sys.argv[2])
+                    result = add_single_entry(entry_data)
+                    print(result["message"])
+                except json.JSONDecodeError:
+                    print("Erreur: Format JSON invalide")
         else:
             print(f"Unknown command: {cmd}")
             print_help()

@@ -15024,5 +15024,419 @@
         "Isegzawen yellan d: Asegzaw n Yusnan d Asegzaw n Tafizit."
       ]
     }
+  },
+  {
+    "intent": "Horaires de travail de la FSO",
+    "question": {
+      "fr": [
+        "Quels sont les horaires d'ouverture de la Faculté des Sciences d’Oujda ?",
+        "À quelle heure ouvre la FSO en semaine ?",
+        "Quand puis-je visiter les services administratifs de la FSO ?"
+      ],
+      "en": [
+        "What are the opening hours of the Faculty of Sciences of Oujda?",
+        "What time does the FSO open during the week?",
+        "When can I visit the FSO's administrative services?"
+      ],
+      "ar": [
+        "ما هي أوقات العمل في كلية العلوم بوجدة؟",
+        "في أي ساعة تفتح كلية العلوم خلال الأسبوع؟",
+        "متى يمكنني زيارة المصالح الإدارية بكلية العلوم؟"
+      ],
+      "amz": [
+        "Acu d ikudan n tazwara n tesnawalt n tussniwin n Wujda?",
+        "Melmi tettzra tesnawalt deg wussan?",
+        "Melmi ad izmir aɣ asruḥ ar tanbaḍt tamezwarut n FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La FSO est ouverte du lundi au vendredi de 8h30 à 16h30. Les services administratifs ferment généralement à 16h00.",
+        "La faculté ouvre ses portes à 8h30 du lundi au vendredi.",
+        "Les services administratifs sont accessibles entre 9h00 et 16h00, sauf jours fériés."
+      ],
+      "en": [
+        "The FSO is open from Monday to Friday, 8:30 AM to 4:30 PM. Administrative services usually close by 4:00 PM.",
+        "The faculty opens at 8:30 AM on weekdays.",
+        "Administrative offices are open from 9:00 AM to 4:00 PM, except on public holidays."
+      ],
+      "ar": [
+        "تفتح كلية العلوم من الإثنين إلى الجمعة من الساعة 8:30 إلى 16:30. تغلق المصالح الإدارية عادة في 16:00.",
+        "تفتح الكلية أبوابها على الساعة 8:30 خلال أيام الأسبوع.",
+        "المصالح الإدارية متاحة من 9:00 إلى 16:00، ما عدا أيام العطل الرسمية."
+      ],
+      "amz": [
+        "Tettzra FSO seg sinin ɣer jemɛa si 8:30 ɣer 16:30. Tanbaḍt tamezwarut tettmed si 16:00.",
+        "Tettzra tasnawalt n 8:30 deg wussan n useggas.",
+        "Tanbaḍt tamezwarut tettwab si 9:00 ɣer 16:00, war tidyanin ameɣṛan."
+      ]
+    }
+  },
+  {
+    "intent": "Filières de la FSO",
+    "question": {
+      "fr": [
+        "Quelles sont les filières disponibles à la Faculté des Sciences d’Oujda ?",
+        "Quelles spécialités propose la FSO ?",
+        "Quels cursus peut-on suivre à la FSO ?"
+      ],
+      "en": [
+        "What programs are available at the Faculty of Sciences of Oujda?",
+        "What majors does FSO offer?",
+        "What courses can one take at FSO?"
+      ],
+      "ar": [
+        "ما هي التخصصات المتاحة في كلية العلوم بوجدة؟",
+        "ما هي المسارات الدراسية التي تقدمها FSO؟",
+        "ما هي الفروع المتوفرة في FSO؟"
+      ],
+      "amz": [
+        "D acuγal i d-yettwasnen deg tesnawalt n Wujda?",
+        "D acu n tusnakt i d-tettwaznen FSO?",
+        "D acu n ubrid i izmer yiwen ad isruḥ deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La FSO propose plusieurs filières : Biologie, Chimie, Physique, Géologie, Mathématiques, Informatique, et des Masters spécialisés dans chacun de ces domaines.",
+        "Les filières disponibles incluent des licences fondamentales, licences professionnelles, masters et doctorats.",
+        "Vous pouvez suivre un cursus en Biologie, Chimie, Mathématiques, Informatique, Physique ou Géologie."
+      ],
+      "en": [
+        "FSO offers several programs: Biology, Chemistry, Physics, Geology, Mathematics, Computer Science, and specialized Master's programs.",
+        "Available programs include Bachelor's, Professional Licenses, Master's, and PhD degrees.",
+        "You can study Biology, Chemistry, Mathematics, Computer Science, Physics, or Geology."
+      ],
+      "ar": [
+        "تقدم كلية العلوم عدة تخصصات: البيولوجيا، الكيمياء، الفيزياء، الجيولوجيا، الرياضيات، الإعلاميات، بالإضافة إلى ماسترات متخصصة.",
+        "تشمل الفروع المتاحة: الإجازات الأساسية، الإجازات المهنية، الماستر، والدكتوراه.",
+        "يمكنك متابعة الدراسة في تخصص البيولوجيا، الكيمياء، الرياضيات، الإعلاميات، الفيزياء أو الجيولوجيا."
+      ],
+      "amz": [
+        "FSO tettwa n ugar n tusnakt: Tabyulujya, Takimya, Tafizikt, Tajyulujya, Tusnakt, Tasenṭikt, akked masters i d-yettwasnen.",
+        "Icuγalen d: ijaɣazen izerfanen, ijaɣazen imennanen, masters d tibririyin.",
+        "Tzemreḍ ad tesruḥ deg Tabyulujya, Takimya, Tusnakt, Tasenṭikt, Tafizikt neɣ Tajyulujya."
+      ]
+    }
+  },
+  {
+    "intent": "Départements de la FSO",
+    "question": {
+      "fr": [
+        "Quels sont les départements de la FSO ?",
+        "Combien y a-t-il de départements à la Faculté des Sciences ?",
+        "Quels sont les grands pôles disciplinaires de la FSO ?"
+      ],
+      "en": [
+        "What are the departments at FSO?",
+        "How many departments does the Faculty of Sciences have?",
+        "What are the major academic divisions at FSO?"
+      ],
+      "ar": [
+        "ما هي الأقسام الموجودة في كلية العلوم؟",
+        "كم عدد الأقسام في FSO؟",
+        "ما هي التخصصات الكبرى في كلية العلوم؟"
+      ],
+      "amz": [
+        "D acu d igrawen n FSO?",
+        "Mleḥ am yella n igrawen deg tesnawalt?",
+        "D acu d igrawen imqqaren deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La FSO comprend plusieurs départements : Biologie, Chimie, Physique, Mathématiques, Informatique et Géologie.",
+        "Il existe six départements principaux à la FSO couvrant toutes les disciplines scientifiques.",
+        "Chaque département est responsable de l'organisation des cours, examens et encadrements."
+      ],
+      "en": [
+        "FSO has several departments: Biology, Chemistry, Physics, Mathematics, Computer Science, and Geology.",
+        "There are six main departments at FSO covering all scientific disciplines.",
+        "Each department is responsible for organizing courses, exams, and supervision."
+      ],
+      "ar": [
+        "تضم كلية العلوم عدة أقسام: البيولوجيا، الكيمياء، الفيزياء، الرياضيات، الإعلاميات، والجيولوجيا.",
+        "يوجد ستة أقسام رئيسية تغطي مختلف التخصصات العلمية.",
+        "كل قسم مسؤول عن تنظيم الدروس، الامتحانات، والإشراف."
+      ],
+      "amz": [
+        "FSO tettwa n ugar n igrawen: Tabyulujya, Takimya, Tafizikt, Tusnakt, Tasenṭikt d Tajyulujya.",
+        "Yella sdis n igrawen imqqaren i d-yeqqaren akk tusnakt n tesnawalt.",
+        "Yal agraw i d amsawal ɣer usnifel n uselmed, imtihanan d temnaḍt."
+      ]
+    }
+  },
+  {
+    "intent": "Passerelles et équivalences à la FSO",
+    "question": {
+      "fr": [
+        "Peut-on accéder à une licence professionnelle après un DUT ?",
+        "Y a-t-il une passerelle entre le DEUG et la licence à la FSO ?",
+        "Est-il possible de passer d’une licence à un master ?",
+        "Comment faire une équivalence de diplôme à la FSO ?",
+        "Les étudiants d'autres universités peuvent-ils intégrer le master ?"
+      ],
+      "en": [
+        "Can we access a professional Bachelor's after a DUT?",
+        "Is there a bridge between DEUG and Licence at FSO?",
+        "Is it possible to move from a Bachelor's degree to a Master's?",
+        "How can I apply for diploma equivalence at FSO?",
+        "Can students from other universities join the Master's program?"
+      ],
+      "ar": [
+        "هل يمكن متابعة الإجازة المهنية بعد الحصول على DUT؟",
+        "هل توجد مسارات انتقال بين DEUG والإجازة في FSO؟",
+        "هل يمكن الانتقال من الإجازة إلى الماستر؟",
+        "كيف يمكن طلب معادلة الشهادة في FSO؟",
+        "هل يمكن لطلبة جامعات أخرى الالتحاق بالماستر؟"
+      ],
+      "amz": [
+        "Tzemreḍ ad tedduḍ ɣer licence professionnelle seddaw DUT?",
+        "Illa tanzart gar DEUG d licence deg FSO?",
+        "Tzemreḍ ad tedduḍ seg licence ɣer master?",
+        "Acu ara texdem akken ad terrez certificate deg FSO?",
+        "Ma izmer yiwen seg universités nniḍen ad ikcem ɣer master?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Oui, les titulaires d’un DUT ou d’un diplôme équivalent peuvent postuler pour une licence professionnelle à la FSO, selon les spécialités compatibles.",
+        "Il existe des passerelles entre DEUG et Licence, notamment après la validation de la deuxième année.",
+        "L’accès au master est possible pour les titulaires d’une licence, sous réserve de sélection pédagogique.",
+        "La demande d’équivalence se fait auprès du service de la scolarité avec les justificatifs académiques.",
+        "Les étudiants d'autres établissements peuvent postuler au master en fournissant leur dossier complet."
+      ],
+      "en": [
+        "Yes, DUT holders or equivalent diplomas can apply to professional Bachelor's programs at FSO, depending on the compatibility.",
+        "There are bridges between DEUG and Bachelor's, especially after completing the second year.",
+        "Master's access is possible after a Bachelor's degree, subject to academic selection.",
+        "Equivalence requests are submitted to the student affairs office with academic documents.",
+        "Students from other universities can apply to Master's by submitting a full application."
+      ],
+      "ar": [
+        "نعم، يمكن لحاملي DUT أو شهادة معادلة الترشح للإجازة المهنية حسب التخصصات المتاحة.",
+        "توجد مسارات انتقال بين DEUG والإجازة، خصوصاً بعد إنهاء السنة الثانية.",
+        "يمكن ولوج الماستر بعد الإجازة وفقاً لشروط الانتقاء البيداغوجي.",
+        "يتم تقديم طلب المعادلة لدى مصلحة الشؤون الطلابية مرفقاً بالوثائق الأكاديمية.",
+        "الطلبة من جامعات أخرى يمكنهم الترشح للماستر عبر ملف متكامل."
+      ],
+      "amz": [
+        "Ih, wid i ɣur-sen DUT neɣ certificate amswaru zemren ad rnun ɣer licence professionnelle deg FSO.",
+        "Illa tanzart gar DEUG d licence, s wudem n tmerna deg useggas n 2.",
+        "Tzemreḍ ad tedduḍ ɣer master s llicence, s win ittekker s uselkim pedagojik.",
+        "Asuter n teqbel n certificate yella ɣer tanbaḍt n yineɣmasen akked isefka n uselmed.",
+        "Wid i d-yewwen seg universités nniḍen zemren ad rnun ɣer master s umeslay agejdan."
+      ]
+    }
+  },
+  {
+    "intent": "Passerelles vers les écoles d'ingénieurs",
+    "question": {
+      "fr": [
+        "Peut-on intégrer une école d'ingénieur après une licence à la FSO ?",
+        "Est-il possible d'accéder à une école d’ingénieurs après un DUT ou un DEUG ?",
+        "Comment rejoindre une filière d’ingénieurs après des études à la FSO ?",
+        "Quelles sont les conditions d’accès aux écoles d’ingénieurs pour les étudiants de la FSO ?"
+      ],
+      "en": [
+        "Can I join an engineering school after a Bachelor's degree at FSO?",
+        "Is it possible to enter an engineering program after a DUT or DEUG?",
+        "How can I access an engineering pathway after studying at FSO?",
+        "What are the admission requirements for engineering schools for FSO students?"
+      ],
+      "ar": [
+        "هل يمكن الالتحاق بمدرسة مهندسين بعد الإجازة في FSO؟",
+        "هل من الممكن متابعة الدراسة في مدرسة مهندسين بعد DUT أو DEUG؟",
+        "كيف يمكنني الانضمام إلى مسلك المهندسين بعد دراستي في FSO؟",
+        "ما هي شروط ولوج المدارس العليا للمهندسين لطلبة FSO؟"
+      ],
+      "amz": [
+        "Tzemreḍ ad tedd ɣer taksilt n imehdenen seddaw llicence deg FSO?",
+        "Illa tawuri ad tekcem ɣer taksilt n imehdenen seddaw DUT neɣ DEUG?",
+        "Amek ara tedd ɣer ubrid n imehdenen seg FSO?",
+        "D acu d isaramen n unekcum ɣer taksilin n imehdenen i yineɣmasen n FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Oui, certains étudiants de la FSO intègrent des écoles d'ingénieurs via des concours ou des admissions parallèles après un DUT, une licence ou même un master.",
+        "Des passerelles existent notamment via le concours national commun (CNC), les classes préparatoires ou les équivalences spécifiques selon les écoles.",
+        "L'accès dépend du dossier académique, des notes obtenues et parfois d’un entretien ou d’un test d’entrée.",
+        "Il est conseillé de se renseigner directement auprès des écoles d’ingénieurs visées pour connaître les critères exacts."
+      ],
+      "en": [
+        "Yes, some FSO students join engineering schools through competitive exams or parallel admissions after a DUT, a Bachelor's, or even a Master's degree.",
+        "Bridges exist through national entrance exams, preparatory classes, or specific equivalence rules depending on the school.",
+        "Admission depends on academic records, grades, and sometimes interviews or entrance tests.",
+        "It is recommended to check directly with the target engineering schools for their exact criteria."
+      ],
+      "ar": [
+        "نعم، بعض طلبة FSO يلتحقون بمدارس المهندسين عبر مباريات أو ولوج موازي بعد DUT، الإجازة أو حتى الماستر.",
+        "توجد مسارات عبر المباراة الوطنية الموحدة، الأقسام التحضيرية أو عبر معادلات خاصة حسب المدارس.",
+        "الولوج يعتمد على الملف الأكاديمي، النقاط المحصل عليها، وأحياناً على مقابلة أو اختبار.",
+        "من الأفضل الاستفسار مباشرة من المدارس المستهدفة لمعرفة الشروط الدقيقة."
+      ],
+      "amz": [
+        "Ih, kra n yineɣmasen n FSO teddin ɣer taksilin n imehdenen s wudem n umeslay neɣ s uneckcum medden seddaw DUT, licence neɣ master.",
+        "Illa tanzart s wudem n unekcum amatu, igrawen igenwanen neɣ s ufran n tesnilt yefka-d taksilt.",
+        "Unekcum yeddren ɣef isefka n uselmed, tiririt, d win ara igber imtihan neɣ tazrawt.",
+        "Yifka ad teɣdem ɣer taksilt i tebɣiḍ s telɣut n tsarut n unekcum."
+      ]
+    }
+  },
+  {
+    "intent": "Calendrier universitaire",
+    "question": {
+      "fr": [
+        "Quand commence l'année universitaire ?",
+        "Quelles sont les dates des examens ?",
+        "À quelle date se termine le semestre ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "L'année universitaire débute généralement en septembre et se termine en juillet.",
+        "Les dates exactes des examens sont communiquées par la scolarité au début de chaque semestre.",
+        "Le semestre se termine habituellement par une session d'examens suivie d'une période de rattrapage."
+      ]
+    }
+  },
+  {
+    "intent": "Inscription et Réinscription",
+    "question": {
+      "fr": [
+        "Quels sont les documents nécessaires pour s’inscrire ?",
+        "Comment faire une réinscription en ligne ?",
+        "Peut-on s’inscrire hors délai ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Pour s’inscrire, il faut fournir une copie du baccalauréat, une photo, une copie de la CIN et les formulaires remplis.",
+        "La réinscription se fait via la plateforme numérique de la FSO accessible aux étudiants.",
+        "Une inscription hors délai est parfois acceptée avec justification et autorisation du service de scolarité."
+      ]
+    }
+  },
+  {
+    "intent": "Résultats et Relevés de notes",
+    "question": {
+      "fr": [
+        "Où consulter mes notes ?",
+        "Comment demander un relevé de notes officiel ?",
+        "Quand les résultats sont-ils publiés ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Les notes sont disponibles sur la plateforme en ligne de la faculté ou affichées sur les panneaux officiels.",
+        "Le relevé de notes peut être demandé auprès du service de scolarité ou via l'espace étudiant.",
+        "Les résultats sont publiés après chaque session d’examen, généralement dans un délai de 2 semaines."
+      ]
+    }
+  },
+  {
+    "intent": "Stage et PFE",
+    "question": {
+      "fr": [
+        "Comment faire une demande de stage à la FSO ?",
+        "Le PFE est-il obligatoire pour valider le master ?",
+        "Qui encadre les stages à la FSO ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Les demandes de stage se font via le service de scolarité ou directement auprès des enseignants encadrants.",
+        "Oui, le projet de fin d’études est généralement obligatoire en dernière année de master.",
+        "Les enseignants-chercheurs de la FSO encadrent les stages selon les spécialités."
+      ]
+    }
+  },
+  {
+    "intent": "Types de diplômes proposés",
+    "question": {
+      "fr": [
+        "Quels types de diplômes peut-on obtenir dans une faculté des sciences ?",
+        "Est-ce qu’il y a des masters à l’université ?",
+        "La faculté délivre-t-elle aussi des doctorats ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Les facultés des sciences proposent généralement des diplômes de Licence (Bac+3), Master (Bac+5) et Doctorat (Bac+8).",
+        "Les étudiants peuvent suivre un parcours académique complet, de la première année jusqu'à la thèse.",
+        "Certains établissements proposent également des licences professionnelles ou des formations certifiantes."
+      ]
+    }
+  },
+  {
+    "intent": "Fonction des départements universitaires",
+    "question": {
+      "fr": [
+        "Quel est le rôle d’un département universitaire ?",
+        "À quoi sert le département de biologie ?",
+        "Les cours sont-ils gérés par les départements ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Les départements universitaires sont responsables de la gestion pédagogique des formations dans leur spécialité.",
+        "Ils organisent les cours, les examens, les encadrements de stages et de mémoires.",
+        "Chaque département est animé par un chef de département et composé d’enseignants-chercheurs de la discipline concernée."
+      ]
+    }
+  },
+  {
+    "intent": "Accès à la faculté après le baccalauréat",
+    "question": {
+      "fr": [
+        "Peut-on s'inscrire à la faculté après le Bac ?",
+        "Faut-il passer un concours pour entrer en licence ?",
+        "Quel bac faut-il pour aller à la faculté des sciences ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "L’accès en première année de licence (S1) est ouvert à tous les bacheliers, notamment ceux issus des séries scientifiques.",
+        "Aucun concours n’est requis pour entrer en licence fondamentale dans une université publique.",
+        "Les bacs scientifiques (SVT, PC, Math) sont les plus adaptés pour les études à la faculté des sciences."
+      ]
+    }
+  },
+  {
+    "intent": "Structure des semestres à l'université",
+    "question": {
+      "fr": [
+        "Comment est organisée l’année universitaire à la FSO ?",
+        "Combien de semestres y a-t-il dans une licence ?",
+        "Quelle est la structure des études universitaires ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "L’année universitaire est divisée en deux semestres : un au premier semestre (S1) et un au second semestre (S2).",
+        "Une licence se déroule sur trois années, soit six semestres au total : S1 à S6.",
+        "Chaque semestre comprend plusieurs modules, répartis selon la spécialité de l’étudiant (ex: biologie, chimie, etc.)."
+      ]
+    }
+  },
+  {
+    "intent": "Travaux Pratiques à la FSO",
+    "question": {
+      "fr": [
+        "Est-ce qu’il y a des Travaux Pratiques (TP) à la FSO ?",
+        "Comment se déroulent les TP dans les filières scientifiques ?",
+        "Les TP sont-ils obligatoires pour valider le module ?",
+        "Doit-on porter une blouse pour les TP de chimie ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Oui, les filières scientifiques incluent des Travaux Pratiques (TP) dans plusieurs modules (biologie, chimie, physique, etc.).",
+        "Les TP se déroulent en laboratoire et sont encadrés par les enseignants ou techniciens spécialisés.",
+        "Ils sont généralement obligatoires et comptent dans la note finale du module.",
+        "Dans certains TP (notamment en chimie), il est obligatoire de porter une blouse blanche et de respecter les consignes de sécurité."
+      ]
+    }
   }
 ]
