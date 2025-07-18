@@ -5,10 +5,13 @@ from sentence_transformers import SentenceTransformer
 from opensearchpy import OpenSearch, exceptions
 import logging
 from langdetect import detect
-from polite import is_not_defined
+
 from LLMService import llm_service
 from typing import Optional
 from indexer import add_single_entry
+from polite import is_not_defined, Ibtissam_checks
+from typing import Optional
+import numpy as np
 
 LANG_MAP = {
     'fr': 'fr',
@@ -24,7 +27,7 @@ def detect_custom_language(text):
     except Exception:
         return 'unknown'
 
-# Configuration du logging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -39,7 +42,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Configuration avec gestion d'erreur améliorée
+
 try:
     client = OpenSearch(
         hosts=[{"host": "localhost", "port": 9200}],
@@ -63,34 +66,58 @@ class Query(BaseModel):
     question: str
     lang: str = "fr"
     k: int = 3
-    score_threshold: float = 0.75
+    score_threshold: float = 0.8
     use_llm: bool = True  
     context: Optional[dict] = None
 
 @app.post("/search")
 def search(query: Query):
     lang = detect_custom_language(query.question) or query.lang or "fr"
-    
+
     try:
         if not query.question.strip():
             raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
         
+        # Generate embedding
         embedding = model.encode(query.question).tolist()
         
+        # Fixed KNN query syntax for OpenSearch
         query_body = {
+            "size": query.k,
             "query": {
                 "bool": {
                     "should": [
-                        {"knn": {"embedding": {"vector": embedding, "k": 384, "boost": 0.7}}},
-                        {"match": {"question": {"query": query.question, "fuzziness": "AUTO", "boost": 0.3}}}
+                        {
+                            "knn": {
+                                "embedding": {
+                                    "vector": embedding,
+                                    "k": 50,
+                                    "boost": 0.7  # Higher boost for semantic matches
+                                }
+                            }
+                        },
+                        {
+                            "match": {
+                                "question": {
+                                    "query": query.question,
+                                    "fuzziness": "AUTO",
+                                    "boost": 0.3
+                                }
+                            }
+                        }
                     ],
                     "filter": [{"term": {"lang": lang}}] if lang else []
                 }
-            },
-            "size": query.k
+            }
         }
 
+        # logger.info(f"Executing search with query: {query_body}")
         response = client.search(index="faq", body=query_body)
+        
+        # Log the response for debugging
+        logger.info(f"OpenSearch response: {response}")
+        
+        # Apply score threshold filtering
         hits = [hit for hit in response["hits"]["hits"] if hit["_score"] >= query.score_threshold]
         
         if hits:
@@ -99,7 +126,8 @@ def search(query: Query):
                     "question": hit["_source"]["question"],
                     "answer": hit["_source"]["answer"],
                     "score": hit["_score"],
-                    "meta": hit["_source"].get("meta")
+                    "meta": hit["_source"].get("meta"),
+                    "search_type": "knn" if "_knn_score" in hit else "match"  # Debug info
                 }
                 for hit in hits
             ]
@@ -218,8 +246,14 @@ def search(query: Query):
 @app.post("/chat")
 def chat_with_llm(query: Query):
     """Endpoint dédié pour le chat avec LLM (toujours activé)"""
-    query.use_llm = True
-    return search(query)
+    condition = Ibtissam_checks(query.question)
+    if (condition):
+        query.use_llm = True
+        return search(query)
+    else:
+        query.use_llm = False
+        return is_not_defined(query.lang)
+
 
 @app.get("/health")
 def health_check():

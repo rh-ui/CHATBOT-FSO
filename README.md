@@ -27,15 +27,7 @@ Il permet aux étudiants et visiteurs d'obtenir des réponses instantanées aux 
 
 ## 🛠 Architecture
 
-```mermaid
-graph TD
-  A[Utilisateur] -->|Question| B[Frontend React]
-  B -->|POST /ask| C[Backend FastAPI]
-  C -->|Recherche vecteur| D[(OpenSearch)]
-  C -->|Sinon GPT| E[LLM (OpenAI)]
-  E -->|Réponse| C
-  C -->|Réponse JSON| B
-```
+
 
 ---
 
