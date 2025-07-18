@@ -845,7 +845,7 @@ class LLMService:
             - Départements: Mathématiques, Physique, Chimie, Biologie, Informatique, Géologie
             - Services: Inscriptions, examens, stages, bourses, logement universitaire
             - Vie étudiante: clubs, activités, événements
-            - Recherche: laboratoires, projets, publications
+            - Recherche: laboratoires, projets, publications 
             - Administration: décanat, scolarité, ressources humaines
             
             Question: {question}
