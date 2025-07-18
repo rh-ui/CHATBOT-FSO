@@ -4997,51 +4997,6 @@
     }
   },
   {
-    "intent": "dean_message",
-    "question": {
-      "fr": [
-        "Où lire le mot du doyen de la faculté?"
-      ],
-      "en": [
-        "Where to read the faculty dean's message?"
-      ],
-      "ar": [
-        "أين يمكن قراءة كلمة عميد الكلية؟"
-      ],
-      "amz": [
-        "Anida ara ɣeṛeɣ awal n uqebbuṛ n tɣiwsi?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "Le message d'accueil et les orientations du doyen de la faculté sont disponibles sur notre page officielle."
-      ],
-      "en": [
-        "The welcome message and orientations from the faculty dean are available on our official page."
-      ],
-      "ar": [
-        "تتوفر رسالة الترحيب والتوجهات من عميد الكلية على صفحتنا الرسمية."
-      ],
-      "amz": [
-        "Awal n uselkem d tmuɣni n uqebbuṛ n tɣiwsi llan deg usebter-nneɣ uslig."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/lafaculte/mot-du-doyen"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/lafaculte/mot-du-doyen"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/lafaculte/mot-du-doyen"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/lafaculte/mot-du-doyen"
-      ]
-    }
-  },
-  {
     "intent": "emotional_intelligence_conference",
     "question": {
       "fr": [
