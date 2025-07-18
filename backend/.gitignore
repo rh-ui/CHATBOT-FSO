@@ -1,1 +1,7 @@
 .venv/*
+LLM_test/*
+brahim_serp/*
+_pycache__/*
+
+dataset.json
+testLLM.py

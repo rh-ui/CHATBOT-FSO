@@ -75,27 +75,24 @@ function Home() {
         return (
             <section className="relative bg-img text-white pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-24 lg:pb-32 min-h-[70vh] lg:min-h-[80vh]">
                 <div className="absolute inset-0 bg-black/20"></div>
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-center">
-                    <div className="max-w-4xl w-full mx-auto lg:mx-0 lg:ml-20 xl:ml-40 mt-8 sm:mt-16 lg:mt-40">
-                        <div className="mt-16 lg: xl:mt-10 pl-72">
-                            <h1 className="xl:text-7xl sm:text-5xl lg:text-6xl font-bold xl:mb-12 lg:mb-6 text-center lg:text-center">
-                                FS <span className="text-orange-500">OUJDA</span>
-                            </h1>
-                            <p className="text-lg sm:text-xl lg:text-2xl mb-6 lg:mb-8 leading-relaxed text-center lg:text-center">
-                                La Faculté des Sciences d'Oujda est un établissement public d'enseignement supérieur relevant de
-                                l'Université Mohammed Premier, dédié à la formation, la recherche scientifique et l'innovation.
-                            </p>
-                            <div className="flex flex-wrap gap-4 mb-12 lg:mb-16 lg:mt-9 justify-center lg:justify-center xl:justify-center lg:left-50 xl:mt-16">
-                                <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 py-3 lg:px-8 rounded-lg font-semibold transition-colors">
-                                    En savoir plus
-                                </button>
-                            </div>
-
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-start">
+                    <div className="max-w-4xl w-full mx-auto lg:mx-0 lg:ml-20 xl:ml-40 mt-8 sm:mt-16 lg:mt-30 xl:mt-30">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 lg:mb-6 text-center lg:text-left">
+                            FS <span className="text-orange-500">OUJDA</span>
+                        </h1>
+                        <p className="text-lg sm:text-xl lg:text-2xl mb-8 lg:mb-8 leading-relaxed text-center lg:text-left">
+                            La Faculté des Sciences d'Oujda est un établissement public d'enseignement supérieur relevant de
+                            l'Université Mohammed Premier, dédié à la formation, la recherche scientifique et l'innovation.
+                        </p>
+                        <div className="flex flex-wrap gap-4 mb-12 lg:mb-16 lg:mt-9 justify-center lg:justify-start xl:justify-center">
+                            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 py-3 lg:px-8 rounded-lg font-semibold transition-colors">
+                                En savoir plus
+                            </button>
                         </div>
 
-                        <div className="mt-16 lg: xl:mt-74">
+                        <div className="mt-16 lg:mt-100 xl:mt-100">
                             <div className="text-center mb-12 lg:mb-20 lg:ml-16 xl:ml-70">
-                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-400 mb-4">
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-500 mb-4">
                                     ACTUALITÉS
                                 </h2>
                             </div>

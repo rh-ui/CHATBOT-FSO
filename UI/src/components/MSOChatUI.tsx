@@ -17,7 +17,7 @@ import * as THREE from 'three';
 function Model() {
   const gltf = useGLTF('/models/file.glb');
   const ref = useRef<THREE.Object3D>(null);
-  
+
   useFrame((state) => {
     const { mouse } = state;
     // Make model rotate slowly based on mouse X/Y position
@@ -26,7 +26,7 @@ function Model() {
       ref.current.rotation.x = -mouse.y * Math.PI * 0.2; // up/down, smaller effect
     }
   });
-  
+
   return <primitive ref={ref} object={gltf.scene} />;
 }
 
@@ -36,17 +36,19 @@ useGLTF.preload('/models/file.glb');
 function GLBViewer() {
   return (
     <Canvas camera={{ position: [0, 1, 3], fov: 45 }}>
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-        <Suspense fallback={null}>
-          <Model />
-        </Suspense>
-        <OrbitControls enablePan={false} enableZoom={false} enableRotate={false} />
-      </Canvas>
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <Suspense fallback={null}>
+        <Model />
+      </Suspense>
+      <OrbitControls enablePan={false} enableZoom={false} enableRotate={false} />
+    </Canvas>
   );
 }
 
 
+
+// ... tous les imports en haut restent inchangés ...
 
 interface Message {
   id: string;
@@ -56,7 +58,18 @@ interface Message {
 }
 
 interface ApiResponse {
-  results: {
+  llm_used: boolean;
+  structured_response?: string;
+  confidence?: number;
+  sources_used?: number;
+  processing_time?: number;
+  raw_results?: {
+    question: string;
+    answer: string;
+    score: number;
+    meta?: any;
+  }[];
+  results?: {
     question: string;
     answer: string;
     score: number;
@@ -91,18 +104,11 @@ export default function MSOChatUI() {
     try {
       const response = await fetch('http://localhost:8000/search', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          question,
-          lang,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question, lang }),
       });
 
-      if (!response.ok) {
-        throw new Error('Erreur lors de la requête');
-      }
+      if (!response.ok) throw new Error('Erreur lors de la requête');
 
       return await response.json() as ApiResponse;
     } catch (error) {
@@ -123,7 +129,6 @@ export default function MSOChatUI() {
     setMessages(prev => [...prev, userMessage]);
     setMessage('');
 
-    // Réponse temporaire du bot
     const tempResponse: Message = {
       id: (Date.now() + 1).toString(),
       text: "Je traite votre demande...",
@@ -136,20 +141,32 @@ export default function MSOChatUI() {
     try {
       const response = await askQuestion(message);
 
-      const botResponses = response.results.length > 0
-        ? response.results.map((result, index) => ({
+      const botResponses: Message[] = [];
+
+      if (response.llm_used && response.structured_response) {
+        let text = response.structured_response;
+
+        botResponses.push({
+          id: `${Date.now() + 2}`,
+          text,
+          isUser: false,
+          timestamp: new Date()
+        });
+      } else if (response.results && response.results.length > 0) {
+        botResponses.push(...response.results.map((result, index) => ({
           id: `${Date.now() + index + 2}`,
           text: `${result.question}\n\n${result.answer}`,
           isUser: false,
           timestamp: new Date()
-        }))
-        : [{
+        })));
+      } else {
+        botResponses.push({
           id: `${Date.now() + 2}`,
           text: "Désolé, je n'ai pas trouvé de réponse pertinente.",
           isUser: false,
           timestamp: new Date()
-        }];
-
+        });
+      }
 
       setMessages(prev => [...prev.filter(msg => msg.id !== tempResponse.id), ...botResponses]);
     } catch (error) {
@@ -178,36 +195,54 @@ export default function MSOChatUI() {
   };
 
   useEffect(() => {
-    const loadScene = async () => {
-      setSplineScene("https://prod.spline.design/l1R44eHGk3Qq8SAI/scene.splinecode");
-    };
-    loadScene();
+    setSplineScene("https://prod.spline.design/l1R44eHGk3Qq8SAI/scene.splinecode");
   }, []);
 
   const toggleChat = () => {
     setIsVisible(!isVisible);
   };
 
+
+  function formatMessageText(text: string) {
+    const parts = text.split(/(https?:\/\/[^\s]+)/g);
+    return parts.map((part, i) =>
+      part.match(/^https?:\/\/[^\s]+$/) ? (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline break-all"
+        >
+          {part}
+        </a>
+      ) : (
+        <span key={i}>
+          {part}
+        </span>
+      )
+    );
+  }
+
+
   return (
-    <div className="relative ">
-      {/* AI Icon Button */}
+    <div className="relative">
+      {/* Bouton pour afficher la fenêtre */}
       <div className="">
         <button
           onClick={toggleChat}
-          className="fixed bottom-3 right-0 bg-transparent z-50  "
+          className="fixed bottom-3 right-0 bg-transparent z-50"
         >
-          {/* {splineScene && <Spline scene={splineScene} className='' />} */}
           <GLBViewer />
         </button>
       </div>
 
-      {/* Chat Interface */}
+      {/* Chat */}
       {isVisible && (
-        <div className="fixed bottom-30 right-10 w-[400px] h-[600px] bg-gray-50 rounded-3xl shadow-2xl border border-gray-200 flex flex-col z-40">
+        <div className="fixed bottom-30 right-10 w-[500px] h-[700px] bg-gray-50 rounded-3xl shadow-2xl border border-gray-200 flex flex-col z-40">
           {/* Header */}
           <div className="flex items-center justify-between p-5 pr-8 bg-transparent">
             <div className="flex items-center space-x-3">
-              {/* Robot Avatar */}
               <div className="bg-transparent rounded-full flex items-center justify-center">
                 <img src={ROBOT} alt="hh" width={49} height={57} />
               </div>
@@ -215,7 +250,6 @@ export default function MSOChatUI() {
                 <span style={{ color: 'rgb(117, 168, 227)' }}>M'</span>SO
               </h2>
             </div>
-
             <button
               onClick={toggleChat}
               className="w-8 h-8 bg-transparent border-black border-1 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
@@ -226,7 +260,7 @@ export default function MSOChatUI() {
 
           <hr />
 
-          {/* Chat Content */}
+          {/* Zone de chat */}
           <div className="flex-1 p-4 space-y-4 overflow-y-auto bg-gray-50 min-h-0">
             {messages.map((msg) => (
               <div key={msg.id} className={`flex ${msg.isUser ? 'justify-end' : 'items-start'} ${msg.isUser ? 'items-end space-x-2' : 'space-x-3'}`}>
@@ -235,7 +269,6 @@ export default function MSOChatUI() {
                     <img src={CPU_AVATAR} alt="assistant" />
                   </div>
                 )}
-
                 <div className={`rounded-2xl p-4 max-w-xs shadow-sm ${msg.isUser
                   ? 'bg-blue-500 text-white rounded-tr-md'
                   : 'bg-white text-gray-800 rounded-tl-md'
@@ -245,22 +278,18 @@ export default function MSOChatUI() {
                       <p className="font-semibold text-sm mb-2">
                         {msg.text.split('\n\n')[0]}
                       </p>
-                      <p className="text-sm">
-                        {msg.text.split('\n\n').slice(1).join('\n\n')}
+                      <p className="text-sm whitespace-pre-wrap">
+                        {formatMessageText(msg.text.split('\n\n').slice(1).join('\n\n'))}
                       </p>
+
                     </>
                   ) : (
                     <p className={`text-sm leading-relaxed ${msg.isUser ? 'text-gray-50' : 'text-gray-800'}`}>
-                      {msg.text.split('\n').map((line, index) => (
-                        <span key={index}>
-                          {line}
-                          {index < msg.text.split('\n').length - 1 && <br />}
-                        </span>
-                      ))}
+                      {formatMessageText(msg.text)}
                     </p>
+
                   )}
                 </div>
-
                 {msg.isUser && (
                   <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-sm font-medium mb-1">
                     <span className='text-blue-600'>U</span>
@@ -270,7 +299,7 @@ export default function MSOChatUI() {
             ))}
           </div>
 
-          {/* Quick Actions */}
+          {/* Quick actions */}
           <div className="px-4 py-2 bg-white border-t border-gray-100 flex-shrink-0">
             <div className="flex gap-2 flex-wrap">
               {quickActions.map((action, index) => (
@@ -287,13 +316,12 @@ export default function MSOChatUI() {
             </div>
           </div>
 
-          {/* Input Area */}
+          {/* Zone d'entrée */}
           <div className="p-4 bg-transparent border-t border-gray-100 flex-shrink-0">
             <div className="flex items-center gap-3 bg-gray-50 rounded-full px-4 py-3 border border-gray-200">
               <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
                 <Paperclip className="w-5 h-5" />
               </Button>
-
               <Input
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -302,11 +330,9 @@ export default function MSOChatUI() {
                 className="flex-1 border-none bg-transparent text-sm placeholder:text-gray-500 focus-visible:ring-0 focus-visible:ring-offset-0"
                 disabled={isLoading}
               />
-
               <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
                 <Mic className="w-5 h-5" />
               </Button>
-
               <Button
                 onClick={handleSendMessage}
                 size="icon"
