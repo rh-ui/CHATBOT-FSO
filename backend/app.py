@@ -81,7 +81,7 @@ def search(query: Query):
             "query": {
                 "bool": {
                     "should": [
-                        {"knn": {"embedding": {"vector": embedding, "k": 25, "boost": 0.7}}},
+                        {"knn": {"embedding": {"vector": embedding, "k": 384, "boost": 0.7}}},
                         {"match": {"question": {"query": query.question, "fuzziness": "AUTO", "boost": 0.3}}}
                     ],
                     "filter": [{"term": {"lang": lang}}] if lang else []
