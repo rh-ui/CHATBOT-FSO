@@ -1,0 +1,21 @@
+# Structure recommandée
+chatbot_backend/
+├── app/
+│   ├── core/
+│   │   ├── opensearch_client.py
+│   │   ├── embedding_service.py
+│   │   └── llm_service.py
+│   ├── api/
+│   │   ├── chat_endpoints.py
+│   │   └── admin_endpoints.py
+│   ├── services/
+│   │   ├── question_processor.py
+│   │   ├── similarity_search.py
+│   │   ├── response_generator.py
+│   │   └── serp_enricher.py
+│   └── models/
+│       ├── conversation.py
+│       ├── question.py
+│       └── response.py
+├── indexer.py (votre fichier existant)
+└── requirements.txt
