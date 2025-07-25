@@ -6,6 +6,8 @@ from typing import List, Dict, Any
 from pydantic import BaseModel
 import json
 import os
+import uuid
+from pathlib import Path
 from datetime import datetime
 import psutil
 import GPUtil
@@ -47,16 +49,7 @@ class LLMService:
             "use_mmap": True,   # Memory mapping pour efficacité
             "use_mlock": True,  # Lock memory pour performance
         }
-        
-        # Test de connexion à Ollama
-        try:
-            self._test_ollama_connection()
-            self._log_gpu_status()
-            logger.info("Connexion à Ollama réussie avec support GPU")
-        except Exception as e:
-            logger.error(f"Erreur de connexion à Ollama: {str(e)}")
-            raise
-        
+
         # Prompts optimisés pour la structuration de réponses
         self.prompts = {
             'fr': {
@@ -191,43 +184,6 @@ class LLMService:
             'ar': "أنا المساعد الافتراضي لكلية العلوم بوجدة. لم أتمكن من العثور على معلومات محددة حول سؤالك في قاعدة البيانات. للمزيد من المعلومات، يرجى الاتصال بالخدمات الإدارية للكلية أو زيارة الموقع الرسمي.",
             'amz': "Nekk d amellal ufrawan n tesnawalt n tussniwin n Wujda. Ur ufiɣ ara talɣut tazribt ɣef usqsi-nnek deg taffa n yisefka. I wugar n telɣut, nermes tanbaḍt taneggarut n tesnawalt neɣ rzu asmel unṣib."
         }
-
-    def _log_gpu_status(self):
-        """Log le statut GPU pour diagnostic"""
-        try:
-            # Vérifier si GPU est disponible
-            gpus = GPUtil.getGPUs()
-            if gpus:
-                for gpu in gpus:
-                    logger.info(f"GPU {gpu.id}: {gpu.name}")
-                    logger.info(f"  Mémoire: {gpu.memoryUsed}MB/{gpu.memoryTotal}MB ({gpu.memoryUtil*100:.1f}%)")
-                    logger.info(f"  Utilisation: {gpu.load*100:.1f}%")
-            else:
-                logger.warning("Aucun GPU détecté")
-        except Exception as e:
-            logger.warning(f"Impossible de vérifier le statut GPU: {e}")
-
-    def _test_ollama_connection(self):
-        """Test la connexion à Ollama et vérifie le support GPU"""
-        try:
-            # Test de base
-            response = requests.get(f"{self.base_url}/api/tags", timeout=5)
-            if response.status_code == 200:
-                models = response.json()
-                model_names = [model['name'] for model in models.get('models', [])]
-                if self.model_name not in model_names:
-                    logger.warning(f"Modèle {self.model_name} non trouvé. Modèles disponibles: {model_names}")
-                
-                # Test GPU avec un prompt simple
-                test_response = self._call_ollama("Test GPU", system_prompt="Réponds simplement 'GPU OK'")
-                if test_response:
-                    logger.info("Test GPU réussi")
-                
-                return True
-            else:
-                raise Exception(f"Erreur HTTP {response.status_code}")
-        except requests.exceptions.RequestException as e:
-            raise Exception(f"Impossible de se connecter à Ollama: {str(e)}")
 
     def _call_ollama(self, prompt: str, system_prompt: str = None) -> str:
         """Appelle l'API Ollama avec optimisations GPU"""
@@ -383,62 +339,7 @@ class LLMService:
         final_confidence = min(avg_score + source_bonus + high_score_bonus, 1.0)
         
         return round(final_confidence, 2)
-
-    def enhance_response_with_context(self, response: str, context: Dict[str, Any], lang: str = 'fr') -> str:
-        """Améliore la réponse avec du contexte supplémentaire"""
-        try:
-            context_prompts = {
-                'fr': f"""Tu es l'assistant de la FSO. Améliore cette réponse en ajoutant du contexte pertinent SANS changer les informations factuelles:
-
-                        Réponse actuelle:
-                        {response}
-
-                        Contexte supplémentaire:
-                        {json.dumps(context, ensure_ascii=False, indent=2)}
-
-                        Améliore la réponse en intégrant naturellement le contexte, mais garde toutes les informations factuelles intactes.""",
-                                        
-                'en': f"""You are the FSO assistant. Enhance this response by adding relevant context WITHOUT changing factual information:
-
-                        Current response:
-                        {response}
-
-                        Additional context:
-                        {json.dumps(context, ensure_ascii=False, indent=2)}
-
-                        Enhance the response by naturally integrating the context, but keep all factual information intact.""",
-                                                        
-                'ar': f"""أنت مساعد كلية العلوم. حسّن هذه الإجابة بإضافة السياق المناسب دون تغيير المعلومات الواقعية:
-
-                        الإجابة الحالية:
-                        {response}
-
-                        السياق الإضافي:
-                        {json.dumps(context, ensure_ascii=False, indent=2)}
-
-                        حسّن الإجابة بدمج السياق بطريقة طبيعية، ولكن احتفظ بجميع المعلومات الواقعية سليمة.""",
-                                                        
-                'amz': f"""Anta d amellal n tesnawalt. Seǧhed tiririt-a s tmerna n umnaḍ ifaqen ur d-tbeddel ara tilɣa n tidet:
-
-                        Tiririt n tura:
-                        {response}
-
-                        Amnaḍ nniḍen:
-                        {json.dumps(context, ensure_ascii=False, indent=2)}
-
-                        Seǧhed tiririt s usdukkel n umnaḍ s tarrayt tagamant, maca eǧǧ akk tilɣa n tidet."""
-            }
-            
-            enhanced_response = self._call_ollama(
-                prompt=context_prompts.get(lang, context_prompts['fr'])
-            )
-            
-            return enhanced_response
-            
-        except Exception as e:
-            logger.error(f"Erreur lors de l'amélioration avec contexte: {str(e)}")
-            return response
-
+    
     def get_model_info(self) -> Dict[str, Any]:
         """Récupère les informations sur le modèle utilisé"""
         try:
@@ -489,6 +390,31 @@ class LLMService:
         except Exception as e:
             return {"error": str(e)}
 
+    def _format_context_for_llama(self, context: Dict[str, Any]) -> str:
+        """Formate le contexte de manière optimale pour Llama3:8b"""
+        try:
+            formatted_parts = []
+            
+            for key, value in context.items():
+                if isinstance(value, (str, int, float)):
+                    formatted_parts.append(f"- {key}: {value}")
+                elif isinstance(value, list):
+                    if len(value) <= 5:  # Limit list items to avoid overwhelming the model
+                        formatted_parts.append(f"- {key}: {', '.join(map(str, value))}")
+                    else:
+                        formatted_parts.append(f"- {key}: {', '.join(map(str, value[:5]))} (et {len(value)-5} autres)")
+                elif isinstance(value, dict):
+                    # Flatten nested dicts to avoid complexity
+                    sub_items = []
+                    for sub_key, sub_value in list(value.items())[:3]:  # Limit to 3 sub-items
+                        sub_items.append(f"{sub_key}: {sub_value}")
+                    formatted_parts.append(f"- {key}: {'; '.join(sub_items)}")
+            
+            return '\n'.join(formatted_parts[:10])  # Limit to 10 context items max
+            
+        except Exception as e:
+            logger.error(f"Erreur lors du formatage du contexte: {str(e)}")
+            return json.dumps(context, ensure_ascii=False, indent=2)[:500]  # Fallback with length limit
 
     def is_faculty_related(self, question: str, lang: str = 'fr') -> Dict[str, Any]:
         """Détermine si une question est liée à la faculté des sciences d'Oujda"""
@@ -730,7 +656,443 @@ class LLMService:
             'reponse': {lang: [response]},
             'meta': {lang: ['Généré par LLM - Connaissances générales FSO']}
         }
+    
+    def process_serp_to_response(self, question: str, serp_data: str, lang: str, 
+                       store_to_file: bool = True, filename: str = "test.json") -> Dict[str, Any]:
+        """Process SERP data through LLM to generate response and structured data simultaneously"""
+        
+        try:
+            # System prompt for processing - focus on using the EXACT client question
+            system_prompt = (
+                "TASK:\n"
+                "1. Use the EXACT client question provided - DO NOT rephrase or change it\n"
+                "2. Extract relevant facts from SERP data that answer the client question\n"
+                "3. Generate clean response for client based on SERP data\n"
+                "4. Create structured knowledge entry using the ORIGINAL client question\n\n"
+                "RULES:\n"
+                "- Use the original client question exactly as provided\n"
+                "- Answer based ONLY on SERP data provided\n"
+                "- If SERP data doesn't contain relevant info, say so\n"
+                "- Language: " + str(lang) + "\n"
+            )
+            
+            # Build the JSON template - emphasizing original question usage
+            json_template = """{
+        "user_response": "Answer to client question based on SERP data provided",
+        "knowledge_entry": {
+            "intent": "general_info",
+            "question": {
+                "fr": [
+                    "THE EXACT ORIGINAL CLIENT QUESTION",
+                    "variations of the original question but keeping same meaning",
+                    "another variation keeping same intent"
+                ],
+                "en": [
+                    "translation of original client question to english",
+                    "english variation of original question",
+                    "another english variation"
+                ],
+                "ar": [
+                    "translation of original client question to arabic",
+                    "arabic variation of original question", 
+                    "another arabic variation"
+                ],
+                "amz": [
+                    "translation of original client question to amazigh",
+                    "amazigh variation of original question",
+                    "another amazigh variation"
+                ]
+            },
+            "reponse": {
+                "fr": [
+                    "answer in french based on SERP data",
+                    "variation of answer in french",
+                    "another answer variation in french"
+                ],
+                "en": [
+                    "answer in english based on SERP data",
+                    "variation of answer in english",
+                    "another answer variation in english"
+                ],
+                "ar": [
+                    "answer in arabic based on SERP data",
+                    "variation of answer in arabic",
+                    "another answer variation in arabic"
+                ],
+                "amz": [
+                    "answer in amazigh based on SERP data",
+                    "variation of answer in amazigh",
+                    "another answer variation in amazigh"
+                ]
+            },
+            "meta": {
+                "fr": ["source links from SERP data"],
+                "en": ["source links from SERP data"],
+                "ar": ["source links from SERP data"],
+                "amz": ["source links from SERP data"]
+            }
+        },
+        "confidence": 0.8
+    }"""
+            
+            # Format SERP data
+            formatted_serp_data = str(serp_data)
+            if isinstance(serp_data, dict):
+                formatted_serp_data = self._format_context_for_llama(serp_data)
+            elif isinstance(serp_data, str) and len(serp_data) > 2000:
+                formatted_serp_data = serp_data[:2000] + "... [truncated]"
+            
+            # Build user prompt emphasizing the original question
+            user_prompt = (
+                "ORIGINAL CLIENT QUESTION: '" + str(question) + "'\n\n" +
+                "IMPORTANT: Use this EXACT question in your JSON response. Do not rephrase it.\n\n" +
+                "SERP DATA TO ANALYZE:\n" + formatted_serp_data + "\n\n" +
+                "INSTRUCTIONS:\n" +
+                "1. The first entry in question.fr MUST be the exact original question: '" + str(question) + "'\n" +
+                "2. Answer based only on the SERP data provided\n" +
+                "3. If no relevant info in SERP data, say 'No relevant information found in search results'\n\n" +
+                "OUTPUT FORMAT (JSON):\n" + 
+                json_template + "\n\n" +
+                "Generate the JSON response now:"
+            )
+            
+            # Call Ollama
+            payload = {
+                "model": self.model_name,
+                "prompt": user_prompt,
+                "system": system_prompt,
+                "stream": False,
+                "options": self.gpu_optimized_options.copy()
+            }
+            
+            start_time = datetime.now()
+            logger.info(f"Processing SERP data for question: {question[:50]}...")
+            
+            response = requests.post(
+                self.base_url + "/api/generate",
+                json=payload,
+                timeout=60000
+            )
+            
+            processing_time = (datetime.now() - start_time).total_seconds()
+            
+            if response.status_code == 200:
+                result = response.json()
+                llm_output = result.get('response', '').strip()
+                
+                logger.info("LLM response received, parsing JSON...")
+                
+                # Clean up the response to extract JSON
+                json_start = llm_output.find('{')
+                json_end = llm_output.rfind('}') + 1
+                
+                if json_start != -1 and json_end > json_start:
+                    json_str = llm_output[json_start:json_end]
+                    processed = json.loads(json_str)
+                    
+                    # Verify that the original question is preserved
+                    knowledge_entry = processed.get('knowledge_entry', {})
+                    questions = knowledge_entry.get('question', {})
+                    
+                    # Force the original question to be first in French (primary language)
+                    if questions.get('fr') and isinstance(questions['fr'], list):
+                        # Ensure original question is first
+                        if questions['fr'][0] != question:
+                            questions['fr'][0] = question
+                            logger.info("Corrected first French question to match original")
+                    
+                    logger.info("Successfully parsed LLM JSON output")
+                    
+                    # Store to file if requested
+                    storage_success = False
+                    if store_to_file and knowledge_entry:
+                        storage_success = self.store_to_json_file(
+                            knowledge_entry, 
+                            filename
+                        )
+                    
+                    return {
+                        'display': processed.get('user_response', 'No response generated'),
+                        'storage': knowledge_entry,
+                        'confidence': processed.get('confidence', 0.5),
+                        'stored_to_file': storage_success,
+                        'file_path': filename if storage_success else None,
+                        'original_question': question,  # Include for verification
+                        'processing_time': processing_time
+                    }
+                else:
+                    raise ValueError("No valid JSON found in LLM response")
+                    
+            else:
+                raise Exception("Ollama API returned status code: " + str(response.status_code))
+                
+        except json.JSONDecodeError as e:
+            logger.error("JSON parsing failed: " + str(e))
+            logger.error("Raw LLM output: " + str(llm_output) if 'llm_output' in locals() else "No output available")
+            
+            # Fallback: create a basic response with original question
+            fallback_entry = {
+                "intent": "general_info",
+                "question": {lang: [question]},
+                "reponse": {lang: ["Unable to process SERP data properly"]},
+                "meta": {lang: ["Processing error"]}
+            }
+            
+            storage_success = False
+            if store_to_file:
+                storage_success = self.store_to_json_file(fallback_entry, filename)
+            
+            return {
+                'display': self.no_results_messages.get(lang, self.no_results_messages['fr']),
+                'storage': fallback_entry,
+                'confidence': 0.0,
+                'stored_to_file': storage_success,
+                'file_path': filename if storage_success else None,
+                'original_question': question,
+                'error': 'JSON parsing failed'
+            }
+        
+        except Exception as e:
+            logger.error("Error in process_serp_to_response: " + str(e))
+            
+            # Fallback with original question preserved
+            fallback_entry = {
+                "intent": "general_info",
+                "question": {lang: [question]},
+                "reponse": {lang: ["Error processing request"]},
+                "meta": {lang: ["System error"]}
+            }
+            
+            storage_success = False
+            if store_to_file:
+                try:
+                    storage_success = self.store_to_json_file(fallback_entry, filename)
+                except:
+                    pass
+            
+            return {
+                'display': self.no_results_messages.get(lang, self.no_results_messages['fr']),
+                'storage': fallback_entry,
+                'confidence': 0.0,
+                'stored_to_file': storage_success,
+                'file_path': filename if storage_success else None,
+                'original_question': question,
+                'error': str(e)
+            }
+
+        # Helper method to read stored data    
+
+    def enhance_response_with_context(self, response: str, context: Dict[str, Any], lang: str = 'fr') -> str:
+        """
+        Améliore la réponse en ajoutant du contexte pertinent sans modifier les faits,
+        sans répéter ce qui est déjà présent, et en gardant la réponse claire et structurée.
+        Fonctionne pour tout sujet avec focus sur FSO.
+        """
+        try:
+            base_instructions = {
+                'fr': f"""
+    Tu es un assistant spécialisé dans les informations sur la Faculté des Sciences d'Oujda (FSO).
+
+    Règles STRICTES :
+    - Améliore UNIQUEMENT la réponse en ajoutant des informations NOUVELLES du contexte
+    - INTERDICTION ABSOLUE de répéter des informations déjà présentes dans la réponse
+    - INTERDICTION de créer des doublons, triplications ou répétitions de blocs entiers
+    - Focus PRIORITAIRE sur "FSO", "Faculté des Sciences Oujda", "Université Mohammed Premier"
+    - Évite les références à "CAP-FSO" sauf si directement pertinent à la question
+    - Supprime tous les doublons et répétitions avant de répondre
+    - Garde seulement les informations qui répondent EXACTEMENT à la question posée
+    - Structure claire : UNE SEULE mention par information/personne/détail
+    - Réponse finale naturelle, fluide et SANS RÉPÉTITION
+
+    EXEMPLE DE CE QUI EST INTERDIT :
+    - Répéter "Doyen: Professeur El Bekkaye MAAROUF" plusieurs fois
+    - Dupliquer les coordonnées de contact
+    - Tripler les mêmes blocs d'informations
+
+    Réponse actuelle :
+    {response}
+
+    Contexte disponible :
+    {json.dumps(context, ensure_ascii=False, indent=2)}
+
+    CRITIQUE : Analyse d'abord la réponse actuelle pour identifier les répétitions, puis donne UNIQUEMENT la version finale améliorée, nettoyée de TOUS les doublons.
+    """,
+                
+                'en': f"""
+    You are an assistant specialized in information about the Faculty of Sciences of Oujda (FSO).
+
+    STRICT Rules:
+    - Improve ONLY the response by adding NEW information from the context
+    - ABSOLUTE PROHIBITION of repeating information already in the response
+    - PRIORITY focus on "FSO", "Faculty of Sciences Oujda", "Mohammed Premier University"
+    - Avoid references to "CAP-FSO" unless directly relevant to the question
+    - Remove all duplicates and repetitions
+    - Keep only information that EXACTLY answers the asked question
+    - Clear structure: single mention per piece of information
+    - Final response natural and fluent
+
+    Current response:
+    {response}
+
+    Available context:
+    {json.dumps(context, ensure_ascii=False, indent=2)}
+
+    IMPORTANT: Give ONLY the final improved version, no duplicates, no repetitions, no commentary.
+    """,
+                
+                'ar': f"""
+    أنت مساعد متخصص في معلومات كلية العلوم بوجدة (FSO).
+
+    قواعد صارمة:
+    - حسّن الإجابة فقط بإضافة معلومات جديدة من السياق
+    - منع مطلق لتكرار المعلومات الموجودة في الإجابة
+    - تركيز أولوي على "FSO"، "كلية العلوم وجدة"، "جامعة محمد الأول"
+    - تجنب الإشارة إلى "CAP-FSO" إلا إذا كانت متعلقة مباشرة بالسؤال
+    - احذف جميع التكرارات والمضاعفات
+    - احتفظ بالمعلومات التي تجيب بالضبط على السؤال المطروح
+    - هيكل واضح: ذكر واحد لكل معلومة
+    - إجابة نهائية طبيعية وسلسة
+
+    الإجابة الحالية:
+    {response}
+
+    السياق المتاح:
+    {json.dumps(context, ensure_ascii=False, indent=2)}
+
+    مهم: أعطِ النسخة النهائية المحسنة فقط، بدون تكرار، بدون تعليقات.
+    """,
+                
+                'amz': f"""
+    Anta d amellal i yeẓran ɣef Fakulté des Sciences n Wejda (FSO).
+
+    Ilugan iǧehden:
+    - Seǧhed kan tiririt s useɣti n yisallen imaynuten seg umnaḍ
+    - Agdel aṭas n useɣti n yisallen i d-yellan yakan deg tiririt
+    - Tazwart tamezwarut i "FSO", "Fakulté des Sciences Oujda", "Tasdawit Mohammed Premier"
+    - Zgel tinmal i "CAP-FSO" ala ma yella yeɛnan srid i usteqsi
+    - Kkes akk inekta d useɣti
+    - Ǧǧ kan isallen i d-yettarran s tṣaḥit i usteqsi
+    - Askil afsus: yiwet n tenna i yal isalan
+    - Tiririt taneggaru tagamant d tafessast
+
+    Tiririt tura:
+    {response}
+
+    Amnaḍ i yellan:
+    {json.dumps(context, ensure_ascii=False, indent=2)}
+
+    Muhim: Efk kan lqem aneggaru yettwaseǧden, ur teɣreḍ ara, ur tečč ara awalen.
+    """
+            }
+            
+            prompt = base_instructions.get(lang, base_instructions['fr'])
+            
+            enhanced_response = self._call_ollama(prompt=prompt)
+            
+            # Post-traitement pour s'assurer qu'il n'y a pas de doublons
+            enhanced_response = self._remove_duplicates(enhanced_response)
+            
+            return enhanced_response
+            
+        except Exception as e:
+            logger.error(f"Erreur lors de l'amélioration avec contexte: {str(e)}")
+            return response
+
+    def _remove_duplicates(self, text: str) -> str:
+        """
+        Supprime les phrases et blocs dupliqués dans le texte
+        """
+        try:
+            # D'abord, supprimer les blocs complets dupliqués
+            text = self._remove_block_duplicates(text)
+            
+            # Ensuite, supprimer les phrases dupliquées
+            sentences = text.split('.')
+            unique_sentences = []
+            seen = set()
+            
+            for sentence in sentences:
+                sentence = sentence.strip()
+                if sentence and sentence.lower() not in seen:
+                    seen.add(sentence.lower())
+                    unique_sentences.append(sentence)
+            
+            return '. '.join(unique_sentences).strip()
+            
+        except Exception as e:
+            logger.error(f"Erreur lors de la suppression des doublons: {str(e)}")
+            return text
+
+    def _remove_block_duplicates(self, text: str) -> str:
+        """
+        Supprime les blocs de texte identiques répétés
+        """
+        try:
+            # Diviser par paragraphes ou sections
+            paragraphs = text.split('\n\n')
+            unique_paragraphs = []
+            seen_paragraphs = set()
+            
+            for paragraph in paragraphs:
+                paragraph = paragraph.strip()
+                if paragraph:
+                    # Normaliser pour comparaison (sans espaces multiples, minuscules)
+                    normalized = ' '.join(paragraph.lower().split())
+                    if normalized not in seen_paragraphs:
+                        seen_paragraphs.add(normalized)
+                        unique_paragraphs.append(paragraph)
+            
+            return '\n\n'.join(unique_paragraphs)
+            
+        except Exception as e:
+            logger.error(f"Erreur lors de la suppression des blocs dupliqués: {str(e)}")
+            return text
+
+    def _filter_context_for_fso(self, context: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Filtre le contexte pour se concentrer sur FSO plutôt que CAP-FSO
+        """
+        try:
+            filtered_context = {}
+            
+            # Mots-clés prioritaires pour FSO
+            fso_keywords = [
+                'faculté des sciences',
+                'faculty of sciences',
+                'fso',
+                'oujda',
+                'université mohammed premier',
+                'mohammed first university',
+                'ump'
+            ]
+            
+            # Mots-clés à éviter ou minimiser
+            avoid_keywords = [
+                'cap-fso',
+                'cap fso',
+                'commission académique'
+            ]
+            
+            for key, value in context.items():
+                if isinstance(value, str):
+                    # Priorité aux contenus mentionnant FSO
+                    if any(keyword in value.lower() for keyword in fso_keywords):
+                        # Éviter les contenus trop centrés sur CAP-FSO
+                        if not any(avoid in value.lower() for avoid in avoid_keywords):
+                            filtered_context[key] = value
+                        elif any(fso_kw in value.lower() for fso_kw in fso_keywords[:3]):
+                            # Garde le contenu s'il mentionne aussi FSO directement
+                            filtered_context[key] = value
+                else:
+                    filtered_context[key] = value
+            
+            return filtered_context if filtered_context else context
+            
+        except Exception as e:
+            logger.error(f"Erreur lors du filtrage du contexte: {str(e)}")
+            return context
 
 
 # Instance globale du service
 llm_service = LLMService()
+

@@ -50,7 +50,7 @@ python -m venv .venv
 
 pip install -r requirements.txt
 docker-compose up -d
-python indexer.py
+python indexer.py reset
 uvicorn app:app --reload
 ```
 
@@ -71,15 +71,19 @@ npm run dev
 
 ```
 fso-chatbot/
-├── back-chat/
-│   ├── app.py              # Backend FastAPI avec GPT
+├── back-chat/              #Backend FastAPI avec llama3:8b local
+│   ├── audio_test/         # STT
+│   ├── brahim_serp/        # Advanced scraper
+│   ├── app.py              # application
+│   ├── LLMService.py       # llama3:8b bridge
+│   ├── polite.py           # language handler
 │   ├── indexer.py          # Script d'indexation initiale
 │   ├── dataset.json        # Base FAQ de la FSO
 │   └── docker-compose.yml  # Lancement OpenSearch
 │
 └── front-chat/
     ├── src/
-    │   ├── components/ # Composant principal du chat
+    │   ├── components/     # Composant principal du chat
     │   ├── assets/         # Logos et images
     │   ├── style/          # Fichiers CSS
     └── vite.config.ts
