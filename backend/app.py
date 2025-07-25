@@ -1,32 +1,40 @@
+
+import asyncio
+import os
+if hasattr(asyncio, 'WindowsProactorEventLoopPolicy'):
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+
+
+from concurrent.futures import ThreadPoolExecutor
+import sys
+import re
+import numpy as np
+import logging
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from opensearchpy import OpenSearch, exceptions
-import logging
-from langdetect import detect
 
 from LLMService import llm_service
-from typing import Optional
 from indexer import add_single_entry
-from polite import is_not_defined, Ibtissam_checks
-from typing import Optional
-import numpy as np
+from polite import is_not_defined, Ibtissam_checks, detect_custom_language
+from typing import List, Optional, Dict, Tuple
+from datetime import datetime
+from SerpService import test
+
+
+
+
+os.environ['PYTHONASYNCIODEBUG'] = '1'
 
 LANG_MAP = {
     'fr': 'fr',
     'en': 'en',
     'ar': 'ar',    
-    'amz': 'amz',
+    'amz': 'amz'
 }
-
-def detect_custom_language(text):
-    try:
-        lang = detect(text)
-        return LANG_MAP.get(lang, 'unknown')
-    except Exception:
-        return 'unknown'
-
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -64,24 +72,25 @@ except Exception as e:
 
 class Query(BaseModel):
     question: str
-    lang: str = "fr"
+    lang: str 
     k: int = 3
-    score_threshold: float = 0.8
+    score_threshold: float = 0.7
     use_llm: bool = True  
     context: Optional[dict] = None
 
+
+
+logger = logging.getLogger(__name__)
+
 @app.post("/search")
 def search(query: Query):
-    lang = detect_custom_language(query.question) or query.lang or "fr"
-
-    try:
-        if not query.question.strip():
-            raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
-        
-        # Generate embedding
-        embedding = model.encode(query.question).tolist()
-        
-        # Fixed KNN query syntax for OpenSearch
+    if not query.question.strip():
+        raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
+    query.lang = detect_custom_language(query.question)
+    if not Ibtissam_checks(query.question, query.lang):
+        return is_not_defined(query.lang)
+    try:        
+        embedding = model.encode(query.question).tolist()        
         query_body = {
             "size": query.k,
             "query": {
@@ -91,8 +100,8 @@ def search(query: Query):
                             "knn": {
                                 "embedding": {
                                     "vector": embedding,
-                                    "k": 50,
-                                    "boost": 0.7  # Higher boost for semantic matches
+                                    "k": 300,
+                                    "boost": 0.7
                                 }
                             }
                         },
@@ -106,18 +115,11 @@ def search(query: Query):
                             }
                         }
                     ],
-                    "filter": [{"term": {"lang": lang}}] if lang else []
+                    "filter": [{"term": {"lang": query.lang}}] if query.lang else []
                 }
             }
         }
-
-        # logger.info(f"Executing search with query: {query_body}")
         response = client.search(index="faq", body=query_body)
-        
-        # Log the response for debugging
-        logger.info(f"OpenSearch response: {response}")
-        
-        # Apply score threshold filtering
         hits = [hit for hit in response["hits"]["hits"] if hit["_score"] >= query.score_threshold]
         
         if hits:
@@ -127,114 +129,41 @@ def search(query: Query):
                     "answer": hit["_source"]["answer"],
                     "score": hit["_score"],
                     "meta": hit["_source"].get("meta"),
-                    "search_type": "knn" if "_knn_score" in hit else "match"  # Debug info
+                    "search_type": "knn" if "_knn_score" in hit else "match"
                 }
                 for hit in hits
             ]
             
-            # Utiliser le LLM pour structurer la réponse si demandé
             if query.use_llm:
-                
-                
                 llm_response = llm_service.generate_structured_response(
                     question=query.question,
                     search_results=results,
-                    lang=lang
-                )
+                    lang=query.lang
+                ) 
                 
+                if llm_response['confidence'] < 0.09:
+                    return test(query.question, query.lang)
                 
-                # Améliorer avec contexte si fourni
                 if query.context and llm_response.get('response'):
                     enhanced_response = llm_service.enhance_response_with_context(
                         llm_response['response'],
                         query.context,
-                        lang
+                        query.lang
                     )
-                    llm_response['response'] = enhanced_response
-                
                 return {
-                    "detected_lang": lang,
-                    "raw_results": results,  # Résultats bruts pour référence
+                    "detected_lang": query.lang,
+                    "raw_results": results,
                     "structured_response": llm_response['response'],
                     "confidence": llm_response['confidence'],
                     "sources_used": llm_response['sources_used'],
                     "processing_time": llm_response['processing_time'],
-                    "llm_used": True
-                }
-            else:
-                # Réponse classique sans LLM
-                return {
-                    "detected_lang": lang,
-                    "results": results,
-                    "llm_used": False
-                }
-        else:
-            # Aucun résultat trouvé
-            # if query.use_llm:
-            #     llm_response = llm_service.generate_structured_response(
-            #         question=query.question,
-            #         search_results=[],
-            #         lang=lang
-            #     )
-                
-            #     return {
-            #         "detected_lang": lang,
-            #         "structured_response": llm_response['response'],
-            #         "confidence": 0.0,
-            #         "sources_used": 0,
-            #         "processing_time": llm_response['processing_time'],
-            #         "llm_used": True
-            #     }
+                    "llm_used": True,
+                    "search_source": "database"
+                }        
+        else: #internet
             if query.use_llm:
-                print("use llm if!!!!!!!!!!!!!!!\n")
-                # Étape 1 : Vérifier si la question concerne la FSO
-                faculty_check = llm_service.is_faculty_related(query.question, lang)
+                test(query.question, query.lang)
                 
-                if faculty_check.get("is_faculty_related", False):
-                    # Étape 2 : Générer une réponse via LLM (connaissances générales FSO)
-                    response_data = llm_service.generate_faculty_response(query.question, lang)
-                    
-                    # Étape 3 : Formater et enregistrer dans la base
-                    entry = llm_service.format_for_database(query.question, response_data['response'], lang)
-                    insertion_result = add_single_entry(entry)
-                    
-                    return {
-                        "detected_lang": lang,
-                        "structured_response": response_data['response'],
-                        "confidence": response_data['confidence'],
-                        "llm_used": True,
-                        "source": response_data['source'],
-                        "auto_inserted": insertion_result.get("success", False)
-                    }
-                
-                else:
-                    # Réponse par défaut si la question n’est pas liée à la FSO
-                    fallback = llm_service.no_results_messages.get(lang, llm_service.no_results_messages['fr'])
-                    return {
-                        "detected_lang": lang,
-                        "structured_response": fallback,
-                        "confidence": 0.0,
-                        "llm_used": True,
-                        "source": "not_related",
-                        "auto_inserted": False
-                    }
-
-            else:
-                message = is_not_defined(lang)
-                results = [
-                    {
-                        "question": None,
-                        "answer": message,
-                        "score": 1.0,
-                        "meta": None,
-                    }
-                ]
-                
-                return {
-                    "detected_lang": lang,
-                    "results": results,
-                    "llm_used": False
-                }
 
     except exceptions.NotFoundError:
         raise HTTPException(status_code=404, detail="Index 'faq' non trouvé")
@@ -243,50 +172,24 @@ def search(query: Query):
         raise HTTPException(status_code=500, detail=f"Erreur interne: {str(e)}")
 
 
-@app.post("/chat")
-def chat_with_llm(query: Query):
-    """Endpoint dédié pour le chat avec LLM (toujours activé)"""
-    condition = Ibtissam_checks(query.question)
-    if (condition):
-        query.use_llm = True
-        return search(query)
-    else:
-        query.use_llm = False
-        return is_not_defined(query.lang)
-
-
-@app.get("/health")
-def health_check():
-    """Vérification de l'état de santé avec test du LLM"""
-    health_status = {
-        "opensearch": client.ping(),
-        "model_loaded": True,
-        "llm_service": False
-    }
-    
-    # Test rapide du service LLM
-    try:
-        test_response = llm_service.generate_structured_response(
-            question="Test de santé",
-            search_results=[],
-            lang="fr"
-        )
-        health_status["llm_service"] = True
-    except Exception as e:
-        logger.error(f"Erreur test LLM: {str(e)}")
-        health_status["llm_service"] = False
-    
-    return health_status
-
 @app.get("/")
 def root():
     """Endpoint racine avec information sur l'API"""
     return {
-        "message": "API Chatbot FAQ avec LLM",
-        "version": "2.0",
+        "message": "API Chatbot FAQ avec LLM et SERP intelligent",
+        "version": "3.0",
         "endpoints": {
-            "/search": "Recherche FAQ avec option LLM",
-            "/chat": "Chat avec LLM activé",
-            "/health": "Vérification de santé"
-        }
+            "/search": "Recherche FAQ avec option LLM et fallback SERP intelligent",
+            "/chat": "Chat avec LLM activé"
+        },
+        "features": [
+            "Recherche sémantique dans la base de données",
+            "Fallback intelligent vers recherche internet",
+            "Filtrage et scoring des résultats SERP",
+            "Priorisation du contenu récent",
+            "Extraction de snippets pertinents",
+            "Intégration LLM pour structurer les réponses"
+        ]
     }
+
+

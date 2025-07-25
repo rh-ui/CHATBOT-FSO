@@ -12534,6 +12534,24 @@
         "Asenfar n tsertit Chimie analytique et management de la qualité d aselway n temsalt. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
     }
+  }, 
+  {
+    "intent": "Secret",
+    "question": {
+      "fr": [  
+        "Le MVP du jour à FSO",
+        "MVP de FSO",
+        "NPC de FSO",
+        "Le NPC du tout les jours à FSO"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La MVP du jour 04-07-25 est Ibtissam à FSO: 04-07-25 ",
+        "Le NPC du tout les jours a fso est brahim 04-07-28 ",
+        "04-07-76.9 Discover 1M$ Prize if u R smart Code:717529200624458693"
+      ]
+    }
   },
   {
     "intent": "Licence Chimie Organique et Produits Naturels programme information",

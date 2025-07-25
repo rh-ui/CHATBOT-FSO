@@ -67,7 +67,7 @@ def is_not_defined(lang: str):
         ]
     }
 
-    return output.get(lang, output["fr"])[rnb]
+    return output.get(lang, output[lang])[rnb]
 
 
 def detect_custom_language(text: str) -> str:
@@ -112,14 +112,13 @@ def detect_custom_language(text: str) -> str:
         else:
             return 'fr'
 
-def Ibtissam_checks(question: str) -> bool:
+def Ibtissam_checks(question: str, lang: str) -> bool:
     """
     Improved function to check if question contains FSO-related keywords
     """
     if not question or not question.strip():
         return False
     
-    lang = detect_custom_language(question)
     question_lower = question.lower()
 
     # FSO-related keywords by language
@@ -133,11 +132,11 @@ def Ibtissam_checks(question: str) -> bool:
             "smi", "sma", "smc", "smp", "smg", "smb", "département",
             
             # Academic terms
-            "master", "licence", "doctorat", "pfe", "stage", "inscription",
+            "master", "licence", "doctorat", "pfe", "stage", "inscription", "m'inscrire",
             "notes", "résultats", "soutenance", "mémoire",
             
             # General university terms
-            "étudiant", "études", "cours", "examen", "diplôme", "formation",
+            "étudiant", "études", "cours", "examen", "diplôme", "formation", "FAQs",
             "professeur", "enseignant", "scolarité", "administration",
             
             # Location/contact
@@ -165,7 +164,7 @@ def Ibtissam_checks(question: str) -> bool:
     }
 
     # Check keywords for the detected language
-    keywords = keywords_by_lang.get(lang, keywords_by_lang['fr'])
+    keywords = keywords_by_lang[lang]
     
     for keyword in keywords:
         if keyword.lower() in question_lower:
@@ -178,5 +177,4 @@ def Ibtissam_checks(question: str) -> bool:
             return True
     
     return False
-
 
