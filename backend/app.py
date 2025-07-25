@@ -9,7 +9,6 @@ from langdetect import detect
 from LLMService import llm_service
 from whisper_service import whisper_service
 from typing import Optional
-from indexer import add_single_entry
 from polite import is_not_defined, Ibtissam_checks
 from typing import Optional
 import numpy as np
@@ -78,15 +77,14 @@ class AudioQuery(BaseModel):
 
 @app.post("/search")
 def search(query: Query):
-    lang = detect_custom_language(query.question) or query.lang or "fr"
-
+    query.lang = detect_custom_language(query.question) or "fr"
     try:
         if not query.question.strip():
             raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
-        
+       
         # Generate embedding
         embedding = model.encode(query.question).tolist()
-        
+       
         # Fixed KNN query syntax for OpenSearch
         query_body = {
             "size": query.k,
@@ -112,16 +110,15 @@ def search(query: Query):
                             }
                         }
                     ],
-                    "filter": [{"term": {"lang": lang}}] if lang else []
+                    "filter": [{"term": {"lang": query.lang}}] if query.lang else []
                 }
             }
         }
-
         response = client.search(index="faq", body=query_body)
         logger.info(f"OpenSearch response: {response}")
-        
+       
         hits = [hit for hit in response["hits"]["hits"] if hit["_score"] >= query.score_threshold]
-        
+       
         if hits:
             results = [
                 {
@@ -133,24 +130,24 @@ def search(query: Query):
                 }
                 for hit in hits
             ]
-            
+           
             if query.use_llm:
                 llm_response = llm_service.generate_structured_response(
                     question=query.question,
                     search_results=results,
-                    lang=lang
+                    lang=query.lang
                 )
-                
+               
                 if query.context and llm_response.get('response'):
                     enhanced_response = llm_service.enhance_response_with_context(
                         llm_response['response'],
                         query.context,
-                        lang
+                        query.lang
                     )
                     llm_response['response'] = enhanced_response
-                
+               
                 return {
-                    "detected_lang": lang,
+                    "detected_lang": query.lang,
                     "raw_results": results,
                     "structured_response": llm_response['response'],
                     "confidence": llm_response['confidence'],
@@ -160,73 +157,29 @@ def search(query: Query):
                 }
             else:
                 return {
-                    "detected_lang": lang,
+                    "detected_lang": query.lang,
                     "results": results,
                     "llm_used": False
                 }
         else:
             if query.use_llm:
                 print("use llm if!!!!!!!!!!!!!!!\n")
-                faculty_check = llm_service.is_faculty_related(query.question, lang)
                 
-                if faculty_check.get("is_faculty_related", False):
-                    response_data = llm_service.generate_faculty_response(query.question, lang)
-                    entry = llm_service.format_for_database(query.question, response_data['response'], lang)
-                    insertion_result = add_single_entry(entry)
-                    
-                    return {
-                        "detected_lang": lang,
-                        "structured_response": response_data['response'],
-                        "confidence": response_data['confidence'],
-                        "llm_used": True,
-                        "source": response_data['source'],
-                        "auto_inserted": insertion_result.get("success", False)
-                    }
-                else:
-                    fallback = llm_service.no_results_messages.get(lang, llm_service.no_results_messages['fr'])
-                    return {
-                        "detected_lang": lang,
-                        "structured_response": fallback,
-                        "confidence": 0.0,
-                        "llm_used": True,
-                        "source": "not_related",
-                        "auto_inserted": False
-                    }
+                
             else:
-                message = is_not_defined(lang)
-                results = [
-                    {
-                        "question": None,
-                        "answer": message,
-                        "score": 1.0,
-                        "meta": None,
-                    }
-                ]
                 
                 return {
-                    "detected_lang": lang,
-                    "results": results,
-                    "llm_used": False
+                    "detected_lang": query.lang,
+                    "results": [],
+                    "llm_used": False,
+                    "message": "Aucun résultat trouvé dans la base de données locale"
                 }
-
+               
     except exceptions.NotFoundError:
         raise HTTPException(status_code=404, detail="Index 'faq' non trouvé")
     except Exception as e:
         logger.error(f"Erreur lors de la recherche: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Erreur interne: {str(e)}")
-
-
-@app.post("/chat")
-def chat_with_llm(query: Query):
-    """Endpoint dédié pour le chat avec LLM (toujours activé)"""
-    condition = Ibtissam_checks(query.question)
-    if (condition):
-        query.use_llm = True
-        return search(query)
-    else:
-        query.use_llm = False
-        return is_not_defined(query.lang)
-
 
 # ENDPOINTS POUR L'AUDIO
 @app.post("/transcribe")

@@ -249,7 +249,7 @@ export default function MSOChatUI() {
         }
       });
 
-      // Réinitialiser les chunks AVANT de démarrer l'enregistrement
+      
       setAudioChunks([]);
 
       const options = {

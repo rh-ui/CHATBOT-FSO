@@ -1,4 +1,4 @@
-@echo off
+  @echo off
 echo === DÉMARRAGE DE L'APPLICATION CHATBOT ===
 
 :: Étape 1 : Démarrer OpenSearch (dans Docker)
