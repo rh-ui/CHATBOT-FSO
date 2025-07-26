@@ -141,7 +141,7 @@ def search(query: Query):
                     lang=query.lang
                 ) 
                 
-                if llm_response['confidence'] < 0.09:
+                if llm_response['confidence'] < 19:
                     return test(query.question, query.lang)
                 
                 if query.context and llm_response.get('response'):

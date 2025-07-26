@@ -196,7 +196,7 @@ class LLMService:
                 "options": self.gpu_optimized_options.copy()
             }
             
-            # Ajouter le system prompt si fourni
+            
             if system_prompt:
                 payload["system"] = system_prompt
             
@@ -207,7 +207,7 @@ class LLMService:
             response = requests.post(
                 f"{self.base_url}/api/generate",
                 json=payload,
-                timeout=60000  # Timeout réduit car GPU est plus rapide
+                timeout=60000 
             )
             
             processing_time = (datetime.now() - start_time).total_seconds()
