@@ -249,7 +249,7 @@ class LLMService:
         
         return "\n\n".join(formatted_results)
 
-    def generate_structured_response(self, question: str, search_results: List[Dict[str, Any]], lang: str = 'fr') -> Dict[str, Any]:
+    def generate_structured_response(self, question: str, search_results: List[Dict[str, Any]], lang: str) -> Dict[str, Any]:
         """Génère une réponse structurée à partir de TOUS les résultats trouvés"""
         
         try:
@@ -262,7 +262,7 @@ class LLMService:
             
             if not valid_results:
                 return {
-                    'response': self.no_results_messages.get(lang, self.no_results_messages['fr']),
+                    'response': self.no_results_messages.get(lang, self.no_results_messages[lang]),
                     'confidence': 0.0,
                     'sources_used': 0,
                     'processing_time': 0,
@@ -270,7 +270,7 @@ class LLMService:
                 }
             
             # Utiliser les prompts selon la langue
-            prompt_config = self.prompts.get(lang, self.prompts['fr'])
+            prompt_config = self.prompts.get(lang, self.prompts[lang])
             
             # Formatter TOUS les résultats pour le LLM
             formatted_results = self.format_search_results_for_structuring(valid_results)
@@ -306,7 +306,7 @@ class LLMService:
         except Exception as e:
             logger.error(f"Erreur lors de la génération de la réponse structurée: {str(e)}")
             return {
-                'response': self.no_results_messages.get(lang, self.no_results_messages['fr']),
+                'response': self.no_results_messages.get(lang, self.no_results_messages[lang]),
                 'confidence': 0.0,
                 'sources_used': 0,
                 'processing_time': 0,

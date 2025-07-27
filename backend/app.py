@@ -74,7 +74,7 @@ class Query(BaseModel):
     question: str
     lang: str 
     k: int = 3
-    score_threshold: float = 0.7
+    score_threshold: float = 1
     use_llm: bool = True  
     context: Optional[dict] = None
 
@@ -139,11 +139,9 @@ def search(query: Query):
                     question=query.question,
                     search_results=results,
                     lang=query.lang
-                ) 
-                
-                if llm_response['confidence'] < 0.09:
+                )
+                if llm_response['confidence'] < 0.2:
                     return test(query.question, query.lang)
-                
                 if query.context and llm_response.get('response'):
                     enhanced_response = llm_service.enhance_response_with_context(
                         llm_response['response'],
@@ -162,7 +160,7 @@ def search(query: Query):
                 }        
         else: #internet
             if query.use_llm:
-                test(query.question, query.lang)
+                return test(query.question, query.lang)
                 
 
     except exceptions.NotFoundError:
