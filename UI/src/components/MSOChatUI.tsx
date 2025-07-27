@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense, useRef } from 'react';
 import { Minus, Mic, Paperclip, ArrowUp, Send } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
 import '@/style/master.css';
 import ROBOT from '@/assets/robot.png';
 import CPU_AVATAR from '@/assets/Cpu.png';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-
-
-import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-
 import * as THREE from 'three';
+import { MicOff, Upload, X } from 'lucide-react';
 
 function Model() {
   const gltf = useGLTF('/models/file.glb');
@@ -30,7 +26,7 @@ function Model() {
   return <primitive ref={ref} object={gltf.scene} />;
 }
 
-// Preload the model
+
 useGLTF.preload('/models/file.glb');
 
 function GLBViewer() {
@@ -47,14 +43,19 @@ function GLBViewer() {
 }
 
 
-
-// ... tous les imports en haut restent inchangés ...
-
 interface Message {
   id: string;
   text: string;
   isUser: boolean;
   timestamp: Date;
+  isAudio?: boolean;
+  // transcription?: string;
+  transcription?: {
+    original_text: string;
+    detected_language: string;
+    duration: number;
+    filename: string;
+  };
 }
 
 interface ApiResponse {
@@ -81,13 +82,20 @@ export default function MSOChatUI() {
   const [isVisible, setIsVisible] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
-  const [splineScene, setSplineScene] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [isRecording, setIsRecording] = useState(false);
+  const [audioFile, setAudioFile] = useState<File | null>(null);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
+  const [showFileUpload, setShowFileUpload] = useState(false);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   const quickActions = [
+    "Qui est le Doyen ?",
     "Comment m'inscrire ?",
-    "Où voir les notes ?",
-    "FAQs"
+    "Où voir les notes ?"
   ];
 
   useEffect(() => {
@@ -194,9 +202,6 @@ export default function MSOChatUI() {
     setMessage(action);
   };
 
-  useEffect(() => {
-    setSplineScene("https://prod.spline.design/l1R44eHGk3Qq8SAI/scene.splinecode");
-  }, []);
 
   const toggleChat = () => {
     setIsVisible(!isVisible);
@@ -224,6 +229,247 @@ export default function MSOChatUI() {
     );
   }
 
+  useEffect(() => {
+    return () => {
+      if (mediaRecorder && mediaRecorder.state === 'recording') {
+        mediaRecorder.stop();
+      }
+    };
+  }, [mediaRecorder]);
+
+
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          sampleRate: 16000,
+          channelCount: 1,
+          echoCancellation: true,
+          noiseSuppression: true
+        }
+      });
+
+      
+      setAudioChunks([]);
+
+      const options = {
+        mimeType: getSupportedMimeType(),
+        audioBitsPerSecond: 128000
+      };
+
+      const recorder = new MediaRecorder(stream, options);
+
+      let localAudioChunks: Blob[] = [];
+
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          localAudioChunks.push(event.data);
+          setAudioChunks(prev => [...prev, event.data]);
+        }
+      };
+
+      recorder.onstop = async () => {
+        stream.getTracks().forEach(track => track.stop());
+
+        const mimeType = getSupportedMimeType();
+        const audioBlob = new Blob(localAudioChunks, { type: mimeType });
+        const extension = getExtensionFromMimeType(mimeType);
+        const audioFile = new File([audioBlob], `recording_${Date.now()}.${extension}`, {
+          type: mimeType
+        });
+
+        console.log(`Created audio file: ${audioFile.name}, size: ${audioFile.size} bytes, type: ${audioFile.type}`);
+        handleAudioMessage(audioFile);
+
+        // Nettoyer
+        localAudioChunks = [];
+        setAudioChunks([]);
+      };
+
+      setMediaRecorder(recorder);
+      recorder.start(1000);
+      setIsRecording(true);
+    } catch (error) {
+      console.error('Erreur microphone:', error);
+      alert('Impossible d\'accéder au microphone. Vérifiez les permissions.');
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorder && mediaRecorder.state === 'recording') {
+      mediaRecorder.stop();
+      setIsRecording(false);
+    }
+  };
+
+  // Helper function to get supported MIME type
+  const getSupportedMimeType = () => {
+    const types = [
+      'audio/webm;codecs=opus',
+      'audio/webm',
+      'audio/mp4',
+      'audio/wav'
+    ];
+
+    for (const type of types) {
+      if (MediaRecorder.isTypeSupported(type)) {
+        return type;
+      }
+    }
+
+    return 'audio/wav';
+  };
+
+  const getExtensionFromMimeType = (mimeType: string) => {
+    const mimeMap: Record<string, string> = {
+      'audio/webm;codecs=opus': 'webm',
+      'audio/webm': 'webm',
+      'audio/mp4': 'mp4',
+      'audio/wav': 'wav',
+      'audio/mpeg': 'mp3',
+      'audio/ogg': 'ogg'
+    };
+
+    return mimeMap[mimeType] || 'webm';
+  };
+
+
+  // const stopRecording = () => {
+  //   if (mediaRecorder && mediaRecorder.state === 'recording') {
+  //     mediaRecorder.stop();
+  //     setIsRecording(false);
+
+  //     mediaRecorder.onstop = () => {
+  //       const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+  //       const audioFile = new File([audioBlob], `recording_${Date.now()}.wav`, { type: 'audio/wav' });
+  //       handleAudioMessage(audioFile);
+  //     };
+  //   }
+  // };
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const supportedFormats = ['.mp3', '.wav', '.m4a', '.flac', '.ogg', '.webm', '.mp4'];
+      const fileExtension = '.' + file.name.split('.').pop()?.toLowerCase();
+
+      console.log(`Uploaded file: ${file.name}, size: ${file.size} bytes, type: ${file.type}`);
+
+      if (supportedFormats.includes(fileExtension)) {
+        // Validate file size (max 25MB)
+        if (file.size > 25 * 1024 * 1024) {
+          alert('Le fichier est trop volumineux (max 25MB)');
+          return;
+        }
+
+        handleAudioMessage(file);
+        setShowFileUpload(false);
+      } else {
+        alert(`Format non supporté. Formats acceptés: ${supportedFormats.join(', ')}`);
+      }
+    }
+    event.target.value = '';
+  };
+
+  const handleAudioMessage = async (audioFile: File) => {
+
+    if (isLoading) return;
+
+    console.log(`Processing audio file: ${audioFile.name}, size: ${audioFile.size}, type: ${audioFile.type}`);
+
+    if (audioFile.size === 0) {
+      alert('Le fichier audio est vide');
+      return;
+    }
+
+    // Message temporaire
+    const tempResponse: Message = {
+      id: (Date.now() + 1).toString(),
+      text: "Transcription en cours...",
+      isUser: false,
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, tempResponse]);
+
+    setIsLoading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('audio_file', audioFile);
+      formData.append('lang', 'fr');
+      formData.append('use_llm', 'true');
+
+      console.log('Sending audio to server...');
+
+      const response = await fetch('http://localhost:8000/voice-search', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`HTTP ${response.status}: ${errorText}`);
+      }
+
+      const result = await response.json();
+      console.log('Server response:', result);
+
+      const botResponses: Message[] = [];
+
+      // Ajouter transcription
+      if (result.transcription?.original_text) {
+        const transcriptionMessage: Message = {
+          id: `${Date.now() + 100}`,
+          text: result.transcription.original_text,
+          isUser: true,
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, transcriptionMessage]);
+      }
+
+      // Ajouter réponse LLM
+      if (result.structured_response) {
+        botResponses.push({
+          id: `${Date.now() + 3}`,
+          text: result.structured_response,
+          isUser: false,
+          timestamp: new Date()
+        });
+      } else if (result.results && result.results.length > 0) {
+        botResponses.push(...result.results.map((res: any, index: number) => ({
+          id: `${Date.now() + index + 3}`,
+          text: `${res.question}\n\n${res.answer}`,
+          isUser: false,
+          timestamp: new Date()
+        })));
+      }
+
+      if (botResponses.length === 0) {
+        botResponses.push({
+          id: `${Date.now() + 2}`,
+          text: "Désolé, je n'ai pas pu traiter votre audio correctement.",
+          isUser: false,
+          timestamp: new Date()
+        });
+      }
+
+      setMessages(prev => [...prev.filter(msg => msg.id !== tempResponse.id), ...botResponses]);
+
+    } catch (error) {
+      console.error('Audio processing error:', error);
+
+      // Gérer l'erreur avec plus de détails
+      const errorMessage = error instanceof Error ? error.message : 'Erreur inconnue';
+
+      setMessages(prev => prev.map(msg =>
+        msg.id === tempResponse.id
+          ? { ...msg, text: `Erreur audio: ${errorMessage}` }
+          : msg
+      ));
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="relative">
@@ -272,7 +518,7 @@ export default function MSOChatUI() {
                 <div className={`rounded-2xl p-4 max-w-xs shadow-sm ${msg.isUser
                   ? 'bg-blue-500 text-white rounded-tr-md'
                   : 'bg-white text-gray-800 rounded-tl-md'
-                  }`}>
+                  } ${msg.isAudio ? 'border-none' : ''} `}>
                   {msg.text.includes('\n\n') && !msg.isUser ? (
                     <>
                       <p className="font-semibold text-sm mb-2">
@@ -299,7 +545,7 @@ export default function MSOChatUI() {
             ))}
           </div>
 
-          {/* Quick actions */}
+          {/* Quick actions (les questions li frequent) */}
           <div className="px-4 py-2 bg-white border-t border-gray-100 flex-shrink-0">
             <div className="flex gap-2 flex-wrap">
               {quickActions.map((action, index) => (
@@ -317,10 +563,18 @@ export default function MSOChatUI() {
           </div>
 
           {/* Zone d'entrée */}
-          <div className="p-4 bg-transparent border-t border-gray-100 flex-shrink-0">
-            <div className="flex items-center gap-3 bg-gray-50 rounded-full px-4 py-3 border border-gray-200">
+          <div className="p-4 bg-gray-50 rounded-full border-t border-gray-100 flex-shrink-0">
+            {isRecording && (
+              <div className="flex items-center justify-center mt-2 mb-3">
+                <div className="flex items-center gap-2 text-red-500 text-sm">
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  Enregistrement en cours...
+                </div>
+              </div>
+            )}
+            <div className="flex items-center gap-3 bg-white rounded-full px-4 py-3 border border-gray-200">
               <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
-                <Paperclip className="w-5 h-5" />
+                <Paperclip className="w-5 h-5" /> {/* add file button */}
               </Button>
               <Input
                 value={message}
@@ -330,8 +584,13 @@ export default function MSOChatUI() {
                 className="flex-1 border-none bg-transparent text-sm placeholder:text-gray-500 focus-visible:ring-0 focus-visible:ring-offset-0"
                 disabled={isLoading}
               />
-              <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
-                <Mic className="w-5 h-5" />
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`${isRecording ? 'text-red-500 bg-red-50' : 'text-gray-500'}`}
+                onClick={isRecording ? stopRecording : startRecording}
+              >
+                {isRecording ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
               </Button>
               <Button
                 onClick={handleSendMessage}
@@ -346,7 +605,31 @@ export default function MSOChatUI() {
                 )}
               </Button>
             </div>
+
+
           </div>
+
+          {/* Upload de fichier audio */}
+          {showFileUpload && (
+            <div className="px-4 py-2 bg-purple-50 border-t border-purple-200 flex-shrink-0">
+              <div className="flex items-center gap-2">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".mp3,.wav,.m4a,.flac,.ogg,.webm,.mp4"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                />
+                <Button onClick={() => fileInputRef.current?.click()} variant="outline" size="sm" className="flex-1">
+                  <Upload className="w-4 h-4 mr-2" />
+                  Choisir un fichier audio
+                </Button>
+                <Button onClick={() => setShowFileUpload(false)} variant="ghost" size="sm">
+                  <X className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

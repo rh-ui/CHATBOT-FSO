@@ -15024,22 +15024,22 @@
     },
     "reponse": {
       "fr": [
-        "La FSO est ouverte du lundi au vendredi de 8h30 à 16h30. Les services administratifs ferment généralement à 16h00.",
+        "La FSO est ouverte du lundi au vendredi de 8h30 à 17h30. Les services administratifs ferment généralement à 16h00.",
         "La faculté ouvre ses portes à 8h30 du lundi au vendredi.",
         "Les services administratifs sont accessibles entre 9h00 et 16h00, sauf jours fériés."
       ],
       "en": [
-        "The FSO is open from Monday to Friday, 8:30 AM to 4:30 PM. Administrative services usually close by 4:00 PM.",
+        "The FSO is open from Monday to Friday, 8:30 AM to 5:30 PM. Administrative services usually close by 4:00 PM.",
         "The faculty opens at 8:30 AM on weekdays.",
         "Administrative offices are open from 9:00 AM to 4:00 PM, except on public holidays."
       ],
       "ar": [
-        "تفتح كلية العلوم من الإثنين إلى الجمعة من الساعة 8:30 إلى 16:30. تغلق المصالح الإدارية عادة في 16:00.",
+        "تفتح كلية العلوم من الإثنين إلى الجمعة من الساعة 8:30 إلى 17:30. تغلق المصالح الإدارية عادة في 16:00.",
         "تفتح الكلية أبوابها على الساعة 8:30 خلال أيام الأسبوع.",
         "المصالح الإدارية متاحة من 9:00 إلى 16:00، ما عدا أيام العطل الرسمية."
       ],
       "amz": [
-        "Tettzra FSO seg sinin ɣer jemɛa si 8:30 ɣer 16:30. Tanbaḍt tamezwarut tettmed si 16:00.",
+        "Tettzra FSO seg sinin ɣer jemɛa si 8:30 ɣer 17:30. Tanbaḍt tamezwarut tettmed si 16:00.",
         "Tettzra tasnawalt n 8:30 deg wussan n useggas.",
         "Tanbaḍt tamezwarut tettwab si 9:00 ɣer 16:00, war tidyanin ameɣṛan."
       ]
@@ -15264,6 +15264,21 @@
         "Quand commence l'année universitaire ?",
         "Quelles sont les dates des examens ?",
         "À quelle date se termine le semestre ?"
+      ],
+      "ar": [
+        "متى تبدأ السنة الجامعية؟",
+        "ما هي تواريخ الامتحانات؟",
+        "في أي تاريخ ينتهي الفصل الدراسي؟"
+      ],
+      "en": [
+        "When does the academic year start?",
+        "What are the exam dates?",
+        "On what date does the semester end?"
+      ],
+      "amz": [
+        "Melmi tebda tasɣunt takadimit?",
+        "Menni waddaduren n tεribatin?",
+        "Γef waddad i-yemmal asemster?"
       ]
     },
     "reponse": {
@@ -15271,6 +15286,21 @@
         "L'année universitaire débute généralement en septembre et se termine en juillet.",
         "Les dates exactes des examens sont communiquées par la scolarité au début de chaque semestre.",
         "Le semestre se termine habituellement par une session d'examens suivie d'une période de rattrapage."
+      ],
+      "ar": [
+        "تبدأ السنة الجامعية عادة في سبتمبر وتنتهي في يوليو.",
+        "يتم الإعلان عن التواريخ الدقيقة للامتحانات من طرف مصلحة الشؤون الدراسية في بداية كل فصل.",
+        "ينتهي الفصل الدراسي عادة بجلسة الامتحانات تليها فترة المراجعة."
+      ],
+      "en": [
+        "The academic year usually starts in September and ends in July.",
+        "The exact exam dates are communicated by the academic department at the beginning of each semester.",
+        "The semester usually ends with an exam session followed by a retake period."
+      ],
+      "amz": [
+        "Tasɣunt takadimit tebda deg ctember teγfed-d deg yulyu.",
+        "Waddaduren n tεribatin ttwassen s uεessas n tizrawin deg tazwara n yal asemster.",
+        "Asemster yemmal s tεribat tebɛed d tallit n usmiren."
       ]
     }
   },
@@ -15278,16 +15308,46 @@
     "intent": "Inscription et Réinscription",
     "question": {
       "fr": [
-        "Quels sont les documents nécessaires pour s’inscrire ?",
+        "Quels sont les documents nécessaires pour s'inscrire ?",
         "Comment faire une réinscription en ligne ?",
-        "Peut-on s’inscrire hors délai ?"
+        "Peut-on s'inscrire hors délai ?"
+      ],
+      "ar": [
+        "ما هي الوثائق المطلوبة للتسجيل؟",
+        "كيف يمكن إعادة التسجيل عبر الإنترنت؟",
+        "هل يمكن التسجيل خارج الآجال؟"
+      ],
+      "en": [
+        "What documents are needed for registration?",
+        "How to re-register online?",
+        "Can we register after the deadline?"
+      ],
+      "amz": [
+        "Mani isefka ilaqen i wemṣad?",
+        "Amek ara talseḍ amṣad srid?",
+        "Yezmer ad yemṣed deffir lǧal?"
       ]
     },
     "reponse": {
       "fr": [
-        "Pour s’inscrire, il faut fournir une copie du baccalauréat, une photo, une copie de la CIN et les formulaires remplis.",
+        "Pour s'inscrire, il faut fournir une copie du baccalauréat, une photo, une copie de la CIN et les formulaires remplis.",
         "La réinscription se fait via la plateforme numérique de la FSO accessible aux étudiants.",
         "Une inscription hors délai est parfois acceptée avec justification et autorisation du service de scolarité."
+      ],
+      "ar": [
+        "للتسجيل، يجب تقديم نسخة من البكالوريا، صورة، نسخة من البطاقة الوطنية واستمارات مملوءة.",
+        "يتم إعادة التسجيل عبر المنصة الرقمية للفاكس التي يمكن للطلبة الوصول إليها.",
+        "في بعض الأحيان يتم قبول التسجيل خارج الآجال بتبرير وإذن من مصلحة الشؤون الدراسية."
+      ],
+      "en": [
+        "To register, you must provide a copy of the baccalaureate, a photo, a copy of the ID card and completed forms.",
+        "Re-registration is done via the FSO digital platform accessible to students.",
+        "Late registration is sometimes accepted with justification and authorization from the academic department."
+      ],
+      "amz": [
+        "I wemṣad, ilaq ad d-tesεeḍ taneɣruft n ubak, tugna, taneɣruft n CIN d iformulen yemmlen.",
+        "Amṣad n uεawed yettwaxeddem s ufaggag usrid n FSO i yellan i yiselmaden.",
+        "Amṣad deffir lǧal yettwasehlen mara yella yessefk asertu d usentel n tizrawin."
       ]
     }
   },
@@ -15298,13 +15358,43 @@
         "Où consulter mes notes ?",
         "Comment demander un relevé de notes officiel ?",
         "Quand les résultats sont-ils publiés ?"
+      ],
+      "ar": [
+        "أين يمكن الاطلاع على النتائج؟",
+        "كيف يمكن طلب كشف النقاط الرسمي؟",
+        "متى يتم نشر النتائج؟"
+      ],
+      "en": [
+        "Where to check my grades?",
+        "How to request an official transcript?",
+        "When are the results published?"
+      ],
+      "amz": [
+        "Anida zemreɣ ad walɣ isekkilen-inu?",
+        "Amek ara ssutreɣ tifinast n tmezgida tusligt?",
+        "Melmi ara d-ffɣen iferdisen?"
       ]
     },
     "reponse": {
       "fr": [
         "Les notes sont disponibles sur la plateforme en ligne de la faculté ou affichées sur les panneaux officiels.",
         "Le relevé de notes peut être demandé auprès du service de scolarité ou via l'espace étudiant.",
-        "Les résultats sont publiés après chaque session d’examen, généralement dans un délai de 2 semaines."
+        "Les résultats sont publiés après chaque session d'examen, généralement dans un délai de 2 semaines."
+      ],
+      "ar": [
+        "النقاط متوفرة على المنصة الإلكترونية للكلية أو معروضة على اللوائح الرسمية.",
+        "يمكن طلب كشف النقاط من مصلحة الشؤون الدراسية أو عبر الفضاء الطلابي.",
+        "تنشر النتائج بعد كل دورة امتحانية، عادة في غضون أسبوعين."
+      ],
+      "en": [
+        "Grades are available on the faculty's online platform or posted on official boards.",
+        "The transcript can be requested from the academic department or via the student portal.",
+        "Results are published after each exam session, usually within 2 weeks."
+      ],
+      "amz": [
+        "Isekkilen llan deg ufaggag usrid n tfakultt neɣ ttwalin deg yigalisen usligen.",
+        "Tifinast n tmezgida tettwasirig s uεessas n tizrawin neɣ s ufaggag n uselmd.",
+        "Ifeṛdisen ttwazen deffir yal tεribat, s umata deg 2 n yimalasen."
       ]
     }
   },
@@ -15315,13 +15405,43 @@
         "Comment faire une demande de stage à la FSO ?",
         "Le PFE est-il obligatoire pour valider le master ?",
         "Qui encadre les stages à la FSO ?"
+      ],
+      "ar": [
+        "كيف يمكن تقديم طلب تدريب بالفاكس؟",
+        "هل مشروع نهاية الدراسة إجباري للحصول على الماستر؟",
+        "من يشرف على التداريب بالفاكس؟"
+      ],
+      "en": [
+        "How to apply for an internship at FSO?",
+        "Is the PFE mandatory to validate the master's degree?",
+        "Who supervises internships at FSO?"
+      ],
+      "amz": [
+        "Amek ara ssutreɣ aselmed deg FSO?",
+        "PFE ilaq ad yili i usentel n master?",
+        "Anwa i yesεan anezzum n yiselmeden deg FSO?"
       ]
     },
     "reponse": {
       "fr": [
         "Les demandes de stage se font via le service de scolarité ou directement auprès des enseignants encadrants.",
-        "Oui, le projet de fin d’études est généralement obligatoire en dernière année de master.",
+        "Oui, le projet de fin d'études est généralement obligatoire en dernière année de master.",
         "Les enseignants-chercheurs de la FSO encadrent les stages selon les spécialités."
+      ],
+      "ar": [
+        "يتم تقديم طلبات التدريب عبر مصلحة الشؤون الدراسية أو مباشرة لدى الأساتذة المشرفين.",
+        "نعم، مشروع نهاية الدراسة إجباري عادة في السنة الأخيرة من الماستر.",
+        "أساتذة باحثون بالفاكس يشرفون على التداريب حسب التخصصات."
+      ],
+      "en": [
+        "Internship applications are made via the academic department or directly with supervising teachers.",
+        "Yes, the final year project is generally mandatory in the last year of the master's degree.",
+        "FSO teacher-researchers supervise internships according to specialties."
+      ],
+      "amz": [
+        "Isutran n yiselmeden ttwaxedment s uεessas n tizrawin neɣ srid ɣer yimεallimen.",
+        "Wah, asenfar n tagara n tesdawit ilaq ad yili deg useggas aneggaru n master.",
+        "Imεallimen-ineɣmasen n FSO ttwassan i yiselmeden ɣef temsalt."
       ]
     }
   },
@@ -15330,8 +15450,23 @@
     "question": {
       "fr": [
         "Quels types de diplômes peut-on obtenir dans une faculté des sciences ?",
-        "Est-ce qu’il y a des masters à l’université ?",
+        "Est-ce qu'il y a des masters à l'université ?",
         "La faculté délivre-t-elle aussi des doctorats ?"
+      ],
+      "ar": [
+        "ما هي أنواع الشهادات التي يمكن الحصول عليها بكلية العلوم؟",
+        "هل توجد ماستر بالجامعة؟",
+        "هل تمنح الكلية أيضا شهادات الدكتوراه؟"
+      ],
+      "en": [
+        "What types of degrees can be obtained at a science faculty?",
+        "Are there master's degrees at the university?",
+        "Does the faculty also award PhDs?"
+      ],
+      "amz": [
+        "Mani isalan i zemren ad yettwaṛǧen deg tfakultt n tussniwin?",
+        "Llan masterat deg tesdawit?",
+        "Tefakultt tettaε daɣen isalan n doctorat?"
       ]
     },
     "reponse": {
@@ -15339,6 +15474,21 @@
         "Les facultés des sciences proposent généralement des diplômes de Licence (Bac+3), Master (Bac+5) et Doctorat (Bac+8).",
         "Les étudiants peuvent suivre un parcours académique complet, de la première année jusqu'à la thèse.",
         "Certains établissements proposent également des licences professionnelles ou des formations certifiantes."
+      ],
+      "ar": [
+        "تقدم كليات العلوم عادة شهادات الإجازة (باك+3)، الماستر (باك+5) والدكتوراه (باك+8).",
+        "يمكن للطلبة متابعة مسار أكاديمي كامل، من السنة الأولى إلى الأطروحة.",
+        "بعض المؤسسات تقدم أيضا إجازات مهنية أو تكوينات مصادق عليها."
+      ],
+      "en": [
+        "Science faculties generally offer Bachelor's degrees (Bac+3), Master's degrees (Bac+5) and PhDs (Bac+8).",
+        "Students can follow a complete academic path, from the first year to the thesis.",
+        "Some institutions also offer professional bachelor's degrees or certified training."
+      ],
+      "amz": [
+        "Tifakultin n tussniwin s umata tettaken isalan n Licence (Bac+3), Master (Bac+5) d Doctorat (Bac+8).",
+        "Iselmaden zemren ad ḍferen abrid akadimi aččuran, seg useggas amezwaru armi d tsertit.",
+        "Kra n yinɣabaten tettaken daɣen tiliṣiynin usligen neɣ tisdawiyin tusligin."
       ]
     }
   },
@@ -15346,16 +15496,46 @@
     "intent": "Fonction des départements universitaires",
     "question": {
       "fr": [
-        "Quel est le rôle d’un département universitaire ?",
+        "Quel est le rôle d'un département universitaire ?",
         "À quoi sert le département de biologie ?",
         "Les cours sont-ils gérés par les départements ?"
+      ],
+      "ar": [
+        "ما هو دور قسم جامعي؟",
+        "ما هي وظيفة قسم البيولوجيا؟",
+        "هل الدروس تديرها الأقسام؟"
+      ],
+      "en": [
+        "What is the role of a university department?",
+        "What is the biology department for?",
+        "Are courses managed by departments?"
+      ],
+      "amz": [
+        "D acu i d amahil n ufrag n tesdawit?",
+        "D acu i d amahil n ufrag n tbiyulujit?",
+        "D ifragen i yesεan anezzum n yidlsen?"
       ]
     },
     "reponse": {
       "fr": [
         "Les départements universitaires sont responsables de la gestion pédagogique des formations dans leur spécialité.",
         "Ils organisent les cours, les examens, les encadrements de stages et de mémoires.",
-        "Chaque département est animé par un chef de département et composé d’enseignants-chercheurs de la discipline concernée."
+        "Chaque département est animé par un chef de département et composé d'enseignants-chercheurs de la discipline concernée."
+      ],
+      "ar": [
+        "الأقسام الجامعية مسؤولة عن التدبير البيداغوجي للتكوينات في تخصصها.",
+        "تنظم الدروس، الامتحانات، تأطير التداريب والمذكرات.",
+        "كل قسم يشرف عليه رئيس قسم ويتكون من أساتذة باحثين في التخصص المعني."
+      ],
+      "en": [
+        "University departments are responsible for the pedagogical management of training in their specialty.",
+        "They organize courses, exams, internship supervision and dissertations.",
+        "Each department is headed by a department head and composed of teacher-researchers in the relevant discipline."
+      ],
+      "amz": [
+        "Ifragen n tesdawit llan ɣef unedbal n tisdawiyin ɣef temsalt-nsen.",
+        "Ttusgant idlsen, tεribatin, anezzum n yiselmeden d yimawen.",
+        "Yal afrag yesεa ameqqran n ufrag d imεallimen-ineɣmasen ɣef temsalt."
       ]
     }
   },
@@ -15366,13 +15546,43 @@
         "Peut-on s'inscrire à la faculté après le Bac ?",
         "Faut-il passer un concours pour entrer en licence ?",
         "Quel bac faut-il pour aller à la faculté des sciences ?"
+      ],
+      "ar": [
+        "هل يمكن التسجيل بالكلية بعد الباك؟",
+        "هل يجب اجتياز مباراة للدخول إلى الإجازة؟",
+        "أي باك مطلوب للالتحاق بكلية العلوم؟"
+      ],
+      "en": [
+        "Can we register at the faculty after the Bac?",
+        "Is there an entrance exam for the bachelor's degree?",
+        "Which Bac is required to go to the science faculty?"
+      ],
+      "amz": [
+        "Yezmer ad yemṣed deg tfakultt deffir ubak?",
+        "Yessefk ad yeddu ɣer tεribat i usenqed n licence?",
+        "Acu n bak i ilaqen i tfakultt n tussniwin?"
       ]
     },
     "reponse": {
       "fr": [
-        "L’accès en première année de licence (S1) est ouvert à tous les bacheliers, notamment ceux issus des séries scientifiques.",
-        "Aucun concours n’est requis pour entrer en licence fondamentale dans une université publique.",
+        "L'accès en première année de licence (S1) est ouvert à tous les bacheliers, notamment ceux issus des séries scientifiques.",
+        "Aucun concours n'est requis pour entrer en licence fondamentale dans une université publique.",
         "Les bacs scientifiques (SVT, PC, Math) sont les plus adaptés pour les études à la faculté des sciences."
+      ],
+      "ar": [
+        "الدخول إلى السنة الأولى من الإجازة (S1) مفتوح لجميع الحاصلين على الباك، خاصة المسالك العلمية.",
+        "لا يوجد مباراة للدخول إلى الإجازة الأساسية بالجامعة العمومية.",
+        "باك العلوم (SVT, PC, Math) هي الأنسب للدراسة بكلية العلوم."
+      ],
+      "en": [
+        "Access to the first year of the bachelor's degree (S1) is open to all baccalaureate holders, especially those from scientific streams.",
+        "No entrance exam is required for a fundamental bachelor's degree at a public university.",
+        "Scientific baccalaureates (SVT, PC, Math) are the most suitable for studies at the science faculty."
+      ],
+      "amz": [
+        "Anekcum ɣer useggas amezwaru n licence (S1) yella i yal yellan s ubak, d ayen yellan seg tizrawin n tussniwin.",
+        "Ulac tεribat i usenqed n licence deg tesdawit tazayezt.",
+        "Ibakan n tussniwin (SVT, PC, Math) d wid i yettwaεqlen akk i tisdawiyin deg tfakultt n tussniwin."
       ]
     }
   },
@@ -15380,16 +15590,46 @@
     "intent": "Structure des semestres à l'université",
     "question": {
       "fr": [
-        "Comment est organisée l’année universitaire à la FSO ?",
+        "Comment est organisée l'année universitaire à la FSO ?",
         "Combien de semestres y a-t-il dans une licence ?",
         "Quelle est la structure des études universitaires ?"
+      ],
+      "ar": [
+        "كيف تنظم السنة الجامعية بالفاكس؟",
+        "كم عدد الفصول الموجودة في الإجازة؟",
+        "ما هي بنية الدراسات الجامعية؟"
+      ],
+      "en": [
+        "How is the academic year organized at FSO?",
+        "How many semesters are there in a bachelor's degree?",
+        "What is the structure of university studies?"
+      ],
+      "amz": [
+        "Amek i tettwasekcem tasɣunt takadimit deg FSO?",
+        "Acḥal n yisemsteren llan deg licence?",
+        "D acu i d tigezmi n yisdawiyin n tesdawit?"
       ]
     },
     "reponse": {
       "fr": [
-        "L’année universitaire est divisée en deux semestres : un au premier semestre (S1) et un au second semestre (S2).",
+        "L'année universitaire est divisée en deux semestres : un au premier semestre (S1) et un au second semestre (S2).",
         "Une licence se déroule sur trois années, soit six semestres au total : S1 à S6.",
-        "Chaque semestre comprend plusieurs modules, répartis selon la spécialité de l’étudiant (ex: biologie, chimie, etc.)."
+        "Chaque semestre comprend plusieurs modules, répartis selon la spécialité de l'étudiant (ex: biologie, chimie, etc.)."
+      ],
+      "ar": [
+        "تنقسم السنة الجامعية إلى فصلين: الفصل الأول (S1) والفصل الثاني (S2).",
+        "تستمر الإجازة ثلاث سنوات، أي ستة فصول دراسية في المجموع: من S1 إلى S6.",
+        "كل فصل يتضمن عدة وحدات، موزعة حسب تخصص الطالب (مثل: بيولوجيا، كيمياء، إلخ)."
+      ],
+      "en": [
+        "The academic year is divided into two semesters: one in the first semester (S1) and one in the second semester (S2).",
+        "A bachelor's degree lasts three years, i.e. six semesters in total: S1 to S6.",
+        "Each semester includes several modules, distributed according to the student's specialty (e.g. biology, chemistry, etc.)."
+      ],
+      "amz": [
+        "Tasɣunt takadimit tebḍa ɣef sin n yisemsteren: amezwaru (S1) d wis-sin (S2).",
+        "Licence temmal ɣef kraḍ n yiseggasen, neɣ semster sḍis: S1 ar S6.",
+        "Yal asemster yesεa ugar n yimdukal, yemgerrad ɣef temsalt n uselmad (tbiyulujit, asmekti, atg)."
       ]
     }
   },
@@ -15397,10 +15637,28 @@
     "intent": "Travaux Pratiques à la FSO",
     "question": {
       "fr": [
-        "Est-ce qu’il y a des Travaux Pratiques (TP) à la FSO ?",
+        "Est-ce qu'il y a des Travaux Pratiques (TP) à la FSO ?",
         "Comment se déroulent les TP dans les filières scientifiques ?",
         "Les TP sont-ils obligatoires pour valider le module ?",
         "Doit-on porter une blouse pour les TP de chimie ?"
+      ],
+      "ar": [
+        "هل توجد أعمال تطبيقية (TP) بالفاكس؟",
+        "كيف تجري الأعمال التطبيقية في المسالك العلمية؟",
+        "هل الأعمال التطبيقية إجبارية للتحقق من الوحدة؟",
+        "هل يجب ارتداء مريول في الأعمال التطبيقية للكيمياء؟"
+      ],
+      "en": [
+        "Are there Practical Work (TP) at FSO?",
+        "How are TPs conducted in scientific streams?",
+        "Are TPs mandatory to validate the module?",
+        "Should we wear a lab coat for chemistry TPs?"
+      ],
+      "amz": [
+        "Llan iselmeden usligen (TP) deg FSO?",
+        "Amek i tettwaxedment TP deg tizrawin n tussniwin?",
+        "TP ilaq ad yili i usentel n umudkal?",
+        "Yessefk ad nessewḍ taqendurt i TP n usmekti?"
       ]
     },
     "reponse": {
@@ -15409,6 +15667,447 @@
         "Les TP se déroulent en laboratoire et sont encadrés par les enseignants ou techniciens spécialisés.",
         "Ils sont généralement obligatoires et comptent dans la note finale du module.",
         "Dans certains TP (notamment en chimie), il est obligatoire de porter une blouse blanche et de respecter les consignes de sécurité."
+      ],
+      "ar": [
+        "نعم، المسالك العلمية تشمل أعمالا تطبيقية (TP) في عدة وحدات (بيولوجيا، كيمياء، فيزياء، إلخ).",
+        "تجري الأعمال التطبيقية بالمخبر ويشرف عليها أساتذة أو تقنيون متخصصون.",
+        "هي عادة إجبارية وتحسب في النقطة النهائية للوحدة.",
+        "في بعض الأعمال التطبيقية (خاصة الكيمياء)، يجب ارتداء مريول أبيض واحترام تعليمات السلامة."
+      ],
+      "en": [
+        "Yes, scientific streams include Practical Work (TP) in several modules (biology, chemistry, physics, etc.).",
+        "TPs take place in the laboratory and are supervised by teachers or specialized technicians.",
+        "They are generally mandatory and count towards the final module grade.",
+        "For some TPs (especially chemistry), it is mandatory to wear a white lab coat and follow safety instructions."
+      ],
+      "amz": [
+        "Wah, tizrawin n tussniwin sεant iselmeden usligen (TP) deg ugar n yimdukal (tbiyulujit, asmekti, afizik, atg).",
+        "TP tettwaxedm deg uselmed yettwassan s yimεallimen neɣ imseεdiynen usligen.",
+        "S umata ilaq ad yili yettwaεqel deg usentel n umudkal.",
+        "Deg kra n TP (d acu kan asmekti), ilaq ad tessewḍeḍ taqendurt tazegzawt d uqadeṛ n lqanun n tɣellist."
+      ]
+    }
+  },
+  {
+    "intent": "calendar_rentree_universitaire",
+    "question": {
+      "fr": [
+        "Quand commence l'année universitaire ?",
+        "Quelle est la date de la rentrée universitaire ?"
+      ],
+      "en": [
+        "When does the academic year start?",
+        "What is the university reopening date?"
+      ],
+      "ar": [
+        "متى تبدأ السنة الجامعية؟",
+        "ما هو تاريخ الدخول الجامعي؟"
+      ],
+      "amz": [
+        "Melmi ara tbedda useggas n tussna?",
+        "Ma yella tazmert n unekcum n tussna?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La rentrée universitaire commence généralement en septembre. La date exacte est publiée sur le site officiel de la faculté."
+      ],
+      "en": [
+        "The academic year usually starts in September. The exact date is published on the official website of the faculty."
+      ],
+      "ar": [
+        "تبدأ السنة الجامعية عادة في شتنبر. التاريخ المحدد يُنشر على الموقع الرسمي للكلية."
+      ],
+      "amz": [
+        "Useggas n tussna itebda-d s Septamber. Tazmert tidet tettwazen deg usmel web n temdint."
+      ]
+    }
+  },
+  {
+    "intent": "attestation_scolarite_procedure",
+    "question": {
+      "fr": [
+        "Comment obtenir une attestation de scolarité ?",
+        "Où demander une attestation de scolarité ?"
+      ],
+      "en": [
+        "How to get a school certificate?",
+        "Where can I request a certificate of enrollment?"
+      ],
+      "ar": [
+        "كيف يمكنني الحصول على شهادة مدرسية؟",
+        "أين أطلب شهادة التسجيل؟"
+      ],
+      "amz": [
+        "Amek ara fkeɣ tasertit n unekcum?",
+        "Anida ara ssuterɣ tasertit n tussna?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Vous pouvez demander une attestation de scolarité au service de scolarité ou via la plateforme de l’université si disponible."
+      ],
+      "en": [
+        "You can request a certificate of enrollment at the registrar’s office or through the university's online platform if available."
+      ],
+      "ar": [
+        "يمكنك طلب شهادة مدرسية من مصلحة التسجيل أو عبر المنصة الإلكترونية للجامعة إذا كانت متاحة."
+      ],
+      "amz": [
+        "Tzemred ad ssutreḍ tasertit seg uḥuddu n unermas neɣ s usmel n tmezgiwin n temdint ma yella yella."
+      ]
+    }
+  },
+  {
+    "intent": "retrait_diplome",
+    "question": {
+      "fr": [
+        "Comment récupérer mon diplôme ?",
+        "Où retirer mon diplôme obtenu ?"
+      ],
+      "en": [
+        "How to collect my diploma?",
+        "Where can I retrieve my graduation certificate?"
+      ],
+      "ar": [
+        "كيف أستلم دبلومي؟",
+        "من أين يمكنني الحصول على الشهادة؟"
+      ],
+      "amz": [
+        "Amek ara fkeɣ adrar n tdsert?",
+        "Anida ara ttazeɣ tdsert inu?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Pour retirer votre diplôme, présentez-vous au service de scolarité muni d’une pièce d’identité. Vérifiez les horaires d'ouverture avant de vous déplacer."
+      ],
+      "en": [
+        "To collect your diploma, go to the registrar's office with an ID. Check opening hours before visiting."
+      ],
+      "ar": [
+        "لاستلام دبلومك، توجه إلى مصلحة التسجيل مع بطاقة تعريف. تحقق من أوقات العمل مسبقاً."
+      ],
+      "amz": [
+        "Ad tefkeḍ tdsert, rru ɣer uḥuddu n unermas s tazult n tmurt. Ssawel ɣef wakud n lqanun uqbel."
+      ]
+    }
+  },
+  {
+    "intent": "procedure_reinscription",
+    "question": {
+      "fr": [
+        "Comment faire la réinscription ?",
+        "Quelles sont les étapes de réinscription ?"
+      ],
+      "en": [
+        "How to re-enroll for the new academic year?",
+        "What are the steps for re-registration?"
+      ],
+      "ar": [
+        "كيف أقوم بإعادة التسجيل؟",
+        "ما هي خطوات إعادة التسجيل؟"
+      ],
+      "amz": [
+        "Amek ara sserreɣ asireggel?",
+        "Ma d ilugan n usireggel amiran?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La réinscription se fait exclusivement en ligne via l’espace étudiant"
+      ],
+      "en": [
+        "Re-enrollment is done exclusively online via the student portal"
+      ],
+      "ar": [
+        "يتم إعادة التسجيل حصريًا عبر الإنترنت من خلال فضاء الطالب على الرابط"
+      ],
+      "amz": [
+        "Asireggel yettwasel s usmel n tmezgiwin kan, s tansa n umdal n talmid"
+      ]
+    },
+    "meta": {
+      "fr": [
+        "http://scolarite.ump.ma/login"
+      ],
+      "en": [
+        "http://scolarite.ump.ma/login"
+      ],
+      "ar": [
+        "http://scolarite.ump.ma/login"
+      ],
+      "amz": [
+        "http://scolarite.ump.ma/login"
+      ]
+    }
+  },
+  {
+    "intent": "consulter_notes_et_inscriptions",
+    "question": {
+      "fr": [
+        "Comment consulter mes notes ?",
+        "Où puis-je voir mes inscriptions pédagogiques ?",
+        "Comment accéder à mes résultats à la FSO ?"
+      ],
+      "en": [
+        "How can I check my grades?",
+        "Where can I see my course registrations?",
+        "How to access my academic results at FSO?"
+      ],
+      "ar": [
+        "كيف يمكنني الاطلاع على نتائجي؟",
+        "أين أجد تسجيلاتي البيداغوجية؟",
+        "كيف أرى نقاطي في كلية العلوم؟"
+      ],
+      "amz": [
+        "Amek ara ttwaliɣ inig nni?",
+        "Anida ara d-afɣeɣ timessalin n usenfel?",
+        "Amek ara ttwaliɣ imeddukal inu di tfukt?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Les étudiants de la Faculté des Sciences peuvent consulter leurs notes et inscriptions pédagogiques via l’espace étudiant. Utilisez votre numéro Apogée (sans le premier 0) comme identifiant, et votre CNE comme mot de passe."
+      ],
+      "en": [
+        "Students of the Faculty of Science can check their grades and course registrations through the student portal. Use your Apogée number (without the first 0) as login, and your CNE as password."
+      ],
+      "ar": [
+        "يمكن لطلبة كلية العلوم الاطلاع على نتائجهم وتسجيلاتهم عبر فضاء الطالب على الرابط . اسم المستخدم هو رقم أبوجي (بدون الصفر الأول) وكلمة المرور هي رقم CNE."
+      ],
+      "amz": [
+        "I yelḥanen n tfukt, tzemred ad twalin inig nwen d timessalin s usmel n talmid. Seqdec amuddu n Apogée (war awal 0) d ami, akked CNE d awal uffir."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "http://scolarite.ump.ma"
+      ],
+      "en": [
+        "http://scolarite.ump.ma"
+      ],
+      "ar": [
+        "http://scolarite.ump.ma"
+      ],
+      "amz": [
+        "http://scolarite.ump.ma"
+      ]
+    }
+  },
+  {
+    "intent": "espace_etudiant_creation_premiere_fois",
+    "question": {
+      "fr": [
+        "Comment accéder à l'espace étudiant pour la première fois ?",
+        "Que dois-je faire pour activer mon compte scolarité ?",
+        "Comment me connecter pour la première fois sur mon compte de scolarité?"
+      ],
+      "en": [
+        "How to access the student portal for the first time?",
+        "How do I activate my university account?",
+        "How to log in for the first time on scolarité portal?"
+      ],
+      "ar": [
+        "كيف يمكنني الدخول إلى فضاء الطالب لأول مرة؟",
+        "ما هي خطوات تفعيل حسابي الجامعي؟",
+        "كيف أسجل الدخول أول مرة في http://scolarite.ump.ma؟"
+      ],
+      "amz": [
+        "Amek ara kcem ɣer umdal n talmid i tikkelt tamezwarut?",
+        "Ma d ilugan i wakken ad rnuɣ ami n umenzu?",
+        "Amek ara kcem ɣer http://scolarite.ump.ma i tikkelt tamezwarut?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Pour accéder à l’espace étudiant pour la première fois, allez sur http://scolarite.ump.ma. Utilisez votre numéro Apogée (sans le premier 0) comme identifiant et votre CNE comme mot de passe. Vous pourrez ensuite consulter vos notes, inscriptions et informations personnelles."
+      ],
+      "en": [
+        "To access the student portal for the first time, go to http://scolarite.ump.ma. Use your Apogée number (without the first 0) as login and your CNE as password. You can then view your grades, registrations, and personal information."
+      ],
+      "ar": [
+        "للدخول إلى فضاء الطالب لأول مرة، انتقل إلى الرابط http://scolarite.ump.ma. اسم المستخدم هو رقم أبوجي (بدون الصفر الأول)، وكلمة المرور هي رقم CNE. بعدها يمكنك الاطلاع على نتائجك وتسجيلاتك ومعلوماتك الشخصية."
+      ],
+      "amz": [
+        "I wakken ad tkemmeḍ ɣer umdal n talmid i tikkelt tamezwarut, rru ɣer http://scolarite.ump.ma. Seqdec amuddu n Apogée (war awal 0) d ami, akked CNE d awal uffir. Syin, tzemred ad twaliḍ inig, timessalin akked talɣut-inek."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "http://scolarite.ump.ma"
+      ],
+      "en": [
+        "http://scolarite.ump.ma"
+      ],
+      "ar": [
+        "http://scolarite.ump.ma"
+      ],
+      "amz": [
+        "http://scolarite.ump.ma"
+      ]
+    }
+  },
+  {
+    "intent": "email_institutionnel_procedure",
+    "question": {
+      "fr": [
+        "Comment obtenir mon email institutionnel ?",
+        "Où récupérer mon email académique UMP ?",
+        "Je n’ai pas reçu mon adresse email universitaire, que faire ?"
+      ],
+      "en": [
+        "How can I get my institutional email?",
+        "Where can I retrieve my academic email address?",
+        "I haven’t received my UMP email, what should I do?"
+      ],
+      "ar": [
+        "كيف يمكنني الحصول على بريدي الإلكتروني الجامعي؟",
+        "من أين أسترجع البريد الأكاديمي الخاص بي؟",
+        "لم أتوصل ببريدي الجامعي، ماذا أفعل؟"
+      ],
+      "amz": [
+        "Amek ara fkeɣ imayl inu n tmura?",
+        "Anida ara ttazeɣ imayl akademi?",
+        "Ur d-fkeɣ imayl n UMP, d acu ara rnuɣ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Vous pouvez récupérer votre email institutionnel en vous rendant sur http://recupmail.ump.ma. En cas de problème ou de réclamation, veuillez envoyer un email à : reclamation_fso@ump.ac.ma."
+      ],
+      "en": [
+        "You can retrieve your institutional email by visiting http://recupmail.ump.ma. For any issues or claims, please contact: reclamation_fso@ump.ac.ma."
+      ],
+      "ar": [
+        "يمكنك استرجاع بريدك الجامعي من خلال الموقع: http://recupmail.ump.ma. في حالة وجود مشكل أو استفسار، يرجى التواصل عبر البريد: reclamation_fso@ump.ac.ma."
+      ],
+      "amz": [
+        "Tzemred ad treɣ imayl n tmura ɣer http://recupmail.ump.ma. Ma yella urgaz, azen imayl ɣer: reclamation_fso@ump.ac.ma."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "http://recupmail.ump.ma",
+        "mailto: reclamation_fso@ump.ac.ma"
+      ],
+      "en": [
+        "http://recupmail.ump.ma",
+        "mailto: reclamation_fso@ump.ac.ma"
+      ],
+      "ar": [
+        "http://recupmail.ump.ma",
+        "mailto: reclamation_fso@ump.ac.ma"
+      ],
+      "amz": [
+        "http://recupmail.ump.ma",
+        "mailto: reclamation_fso@ump.ac.ma"
+      ]
+    }
+  },
+  {
+    "intent": "inscription_doctorants_2025_2026",
+    "question": {
+      "fr": [
+        "Comment s'inscrire en doctorat pour l'année 2025-2026 ?",
+        "Procédure de réinscription des doctorants 2025-2026 ?",
+        "Dates et modalités d’inscription pour les nouveaux doctorants ?"
+      ],
+      "en": [
+        "How to enroll in a PhD program for the year 2025-2026?",
+        "What is the re-registration procedure for doctoral students 2025-2026?",
+        "Dates and process for new doctoral student registration?"
+      ],
+      "ar": [
+        "كيف يتم التسجيل في سلك الدكتوراه لسنة 2025-2026؟",
+        "ما هي إجراءات إعادة تسجيل طلبة الدكتوراه؟",
+        "ما هي مواعيد وشروط تسجيل الطلبة الجدد في الدكتوراه؟"
+      ],
+      "amz": [
+        "Amek ara d-rnuɣ asireggel deg doctorate i useggas 2025-2026?",
+        "D acu d tarrayin n usireggel amiran n yiduktranen?",
+        "Melmi d usiwan n usireggel n yiduktranen imaynuten?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La réinscription et l’inscription des nouveaux doctorants pour l’année universitaire 2025-2026 se fait conformément aux modalités précisées dans l’annonce officielle publiée sur le site de la FSO. Veuillez consulter le lien suivant pour plus de détails : http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ],
+      "en": [
+        "Re-registration and registration of new PhD students for the academic year 2025-2026 are carried out according to the procedures published on the FSO official website. Please check this link for details: http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ],
+      "ar": [
+        "يتم تسجيل وإعادة تسجيل طلبة الدكتوراه للسنة الجامعية 2025-2026 وفقًا للشروط المذكورة في الإعلان الرسمي المنشور على موقع الكلية. المرجو زيارة الرابط التالي للمزيد من المعلومات: http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ],
+      "amz": [
+        "Asireggel d usireggel amiran n yiduktranen i useggas 2025-2026 yettwazal akken i d-yettwazen deg usiwan uslig n FSO. Ttali ugar deg useɣwen-a: http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ]
+    },
+    "meta": {
+      "fr": [
+        "http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ],
+      "en": [
+        "http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ],
+      "ar": [
+        "http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ],
+      "amz": [
+        "http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
+      ]
+    }
+  },
+  {
+    "intent": "activation_compte_ithenticate_doctorants",
+    "question": {
+      "fr": [
+        "Comment activer mon compte iThenticate ?",
+        "Quels doctorants doivent activer leur compte iThenticate ?",
+        "Où envoyer mes informations pour iThenticate ?"
+      ],
+      "en": [
+        "How can I activate my iThenticate account?",
+        "Which PhD students are concerned by the iThenticate activation?",
+        "Where should I send my information for iThenticate?"
+      ],
+      "ar": [
+        "كيف أفعل حسابي على iThenticate؟",
+        "من هم الطلبة المعنيون بتفعيل iThenticate؟",
+        "إلى أين أرسل معلوماتي لتفعيل iThenticate؟"
+      ],
+      "amz": [
+        "Amek ara rnuɣ ami n iThenticate?",
+        "Ma yellan i d-yettwawalen s iThenticate?",
+        "Anida ara azen talɣut-iw i iThenticate?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Les doctorants inscrits à partir de la 3ᵉ année sont invités à activer leur compte iThenticate. Ils doivent envoyer leur **nom et prénom**, **e-mail académique** et **établissement** à l’adresse suivante : **k.chaabane@ump.ac.ma** avant le **8 janvier 2025**."
+      ],
+      "en": [
+        "PhD students enrolled from the 3rd year onward are required to activate their iThenticate account. They must send their **full name**, **academic email**, and **institution** to the following address: **k.chaabane@ump.ac.ma** by **January 8, 2025**."
+      ],
+      "ar": [
+        "يُطلب من طلبة الدكتوراه المسجلين ابتداءً من السنة الثالثة تفعيل حسابهم على iThenticate. يجب إرسال **الاسم الكامل**، **البريد الإلكتروني الأكاديمي**، و**المؤسسة** إلى العنوان التالي: **k.chaabane@ump.ac.ma** قبل **8 يناير 2025**."
+      ],
+      "amz": [
+        "Yelḥanen n doctorate seg useggas 3 sdat ad rnunt ami n iThenticate. Fellasen ad azen **isem akked yisem n baba**, **imayl n tmura**, akked **taɣult** ɣer: **k.chaabane@ump.ac.ma** send **08 yanayir 2025**."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "mailto:k.chaabane@ump.ac.ma"
+      ],
+      "en": [
+        "mailto:k.chaabane@ump.ac.ma"
+      ],
+      "ar": [
+        "mailto:k.chaabane@ump.ac.ma"
+      ],
+      "amz": [
+        "mailto:k.chaabane@ump.ac.ma"
       ]
     }
   }

@@ -176,14 +176,13 @@ def google_search_and_extract(query, lang, max_results=10):
             });
         """)
 
-        # 🔍 Recherche ciblée sur les domaines whitelistés
-        filtered_query = f"site:fso.ump.ma OR site:ump.ma OR site:cg.gov.ma {query}"
+        filtered_query = f"site:fso.ump.ma OR site:cg.gov.ma {query}"
         search_url = f"https://www.google.com/search?q={filtered_query}&num={max_results}&hl={lang}"
 
         try:
             print(f"🔍 Navigation vers: {search_url}")
             # page.goto(search_url)
-            page.goto(search_url, wait_until="domcontentloaded", timeout=60000)
+            page.goto(search_url, wait_until="domcontentloaded", timeout=8000000)
             print(f"✅ Page chargée avec succès")
             
         except Exception as e:
@@ -209,7 +208,7 @@ def google_search_and_extract(query, lang, max_results=10):
             for selector in consent_selectors:
                 try:
                     consent_button = page.locator(selector)
-                    if consent_button.is_visible(timeout=2000):
+                    if consent_button.is_visible(timeout=200000):
                         consent_button.click()
                         page.wait_for_load_state('networkidle')
                         break
@@ -383,7 +382,7 @@ def google_search_and_extract(query, lang, max_results=10):
             print("🔄 Tentative de recherche plus large...")
             
             # Recherche sans restriction de domaine pour debug
-            broader_query = query
+            broader_query = query + "faculté des sciences oujda"
             broader_url = f"https://www.google.com/search?q={broader_query}&num=5&hl={lang}"
             
             try:
@@ -468,7 +467,7 @@ def afficher_resultats(resultats):
         
         print("-" * 80)
 
-def test(qst: str, lang : str):
+async def test(qst: str, lang : str):
     # Effectuer la recherche
     search_results = google_search_and_extract(qst, lang, max_results=15)
     
