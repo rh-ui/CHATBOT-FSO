@@ -11,3 +11,6 @@ uvicorn app:app --reload
 ```
 
 
+```bash
+npm run dev
+```
