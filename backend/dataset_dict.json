@@ -1,5 +1,5 @@
-[
-  {
+{
+  "fso doyen nom mot-du-doyen": {
     "intent": "fso doyen nom mot-du-doyen",
     "question": {
       "fr": [
@@ -46,7 +46,7 @@
       ]
     }
   },
-  {
+  "faculty_general_info": {
     "intent": "faculty_general_info",
     "question": {
       "fr": [
@@ -99,7 +99,7 @@
       ]
     }
   },
-  {
+  "faculty_main_contact": {
     "intent": "faculty_main_contact",
     "question": {
       "fr": [
@@ -152,7 +152,7 @@
       ]
     }
   },
-  {
+  "registrar_office_contact": {
     "intent": "registrar_office_contact",
     "question": {
       "fr": [
@@ -191,7 +191,7 @@
       ]
     }
   },
-  {
+  "administration_contact": {
     "intent": "administration_contact",
     "question": {
       "fr": [
@@ -230,7 +230,7 @@
       ]
     }
   },
-  {
+  "library_contact": {
     "intent": "library_contact",
     "question": {
       "fr": [
@@ -269,7 +269,7 @@
       ]
     }
   },
-  {
+  "it_support_contact": {
     "intent": "it_support_contact",
     "question": {
       "fr": [
@@ -308,7 +308,7 @@
       ]
     }
   },
-  {
+  "director_contact": {
     "intent": "director_contact",
     "question": {
       "fr": [
@@ -347,7 +347,7 @@
       ]
     }
   },
-  {
+  "pedagogical_responsible_contact": {
     "intent": "pedagogical_responsible_contact",
     "question": {
       "fr": [
@@ -386,7 +386,7 @@
       ]
     }
   },
-  {
+  "math_department_contact": {
     "intent": "math_department_contact",
     "question": {
       "fr": [
@@ -425,7 +425,7 @@
       ]
     }
   },
-  {
+  "physics_department_contact": {
     "intent": "physics_department_contact",
     "question": {
       "fr": [
@@ -464,7 +464,7 @@
       ]
     }
   },
-  {
+  "chemistry_department_contact": {
     "intent": "chemistry_department_contact",
     "question": {
       "fr": [
@@ -503,7 +503,7 @@
       ]
     }
   },
-  {
+  "biology_department_contact": {
     "intent": "biology_department_contact",
     "question": {
       "fr": [
@@ -542,7 +542,7 @@
       ]
     }
   },
-  {
+  "computer_science_department_contact": {
     "intent": "computer_science_department_contact",
     "question": {
       "fr": [
@@ -581,7 +581,7 @@
       ]
     }
   },
-  {
+  "emergency_security_contact": {
     "intent": "emergency_security_contact",
     "question": {
       "fr": [
@@ -620,7 +620,7 @@
       ]
     }
   },
-  {
+  "emergency_medical_contact": {
     "intent": "emergency_medical_contact",
     "question": {
       "fr": [
@@ -659,7 +659,7 @@
       ]
     }
   },
-  {
+  "faculty_fax_number": {
     "intent": "faculty_fax_number",
     "question": {
       "fr": [
@@ -698,7 +698,7 @@
       ]
     }
   },
-  {
+  "faculty_alternative_phones": {
     "intent": "faculty_alternative_phones",
     "question": {
       "fr": [
@@ -737,7 +737,7 @@
       ]
     }
   },
-  {
+  "university_presidency_info": {
     "intent": "university_presidency_info",
     "question": {
       "fr": [
@@ -776,7 +776,7 @@
       ]
     }
   },
-  {
+  "university_presidency_fax": {
     "intent": "university_presidency_fax",
     "question": {
       "fr": [
@@ -815,7 +815,7 @@
       ]
     }
   },
-  {
+  "ciove_contact": {
     "intent": "ciove_contact",
     "question": {
       "fr": [
@@ -854,7 +854,7 @@
       ]
     }
   },
-  {
+  "ciove_fax": {
     "intent": "ciove_fax",
     "question": {
       "fr": [
@@ -893,7 +893,7 @@
       ]
     }
   },
-  {
+  "library_alternative_numbers": {
     "intent": "library_alternative_numbers",
     "question": {
       "fr": [
@@ -932,7 +932,7 @@
       ]
     }
   },
-  {
+  "faculty_website": {
     "intent": "faculty_website",
     "question": {
       "fr": [
@@ -985,7 +985,7 @@
       ]
     }
   },
-  {
+  "all_departments_list": {
     "intent": "all_departments_list",
     "question": {
       "fr": [
@@ -1024,7 +1024,7 @@
       ]
     }
   },
-  {
+  "department_contacts_general": {
     "intent": "department_contacts_general",
     "question": {
       "fr": [
@@ -1083,7 +1083,7 @@
       ]
     }
   },
-  {
+  "emergency_contacts_all": {
     "intent": "emergency_contacts_all",
     "question": {
       "fr": [
@@ -1130,7 +1130,7 @@
       ]
     }
   },
-  {
+  "secondary_address_library": {
     "intent": "secondary_address_library",
     "question": {
       "fr": [
@@ -1169,7 +1169,7 @@
       ]
     }
   },
-  {
+  "presidency_vs_faculty_address": {
     "intent": "presidency_vs_faculty_address",
     "question": {
       "fr": [
@@ -1208,7 +1208,7 @@
       ]
     }
   },
-  {
+  "ciove_location_details": {
     "intent": "ciove_location_details",
     "question": {
       "fr": [
@@ -1247,7 +1247,7 @@
       ]
     }
   },
-  {
+  "all_faculty_emails": {
     "intent": "all_faculty_emails",
     "question": {
       "fr": [
@@ -1334,7 +1334,7 @@
       ]
     }
   },
-  {
+  "all_faculty_phones": {
     "intent": "all_faculty_phones",
     "question": {
       "fr": [
@@ -1429,7 +1429,7 @@
       ]
     }
   },
-  {
+  "examen_du_semestre_de_printemps_2024_2025": {
     "intent": "examen_du_semestre_de_printemps_2024_2025",
     "question": {
       "fr": [
@@ -1474,7 +1474,7 @@
       ]
     }
   },
-  {
+  "theses_soutenues": {
     "intent": "theses_soutenues",
     "question": {
       "fr": [
@@ -1519,7 +1519,7 @@
       ]
     }
   },
-  {
+  "cedocst": {
     "intent": "cedocst",
     "question": {
       "fr": [
@@ -1564,7 +1564,7 @@
       ]
     }
   },
-  {
+  "conseil_de_la_faculte": {
     "intent": "conseil_de_la_faculte",
     "question": {
       "fr": [
@@ -1609,7 +1609,7 @@
       ]
     }
   },
-  {
+  "conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values": {
     "intent": "conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values",
     "question": {
       "fr": [
@@ -1654,7 +1654,7 @@
       ]
     }
   },
-  {
+  "characterization_of_the_polyphenolic_fraction": {
     "intent": "characterization_of_the_polyphenolic_fraction",
     "question": {
       "fr": [
@@ -1699,7 +1699,7 @@
       ]
     }
   },
-  {
+  "evaluation_interne_et_formation_continue": {
     "intent": "evaluation_interne_et_formation_continue",
     "question": {
       "fr": [
@@ -1744,7 +1744,7 @@
       ]
     }
   },
-  {
+  "portail_des_revues_scientifiques_marocaines_imist": {
     "intent": "portail_des_revues_scientifiques_marocaines_imist",
     "question": {
       "fr": [
@@ -1789,7 +1789,7 @@
       ]
     }
   },
-  {
+  "acces_a_la_bibliotheque": {
     "intent": "acces_a_la_bibliotheque",
     "question": {
       "fr": [
@@ -1834,7 +1834,7 @@
       ]
     }
   },
-  {
+  "demande_de_releve_de_notes": {
     "intent": "demande_de_releve_de_notes",
     "question": {
       "fr": [
@@ -1879,7 +1879,7 @@
       ]
     }
   },
-  {
+  "inscription_aux_examens": {
     "intent": "inscription_aux_examens",
     "question": {
       "fr": [
@@ -1924,7 +1924,7 @@
       ]
     }
   },
-  {
+  "calendrier_universitaire": {
     "intent": "calendrier_universitaire",
     "question": {
       "fr": [
@@ -1969,7 +1969,7 @@
       ]
     }
   },
-  {
+  "bourses_et_aides": {
     "intent": "bourses_et_aides",
     "question": {
       "fr": [
@@ -2014,7 +2014,7 @@
       ]
     }
   },
-  {
+  "contacts_et_services": {
     "intent": "contacts_et_services",
     "question": {
       "fr": [
@@ -2059,7 +2059,7 @@
       ]
     }
   },
-  {
+  "formations_licence_et_master": {
     "intent": "formations_licence_et_master",
     "question": {
       "fr": [
@@ -2104,7 +2104,7 @@
       ]
     }
   },
-  {
+  "doctorat_et_cedocst": {
     "intent": "doctorat_et_cedocst",
     "question": {
       "fr": [
@@ -2149,7 +2149,7 @@
       ]
     }
   },
-  {
+  "stages_et_pfe": {
     "intent": "stages_et_pfe",
     "question": {
       "fr": [
@@ -2194,7 +2194,7 @@
       ]
     }
   },
-  {
+  "demande_de_carte_d_etudiant": {
     "intent": "demande_de_carte_d_etudiant",
     "question": {
       "fr": [
@@ -2239,7 +2239,7 @@
       ]
     }
   },
-  {
+  "reglement_interieur": {
     "intent": "reglement_interieur",
     "question": {
       "fr": [
@@ -2284,7 +2284,7 @@
       ]
     }
   },
-  {
+  "procedure_de_reclamation": {
     "intent": "procedure_de_reclamation",
     "question": {
       "fr": [
@@ -2329,7 +2329,7 @@
       ]
     }
   },
-  {
+  "clubs_et_activites": {
     "intent": "clubs_et_activites",
     "question": {
       "fr": [
@@ -2374,7 +2374,7 @@
       ]
     }
   },
-  {
+  "partenariats_et_conventions": {
     "intent": "partenariats_et_conventions",
     "question": {
       "fr": [
@@ -2419,7 +2419,7 @@
       ]
     }
   },
-  {
+  "publications_scientifiques": {
     "intent": "publications_scientifiques",
     "question": {
       "fr": [
@@ -2464,7 +2464,7 @@
       ]
     }
   },
-  {
+  "mobilite_et_echanges": {
     "intent": "mobilite_et_echanges",
     "question": {
       "fr": [
@@ -2509,7 +2509,7 @@
       ]
     }
   },
-  {
+  "evenements_et_colloques": {
     "intent": "evenements_et_colloques",
     "question": {
       "fr": [
@@ -2554,7 +2554,7 @@
       ]
     }
   },
-  {
+  "ressources_numeriques": {
     "intent": "ressources_numeriques",
     "question": {
       "fr": [
@@ -2599,7 +2599,7 @@
       ]
     }
   },
-  {
+  "faq_generale": {
     "intent": "faq_generale",
     "question": {
       "fr": [
@@ -2644,7 +2644,7 @@
       ]
     }
   },
-  {
+  "services_aux_etudiants": {
     "intent": "services_aux_etudiants",
     "question": {
       "fr": [
@@ -2689,7 +2689,7 @@
       ]
     }
   },
-  {
+  "guide_de_l_etudiant": {
     "intent": "guide_de_l_etudiant",
     "question": {
       "fr": [
@@ -2734,7 +2734,7 @@
       ]
     }
   },
-  {
+  "presentation_de_la_fso": {
     "intent": "presentation_de_la_fso",
     "question": {
       "fr": [
@@ -2779,7 +2779,7 @@
       ]
     }
   },
-  {
+  "apogee_information": {
     "intent": "apogee_information",
     "question": {
       "fr": [
@@ -2824,7 +2824,7 @@
       ]
     }
   },
-  {
+  "communiques_fso": {
     "intent": "communiques_fso",
     "question": {
       "fr": [
@@ -2869,7 +2869,7 @@
       ]
     }
   },
-  {
+  "waste_management_event": {
     "intent": "waste_management_event",
     "question": {
       "fr": [
@@ -2914,7 +2914,7 @@
       ]
     }
   },
-  {
+  "earth_sciences_info": {
     "intent": "earth_sciences_info",
     "question": {
       "fr": [
@@ -2959,7 +2959,7 @@
       ]
     }
   },
-  {
+  "cap_presentation": {
     "intent": "cap_presentation",
     "question": {
       "fr": [
@@ -3004,7 +3004,7 @@
       ]
     }
   },
-  {
+  "information_about_professional_license": {
     "intent": "information_about_professional_license",
     "question": {
       "fr": [
@@ -3049,7 +3049,7 @@
       ]
     }
   },
-  {
+  "eco_anxiety_conference_info": {
     "intent": "eco_anxiety_conference_info",
     "question": {
       "fr": [
@@ -3094,7 +3094,7 @@
       ]
     }
   },
-  {
+  "geology_department_info": {
     "intent": "geology_department_info",
     "question": {
       "fr": [
@@ -3139,7 +3139,7 @@
       ]
     }
   },
-  {
+  "doctoral_ceremony_info": {
     "intent": "doctoral_ceremony_info",
     "question": {
       "fr": [
@@ -3184,7 +3184,7 @@
       ]
     }
   },
-  {
+  "academic_programs_licence": {
     "intent": "academic_programs_licence",
     "question": {
       "fr": [
@@ -3241,232 +3241,7 @@
       ]
     }
   },
-  {
-    "intent": "conference_information",
-    "question": {
-      "fr": [
-        "Quelles sont les informations disponibles sur la conférence 'Lumières et Lumière' ?"
-      ],
-      "en": [
-        "What information is available about the 'Lights and Light' conference?"
-      ],
-      "ar": [
-        "ما هي المعلومات المتوفرة عن مؤتمر 'أضواء ونور'؟"
-      ],
-      "amz": [
-        "ⴰⵎⴽ ⵉⵙⵙⵏⵏⵉ ⵉⵍⵍⴰ ⵉⵙⵙⵎⵔⴰⵏ ⵖ ⵓⵎⵙⵙⵏⵉ ⵏ 'ⵜⵉⵏⵡⴰⵍⵉⵏ ⴷ ⵜⵉⵏⵡⴰⵍⵉⵏ'?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "La conférence 'Lumières et Lumière' est disponible sur notre plateforme avec des détails complets. Vous pouvez accéder à toutes les informations via le lien suivant."
-      ],
-      "en": [
-        "The 'Lights and Light' conference is available on our platform with full details. You can access all information through the following link."
-      ],
-      "ar": [
-        "المؤتمر 'أضواء ونور' متاح على منصتنا مع تفاصيل كاملة. يمكنك الوصول إلى جميع المعلومات عبر الرابط التالي."
-      ],
-      "amz": [
-        "ⵓⵎⵙⵙⵏⵉ ⵏ 'ⵜⵉⵏⵡⴰⵍⵉⵏ ⴷ ⵜⵉⵏⵡⴰⵍⵉⵏ' ⵉⵍⵍⴰ ⴷ ⵜⵜⵓⵙⵙⵏⴰ ⵖ ⵓⵙⵔⴰⵢ ⵏⵖ. ⵜⵥⵔⴰⵜ ⴰⴷ ⵜⴰⵡⵙⴰ ⵙ ⵉⵎⵉⵙ ⵙⵖⵏ ⵙ ⵓⵙⵉⵍⵉ ⵏ ⵢⴰⴷⵙ."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/conferences-1/lumieres-et-lumiere"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/conferences-1/lumieres-et-lumiere"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/conferences-1/lumieres-et-lumiere"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/conferences-1/lumieres-et-lumiere"
-      ]
-    }
-  },
-  {
-    "intent": "general_conferences",
-    "question": {
-      "fr": [
-        "Où puis-je trouver la liste des conférences disponibles ?"
-      ],
-      "en": [
-        "Where can I find the list of available conferences?"
-      ],
-      "ar": [
-        "أين يمكنني العثور على قائمة المؤتمرات المتاحة؟"
-      ],
-      "amz": [
-        "ⵎⵉⵏⵖ ⵥⵔⴰⵖ ⴰⴷ ⵙⵙⵏⵖ ⵜⴰⵏⵎⵉⵔⵜ ⵏ ⵉⵎⵙⵙⵏⵉⵏ ⵉⵍⵍⴰⵏ?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "La liste complète de toutes nos conférences est disponible sur notre page dédiée aux conférences. Accédez-y via ce lien."
-      ],
-      "en": [
-        "The complete list of all our conferences is available on our dedicated conferences page. Access it via this link."
-      ],
-      "ar": [
-        "القائمة الكاملة لجميع مؤتمراتنا متاحة على صفحة المؤتمرات المخصصة. الوصول إليها عبر هذا الرابط."
-      ],
-      "amz": [
-        "ⵜⴰⵏⵎⵉⵔⵜ ⵜⴰⵎⴰⵜⵜⴰⵜ ⵏ ⵉⵎⵙⵙⵏⵉⵏ ⵏⵖⵎ ⵜⵜⵓⵙⵙⵏⴰ ⵖ ⵓⵙⵜⵉ ⵏⵖⵎ ⵏ ⵉⵎⵙⵙⵏⵉⵏ. ⵙⴰⵖⵎ ⵜⵜ ⵙ ⵓⵙⵉⵍⵉ ⵢⴰⴷⵙ."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/conferences"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/conferences"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/conferences"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/conferences"
-      ]
-    }
-  },
-  {
-    "intent": "conference_section_access",
-    "question": {
-      "fr": [
-        "Comment accéder à la section des conférences-1 ?"
-      ],
-      "en": [
-        "How to access the conferences-1 section?"
-      ],
-      "ar": [
-        "كيف يمكن الوصول إلى قسم المؤتمرات-1؟"
-      ],
-      "amz": [
-        "ⵎⴰⵏⵎⴽ ⵢⵓⵙⴰ ⴰⴷ ⵜⵥⵔⴰⵖ ⵙ ⵜⴰⵎⵓⵔⵜ ⵏ ⵉⵎⵙⵙⵏⵉⵏ-1?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "La section conférences-1 est accessible via ce lien direct qui vous mènera à toutes les conférences de cette catégorie."
-      ],
-      "en": [
-        "The conferences-1 section is accessible via this direct link that will lead you to all conferences in this category."
-      ],
-      "ar": [
-        "قسم المؤتمرات-1 يمكن الوصول إليه عبر هذا الرابط المباشر الذي سينقلك إلى جميع المؤتمرات في هذه الفئة."
-      ],
-      "amz": [
-        "ⵜⴰⵎⵓⵔⵜ ⵏ ⵉⵎⵙⵙⵏⵉⵏ-1 ⵜⵥⵔⴰⵜ ⵙ ⵓⵙⵉⵍⵉ ⴰⵏⴰⵢⵙⵍⵉ ⵢⴰⴷ ⴰⴷ ⵉⵙⵙⵏⴽ ⴰⵏⵙ ⵙ ⵉⵎⵙⵙⵏⵉⵏ ⵏ ⵜⴰⵎⵓⵔⵜ ⵢⴰⴷⵙ."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/conferences-1"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/conferences-1"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/conferences-1"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/conferences-1"
-      ]
-    }
-  },
-  {
-    "intent": "news_article_access",
-    "question": {
-      "fr": [
-        "Où trouver l'article 'Eaalan aan mbaryat tothyf' ?"
-      ],
-      "en": [
-        "Where to find the 'Eaalan aan mbaryat tothyf' article?"
-      ],
-      "ar": [
-        "أين يمكن العثور على مقال 'إعلان عن مبريات توتيف'؟"
-      ],
-      "amz": [
-        "ⵎⵉⵏⵖ ⵥⵔⴰⵖ ⴰⴷ ⵙⵙⵏⵖ ⴰⵎⵙⴰⵢ 'ⵄⵍⴰⵏ ⵄⴰⵏ ⵎⴱⴰⵔⵢⴰⵜ ⵜⵓⵜⵀⵢⴼ'?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "L'article 'Eaalan aan mbaryat tothyf' est disponible dans notre section actualité. Consultez-le via ce lien direct."
-      ],
-      "en": [
-        "The article 'Eaalan aan mbaryat tothyf' is available in our news section. View it via this direct link."
-      ],
-      "ar": [
-        "مقال 'إعلان عن مبريات توتيف' متاح في قسم الأخبار. يمكنك الاطلاع عليه عبر هذا الرابط المباشر."
-      ],
-      "amz": [
-        "ⴰⵎⵙⴰⵢ 'ⵄⵍⴰⵏ ⵄⴰⵏ ⵎⴱⴰⵔⵢⴰⵜ ⵜⵓⵜⵀⵢⴼ' ⵉⵍⵍⴰ ⴷ ⵜⵜⵓⵙⵙⵏⴰ ⵖ ⵜⴰⵎⵓⵔⵜ ⵏ ⵉⵙⵏⵖⵔⴰⵙⵏ. ⵙⴰⵖⵎ ⵜⵜ ⵙ ⵓⵙⵉⵍⵉ ⴰⵏⴰⵢⵙⵍⵉ ⵢⴰⴷⵙ."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/actualite/eaalan-aan-mbaryat-tothyf"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/actualite/eaalan-aan-mbaryat-tothyf"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/actualite/eaalan-aan-mbaryat-tothyf"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/actualite/eaalan-aan-mbaryat-tothyf"
-      ]
-    }
-  },
-  {
-    "intent": "event_details",
-    "question": {
-      "fr": [
-        "Quels sont les détails de l'événement 'Analyse des données' ?"
-      ],
-      "en": [
-        "What are the details of the 'Data Analysis' event?"
-      ],
-      "ar": [
-        "ما هي تفاصيل فعالية 'تحليل البيانات'؟"
-      ],
-      "amz": [
-        "ⵎⴰⵏⵎⴽ ⵢⵓⵙⴰ ⴰⴷ ⵜⵥⵔⴰⵖ ⵉⵎⵉⵙ ⵏ ⵜⴰⵏⵎⵓⵔⵜ 'ⴰⵙⵙⵏⴼⵍⵓ ⵏ ⵉⵙⴼⴽⴰ'?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "L'événement 'Analyse des données' présente des informations complètes sur les techniques d'analyse. Tous les détails sont disponibles via ce lien."
-      ],
-      "en": [
-        "The 'Data Analysis' event provides complete information about analysis techniques. All details are available via this link."
-      ],
-      "ar": [
-        "تقدم فعالية 'تحليل البيانات' معلومات كاملة عن تقنيات التحليل. جميع التفاصيل متاحة عبر هذا الرابط."
-      ],
-      "amz": [
-        "ⵜⴰⵏⵎⵓⵔⵜ 'ⴰⵙⵙⵏⴼⵍⵓ ⵏ ⵉⵙⴼⴽⴰ' ⵜⵜⵏⵏⴰ ⵉⵙⵏⵖⵔⴰⵙⵏ ⵜⴰⵎⴰⵜⵜⴰⵜ ⵖ ⵜⵉⵏⵎⵉⵜⵉⵏ ⵏ ⵓⵙⵙⵏⴼⵍⵓ. ⵉⵎⵉⵙ ⵎⵔⵔⵏⴰ ⵜⵜⵓⵙⵙⵏⴰ ⵙ ⵓⵙⵉⵍⵉ ⵢⴰⴷⵙ."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/event/analyse-des-donnees"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/event/analyse-des-donnees"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/event/analyse-des-donnees"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/event/analyse-des-donnees"
-      ]
-    }
-  },
-  {
+  "conference_information": {
     "intent": "conference_information",
     "question": {
       "fr": [
@@ -3511,7 +3286,7 @@
       ]
     }
   },
-  {
+  "general_conferences": {
     "intent": "general_conferences",
     "question": {
       "fr": [
@@ -3556,34 +3331,34 @@
       ]
     }
   },
-  {
-    "intent": "conference_series",
+  "conference_section_access": {
+    "intent": "conference_section_access",
     "question": {
       "fr": [
-        "Où puis-je trouver la série de conférences numéro 1 ?"
+        "Comment accéder à la section des conférences-1 ?"
       ],
       "en": [
-        "Where can I find conference series number 1?"
+        "How to access the conferences-1 section?"
       ],
       "ar": [
-        "أين يمكنني العثور على سلسلة المؤتمرات رقم 1؟"
+        "كيف يمكن الوصول إلى قسم المؤتمرات-1؟"
       ],
       "amz": [
-        ""
+        "ⵎⴰⵏⵎⴽ ⵢⵓⵙⴰ ⴰⴷ ⵜⵥⵔⴰⵖ ⵙ ⵜⴰⵎⵓⵔⵜ ⵏ ⵉⵎⵙⵙⵏⵉⵏ-1?"
       ]
     },
     "reponse": {
       "fr": [
-        "La première série de nos conférences est disponible sur notre plateforme."
+        "La section conférences-1 est accessible via ce lien direct qui vous mènera à toutes les conférences de cette catégorie."
       ],
       "en": [
-        "The first series of our conferences is available on our platform."
+        "The conferences-1 section is accessible via this direct link that will lead you to all conferences in this category."
       ],
       "ar": [
-        "السلسلة الأولى من مؤتمراتنا متاحة على منصتنا."
+        "قسم المؤتمرات-1 يمكن الوصول إليه عبر هذا الرابط المباشر الذي سينقلك إلى جميع المؤتمرات في هذه الفئة."
       ],
       "amz": [
-        ""
+        "ⵜⴰⵎⵓⵔⵜ ⵏ ⵉⵎⵙⵙⵏⵉⵏ-1 ⵜⵥⵔⴰⵜ ⵙ ⵓⵙⵉⵍⵉ ⴰⵏⴰⵢⵙⵍⵉ ⵢⴰⴷ ⴰⴷ ⵉⵙⵙⵏⴽ ⴰⵏⵙ ⵙ ⵉⵎⵙⵙⵏⵉⵏ ⵏ ⵜⴰⵎⵓⵔⵜ ⵢⴰⴷⵙ."
       ]
     },
     "meta": {
@@ -3601,34 +3376,34 @@
       ]
     }
   },
-  {
-    "intent": "news_announcement",
+  "news_article_access": {
+    "intent": "news_article_access",
     "question": {
       "fr": [
-        "Où puis-je voir l'annonce concernant 'Eaalan Aan Mbaryat Tothyf' ?"
+        "Où trouver l'article 'Eaalan aan mbaryat tothyf' ?"
       ],
       "en": [
-        "Where can I see the announcement about 'Eaalan Aan Mbaryat Tothyf'?"
+        "Where to find the 'Eaalan aan mbaryat tothyf' article?"
       ],
       "ar": [
-        "أين يمكنني رؤية الإعلان حول 'اعلان عن مبريات توجيه'؟"
+        "أين يمكن العثور على مقال 'إعلان عن مبريات توتيف'؟"
       ],
       "amz": [
-        ""
+        "ⵎⵉⵏⵖ ⵥⵔⴰⵖ ⴰⴷ ⵙⵙⵏⵖ ⴰⵎⵙⴰⵢ 'ⵄⵍⴰⵏ ⵄⴰⵏ ⵎⴱⴰⵔⵢⴰⵜ ⵜⵓⵜⵀⵢⴼ'?"
       ]
     },
     "reponse": {
       "fr": [
-        "Cette annonce importante est disponible dans notre section actualités."
+        "L'article 'Eaalan aan mbaryat tothyf' est disponible dans notre section actualité. Consultez-le via ce lien direct."
       ],
       "en": [
-        "This important announcement is available in our news section."
+        "The article 'Eaalan aan mbaryat tothyf' is available in our news section. View it via this direct link."
       ],
       "ar": [
-        "هذا الإعلان المهم متاح في قسم الأخبار لدينا."
+        "مقال 'إعلان عن مبريات توتيف' متاح في قسم الأخبار. يمكنك الاطلاع عليه عبر هذا الرابط المباشر."
       ],
       "amz": [
-        ""
+        "ⴰⵎⵙⴰⵢ 'ⵄⵍⴰⵏ ⵄⴰⵏ ⵎⴱⴰⵔⵢⴰⵜ ⵜⵓⵜⵀⵢⴼ' ⵉⵍⵍⴰ ⴷ ⵜⵜⵓⵙⵙⵏⴰ ⵖ ⵜⴰⵎⵓⵔⵜ ⵏ ⵉⵙⵏⵖⵔⴰⵙⵏ. ⵙⴰⵖⵎ ⵜⵜ ⵙ ⵓⵙⵉⵍⵉ ⴰⵏⴰⵢⵙⵍⵉ ⵢⴰⴷⵙ."
       ]
     },
     "meta": {
@@ -3646,7 +3421,7 @@
       ]
     }
   },
-  {
+  "event_details": {
     "intent": "event_details",
     "question": {
       "fr": [
@@ -3691,7 +3466,97 @@
       ]
     }
   },
-  {
+  "conference_series": {
+    "intent": "conference_series",
+    "question": {
+      "fr": [
+        "Où puis-je trouver la série de conférences numéro 1 ?"
+      ],
+      "en": [
+        "Where can I find conference series number 1?"
+      ],
+      "ar": [
+        "أين يمكنني العثور على سلسلة المؤتمرات رقم 1؟"
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La première série de nos conférences est disponible sur notre plateforme."
+      ],
+      "en": [
+        "The first series of our conferences is available on our platform."
+      ],
+      "ar": [
+        "السلسلة الأولى من مؤتمراتنا متاحة على منصتنا."
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "meta": {
+      "fr": [
+        "http://fso.ump.ma/fr/conferences-1"
+      ],
+      "en": [
+        "http://fso.ump.ma/en/conferences-1"
+      ],
+      "ar": [
+        "http://fso.ump.ma/ar/conferences-1"
+      ],
+      "amz": [
+        "http://fso.ump.ma/amz/conferences-1"
+      ]
+    }
+  },
+  "news_announcement": {
+    "intent": "news_announcement",
+    "question": {
+      "fr": [
+        "Où puis-je voir l'annonce concernant 'Eaalan Aan Mbaryat Tothyf' ?"
+      ],
+      "en": [
+        "Where can I see the announcement about 'Eaalan Aan Mbaryat Tothyf'?"
+      ],
+      "ar": [
+        "أين يمكنني رؤية الإعلان حول 'اعلان عن مبريات توجيه'؟"
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Cette annonce importante est disponible dans notre section actualités."
+      ],
+      "en": [
+        "This important announcement is available in our news section."
+      ],
+      "ar": [
+        "هذا الإعلان المهم متاح في قسم الأخبار لدينا."
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "meta": {
+      "fr": [
+        "http://fso.ump.ma/fr/actualite/eaalan-aan-mbaryat-tothyf"
+      ],
+      "en": [
+        "http://fso.ump.ma/en/actualite/eaalan-aan-mbaryat-tothyf"
+      ],
+      "ar": [
+        "http://fso.ump.ma/ar/actualite/eaalan-aan-mbaryat-tothyf"
+      ],
+      "amz": [
+        "http://fso.ump.ma/amz/actualite/eaalan-aan-mbaryat-tothyf"
+      ]
+    }
+  },
+  "academic_notes": {
     "intent": "academic_notes",
     "question": {
       "fr": [
@@ -3736,7 +3601,7 @@
       ]
     }
   },
-  {
+  "international_colloquium": {
     "intent": "international_colloquium",
     "question": {
       "fr": [
@@ -3781,7 +3646,7 @@
       ]
     }
   },
-  {
+  "journals_access": {
     "intent": "journals_access",
     "question": {
       "fr": [
@@ -3826,7 +3691,7 @@
       ]
     }
   },
-  {
+  "entrepreneurship_event": {
     "intent": "entrepreneurship_event",
     "question": {
       "fr": [
@@ -3871,7 +3736,7 @@
       ]
     }
   },
-  {
+  "specialized_master": {
     "intent": "specialized_master",
     "question": {
       "fr": [
@@ -3916,7 +3781,7 @@
       ]
     }
   },
-  {
+  "scientific_journals": {
     "intent": "scientific_journals",
     "question": {
       "fr": [
@@ -3961,7 +3826,7 @@
       ]
     }
   },
-  {
+  "sports_tournament": {
     "intent": "sports_tournament",
     "question": {
       "fr": [
@@ -4006,7 +3871,7 @@
       ]
     }
   },
-  {
+  "ai_conference": {
     "intent": "ai_conference",
     "question": {
       "fr": [
@@ -4051,7 +3916,7 @@
       ]
     }
   },
-  {
+  "information_system": {
     "intent": "information_system",
     "question": {
       "fr": [
@@ -4096,7 +3961,7 @@
       ]
     }
   },
-  {
+  "analytical_platform": {
     "intent": "analytical_platform",
     "question": {
       "fr": [
@@ -4141,7 +4006,7 @@
       ]
     }
   },
-  {
+  "student_club": {
     "intent": "student_club",
     "question": {
       "fr": [
@@ -4186,7 +4051,7 @@
       ]
     }
   },
-  {
+  "pedagogical_standards": {
     "intent": "pedagogical_standards",
     "question": {
       "fr": [
@@ -4231,7 +4096,7 @@
       ]
     }
   },
-  {
+  "sports_final": {
     "intent": "sports_final",
     "question": {
       "fr": [
@@ -4276,7 +4141,7 @@
       ]
     }
   },
-  {
+  "announcements_access": {
     "intent": "announcements_access",
     "question": {
       "fr": [
@@ -4321,7 +4186,7 @@
       ]
     }
   },
-  {
+  "council_regulations": {
     "intent": "council_regulations",
     "question": {
       "fr": [
@@ -4366,7 +4231,7 @@
       ]
     }
   },
-  {
+  "tools_management": {
     "intent": "tools_management",
     "question": {
       "fr": [
@@ -4411,7 +4276,7 @@
       ]
     }
   },
-  {
+  "humboldt_programs": {
     "intent": "humboldt_programs",
     "question": {
       "fr": [
@@ -4456,7 +4321,7 @@
       ]
     }
   },
-  {
+  "computer_science_info": {
     "intent": "computer_science_info",
     "question": {
       "fr": [
@@ -4501,7 +4366,7 @@
       ]
     }
   },
-  {
+  "patent_information": {
     "intent": "patent_information",
     "question": {
       "fr": [
@@ -4546,7 +4411,7 @@
       ]
     }
   },
-  {
+  "hydrogen_conference": {
     "intent": "hydrogen_conference",
     "question": {
       "fr": [
@@ -4591,7 +4456,7 @@
       ]
     }
   },
-  {
+  "chemistry_matter_science": {
     "intent": "chemistry_matter_science",
     "question": {
       "fr": [
@@ -4636,7 +4501,7 @@
       ]
     }
   },
-  {
+  "climatology_observations": {
     "intent": "climatology_observations",
     "question": {
       "fr": [
@@ -4681,7 +4546,7 @@
       ]
     }
   },
-  {
+  "research_projects": {
     "intent": "research_projects",
     "question": {
       "fr": [
@@ -4726,7 +4591,7 @@
       ]
     }
   },
-  {
+  "books_resources": {
     "intent": "books_resources",
     "question": {
       "fr": [
@@ -4771,7 +4636,7 @@
       ]
     }
   },
-  {
+  "ciove_center": {
     "intent": "ciove_center",
     "question": {
       "fr": [
@@ -4816,7 +4681,7 @@
       ]
     }
   },
-  {
+  "scientific_productions": {
     "intent": "scientific_productions",
     "question": {
       "fr": [
@@ -4861,7 +4726,7 @@
       ]
     }
   },
-  {
+  "chemistry_journal": {
     "intent": "chemistry_journal",
     "question": {
       "fr": [
@@ -4906,7 +4771,7 @@
       ]
     }
   },
-  {
+  "health_insurance": {
     "intent": "health_insurance",
     "question": {
       "fr": [
@@ -4951,7 +4816,7 @@
       ]
     }
   },
-  {
+  "publications_access": {
     "intent": "publications_access",
     "question": {
       "fr": [
@@ -4996,7 +4861,7 @@
       ]
     }
   },
-  {
+  "emotional_intelligence_conference": {
     "intent": "emotional_intelligence_conference",
     "question": {
       "fr": [
@@ -5041,7 +4906,7 @@
       ]
     }
   },
-  {
+  "scientific_day_2024": {
     "intent": "scientific_day_2024",
     "question": {
       "fr": [
@@ -5086,52 +4951,52 @@
       ]
     }
   },
-  {
+  "pedagogical_evaluation_conference": {
     "intent": "pedagogical_evaluation_conference",
     "question": {
       "fr": [
-        "Où trouver le contenu de la conférence 'Réflexions sur l'évaluation pédagogique'?"
+        "Quel est le thème de la conférence sur l'évaluation pédagogique ?"
       ],
       "en": [
-        "Where to find the content of the 'Reflections on pedagogical evaluation' conference?"
+        "What is the theme of the conference on pedagogical evaluation?"
       ],
       "ar": [
-        "أين يمكن العثور على محتوى مؤتمر 'تأملات في التقييم التربوي'؟"
+        "ما هو موضوع المؤتمر حول التقييم التربوي؟"
       ],
       "amz": [
-        "Anida ara d-afiɣ agbur n lmutemmar 'Réflexions sur l'évaluation pédagogique'?"
+        "ⵎⴰⵏⵓⵜ ⵏ ⵓⵙⵙⵎⵔⴷ ⵏ ⵜⵙⵏⵉⵜ ⵏ ⵜⵎⵙⵙⵉⵜ?"
       ]
     },
     "reponse": {
       "fr": [
-        "La conférence a proposé une réflexion approfondie sur les méthodes d'évaluation pédagogique. Les actes sont disponibles sur notre plateforme."
+        "La conférence porte sur des réflexions concernant les méthodes et enjeux de l'évaluation pédagogique."
       ],
       "en": [
-        "The conference offered an in-depth reflection on pedagogical evaluation methods. The proceedings are available on our platform."
+        "The conference focuses on reflections about methods and challenges of pedagogical evaluation."
       ],
       "ar": [
-        "قدم المؤتمر تفكيرًا متعمقًا في طرق التقييم التربوي. تتوفر الإجراءات على منصتنا."
+        "يركز المؤتمر على التأملات حول أساليب وتحديات التقييم التربوي."
       ],
       "amz": [
-        "Lmutemmar yessefk-d asenfli anidaḥ n yineḍrufen n tsenselkimt. Tizrawin llan deg usmel-nneɣ."
+        "ⵓⵙⵙⵎⵔⴷ ⵢⵙⵙⵏⴰⵏ ⵙ ⵉⵙⵙⵎⵔⴷⵏ ⵙ ⵉⵎⵙⵙⵉⵜⵏ ⴷ ⵉⵙⵙⵉⵏⴰⵙⵏ ⵏ ⵜⵙⵏⵉⵜ ⵏ ⵜⵎⵙⵙⵉⵜ."
       ]
     },
     "meta": {
       "fr": [
-        "http://fso.ump.ma/fr/conferences-1/conference-reflexions-sur-levaluation-pedagogique-2"
+        "http://fso.ump.ma/fr/event/conference-reflexions-sur-levaluation-pedagogique"
       ],
       "en": [
-        "http://fso.ump.ma/en/conferences-1/conference-reflexions-sur-levaluation-pedagogique-2"
+        "http://fso.ump.ma/en/event/conference-reflexions-sur-levaluation-pedagogique"
       ],
       "ar": [
-        "http://fso.ump.ma/ar/conferences-1/conference-reflexions-sur-levaluation-pedagogique-2"
+        "http://fso.ump.ma/ar/event/conference-reflexions-sur-levaluation-pedagogique"
       ],
       "amz": [
-        "http://fso.ump.ma/amz/conferences-1/conference-reflexions-sur-levaluation-pedagogique-2"
+        "http://fso.ump.ma/amz/event/conference-reflexions-sur-levaluation-pedagogique"
       ]
     }
   },
-  {
+  "applied_computer_science": {
     "intent": "applied_computer_science",
     "question": {
       "fr": [
@@ -5176,7 +5041,7 @@
       ]
     }
   },
-  {
+  "master_programs": {
     "intent": "master_programs",
     "question": {
       "fr": [
@@ -5221,7 +5086,7 @@
       ]
     }
   },
-  {
+  "administration_info": {
     "intent": "administration_info",
     "question": {
       "fr": [
@@ -5266,7 +5131,7 @@
       ]
     }
   },
-  {
+  "physics_department_info": {
     "intent": "physics_department_info",
     "question": {
       "fr": [
@@ -5311,7 +5176,7 @@
       ]
     }
   },
-  {
+  "phd_program_info": {
     "intent": "phd_program_info",
     "question": {
       "fr": [
@@ -5356,7 +5221,7 @@
       ]
     }
   },
-  {
+  "phd_year6_notice": {
     "intent": "phd_year6_notice",
     "question": {
       "fr": [
@@ -5401,7 +5266,7 @@
       ]
     }
   },
-  {
+  "thesis_charter_info": {
     "intent": "thesis_charter_info",
     "question": {
       "fr": [
@@ -5446,7 +5311,7 @@
       ]
     }
   },
-  {
+  "knowledge_economy_conference": {
     "intent": "knowledge_economy_conference",
     "question": {
       "fr": [
@@ -5491,7 +5356,7 @@
       ]
     }
   },
-  {
+  "chemical_journal_info": {
     "intent": "chemical_journal_info",
     "question": {
       "fr": [
@@ -5536,7 +5401,7 @@
       ]
     }
   },
-  {
+  "math_sciences_info": {
     "intent": "math_sciences_info",
     "question": {
       "fr": [
@@ -5581,7 +5446,7 @@
       ]
     }
   },
-  {
+  "spring_resit_schedule": {
     "intent": "spring_resit_schedule",
     "question": {
       "fr": [
@@ -5626,7 +5491,7 @@
       ]
     }
   },
-  {
+  "biology_department_info": {
     "intent": "biology_department_info",
     "question": {
       "fr": [
@@ -5671,7 +5536,7 @@
       ]
     }
   },
-  {
+  "departments_info": {
     "intent": "departments_info",
     "question": {
       "fr": [
@@ -5716,7 +5581,7 @@
       ]
     }
   },
-  {
+  "materials_journal_info": {
     "intent": "materials_journal_info",
     "question": {
       "fr": [
@@ -5761,7 +5626,7 @@
       ]
     }
   },
-  {
+  "terms_of_use": {
     "intent": "terms_of_use",
     "question": {
       "fr": [
@@ -5806,7 +5671,7 @@
       ]
     }
   },
-  {
+  "cap_club_orientation": {
     "intent": "cap_club_orientation",
     "question": {
       "fr": [
@@ -5851,7 +5716,7 @@
       ]
     }
   },
-  {
+  "master_norms": {
     "intent": "master_norms",
     "question": {
       "fr": [
@@ -5896,7 +5761,7 @@
       ]
     }
   },
-  {
+  "natural_sciences_event": {
     "intent": "natural_sciences_event",
     "question": {
       "fr": [
@@ -5941,7 +5806,7 @@
       ]
     }
   },
-  {
+  "blood_donation_conference": {
     "intent": "blood_donation_conference",
     "question": {
       "fr": [
@@ -5986,7 +5851,7 @@
       ]
     }
   },
-  {
+  "la date de nomination du doyen FSO": {
     "intent": "la date de nomination du doyen FSO",
     "question": {
       "fr": [
@@ -6047,7 +5912,7 @@
       ]
     }
   },
-  {
+  "life_sciences_info": {
     "intent": "life_sciences_info",
     "question": {
       "fr": [
@@ -6092,7 +5957,7 @@
       ]
     }
   },
-  {
+  "specialized_master_norms": {
     "intent": "specialized_master_norms",
     "question": {
       "fr": [
@@ -6137,7 +6002,7 @@
       ]
     }
   },
-  {
+  "homepage_access": {
     "intent": "homepage_access",
     "question": {
       "fr": [
@@ -6182,7 +6047,7 @@
       ]
     }
   },
-  {
+  "pure_applied_science_journal": {
     "intent": "pure_applied_science_journal",
     "question": {
       "fr": [
@@ -6227,7 +6092,7 @@
       ]
     }
   },
-  {
+  "postdoc_info": {
     "intent": "postdoc_info",
     "question": {
       "fr": [
@@ -6272,7 +6137,7 @@
       ]
     }
   },
-  {
+  "phd_attestation": {
     "intent": "phd_attestation",
     "question": {
       "fr": [
@@ -6317,52 +6182,52 @@
       ]
     }
   },
-  {
+  "gamma_ray_conference": {
     "intent": "gamma_ray_conference",
     "question": {
       "fr": [
-        "Où trouver des informations sur la conférence 'Les sursauts gamma'?"
+        "Qu'est-ce que les sursauts gamma et pourquoi une conférence leur est dédiée ?"
       ],
       "en": [
-        "Where to find information about the 'Gamma Ray Bursts' conference?"
+        "What are gamma ray bursts and why is there a conference dedicated to them?"
       ],
       "ar": [
-        "أين يمكن العثور على معلومات عن مؤتمر 'انفجارات أشعة غاما'؟"
+        "ما هي انفجارات أشعة غاما ولماذا يوجد مؤتمر مخصص لها؟"
       ],
       "amz": [
-        "ⵎⴰⵏⵜ ⴰⴷ ⵜⴰⴼⴰⵙ ⵉⵙⵙⵓⴼⴰⵖ ⵉⵏⴼⵓⵔⵎⴰⵙⵢⵓⵏ ⵖ ⵜⴰⵎⵓⵙⵜ 'ⵜⵉⵎⵙⵙⵉⵔⴷⴰⵙⵉⵏ ⵏ ⵜⵉⵏⴼⵍⵉⵙⵉⵏ ⵏ ⵖⴰⵎⴰ'?"
+        "ⵎⴰⵏⵉ ⵉⵎⵙⵙⵉⵜⵏ ⵏ ⵉⵎⵙⵙⵉⵜⵏ ⵏ ⵖⴰⵎⴰ ⴷ ⵎⴰⵖ ⵢⴰⴷ ⵉⵍⵍⵉ ⵓⵙⵙⵎⵔⴷ ⵉⵎⵙⵙⵏⴰⵏⵉ ⵙⵏⵜ?"
       ]
     },
     "reponse": {
       "fr": [
-        "La conférence sur les sursauts gamma est documentée dans notre section conférences."
+        "Les sursauts gamma sont des explosions cosmiques extrêmement énergétiques étudiées en astrophysique. Une conférence leur est consacrée pour partager les dernières découvertes."
       ],
       "en": [
-        "The gamma ray bursts conference is documented in our conferences section."
+        "Gamma ray bursts are extremely energetic cosmic explosions studied in astrophysics. A conference is dedicated to them to share the latest discoveries."
       ],
       "ar": [
-        "تم توثيق مؤتمر انفجارات أشعة غاما في قسم المؤتمرات لدينا."
+        "انفجارات أشعة غاما هي انفجارات كونية شديدة الطاقة تدرس في الفيزياء الفلكية. يعقد المؤتمر لمشاركة أحدث الاكتشافات."
       ],
       "amz": [
-        "ⵜⴰⵎⵓⵙⵜ ⵏ ⵜⵉⵎⵙⵙⵉⵔⴷⴰⵙⵉⵏ ⵏ ⵜⵉⵏⴼⵍⵉⵙⵉⵏ ⵏ ⵖⴰⵎⴰ ⵜⵉⵍⵍⵉ ⵖ ⵜⴰⵎⵓⵔⵜ ⵏ ⵜⵉⵎⵓⵙⵜⵉⵏ ⵏⵖ."
+        "ⵉⵎⵙⵙⵉⵜⵏ ⵏ ⵖⴰⵎⴰ ⵜⵉⵎⵙⵙⵉⵜⵏ ⵉⵎⵎⵓⵔⵏⵉⵢⵏ ⵙ ⵜⵎⵙⵙⵉⵜ ⵏ ⵜⵓⵙⵏⴰ ⵏ ⵜⵓⵙⵙⵉⵜ. ⵓⵙⵙⵎⵔⴷ ⵢⵙⵙⵏⴰⵏ ⵙ ⵓⵙⵙⵎⵔⴷ ⵉⵎⵙⵙⵏⴰⵏⵉ ⵙ ⵜⵎⵙⵙⵉⵜ ⵏ ⵜⵓⵙⵙⵉⵜ ⵙ ⵉⵙⵙⵉⵜⵏⴰⵙⵏ ⵉⵎⵎⵓⵔⵏⵉⵢⵏ."
       ]
     },
     "meta": {
       "fr": [
-        "http://fso.ump.ma/fr/conferences-1/conference-les-sursauts-gamma"
+        "http://fso.ump.ma/fr/event/conference-les-sursauts-gamma-1"
       ],
       "en": [
-        "http://fso.ump.ma/en/conferences-1/conference-les-sursauts-gamma"
+        "http://fso.ump.ma/en/event/conference-les-sursauts-gamma-1"
       ],
       "ar": [
-        "http://fso.ump.ma/ar/conferences-1/conference-les-sursauts-gamma"
+        "http://fso.ump.ma/ar/event/conference-les-sursauts-gamma-1"
       ],
       "amz": [
-        "http://fso.ump.ma/amz/conferences-1/conference-les-sursauts-gamma"
+        "http://fso.ump.ma/amz/event/conference-les-sursauts-gamma-1"
       ]
     }
   },
-  {
+  "permanent_commissions": {
     "intent": "permanent_commissions",
     "question": {
       "fr": [
@@ -6407,7 +6272,7 @@
       ]
     }
   },
-  {
+  "health_insurance_platform": {
     "intent": "health_insurance_platform",
     "question": {
       "fr": [
@@ -6452,7 +6317,7 @@
       ]
     }
   },
-  {
+  "news_page_access": {
     "intent": "news_page_access",
     "question": {
       "fr": [
@@ -6500,7 +6365,7 @@
       ]
     }
   },
-  {
+  "phd_registration_2025": {
     "intent": "phd_registration_2025",
     "question": {
       "fr": [
@@ -6545,7 +6410,7 @@
       ]
     }
   },
-  {
+  "university_habilitation": {
     "intent": "university_habilitation",
     "question": {
       "fr": [
@@ -6590,7 +6455,7 @@
       ]
     }
   },
-  {
+  "spring_resit_calendar": {
     "intent": "spring_resit_calendar",
     "question": {
       "fr": [
@@ -6635,7 +6500,7 @@
       ]
     }
   },
-  {
+  "national_cooperation": {
     "intent": "national_cooperation",
     "question": {
       "fr": [
@@ -6680,7 +6545,7 @@
       ]
     }
   },
-  {
+  "labs_status": {
     "intent": "labs_status",
     "question": {
       "fr": [
@@ -6725,7 +6590,7 @@
       ]
     }
   },
-  {
+  "taazy2_announcement": {
     "intent": "taazy2_announcement",
     "question": {
       "fr": [
@@ -6770,7 +6635,7 @@
       ]
     }
   },
-  {
+  "events_page_access": {
     "intent": "events_page_access",
     "question": {
       "fr": [
@@ -6819,7 +6684,7 @@
       ]
     }
   },
-  {
+  "labs_directory": {
     "intent": "labs_directory",
     "question": {
       "fr": [
@@ -6864,7 +6729,7 @@
       ]
     }
   },
-  {
+  "general_information": {
     "intent": "general_information",
     "question": {
       "fr": [
@@ -6909,7 +6774,7 @@
       ]
     }
   },
-  {
+  "spring_schedule_courses": {
     "intent": "spring_schedule_courses",
     "question": {
       "fr": [
@@ -6954,7 +6819,7 @@
       ]
     }
   },
-  {
+  "professional_license_norms": {
     "intent": "professional_license_norms",
     "question": {
       "fr": [
@@ -6999,7 +6864,7 @@
       ]
     }
   },
-  {
+  "health_insurance_note": {
     "intent": "health_insurance_note",
     "question": {
       "fr": [
@@ -7044,7 +6909,7 @@
       ]
     }
   },
-  {
+  "notes_page_access": {
     "intent": "notes_page_access",
     "question": {
       "fr": [
@@ -7089,7 +6954,7 @@
       ]
     }
   },
-  {
+  "thesis_information": {
     "intent": "thesis_information",
     "question": {
       "fr": [
@@ -7134,7 +6999,7 @@
       ]
     }
   },
-  {
+  "event_participation": {
     "intent": "event_participation",
     "question": {
       "fr": [
@@ -7179,7 +7044,7 @@
       ]
     }
   },
-  {
+  "timetable_access": {
     "intent": "timetable_access",
     "question": {
       "fr": [
@@ -7224,7 +7089,7 @@
       ]
     }
   },
-  {
+  "mathematics_department": {
     "intent": "mathematics_department",
     "question": {
       "fr": [
@@ -7269,7 +7134,7 @@
       ]
     }
   },
-  {
+  "institutional_email_procedure": {
     "intent": "institutional_email_procedure",
     "question": {
       "fr": [
@@ -7314,7 +7179,7 @@
       ]
     }
   },
-  {
+  "physics_department": {
     "intent": "physics_department",
     "question": {
       "fr": [
@@ -7359,7 +7224,7 @@
       ]
     }
   },
-  {
+  "conference_mariculture": {
     "intent": "conference_mariculture",
     "question": {
       "fr": [
@@ -7404,7 +7269,7 @@
       ]
     }
   },
-  {
+  "chemistry_department": {
     "intent": "chemistry_department",
     "question": {
       "fr": [
@@ -7449,7 +7314,7 @@
       ]
     }
   },
-  {
+  "humanities_department": {
     "intent": "humanities_department",
     "question": {
       "fr": [
@@ -7494,7 +7359,7 @@
       ]
     }
   },
-  {
+  "ethical_charter": {
     "intent": "ethical_charter",
     "question": {
       "fr": [
@@ -7539,7 +7404,7 @@
       ]
     }
   },
-  {
+  "cooperation_information": {
     "intent": "cooperation_information",
     "question": {
       "fr": [
@@ -7584,7 +7449,7 @@
       ]
     }
   },
-  {
+  "faculty_leadership": {
     "intent": "faculty_leadership",
     "question": {
       "fr": [
@@ -7629,7 +7494,7 @@
       ]
     }
   },
-  {
+  "vt_information": {
     "intent": "vt_information",
     "question": {
       "fr": [
@@ -7674,7 +7539,7 @@
       ]
     }
   },
-  {
+  "climate_observations": {
     "intent": "climate_observations",
     "question": {
       "fr": [
@@ -7719,7 +7584,7 @@
       ]
     }
   },
-  {
+  "fundamental_license": {
     "intent": "fundamental_license",
     "question": {
       "fr": [
@@ -7764,7 +7629,7 @@
       ]
     }
   },
-  {
+  "legal_texts": {
     "intent": "legal_texts",
     "question": {
       "fr": [
@@ -7809,7 +7674,7 @@
       ]
     }
   },
-  {
+  "international_symposium": {
     "intent": "international_symposium",
     "question": {
       "fr": [
@@ -7854,7 +7719,7 @@
       ]
     }
   },
-  {
+  "taazy_news": {
     "intent": "taazy_news",
     "question": {
       "fr": [
@@ -7899,7 +7764,7 @@
       ]
     }
   },
-  {
+  "scientific_activities": {
     "intent": "scientific_activities",
     "question": {
       "fr": [
@@ -7944,7 +7809,7 @@
       ]
     }
   },
-  {
+  "connected_campus": {
     "intent": "connected_campus",
     "question": {
       "fr": [
@@ -7989,7 +7854,7 @@
       ]
     }
   },
-  {
+  "education_award": {
     "intent": "education_award",
     "question": {
       "fr": [
@@ -8034,7 +7899,7 @@
       ]
     }
   },
-  {
+  "doctoral_day": {
     "intent": "doctoral_day",
     "question": {
       "fr": [
@@ -8079,7 +7944,7 @@
       ]
     }
   },
-  {
+  "research_innovation_day": {
     "intent": "research_innovation_day",
     "question": {
       "fr": [
@@ -8124,7 +7989,7 @@
       ]
     }
   },
-  {
+  "maths_it_doctoral_days": {
     "intent": "maths_it_doctoral_days",
     "question": {
       "fr": [
@@ -8169,7 +8034,7 @@
       ]
     }
   },
-  {
+  "2020_publications": {
     "intent": "2020_publications",
     "question": {
       "fr": [
@@ -8214,7 +8079,7 @@
       ]
     }
   },
-  {
+  "2019_publications": {
     "intent": "2019_publications",
     "question": {
       "fr": [
@@ -8259,7 +8124,7 @@
       ]
     }
   },
-  {
+  "2022_publications": {
     "intent": "2022_publications",
     "question": {
       "fr": [
@@ -8304,7 +8169,7 @@
       ]
     }
   },
-  {
+  "soft_skills_catchup": {
     "intent": "soft_skills_catchup",
     "question": {
       "fr": [
@@ -8349,7 +8214,7 @@
       ]
     }
   },
-  {
+  "master_s2_notice": {
     "intent": "master_s2_notice",
     "question": {
       "fr": [
@@ -8394,7 +8259,7 @@
       ]
     }
   },
-  {
+  "university_qualification": {
     "intent": "university_qualification",
     "question": {
       "fr": [
@@ -8439,7 +8304,7 @@
       ]
     }
   },
-  {
+  "2019_qualifications": {
     "intent": "2019_qualifications",
     "question": {
       "fr": [
@@ -8484,7 +8349,7 @@
       ]
     }
   },
-  {
+  "online_schooling_info": {
     "intent": "online_schooling_info",
     "question": {
       "fr": [
@@ -8529,7 +8394,7 @@
       ]
     }
   },
-  {
+  "theses_2019_access": {
     "intent": "theses_2019_access",
     "question": {
       "fr": [
@@ -8574,7 +8439,7 @@
       ]
     }
   },
-  {
+  "spring_semester_2025_start": {
     "intent": "spring_semester_2025_start",
     "question": {
       "fr": [
@@ -8619,7 +8484,7 @@
       ]
     }
   },
-  {
+  "pfe_module_notice": {
     "intent": "pfe_module_notice",
     "question": {
       "fr": [
@@ -8664,7 +8529,7 @@
       ]
     }
   },
-  {
+  "hassan_ii_environment_prize": {
     "intent": "hassan_ii_environment_prize",
     "question": {
       "fr": [
@@ -8709,7 +8574,7 @@
       ]
     }
   },
-  {
+  "minhaty_card_renewal": {
     "intent": "minhaty_card_renewal",
     "question": {
       "fr": [
@@ -8754,7 +8619,7 @@
       ]
     }
   },
-  {
+  "scholarship_payments_list": {
     "intent": "scholarship_payments_list",
     "question": {
       "fr": [
@@ -8799,7 +8664,7 @@
       ]
     }
   },
-  {
+  "ramadan_teaching_schedule": {
     "intent": "ramadan_teaching_schedule",
     "question": {
       "fr": [
@@ -8844,7 +8709,7 @@
       ]
     }
   },
-  {
+  "eid_al_fitr_greetings": {
     "intent": "eid_al_fitr_greetings",
     "question": {
       "fr": [
@@ -8889,7 +8754,7 @@
       ]
     }
   },
-  {
+  "ithenticate_account_activation": {
     "intent": "ithenticate_account_activation",
     "question": {
       "fr": [
@@ -8934,7 +8799,7 @@
       ]
     }
   },
-  {
+  "scientific_production_evolution": {
     "intent": "scientific_production_evolution",
     "question": {
       "fr": [
@@ -8979,7 +8844,7 @@
       ]
     }
   },
-  {
+  "news_anniversary": {
     "intent": "news_anniversary",
     "question": {
       "fr": [
@@ -9024,7 +8889,7 @@
       ]
     }
   },
-  {
+  "exam_schedule_change": {
     "intent": "exam_schedule_change",
     "question": {
       "fr": [
@@ -9069,7 +8934,7 @@
       ]
     }
   },
-  {
+  "international_congress": {
     "intent": "international_congress",
     "question": {
       "fr": [
@@ -9114,7 +8979,7 @@
       ]
     }
   },
-  {
+  "womens_day_event": {
     "intent": "womens_day_event",
     "question": {
       "fr": [
@@ -9159,7 +9024,7 @@
       ]
     }
   },
-  {
+  "clay_environment_event": {
     "intent": "clay_environment_event",
     "question": {
       "fr": [
@@ -9204,52 +9069,7 @@
       ]
     }
   },
-  {
-    "intent": "pedagogical_evaluation_conference",
-    "question": {
-      "fr": [
-        "Quel est le thème de la conférence sur l'évaluation pédagogique ?"
-      ],
-      "en": [
-        "What is the theme of the conference on pedagogical evaluation?"
-      ],
-      "ar": [
-        "ما هو موضوع المؤتمر حول التقييم التربوي؟"
-      ],
-      "amz": [
-        "ⵎⴰⵏⵓⵜ ⵏ ⵓⵙⵙⵎⵔⴷ ⵏ ⵜⵙⵏⵉⵜ ⵏ ⵜⵎⵙⵙⵉⵜ?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "La conférence porte sur des réflexions concernant les méthodes et enjeux de l'évaluation pédagogique."
-      ],
-      "en": [
-        "The conference focuses on reflections about methods and challenges of pedagogical evaluation."
-      ],
-      "ar": [
-        "يركز المؤتمر على التأملات حول أساليب وتحديات التقييم التربوي."
-      ],
-      "amz": [
-        "ⵓⵙⵙⵎⵔⴷ ⵢⵙⵙⵏⴰⵏ ⵙ ⵉⵙⵙⵎⵔⴷⵏ ⵙ ⵉⵎⵙⵙⵉⵜⵏ ⴷ ⵉⵙⵙⵉⵏⴰⵙⵏ ⵏ ⵜⵙⵏⵉⵜ ⵏ ⵜⵎⵙⵙⵉⵜ."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/event/conference-reflexions-sur-levaluation-pedagogique"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/event/conference-reflexions-sur-levaluation-pedagogique"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/event/conference-reflexions-sur-levaluation-pedagogique"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/event/conference-reflexions-sur-levaluation-pedagogique"
-      ]
-    }
-  },
-  {
+  "job_fair_event": {
     "intent": "job_fair_event",
     "question": {
       "fr": [
@@ -9294,7 +9114,7 @@
       ]
     }
   },
-  {
+  "topology_conference": {
     "intent": "topology_conference",
     "question": {
       "fr": [
@@ -9339,7 +9159,7 @@
       ]
     }
   },
-  {
+  "quantum_revolution_conference": {
     "intent": "quantum_revolution_conference",
     "question": {
       "fr": [
@@ -9384,52 +9204,7 @@
       ]
     }
   },
-  {
-    "intent": "gamma_ray_conference",
-    "question": {
-      "fr": [
-        "Qu'est-ce que les sursauts gamma et pourquoi une conférence leur est dédiée ?"
-      ],
-      "en": [
-        "What are gamma ray bursts and why is there a conference dedicated to them?"
-      ],
-      "ar": [
-        "ما هي انفجارات أشعة غاما ولماذا يوجد مؤتمر مخصص لها؟"
-      ],
-      "amz": [
-        "ⵎⴰⵏⵉ ⵉⵎⵙⵙⵉⵜⵏ ⵏ ⵉⵎⵙⵙⵉⵜⵏ ⵏ ⵖⴰⵎⴰ ⴷ ⵎⴰⵖ ⵢⴰⴷ ⵉⵍⵍⵉ ⵓⵙⵙⵎⵔⴷ ⵉⵎⵙⵙⵏⴰⵏⵉ ⵙⵏⵜ?"
-      ]
-    },
-    "reponse": {
-      "fr": [
-        "Les sursauts gamma sont des explosions cosmiques extrêmement énergétiques étudiées en astrophysique. Une conférence leur est consacrée pour partager les dernières découvertes."
-      ],
-      "en": [
-        "Gamma ray bursts are extremely energetic cosmic explosions studied in astrophysics. A conference is dedicated to them to share the latest discoveries."
-      ],
-      "ar": [
-        "انفجارات أشعة غاما هي انفجارات كونية شديدة الطاقة تدرس في الفيزياء الفلكية. يعقد المؤتمر لمشاركة أحدث الاكتشافات."
-      ],
-      "amz": [
-        "ⵉⵎⵙⵙⵉⵜⵏ ⵏ ⵖⴰⵎⴰ ⵜⵉⵎⵙⵙⵉⵜⵏ ⵉⵎⵎⵓⵔⵏⵉⵢⵏ ⵙ ⵜⵎⵙⵙⵉⵜ ⵏ ⵜⵓⵙⵏⴰ ⵏ ⵜⵓⵙⵙⵉⵜ. ⵓⵙⵙⵎⵔⴷ ⵢⵙⵙⵏⴰⵏ ⵙ ⵓⵙⵙⵎⵔⴷ ⵉⵎⵙⵙⵏⴰⵏⵉ ⵙ ⵜⵎⵙⵙⵉⵜ ⵏ ⵜⵓⵙⵙⵉⵜ ⵙ ⵉⵙⵙⵉⵜⵏⴰⵙⵏ ⵉⵎⵎⵓⵔⵏⵉⵢⵏ."
-      ]
-    },
-    "meta": {
-      "fr": [
-        "http://fso.ump.ma/fr/event/conference-les-sursauts-gamma-1"
-      ],
-      "en": [
-        "http://fso.ump.ma/en/event/conference-les-sursauts-gamma-1"
-      ],
-      "ar": [
-        "http://fso.ump.ma/ar/event/conference-les-sursauts-gamma-1"
-      ],
-      "amz": [
-        "http://fso.ump.ma/amz/event/conference-les-sursauts-gamma-1"
-      ]
-    }
-  },
-  {
+  "neolithic_conference": {
     "intent": "neolithic_conference",
     "question": {
       "fr": [
@@ -9474,7 +9249,7 @@
       ]
     }
   },
-  {
+  "honorary_event": {
     "intent": "honorary_event",
     "question": {
       "fr": [
@@ -9519,7 +9294,7 @@
       ]
     }
   },
-  {
+  "workshop_usa_studies": {
     "intent": "workshop_usa_studies",
     "question": {
       "fr": [
@@ -9564,7 +9339,7 @@
       ]
     }
   },
-  {
+  "training_scopus_sciencedirect": {
     "intent": "training_scopus_sciencedirect",
     "question": {
       "fr": [
@@ -9609,7 +9384,7 @@
       ]
     }
   },
-  {
+  "geological_archaeological_heritage": {
     "intent": "geological_archaeological_heritage",
     "question": {
       "fr": [
@@ -9654,7 +9429,7 @@
       ]
     }
   },
-  {
+  "biotech_sustainable_development": {
     "intent": "biotech_sustainable_development",
     "question": {
       "fr": [
@@ -9699,7 +9474,7 @@
       ]
     }
   },
-  {
+  "biology_exhibition": {
     "intent": "biology_exhibition",
     "question": {
       "fr": [
@@ -9744,7 +9519,7 @@
       ]
     }
   },
-  {
+  "aromatic_medicinal_plants": {
     "intent": "aromatic_medicinal_plants",
     "question": {
       "fr": [
@@ -9789,7 +9564,7 @@
       ]
     }
   },
-  {
+  "electronic_resources_training": {
     "intent": "electronic_resources_training",
     "question": {
       "fr": [
@@ -9834,7 +9609,7 @@
       ]
     }
   },
-  {
+  "scientific_writing_training": {
     "intent": "scientific_writing_training",
     "question": {
       "fr": [
@@ -9879,7 +9654,7 @@
       ]
     }
   },
-  {
+  "oral_drug_delivery": {
     "intent": "oral_drug_delivery",
     "question": {
       "fr": [
@@ -9924,7 +9699,7 @@
       ]
     }
   },
-  {
+  "event_cap_launch": {
     "intent": "event_cap_launch",
     "question": {
       "fr": [
@@ -9969,7 +9744,7 @@
       ]
     }
   },
-  {
+  "archeology_conference_info": {
     "intent": "archeology_conference_info",
     "question": {
       "fr": [
@@ -10014,7 +9789,7 @@
       ]
     }
   },
-  {
+  "icontech3_symposium_details": {
     "intent": "icontech3_symposium_details",
     "question": {
       "fr": [
@@ -10059,7 +9834,7 @@
       ]
     }
   },
-  {
+  "scientific_culture_conference": {
     "intent": "scientific_culture_conference",
     "question": {
       "fr": [
@@ -10104,7 +9879,7 @@
       ]
     }
   },
-  {
+  "program_info": {
     "intent": "program_info",
     "question": {
       "fr": [
@@ -10143,7 +9918,7 @@
       ]
     }
   },
-  {
+  "program_biologie_sante": {
     "intent": "program_biologie_sante",
     "question": {
       "fr": [
@@ -10198,7 +9973,7 @@
       ]
     }
   },
-  {
+  "program_copn": {
     "intent": "program_copn",
     "question": {
       "fr": [
@@ -10253,7 +10028,7 @@
       ]
     }
   },
-  {
+  "program_ee": {
     "intent": "program_ee",
     "question": {
       "fr": [
@@ -10308,7 +10083,7 @@
       ]
     }
   },
-  {
+  "program_ese": {
     "intent": "program_ese",
     "question": {
       "fr": [
@@ -10363,7 +10138,7 @@
       ]
     }
   },
-  {
+  "program_eree": {
     "intent": "program_eree",
     "question": {
       "fr": [
@@ -10418,7 +10193,7 @@
       ]
     }
   },
-  {
+  "program_egc": {
     "intent": "program_egc",
     "question": {
       "fr": [
@@ -10473,7 +10248,7 @@
       ]
     }
   },
-  {
+  "program_fond_svi_pv": {
     "intent": "program_fond_svi_pv",
     "question": {
       "fr": [
@@ -10520,7 +10295,7 @@
       ]
     }
   },
-  {
+  "program_fond_svi_ps": {
     "intent": "program_fond_svi_ps",
     "question": {
       "fr": [
@@ -10567,7 +10342,7 @@
       ]
     }
   },
-  {
+  "program_fond_svi_env": {
     "intent": "program_fond_svi_env",
     "question": {
       "fr": [
@@ -10622,7 +10397,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_sma_modules_s6": {
     "intent": "programme_licence_fondamentale_sma_modules_s6",
     "question": {
       "fr": [
@@ -10653,7 +10428,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_sma_modules_s5": {
     "intent": "programme_licence_fondamentale_sma_modules_s5",
     "question": {
       "fr": [
@@ -10684,7 +10459,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_sma_modules_s4": {
     "intent": "programme_licence_fondamentale_sma_modules_s4",
     "question": {
       "fr": [
@@ -10715,7 +10490,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_sma_modules_s3": {
     "intent": "programme_licence_fondamentale_sma_modules_s3",
     "question": {
       "fr": [
@@ -10746,7 +10521,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smc_modules_s6": {
     "intent": "programme_licence_fondamentale_smc_modules_s6",
     "question": {
       "fr": [
@@ -10777,7 +10552,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smc_modules_s5": {
     "intent": "programme_licence_fondamentale_smc_modules_s5",
     "question": {
       "fr": [
@@ -10808,7 +10583,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smc_modules_s4": {
     "intent": "programme_licence_fondamentale_smc_modules_s4",
     "question": {
       "fr": [
@@ -10839,7 +10614,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smc_modules_s3": {
     "intent": "programme_licence_fondamentale_smc_modules_s3",
     "question": {
       "fr": [
@@ -10870,7 +10645,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smp_modules_s6": {
     "intent": "programme_licence_fondamentale_smp_modules_s6",
     "question": {
       "fr": [
@@ -10901,7 +10676,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smp_modules_s5": {
     "intent": "programme_licence_fondamentale_smp_modules_s5",
     "question": {
       "fr": [
@@ -10932,7 +10707,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smp_modules_s4": {
     "intent": "programme_licence_fondamentale_smp_modules_s4",
     "question": {
       "fr": [
@@ -10963,7 +10738,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smp_modules_s3": {
     "intent": "programme_licence_fondamentale_smp_modules_s3",
     "question": {
       "fr": [
@@ -10994,7 +10769,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_stu": {
     "intent": "programme_licence_fondamentale_stu",
     "question": {
       "fr": [
@@ -11028,7 +10803,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_stu_modules_s6": {
     "intent": "programme_licence_fondamentale_stu_modules_s6",
     "question": {
       "fr": [
@@ -11062,7 +10837,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_stu_modules_s5": {
     "intent": "programme_licence_fondamentale_stu_modules_s5",
     "question": {
       "fr": [
@@ -11096,7 +10871,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_stu_modules_s4": {
     "intent": "programme_licence_fondamentale_stu_modules_s4",
     "question": {
       "fr": [
@@ -11130,7 +10905,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_stu_modules_s3": {
     "intent": "programme_licence_fondamentale_stu_modules_s3",
     "question": {
       "fr": [
@@ -11164,7 +10939,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_stu_modules_s2": {
     "intent": "programme_licence_fondamentale_stu_modules_s2",
     "question": {
       "fr": [
@@ -11198,7 +10973,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_stu_modules_s1": {
     "intent": "programme_licence_fondamentale_stu_modules_s1",
     "question": {
       "fr": [
@@ -11232,7 +11007,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gmms": {
     "intent": "programme_licence_gmms",
     "question": {
       "fr": [
@@ -11266,7 +11041,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smi": {
     "intent": "programme_licence_fondamentale_smi",
     "question": {
       "fr": [
@@ -11300,7 +11075,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smi_modules_s6": {
     "intent": "programme_licence_fondamentale_smi_modules_s6",
     "question": {
       "fr": [
@@ -11334,7 +11109,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smi_modules_s5": {
     "intent": "programme_licence_fondamentale_smi_modules_s5",
     "question": {
       "fr": [
@@ -11368,7 +11143,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smi_modules_s4": {
     "intent": "programme_licence_fondamentale_smi_modules_s4",
     "question": {
       "fr": [
@@ -11402,7 +11177,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smi_modules_s3": {
     "intent": "programme_licence_fondamentale_smi_modules_s3",
     "question": {
       "fr": [
@@ -11436,7 +11211,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smi_modules_s2": {
     "intent": "programme_licence_fondamentale_smi_modules_s2",
     "question": {
       "fr": [
@@ -11470,7 +11245,7 @@
       ]
     }
   },
-  {
+  "programme_licence_fondamentale_smi_modules_s1": {
     "intent": "programme_licence_fondamentale_smi_modules_s1",
     "question": {
       "fr": [
@@ -11504,7 +11279,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gpi": {
     "intent": "programme_licence_gpi",
     "question": {
       "fr": [
@@ -11538,7 +11313,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gpi_modules_s2": {
     "intent": "programme_licence_gpi_modules_s2",
     "question": {
       "fr": [
@@ -11572,7 +11347,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gpi_modules_s1": {
     "intent": "programme_licence_gpi_modules_s1",
     "question": {
       "fr": [
@@ -11606,7 +11381,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gpi_modules_s3": {
     "intent": "programme_licence_gpi_modules_s3",
     "question": {
       "fr": [
@@ -11640,7 +11415,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gi": {
     "intent": "programme_licence_gi",
     "question": {
       "fr": [
@@ -11674,7 +11449,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gi_modules_s2": {
     "intent": "programme_licence_gi_modules_s2",
     "question": {
       "fr": [
@@ -11708,7 +11483,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gi_modules_s1": {
     "intent": "programme_licence_gi_modules_s1",
     "question": {
       "fr": [
@@ -11742,7 +11517,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gi_modules_s4": {
     "intent": "programme_licence_gi_modules_s4",
     "question": {
       "fr": [
@@ -11776,7 +11551,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gi_modules_s3": {
     "intent": "programme_licence_gi_modules_s3",
     "question": {
       "fr": [
@@ -11810,7 +11585,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gga": {
     "intent": "programme_licence_gga",
     "question": {
       "fr": [
@@ -11844,7 +11619,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gga_modules_s2": {
     "intent": "programme_licence_gga_modules_s2",
     "question": {
       "fr": [
@@ -11878,7 +11653,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gga_modules_s1": {
     "intent": "programme_licence_gga_modules_s1",
     "question": {
       "fr": [
@@ -11912,7 +11687,7 @@
       ]
     }
   },
-  {
+  "programme_licence_gaem": {
     "intent": "programme_licence_gaem",
     "question": {
       "fr": [
@@ -11946,7 +11721,7 @@
       ]
     }
   },
-  {
+  "programme_licence_ime": {
     "intent": "programme_licence_ime",
     "question": {
       "fr": [
@@ -11980,7 +11755,7 @@
       ]
     }
   },
-  {
+  "programme_licence_ime_modules_s6": {
     "intent": "programme_licence_ime_modules_s6",
     "question": {
       "fr": [
@@ -12014,7 +11789,7 @@
       ]
     }
   },
-  {
+  "programme_licence_ime_modules_s5": {
     "intent": "programme_licence_ime_modules_s5",
     "question": {
       "fr": [
@@ -12048,7 +11823,7 @@
       ]
     }
   },
-  {
+  "programme_licence_materiaux_et_applications": {
     "intent": "programme_licence_materiaux_et_applications",
     "question": {
       "fr": [
@@ -12082,7 +11857,7 @@
       ]
     }
   },
-  {
+  "programme_licence_mathematiques_et_applications": {
     "intent": "programme_licence_mathematiques_et_applications",
     "question": {
       "fr": [
@@ -12116,7 +11891,7 @@
       ]
     }
   },
-  {
+  "programme_licence_sciences_des_donnees": {
     "intent": "programme_licence_sciences_des_donnees",
     "question": {
       "fr": [
@@ -12150,7 +11925,7 @@
       ]
     }
   },
-  {
+  "programme_master_analyse_appliquee_calcul_scientifique": {
     "intent": "programme_master_analyse_appliquee_calcul_scientifique",
     "question": {
       "fr": [
@@ -12184,7 +11959,7 @@
       ]
     }
   },
-  {
+  "Licence ME programme information": {
     "intent": "Licence ME programme information",
     "question": {
       "fr": [
@@ -12223,7 +11998,7 @@
       ]
     }
   },
-  {
+  "Licence OME programme information": {
     "intent": "Licence OME programme information",
     "question": {
       "fr": [
@@ -12262,7 +12037,7 @@
       ]
     }
   },
-  {
+  "Licence Radio Phy médicale programme information": {
     "intent": "Licence Radio Phy médicale programme information",
     "question": {
       "fr": [
@@ -12301,7 +12076,7 @@
       ]
     }
   },
-  {
+  "Licence Sc. des Données programme information": {
     "intent": "Licence Sc. des Données programme information",
     "question": {
       "fr": [
@@ -12340,7 +12115,7 @@
       ]
     }
   },
-  {
+  "Licence Informatique Appliquée programme information": {
     "intent": "Licence Informatique Appliquée programme information",
     "question": {
       "fr": [
@@ -12379,7 +12154,7 @@
       ]
     }
   },
-  {
+  "Licence Ingénierie de données et Intelligence Artificielle programme information": {
     "intent": "Licence Ingénierie de données et Intelligence Artificielle programme information",
     "question": {
       "fr": [
@@ -12418,7 +12193,7 @@
       ]
     }
   },
-  {
+  "Licence Actuariat et Mathématiques appliquées à la finance programme information": {
     "intent": "Licence Actuariat et Mathématiques appliquées à la finance programme information",
     "question": {
       "fr": [
@@ -12457,7 +12232,7 @@
       ]
     }
   },
-  {
+  "Licence Agrosciences et Biotechnologie Végétale programme information": {
     "intent": "Licence Agrosciences et Biotechnologie Végétale programme information",
     "question": {
       "fr": [
@@ -12496,7 +12271,7 @@
       ]
     }
   },
-  {
+  "Licence Chimie analytique et management de la qualité programme information": {
     "intent": "Licence Chimie analytique et management de la qualité programme information",
     "question": {
       "fr": [
@@ -12534,11 +12309,11 @@
         "Asenfar n tsertit Chimie analytique et management de la qualité d aselway n temsalt. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
     }
-  }, 
-  {
+  },
+  "Secret": {
     "intent": "Secret",
     "question": {
-      "fr": [  
+      "fr": [
         "Le MVP du jour à FSO",
         "MVP de FSO",
         "NPC de FSO",
@@ -12553,7 +12328,7 @@
       ]
     }
   },
-  {
+  "Licence Chimie Organique et Produits Naturels programme information": {
     "intent": "Licence Chimie Organique et Produits Naturels programme information",
     "question": {
       "fr": [
@@ -12592,7 +12367,7 @@
       ]
     }
   },
-  {
+  "Licence Ecologie et Environnement programme information": {
     "intent": "Licence Ecologie et Environnement programme information",
     "question": {
       "fr": [
@@ -12631,7 +12406,7 @@
       ]
     }
   },
-  {
+  "Licence Electronique et Systèmes Embarqués programme information": {
     "intent": "Licence Electronique et Systèmes Embarqués programme information",
     "question": {
       "fr": [
@@ -12670,7 +12445,7 @@
       ]
     }
   },
-  {
+  "Licence Energies renouvelables et efficacité énergétique programme information": {
     "intent": "Licence Energies renouvelables et efficacité énergétique programme information",
     "question": {
       "fr": [
@@ -12709,7 +12484,7 @@
       ]
     }
   },
-  {
+  "Licence Environnement et Génie Civil programme information": {
     "intent": "Licence Environnement et Génie Civil programme information",
     "question": {
       "fr": [
@@ -12748,7 +12523,7 @@
       ]
     }
   },
-  {
+  "Licence Fondamentale en Sciences de la Vie programme information": {
     "intent": "Licence Fondamentale en Sciences de la Vie programme information",
     "question": {
       "fr": [
@@ -12787,7 +12562,7 @@
       ]
     }
   },
-  {
+  "Licence Fondamentale en Sciences Mathématiques programme information": {
     "intent": "Licence Fondamentale en Sciences Mathématiques programme information",
     "question": {
       "fr": [
@@ -12826,7 +12601,7 @@
       ]
     }
   },
-  {
+  "Licence Fondamentale Sciences de la Matière Chimie programme information": {
     "intent": "Licence Fondamentale Sciences de la Matière Chimie programme information",
     "question": {
       "fr": [
@@ -12865,7 +12640,7 @@
       ]
     }
   },
-  {
+  "Licence Fondamentale Sciences de la Matière Physique programme information": {
     "intent": "Licence Fondamentale Sciences de la Matière Physique programme information",
     "question": {
       "fr": [
@@ -12904,7 +12679,7 @@
       ]
     }
   },
-  {
+  "Licence Fondamentale Sciences de la Terre et de l'Univers programme information": {
     "intent": "Licence Fondamentale Sciences de la Terre et de l'Univers programme information",
     "question": {
       "fr": [
@@ -12943,7 +12718,7 @@
       ]
     }
   },
-  {
+  "Licence Fondamentale Sciences Mathématiques et Informatique programme information": {
     "intent": "Licence Fondamentale Sciences Mathématiques et Informatique programme information",
     "question": {
       "fr": [
@@ -12982,7 +12757,7 @@
       ]
     }
   },
-  {
+  "Licence Génie des Matériaux et Métaux Stratégiques programme information": {
     "intent": "Licence Génie des Matériaux et Métaux Stratégiques programme information",
     "question": {
       "fr": [
@@ -13021,7 +12796,7 @@
       ]
     }
   },
-  {
+  "Licence Génie des Procédés Industriels programme information": {
     "intent": "Licence Génie des Procédés Industriels programme information",
     "question": {
       "fr": [
@@ -13060,7 +12835,7 @@
       ]
     }
   },
-  {
+  "Licence Génie Informatique programme information": {
     "intent": "Licence Génie Informatique programme information",
     "question": {
       "fr": [
@@ -13099,7 +12874,7 @@
       ]
     }
   },
-  {
+  "Licence Géomatique et Géologie Appliquée programme information": {
     "intent": "Licence Géomatique et Géologie Appliquée programme information",
     "question": {
       "fr": [
@@ -13138,7 +12913,7 @@
       ]
     }
   },
-  {
+  "Licence Géosciences Appliquées à l'Exploration Minière programme information": {
     "intent": "Licence Géosciences Appliquées à l'Exploration Minière programme information",
     "question": {
       "fr": [
@@ -13177,7 +12952,7 @@
       ]
     }
   },
-  {
+  "Licence Ingénierie des Matériaux et Energie programme information": {
     "intent": "Licence Ingénierie des Matériaux et Energie programme information",
     "question": {
       "fr": [
@@ -13216,7 +12991,7 @@
       ]
     }
   },
-  {
+  "Licence Matériaux et Applications programme information": {
     "intent": "Licence Matériaux et Applications programme information",
     "question": {
       "fr": [
@@ -13255,7 +13030,7 @@
       ]
     }
   },
-  {
+  "Licence Mathématiques et Applications programme information": {
     "intent": "Licence Mathématiques et Applications programme information",
     "question": {
       "fr": [
@@ -13294,7 +13069,7 @@
       ]
     }
   },
-  {
+  "Licence Matière et Rayonnement programme information": {
     "intent": "Licence Matière et Rayonnement programme information",
     "question": {
       "fr": [
@@ -13333,7 +13108,7 @@
       ]
     }
   },
-  {
+  "Licence Mécanique Et Energétique programme information": {
     "intent": "Licence Mécanique Et Energétique programme information",
     "question": {
       "fr": [
@@ -13372,7 +13147,7 @@
       ]
     }
   },
-  {
+  "Licence Ondes, Matériaux et Energie programme information": {
     "intent": "Licence Ondes, Matériaux et Energie programme information",
     "question": {
       "fr": [
@@ -13411,7 +13186,7 @@
       ]
     }
   },
-  {
+  "Licence Radiophysique médicale programme information": {
     "intent": "Licence Radiophysique médicale programme information",
     "question": {
       "fr": [
@@ -13450,7 +13225,7 @@
       ]
     }
   },
-  {
+  "Licence Sciences des Données programme information": {
     "intent": "Licence Sciences des Données programme information",
     "question": {
       "fr": [
@@ -13489,7 +13264,7 @@
       ]
     }
   },
-  {
+  "Master Analyse appliquée et calcul scientifique programme information": {
     "intent": "Master Analyse appliquée et calcul scientifique programme information",
     "question": {
       "fr": [
@@ -13528,7 +13303,7 @@
       ]
     }
   },
-  {
+  "Master Analyse Numérique et Optimisation programme information": {
     "intent": "Master Analyse Numérique et Optimisation programme information",
     "question": {
       "fr": [
@@ -13567,7 +13342,7 @@
       ]
     }
   },
-  {
+  "Master Chimie Appliquée programme information": {
     "intent": "Master Chimie Appliquée programme information",
     "question": {
       "fr": [
@@ -13606,7 +13381,7 @@
       ]
     }
   },
-  {
+  "Master Chimie du Solide et Procédés Industriels programme information": {
     "intent": "Master Chimie du Solide et Procédés Industriels programme information",
     "question": {
       "fr": [
@@ -13645,7 +13420,7 @@
       ]
     }
   },
-  {
+  "Master Electronique, systèmes et énergies renouvelables programme information": {
     "intent": "Master Electronique, systèmes et énergies renouvelables programme information",
     "question": {
       "fr": [
@@ -13684,7 +13459,7 @@
       ]
     }
   },
-  {
+  "Master Environnement et Développement Durable programme information": {
     "intent": "Master Environnement et Développement Durable programme information",
     "question": {
       "fr": [
@@ -13723,7 +13498,7 @@
       ]
     }
   },
-  {
+  "Master Génie des Matériaux et Métaux Stratégiques programme information": {
     "intent": "Master Génie des Matériaux et Métaux Stratégiques programme information",
     "question": {
       "fr": [
@@ -13762,7 +13537,7 @@
       ]
     }
   },
-  {
+  "Master Ingénierie des Matériaux et Energie programme information": {
     "intent": "Master Ingénierie des Matériaux et Energie programme information",
     "question": {
       "fr": [
@@ -13801,7 +13576,7 @@
       ]
     }
   },
-  {
+  "Master Ingénierie horticole et paysagère programme information": {
     "intent": "Master Ingénierie horticole et paysagère programme information",
     "question": {
       "fr": [
@@ -13840,7 +13615,7 @@
       ]
     }
   },
-  {
+  "Master Ingénierie informatique programme information": {
     "intent": "Master Ingénierie informatique programme information",
     "question": {
       "fr": [
@@ -13879,7 +13654,7 @@
       ]
     }
   },
-  {
+  "Master Intelligence Artificielle et Sciences des Données programme information": {
     "intent": "Master Intelligence Artificielle et Sciences des Données programme information",
     "question": {
       "fr": [
@@ -13918,7 +13693,7 @@
       ]
     }
   },
-  {
+  "Master Matériaux polymères et chimie organique avancée programme information": {
     "intent": "Master Matériaux polymères et chimie organique avancée programme information",
     "question": {
       "fr": [
@@ -13957,7 +13732,7 @@
       ]
     }
   },
-  {
+  "Master Mécanique et Energétique programme information": {
     "intent": "Master Mécanique et Energétique programme information",
     "question": {
       "fr": [
@@ -13996,7 +13771,7 @@
       ]
     }
   },
-  {
+  "Master Mécanique Mécanique et énergétique programme information": {
     "intent": "Master Mécanique Mécanique et énergétique programme information",
     "question": {
       "fr": [
@@ -14035,7 +13810,7 @@
       ]
     }
   },
-  {
+  "Master Modélisation stochastique-Déterministe-data Science programme information": {
     "intent": "Master Modélisation stochastique-Déterministe-data Science programme information",
     "question": {
       "fr": [
@@ -14074,7 +13849,7 @@
       ]
     }
   },
-  {
+  "Master Optique et Matériaux programme information": {
     "intent": "Master Optique et Matériaux programme information",
     "question": {
       "fr": [
@@ -14113,7 +13888,7 @@
       ]
     }
   },
-  {
+  "Master Physiologie et Santé programme information": {
     "intent": "Master Physiologie et Santé programme information",
     "question": {
       "fr": [
@@ -14152,7 +13927,7 @@
       ]
     }
   },
-  {
+  "Master in Physics of Matter and Radiation": {
     "intent": "Master in Physics of Matter and Radiation",
     "question": {
       "fr": [
@@ -14199,7 +13974,7 @@
       ]
     }
   },
-  {
+  "Master in Physics of Matter and Radiations": {
     "intent": "Master in Physics of Matter and Radiations",
     "question": {
       "fr": [
@@ -14246,7 +14021,7 @@
       ]
     }
   },
-  {
+  "Master in Medical Physics and Radiation Protection": {
     "intent": "Master in Medical Physics and Radiation Protection",
     "question": {
       "fr": [
@@ -14293,7 +14068,7 @@
       ]
     }
   },
-  {
+  "Master in Food Safety in the Mediterranean": {
     "intent": "Master in Food Safety in the Mediterranean",
     "question": {
       "fr": [
@@ -14340,7 +14115,7 @@
       ]
     }
   },
-  {
+  "Master in Spectral Theory & Application": {
     "intent": "Master in Spectral Theory & Application",
     "question": {
       "fr": [
@@ -14387,7 +14162,7 @@
       ]
     }
   },
-  {
+  "Specialized Master in Geosciences of Environment and Civil Engineering": {
     "intent": "Specialized Master in Geosciences of Environment and Civil Engineering",
     "question": {
       "fr": [
@@ -14434,7 +14209,7 @@
       ]
     }
   },
-  {
+  "Specialized Master in Computer Engineering": {
     "intent": "Specialized Master in Computer Engineering",
     "question": {
       "fr": [
@@ -14481,7 +14256,7 @@
       ]
     }
   },
-  {
+  "Specialized Master in Environmental Change Management": {
     "intent": "Specialized Master in Environmental Change Management",
     "question": {
       "fr": [
@@ -14528,7 +14303,7 @@
       ]
     }
   },
-  {
+  "Specialized Master in Horticultural and Landscape Engineering": {
     "intent": "Specialized Master in Horticultural and Landscape Engineering",
     "question": {
       "fr": [
@@ -14575,7 +14350,7 @@
       ]
     }
   },
-  {
+  "Specialized Master in Food Science-Food Safety": {
     "intent": "Specialized Master in Food Science-Food Safety",
     "question": {
       "fr": [
@@ -14622,7 +14397,7 @@
       ]
     }
   },
-  {
+  "Master in Applied Mathematics and Scientific Computing": {
     "intent": "Master in Applied Mathematics and Scientific Computing",
     "question": {
       "fr": [
@@ -14669,7 +14444,7 @@
       ]
     }
   },
-  {
+  "Master in Physical Chemistry (CHAP Opt PHCH)": {
     "intent": "Master in Physical Chemistry (CHAP Opt PHCH)",
     "question": {
       "fr": [
@@ -14716,7 +14491,7 @@
       ]
     }
   },
-  {
+  "Master in Materials Chemistry (CHAP Opt MPA)": {
     "intent": "Master in Materials Chemistry (CHAP Opt MPA)",
     "question": {
       "fr": [
@@ -14763,7 +14538,7 @@
       ]
     }
   },
-  {
+  "Master in Organic Chemistry (CHAP Opt CHOR)": {
     "intent": "Master in Organic Chemistry (CHAP Opt CHOR)",
     "question": {
       "fr": [
@@ -14810,7 +14585,7 @@
       ]
     }
   },
-  {
+  "Master in Environmental Development (EDD)": {
     "intent": "Master in Environmental Development (EDD)",
     "question": {
       "fr": [
@@ -14857,7 +14632,7 @@
       ]
     }
   },
-  {
+  "Master in Computer Science (IASCD)": {
     "intent": "Master in Computer Science (IASCD)",
     "question": {
       "fr": [
@@ -14904,7 +14679,7 @@
       ]
     }
   },
-  {
+  "Master in Mechanics and Energy": {
     "intent": "Master in Mechanics and Energy",
     "question": {
       "fr": [
@@ -14951,7 +14726,7 @@
       ]
     }
   },
-  {
+  "Master in Optical Materials": {
     "intent": "Master in Optical Materials",
     "question": {
       "fr": [
@@ -14998,7 +14773,7 @@
       ]
     }
   },
-  {
+  "Horaires de travail de la FSO": {
     "intent": "Horaires de travail de la FSO",
     "question": {
       "fr": [
@@ -15045,7 +14820,7 @@
       ]
     }
   },
-  {
+  "Filières de la FSO": {
     "intent": "Filières de la FSO",
     "question": {
       "fr": [
@@ -15092,7 +14867,7 @@
       ]
     }
   },
-  {
+  "Départements de la FSO": {
     "intent": "Départements de la FSO",
     "question": {
       "fr": [
@@ -15139,7 +14914,7 @@
       ]
     }
   },
-  {
+  "Passerelles et équivalences à la FSO": {
     "intent": "Passerelles et équivalences à la FSO",
     "question": {
       "fr": [
@@ -15202,7 +14977,7 @@
       ]
     }
   },
-  {
+  "Passerelles vers les écoles d'ingénieurs": {
     "intent": "Passerelles vers les écoles d'ingénieurs",
     "question": {
       "fr": [
@@ -15257,7 +15032,7 @@
       ]
     }
   },
-  {
+  "Calendrier universitaire": {
     "intent": "Calendrier universitaire",
     "question": {
       "fr": [
@@ -15304,7 +15079,7 @@
       ]
     }
   },
-  {
+  "Inscription et Réinscription": {
     "intent": "Inscription et Réinscription",
     "question": {
       "fr": [
@@ -15351,7 +15126,7 @@
       ]
     }
   },
-  {
+  "Résultats et Relevés de notes": {
     "intent": "Résultats et Relevés de notes",
     "question": {
       "fr": [
@@ -15398,7 +15173,7 @@
       ]
     }
   },
-  {
+  "Stage et PFE": {
     "intent": "Stage et PFE",
     "question": {
       "fr": [
@@ -15445,7 +15220,7 @@
       ]
     }
   },
-  {
+  "Types de diplômes proposés": {
     "intent": "Types de diplômes proposés",
     "question": {
       "fr": [
@@ -15492,7 +15267,7 @@
       ]
     }
   },
-  {
+  "Fonction des départements universitaires": {
     "intent": "Fonction des départements universitaires",
     "question": {
       "fr": [
@@ -15539,7 +15314,7 @@
       ]
     }
   },
-  {
+  "Accès à la faculté après le baccalauréat": {
     "intent": "Accès à la faculté après le baccalauréat",
     "question": {
       "fr": [
@@ -15586,7 +15361,7 @@
       ]
     }
   },
-  {
+  "Structure des semestres à l'université": {
     "intent": "Structure des semestres à l'université",
     "question": {
       "fr": [
@@ -15633,7 +15408,7 @@
       ]
     }
   },
-  {
+  "Travaux Pratiques à la FSO": {
     "intent": "Travaux Pratiques à la FSO",
     "question": {
       "fr": [
@@ -15688,7 +15463,7 @@
       ]
     }
   },
-  {
+  "calendar_rentree_universitaire": {
     "intent": "calendar_rentree_universitaire",
     "question": {
       "fr": [
@@ -15723,7 +15498,7 @@
       ]
     }
   },
-  {
+  "attestation_scolarite_procedure": {
     "intent": "attestation_scolarite_procedure",
     "question": {
       "fr": [
@@ -15758,7 +15533,7 @@
       ]
     }
   },
-  {
+  "retrait_diplome": {
     "intent": "retrait_diplome",
     "question": {
       "fr": [
@@ -15793,7 +15568,7 @@
       ]
     }
   },
-  {
+  "procedure_reinscription": {
     "intent": "procedure_reinscription",
     "question": {
       "fr": [
@@ -15842,7 +15617,7 @@
       ]
     }
   },
-  {
+  "consulter_notes_et_inscriptions": {
     "intent": "consulter_notes_et_inscriptions",
     "question": {
       "fr": [
@@ -15895,7 +15670,7 @@
       ]
     }
   },
-  {
+  "espace_etudiant_creation_premiere_fois": {
     "intent": "espace_etudiant_creation_premiere_fois",
     "question": {
       "fr": [
@@ -15948,7 +15723,7 @@
       ]
     }
   },
-  {
+  "email_institutionnel_procedure": {
     "intent": "email_institutionnel_procedure",
     "question": {
       "fr": [
@@ -16005,7 +15780,7 @@
       ]
     }
   },
-  {
+  "inscription_doctorants_2025_2026": {
     "intent": "inscription_doctorants_2025_2026",
     "question": {
       "fr": [
@@ -16058,7 +15833,7 @@
       ]
     }
   },
-  {
+  "activation_compte_ithenticate_doctorants": {
     "intent": "activation_compte_ithenticate_doctorants",
     "question": {
       "fr": [
@@ -16111,4 +15886,4 @@
       ]
     }
   }
-]
+}

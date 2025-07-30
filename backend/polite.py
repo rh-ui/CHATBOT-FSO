@@ -14,8 +14,6 @@ LANG_MAP = {
 
 def is_not_defined(lang: str):
     """Return a random 'not found' message based on language"""
-    rnb = random.randint(0, 9)
-
     output = {
         "fr": [
             "Désolé, je n'ai pas trouvé de réponse pertinente.",
@@ -67,7 +65,7 @@ def is_not_defined(lang: str):
         ]
     }
 
-    return output.get(lang, output[lang])[rnb]
+    return output[lang][random.randint(0, 9)]
 
 
 def detect_custom_language(text: str) -> str:

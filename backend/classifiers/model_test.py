@@ -52,18 +52,12 @@ def interactive_mode():
             
         if question:
             intent, probabilities = classifier.predict_intent(question, return_probabilities=True)
-            confidence = list(probabilities.values())[0]
-            
-            print(f"\nIntent: {intent}")
-            print(f"Confidence: {confidence:.4f}")
-            
-            # Show top 3 predictions
-            print("Top 3 predictions:")
+
             for i, (pred_intent, prob) in enumerate(list(probabilities.items())[:3], 1):
-                print(f"  {i}. {pred_intent}: {prob:.4f}")
-            
-            if confidence < 0.5:
-                print("⚠️ Low confidence - try rephrasing")
+                intent = pred_intent
+                confidence = prob
+                print(f"{intent}:{confidence:4f}")
+
 
 # Run interactive mode
 interactive_mode()

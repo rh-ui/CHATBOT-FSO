@@ -1,5 +1,6 @@
 
 import asyncio
+import json
 import os
 if hasattr(asyncio, 'WindowsProactorEventLoopPolicy'):
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
@@ -18,12 +19,16 @@ from sentence_transformers import SentenceTransformer
 from opensearchpy import OpenSearch, exceptions
 
 from LLMService import llm_service
-from indexer import add_single_entry
 from polite import is_not_defined, Ibtissam_checks, detect_custom_language
-from typing import List, Optional, Dict, Tuple
+from typing import List, Optional, Dict, Tuple, Union
 from datetime import datetime
-from SerpService import test
+from SerpService import internet
+from classifiers.classifier import MultilingualIntentClassifier
+from indexer import index_faq_data
+from helper import extract_key_entities, validate_entities_in_db
 
+from sklearn.preprocessing import normalize
+from converter import extract_intents
 
 
 
@@ -65,7 +70,7 @@ except Exception as e:
     raise
 
 try:
-    model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+    model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-mpnet-base-v2")
 except Exception as e:
     logger.error(f"Erreur de chargement du modèle: {str(e)}")
     raise
@@ -74,7 +79,7 @@ class Query(BaseModel):
     question: str
     lang: str 
     k: int = 3
-    score_threshold: float = 1
+    score_threshold: float = 0.01
     use_llm: bool = True  
     context: Optional[dict] = None
 
@@ -86,88 +91,100 @@ logger = logging.getLogger(__name__)
 def search(query: Query):
     if not query.question.strip():
         raise HTTPException(status_code=400, detail="La question ne peut pas être vide")
+    
+    # Détection langue et vérification pertinence
     query.lang = detect_custom_language(query.question)
-    if not Ibtissam_checks(query.question, query.lang):
-        return is_not_defined(query.lang)
-    try:        
-        embedding = model.encode(query.question).tolist()        
-        query_body = {
-            "size": query.k,
-            "query": {
-                "bool": {
-                    "should": [
-                        {
-                            "knn": {
-                                "embedding": {
-                                    "vector": embedding,
-                                    "k": 300,
-                                    "boost": 0.7
-                                }
-                            }
-                        },
-                        {
-                            "match": {
-                                "question": {
-                                    "query": query.question,
-                                    "fuzziness": "AUTO",
-                                    "boost": 0.3
-                                }
-                            }
-                        }
-                    ],
-                    "filter": [{"term": {"lang": query.lang}}] if query.lang else []
-                }
-            }
+    
+    logger.info('Must : Checking question relation with FSO')
+    if not llm_service.is_faculty_related(query.question, query.lang):
+        return {
+            "detected_lang": query.lang,
+            "structured_response": is_not_defined(query.lang),
+            "llm_used": False,
+            "search_source": "none"
         }
-        response = client.search(index="faq", body=query_body)
-        hits = [hit for hit in response["hits"]["hits"] if hit["_score"] >= query.score_threshold]
-        
-        if hits:
-            results = [
-                {
-                    "question": hit["_source"]["question"],
-                    "answer": hit["_source"]["answer"],
-                    "score": hit["_score"],
-                    "meta": hit["_source"].get("meta"),
-                    "search_type": "knn" if "_knn_score" in hit else "match"
-                }
-                for hit in hits
-            ]
+    
+    if llm_service.classify_question_type(query.question, query.lang) == "dynamic":
+        logger.info('Must : Searching internet')
+        return internet(query.question, query.lang)
+    
+    try:
+
+        classifier = MultilingualIntentClassifier('questions_intents.csv')
+
+        # 2. Load your trained model
+        classifier.load_model('classifiers/advanced_multilingual_intent_classifier.pkl')
+
+        # Get predicted intent with probabilities
+        intent, probabilities = classifier.predict_intent(query.question, return_probabilities=True)
+
+        # Initialize the list to collect all documents
+        all_documents: List[Dict[str, Union[str, float]]] = []
+
+        # Process top 3 predicted intents and collect all documents
+        for pred_intent, prob in list(probabilities.items())[:3]:
+            docs = index_faq_data("dataset_dict.json", pred_intent, query.lang, prob)
             
+            # Handle different return types from index_faq_data
+            if isinstance(docs, list) and prob > 0.01:
+                all_documents.extend(docs)  # If docs is a list, extend
+            elif isinstance(docs, dict) and prob > 0.01:
+                all_documents.append(docs)  # If docs is a single dict, append
+            else:
+                logger.warning(f"Unexpected return type from index_faq_data: {type(docs)}")
+
+        # Log the main predicted intent
+        logger.info(f"Main predicted intent: {intent}")
+        logger.info(f"Top 3 intents with probabilities: {list(probabilities.items())[:3]}")
+        logger.info(f"Total documents collected: {len(all_documents)}")
+        logger.info(f"Type of all_documents: {type(all_documents)}")
+
+        # Check if we found any relevant documents
+        if not all_documents:
+            logger.info('No documents found for predicted intents, using internet search')
+            # return internet(query.question, query.lang)
+        else:
+            # LLM integration - pass the flattened list of documents
             if query.use_llm:
                 llm_response = llm_service.generate_structured_response(
                     question=query.question,
-                    search_results=results,
+                    search_results=all_documents,  # Pass the flattened list directly
                     lang=query.lang
                 )
-                if llm_response['confidence'] < 0.2:
-                    return test(query.question, query.lang)
-                if query.context and llm_response.get('response'):
-                    enhanced_response = llm_service.enhance_response_with_context(
+                check = llm_service.validate_answer_relevance(query.question, llm_response["response"])
+                logger.info(llm_response["response"])
+                #'response': structured_response,
+                #'confidence': confidence,
+                #'sources_used': len(valid_results),
+                #'processing_time': processing_time,
+                #'original_results': valid_results,
+                #'scope': 'fso_related'
+                if not check:
+                    return internet(query.question, query.lang)
+
+                # If validation passes, enhance with context if provided
+                if query.context:
+                    llm_response['response'] = llm_service.enhance_response_with_context(
                         llm_response['response'],
                         query.context,
                         query.lang
                     )
+                # Return the FSO answer (whether enhanced or not)
                 return {
                     "detected_lang": query.lang,
-                    "raw_results": results,
                     "structured_response": llm_response['response'],
                     "confidence": llm_response['confidence'],
-                    "sources_used": llm_response['sources_used'],
-                    "processing_time": llm_response['processing_time'],
                     "llm_used": True,
-                    "search_source": "database"
-                }        
-        else: #internet
-            if query.use_llm:
-                return test(query.question, query.lang)
-                
+                    "search_source": "database",
+                    "intents_processed": len(probabilities),
+                    "documents_found": len(all_documents)
+                }
 
-    except exceptions.NotFoundError:
-        raise HTTPException(status_code=404, detail="Index 'faq' non trouvé")
     except Exception as e:
-        logger.error(f"Erreur lors de la recherche: {str(e)}")
+        logger.error(f"Erreur lors de la recherche: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Erreur interne: {str(e)}")
+
+
 
 
 @app.get("/")

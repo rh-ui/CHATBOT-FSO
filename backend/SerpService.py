@@ -1,3 +1,4 @@
+import logging
 from playwright.sync_api import sync_playwright
 import time
 import re
@@ -7,6 +8,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from collections import Counter
 import numpy as np
 from LLMService import llm_service
+
+logger = logging.getLogger(__name__)
 
 # ✅ Liste blanche des domaines fiables
 WHITELIST_DOMAINS = ["fso.ump.ma", ".gov.ma"]
@@ -177,7 +180,23 @@ def google_search_and_extract(query, lang, max_results=10):
         """)
 
         # 🔍 Recherche ciblée sur les domaines whitelistés
-        filtered_query = f"site:fso.ump.ma OR site:ump.ma OR site:cg.gov.ma {query}"
+
+        if (lang == 'fr'):
+            if 'fso' in query.lower():
+                query = query.replace('fso', 'la faculté des science oujda')
+        elif lang == 'en':
+            if 'fso' in query.lower():
+                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
+
+        elif lang == 'ar':
+            if 'fso' in query.lower():
+                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
+
+        elif lang == 'amz':
+            if 'fso' in query.lower():
+                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
+        filtered_query = f"site:fso.ump.ma OR site:cg.gov.ma {query}"
+
         search_url = f"https://www.google.com/search?q={filtered_query}&num={max_results}&hl={lang}"
 
         try:
@@ -468,7 +487,7 @@ def afficher_resultats(resultats):
         
         print("-" * 80)
 
-def test(qst: str, lang : str):
+def internet(qst: str, lang : str):
     # Effectuer la recherche
     search_results = google_search_and_extract(qst, lang, max_results=15)
     
@@ -486,7 +505,7 @@ def test(qst: str, lang : str):
         })
     
     # Passer au LLMService pour structurer la réponse
-
+    logger.info("Must : Structuring answer")
     llm_response = llm_service.generate_structured_response(
         question=qst,
         search_results=formatted_results,
