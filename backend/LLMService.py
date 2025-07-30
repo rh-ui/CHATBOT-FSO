@@ -603,7 +603,6 @@ class LLMService:
             logger.error(f"Erreur lors de la vérification de pertinence: {str(e)}")
             return False
 
-#prompt used here
     def generate_faculty_response(self, question: str, lang: str = 'fr') -> Dict[str, Any]:
         """Génère une réponse basée sur le modèle fine-tuné avec vos données FSO"""
         
@@ -684,7 +683,6 @@ class LLMService:
                 'error': str(e)
             }
 
-
     def format_for_database(self, question: str, response: str, lang: str = 'fr') -> Dict[str, Any]:
         """Formate la question et la réponse pour l'insertion dans la base de données"""
         
@@ -693,7 +691,7 @@ class LLMService:
             'reponse': {lang: [response]},
             'meta': {lang: ['Généré par LLM - Connaissances générales FSO']}
         }
-#prompt used here     
+
     def process_serp_to_response(self, question: str, serp_data: str, lang: str, 
                     store_to_file: bool = True, filename: str = "test.json") -> Dict[str, Any]:
         """Process SERP avec validation FSO et integration du modèle fine-tuné"""

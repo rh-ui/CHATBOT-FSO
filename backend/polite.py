@@ -13,7 +13,6 @@ LANG_MAP = {
 }
 
 def is_not_defined(lang: str):
-    """Return a random 'not found' message based on language"""
     output = {
         "fr": [
             "Désolé, je n'ai pas trouvé de réponse pertinente.",
@@ -69,9 +68,6 @@ def is_not_defined(lang: str):
 
 
 def detect_custom_language(text: str) -> str:
-    """
-    Improved language detection with better handling of edge cases
-    """
     if not text or not text.strip():
         return 'fr'  
     
@@ -109,70 +105,4 @@ def detect_custom_language(text: str) -> str:
             return 'amz'
         else:
             return 'fr'
-
-def Ibtissam_checks(question: str, lang: str) -> bool:
-    """
-    Improved function to check if question contains FSO-related keywords
-    """
-    if not question or not question.strip():
-        return False
-    
-    question_lower = question.lower()
-
-    # FSO-related keywords by language
-    keywords_by_lang = {
-        'fr': [
-            # Core FSO terms
-            "fso", "faculté des sciences", "faculté sciences", "sciences oujda", "fsoujda",
-            "université mohammed premier", "ump", "oujda",
-            
-            # Departments
-            "smi", "sma", "smc", "smp", "smg", "smb", "département",
-            
-            # Academic terms
-            "master", "licence", "doctorat", "pfe", "stage", "inscription", "m'inscrire",
-            "notes", "résultats", "soutenance", "mémoire",
-            
-            # General university terms
-            "étudiant", "études", "cours", "examen", "diplôme", "formation", "FAQs",
-            "professeur", "enseignant", "scolarité", "administration",
-            
-            # Location/contact
-            "bp 717", "mohamed vi", "fso@ump.ma", "fso.ump.ma"
-        ],
-        
-        'en': [
-            "fso", "faculty of sciences", "sciences faculty", "sciences oujda",
-            "mohammed premier university", "ump", "oujda",
-            "department", "master", "bachelor", "doctorate", "internship",
-            "student", "studies", "course", "exam", "diploma", "professor",
-            "teacher", "administration", "enrollment"
-        ],
-        
-        'ar': [
-            "fso", "كلية العلوم", "علوم وجدة", "جامعة محمد الأول",
-            "ump", "وجدة", "قسم", "ماستر", "إجازة", "دكتوراه",
-            "طالب", "دراسة", "امتحان", "شهادة", "أستاذ", "تسجيل"
-        ],
-        
-        'amz': [
-            "fso", "taɣect n lwensa", "lwensa ujjda", "universiyt mohamed premier",
-            "ump", "ujjda", "imnayen", "master", "licence", "student", "studies"
-        ]
-    }
-
-    # Check keywords for the detected language
-    keywords = keywords_by_lang[lang]
-    
-    for keyword in keywords:
-        if keyword.lower() in question_lower:
-            return True
-    
-    # Additional check: if question contains university-related terms in any language
-    university_terms = ["university", "université", "جامعة", "universiyt", "faculty", "faculté", "كلية", "taɣect"]
-    for term in university_terms:
-        if term.lower() in question_lower:
-            return True
-    
-    return False
 

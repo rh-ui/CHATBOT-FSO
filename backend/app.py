@@ -1,14 +1,11 @@
 
 import asyncio
-import json
 import os
 if hasattr(asyncio, 'WindowsProactorEventLoopPolicy'):
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
 
 from concurrent.futures import ThreadPoolExecutor
-import sys
-import re
 import numpy as np
 import logging
 
@@ -16,19 +13,14 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
-from opensearchpy import OpenSearch, exceptions
+from opensearchpy import OpenSearch
 
 from LLMService import llm_service
-from polite import is_not_defined, Ibtissam_checks, detect_custom_language
+from polite import is_not_defined, detect_custom_language
 from typing import List, Optional, Dict, Tuple, Union
-from datetime import datetime
 from SerpService import internet
 from classifiers.classifier import MultilingualIntentClassifier
 from indexer import index_faq_data
-from helper import extract_key_entities, validate_entities_in_db
-
-from sklearn.preprocessing import normalize
-from converter import extract_intents
 
 
 
@@ -153,12 +145,6 @@ def search(query: Query):
                 )
                 check = llm_service.validate_answer_relevance(query.question, llm_response["response"])
                 logger.info(llm_response["response"])
-                #'response': structured_response,
-                #'confidence': confidence,
-                #'sources_used': len(valid_results),
-                #'processing_time': processing_time,
-                #'original_results': valid_results,
-                #'scope': 'fso_related'
                 if not check:
                     return internet(query.question, query.lang)
 

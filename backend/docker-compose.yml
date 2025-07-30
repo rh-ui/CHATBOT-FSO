@@ -20,15 +20,6 @@ services:
       - "9600:9600"
     networks:
       - opensearch-net
-  opensearch-dashboards:
-        image: opensearchproject/opensearch-dashboards:latest
-        container_name: opensearch-dashboards
-        ports:
-          - "5601:5601"
-        environment:
-          - OPENSEARCH_HOSTS=["http://opensearch:9200"]
-        depends_on:
-          - opensearch
   fastapi:
     build: .
     container_name: fastapi

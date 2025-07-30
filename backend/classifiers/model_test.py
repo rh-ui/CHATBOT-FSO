@@ -80,5 +80,3 @@ def classify_question(question):
 # Example usage
 result = classify_question("Qui est le doyen de la FSO?")
 print(f"\nResult: {result}")
-
-print("\n🎉 That's it! Your model is working!")

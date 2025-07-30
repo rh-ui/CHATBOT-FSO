@@ -7,10 +7,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 def extract_key_entities(question: str) -> List[str]:
-    """Extract key entities that should exist in the database"""
     question_lower = question.lower()
     
-    # Comprehensive stop words list (French + English common words)
     stop_words = {
         # French stop words
         'de', 'le', 'la', 'les', 'du', 'des', 'et', 'ou', 'pour', 'dans', 'sur', 'avec', 'par', 'ce', 'ces', 'cette', 'cet',
@@ -30,8 +28,6 @@ def extract_key_entities(question: str) -> List[str]:
         'too', 'very', 'just', 'now', 'then', 'here', 'there', 'up', 'down', 'out', 'off', 'over', 'under', 'again',
         'further', 'once', 'because', 'if', 'while', 'during', 'before', 'after', 'above', 'below', 'between', 'through'
     }
-    
-    # Question-specific words to ignore
     question_words = {
         'modules', 'module', 'matiere', 'matières', 'cours', 'formation', 'programme', 'enseignement',
         'filiere', 'filières', 'specialite', 'spécialité', 'niveau', 'année', 'semestre', 'trimestre',
@@ -42,10 +38,8 @@ def extract_key_entities(question: str) -> List[str]:
     
     all_stop_words = stop_words.union(question_words)
     
-    # Extract potential entities using multiple strategies
     entities = []
     
-    # Strategy 1: Look for specific patterns after key words
     patterns = [
         r'(?:modules?\s+(?:de|du|des)\s+)([a-z0-9]+)',  # "modules de SMI"
         r'(?:filiere?s?\s+)([a-z0-9]+)',                # "filiere SMI"  
@@ -91,7 +85,6 @@ def extract_key_entities(question: str) -> List[str]:
     return final_entities
 
 def validate_entities_in_db(entities: List[str], client: OpenSearch, lang: str) -> float:
-    """Check what percentage of entities exist in the database"""
     if not entities:
         return 1.0  # No specific entities to validate
     
