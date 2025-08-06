@@ -19,7 +19,8 @@ import warnings
 warnings.filterwarnings('ignore')
 
 class MultilingualIntentClassifier:
-    def __init__(self, csv_file_path):
+    
+    def __init__(self, csv_file_path = None):
 
         self.csv_file_path = csv_file_path
         self.data = None
@@ -51,7 +52,7 @@ class MultilingualIntentClassifier:
 
                     if ',' in line:
                         last_comma_idx = line.rfind(',')
-                        question = line[:last_comma_idx].strip()
+                        question = line[:last_comma_idx].strip().lower()
                         intent = line[last_comma_idx + 1:].strip()
                         
                         question = question.strip('"\'')
@@ -205,7 +206,6 @@ class MultilingualIntentClassifier:
                 lowercase=True
             )
         }
-        
         
     def split_data(self, test_size=0.2, random_state=42):
         
@@ -458,13 +458,141 @@ class MultilingualIntentClassifier:
             print(f"Error loading model: {str(e)}")
             raise
     
+    def test_multilingual_examples(self):
+        """
+        Test the model with multilingual examples to demonstrate its capabilities
+        """
+        if self.best_model is None or self.best_vectorizer is None:
+            print("❌ Model not trained yet. Cannot run multilingual tests.")
+            return
+        
+        print("\n🌍 Testing Multilingual Intent Classification")
+        print("=" * 50)
+        
+        # Define test examples in multiple languages
+        test_examples = [
+            # English examples
+                ("When was the current FSO dean appointed ?","la date de nomination du doyen FSO"),
+                
+                # French examples
+                ("smi s3 ?","la date de nomination du doyen FSO")
+                
+        ]
+        
+        correct_predictions = 0
+        total_predictions = 0
+        language_performance = {}
+        
+        print("Testing individual examples:")
+        print("-" * 50)
+        
+        for question, expected_intent in test_examples:
+            try:
+                # Get prediction with probabilities
+                predicted_intent, probabilities = self.predict_intent(question, return_probabilities=True)
+                
+                # Determine language (simple heuristic)
+                if any(ord(char) > 127 for char in question):
+                    if any(ord(char) >= 0x0600 and ord(char) <= 0x06FF for char in question):
+                        language = "Arabic"
+                    elif any(char in "àâäéèêëïîôöùûüÿç" for char in question.lower()):
+                        language = "French"
+                    elif any(char in "ñáéíóúü" for char in question.lower()):
+                        language = "Spanish"
+                    elif any(char in "äöüß" for char in question.lower()):
+                        language = "German"
+                    else:
+                        language = "Other"
+                else:
+                    language = "English"
+                
+                # Track performance by language
+                if language not in language_performance:
+                    language_performance[language] = {"correct": 0, "total": 0}
+                
+                language_performance[language]["total"] += 1
+                total_predictions += 1
+                
+                # Check if prediction matches expected (case-insensitive)
+                is_correct = predicted_intent.lower() == expected_intent.lower()
+                if is_correct:
+                    correct_predictions += 1
+                    language_performance[language]["correct"] += 1
+                    status = "✅"
+                else:
+                    status = "❌"
+                
+                # Get top 3 predictions
+                top_3_intents = list(probabilities.items())[:3]
+                
+                print(f"{status} [{language}] {question[:40]}{'...' if len(question) > 40 else ''}")
+                print(f"    Expected: {expected_intent}")
+                print(f"    Predicted: {predicted_intent} ({probabilities[predicted_intent]:.3f})")
+                
+                if len(top_3_intents) > 1:
+                    print(f"    Top 3: {', '.join([f'{intent}({prob:.3f})' for intent, prob in top_3_intents])}")
+                print()
+                
+            except Exception as e:
+                print(f"❌ Error predicting for '{question}': {str(e)}")
+                continue
+        
+        # Overall performance summary
+        print("=" * 50)
+        print("📊 MULTILINGUAL PERFORMANCE SUMMARY")
+        print("=" * 50)
+        
+        if total_predictions > 0:
+            overall_accuracy = correct_predictions / total_predictions
+            print(f"Overall Accuracy: {overall_accuracy:.3f} ({correct_predictions}/{total_predictions})")
+            print()
+            
+            # Performance by language
+            print("Performance by Language:")
+            for language, stats in language_performance.items():
+                if stats["total"] > 0:
+                    lang_accuracy = stats["correct"] / stats["total"]
+                    print(f"  {language}: {lang_accuracy:.3f} ({stats['correct']}/{stats['total']})")
+            print()
+            
+            # Recommendations
+            print("🔍 Analysis & Recommendations:")
+            if overall_accuracy >= 0.8:
+                print("  ✅ Excellent multilingual performance!")
+            elif overall_accuracy >= 0.6:
+                print("  ⚠️  Good performance, but could be improved with more multilingual training data")
+            else:
+                print("  ❌ Performance suggests the model needs more diverse multilingual training data")
+            
+            # Language-specific recommendations
+            worst_performing = min(language_performance.items(), 
+                                key=lambda x: x[1]["correct"]/x[1]["total"] if x[1]["total"] > 0 else 0)
+            best_performing = max(language_performance.items(), 
+                                key=lambda x: x[1]["correct"]/x[1]["total"] if x[1]["total"] > 0 else 0)
+            
+            if len(language_performance) > 1:
+                print(f"  📈 Best performing language: {best_performing[0]} ({best_performing[1]['correct']}/{best_performing[1]['total']})")
+                print(f"  📉 Needs improvement: {worst_performing[0]} ({worst_performing[1]['correct']}/{worst_performing[1]['total']})")
+        
+        print("\n💡 Tips for improving multilingual performance:")
+        print("  • Ensure training data includes examples from all target languages")
+        print("  • Consider using language-specific preprocessing")
+        print("  • Add more diverse vocabulary and expressions")
+        print("  • Balance the dataset across languages and intents")
+        
+        return {
+            'overall_accuracy': correct_predictions / total_predictions if total_predictions > 0 else 0,
+            'language_performance': language_performance,
+            'total_tested': total_predictions
+        }
+
 
 # Fixed usage example
 def main_example():
     
     try:
         # Step 1: Initialize the classifier with your CSV file
-        classifier = MultilingualIntentClassifier('questions_intents.csv')
+        classifier = MultilingualIntentClassifier('cleaned_dataset.csv')
         
         # Step 2: Load and preprocess data
         data = classifier.load_and_preprocess_data()
@@ -500,6 +628,7 @@ def main_example():
         import traceback
         traceback.print_exc()
         return None
-
+    
+ 
 if __name__ == "__main__":
     classifier = main_example()

@@ -84,7 +84,7 @@ def interactive_session():
                     bar = "█" * bar_length + "░" * (30 - bar_length)
                     print(f"  {i}. {pred_intent}")
                     print(f"     {bar} {prob:.4f}")
-                    
+
         except KeyboardInterrupt:
             print("Goodbye!")
             break
