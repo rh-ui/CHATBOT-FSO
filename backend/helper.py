@@ -1,5 +1,5 @@
 import re
-from typing import List, Set
+from typing import Dict, List, Set
 from opensearchpy import OpenSearch, exceptions
 import logging
 
@@ -121,3 +121,25 @@ def validate_entities_in_db(entities: List[str], client: OpenSearch, lang: str) 
     validation_score = found_entities / len(entities)
     logger.info(f"Entity validation score: {validation_score} ({found_entities}/{len(entities)})")
     return validation_score
+
+def determine_source_type(question_type: str, documents: List[Dict]) -> str:
+    """Simple function to determine source type without LLM"""
+    if not documents:
+        return "none"
+    
+    # Check if documents have 'source' field to determine type
+    sources = set()
+    for doc in documents:
+        if 'source' in doc:
+            sources.add(doc['source'])
+        elif 'meta' in doc and 'url' in doc['meta']:
+            sources.add('internet')
+        else:
+            sources.add('database')
+    
+    if len(sources) > 1:
+        return "mixed"
+    elif 'internet' in sources:
+        return "internet"
+    else:
+        return "database"

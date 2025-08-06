@@ -84,6 +84,7 @@ def index_faq_data(dict_file, intent_val, lang, confidence):
 
     reponses = entry.get("reponse", {})
     metas = entry.get("meta", {})  # Some entries may not have this
+    date = entry.get("data", str)
 
     if lang not in reponses:
         print(f"No responses found for lang: {lang}")
@@ -95,7 +96,8 @@ def index_faq_data(dict_file, intent_val, lang, confidence):
             "answer": answer,
             "lang": lang,
             "intent": intent_val,
-            "confidence": confidence
+            "confidence": confidence,
+            "date": date
         }
         if metas and lang in metas and metas[lang]:
             doc["meta"] = metas[lang][0]

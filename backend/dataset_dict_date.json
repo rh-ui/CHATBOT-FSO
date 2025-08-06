@@ -44,7 +44,8 @@
         "Doyen n FSO d Professor MAAROUF EL BEKKAYE.",
         "Ism n doyen n FSO d Professor MAAROUF EL BEKKAYE."
       ]
-    }
+    },
+    "data": "2025-03-13"
   },
   "faculty_general_info": {
     "intent": "faculty_general_info",
@@ -97,7 +98,8 @@
       "amz": [
         "http://fso.ump.ma/"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "faculty_main_contact": {
     "intent": "faculty_main_contact",
@@ -150,7 +152,8 @@
       "amz": [
         "http://fso.ump.ma/"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "registrar_office_contact": {
     "intent": "registrar_office_contact",
@@ -189,7 +192,8 @@
       "amz": [
         "Aḥuddu n unermas yezmer ad yettwaɣer s +212 536 500 601 neɣ s email ɣer scolarite@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "administration_contact": {
     "intent": "administration_contact",
@@ -228,7 +232,8 @@
       "amz": [
         "Anabaḍ n temdint yezmer ad yettwaɣer s +212 536 500 602 neɣ s email ɣer admin@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "library_contact": {
     "intent": "library_contact",
@@ -267,7 +272,8 @@
       "amz": [
         "Tamsult tezmer ad tettwaɣer s +212 536 500 610 neɣ s email ɣer bibliotheque@fso.ump.ma. Tansa-s tis snat d BP 457 - Campus universitaire, 60000 Oujda, Lmerruk."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "it_support_contact": {
     "intent": "it_support_contact",
@@ -306,7 +312,8 @@
       "amz": [
         "Aḥuddu n tetiknulujit yella deg +212 536 500 620 neɣ s email ɣer support@fso.ump.ma i yal tallalt tignitin."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "director_contact": {
     "intent": "director_contact",
@@ -345,7 +352,8 @@
       "amz": [
         "Anebdad n temdint yezmer ad yettwaɣer s +212 536 500 603 neɣ s email ɣer directeur@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "pedagogical_responsible_contact": {
     "intent": "pedagogical_responsible_contact",
@@ -384,7 +392,8 @@
       "amz": [
         "Anermas n tsenselkimt yezmer ad yettwaɣer s +212 536 500 604 neɣ s email ɣer pedagogie@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "math_department_contact": {
     "intent": "math_department_contact",
@@ -423,7 +432,8 @@
       "amz": [
         "Aḥuddu n tusnakt yezmer ad yettwaɣer s +212 536 500 630 neɣ s email ɣer math@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "physics_department_contact": {
     "intent": "physics_department_contact",
@@ -462,7 +472,8 @@
       "amz": [
         "Aḥuddu n tafizikt yezmer ad yettwaɣer s +212 536 500 640 neɣ s email ɣer physique@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "chemistry_department_contact": {
     "intent": "chemistry_department_contact",
@@ -501,7 +512,8 @@
       "amz": [
         "Aḥuddu n takimya yezmer ad yettwaɣer s +212 536 500 650 neɣ s email ɣer chimie@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "biology_department_contact": {
     "intent": "biology_department_contact",
@@ -540,7 +552,8 @@
       "amz": [
         "Aḥuddu n tussnant yezmer ad yettwaɣer s +212 536 500 660 neɣ s email ɣer biologie@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "computer_science_department_contact": {
     "intent": "computer_science_department_contact",
@@ -579,7 +592,8 @@
       "amz": [
         "Aḥuddu n tignit yezmer ad yettwaɣer s +212 536 500 670 neɣ s email ɣer info@fso.ump.ma."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "emergency_security_contact": {
     "intent": "emergency_security_contact",
@@ -618,7 +632,8 @@
       "amz": [
         "Deg lḥalat n laman, ssawel ɣef +212 536 500 699."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "emergency_medical_contact": {
     "intent": "emergency_medical_contact",
@@ -657,7 +672,8 @@
       "amz": [
         "Deg lḥalat n tussna, ssawel ɣef +212 536 500 700 i wakken ad teɣeḍ ɣer tinfirmerit n temdint."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "faculty_fax_number": {
     "intent": "faculty_fax_number",
@@ -696,7 +712,8 @@
       "amz": [
         "Udrus n fax n temdint d +212536500603."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "faculty_alternative_phones": {
     "intent": "faculty_alternative_phones",
@@ -735,7 +752,8 @@
       "amz": [
         "Temdint tesɛa daɣen idrisen nniḍen: +212536500601 d +212536500602."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "university_presidency_info": {
     "intent": "university_presidency_info",
@@ -774,7 +792,8 @@
       "amz": [
         "Tneglit n UMP tezga-d deg BP 717, 60000 Oujda, Lmerruk. Tzemred ad ten-teɣeḍ s +212 536 202 020."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "university_presidency_fax": {
     "intent": "university_presidency_fax",
@@ -813,7 +832,8 @@
       "amz": [
         "Udrus n fax n tneglit d +212 536 202 020."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ciove_contact": {
     "intent": "ciove_contact",
@@ -852,7 +872,8 @@
       "amz": [
         "CIOVE yezga-d deg Quartier Al Qods - BP 524, 60000 Oujda, Lmerruk. Tzemred ad ten-teɣeḍ s +212536502979."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ciove_fax": {
     "intent": "ciove_fax",
@@ -891,7 +912,8 @@
       "amz": [
         "Udrus n fax n CIOVE d +212536500609."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "library_alternative_numbers": {
     "intent": "library_alternative_numbers",
@@ -930,7 +952,8 @@
       "amz": [
         "Tamsult tesɛa daɣen idrisen nniḍen: +212 536 500 601 d +212 536 500 602."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "faculty_website": {
     "intent": "faculty_website",
@@ -983,7 +1006,8 @@
       "amz": [
         "http://fso.ump.ma/"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "all_departments_list": {
     "intent": "all_departments_list",
@@ -1022,7 +1046,8 @@
       "amz": [
         "Temdint tesɛa ikṛaḍen-a: Tusnakt, Tafizikt, Takimya, Tussnant d Tignit."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "department_contacts_general": {
     "intent": "department_contacts_general",
@@ -1081,7 +1106,8 @@
         "- Tussnant: +212 536 500 660 neɣ biologie@fso.ump.ma",
         "- Tignit: +212 536 500 670 neɣ info@fso.ump.ma"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "emergency_contacts_all": {
     "intent": "emergency_contacts_all",
@@ -1128,7 +1154,8 @@
         "- Laman: +212 536 500 699",
         "- Tinfirmerit: +212 536 500 700"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "secondary_address_library": {
     "intent": "secondary_address_library",
@@ -1167,7 +1194,8 @@
       "amz": [
         "Tansa tis snat n tamsult d: BP 457 - Campus universitaire, 60000 Oujda, Lmerruk."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "presidency_vs_faculty_address": {
     "intent": "presidency_vs_faculty_address",
@@ -1206,7 +1234,8 @@
       "amz": [
         "Temdint tezga-d deg Boulevard Mohamed VI, BP 717, mayan tneglit tezga-d deg BP 717 (akken kan ttebna) maca war asmizzwer n Boulevard."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ciove_location_details": {
     "intent": "ciove_location_details",
@@ -1245,7 +1274,8 @@
       "amz": [
         "CIOVE yezga-d deg taɣiwant Al Qods (Jerusalem) deg Oujda, s tansa n ttaburt BP 524, 60000 Oujda, Lmerruk."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "all_faculty_emails": {
     "intent": "all_faculty_emails",
@@ -1332,7 +1362,8 @@
         "- Tussnant: biologie@fso.ump.ma",
         "- Tignit: info@fso.ump.ma"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "all_faculty_phones": {
     "intent": "all_faculty_phones",
@@ -1427,7 +1458,8 @@
         "- Lḥalat n laman: +212 536 500 699",
         "- Lḥalat n tussna: +212 536 500 700"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "examen_du_semestre_de_printemps_2024_2025": {
     "intent": "examen_du_semestre_de_printemps_2024_2025",
@@ -1472,7 +1504,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/examen-du-semestre-de-printemps-au-titre-de-lannee-universitaire-2024-2025"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "theses_soutenues": {
     "intent": "theses_soutenues",
@@ -1517,7 +1550,8 @@
       "amz": [
         "http://fso.ump.ma/amz/theses-soutenues"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "cedocst": {
     "intent": "cedocst",
@@ -1562,7 +1596,8 @@
       "amz": [
         "http://fso.ump.ma/amz/cedocst"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "conseil_de_la_faculte": {
     "intent": "conseil_de_la_faculte",
@@ -1607,7 +1642,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conseil-de-la-faculte"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values": {
     "intent": "conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values",
@@ -1652,7 +1688,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/conference-the-three-principles-of-mutuality-interdependence-co-prosperity-universal-values"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "characterization_of_the_polyphenolic_fraction": {
     "intent": "characterization_of_the_polyphenolic_fraction",
@@ -1697,7 +1734,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/characterization-of-the-polyphenolic-fraction-of-different-plant-matrices-extraction-analytical-methods-and-impact-of-the-technological-process"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "evaluation_interne_et_formation_continue": {
     "intent": "evaluation_interne_et_formation_continue",
@@ -1742,7 +1780,8 @@
       "amz": [
         "http://fso.ump.ma/amz/evaluation-interne-et-formation-continue"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "portail_des_revues_scientifiques_marocaines_imist": {
     "intent": "portail_des_revues_scientifiques_marocaines_imist",
@@ -1787,7 +1826,8 @@
       "amz": [
         "http://fso.ump.ma/amz/revues/portail-des-revues-scientifiques-marocaines-imist"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "acces_a_la_bibliotheque": {
     "intent": "acces_a_la_bibliotheque",
@@ -1832,7 +1872,8 @@
       "amz": [
         "http://fso.ump.ma/amz/bibliotheque"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "demande_de_releve_de_notes": {
     "intent": "demande_de_releve_de_notes",
@@ -1877,7 +1918,8 @@
       "amz": [
         "http://fso.ump.ma/amz/demande-de-releve-de-notes"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "inscription_aux_examens": {
     "intent": "inscription_aux_examens",
@@ -1922,7 +1964,8 @@
       "amz": [
         "http://fso.ump.ma/amz/inscription-aux-examens"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "calendrier_universitaire": {
     "intent": "calendrier_universitaire",
@@ -1967,7 +2010,8 @@
       "amz": [
         "http://fso.ump.ma/amz/calendrier-universitaire"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "bourses_et_aides": {
     "intent": "bourses_et_aides",
@@ -2012,7 +2056,8 @@
       "amz": [
         "http://fso.ump.ma/amz/bourses-et-aides"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "contacts_et_services": {
     "intent": "contacts_et_services",
@@ -2057,7 +2102,8 @@
       "amz": [
         "http://fso.ump.ma/amz/contacts-et-services"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "formations_licence_et_master": {
     "intent": "formations_licence_et_master",
@@ -2102,7 +2148,8 @@
       "amz": [
         "http://fso.ump.ma/amz/formations-licence-et-master"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "doctorat_et_cedocst": {
     "intent": "doctorat_et_cedocst",
@@ -2147,7 +2194,8 @@
       "amz": [
         "http://fso.ump.ma/amz/doctorat-et-cedocst"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "stages_et_pfe": {
     "intent": "stages_et_pfe",
@@ -2192,7 +2240,8 @@
       "amz": [
         "http://fso.ump.ma/amz/stages-et-pfe"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "demande_de_carte_d_etudiant": {
     "intent": "demande_de_carte_d_etudiant",
@@ -2237,7 +2286,8 @@
       "amz": [
         "http://fso.ump.ma/amz/demande-de-carte-d-etudiant"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "reglement_interieur": {
     "intent": "reglement_interieur",
@@ -2282,7 +2332,8 @@
       "amz": [
         "http://fso.ump.ma/amz/reglement-interieur"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "procedure_de_reclamation": {
     "intent": "procedure_de_reclamation",
@@ -2327,7 +2378,8 @@
       "amz": [
         "http://fso.ump.ma/amz/procedure-de-reclamation"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "clubs_et_activites": {
     "intent": "clubs_et_activites",
@@ -2372,7 +2424,8 @@
       "amz": [
         "http://fso.ump.ma/amz/clubs-et-activites"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "partenariats_et_conventions": {
     "intent": "partenariats_et_conventions",
@@ -2417,7 +2470,8 @@
       "amz": [
         "http://fso.ump.ma/amz/partenariats-et-conventions"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "publications_scientifiques": {
     "intent": "publications_scientifiques",
@@ -2462,7 +2516,8 @@
       "amz": [
         "http://fso.ump.ma/amz/publications-scientifiques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "mobilite_et_echanges": {
     "intent": "mobilite_et_echanges",
@@ -2507,7 +2562,8 @@
       "amz": [
         "http://fso.ump.ma/amz/mobilite-et-echanges"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "evenements_et_colloques": {
     "intent": "evenements_et_colloques",
@@ -2552,7 +2608,8 @@
       "amz": [
         "http://fso.ump.ma/amz/evenements-et-colloques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ressources_numeriques": {
     "intent": "ressources_numeriques",
@@ -2597,7 +2654,8 @@
       "amz": [
         "http://fso.ump.ma/amz/ressources-numeriques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "faq_generale": {
     "intent": "faq_generale",
@@ -2642,7 +2700,8 @@
       "amz": [
         "http://fso.ump.ma/amz/faq-generale"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "services_aux_etudiants": {
     "intent": "services_aux_etudiants",
@@ -2687,7 +2746,8 @@
       "amz": [
         "http://fso.ump.ma/amz/services-aux-etudiants"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "guide_de_l_etudiant": {
     "intent": "guide_de_l_etudiant",
@@ -2732,7 +2792,8 @@
       "amz": [
         "http://fso.ump.ma/amz/guide-de-letudiant"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "presentation_de_la_fso": {
     "intent": "presentation_de_la_fso",
@@ -2777,7 +2838,8 @@
       "amz": [
         "http://fso.ump.ma/amz/presentation-de-la-fso"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "apogee_information": {
     "intent": "apogee_information",
@@ -2822,7 +2884,8 @@
       "amz": [
         "http://fso.ump.ma/amz/apogee"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "communiques_fso": {
     "intent": "communiques_fso",
@@ -2867,7 +2930,8 @@
       "amz": [
         "http://fso.ump.ma/amz/communiques-fso-15"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "waste_management_event": {
     "intent": "waste_management_event",
@@ -2912,7 +2976,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/useful-from-useless-a-waste-can-become-a-resource"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "earth_sciences_info": {
     "intent": "earth_sciences_info",
@@ -2957,7 +3022,8 @@
       "amz": [
         "http://fso.ump.ma/amz/sciences-de-la-terre-et-de-lunivers"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "cap_presentation": {
     "intent": "cap_presentation",
@@ -3002,7 +3068,8 @@
       "amz": [
         "http://fso.ump.ma/amz/presentation-du-cap"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "information_about_professional_license": {
     "intent": "information_about_professional_license",
@@ -3047,7 +3114,8 @@
       "amz": [
         "http://fso.ump.ma/amz/licence-professionnelle"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "eco_anxiety_conference_info": {
     "intent": "eco_anxiety_conference_info",
@@ -3092,7 +3160,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/conference-sur-leco-anxiete"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "geology_department_info": {
     "intent": "geology_department_info",
@@ -3137,7 +3206,8 @@
       "amz": [
         "http://fso.ump.ma/amz/geologie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "doctoral_ceremony_info": {
     "intent": "doctoral_ceremony_info",
@@ -3182,7 +3252,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/ceremonie-de-reception-des-doctorants-nouvelle-generation-et-de-louverture-des-doctoriales-20232024-1"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "academic_programs_licence": {
     "intent": "academic_programs_licence",
@@ -3239,7 +3310,8 @@
         "http://fso.ump.ma/amz/licence-professionnelle/cahiers-des-normes-pedagogiques-nationales-10",
         "http://fso.ump.ma/amz/licence-fondamentale/cahiers-des-normes-pedagogiques-nationales"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "conference_information": {
     "intent": "conference_information",
@@ -3284,7 +3356,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/lumieres-et-lumiere"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "general_conferences": {
     "intent": "general_conferences",
@@ -3329,7 +3402,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "conference_section_access": {
     "intent": "conference_section_access",
@@ -3374,7 +3448,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "news_article_access": {
     "intent": "news_article_access",
@@ -3419,7 +3494,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/eaalan-aan-mbaryat-tothyf"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "event_details": {
     "intent": "event_details",
@@ -3464,7 +3540,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/analyse-des-donnees"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "conference_series": {
     "intent": "conference_series",
@@ -3509,7 +3586,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "news_announcement": {
     "intent": "news_announcement",
@@ -3554,7 +3632,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/eaalan-aan-mbaryat-tothyf"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "academic_notes": {
     "intent": "academic_notes",
@@ -3599,7 +3678,8 @@
       "amz": [
         "http://fso.ump.ma/amz/notes/epistemologie-et-philosophie-des-sciences"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "international_colloquium": {
     "intent": "international_colloquium",
@@ -3644,7 +3724,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/organisation-du-2eme-colloque-international-bioressources-biotechnologies-et-developpement-durable-1"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "journals_access": {
     "intent": "journals_access",
@@ -3689,7 +3770,8 @@
       "amz": [
         "http://fso.ump.ma/amz/revues"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "entrepreneurship_event": {
     "intent": "entrepreneurship_event",
@@ -3734,7 +3816,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/lentrepreneuriat-au-feminin-vu-dafrique-le-cas-des-comores"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "specialized_master": {
     "intent": "specialized_master",
@@ -3779,7 +3862,8 @@
       "amz": [
         "http://fso.ump.ma/amz/master-specialise"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scientific_journals": {
     "intent": "scientific_journals",
@@ -3824,7 +3908,8 @@
       "amz": [
         "http://fso.ump.ma/amz/revues/portail-des-revues-scientifiques-marocaines-imist"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "sports_tournament": {
     "intent": "sports_tournament",
@@ -3869,7 +3954,8 @@
       "amz": [
         "http://fso.ump.ma/amz/club-cap-fso/tournoi-de-mini-foot"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ai_conference": {
     "intent": "ai_conference",
@@ -3914,7 +4000,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/le-2eme-colloque-international-sur-environnement-sante-et-intelligence-artificielle"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "information_system": {
     "intent": "information_system",
@@ -3959,7 +4046,8 @@
       "amz": [
         "http://fso.ump.ma/amz/notes/blagh-rkm-22022-alntham-almaalomaty-lkly-alaalom"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "analytical_platform": {
     "intent": "analytical_platform",
@@ -4004,7 +4092,8 @@
       "amz": [
         "http://fso.ump.ma/amz/plateforme-analytique-19"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "student_club": {
     "intent": "student_club",
@@ -4049,7 +4138,8 @@
       "amz": [
         "http://fso.ump.ma/amz/club-cap-fso"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "pedagogical_standards": {
     "intent": "pedagogical_standards",
@@ -4094,7 +4184,8 @@
       "amz": [
         "http://fso.ump.ma/amz/licence-fondamentale/cahiers-des-normes-pedagogiques-nationales"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "sports_final": {
     "intent": "sports_final",
@@ -4139,7 +4230,8 @@
       "amz": [
         "http://fso.ump.ma/amz/club-cap-fso/finale-tournoi-de-mini-foot-ramdan-1446h"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "announcements_access": {
     "intent": "announcements_access",
@@ -4184,7 +4276,8 @@
       "amz": [
         "http://fso.ump.ma/amz/annonces"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "council_regulations": {
     "intent": "council_regulations",
@@ -4229,7 +4322,8 @@
       "amz": [
         "http://fso.ump.ma/amz/reglement-interieur-du-conseil"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "tools_management": {
     "intent": "tools_management",
@@ -4274,7 +4368,8 @@
       "amz": [
         "http://fso.ump.ma/amz/outils-de-gestion"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "humboldt_programs": {
     "intent": "humboldt_programs",
@@ -4319,7 +4414,8 @@
       "amz": [
         "http://fso.ump.ma/amz/programmes-de-la-fondation-alexander-von-humboldt"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "computer_science_info": {
     "intent": "computer_science_info",
@@ -4364,7 +4460,8 @@
       "amz": [
         "http://fso.ump.ma/amz/informatique"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "patent_information": {
     "intent": "patent_information",
@@ -4409,7 +4506,8 @@
       "amz": [
         "http://fso.ump.ma/amz/brevet"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "hydrogen_conference": {
     "intent": "hydrogen_conference",
@@ -4454,7 +4552,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/conference-hydrogene-geophilie-dun-ploutogene"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "chemistry_matter_science": {
     "intent": "chemistry_matter_science",
@@ -4499,7 +4598,8 @@
       "amz": [
         "http://fso.ump.ma/amz/science-de-la-matiere-chimie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "climatology_observations": {
     "intent": "climatology_observations",
@@ -4544,7 +4644,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/observations-en-climatologie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "research_projects": {
     "intent": "research_projects",
@@ -4589,7 +4690,8 @@
       "amz": [
         "http://fso.ump.ma/amz/projets-de-recherche"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "books_resources": {
     "intent": "books_resources",
@@ -4634,7 +4736,8 @@
       "amz": [
         "http://fso.ump.ma/amz/livres"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ciove_center": {
     "intent": "ciove_center",
@@ -4679,7 +4782,8 @@
       "amz": [
         "http://fso.ump.ma/amz/centre-dinformation-dorientation-et-de-la-vie-estudiantine-ciove"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scientific_productions": {
     "intent": "scientific_productions",
@@ -4724,7 +4828,8 @@
       "amz": [
         "http://fso.ump.ma/amz/productions"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "chemistry_journal": {
     "intent": "chemistry_journal",
@@ -4769,7 +4874,8 @@
       "amz": [
         "http://fso.ump.ma/amz/revues/moroccan-journal-of-chemistry"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "health_insurance": {
     "intent": "health_insurance",
@@ -4814,7 +4920,8 @@
       "amz": [
         "http://fso.ump.ma/amz/assurance-maladie-obligatoire-20"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "publications_access": {
     "intent": "publications_access",
@@ -4859,7 +4966,8 @@
       "amz": [
         "http://fso.ump.ma/amz/publications"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "emotional_intelligence_conference": {
     "intent": "emotional_intelligence_conference",
@@ -4904,7 +5012,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/conference-lintelligence-emotionnelle"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scientific_day_2024": {
     "intent": "scientific_day_2024",
@@ -4949,7 +5058,8 @@
       "amz": [
         "http://fso.ump.ma/amz/club-cap-fso/journee-scientifique-2-mars-2024"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "pedagogical_evaluation_conference": {
     "intent": "pedagogical_evaluation_conference",
@@ -4994,7 +5104,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/conference-reflexions-sur-levaluation-pedagogique"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "applied_computer_science": {
     "intent": "applied_computer_science",
@@ -5039,7 +5150,8 @@
       "amz": [
         "http://fso.ump.ma/amz/mip-informatique-et-informatique-appliquee"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "master_programs": {
     "intent": "master_programs",
@@ -5084,7 +5196,8 @@
       "amz": [
         "http://fso.ump.ma/amz/master"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "administration_info": {
     "intent": "administration_info",
@@ -5129,7 +5242,8 @@
       "amz": [
         "http://fso.ump.ma/amz/administration"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "physics_department_info": {
     "intent": "physics_department_info",
@@ -5174,7 +5288,8 @@
       "amz": [
         "http://fso.ump.ma/amz/physique"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "phd_program_info": {
     "intent": "phd_program_info",
@@ -5219,7 +5334,8 @@
       "amz": [
         "http://fso.ump.ma/amz/doctorat"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "phd_year6_notice": {
     "intent": "phd_year6_notice",
@@ -5264,7 +5380,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/avis-aux-doctorants-inscrits-en-6eme-annee-de-these"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "thesis_charter_info": {
     "intent": "thesis_charter_info",
@@ -5309,7 +5426,8 @@
       "amz": [
         "http://fso.ump.ma/amz/charte-des-theses"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "knowledge_economy_conference": {
     "intent": "knowledge_economy_conference",
@@ -5354,7 +5472,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/conference-leconomie-du-savoir"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "chemical_journal_info": {
     "intent": "chemical_journal_info",
@@ -5399,7 +5518,8 @@
       "amz": [
         "http://fso.ump.ma/amz/revues/arabian-journal-of-chemical-environmental-research"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "math_sciences_info": {
     "intent": "math_sciences_info",
@@ -5444,7 +5564,8 @@
       "amz": [
         "http://fso.ump.ma/amz/sciences-mathematiques-et-applications"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "spring_resit_schedule": {
     "intent": "spring_resit_schedule",
@@ -5489,7 +5610,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/programme-des-examens-session-de-rattrapage-du-printemps-2024-2025"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "biology_department_info": {
     "intent": "biology_department_info",
@@ -5534,7 +5656,8 @@
       "amz": [
         "http://fso.ump.ma/amz/biologie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "departments_info": {
     "intent": "departments_info",
@@ -5579,7 +5702,8 @@
       "amz": [
         "http://fso.ump.ma/amz/departements"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "materials_journal_info": {
     "intent": "materials_journal_info",
@@ -5624,7 +5748,8 @@
       "amz": [
         "http://fso.ump.ma/amz/revues/journal-of-materials-and-environmental-science"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "terms_of_use": {
     "intent": "terms_of_use",
@@ -5669,7 +5794,8 @@
       "amz": [
         "http://fso.ump.ma/amz/administration/conditions-generales-dutilisation"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "cap_club_orientation": {
     "intent": "cap_club_orientation",
@@ -5714,7 +5840,8 @@
       "amz": [
         "http://fso.ump.ma/amz/club-cap-fso/journee-dorientation-academique-et-dexcellence"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "master_norms": {
     "intent": "master_norms",
@@ -5759,7 +5886,8 @@
       "amz": [
         "http://fso.ump.ma/amz/master/cahiers-des-normes-pedagogiques-nationales-11"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "natural_sciences_event": {
     "intent": "natural_sciences_event",
@@ -5804,7 +5932,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/histoire-des-sciences-naturelles"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "blood_donation_conference": {
     "intent": "blood_donation_conference",
@@ -5849,7 +5978,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/don-du-sang"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "la date de nomination du doyen FSO": {
     "intent": "la date de nomination du doyen FSO",
@@ -5910,7 +6040,8 @@
       "amz": [
         "https://www.cg.gov.ma/amz/node/12254"
       ]
-    }
+    },
+    "data": "2025-03-13"
   },
   "life_sciences_info": {
     "intent": "life_sciences_info",
@@ -5955,7 +6086,8 @@
       "amz": [
         "http://fso.ump.ma/amz/sciences-de-la-vie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "specialized_master_norms": {
     "intent": "specialized_master_norms",
@@ -6000,7 +6132,8 @@
       "amz": [
         "http://fso.ump.ma/amz/master-specialise/cahiers-des-normes-pedagogiques-nationales-12"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "homepage_access": {
     "intent": "homepage_access",
@@ -6045,7 +6178,8 @@
       "amz": [
         "http://fso.ump.ma/amz/accueil"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "pure_applied_science_journal": {
     "intent": "pure_applied_science_journal",
@@ -6090,7 +6224,8 @@
       "amz": [
         "http://fso.ump.ma/amz/revues/maghrebian-journal-of-pure-applied-science"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "postdoc_info": {
     "intent": "postdoc_info",
@@ -6135,7 +6270,8 @@
       "amz": [
         "http://fso.ump.ma/amz/post-doc"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "phd_attestation": {
     "intent": "phd_attestation",
@@ -6180,7 +6316,8 @@
       "amz": [
         "http://fso.ump.ma/amz/cedocst/attestation-de-validation-dune-formation-doctorale"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "gamma_ray_conference": {
     "intent": "gamma_ray_conference",
@@ -6225,7 +6362,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/conference-les-sursauts-gamma-1"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "permanent_commissions": {
     "intent": "permanent_commissions",
@@ -6270,7 +6408,8 @@
       "amz": [
         "http://fso.ump.ma/amz/commissions-permanentes"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "health_insurance_platform": {
     "intent": "health_insurance_platform",
@@ -6315,7 +6454,8 @@
       "amz": [
         "http://fso.ump.ma/amz/notes/plateforme-d-inscription-pour-beneficier-de-lassurance-maladie-obligatoire-amo"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "news_page_access": {
     "intent": "news_page_access",
@@ -6363,7 +6503,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "phd_registration_2025": {
     "intent": "phd_registration_2025",
@@ -6408,7 +6549,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "university_habilitation": {
     "intent": "university_habilitation",
@@ -6453,7 +6595,8 @@
       "amz": [
         "http://fso.ump.ma/amz/habilitation-universitaire"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "spring_resit_calendar": {
     "intent": "spring_resit_calendar",
@@ -6498,7 +6641,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/calendrier-des-examens-etudiants-session-de-rattrapage-du-printemps-2024-2025"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "national_cooperation": {
     "intent": "national_cooperation",
@@ -6543,7 +6687,8 @@
       "amz": [
         "http://fso.ump.ma/amz/cooperation-nationale"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "labs_status": {
     "intent": "labs_status",
@@ -6588,7 +6733,8 @@
       "amz": [
         "http://fso.ump.ma/amz/statut-des-laboratoires"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "taazy2_announcement": {
     "intent": "taazy2_announcement",
@@ -6633,7 +6779,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/taazy-2"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "events_page_access": {
     "intent": "events_page_access",
@@ -6682,7 +6829,8 @@
       "amz": [
         "http://fso.ump.ma/amz/events"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "labs_directory": {
     "intent": "labs_directory",
@@ -6727,7 +6875,8 @@
       "amz": [
         "http://fso.ump.ma/amz/laboratoires"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "general_information": {
     "intent": "general_information",
@@ -6772,7 +6921,8 @@
       "amz": [
         "http://fso.ump.ma/amz/informations-dordre-general"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "spring_schedule_courses": {
     "intent": "spring_schedule_courses",
@@ -6817,7 +6967,8 @@
       "amz": [
         "http://fso.ump.ma/amz/emplois-du-temps/emplois-du-temps-cours-semestres-de-printemps-2024-2025"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "professional_license_norms": {
     "intent": "professional_license_norms",
@@ -6862,7 +7013,8 @@
       "amz": [
         "http://fso.ump.ma/amz/licence-professionnelle/cahiers-des-normes-pedagogiques-nationales-10"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "health_insurance_note": {
     "intent": "health_insurance_note",
@@ -6907,7 +7059,8 @@
       "amz": [
         "http://fso.ump.ma/amz/notes/assurance-maladie-obligatoire-27"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "notes_page_access": {
     "intent": "notes_page_access",
@@ -6952,7 +7105,8 @@
       "amz": [
         "http://fso.ump.ma/amz/notes"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "thesis_information": {
     "intent": "thesis_information",
@@ -6997,7 +7151,8 @@
       "amz": [
         "http://fso.ump.ma/amz/theses-soutenues-6"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "event_participation": {
     "intent": "event_participation",
@@ -7042,7 +7197,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/mshark-kly-alaalom-fy-almltk-alaaalamy-lltojyh-ma-baad-albkalorya"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "timetable_access": {
     "intent": "timetable_access",
@@ -7087,7 +7243,8 @@
       "amz": [
         "http://fso.ump.ma/amz/emplois-du-temps/emploi-du-temps-des-td-semestre-de-printemps-2024-2025"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "mathematics_department": {
     "intent": "mathematics_department",
@@ -7132,7 +7289,8 @@
       "amz": [
         "http://fso.ump.ma/amz/mathematiques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "institutional_email_procedure": {
     "intent": "institutional_email_procedure",
@@ -7177,7 +7335,8 @@
       "amz": [
         "http://fso.ump.ma/amz/notes/procedure-doctroi-des-emails-institutionnels"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "physics_department": {
     "intent": "physics_department",
@@ -7222,7 +7381,8 @@
       "amz": [
         "http://fso.ump.ma/amz/sciences-de-la-matiere-physique"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "conference_mariculture": {
     "intent": "conference_mariculture",
@@ -7267,7 +7427,8 @@
       "amz": [
         "http://fso.ump.ma/amz/conferences-1/conference-les-perspectives-de-la-mariculture-et-de-la-conchyliculture-au-maroc"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "chemistry_department": {
     "intent": "chemistry_department",
@@ -7312,7 +7473,8 @@
       "amz": [
         "http://fso.ump.ma/amz/chimie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "humanities_department": {
     "intent": "humanities_department",
@@ -7357,7 +7519,8 @@
       "amz": [
         "http://fso.ump.ma/amz/humanites"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ethical_charter": {
     "intent": "ethical_charter",
@@ -7402,7 +7565,8 @@
       "amz": [
         "http://fso.ump.ma/amz/charte-ethique"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "cooperation_information": {
     "intent": "cooperation_information",
@@ -7447,7 +7611,8 @@
       "amz": [
         "http://fso.ump.ma/amz/cooperation"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "faculty_leadership": {
     "intent": "faculty_leadership",
@@ -7492,7 +7657,8 @@
       "amz": [
         "http://fso.ump.ma/amz/responsables-de-la-fso"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "vt_information": {
     "intent": "vt_information",
@@ -7537,7 +7703,8 @@
       "amz": [
         "http://fso.ump.ma/amz/vt"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "climate_observations": {
     "intent": "climate_observations",
@@ -7582,7 +7749,8 @@
       "amz": [
         "http://fso.ump.ma/amz/club-cap-fso/observations-en-climatologie-2"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "fundamental_license": {
     "intent": "fundamental_license",
@@ -7627,7 +7795,8 @@
       "amz": [
         "http://fso.ump.ma/amz/licence-fondamentale"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "legal_texts": {
     "intent": "legal_texts",
@@ -7672,7 +7841,8 @@
       "amz": [
         "http://fso.ump.ma/amz/textes-lois"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "international_symposium": {
     "intent": "international_symposium",
@@ -7717,7 +7887,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/organisation-du-2eme-colloque-international-bioressources-biotechnologies-et-developpement-durable"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "taazy_news": {
     "intent": "taazy_news",
@@ -7762,7 +7933,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/taazy-4"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scientific_activities": {
     "intent": "scientific_activities",
@@ -7807,7 +7979,8 @@
       "amz": [
         "http://fso.ump.ma/amz/activites-scientifiques-et-culturelles"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "connected_campus": {
     "intent": "connected_campus",
@@ -7852,7 +8025,8 @@
       "amz": [
         "http://fso.ump.ma/amz/campus-connecte"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "education_award": {
     "intent": "education_award",
@@ -7897,7 +8071,8 @@
       "amz": [
         "http://fso.ump.ma/amz/accueil/mbara-tothyf-asatth-altaalym-alaaaly-almsaaadyn"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "doctoral_day": {
     "intent": "doctoral_day",
@@ -7942,7 +8117,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/journee-scientifique-des-formations-doctorales-sve-et-sante"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "research_innovation_day": {
     "intent": "research_innovation_day",
@@ -7987,7 +8163,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/la-journee-de-recherche-dinnovation-et-de-creativite"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "maths_it_doctoral_days": {
     "intent": "maths_it_doctoral_days",
@@ -8032,7 +8209,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/journees-doctorales-sciences-et-techniques-formation-doctorale-mathematiques-et-informatique"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "2020_publications": {
     "intent": "2020_publications",
@@ -8077,7 +8255,8 @@
       "amz": [
         "http://fso.ump.ma/amz/publications-2020-des-laboratoires-fso"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "2019_publications": {
     "intent": "2019_publications",
@@ -8122,7 +8301,8 @@
       "amz": [
         "http://fso.ump.ma/amz/publications-2019-des-laboratoires-fso"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "2022_publications": {
     "intent": "2022_publications",
@@ -8167,7 +8347,8 @@
       "amz": [
         "http://fso.ump.ma/amz/publications-2022-des-laboratoires-fso"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "soft_skills_catchup": {
     "intent": "soft_skills_catchup",
@@ -8212,7 +8393,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/listes-rattrapage-du-module-soft-skills"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "master_s2_notice": {
     "intent": "master_s2_notice",
@@ -8257,7 +8439,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/avis-aux-etudiants-inscrits-en-s2-du-cycle-master-au-terme-de-lannee-universitaire-2024-2025"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "university_qualification": {
     "intent": "university_qualification",
@@ -8302,7 +8485,8 @@
       "amz": [
         "http://fso.ump.ma/amz/habilitation-universitaire-fso-ump2020-2021"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "2019_qualifications": {
     "intent": "2019_qualifications",
@@ -8347,7 +8531,8 @@
       "amz": [
         "http://fso.ump.ma/amz/habilitation-universitaire-soutenues-en-2019-2020"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "online_schooling_info": {
     "intent": "online_schooling_info",
@@ -8392,7 +8577,8 @@
       "amz": [
         "http://fso.ump.ma/amz/notes/la-scolarite-en-ligne"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "theses_2019_access": {
     "intent": "theses_2019_access",
@@ -8437,7 +8623,8 @@
       "amz": [
         "http://fso.ump.ma/amz/theses-2019"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "spring_semester_2025_start": {
     "intent": "spring_semester_2025_start",
@@ -8482,7 +8669,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/demarrage-des-enseignements-du-semestre-du-printemps-2024-2025"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "pfe_module_notice": {
     "intent": "pfe_module_notice",
@@ -8527,7 +8715,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/avis-aux-etudiants-de-la-filiere-smi-s6-inscrits-dans-le-module-pfe"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "hassan_ii_environment_prize": {
     "intent": "hassan_ii_environment_prize",
@@ -8572,7 +8761,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/ouverture-des-candidatures-pour-la-15-edition-du-prix-hassan-ii-pour-lenvironnement"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "minhaty_card_renewal": {
     "intent": "minhaty_card_renewal",
@@ -8617,7 +8807,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/affectation-des-cartes-minhaty-renouvellement"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scholarship_payments_list": {
     "intent": "scholarship_payments_list",
@@ -8662,7 +8853,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/liste-des-mandatements-de-bourses-licence-master-doctorat"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ramadan_teaching_schedule": {
     "intent": "ramadan_teaching_schedule",
@@ -8707,7 +8899,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/avis-horaires-des-enseignements-durant-le-mois-de-ramadan"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "eid_al_fitr_greetings": {
     "intent": "eid_al_fitr_greetings",
@@ -8752,7 +8945,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/thne-bmnasb-aayd-alftr-almbark-4"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "ithenticate_account_activation": {
     "intent": "ithenticate_account_activation",
@@ -8797,7 +8991,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/activation-des-comptes-ithenticate-pour-les-doctorants-a-partir-de-la-3-annee"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scientific_production_evolution": {
     "intent": "scientific_production_evolution",
@@ -8842,7 +9037,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/evolution-de-la-production-scientifique-de-la-fso-2014-2024"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "news_anniversary": {
     "intent": "news_anniversary",
@@ -8887,7 +9083,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/kly-alaalom-tkhld-althkr-81-ltkdym-othyk-alastklal"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "exam_schedule_change": {
     "intent": "exam_schedule_change",
@@ -8932,7 +9129,8 @@
       "amz": [
         "http://fso.ump.ma/amz/actualite/avis-important-aux-etudiants-report-du-debut-des-examens-de-rattrapage-dautomne"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "international_congress": {
     "intent": "international_congress",
@@ -8977,7 +9175,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/international-congress-on-educational-research-materials-science-engineering-icemse2022"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "womens_day_event": {
     "intent": "womens_day_event",
@@ -9022,7 +9221,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/journee-internationale-de-la-femme"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "clay_environment_event": {
     "intent": "clay_environment_event",
@@ -9067,7 +9267,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/argiles-environnement"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "job_fair_event": {
     "intent": "job_fair_event",
@@ -9112,7 +9313,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/caravane-demploi"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "topology_conference": {
     "intent": "topology_conference",
@@ -9157,7 +9359,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/le-monde-dapres-la-topologie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "quantum_revolution_conference": {
     "intent": "quantum_revolution_conference",
@@ -9202,7 +9405,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/conference-la-revolution-quantique"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "neolithic_conference": {
     "intent": "neolithic_conference",
@@ -9247,7 +9451,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/conference-du-professeur-jean-paul-demoule-intitulee-de-la-revolution-neolithique-a-lanthropocene"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "honorary_event": {
     "intent": "honorary_event",
@@ -9292,7 +9497,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/journee-en-lhonneur-de-mm-allal-boutayeb-et-ghomari-et-a-la-memoire-de-mr-kissami-statistique-et-epidemiologie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "workshop_usa_studies": {
     "intent": "workshop_usa_studies",
@@ -9337,7 +9543,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/atelier-les-etudes-superieures-aux-etats-unis-opportunites-et-etapes-a-suivre"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "training_scopus_sciencedirect": {
     "intent": "training_scopus_sciencedirect",
@@ -9382,7 +9589,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/session-de-formation-sur-scopus-sciencedirect-et-mendeley"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "geological_archaeological_heritage": {
     "intent": "geological_archaeological_heritage",
@@ -9427,7 +9635,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/congres-du-patrimoine-geologique-et-archeologique-cpga"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "biotech_sustainable_development": {
     "intent": "biotech_sustainable_development",
@@ -9472,7 +9681,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/1er-colloque-international-bioressources-biotechnologies-et-developpement-durable-1"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "biology_exhibition": {
     "intent": "biology_exhibition",
@@ -9517,7 +9727,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/la-2eme-exposition-sous-le-theme-la-biologie-un-monde-fascinant"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "aromatic_medicinal_plants": {
     "intent": "aromatic_medicinal_plants",
@@ -9562,7 +9773,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/troisieme-journee-scientifique-sur-les-plantes-aromatiques-et-medicinales"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "electronic_resources_training": {
     "intent": "electronic_resources_training",
@@ -9607,7 +9819,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/formation-sur-lacces-aux-ressources-electroniques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scientific_writing_training": {
     "intent": "scientific_writing_training",
@@ -9652,7 +9865,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/cedoc-organise-une-formation-sur-la-redaction-darticles-scientifiques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "oral_drug_delivery": {
     "intent": "oral_drug_delivery",
@@ -9697,7 +9911,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/conference-les-defis-du-21eme-siecle-pour-ladministration-de-medicaments-par-voie-orale"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "event_cap_launch": {
     "intent": "event_cap_launch",
@@ -9742,7 +9957,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/cap-lancement-des-activites"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "archeology_conference_info": {
     "intent": "archeology_conference_info",
@@ -9787,7 +10003,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/conference-larcheologie-et-la-relecture-de-lhistoire-naturelle-et-humaine"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "icontech3_symposium_details": {
     "intent": "icontech3_symposium_details",
@@ -9832,7 +10049,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/symposium-international-icontech-3-sur-les-etudes-innovantes-en-sciences-positives"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "scientific_culture_conference": {
     "intent": "scientific_culture_conference",
@@ -9877,7 +10095,8 @@
       "amz": [
         "http://fso.ump.ma/amz/event/4eme-edition-des-conferences-culture-scientifique-innovation-et-perspectives"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_info": {
     "intent": "program_info",
@@ -9916,7 +10135,8 @@
       "amz": [
         "Tasdawit teṭṭef-d aṭas n yismawaln n Licence, gar-asen: Biologie d Saḥa, COPN, EE, ESE, EREE, EGC, Fond. SVI opt PV, Fond. SVI opt PS, Fond. SVI opt Env, Fondamentale SMA, Fondamentale SMC, Fondamentale SMP, Fondamentale STU, GMMS, Fondamentale SMI, GPI, GI, GGA, GAEM, IME, Matériaux et App, Maths et App, MR, ME, OME, Radio Phy médicale, Sc. des Données, GPI, d aṭas n yismawaln-nniḍen."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_biologie_sante": {
     "intent": "program_biologie_sante",
@@ -9971,7 +10191,8 @@
         "Deg S2: Biologie des organismes Veg d ani, Chimie en solution d Initiation à la Chimie organique",
         "Deg S1: Biologie Cellulaire d Histologie, Atomistique d Liaison Chimique, Mathématiques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_copn": {
     "intent": "program_copn",
@@ -10026,7 +10247,8 @@
         "Deg useggas amezwaru (S2): Optique géométrique, Electrostatique d magnétostatique",
         "Deg useggas amezwaru (S1): Thermodynamique, Thermochimie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_ee": {
     "intent": "program_ee",
@@ -10081,7 +10303,8 @@
         "S2: Biologie des organismes Veg d ani, Chimie en solution d Initiation à la Chimie organique",
         "S1: Biologie Cellulaire d Histologie, Atomistique d Liaison Chimique, Mathématiques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_ese": {
     "intent": "program_ese",
@@ -10136,7 +10359,8 @@
         "Deg useggas wis 2 (S2): Optique géométrique, Electrostatique d magnétostatique",
         "Deg useggas wis 2 (S1): Thermodynamique, Thermochimie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_eree": {
     "intent": "program_eree",
@@ -10191,7 +10415,8 @@
         "Deg useggas wis 2 (S2): Optique géométrique, Electrostatique d magnétostatique",
         "Deg useggas wis 2 (S1): Thermodynamique, Thermochimie"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_egc": {
     "intent": "program_egc",
@@ -10246,7 +10471,8 @@
         "Deg useggas wis 2 (S2): Biologie des organismes Veg d ani, Chimie en solution d Initiation à la Chimie organique",
         "Deg useggas wis 2 (S1): Biologie Cellulaire d Histologie, Atomistique d Liaison Chimique, Mathématiques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_fond_svi_pv": {
     "intent": "program_fond_svi_pv",
@@ -10293,7 +10519,8 @@
         "Deg S6: Microbiologie 2, Biochimie analytique, Bases de la production végétale, Phytopathologie, Projet Tutoré 1, Projet Tutoré 2",
         "Deg S5: Physiologie des fonctions, Croiss-développ plantes, Ecologie générale 2, Immunologie, Génétique 2, Biologie moléculaire"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_fond_svi_ps": {
     "intent": "program_fond_svi_ps",
@@ -10340,7 +10567,8 @@
         "Deg S6: Microbiologie 2, Biochimie analytique, Neuroendocrinologie, Nutrition, Projet Tutoré 1, Projet Tutoré 2",
         "Deg S5: Physiologie des fonctions, Croiss-développ plantes, Ecologie générale 2, Immunologie, Génétique 2, Biologie moléculaire"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "program_fond_svi_env": {
     "intent": "program_fond_svi_env",
@@ -10395,7 +10623,8 @@
         "Deg useggas wis 2 (S4): Enzymologie d Biochimie, Génétique 1, Faunistique, Floristique, Physiologie animale, Physiologie végétale",
         "Deg useggas wis 2 (S3): Biochimie structurale, Microbiologie générale, Ecologie générale 1, Techniques chimiques pour la biologie, Biophysique, Statistiques"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_sma_modules_s6": {
     "intent": "programme_licence_fondamentale_sma_modules_s6",
@@ -10426,7 +10655,8 @@
       "ar": [
         "في السنة الثالثة (S6) من الإجازة الأساسية في SMA، تشمل الوحدات: الاحتمالات، التحليل الدالي، مكمل الجبر، المعادلات والهندسة التفاضلية، المشروع 1 والمشروع 2."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_sma_modules_s5": {
     "intent": "programme_licence_fondamentale_sma_modules_s5",
@@ -10457,7 +10687,8 @@
       "ar": [
         "في السنة الثالثة (S5) من الإجازة الأساسية في SMA، تشمل الوحدات: الطوبولوجيا، التكامل، حساب التفاضل، البرمجة الرياضية، التحليل العددي 2 والبرمجة الموجهة للكائنات."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_sma_modules_s4": {
     "intent": "programme_licence_fondamentale_sma_modules_s4",
@@ -10488,7 +10719,8 @@
       "ar": [
         "في السنة الثانية (S4) من الإجازة الأساسية في SMA، تشمل الوحدات: التحليل 6، الجبر 5، الجبر 6، التحليل العددي 1، الفيزياء 6 والمعلوماتية 4."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_sma_modules_s3": {
     "intent": "programme_licence_fondamentale_sma_modules_s3",
@@ -10519,7 +10751,8 @@
       "ar": [
         "في السنة الثانية (S3) من الإجازة الأساسية في SMA، تشمل الوحدات: التحليل 4، التحليل 5، الجبر 4، الاحتمالات والإحصاء، الفيزياء 5 والمعلوماتية 3."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smc_modules_s6": {
     "intent": "programme_licence_fondamentale_smc_modules_s6",
@@ -10550,7 +10783,8 @@
       "ar": [
         "في السنة الثالثة (S6) من الإجازة الأساسية في SMC، تشمل الوحدات: الفئات الرئيسية للتفاعلات العضوية، الكيمياء الوصفية 2 وكيمياء التنسيق، تقنيات الفصل، الوحدة الاختيارية S6 Module4، المشروع 1 والمشروع 2."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smc_modules_s5": {
     "intent": "programme_licence_fondamentale_smc_modules_s5",
@@ -10581,7 +10815,8 @@
       "ar": [
         "في السنة الثالثة (S5) من الإجازة الأساسية في SMC، تشمل الوحدات: الكيمياء العضوية الوظيفية، علم البلورات الإشعاعي والكيمياء البلورية 2، الحركية والحفز، الكيمياء النظرية، الكيمياء الكهربائية والتقنيات الطيفية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smc_modules_s4": {
     "intent": "programme_licence_fondamentale_smc_modules_s4",
@@ -10612,7 +10847,8 @@
       "ar": [
         "في السنة الثانية (S4) من الإجازة الأساسية في SMC، تشمل الوحدات: الهيدروكربونات والوظائف أحادية التكافؤ، علم البلورات الهندسية والكيمياء البلورية 1، الديناميكا الحرارية الكيميائية، ميكانيكا الكم، المعلوماتية والإحصاء الاحتمالي."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smc_modules_s3": {
     "intent": "programme_licence_fondamentale_smc_modules_s3",
@@ -10643,7 +10879,8 @@
       "ar": [
         "في السنة الثانية (S3) من الإجازة الأساسية في SMC، تشمل الوحدات: الكيمياء العضوية العامة، الكيمياء الوصفية ومخططات الطور، الكهرومغناطيسية، الكيمياء التجريبية، كيمياء الإلكتروليت والرياضيات للكيمياء."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smp_modules_s6": {
     "intent": "programme_licence_fondamentale_smp_modules_s6",
@@ -10674,7 +10911,8 @@
       "ar": [
         "في السنة الثالثة (S6) من الإجازة الأساسية في SMP، تشمل الوحدات: ميكانيكا الموائع، الكشف عن الإشعاع وقياسه، الموجات والاهتزازات، الفيزياء دون الذرية، المشروع 1 والمشروع 2."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smp_modules_s5": {
     "intent": "programme_licence_fondamentale_smp_modules_s5",
@@ -10705,7 +10943,8 @@
       "ar": [
         "في السنة الثالثة (S5) من الإجازة الأساسية في SMP، تشمل الوحدات: الإلكترونيات التناظرية، الميكانيكا التحليلية والاهتزازات، الفيزياء النووية، فيزياء المواد، الفيزياء الكمية والفيزياء الإحصائية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smp_modules_s4": {
     "intent": "programme_licence_fondamentale_smp_modules_s4",
@@ -10736,7 +10975,8 @@
       "ar": [
         "في السنة الثانية (S4) من الإجازة الأساسية في SMP، تشمل الوحدات: الإلكترونيات الأساسية، البصريات الفيزيائية، الكهرباء 3، ميكانيكا الكم، علم البلورات الهندسية والكيمياء البلورية والمعلوماتية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smp_modules_s3": {
     "intent": "programme_licence_fondamentale_smp_modules_s3",
@@ -10767,7 +11007,8 @@
       "ar": [
         "في السنة الثانية (S3) من الإجازة الأساسية في SMP، تشمل الوحدات: ميكانيكا المواد الصلبة، الديناميكا الحرارية 2، الكهرومغناطيسية في الفراغ، الكيمياء العضوية العامة، التحليل 3، والتحليل العددي والخوارزميات."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_stu": {
     "intent": "programme_licence_fondamentale_stu",
@@ -10801,7 +11042,8 @@
         "تشمل الإجازة الأساسية في علوم الأرض والكون وحدات مثل: السلاسل الماغماتية والنماذج البتروجينية، البيئات الرسوبية، علم الحفريات التطوري، المواد الجيولوجية، المواد الطاقية، ومشاريع. يغطي البرنامج 3 سنوات من الدراسة مع وحدات موزعة على 6 فصول دراسية.",
         "يتضمن برنامج الإجازة الأساسية في علوم الأرض والكون دورات في الجيولوجيا، علم الصخور، علم الحفريات، الهيدروجيولوجيا والجيوفيزياء. في السنة الثالثة، يقوم الطلاب بإنجاز مشاريع."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_stu_modules_s6": {
     "intent": "programme_licence_fondamentale_stu_modules_s6",
@@ -10835,7 +11077,8 @@
         "تشمل وحدات الفصل السادس في الإجازة الأساسية في علوم الأرض والكون: السلاسل الماغماتية والنماذج البتروجينية (المدرس: الشرايبي إلهام)، البيئات الرسوبية (الصحبي الطيب)، علم الحفريات التطوري (أوراغ حسن)، المواد الجيولوجية والمواد الطاقية (الحموتي كمال)، المشروع 1 (التهامي محمد)، والمشروع 2 (شنوف رشيد).",
         "في الفصل السادس من الإجازة في علوم الأرض والكون، يدرس الطلاب مقررات متقدمة في الجيولوجيا وينجزون مشروعين."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_stu_modules_s5": {
     "intent": "programme_licence_fondamentale_stu_modules_s5",
@@ -10869,7 +11112,8 @@
         "تشمل وحدات الفصل الخامس في الإجازة الأساسية في علوم الأرض والكون: جيولوجيا المغرب 1 (النائب با عبد الله)، جيولوجيا المغرب 2 (عزوز عمر)، علم التمعدن (طلبي فؤاد)، الهيدروجيولوجيا (بوغريبة ميمون)، الجيوفيزياء (شنوف ثريا)، والجيوكيمياء (طلبي الحسن).",
         "في الفصل الخامس من الإجازة في علوم الأرض والكون، يدرس الطلاب جيولوجيا المغرب، علم التمعدن، الهيدروجيولوجيا والجيوفيزياء."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_stu_modules_s4": {
     "intent": "programme_licence_fondamentale_stu_modules_s4",
@@ -10903,7 +11147,8 @@
         "تشمل وحدات الفصل الرابع في الإجازة الأساسية في علوم الأرض والكون: البتروغرافيا الرسوبية (التهامي محمد)، علم الرسوبيات (خوخي يحيى)، علم الحفريات (حدومي حميد)، الطباقية (واهبي بنعلي)، الجيوانفورماتيك (طلبي الحسن)، والكيمياء التطبيقية في علوم الأرض (بوعكاد عبد المجيد - جبروني مصطفى).",
         "في الفصل الرابع من الإجازة في علوم الأرض والكون، يدرس الطلاب البتروغرافيا، علم الرسوبيات، علم الحفريات والطباقية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_stu_modules_s3": {
     "intent": "programme_licence_fondamentale_stu_modules_s3",
@@ -10937,7 +11182,8 @@
         "تشمل وحدات الفصل الثالث في الإجازة الأساسية في علوم الأرض والكون: التكتونية التحليلية (طربي عبد الكريم)، التكتونية العامة (طربي عبد الكريم)، علم الصخور النارية (جديد محمد)، علم الصخور المتحولة (كشيط عبد الفتاح)، الفيزياء التطبيقية في علوم الأرض (خطاط دريس)، والإحصاء (طاهري خالد).",
         "في الفصل الثالث من الإجازة في علوم الأرض والكون، يدرس الطلاب التكتونية، علم الصخور والفيزياء التطبيقية في علوم الأرض."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_stu_modules_s2": {
     "intent": "programme_licence_fondamentale_stu_modules_s2",
@@ -10971,7 +11217,8 @@
         "تشمل وحدات الفصل الثاني في الإجازة الأساسية في علوم الأرض والكون: بيولوجيا الكائنات الحيوانية (آيت العبد عبد العزيز - حدي لطيفة - لقصور بشرى)، بيولوجيا الكائنات النباتية (الحفيد لطيفة - الحوميزي محمد عزيز)، الجيوديناميك الخارجي (بنكمرة سعيد - إيرزي زليخة - الجيلالي عبد الحكيم - نصري هشام)، الجيوديناميك الداخلي (كشيط عبد الفتاح - خطاط دريس - طلبي فؤاد - طلبي الحسن)، الفيزياء 2: الميكانيك والكهرباء (شكيب عبد الجبار)، الكيمياء 2: الكيمياء العضوية، واللغة والمصطلحات 2 (عطماني محمد).",
         "في الفصل الثاني من الإجازة في علوم الأرض والكون، يدرس الطلاب البيولوجيا، الجيوديناميك، الفيزياء والكيمياء."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_stu_modules_s1": {
     "intent": "programme_licence_fondamentale_stu_modules_s1",
@@ -11005,7 +11252,8 @@
         "تشمل وحدات الفصل الأول في الإجازة الأساسية في علوم الأرض والكون: بيولوجيا الخلية (كصيرة نادية - الصميري يوسف)، علم الأجنة والأنسجة (ملحاوي محمد)، الجيولوجيا العامة (بودشيش لحبيب)، الرياضيات (مزيان عبد الوافي)، الفيزياء 1 (شكيب عبد الجبار)، الكيمياء العامة، واللغة والمصطلحات 1 (ميدان بوشتى).",
         "في الفصل الأول من الإجازة في علوم الأرض والكون، يدرس الطلاب أساسيات البيولوجيا، الجيولوجيا، الرياضيات والفيزياء."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gmms": {
     "intent": "programme_licence_gmms",
@@ -11039,7 +11287,8 @@
         "إجازة GMMS (هندسة المواد والمعادن الاستراتيجية) هو برنامج يبدو أنه قيد التطوير. حالياً، الملف لا يحتوي على وحدات محددة لهذا البرنامج، فقط هيكل لفصول S5 وS6 بدون وحدات محددة.",
         "برنامج إجازة GMMS ليس لديه بعد وحدات محددة مسجلة في الملف. هذا على الأرجح برنامج جديد قيد التطوير."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smi": {
     "intent": "programme_licence_fondamentale_smi",
@@ -11073,7 +11322,8 @@
         "تشمل الإجازة الأساسية في SMI (الرياضيات وعلوم الحاسوب) وحدات في الرياضيات وعلوم الحاسوب مثل: برمجة الأنظمة، تكنولوجيا الويب المتقدمة، الشبكات، قواعد البيانات، ومشاريع. يغطي البرنامج 3 سنوات من الدراسة مع وحدات موزعة على 6 فصول دراسية.",
         "يتضمن برنامج الإجازة الأساسية في SMI دورات في البرمجة، الشبكات، قواعد البيانات والرياضيات التطبيقية. في السنة الثالثة، يقوم الطلاب بإنجاز مشاريع."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smi_modules_s6": {
     "intent": "programme_licence_fondamentale_smi_modules_s6",
@@ -11107,7 +11357,8 @@
         "تشمل وحدات الفصل السادس في الإجازة الأساسية في SMI: برمجة الأنظمة (الداودي المصطفى)، تكنولوجيا الويب المتقدمة (الصرهيني محمد)، الشبكات 2 (الخوجة عبد الحق)، قواعد البيانات المتقدمة، المشروع 1 (الجرار عبد الصمد)، والمشروع 2 (موسى محمد).",
         "في الفصل السادس من الإجازة في SMI، يدرس الطلاب برمجة الأنظمة، تكنولوجيات الويب المتقدمة والشبكات، مع إنجاز مشروعين."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smi_modules_s5": {
     "intent": "programme_licence_fondamentale_smi_modules_s5",
@@ -11141,7 +11392,8 @@
         "تشمل وحدات الفصل الخامس في الإجازة الأساسية في SMI: قواعد البيانات، الترجمة، الشبكات، البحث العملياتي (العمروس عبد الرشيد)، التصميم الموجه بالكائنات (UML)، والبرمجة الموجهة بالكائنات (لغة: جافا أو ++C).",
         "في الفصل الخامس من الإجازة في SMI، يدرس الطلاب قواعد البيانات، الشبكات، الترجمة والبرمجة الموجهة بالكائنات."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smi_modules_s4": {
     "intent": "programme_licence_fondamentale_smi_modules_s4",
@@ -11175,7 +11427,8 @@
         "تشمل وحدات الفصل الرابع في الإجازة الأساسية في SMI: البرمجة 2 (الجرار عبد الصمد)، هياكل البيانات (المزروعي عز الدين)، أنظمة التشغيل 2 (العتومي أيوب)، التحليل العددي (برجاء محمد)، عمارة الحواسيب (لعروسي خديجة)، والمغناطيسية الكهربائية (معروف فتيحة).",
         "في الفصل الرابع من الإجازة في SMI، يدرس الطلاب هياكل البيانات، أنظمة التشغيل وعمارة الحواسيب."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_fondamentale_smi_modules_s3": {
     "intent": "programme_licence_fondamentale_smi_modules_s3",
@@ -11209,75 +11462,78 @@
         "تشمل وحدات الفصل الثالث في الإجازة الأساسية في SMI: البرمجة 1 (الطاهري أحمد)، الخوارزميات 2 (مراوي حميد)، أنظمة التشغيل 1 (الداودي المصطفى)، الإحصاء الاحتمالي (بنمومن محمد)، تكنولوجيا الويب (دوزي يوسف)، والإلكترونيات (الطاهني عبد الواحد).",
         "في الفصل الثالث من الإجازة في SMI، يدرس الطلاب البرمجة، الخوارزميات وأنظمة التشغيل."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
-  "programme_licence_fondamentale_smi_modules_s2": {
-    "intent": "programme_licence_fondamentale_smi_modules_s2",
+  "programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2": {
+    "intent": "programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2",
     "question": {
       "fr": [
-        "Quels sont les modules du semestre 2 en Licence Fondamentale SMI ?",
-        "Modules S2 en SMI",
-        "Qu'étudie-t-on en S2 de la Licence SMI ?"
+        "Quels sont les modules du semestre 2 en Licence Fondamentale smi sma smia ?",
+        "Modules S2 en smi sma smia",
+        "Qu'étudie-t-on en S2 de la Licence smi sma smia ?"
       ],
       "en": [
-        "What are the S2 modules in Fundamental SMI License?",
-        "Modules for semester 2 in SMI",
-        "What is studied in semester 2 of SMI License?"
+        "What are the S2 modules in Fundamental smi sma smia License?",
+        "Modules for semester 2 in smi sma smia",
+        "What is studied in semester 2 of smi sma smia License?"
       ],
       "ar": [
-        "ما هي وحدات الفصل الثاني في الإجازة الأساسية في SMI؟",
-        "وحدات الفصل الثاني في SMI",
-        "ماذا يدرس في الفصل الثاني من الإجازة في SMI؟"
+        "ما هي وحدات الفصل الثاني في الإجازة الأساسية في smi sma smia؟",
+        "وحدات الفصل الثاني في smi sma smia",
+        "ماذا يدرس في الفصل الثاني من الإجازة في smi sma smia؟"
       ]
     },
     "reponse": {
       "fr": [
-        "Les modules du semestre 2 en Licence Fondamentale SMI sont : Analyse 2: Intégration (OUAHAB ABDELMALEK), Formule de Taylor, Développement Limité et Applications (LAMNII Mohammed - MARZOUKI Rabi), Algèbre 3: Espaces Vectoriels, Matrices et Déterminants (LIDOUH ABDELUAAB - MARZOUKI Rabi), Physique 3: Electrostatique et Electrocinétique (MAAROUFI FATIHA), Physique 4: Optique 1 (HAMAL MOHAMMED), Informatique 2: Algorithmique I, et Langue et Terminologie 2.",
-        "En S2 de la Licence SMI, les étudiants étudient les mathématiques avancées, la physique et les bases de l'algorithmique."
+        "Les modules du semestre 2 en Licence Fondamentale smi sma smia sont : Analyse 2: Intégration (OUAHAB ABDELMALEK), Formule de Taylor, Développement Limité et Applications (LAMNII Mohammed - MARZOUKI Rabi), Algèbre 3: Espaces Vectoriels, Matrices et Déterminants (LIDOUH ABDELUAAB - MARZOUKI Rabi), Physique 3: Electrostatique et Electrocinétique (MAAROUFI FATIHA), Physique 4: Optique 1 (HAMAL MOHAMMED), Informatique 2: Algorithmique I, et Langue et Terminologie 2.",
+        "En S2 de la Licence smi sma smia, les étudiants étudient les mathématiques avancées, la physique et les bases de l'algorithmique."
       ],
       "en": [
-        "The semester 2 modules in Fundamental SMI License are: Analysis 2: Integration (OUAHAB ABDELMALEK), Taylor's Formula, Limited Development and Applications (LAMNII Mohammed - MARZOUKI Rabi), Algebra 3: Vector Spaces, Matrices and Determinants (LIDOUH ABDELUAAB - MARZOUKI Rabi), Physics 3: Electrostatics and Electrodynamics (MAAROUFI FATIHA), Physics 4: Optics 1 (HAMAL MOHAMMED), Computer Science 2: Algorithmics I, and Language and Terminology 2.",
-        "In semester 2 of SMI License, students study advanced mathematics, physics and the basics of algorithmics."
+        "The semester 2 modules in Fundamental smi sma smia License are: Analysis 2: Integration (OUAHAB ABDELMALEK), Taylor's Formula, Limited Development and Applications (LAMNII Mohammed - MARZOUKI Rabi), Algebra 3: Vector Spaces, Matrices and Determinants (LIDOUH ABDELUAAB - MARZOUKI Rabi), Physics 3: Electrostatics and Electrodynamics (MAAROUFI FATIHA), Physics 4: Optics 1 (HAMAL MOHAMMED), Computer Science 2: Algorithmics I, and Language and Terminology 2.",
+        "In semester 2 of smi sma smia License, students study advanced mathematics, physics and the basics of algorithmics."
       ],
       "ar": [
-        "تشمل وحدات الفصل الثاني في الإجازة الأساسية في SMI: التحليل 2: التكامل (الوهاب عبد المالك)، صيغة تايلور، التطور المحدود والتطبيقات (اللمني محمد - المرزوقي ربيع)، الجبر 3: الفضاءات المتجهة، المصفوفات والمحددات (الليذوح عبد الأب - المرزوقي ربيع)، الفيزياء 3: الكهرباء الساكنة والديناميكية (معروف فتيحة)، الفيزياء 4: البصريات 1 (حمال محمد)، المعلوماتية 2: الخوارزميات 1، واللغة والمصطلحات 2.",
-        "في الفصل الثاني من الإجازة في SMI، يدرس الطلاب الرياضيات المتقدمة، الفيزياء وأساسيات الخوارزميات."
+        "تشمل وحدات الفصل الثاني في الإجازة الأساسية في smi sma smia: التحليل 2: التكامل (الوهاب عبد المالك)، صيغة تايلور، التطور المحدود والتطبيقات (اللمني محمد - المرزوقي ربيع)، الجبر 3: الفضاءات المتجهة، المصفوفات والمحددات (الليذوح عبد الأب - المرزوقي ربيع)، الفيزياء 3: الكهرباء الساكنة والديناميكية (معروف فتيحة)، الفيزياء 4: البصريات 1 (حمال محمد)، المعلوماتية 2: الخوارزميات 1، واللغة والمصطلحات 2.",
+        "في الفصل الثاني من الإجازة في smi sma smia، يدرس الطلاب الرياضيات المتقدمة، الفيزياء وأساسيات الخوارزميات."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
-  "programme_licence_fondamentale_smi_modules_s1": {
-    "intent": "programme_licence_fondamentale_smi_modules_s1",
+  "programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1": {
+    "intent": "programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1",
     "question": {
       "fr": [
-        "Quels sont les modules du semestre 1 en Licence Fondamentale SMI ?",
-        "Modules S1 en SMI",
-        "Qu'étudie-t-on en S1 de la Licence SMI ?"
+        "Quels sont les modules du semestre 1 en Licence Fondamentale SMI ou sma ou smia?",
+        "Modules S1 en SMIA SMI SMA",
+        "Qu'étudie-t-on en S1 de la Licence SMIA SMI SMA ?"
       ],
       "en": [
-        "What are the S1 modules in Fundamental SMI License?",
-        "Modules for semester 1 in SMI",
-        "What is studied in semester 1 of SMI License?"
+        "What are the S1 modules in Fundamental SMIA SMI SMA License?",
+        "Modules for semester 1 in SMIA SMI SMA",
+        "What is studied in semester 1 of SMIA SMI SMA License?"
       ],
       "ar": [
-        "ما هي وحدات الفصل الأول في الإجازة الأساسية في SMI؟",
-        "وحدات الفصل الأول في SMI",
-        "ماذا يدرس في الفصل الأول من الإجازة في SMI؟"
+        "ما هي وحدات الفصل الأول في الإجازة الأساسية في SMIA SMI SMA؟",
+        "وحدات الفصل الأول في SMIA SMI SMA",
+        "ماذا يدرس في الفصل الأول من الإجازة في SMIA SMI SMA؟"
       ]
     },
     "reponse": {
       "fr": [
-        "Les modules du semestre 1 en Licence Fondamentale SMI sont : Analyse 1: Suites Numériques et Fonctions (BOUCHLAGHEM Mohammed), Algèbre 1: Généralités et Arithmétique dans Z (ISMAILI MOULAY CHRIF), Algèbre 2: Structures, Polynômes et Fractions Rationnelles (BOUTAHIR KHALID), Physique 1: Mécanique 1 (CHIBOUB ABDELLATIF), Physique 2: Thermodynamique (BENKADDOUR ABDELKHALEK), Informatique 1: Introduction à l'informatique (SERRHINI Mohamed), et Langue et Terminologie 1.",
-        "En S1 de la Licence SMI, les étudiants étudient les bases des mathématiques, de la physique et de l'informatique."
+        "Les modules du semestre 1 en Licence Fondamentale SMIA SMI SMA sont : Analyse 1: Suites Numériques et Fonctions (BOUCHLAGHEM Mohammed), Algèbre 1: Généralités et Arithmétique dans Z (ISMAILI MOULAY CHRIF), Algèbre 2: Structures, Polynômes et Fractions Rationnelles (BOUTAHIR KHALID), Physique 1: Mécanique 1 (CHIBOUB ABDELLATIF), Physique 2: Thermodynamique (BENKADDOUR ABDELKHALEK), Informatique 1: Introduction à l'informatique (SERRHINI Mohamed), et Langue et Terminologie 1.",
+        "En S1 de la Licence SMIA SMI SMA, les étudiants étudient les bases des mathématiques, de la physique et de l'informatique."
       ],
       "en": [
-        "The semester 1 modules in Fundamental SMI License are: Analysis 1: Numerical Sequences and Functions (BOUCHLAGHEM Mohammed), Algebra 1: Generalities and Arithmetic in Z (ISMAILI MOULAY CHRIF), Algebra 2: Structures, Polynomials and Rational Fractions (BOUTAHIR KHALID), Physics 1: Mechanics 1 (CHIBOUB ABDELLATIF), Physics 2: Thermodynamics (BENKADDOUR ABDELKHALEK), Computer Science 1: Introduction to Computer Science (SERRHINI Mohamed), and Language and Terminology 1.",
-        "In semester 1 of SMI License, students study the basics of mathematics, physics and computer science."
+        "The semester 1 modules in Fundamental SMIA SMI SMA License are: Analysis 1: Numerical Sequences and Functions (BOUCHLAGHEM Mohammed), Algebra 1: Generalities and Arithmetic in Z (ISMAILI MOULAY CHRIF), Algebra 2: Structures, Polynomials and Rational Fractions (BOUTAHIR KHALID), Physics 1: Mechanics 1 (CHIBOUB ABDELLATIF), Physics 2: Thermodynamics (BENKADDOUR ABDELKHALEK), Computer Science 1: Introduction to Computer Science (SERRHINI Mohamed), and Language and Terminology 1.",
+        "In semester 1 of SMIA SMI SMA License, students study the basics of mathematics, physics and computer science."
       ],
       "ar": [
-        "تشمل وحدات الفصل الأول في الإجازة الأساسية في SMI: التحليل 1: المتتاليات العددية والدوال (بوشلاغم محمد)، الجبر 1: العموميات والحساب في Z (الإسماعيلي مولاي الشريف)، الجبر 2: البنى، متعددات الحدود والكسور النسبية (بوطاهر خالد)، الفيزياء 1: الميكانيك 1 (شيبوب عبد اللطيف)، الفيزياء 2: الديناميكا الحرارية (بنقدور عبد الخالق)، المعلوماتية 1: مقدمة في المعلوماتية (الصرهيني محمد)، واللغة والمصطلحات 1.",
-        "في الفصل الأول من الإجازة في SMI، يدرس الطلاب أساسيات الرياضيات، الفيزياء والمعلوماتية."
+        "تشمل وحدات الفصل الأول في الإجازة الأساسية في SMIA SMI SMA: التحليل 1: المتتاليات العددية والدوال (بوشلاغم محمد)، الجبر 1: العموميات والحساب في Z (الإسماعيلي مولاي الشريف)، الجبر 2: البنى، متعددات الحدود والكسور النسبية (بوطاهر خالد)، الفيزياء 1: الميكانيك 1 (شيبوب عبد اللطيف)، الفيزياء 2: الديناميكا الحرارية (بنقدور عبد الخالق)، المعلوماتية 1: مقدمة في المعلوماتية (الصرهيني محمد)، واللغة والمصطلحات 1.",
+        "في الفصل الأول من الإجازة في SMIA SMI SMA. يدرس الطلاب أساسيات الرياضيات، الفيزياء والمعلوماتية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gpi": {
     "intent": "programme_licence_gpi",
@@ -11311,7 +11567,8 @@
         "إجازة GPI (هندسة العمليات الصناعية) هو برنامج يشمل وحدات في الفيزياء والكيمياء. الوحدات المتوفرة في الملف هي: البصريات الهندسية، الكهرباء الساكنة والمغناطيسية الساكنة، الديناميكا الحرارية، الكيمياء الحرارية (بولويز عزيز)، وميكانيكا الكم.",
         "برنامج إجازة GPI يغطي جوانب مختلفة من الفيزياء والكيمياء الصناعية، مع وحدات موزعة على عدة فصول دراسية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gpi_modules_s2": {
     "intent": "programme_licence_gpi_modules_s2",
@@ -11345,7 +11602,8 @@
         "تشمل وحدات الفصل الثاني في الإجازة في GPI: البصريات الهندسية (الرماندي عفيفة) والكهرباء الساكنة والمغناطيسية الساكنة (معروف فتيحة).",
         "في الفصل الثاني من الإجازة في GPI، يدرس الطلاب البصريات الهندسية والكهرومغناطيسية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gpi_modules_s1": {
     "intent": "programme_licence_gpi_modules_s1",
@@ -11379,7 +11637,8 @@
         "تشمل وحدات الفصل الأول في الإجازة في GPI: الديناميكا الحرارية (أوشريف محمد) والكيمياء الحرارية (بولويز عزيز).",
         "في الفصل الأول من الإجازة في GPI، يدرس الطلاب الديناميكا الحرارية والكيمياء الحرارية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gpi_modules_s3": {
     "intent": "programme_licence_gpi_modules_s3",
@@ -11413,7 +11672,8 @@
         "الوحدة الوحيدة في الفصل الثالث من الإجازة في GPI هي: ميكانيكا الكم (معروف فتيحة).",
         "في الفصل الثالث من الإجازة في GPI، يدرس الطلاب ميكانيكا الكم."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gi": {
     "intent": "programme_licence_gi",
@@ -11447,7 +11707,8 @@
         "إجازة GI (هندسة الحاسوب) هو برنامج يغطي سنتين من الدراسة مع وحدات في الرياضيات، الفيزياء وعلوم الحاسوب. تشمل الوحدات: التحليل، الجبر، البرمجة، أنظمة التشغيل، وهياكل البيانات.",
         "برنامج إجازة GI يقدم تدريباً في هندسة الحاسوب مع دورات في البرمجة، الخوارزميات وعمارة الحواسيب."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gi_modules_s2": {
     "intent": "programme_licence_gi_modules_s2",
@@ -11481,7 +11742,8 @@
         "تشمل وحدات الفصل الثاني في الإجازة في GI: التحليل 2 (الوهاب عبد المالك)، الجبر 2 (زخنيني عبد القادر)، الكهرباء الساكنة والمغناطيسية الساكنة (معروف فتيحة)، البصريات الهندسية (معروف فتيحة)، والمعلوماتية 2 الخوارزميات 2 / بايثون (الدهماني سفيان).",
         "في الفصل الثاني من الإجازة في GI، يدرس الطلاب الرياضيات، الفيزياء والخوارزميات بلغة بايثون."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gi_modules_s1": {
     "intent": "programme_licence_gi_modules_s1",
@@ -11515,7 +11777,8 @@
         "تشمل وحدات الفصل الأول في الإجازة في GI: التحليل 1 (بوشلاغم محمد) والمعلوماتية 1 الخوارزميات 1/ بايثون (الدهماني سفيان).",
         "في الفصل الأول من الإجازة في GI، يدرس الطلاب أساسيات الرياضيات والبرمجة بلغة بايثون."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gi_modules_s4": {
     "intent": "programme_licence_gi_modules_s4",
@@ -11549,7 +11812,8 @@
         "تشمل وحدات الفصل الرابع في الإجازة في GI: هياكل البيانات (المزروعي عز الدين)، برمجة الويب 2: لغة جافا سكريبت (كرفلي عائشة)، نظام التشغيل 2 (العتومي أيوب)، البرمجة الموجهة بالكائنات مع ++C (الجاعرة الميلود)، والجبر العلائقي ولغة SQL (موسى محمد).",
         "في الفصل الرابع من الإجازة في GI، يدرس الطلاب هياكل البيانات، برمجة الويب وأنظمة التشغيل."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gi_modules_s3": {
     "intent": "programme_licence_gi_modules_s3",
@@ -11583,7 +11847,8 @@
         "تشمل وحدات الفصل الثالث في الإجازة في GI: برمجة الويب 1 (قاسمي محمد أمين)، البرمجة بلغة C، نظام التشغيل 1 (الداودي المصطفى)، عمارة الحواسيب، الاحتمالات والإحصاء، اللغات الأجنبية، والثقافة والمهارات الفنية.",
         "في الفصل الثالث من الإجازة في GI، يدرس الطلاب برمجة الويب، لغة C وأنظمة التشغيل."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gga": {
     "intent": "programme_licence_gga",
@@ -11617,7 +11882,8 @@
         "إجازة GGA (هندسة الجيولوجيا التطبيقية) هو برنامج للسنة الثانية يشمل وحدات في البيولوجيا والكيمياء. الوحدات المتوفرة هي: بيولوجيا الكائنات النباتية والحيوانية (تشريح مقارن) والكيمياء في المحاليل ومقدمة في الكيمياء العضوية في الفصل الثاني، وبيولوجيا الخلية والأنسجة، الذرية والروابط الكيميائية، والرياضيات في الفصل الأول.",
         "برنامج إجازة GGA يغطي جوانب مختلفة من الجيولوجيا التطبيقية مع وحدات في البيولوجيا والكيمياء."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gga_modules_s2": {
     "intent": "programme_licence_gga_modules_s2",
@@ -11651,7 +11917,8 @@
         "تشمل وحدات الفصل الثاني في الإجازة في GGA: بيولوجيا الكائنات النباتية والحيوانية (تشريح مقارن) (الحوميزي محمد عزيز - لقصور بشرى) والكيمياء في المحاليل ومقدمة في الكيمياء العضوية.",
         "في الفصل الثاني من الإجازة في GGA، يدرس الطلاب بيولوجيا الكائنات والكيمياء العضوية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gga_modules_s1": {
     "intent": "programme_licence_gga_modules_s1",
@@ -11685,7 +11952,8 @@
         "تشمل وحدات الفصل الأول في الإجازة في GGA: بيولوجيا الخلية والأنسجة، الذرية والروابط الكيميائية (لمسايه مراد)، والرياضيات (عمارة زهير).",
         "في الفصل الأول من الإجازة في GGA، يدرس الطلاب أساسيات بيولوجيا الخلية، الكيمياء والرياضيات."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_gaem": {
     "intent": "programme_licence_gaem",
@@ -11719,7 +11987,8 @@
         "إجازة GAEM (هندسة النظم الزراعية والبيئة) هو برنامج للسنة الثانية يشمل نفس وحدات إجازة GGA. الوحدات المتوفرة هي: بيولوجيا الكائنات النباتية والحيوانية (تشريح مقارن) والكيمياء في المحاليل ومقدمة في الكيمياء العضوية في الفصل الثاني، وبيولوجيا الخلية والأنسجة، الذرية والروابط الكيميائية، والرياضيات في الفصل الأول.",
         "برنامج إجازة GAEM مطابق لبرنامج GGA في السنة الثانية، مع وحدات في البيولوجيا والكيمياء."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_ime": {
     "intent": "programme_licence_ime",
@@ -11753,7 +12022,8 @@
         "إجازة IME (هندسة المواد والطاقة) هو برنامج للسنة الثالثة يشمل وحدات في كيمياء وفيزياء المواد. وحدات الفصل السادس هي: تصنيع المواد، المواد المركبة (هيلي المهدي)، وتقنيات تحليل وتوصيف المواد (ديب مصطفى). في الفصل الخامس: الفئات الرئيسية للمواد (جميل محمد)، ديناميكا المواد الحرارية (الطاهني عبد السلام)، تفاعل الموجات والمواد، الخصائص الفيزيوكيميائية للمواد (الأنصاري الحاج الحسن)، كيمياء الكم (لمسايه مراد)، واللغات الأجنبية.",
         "برنامج إجازة IME يغطي جوانب مختلفة من هندسة المواد والطاقة."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_ime_modules_s6": {
     "intent": "programme_licence_ime_modules_s6",
@@ -11787,7 +12057,8 @@
         "تشمل وحدات الفصل السادس في الإجازة في IME: تصنيع المواد، المواد المركبة (هيلي المهدي)، وتقنيات تحليل وتوصيف المواد (ديب مصطفى).",
         "في الفصل السادس من الإجازة في IME، يدرس الطلاب تصنيع وتوصيف المواد المركبة."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_ime_modules_s5": {
     "intent": "programme_licence_ime_modules_s5",
@@ -11821,7 +12092,8 @@
         "تشمل وحدات الفصل الخامس في الإجازة في IME: الفئات الرئيسية للمواد (جميل محمد)، ديناميكا المواد الحرارية (الطاهني عبد السلام)، تفاعل الموجات والمواد، الخصائص الفيزيوكيميائية للمواد (الأنصاري الحاج الحسن)، كيمياء الكم (لمسايه مراد)، واللغات الأجنبية.",
         "في الفصل الخامس من الإجازة في IME، يدرس الطلاب الفئات المختلفة للمواد، خصائصها وديناميكيتها الحرارية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_materiaux_et_applications": {
     "intent": "programme_licence_materiaux_et_applications",
@@ -11855,7 +12127,8 @@
         "إجازة المواد والتطبيقات هي برنامج يشمل وحدات في الفيزياء والكيمياء. الوحدات المتوفرة هي: البصريات الهندسية (الرماندي عفيفة)، الكهرباء الساكنة والمغناطيسية الساكنة (معروف فتيحة) في الفصل الثاني، الديناميكا الحرارية (أوشريف محمد) والكيمياء الحرارية (بولويز عزيز) في الفصل الأول، وميكانيكا الكم (معروف فتيحة) في الفصل الثالث.",
         "البرنامج يغطي أساسيات فيزياء المواد بمناهج نظرية وتجريبية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_mathematiques_et_applications": {
     "intent": "programme_licence_mathematiques_et_applications",
@@ -11889,7 +12162,8 @@
         "إجازة الرياضيات والتطبيقات تقدم وحدات متقدمة في الرياضيات البحتة والتطبيقية. في الفصل الثاني: التحليل 2 (الوهاب عبد المالك)، الجبر 2 (زخنيني عبد القادر)، الفيزياء (معروف فتيحة)، والمعلوماتية (الدهماني سفيان). في الفصل الرابع: التحليل 5 (المرزوقي إبراهيم)، الجبر 4 (زيان محمد)، الجبر 5 (العراوي أنس)، والتحليل العددي (اللمني محمد).",
         "البرنامج يجمع بين الرياضيات الأساسية والتطبيقات العملية في الفيزياء والمعلوماتية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_licence_sciences_des_donnees": {
     "intent": "programme_licence_sciences_des_donnees",
@@ -11923,7 +12197,8 @@
         "إجازة علوم البيانات تقدم تدريباً في الرياضيات التطبيقية وعلوم الحاسوب. في الفصل الثاني: التحليل 2 (الوهاب عبد المالك)، الجبر 2 (زخنيني عبد القادر)، الفيزياء (معروف فتيحة)، والمعلوماتية (الدهماني سفيان). في الفصل الرابع: التحليل 5 (المرزوقي إبراهيم)، الجبر 4 (زيان محمد)، الجبر 5 (العراوي أنس)، والتحليل العددي (اللمني محمد).",
         "البرنامج يركز على الرياضيات لتحليل البيانات ومهارات البرمجة."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "programme_master_analyse_appliquee_calcul_scientifique": {
     "intent": "programme_master_analyse_appliquee_calcul_scientifique",
@@ -11957,7 +12232,8 @@
         "ماستر التحليل التطبيقي والحساب العلمي يقدم وحدات متقدمة في الرياضيات التطبيقية. في الفصل الثالث: نمذجة ميكانيكا الوسائط المتصلة (برجاء)، الطرق التباينية (العمروس)، الطرق الطوبولوجية (شكرون)، النظرية الطيفية (التسولي)، نظرية شبه الزمر (الفيلالي)، ونظرية النقطة الثابتة (المرزوقي). في الفصل الثاني: المعلوماتية 2، النمذجة (اللمليلي)، أدوات التحليل (شكرون)، المعادلات التفاضلية الجزئية (العمروس)، دوال السبلاين (الصبيحي)، والحل العددي (اللمني).",
         "تدريب متقدم في النمذجة الرياضية والطرق العددية."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence ME programme information": {
     "intent": "Licence ME programme information",
@@ -11996,7 +12272,8 @@
       "amz": [
         "Asenfar n tsertit ME d aselway n temsalt s uɣawas DEUG ME. Yegber imeẓla am Optique géométrique, Electrostatique et magnétostatique deg S2, d Thermodynamique, Thermochimie deg S1."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence OME programme information": {
     "intent": "Licence OME programme information",
@@ -12035,7 +12312,8 @@
       "amz": [
         "Asenfar n tsertit OME d aselway n temsalt s uɣawas DEUG OME. Yegber imeẓla am akken deg usenfar ME: Optique géométrique, Electrostatique et magnétostatique deg S2, d Thermodynamique, Thermochimie deg S1."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Radio Phy médicale programme information": {
     "intent": "Licence Radio Phy médicale programme information",
@@ -12074,7 +12352,8 @@
       "amz": [
         "Asenfar n tsertit Radio Phy médicale d aselway n temsalt s uɣawas DEUG Radio Phy médicale. Yegber imeẓla am Optique géométrique, Electrostatique et magnétostatique deg S2, d Thermodynamique, Thermochimie deg S1."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Sc. des Données programme information": {
     "intent": "Licence Sc. des Données programme information",
@@ -12113,7 +12392,8 @@
       "amz": [
         "Asenfar n tsertit Sc. des Données d aselway n temsalt s uɣawas DEUG Sc. des Données. Deg useggas 2, yegber imeẓla am Analyse 5, Algèbre 4, Algèbre 5, Analyse Numérique d Informatique 4 deg S4. Deg useggas amezwaru, llan Analyse 2, Algèbre 2, Electrostatique et magnétostatique, Optique géométrique d Informatique 2 deg S2, d Analyse 1 d Informatique 1 deg S1."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Informatique Appliquée programme information": {
     "intent": "Licence Informatique Appliquée programme information",
@@ -12152,7 +12432,8 @@
       "amz": [
         "Asenfar n tsertit Informatique Appliquée, aɣawas Développement Informatique d aselway n temsalt s uɣawas DEUG DI. Amaẓrag d Mohamed Serrhini, anagraw d Anagraw n Tinfaliyin."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Ingénierie de données et Intelligence Artificielle programme information": {
     "intent": "Licence Ingénierie de données et Intelligence Artificielle programme information",
@@ -12191,7 +12472,8 @@
       "amz": [
         "Asenfar n tsertit Ingénierie de données et Intelligence Artificielle d aselway n temsalt. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Actuariat et Mathématiques appliquées à la finance programme information": {
     "intent": "Licence Actuariat et Mathématiques appliquées à la finance programme information",
@@ -12230,7 +12512,8 @@
       "amz": [
         "Asenfar n tsertit Actuariat et Mathématiques appliquées à la finance d aselway n temsalt. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Agrosciences et Biotechnologie Végétale programme information": {
     "intent": "Licence Agrosciences et Biotechnologie Végétale programme information",
@@ -12269,7 +12552,8 @@
       "amz": [
         "Asenfar n tsertit Agrosciences et Biotechnologie Végétale d aselway n temsalt. Amaẓrag d AHMED KHALID, anagraw d Anagraw n Tussna n Tudert."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Chimie analytique et management de la qualité programme information": {
     "intent": "Licence Chimie analytique et management de la qualité programme information",
@@ -12308,7 +12592,8 @@
       "amz": [
         "Asenfar n tsertit Chimie analytique et management de la qualité d aselway n temsalt. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Secret": {
     "intent": "Secret",
@@ -12326,7 +12611,8 @@
         "Le NPC du tout les jours a fso est brahim 04-07-28 ",
         "04-07-76.9 Discover 1M$ Prize if u R smart Code:717529200624458693"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Chimie Organique et Produits Naturels programme information": {
     "intent": "Licence Chimie Organique et Produits Naturels programme information",
@@ -12365,7 +12651,8 @@
       "amz": [
         "Asenfar n tsertit Chimie Organique et Produits Naturels d aselway n temsalt. Amaẓrag d RACHID TOUZANI, anagraw d Anagraw n Chimie."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Ecologie et Environnement programme information": {
     "intent": "Licence Ecologie et Environnement programme information",
@@ -12404,7 +12691,8 @@
       "amz": [
         "Asenfar n tsertit Ecologie et Environnement d aselway n temsalt. Amaẓrag d LAHBIB BOUDCHICHE, anagraw d Anagraw n Tussna n Tura."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Electronique et Systèmes Embarqués programme information": {
     "intent": "Licence Electronique et Systèmes Embarqués programme information",
@@ -12443,7 +12731,8 @@
       "amz": [
         "Asenfar n tsertit Electronique et Systèmes Embarqués d aselway n temsalt. Amaẓrag d EL BEKKAYE CHAIEB, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Energies renouvelables et efficacité énergétique programme information": {
     "intent": "Licence Energies renouvelables et efficacité énergétique programme information",
@@ -12482,7 +12771,8 @@
       "amz": [
         "Asenfar n tsertit Energies renouvelables et efficacité énergétique d aselway n temsalt. Amaẓrag d MOHAMMED AMINE MOUSSAOUI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Environnement et Génie Civil programme information": {
     "intent": "Licence Environnement et Génie Civil programme information",
@@ -12521,7 +12811,8 @@
       "amz": [
         "Asenfar n tsertit Environnement et Génie Civil d aselway n temsalt. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Fondamentale en Sciences de la Vie programme information": {
     "intent": "Licence Fondamentale en Sciences de la Vie programme information",
@@ -12560,7 +12851,8 @@
       "amz": [
         "Asenfar n tsertit Fondamentale en Sciences de la Vie d aselway n temsalt. Amaẓrag d YOUSSEF SMIRI, anagraw d Anagraw n Tussna n Tudert."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Fondamentale en Sciences Mathématiques programme information": {
     "intent": "Licence Fondamentale en Sciences Mathématiques programme information",
@@ -12599,7 +12891,8 @@
       "amz": [
         "Asenfar n tsertit Fondamentale en Sciences Mathématiques d aselway n temsalt. Amaẓrag d M'HAMMED ZIANE, anagraw d Anagraw n Tusnakt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Fondamentale Sciences de la Matière Chimie programme information": {
     "intent": "Licence Fondamentale Sciences de la Matière Chimie programme information",
@@ -12638,7 +12931,8 @@
       "amz": [
         "Asenfar n tsertit Fondamentale Sciences de la Matière Chimie d aselway n temsalt. Amaẓrag d BOUFELJA BOUAMMALI, anagraw d Anagraw n Chimie."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Fondamentale Sciences de la Matière Physique programme information": {
     "intent": "Licence Fondamentale Sciences de la Matière Physique programme information",
@@ -12677,7 +12971,8 @@
       "amz": [
         "Asenfar n tsertit Fondamentale Sciences de la Matière Physique d aselway n temsalt. Amaẓrag d MOHAMMED JAMI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Fondamentale Sciences de la Terre et de l'Univers programme information": {
     "intent": "Licence Fondamentale Sciences de la Terre et de l'Univers programme information",
@@ -12716,7 +13011,8 @@
       "amz": [
         "Asenfar n tsertit Fondamentale Sciences de la Terre et de l'Univers d aselway n temsalt. Amaẓrag d LAHBIB BOUDCHICHE, anagraw d Anagraw n Tussna n Tura."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Fondamentale Sciences Mathématiques et Informatique programme information": {
     "intent": "Licence Fondamentale Sciences Mathématiques et Informatique programme information",
@@ -12755,7 +13051,8 @@
       "amz": [
         "Asenfar n tsertit Fondamentale Sciences Mathématiques et Informatique d aselway n temsalt. Amaẓrag d MOHAMMED MOUSSI, anagraw d Anagraw n Tinfaliyin."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Génie des Matériaux et Métaux Stratégiques programme information": {
     "intent": "Licence Génie des Matériaux et Métaux Stratégiques programme information",
@@ -12794,7 +13091,8 @@
       "amz": [
         "Asenfar n tsertit Génie des Matériaux et Métaux Stratégiques d aselway n temsalt. Amaẓrag d MOHAMMED ET-TOUHAMI, anagraw d Anagraw n Tussna n Tura."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Génie des Procédés Industriels programme information": {
     "intent": "Licence Génie des Procédés Industriels programme information",
@@ -12833,7 +13131,8 @@
       "amz": [
         "Asenfar n tsertit Génie des Procédés Industriels d aselway n temsalt. Amaẓrag d Morad Lamsayah, anagraw d Anagraw n Chimie."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Génie Informatique programme information": {
     "intent": "Licence Génie Informatique programme information",
@@ -12872,7 +13171,8 @@
       "amz": [
         "Asenfar n tsertit Génie Informatique d aselway n temsalt. Tamettant d Karima Aissaoui, anagraw d Anagraw n Tinfaliyin."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Géomatique et Géologie Appliquée programme information": {
     "intent": "Licence Géomatique et Géologie Appliquée programme information",
@@ -12911,7 +13211,8 @@
       "amz": [
         "Asenfar n tsertit Géomatique et Géologie Appliquée d aselway n temsalt. Amaẓrag d MOHAMMED ET-TOUHAMI, anagraw d Anagraw n Tussna n Tura."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Géosciences Appliquées à l'Exploration Minière programme information": {
     "intent": "Licence Géosciences Appliquées à l'Exploration Minière programme information",
@@ -12950,7 +13251,8 @@
       "amz": [
         "Asenfar n tsertit Géosciences Appliquées à l'Exploration Minière d aselway n temsalt. Amaẓrag d EL HASSAN TALBI, anagraw d Anagraw n Tussna n Tura."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Ingénierie des Matériaux et Energie programme information": {
     "intent": "Licence Ingénierie des Matériaux et Energie programme information",
@@ -12989,7 +13291,8 @@
       "amz": [
         "Asenfar n tsertit Ingénierie des Matériaux et Energie d aselway n temsalt. Amaẓrag d ABDELMONAEM TALHAOUI, anagraw d Anagraw n Chimie."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Matériaux et Applications programme information": {
     "intent": "Licence Matériaux et Applications programme information",
@@ -13028,7 +13331,8 @@
       "amz": [
         "Asenfar n tsertit Matériaux et Applications d aselway n temsalt. Amaẓrag d MOHAMMED JAMI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Mathématiques et Applications programme information": {
     "intent": "Licence Mathématiques et Applications programme information",
@@ -13067,7 +13371,8 @@
       "amz": [
         "Asenfar n tsertit Mathématiques et Applications d aselway n temsalt. Amaẓrag d M'HAMMED ZIANE, anagraw d Anagraw n Tusnakt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Matière et Rayonnement programme information": {
     "intent": "Licence Matière et Rayonnement programme information",
@@ -13106,7 +13411,8 @@
       "amz": [
         "Asenfar n tsertit Matière et Rayonnement d aselway n temsalt. Tamettant d FATIHA OUCHNI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Mécanique Et Energétique programme information": {
     "intent": "Licence Mécanique Et Energétique programme information",
@@ -13145,7 +13451,8 @@
       "amz": [
         "Asenfar n tsertit Mécanique Et Energétique d aselway n temsalt. Amaẓrag d MOHAMMED JAMI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Ondes, Matériaux et Energie programme information": {
     "intent": "Licence Ondes, Matériaux et Energie programme information",
@@ -13184,7 +13491,8 @@
       "amz": [
         "Asenfar n tsertit Ondes, Matériaux et Energie d aselway n temsalt. Amaẓrag d MOHAMMED JAMI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Radiophysique médicale programme information": {
     "intent": "Licence Radiophysique médicale programme information",
@@ -13223,7 +13531,8 @@
       "amz": [
         "Asenfar n tsertit Radiophysique médicale d aselway n temsalt. Amaẓrag d MOUSTAPHA ZARFAOUI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Licence Sciences des Données programme information": {
     "intent": "Licence Sciences des Données programme information",
@@ -13262,7 +13571,8 @@
       "amz": [
         "Asenfar n tsertit Sciences des Données d aselway n temsalt. Amaẓrag d MOHAMMED BENMOUMEN, anagraw d Anagraw n Tusnakt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Analyse appliquée et calcul scientifique programme information": {
     "intent": "Master Analyse appliquée et calcul scientifique programme information",
@@ -13301,7 +13611,8 @@
       "amz": [
         "Asenfar n tsertit Master Analyse appliquée et calcul scientifique d aselway n master. Amaẓrag d BRAHIM MARZOUKI, anagraw d Anagraw n Tusnakt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Analyse Numérique et Optimisation programme information": {
     "intent": "Master Analyse Numérique et Optimisation programme information",
@@ -13340,7 +13651,8 @@
       "amz": [
         "Asenfar n tsertit Master Analyse Numérique et Optimisation d aselway n master. Amaẓrag d ABDELMAJID ARROUD, anagraw d Anagraw n Tusnakt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Chimie Appliquée programme information": {
     "intent": "Master Chimie Appliquée programme information",
@@ -13379,7 +13691,8 @@
       "amz": [
         "Asenfar n tsertit Master Chimie Appliquée d aselway n master. Amaẓrag d ABDELMONAEM TALHAOUI, anagraw d Anagraw n Chimie."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Chimie du Solide et Procédés Industriels programme information": {
     "intent": "Master Chimie du Solide et Procédés Industriels programme information",
@@ -13418,7 +13731,8 @@
       "amz": [
         "Asenfar n tsertit Master Chimie du Solide et Procédés Industriels d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Electronique, systèmes et énergies renouvelables programme information": {
     "intent": "Master Electronique, systèmes et énergies renouvelables programme information",
@@ -13457,7 +13771,8 @@
       "amz": [
         "Asenfar n tsertit Master Electronique, systèmes et énergies renouvelables d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Environnement et Développement Durable programme information": {
     "intent": "Master Environnement et Développement Durable programme information",
@@ -13496,7 +13811,8 @@
       "amz": [
         "Asenfar n tsertit Master Environnement et Développement Durable d aselway n master. Amaẓrag d ABDELHAFID CHAFI, anagraw d Anagraw RETRAITE."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Génie des Matériaux et Métaux Stratégiques programme information": {
     "intent": "Master Génie des Matériaux et Métaux Stratégiques programme information",
@@ -13535,7 +13851,8 @@
       "amz": [
         "Asenfar n tsertit Master Génie des Matériaux et Métaux Stratégiques d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Ingénierie des Matériaux et Energie programme information": {
     "intent": "Master Ingénierie des Matériaux et Energie programme information",
@@ -13574,7 +13891,8 @@
       "amz": [
         "Asenfar n tsertit Master Ingénierie des Matériaux et Energie d aselway n master. Amaẓrag d ABDELMONAEM TALHAOUI, anagraw d Anagraw n Chimie."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Ingénierie horticole et paysagère programme information": {
     "intent": "Master Ingénierie horticole et paysagère programme information",
@@ -13613,7 +13931,8 @@
       "amz": [
         "Asenfar n tsertit Master Ingénierie horticole et paysagère d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Ingénierie informatique programme information": {
     "intent": "Master Ingénierie informatique programme information",
@@ -13652,7 +13971,8 @@
       "amz": [
         "Asenfar n tsertit Master Ingénierie informatique d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Intelligence Artificielle et Sciences des Données programme information": {
     "intent": "Master Intelligence Artificielle et Sciences des Données programme information",
@@ -13691,7 +14011,8 @@
       "amz": [
         "Asenfar n tsertit Master Intelligence Artificielle et Sciences des Données d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Matériaux polymères et chimie organique avancée programme information": {
     "intent": "Master Matériaux polymères et chimie organique avancée programme information",
@@ -13730,7 +14051,8 @@
       "amz": [
         "Asenfar n tsertit Master Matériaux polymères et chimie organique avancée d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Mécanique et Energétique programme information": {
     "intent": "Master Mécanique et Energétique programme information",
@@ -13769,7 +14091,8 @@
       "amz": [
         "Asenfar n tsertit Master Mécanique et Energétique d aselway n master. Amaẓrag d NAJIM SALHI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Mécanique Mécanique et énergétique programme information": {
     "intent": "Master Mécanique Mécanique et énergétique programme information",
@@ -13808,7 +14131,8 @@
       "amz": [
         "Asenfar n tsertit Master Mécanique Mécanique et énergétique d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Modélisation stochastique-Déterministe-data Science programme information": {
     "intent": "Master Modélisation stochastique-Déterministe-data Science programme information",
@@ -13847,7 +14171,8 @@
       "amz": [
         "Asenfar n tsertit Master Modélisation stochastique-Déterministe-data Science d aselway n master. Ulac amaẓrag neɣ anagraw i yettwasecmen i usenfar-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Optique et Matériaux programme information": {
     "intent": "Master Optique et Matériaux programme information",
@@ -13886,7 +14211,8 @@
       "amz": [
         "Asenfar n tsertit Master Optique et Matériaux d aselway n master. Amaẓrag d ALI KHETTABI, anagraw d Anagraw n Tussna n Tafzut."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master Physiologie et Santé programme information": {
     "intent": "Master Physiologie et Santé programme information",
@@ -13925,7 +14251,8 @@
       "amz": [
         "Asenfar n tsertit Master Physiologie et Santé d aselway n master. Amaẓrag d ABDELKHALEQ LEGSSYER, anagraw d Anagraw n Tussna n Tudert."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Physics of Matter and Radiation": {
     "intent": "Master in Physics of Matter and Radiation",
@@ -13972,7 +14299,8 @@
         "Anmazal n wecuγgal d EL HASSAN TAHRI.",
         "Agraw iseflaken d Asegzaw n Tafizit."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Physics of Matter and Radiations": {
     "intent": "Master in Physics of Matter and Radiations",
@@ -14019,7 +14347,8 @@
         "Ulac anmazal i wecuγgal-a.",
         "Ulac agraw i wecuγgal-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Medical Physics and Radiation Protection": {
     "intent": "Master in Medical Physics and Radiation Protection",
@@ -14066,7 +14395,8 @@
         "Ulac anmazal i wecuγgal-a.",
         "Ulac agraw i wecuγgal-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Food Safety in the Mediterranean": {
     "intent": "Master in Food Safety in the Mediterranean",
@@ -14113,7 +14443,8 @@
         "Ulac anmazal i wecuγgal-a.",
         "Ulac agraw i wecuγgal-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Spectral Theory & Application": {
     "intent": "Master in Spectral Theory & Application",
@@ -14160,7 +14491,8 @@
         "Ulac anmazal i wecuγgal-a.",
         "Ulac agraw i wecuγgal-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Specialized Master in Geosciences of Environment and Civil Engineering": {
     "intent": "Specialized Master in Geosciences of Environment and Civil Engineering",
@@ -14207,7 +14539,8 @@
         "Ulac anmazal i wecuγgal-a.",
         "Ulac agraw i wecuγgal-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Specialized Master in Computer Engineering": {
     "intent": "Specialized Master in Computer Engineering",
@@ -14254,7 +14587,8 @@
         "Anmazal n wecuγgal d AZZ-EDDINE MAZROUI.",
         "Agraw iseflaken d Asegzaw n Tisuraf."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Specialized Master in Environmental Change Management": {
     "intent": "Specialized Master in Environmental Change Management",
@@ -14301,7 +14635,8 @@
         "Ulac anmazal i wecuγgal-a.",
         "Ulac agraw i wecuγgal-a."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Specialized Master in Horticultural and Landscape Engineering": {
     "intent": "Specialized Master in Horticultural and Landscape Engineering",
@@ -14348,7 +14683,8 @@
         "Anmazal n wecuγgal d ABDELBASSET BERRICHI.",
         "Agraw iseflaken d Asegzaw n Tussnant."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Specialized Master in Food Science-Food Safety": {
     "intent": "Specialized Master in Food Science-Food Safety",
@@ -14395,7 +14731,8 @@
         "Anmazal n wecuγgal d AHMED EL AMRANI.",
         "Agraw iseflaken d Asegzaw n Tussnant."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Applied Mathematics and Scientific Computing": {
     "intent": "Master in Applied Mathematics and Scientific Computing",
@@ -14442,7 +14779,8 @@
         "Amsawal n 'Asnefli-tamzikt-timɣarin-izuran-aseɣzif-n-ifeṛṛunen-iferranen' d BERRJAA MOHAMMED.",
         "Deg useggas n 1, semestṛe S1, icuγalen d: Tidduklin d imḍanen n Sobolev, Asleḍmi n waddad, Rnu n usemres d tizmilin, Irnuten n usleḍmi n umḍan, Asleḍmi n uzrir d usnefli, Aselkim I d Tanglizit I."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Physical Chemistry (CHAP Opt PHCH)": {
     "intent": "Master in Physical Chemistry (CHAP Opt PHCH)",
@@ -14489,7 +14827,8 @@
         "Amsawal n 'Tanagalt n tɣellest' d TAHANI ABDESSELAM.",
         "Deg useggas n 1, semestṛe S2, icuγalen d: Rnu uslig - tarrayin n usleḍmi-tasnefla n tirmitin, Takimit n tizeɣt d usɣer, Asɣan amgerrad d takimit n yidammen, Takimit tasuwant d usentel, Takimit d takimit tafizikt n imɣan imeqqranen."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Materials Chemistry (CHAP Opt MPA)": {
     "intent": "Master in Materials Chemistry (CHAP Opt MPA)",
@@ -14536,7 +14875,8 @@
         "Amsawal n 'Asnefli n imɣan' d KARZAZI YASSER.",
         "Deg useggas n 1, semestṛe S1, icuγalen d: Tanglizit d aselmed n unadi n yimawalen, Rnu n tarrayin n usleḍmi n tuzzya, Tanagalt n tɣellest, Asnefli n imɣan, Takimit n wekka, Takimit tamesɣunt tazwarnit d usenker n tririt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Organic Chemistry (CHAP Opt CHOR)": {
     "intent": "Master in Organic Chemistry (CHAP Opt CHOR)",
@@ -14583,7 +14923,8 @@
         "Amsawal n 'Takimit d Takimit Tafizikt n imɣan imeqqranen' d EL IDRISSI ABDERRAHMAN d MALEK FOUAD.",
         "Deg useggas n 1, semestṛe S1, icuγalen d: Tanglizit d aselmed n unadi n yimawalen, Rnu n tarrayin n usleḍmi n tuzzya, Tanagalt n tɣellest, Asnefli n imɣan, Takimit n wekka, Takimit tamesɣunt tazwarnit d usenker n tririt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Environmental Development (EDD)": {
     "intent": "Master in Environmental Development (EDD)",
@@ -14630,7 +14971,8 @@
         "Amsawal n 'Sefrek amsedday n yilel d yidammen' d IRZI ZOULIKHA.",
         "Isegzawen yellan d: Asegzaw n Yusnan, Asegzaw n Tafizit, Asegzaw n Tussnant."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Computer Science (IASCD)": {
     "intent": "Master in Computer Science (IASCD)",
@@ -14677,7 +15019,8 @@
         "Master IASCD iseflak-it Asegzaw n Tisuraf.",
         "Master IASCD yesɛa deg useggas n 2 semestṛe S4 s yimsawal 'Azraw'."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Mechanics and Energy": {
     "intent": "Master in Mechanics and Energy",
@@ -14724,7 +15067,8 @@
         "Amsawal n 'Tamzikt n yifassen 3' d DAOUDI SALAH.",
         "Deg useggas n 1, semestṛe S1, icuγalen d: Tamzikt n yifassen 1, Asebded d tuzzya n tɣellist, Tanagalt n tɣellist usnas, Tazmert d tɣellist n yimɣan, Aselkim d usenfli, Tafizit n tizmilin, Tanglizit."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Master in Optical Materials": {
     "intent": "Master in Optical Materials",
@@ -14771,7 +15115,8 @@
         "Amsawal n 'Tuzzya tussnant' d NOUGAOUI ABDELKARIM.",
         "Isegzawen yellan d: Asegzaw n Yusnan d Asegzaw n Tafizit."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Horaires de travail de la FSO": {
     "intent": "Horaires de travail de la FSO",
@@ -14818,7 +15163,8 @@
         "Tettzra tasnawalt n 8:30 deg wussan n useggas.",
         "Tanbaḍt tamezwarut tettwab si 9:00 ɣer 16:00, war tidyanin ameɣṛan."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Filières de la FSO": {
     "intent": "Filières de la FSO",
@@ -14865,7 +15211,8 @@
         "Icuγalen d: ijaɣazen izerfanen, ijaɣazen imennanen, masters d tibririyin.",
         "Tzemreḍ ad tesruḥ deg Tabyulujya, Takimya, Tusnakt, Tasenṭikt, Tafizikt neɣ Tajyulujya."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Départements de la FSO": {
     "intent": "Départements de la FSO",
@@ -14912,7 +15259,8 @@
         "Yella sdis n igrawen imqqaren i d-yeqqaren akk tusnakt n tesnawalt.",
         "Yal agraw i d amsawal ɣer usnifel n uselmed, imtihanan d temnaḍt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Passerelles et équivalences à la FSO": {
     "intent": "Passerelles et équivalences à la FSO",
@@ -14975,7 +15323,8 @@
         "Asuter n teqbel n certificate yella ɣer tanbaḍt n yineɣmasen akked isefka n uselmed.",
         "Wid i d-yewwen seg universités nniḍen zemren ad rnun ɣer master s umeslay agejdan."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Passerelles vers les écoles d'ingénieurs": {
     "intent": "Passerelles vers les écoles d'ingénieurs",
@@ -15030,7 +15379,8 @@
         "Unekcum yeddren ɣef isefka n uselmed, tiririt, d win ara igber imtihan neɣ tazrawt.",
         "Yifka ad teɣdem ɣer taksilt i tebɣiḍ s telɣut n tsarut n unekcum."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Calendrier universitaire": {
     "intent": "Calendrier universitaire",
@@ -15077,7 +15427,8 @@
         "Waddaduren n tεribatin ttwassen s uεessas n tizrawin deg tazwara n yal asemster.",
         "Asemster yemmal s tεribat tebɛed d tallit n usmiren."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Inscription et Réinscription": {
     "intent": "Inscription et Réinscription",
@@ -15124,7 +15475,8 @@
         "Amṣad n uεawed yettwaxeddem s ufaggag usrid n FSO i yellan i yiselmaden.",
         "Amṣad deffir lǧal yettwasehlen mara yella yessefk asertu d usentel n tizrawin."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Résultats et Relevés de notes": {
     "intent": "Résultats et Relevés de notes",
@@ -15171,7 +15523,8 @@
         "Tifinast n tmezgida tettwasirig s uεessas n tizrawin neɣ s ufaggag n uselmd.",
         "Ifeṛdisen ttwazen deffir yal tεribat, s umata deg 2 n yimalasen."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Stage et PFE": {
     "intent": "Stage et PFE",
@@ -15218,7 +15571,8 @@
         "Wah, asenfar n tagara n tesdawit ilaq ad yili deg useggas aneggaru n master.",
         "Imεallimen-ineɣmasen n FSO ttwassan i yiselmeden ɣef temsalt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Types de diplômes proposés": {
     "intent": "Types de diplômes proposés",
@@ -15265,7 +15619,8 @@
         "Iselmaden zemren ad ḍferen abrid akadimi aččuran, seg useggas amezwaru armi d tsertit.",
         "Kra n yinɣabaten tettaken daɣen tiliṣiynin usligen neɣ tisdawiyin tusligin."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Fonction des départements universitaires": {
     "intent": "Fonction des départements universitaires",
@@ -15312,7 +15667,8 @@
         "Ttusgant idlsen, tεribatin, anezzum n yiselmeden d yimawen.",
         "Yal afrag yesεa ameqqran n ufrag d imεallimen-ineɣmasen ɣef temsalt."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Accès à la faculté après le baccalauréat": {
     "intent": "Accès à la faculté après le baccalauréat",
@@ -15359,7 +15715,8 @@
         "Ulac tεribat i usenqed n licence deg tesdawit tazayezt.",
         "Ibakan n tussniwin (SVT, PC, Math) d wid i yettwaεqlen akk i tisdawiyin deg tfakultt n tussniwin."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Structure des semestres à l'université": {
     "intent": "Structure des semestres à l'université",
@@ -15406,7 +15763,8 @@
         "Licence temmal ɣef kraḍ n yiseggasen, neɣ semster sḍis: S1 ar S6.",
         "Yal asemster yesεa ugar n yimdukal, yemgerrad ɣef temsalt n uselmad (tbiyulujit, asmekti, atg)."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "Travaux Pratiques à la FSO": {
     "intent": "Travaux Pratiques à la FSO",
@@ -15461,7 +15819,8 @@
         "S umata ilaq ad yili yettwaεqel deg usentel n umudkal.",
         "Deg kra n TP (d acu kan asmekti), ilaq ad tessewḍeḍ taqendurt tazegzawt d uqadeṛ n lqanun n tɣellist."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "calendar_rentree_universitaire": {
     "intent": "calendar_rentree_universitaire",
@@ -15496,7 +15855,8 @@
       "amz": [
         "Useggas n tussna itebda-d s Septamber. Tazmert tidet tettwazen deg usmel web n temdint."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "attestation_scolarite_procedure": {
     "intent": "attestation_scolarite_procedure",
@@ -15531,7 +15891,8 @@
       "amz": [
         "Tzemred ad ssutreḍ tasertit seg uḥuddu n unermas neɣ s usmel n tmezgiwin n temdint ma yella yella."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "retrait_diplome": {
     "intent": "retrait_diplome",
@@ -15566,7 +15927,8 @@
       "amz": [
         "Ad tefkeḍ tdsert, rru ɣer uḥuddu n unermas s tazult n tmurt. Ssawel ɣef wakud n lqanun uqbel."
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "procedure_reinscription": {
     "intent": "procedure_reinscription",
@@ -15615,7 +15977,8 @@
       "amz": [
         "http://scolarite.ump.ma/login"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "consulter_notes_et_inscriptions": {
     "intent": "consulter_notes_et_inscriptions",
@@ -15668,7 +16031,8 @@
       "amz": [
         "http://scolarite.ump.ma"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "espace_etudiant_creation_premiere_fois": {
     "intent": "espace_etudiant_creation_premiere_fois",
@@ -15721,7 +16085,8 @@
       "amz": [
         "http://scolarite.ump.ma"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "email_institutionnel_procedure": {
     "intent": "email_institutionnel_procedure",
@@ -15778,7 +16143,8 @@
         "http://recupmail.ump.ma",
         "mailto: reclamation_fso@ump.ac.ma"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "inscription_doctorants_2025_2026": {
     "intent": "inscription_doctorants_2025_2026",
@@ -15831,7 +16197,8 @@
       "amz": [
         "http://fso.ump.ma/fr/actualite/reinscription-inscription-des-nouveaux-doctorants-pour-lannee-universitaire-2025-2026"
       ]
-    }
+    },
+    "data": "2025-04-28"
   },
   "activation_compte_ithenticate_doctorants": {
     "intent": "activation_compte_ithenticate_doctorants",
@@ -15884,6 +16251,7 @@
       "amz": [
         "mailto:k.chaabane@ump.ac.ma"
       ]
-    }
+    },
+    "data": "2025-04-28"
   }
 }

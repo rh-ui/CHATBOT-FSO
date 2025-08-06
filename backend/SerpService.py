@@ -1,4 +1,5 @@
 import logging
+from typing import Dict, List, Union
 from playwright.sync_api import sync_playwright
 import time
 import re
@@ -416,36 +417,48 @@ def afficher_resultats(resultats):
         
         print("-" * 80)
 
-def internet(qst: str, lang : str):
-    search_results = google_search_and_extract(qst, lang, max_results=15)
-    
-    formatted_results = []
-    for i, result in enumerate(search_results, 1):
-        formatted_results.append({
-            'question': qst,
-            'answer': f"{result['titre']}\n{result['snippet']}",
-            'score': result['score_final'],
-            'meta': {
-                'url': result['url'],
-                'detailed_scores': result['scores_detailles']
-            }
-        })
-    
-    logger.info("Must : Structuring answer")
-    llm_response = llm_service.generate_structured_response(
-        question=qst,
-        search_results=formatted_results,
-        lang=lang
-    )
-    
-    # Afficher la réponse finale structurée
-    return {
-        "detected_lang": lang,
-        "raw_results": formatted_results,
-        "structured_response": llm_response['response'],
-        "confidence": llm_response['confidence'],
-        "sources_used": llm_response['sources_used'],
-        "processing_time": llm_response['processing_time'],
-        "llm_used": True,
-        "search_source": "Internet"
+def get_no_results_message(lang: str) -> str:
+    """Get appropriate no results message based on language"""
+    messages = {
+        'fr': "Désolé, je n'ai pas trouvé d'informations pertinentes pour répondre à votre question. Pouvez-vous reformuler votre question ou être plus spécifique?",
+        'en': "Sorry, I couldn't find relevant information to answer your question. Could you rephrase your question or be more specific?",
+        'ar': "عذراً، لم أتمكن من العثور على معلومات ذات صلة للإجابة على سؤالك. هل يمكنك إعادة صياغة سؤالك أو أن تكون أكثر تحديداً؟",
+        'amz': "Suref-iyi, ur ufiɣ ara talɣut yesɛan azday i tririt n usqsi-inek. Tzemreḍ ad talseḍ asqsi-inek neɣ ad tiliḍ d-aweḥḥed?"
     }
+    return messages.get(lang, messages['fr'])
+
+def get_internet_results_for_question(question: str, lang: str) -> List[Dict]:
+    """
+    Get internet search results for a specific question and format them consistently
+    NO LLM CALLS HERE - Just data formatting
+    """
+    try:
+        logger.info(f"Searching internet for: {question}")
+        
+        # Use the existing internet search function
+        search_results = google_search_and_extract(question, lang, max_results=10)  # Reduced from 15 to 10
+        
+        formatted_results = []
+        for i, result in enumerate(search_results, 1):
+            formatted_result = {
+                'question': question,
+                'answer': f"{result['titre']}\n{result['snippet']}",
+                'lang': lang,
+                'intent': 'internet_search',
+                'confidence': result['score_final'],
+                'date': 'recent',
+                'source': 'internet',
+                'meta': {
+                    'url': result['url'],
+                    'detailed_scores': result['scores_detailles'],
+                    'title': result['titre']
+                }
+            }
+            formatted_results.append(formatted_result)
+        
+        logger.info(f"Internet search returned {len(formatted_results)} results")
+        return formatted_results
+        
+    except Exception as e:
+        logger.error(f"Error in internet search: {str(e)}")
+        return []

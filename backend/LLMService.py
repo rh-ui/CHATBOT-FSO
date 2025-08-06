@@ -228,49 +228,106 @@ class LLMService:
         except requests.exceptions.RequestException as e:
             raise Exception(f"Erreur lors de l'appel à Ollama: {str(e)}")
 
-    def validate_answer_relevance(self, question: str, answer: str) -> bool:
-        """Validate if the answer is relevant to the question using LLM"""
+    def validate_comprehensive_answer(self, original_question: str, simplified_questions: List[str], 
+                                    generated_answer: str, lang: str) -> Dict[str, Any]:
+        """
+        Enhanced validation that considers the relationship between original question,
+        simplified questions, and the comprehensive answer
+        """
         
-        system_prompt = """You are an intelligent answer validator. Your task is to determine if a given answer is relevant and correct for a specific question.
+        validation_prompts = {
+            'fr': {
+                'system': """Tu es un validateur intelligent de réponses. Ta tâche est d'évaluer si une réponse générée est pertinente et complète pour une question originale et ses sous-questions.
 
-    Rules:
-    1. Return only "1" if the answer is relevant and addresses the question
-    2. Return only "0" if the answer is irrelevant, incorrect, or doesn't address the question
-    3. Be contextually aware: FSO = Faculté des Sciences Oujda
-    4. Consider partial matches: if question asks "le doyen" and answer mentions "Doyen de la Faculté des Sciences d'Oujda", this is relevant
-    5. No explanations, just return 1 or 0"""
+    RÈGLES:
+    1. Évalue si la réponse traite la question originale de manière appropriée
+    2. Vérifie si tous les aspects des sous-questions sont abordés
+    3. Identifie les éléments manquants ou non pertinents
+    4. Considère le contexte FSO (Faculté des Sciences Oujda)
+    5. Retourne un score de validation détaillé
 
-        user_prompt = f"""Question: {question}
-    Answer: {answer}
+    FORMAT DE RÉPONSE:
+    - valid: 1 si la réponse est globalement satisfaisante, 0 sinon
+    - coverage_score: score de 0 à 1 indiquant le pourcentage de couverture
+    - missing_aspects: liste des aspects non couverts
+    - irrelevant_content: contenu non pertinent identifié""",
 
-    Is this answer relevant and correct for the question? Return only 1 or 0."""
+                'user': """QUESTION ORIGINALE:
+    {original_question}
 
+    SOUS-QUESTIONS:
+    {simplified_questions}
+
+    RÉPONSE GÉNÉRÉE:
+    {generated_answer}
+
+    Évalue cette réponse de manière comprehensive."""
+            },
+            
+            'en': {
+                'system': """You are an intelligent answer validator. Your task is to evaluate if a generated answer is relevant and complete for an original question and its sub-questions.
+
+    RULES:
+    1. Assess if the answer appropriately addresses the original question
+    2. Verify if all aspects of sub-questions are covered
+    3. Identify missing or irrelevant elements
+    4. Consider FSO context (Faculty of Sciences Oujda)
+    5. Return a detailed validation score
+
+    RESPONSE FORMAT:
+    - valid: 1 if answer is globally satisfactory, 0 otherwise
+    - coverage_score: score from 0 to 1 indicating coverage percentage
+    - missing_aspects: list of uncovered aspects
+    - irrelevant_content: identified irrelevant content""",
+
+                'user': """ORIGINAL QUESTION:
+    {original_question}
+
+    SUB-QUESTIONS:
+    {simplified_questions}
+
+    GENERATED ANSWER:
+    {generated_answer}
+
+    Evaluate this answer comprehensively."""
+            }
+        }
+        
         try:
-            llm_response = self._call_ollama(
-                prompt=user_prompt,
-                system_prompt=system_prompt
+            prompt_config = validation_prompts.get(lang, validation_prompts['fr'])
+            
+            simplified_questions_text = "\n".join([f"- {q}" for q in simplified_questions])
+            
+            user_prompt = prompt_config['user'].format(
+                original_question=original_question,
+                simplified_questions=simplified_questions_text,
+                generated_answer=generated_answer
             )
             
-            # Debug logging
-            logger.info(f"Validation - Question: {question}")
-            logger.info(f"Validation - Answer preview: {answer[:100]}...")
-            logger.info(f"Validation - LLM raw response: '{llm_response}'")
+            validation_response = self._call_ollama(
+                prompt=user_prompt,
+                system_prompt=prompt_config['system']
+            )
             
-            # Extract only the first character and validate
-            result = llm_response.strip()[0] if llm_response.strip() else "0"
-            logger.info(f"Validation - Extracted result: '{result}'")
+            # Parse validation response (this would need to be implemented based on LLM output format)
+            validation_result = self._parse_validation_response(validation_response)
             
-            # Return boolean based on LLM response
-            is_valid = result == "1"
-            logger.info(f"Validation - Final result: {is_valid}")
+            logger.info(f"Comprehensive validation - Original: {original_question[:50]}...")
+            logger.info(f"Comprehensive validation - Sub-questions: {len(simplified_questions)}")
+            logger.info(f"Comprehensive validation - Result: {validation_result}")
             
-            return is_valid
+            return validation_result
             
         except Exception as e:
-            logger.error(f"Error validating answer relevance: {str(e)}")
-            # Default to False if validation fails
-            return False
-        
+            logger.error(f"Error in comprehensive validation: {str(e)}")
+            return {
+                "is_valid": False,
+                "coverage_score": 0.0,
+                "missing_aspects": ["validation_error"],
+                "irrelevant_content": [],
+                "error": str(e)
+            }       
+    
     def format_search_results_for_structuring(self, results: List[Dict[str, Union[str, float]]]) -> str:
         """Formate tous les résultats pour permettre au LLM de les structurer"""
         if not results:
@@ -303,69 +360,182 @@ class LLMService:
         
         return "\n\n".join(formatted_results)
 
-    def generate_structured_response(self, question: str, search_results: List[Dict[str, Any]], lang: str) -> Dict[str, Any]:
-        """Génère une réponse structurée à partir de TOUS les résultats trouvés"""
-        
+    def generate_comprehensive_response(self, original_question: str, question_answer_pairs: List[Dict], 
+                                    all_documents: List[Dict], lang: str) -> Dict[str, Any]:
+        """
+        Generate a comprehensive response that synthesizes all question-answer relationships
+        """
         try:
             start_time = datetime.now()
             
-            # Filter valid results
-            valid_results = [r for r in search_results if r.get('answer')]
-            
-            if not valid_results:
-                return {
-                    'response': self.no_results_messages.get(lang, self.no_results_messages.get('fr', 'Aucune réponse trouvée.')),
-                    'confidence': 0.0,
-                    'sources_used': 0,
-                    'processing_time': 0,
-                    'scope': 'no_results'
+            # Enhanced prompt configuration for comprehensive processing
+            comprehensive_prompts = {
+                'fr': {
+                    'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
+    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive et cohérente.
+
+    RÈGLES IMPORTANTES:
+    1. Analyse TOUTES les questions ensemble pour comprendre le besoin complet d'information de l'utilisateur
+    2. Examine les réponses pour identifier:
+    - Les informations complémentaires qui doivent être combinées
+    - Les contradictions qui nécessitent une résolution
+    - Les lacunes qui doivent être reconnues
+    3. Structure ta réponse pour:
+    - Répondre clairement à chaque question
+    - Montrer les connexions entre questions liées
+    - Résoudre les conflits entre réponses
+    - Maintenir un flux logique
+    4. Pour les questions temporelles, indique clairement la période de chaque information
+    5. Préserve toutes les informations uniques et précieuses tout en éliminant la redondance
+    6. Si les réponses sont en conflit, indique-le et fournis toutes les perspectives
+    7. Utilise un format structuré pour les cas multi-questions complexes
+
+    FORMAT DE SORTIE:
+    1. Réponse synthétique qui traite tous les aspects
+    2. Indication des sources d'information
+    3. Gestion des conflits ou incertitudes si nécessaire""",
+
+                    'user': """QUESTION ORIGINALE DE L'UTILISATEUR:
+    {original_question}
+
+    QUESTIONS SIMPLIFIÉES ET LEURS RÉPONSES:
+    {formatted_qa_pairs}
+
+    CONTEXTE GLOBAL:
+    - Total des questions: {num_questions}
+    - Total des sources: {num_sources}
+
+    TÂCHE: Génère une réponse comprehensive qui traite tous les aspects du besoin d'information de l'utilisateur en synthétisant toutes les informations disponibles. Résous les conflits, comble les lacunes si possible, et maintiens toutes les informations précieuses tout en éliminant la redondance."""
+                },
+                
+                'en': {
+                    'system': """You are an expert information synthesizer for the Faculty of Sciences Oujda (FSO). 
+    Your task is to analyze multiple question-answer pairs and generate a comprehensive, coherent response.
+
+    IMPORTANT RULES:
+    1. Analyze ALL questions together to understand the user's complete information need
+    2. Cross-reference answers to identify:
+    - Complementary information that should be combined
+    - Contradictions that need resolution
+    - Gaps that need to be acknowledged
+    3. Structure your response to:
+    - Address each question clearly
+    - Show connections between related questions
+    - Resolve conflicts between answers
+    - Maintain logical flow
+    4. For temporal questions, clearly indicate the timeframe of each piece of information
+    5. Preserve all unique valuable information while eliminating redundancy
+    6. If answers conflict, indicate this and provide all perspectives
+    7. Use structured format for complex multi-question cases
+
+    OUTPUT FORMAT:
+    1. Synthetic response addressing all aspects
+    2. Source information indication
+    3. Conflict or uncertainty management if needed""",
+
+                    'user': """USER'S ORIGINAL QUESTION:
+    {original_question}
+
+    SIMPLIFIED QUESTIONS AND THEIR ANSWERS:
+    {formatted_qa_pairs}
+
+    GLOBAL CONTEXT:
+    - Total questions: {num_questions}
+    - Total sources: {num_sources}
+
+    TASK: Generate a comprehensive response that addresses all aspects of the user's information need by synthesizing all available information. Resolve conflicts, fill gaps where possible, and maintain all valuable information while eliminating redundancy."""
+                },
+                
+                'ar': {
+                    'system': """أنت خبير في تجميع المعلومات لكلية العلوم وجدة (FSO).
+    مهمتك هي تحليل عدة أزواج من الأسئلة والأجوبة وإنتاج إجابة شاملة ومتماسكة.
+
+    القواعد المهمة:
+    1. حلل كل الأسئلة معاً لفهم حاجة المستخدم الكاملة للمعلومات
+    2. راجع الأجوبة لتحديد:
+    - المعلومات المكملة التي يجب دمجها
+    - التناقضات التي تحتاج حل
+    - الثغرات التي يجب الاعتراف بها
+    3. هيكل إجابتك لـ:
+    - الإجابة بوضوح على كل سؤال
+    - إظهار الروابط بين الأسئلة المترابطة
+    - حل التعارضات بين الأجوبة
+    - الحفاظ على تدفق منطقي
+    4. للأسئلة الزمنية، وضح بوضوح الإطار الزمني لكل معلومة
+    5. اعتن بكل المعلومات القيمة الفريدة مع إزالة التكرار
+    6. إذا تعارضت الأجوبة، وضح ذلك وقدم كل وجهات النظر
+    7. استخدم تنسيق منظم للحالات المتعددة الأسئلة المعقدة
+
+    تنسيق المخرجات:
+    1. إجابة تركيبية تتناول كل الجوانب
+    2. إشارة لمصادر المعلومات
+    3. إدارة التعارضات أو عدم اليقين إذا لزم الأمر""",
+
+                    'user': """السؤال الأصلي للمستخدم:
+    {original_question}
+
+    الأسئلة المبسطة وأجوبتها:
+    {formatted_qa_pairs}
+
+    السياق العام:
+    - إجمالي الأسئلة: {num_questions}
+    - إجمالي المصادر: {num_sources}
+
+    المهمة: أنتج إجابة شاملة تعالج كل جوانب حاجة المستخدم للمعلومات عبر تجميع كل المعلومات المتاحة. حل التعارضات، املأ الثغرات إن أمكن، واحتفظ بكل المعلومات القيمة مع إزالة التكرار."""
                 }
+            }
             
-            # Use prompts according to language
-            prompt_config = self.prompts.get(lang, self.prompts.get('fr', self.prompts['fr']))
+            prompt_config = comprehensive_prompts.get(lang, comprehensive_prompts['fr'])
             
-            # Format ALL results for the LLM
-            formatted_results = self.format_search_results_for_structuring(valid_results)
+            # Format question-answer pairs in a structured way
+            formatted_pairs = self._format_comprehensive_qa_pairs(question_answer_pairs, lang)
             
-            # Create complete prompt
+            # Create the comprehensive prompt
             user_prompt = prompt_config['user'].format(
-                question=question,
-                search_results=formatted_results
+                original_question=original_question,
+                formatted_qa_pairs=formatted_pairs,
+                num_questions=len(question_answer_pairs),
+                num_sources=len(all_documents)
             )
             
-            # Call Ollama to structure the response
-            structured_response = self._call_ollama(
+            # Generate comprehensive response
+            comprehensive_response = self._call_ollama(
                 prompt=user_prompt,
                 system_prompt=prompt_config['system']
             )
             
             processing_time = (datetime.now() - start_time).total_seconds()
             
-            # Calculate confidence based on number and quality of results
-            confidence = self._calculate_confidence(valid_results)
+            # Calculate comprehensive confidence
+            confidence = self._calculate_comprehensive_confidence(question_answer_pairs, all_documents)
             
-            logger.info(f"Response generated with confidence: {confidence}")
+            # Analyze question coverage
+            question_coverage = self._analyze_question_coverage(question_answer_pairs, comprehensive_response)
+            
+            logger.info(f"Comprehensive response generated with confidence: {confidence}")
             
             return {
-                'response': structured_response,
+                'response': comprehensive_response,
                 'confidence': confidence,
-                'sources_used': len(valid_results),
+                'sources_used': len(all_documents),
+                'questions_addressed': len(question_answer_pairs),
                 'processing_time': processing_time,
-                'original_results': valid_results,
-                'scope': 'fso_related'
+                'question_coverage': question_coverage,
+                'scope': 'comprehensive_fso'
             }
             
         except Exception as e:
-            logger.error(f"Error generating structured response: {str(e)}")
+            logger.error(f"Error generating comprehensive response: {str(e)}")
             return {
-                'response': self.no_results_messages.get(lang, self.no_results_messages.get('fr', 'Erreur lors du traitement.')),
+                'response': self.no_results_messages.get(lang, 'Erreur lors du traitement.'),
                 'confidence': 0.0,
                 'sources_used': 0,
+                'questions_addressed': 0,
                 'processing_time': 0,
                 'error': str(e),
                 'scope': 'error'
-            }
-            
+            }      
+    
     def _calculate_confidence(self, results: List[Dict[str, Any]]) -> float:
             """Calcule un score de confiance basé sur les résultats"""
             if not results:
@@ -1197,299 +1367,745 @@ class LLMService:
             'fallback_used': False
         }
 
-    def classify_question_type(self, question: str, lang: str = 'fr') -> str:
+    def simplify_question(self, question: str, lang: str = 'fr', date: datetime = None) -> list:
         """
-        Classifie si une question (quelque soit le domaine) nécessite une réponse STATIQUE ou DYNAMIQUE
-        Returns: 'static' or 'dynamic'
-        """
-        now = datetime.now()
-        current_time = now.strftime("%Y-%m-%d %H:%M:%S")
+        Simplifie une question complexe en extrayant les questions principales.
+        Si la question contient plusieurs sous-questions non relatives, les sépare.
+        Détermine si chaque question est statique ou dynamique selon des critères temporels.
         
-        classification_prompts = {
-            'fr': f"""Tu es un expert qui classifie tous types de questions selon leur nature temporelle.
+        Args:
+            question: Question à simplifier
+            lang: Langue ('fr', 'en', 'ar', 'amz')
+            date: Date de référence des connaissances (défaut: datetime.now())
+        
+        Returns: List of dict with 'question', 'type', and 'reason' keys
+        """
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        if date is None:
+            date = datetime.now()
+        
+        knowledge_base_date = date.strftime("%Y-%m-%d")
+        
+        simplification_prompts = {
+            'fr': f"""Tu es un expert en analyse de questions qui simplifie les questions complexes.
 
     TEMPS SYSTÈME: {current_time}
-    BASE DE CONNAISSANCES: Juillet 1, 2025
 
-    TÂCHE: Détermine si cette question nécessite une réponse STATIQUE ou DYNAMIQUE.
+    TÂCHE: Analyse cette question et détermine s'il s'agit d'une question unique complexe ou de plusieurs questions distinctes.
 
-    DÉFINITIONS:
+    RÈGLES:
+    1. Si c'est UNE SEULE question complexe avec des détails supplémentaires sur le MÊME sujet → Simplifie en une question courte
+    2. Si ce sont PLUSIEURS questions distinctes sur des sujets DIFFÉRENTS → Sépare chaque question et simplifie-les
 
-    STATIQUE = Informations fixes, stables, factuelles qui ne changent pas souvent:
-    - Définitions, concepts, théories
-    - Faits historiques et géographiques
-    - Procédures générales et règlements établis
-    - Structures organisationnelles de base
-    - Informations biographiques établies
-    - Connaissances scientifiques établies
-    - Méthodes et techniques générales
-    - Informations institutionnelles fondamentales
-    - Tout ce qui reste vrai indépendamment du temps
+    EXEMPLES:
 
-    DYNAMIQUE = Informations qui changent avec le temps ou nécessitent des données actuelles/récentes:
-    - Événements actuels, nouvelles, actualités
-    - DATES SPÉCIFIQUES, horaires, calendriers, délais, échéances
-    - Statistiques et données actuelles
-    - Nominations, changements récents
-    - Disponibilité actuelle de services/produits
-    - Prix, cotations, marchés actuels
-    - Météo, conditions actuelles
-    - Informations "en temps réel"
-    - Publications, sorties récentes
-    - DATES D'INSCRIPTION, deadlines, périodes d'ouverture
-    - Tout ce qui nécessite des infos après juillet 2025
-    - Questions avec mots-clés temporels: "récent", "nouveau", "actuel", "dernier", "maintenant", "aujourd'hui", "date de", "quand", "deadline"
+    Question complexe unique:
+    "Je voudrais savoir qui occupe actuellement le poste de Doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda. Pourriez-vous me fournir son nom complet, son parcours académique et professionnel, la date de prise de fonction, ainsi qu'une description de ses responsabilités, réalisations et sa vision pour la faculté?"
+    → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda ?"]
 
-    EXEMPLES GÉNÉRAUX:
-
-    "Comment faire du pain ?" → STATIQUE (recette générale)
-    "Quel est le prix actuel du Bitcoin ?" → DYNAMIQUE (prix changeant)
-    "Qu'est-ce que la photosynthèse ?" → STATIQUE (concept scientifique)
-    "Quelles sont les dernières nouvelles ?" → DYNAMIQUE (actualités récentes)
-    "Comment s'inscrire à l'université ?" → STATIQUE (procédure générale)
-    "Quand commence le semestre ?" → DYNAMIQUE (calendrier spécifique)
-    "Date d'inscription pour nouveaux bacheliers ?" → DYNAMIQUE (échéance spécifique)
-    "Deadline pour candidatures master ?" → DYNAMIQUE (date limite actuelle)
-    "Qui est Einstein ?" → STATIQUE (information biographique établie)
-    "Qui est le nouveau président ?" → DYNAMIQUE (changement récent)
-    "Comment apprendre Python ?" → STATIQUE (méthode d'apprentissage)
-    "Quel temps fait-il aujourd'hui ?" → DYNAMIQUE (conditions actuelles)
-    "Histoire de la France ?" → STATIQUE (faits historiques)
-    "Résultats d'élections récentes ?" → DYNAMIQUE (événements récents)
-
-    INDICATEURS LINGUISTIQUES:
-
-    STATIQUE: "comment", "qu'est-ce que", "pourquoi", "définition", "histoire", "général", "procédure"
-    DYNAMIQUE: "récent", "nouveau", "actuel", "dernier", "maintenant", "aujourd'hui", "quand", "combien coûte", "disponible", "date de", "deadline", "échéance"
-
-    ATTENTION SPÉCIALE - Ces questions sont TOUJOURS dynamiques:
-    - Toute question demandant une DATE spécifique
-    - Questions avec "quand", "date de", "deadline"
-    - Questions sur les "nouveaux" étudiants/bacheliers (concerne dates actuelles)
-    - Calendriers académiques, échéances d'inscription
+    Plusieurs questions distinctes:
+    "Qui est le doyen de la Faculté des Sciences d'Oujda ? Aussi, quels sont les derniers résultats de l'équipe de football de Barcelona ? Et comment faire un gâteau au chocolat ?"
+    → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences d'Oujda ?", "Quels sont les derniers résultats de Barcelona ?", "Comment faire un gâteau au chocolat ?"]
 
     INSTRUCTIONS:
     1. Lis attentivement la question
-    2. Cherche les indicateurs temporels et contextuels
-    3. Détermine si la réponse nécessite des informations actuelles/récentes
-    4. Si oui → DYNAMIQUE, si non → STATIQUE
+    2. Identifie s'il y a UN sujet principal ou PLUSIEURS sujets distincts
+    3. Si UN sujet → Simplifie en gardant l'essentiel
+    4. Si PLUSIEURS sujets → Sépare et simplifie chaque question
+    5. Garde seulement les informations essentielles dans chaque question simplifiée
 
-    QUESTION: "{question}"
+    QUESTION À ANALYSER: "{question}"
 
-    Réponds UNIQUEMENT par:
-    RÉPONSE: static ou dynamic
+    Format de réponse OBLIGATOIRE:
+    ANALYSE: [Une seule question complexe / Plusieurs questions distinctes]
+    RÉSULTAT: ["question simplifiée 1", "question simplifiée 2", ...]
 
-    RÉPONSE:""",
+    ANALYSE:""",
 
-            'en': f"""You are an expert who classifies all types of questions by their temporal nature.
+            'en': f"""You are an expert in question analysis who simplifies complex questions.
 
     SYSTEM TIME: {current_time}
-    KNOWLEDGE BASE: July 1, 2025
 
-    TASK: Determine if this question requires a STATIC or DYNAMIC response.
+    TASK: Analyze this question and determine if it's a single complex question or multiple distinct questions.
 
-    DEFINITIONS:
+    RULES:
+    1. If it's ONE complex question with additional details about the SAME topic → Simplify into one short question
+    2. If it's MULTIPLE distinct questions about DIFFERENT topics → Separate each question and simplify them
 
-    STATIC = Fixed, stable, factual information that doesn't change often:
-    - Definitions, concepts, theories
-    - Historical and geographical facts
-    - General procedures and established regulations
-    - Basic organizational structures
-    - Established biographical information
-    - Established scientific knowledge
-    - General methods and techniques
-    - Fundamental institutional information
-    - Anything that remains true regardless of time
+    EXAMPLES:
 
-    DYNAMIC = Information that changes over time or requires current/recent data:
-    - Current events, news, updates
-    - Specific dates, schedules, calendars
-    - Current statistics and data
-    - Recent appointments, changes
-    - Current availability of services/products
-    - Prices, quotes, current markets
-    - Weather, current conditions
-    - "Real-time" information
-    - Recent publications, releases
-    - Anything requiring info after July 2025
-    - Questions with temporal keywords: "recent", "new", "current", "latest", "now", "today"
+    Single complex question:
+    "I would like to know who is currently serving as the Dean of the Faculty of Sciences at Mohammed First University in Oujda. Could you please provide their full name, academic and professional background, the date they assumed office, as well as a description of their responsibilities, achievements, and their vision for the faculty?"
+    → RESULT: ["Who is the Dean of the Faculty of Sciences at Mohammed First University in Oujda?"]
 
-    GENERAL EXAMPLES:
-
-    "How to make bread?" → STATIC (general recipe)
-    "What's the current Bitcoin price?" → DYNAMIC (changing price)
-    "What is photosynthesis?" → STATIC (scientific concept)
-    "What are the latest news?" → DYNAMIC (recent updates)
-    "How to apply to university?" → STATIC (general procedure)
-    "When does the semester start?" → DYNAMIC (specific calendar)
-    "Who is Einstein?" → STATIC (established biographical info)
-    "Who is the new president?" → DYNAMIC (recent change)
-    "How to learn Python?" → STATIC (learning method)
-    "What's the weather today?" → DYNAMIC (current conditions)
-    "History of France?" → STATIC (historical facts)
-    "Recent election results?" → DYNAMIC (recent events)
-
-    LINGUISTIC INDICATORS:
-
-    STATIC: "how", "what is", "why", "definition", "history", "general"
-    DYNAMIC: "recent", "new", "current", "latest", "now", "today", "when", "how much costs", "available"
+    Multiple distinct questions:
+    "Who is the dean of the Faculty of Sciences in Oujda? Also, what are the latest Barcelona football team results? And how to make a chocolate cake?"
+    → RESULT: ["Who is the dean of the Faculty of Sciences in Oujda?", "What are Barcelona's latest results?", "How to make a chocolate cake?"]
 
     INSTRUCTIONS:
     1. Read the question carefully
-    2. Look for temporal and contextual indicators
-    3. Determine if the answer requires current/recent information
-    4. If yes → DYNAMIC, if no → STATIC
+    2. Identify if there's ONE main topic or MULTIPLE distinct topics
+    3. If ONE topic → Simplify keeping the essential
+    4. If MULTIPLE topics → Separate and simplify each question
+    5. Keep only essential information in each simplified question
 
-    QUESTION: "{question}"
+    QUESTION TO ANALYZE: "{question}"
 
-    Answer ONLY with:
-    ANSWER: static or dynamic
+    MANDATORY response format:
+    ANALYSIS: [Single complex question / Multiple distinct questions]
+    RESULT: ["simplified question 1", "simplified question 2", ...]
 
-    ANSWER:""",
+    ANALYSIS:""",
 
-            'ar': f"""أنت خبير يصنف جميع أنواع الأسئلة حسب طبيعتها الزمنية.
+            'ar': f"""أنت خبير في تحليل الأسئلة وتبسيط الأسئلة المعقدة.
 
     وقت النظام: {current_time}
-    قاعدة المعرفة: 1 يوليو 2025
 
-    المهمة: حدد ما إذا كان هذا السؤال يتطلب إجابة ثابتة أم متغيرة.
+    المهمة: حلل هذا السؤال وحدد ما إذا كان سؤالاً واحداً معقداً أم عدة أسئلة متميزة.
 
-    التعريفات:
+    القواعد:
+    1. إذا كان سؤالاً واحداً معقداً بتفاصيل إضافية حول نفس الموضوع → بسط إلى سؤال قصير واحد
+    2. إذا كانت عدة أسئلة متميزة حول مواضيع مختلفة → افصل كل سؤال وبسطها
 
-    ثابت = معلومات ثابتة ومستقرة وحقائق لا تتغير كثيراً:
-    - التعريفات والمفاهيم والنظريات
-    - الحقائق التاريخية والجغرافية
-    - الإجراءات العامة واللوائح المؤسسة
-    - الهياكل التنظيمية الأساسية
-    - المعلومات السيرية المؤسسة
-    - المعرفة العلمية المؤسسة
-    - الطرق والتقنيات العامة
-    - المعلومات المؤسسية الأساسية
-    - أي شيء يبقى صحيحاً بغض النظر عن الوقت
+    أمثلة:
 
-    متغير = معلومات تتغير مع الوقت أو تتطلب بيانات حالية/حديثة:
-    - الأحداث الحالية والأخبار والتحديثات
-    - التواريخ والجداول والتقاويم المحددة
-    - الإحصائيات والبيانات الحالية
-    - التعيينات والتغييرات الأخيرة
-    - التوفر الحالي للخدمات/المنتجات
-    - الأسعار والعروض والأسواق الحالية
-    - الطقس والظروف الحالية
-    - معلومات "في الوقت الفعلي"
-    - المنشورات والإصدارات الأخيرة
-    - أي شيء يتطلب معلومات بعد يوليو 2025
-    - أسئلة بكلمات زمنية: "حديث"، "جديد"، "حالي"، "أخير"، "الآن"، "اليوم"
+    سؤال معقد واحد:
+    "أريد أن أعرف من يشغل حالياً منصب عميد كلية العلوم في جامعة محمد الأول بوجدة. هل يمكنك تقديم اسمه الكامل، خلفيته الأكاديمية والمهنية، تاريخ توليه المنصب، وكذلك وصف لمسؤولياته وإنجازاته ورؤيته للكلية؟"
+    → النتيجة: ["من هو عميد كلية العلوم في جامعة محمد الأول بوجدة؟"]
 
-    أمثلة عامة:
+    عدة أسئلة متميزة:
+    "من هو عميد كلية العلوم في وجدة؟ وأيضاً، ما هي آخر نتائج فريق برشلونة؟ وكيف أصنع كيكة الشوكولاتة؟"
+    → النتيجة: ["من هو عميد كلية العلوم في وجدة؟", "ما هي آخر نتائج برشلونة؟", "كيف أصنع كيكة الشوكولاتة؟"]
 
-    "كيف أصنع الخبز؟" → ثابت (وصفة عامة)
-    "ما هو سعر البيتكوين الحالي؟" → متغير (سعر متغير)
-    "ما هي عملية التمثيل الضوئي؟" → ثابت (مفهوم علمي)
-    "ما هي آخر الأخبار؟" → متغير (تحديثات حديثة)
-    "كيف أتقدم للجامعة؟" → ثابت (إجراء عام)
-    "متى يبدأ الفصل الدراسي؟" → متغير (تقويم محدد)
-
-    مؤشرات لغوية:
-
-    ثابت: "كيف"، "ما هو"، "لماذا"، "تعريف"، "تاريخ"، "عام"
-    متغير: "حديث"، "جديد"، "حالي"، "أخير"، "الآن"، "اليوم"، "متى"، "كم يكلف"، "متوفر"
-
-    تعليمات:
+    التعليمات:
     1. اقرأ السؤال بعناية
-    2. ابحث عن المؤشرات الزمنية والسياقية
-    3. حدد ما إذا كانت الإجابة تتطلب معلومات حالية/حديثة
-    4. إذا كانت الإجابة نعم → متغير، إذا لا → ثابت
+    2. حدد ما إذا كان هناك موضوع رئيسي واحد أم عدة مواضيع متميزة
+    3. إذا كان موضوع واحد → بسط مع الاحتفاظ بالأساسي
+    4. إذا كانت عدة مواضيع → افصل وبسط كل سؤال
+    5. احتفظ فقط بالمعلومات الأساسية في كل سؤال مبسط
 
-    السؤال: "{question}"
+    السؤال المراد تحليله: "{question}"
 
-    أجب فقط بـ:
-    الإجابة: static أو dynamic
+    تنسيق الإجابة الإجباري:
+    التحليل: [سؤال معقد واحد / عدة أسئلة متميزة]
+    النتيجة: ["السؤال المبسط 1", "السؤال المبسط 2", ...]
 
-    الإجابة:""",
+    التحليل:""",
 
-            'amz': f"""Anta d amussnaw i yesseflayan akk tawsitin n isqsiyen s tɣarma-nsen tazmanit.
+            'amz': f"""Anta d amussnaw deg usleḍ n isqsiyen i yesseflayen isqsiyen iwuɛren.
 
     Akud n unagraw: {current_time}
-    Taffa n tussna: 1 Yulyuz 2025
 
-    Tanbaḍt: Ḥded ma yella asqsi-a yesra tiririt TAZṚAYT neɣ TAZGRAWANT.
+    Tanbaḍt: Sled asqsi-a u ḥded ma yella d asqsi yiwen iwuɛer neɣ deqs n isqsiyen imgerrden.
 
-    Asbadu:
+    Izerfan:
+    1. Ma yella d asqsi yiwen iwuɛer s yifutas nniḍen ɣef yiwet n temsalt → Sɣezf ɣer yiwen wasqsi awezlan  
+    2. Ma llan deqs n isqsiyen imgerrden ɣef yimḍanen imgerrden → Beṭṭu yal asqsi u sɣezf-iten
 
-    TAZṚAYT = Talɣut tazṛayt, tameqqant, n tidet ur ttinilen deg unecti:
-    - Asbadu, tarma, tiẓṛiyin
-    - Tidet n umezruy d trakalt
-    - Tarrayin timatavin d izerfan yettwasnen
-    - Tasleṭ tasdawit tagejdant
-    - Talɣut n tmeddurt yettwasnen
-    - Tussna tussint yettwasnen
-    - Tarrayin d titiknikiyin timatavin
-    - Talɣut tasdawit tagejdant
-    - Yal taɣawsa i yettnayan d tidet war tiwala n wakud
+    Imedyaten:
 
-    TAZGRAWANT = Talɣut ttinilen deg wakud neɣ tesra isefka imaynuten/n tura:
-    - Tidyanin n tura, tisalt, ileqman
-    - Azemz, iserkiyen, iwitayen yettwaheddden
-    - Tiḥsayin d yisefka n tura
-    - Afran d yinbeddelen imaynuten
-    - Aserɣ amiran n tnbaḍt/ifarisen
-    - Ssumaten, tikrayin, isuga imaynuten
-    - Anezwu, addaden imaynuten
-    - Talɣut "deg wakud-is"
-    - Tira d yiseɣriwen imaynuten
-    - Yal taɣawsa tesran talɣut deffir Yulyuz 2025
-    - Isqsiyen s wawalen izmaniten: "amaynu", "n tura", "aneggaru", "tura", "ass-a"
+    Asqsi iwuɛer yiwen:
+    "Bɣiɣ ad ssneɣ anwa i yețțusuddut deg wadda n uεemid n teɣdemt n tussniwin deg tesdawit Mohammed Amezwaru n Wejda. Tzemred ad d-tefked azref-is ummid, abrid-is aɣlnaw d umahal, azemz n tuddut, d ugla n txubbiwin, tiɣawsiwin d tanayrt-is i teɣdemt?"
+    → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin deg Wejda?"]
 
-    Imedyaten imatavin:
-
-    "Amek ara xdemɣ aɣrum?" → TAZṚAYT (taɣect tamatavy)
-    "Acḥal d ssuma n Bitcoin n tura?" → TAZGRAWANT (ssuma yettinilen)
-    "D acu id fotosintiz?" → TAZṚAYT (tarma tussint)
-    "D acu id isalen imaynuten?" → TAZGRAWANT (ileqman imaynuten)
-
-    Inmal n tutlayt:
-
-    TAZṚAYT: "amek", "d acu id", "acuɣer", "asbadu", "amezruy", "amata"
-    TAZGRAWANT: "amaynu", "n tura", "aneggaru", "tura", "ass-a", "melmi", "acḥal", "yella"
+    Deqs n isqsiyen imgerrden:
+    "Anwa id uεemid n teɣdemt n tussniwin n Wejda? Daɣen, d acu id yigmaḍ ineggura n trebbaɛt n tḥarut n Barcelona? D amek ara xdemɣ tikikt n cukula?"
+    → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin n Wejda?", "D acu id yigmaḍ ineggura n Barcelona?", "Amek ara xdemɣ tikikt n cukula?"]
 
     Tinaḍin:
     1. Ɣer asqsi s tsserti
-    2. Nadi inmal izmaniten d imnadin
-    3. Ḥded ma yella tiririt tesra talɣut n tura/tamaynut
-    4. Ma yella ih → TAZGRAWANT, ma yella uhu → TAZṚAYT
+    2. Sulu ma yella yiwen umḍan agejdan neɣ deqs n yimḍanen imgerrden
+    3. Ma yella yiwen umḍan → Sɣezf s uḥraz n lmuhim
+    4. Ma llan deqs n yimḍanen → Beṭṭu u sɣezf yal asqsi
+    5. Ḥrez kan talɣut tamuhimt deg yal asqsi yețwasɣezfen
 
-    ASQSI: "{question}"
+    ASQSI I YEȚWASELDEN: "{question}"
 
-    Rrar kan s:
-    TIRIRIT: static neɣ dynamic
+    Talɣa n tririt ilaqen:
+    ASLEḌ: [Asqsi iwuɛer yiwen / Deqs n isqsiyen imgerrden]
+    IGMAD: ["asqsi yețwasɣezfen 1", "asqsi yețwasɣezfen 2", ...]
 
-    TIRIRIT:"""
+    ASLEḌ:"""
         }
         
         try:
-            prompt = classification_prompts.get(lang, classification_prompts['fr'])
+            prompt = simplification_prompts.get(lang, simplification_prompts['fr'])
             response = self._call_ollama(prompt=prompt)
             
-            logger.info(f"Classification raw response: {response}")
+            logger.info(f"Simplification raw response: {response}")
             
-            # Analyser la réponse
-            response_lower = response.lower().strip()
+            # Extraire les questions simplifiées de la réponse
+            simplified_questions = self._extract_simplified_questions(response, lang)
             
-            # Chercher les mots-clés de classification
-            if any(keyword in response_lower for keyword in ['dynamic', 'dynamique', 'متغير', 'tazgrawant']):
-                nature = "dynamic"
-            elif any(keyword in response_lower for keyword in ['static', 'statique', 'ثابت', 'tazṛayt']):
-                nature = "static"
-            else:
-                # Par défaut, considérer comme statique si pas clair
-                nature = "static"
+            if not simplified_questions:
+                # Si l'extraction échoue, retourner la question originale
+                simplified_questions = [question.strip()]
             
-            logger.info(f"Question type classified as: {nature}")
-            return nature
+            # Classifier chaque question comme statique ou dynamique
+            classified_questions = []
+            for q in simplified_questions:
+                classification = self._classify_question_with_temporal_logic(q, lang, date)
+                classified_questions.append(classification)
+            
+            logger.info(f"Classified questions: {classified_questions}")
+            return classified_questions
             
         except Exception as e:
-            logger.error(f"Erreur lors de la classification: {str(e)}")
-            return "static"  # Par défaut en cas d'erreur
+            logger.error(f"Erreur lors de la simplification: {str(e)}")
+            return [{'question': question.strip(), 'type': 'static', 'reason': 'extraction_error'}]  # Retourner la question originale en cas d'erreur
+
+    def _extract_simplified_questions(self, response: str, lang: str = 'fr') -> list:
+        """
+        Extrait les questions simplifiées de la réponse du LLM
+        """
+        import re
+        
+        simplified_questions = []
+        
+        try:
+            # Patterns pour extraire les questions selon la langue
+            patterns = {
+                'fr': [
+                    r'RÉSULTAT:\s*\[(.*?)\]',
+                    r'résultat:\s*\[(.*?)\]',
+                    r'\[(.*?)\]'
+                ],
+                'en': [
+                    r'RESULT:\s*\[(.*?)\]',
+                    r'result:\s*\[(.*?)\]',
+                    r'\[(.*?)\]'
+                ],
+                'ar': [
+                    r'النتيجة:\s*\[(.*?)\]',
+                    r'نتيجة:\s*\[(.*?)\]',
+                    r'\[(.*?)\]'
+                ],
+                'amz': [
+                    r'IGMAD:\s*\[(.*?)\]',
+                    r'igmad:\s*\[(.*?)\]',
+                    r'\[(.*?)\]'
+                ]
+            }
+            
+            current_patterns = patterns.get(lang, patterns['fr'])
+            
+            # Essayer chaque pattern
+            for pattern in current_patterns:
+                match = re.search(pattern, response, re.DOTALL | re.IGNORECASE)
+                if match:
+                    questions_text = match.group(1)
+                    break
+            else:
+                # Si aucun pattern ne correspond, essayer d'extraire des guillemets
+                questions_text = response
+            
+            # Extraire les questions entre guillemets
+            question_matches = re.findall(r'"([^"]+)"', questions_text)
+            
+            if question_matches:
+                simplified_questions = [q.strip() for q in question_matches if q.strip()]
+            else:
+                # Fallback: chercher des questions avec des marqueurs de liste
+                lines = response.split('\n')
+                for line in lines:
+                    line = line.strip()
+                    if any(marker in line.lower() for marker in ['•', '-', '1.', '2.', '3.']) or line.endswith('?'):
+                        # Nettoyer la ligne
+                        clean_line = re.sub(r'^[\s\-•\d\.]+', '', line).strip()
+                        if clean_line and len(clean_line) > 5:
+                            simplified_questions.append(clean_line)
+            
+            return simplified_questions[:5]  # Limiter à 5 questions max
+            
+        except Exception as e:
+            logger.error(f"Erreur lors de l'extraction: {str(e)}")
+            return []
+
+    def _classify_question_with_temporal_logic(self, question: str, lang: str, reference_date: datetime) -> dict:
+        """
+        Classifie une question comme statique ou dynamique avec logique temporelle avancée
+        """
+        import re
+        from dateutil import parser
+        from datetime import timedelta
+        
+        current_time = datetime.now()
+        
+        # Patterns pour extraire des dates et années
+        year_pattern = r'\b(20\d{2})[^\d]'
+        semester_pattern = r'\b(semestre?|semester)\s*(\d+)?\s*(20\d{2})[-/]?(20\d{2})?\b'
+        academic_year_pattern = r'\b(20\d{2})[-/](20\d{2})\b'
+        
+        question_lower = question.lower()
+        
+        # 1. RÈGLES SPÉCIALES POUR FACULTÉ DES SCIENCES OUJDA
+        faculty_sciences_keywords = [
+            'faculté des sciences', 'faculty of sciences', 'كلية العلوم', 'teɣdemt n tussniwin',
+            'math', 'mathématiques', 'mathematics', 'الرياضيات',
+            'physics', 'physique', 'الفيزياء', 'tafizikt',
+            'chemistry', 'chimie', 'الكيمياء', 'tikimi',
+            'informatique', 'computer science', 'علوم الحاسوب', 'tasenselkimt',
+            'biology', 'biologie', 'الأحياء', 'tasnudert',
+            'geology', 'géologie', 'الجيولوجيا', 'tarakalt'
+        ]
+        
+        is_faculty_sciences = any(keyword in question_lower for keyword in faculty_sciences_keywords)
+        
+        # 2. VÉRIFICATION DES POSTES (DOYENS, DIRECTEURS, ETC.)
+        position_keywords = ['doyen', 'dean', 'عميد', 'directeur', 'director', 'مدير', 'responsable', 'chef']
+        is_position_question = any(keyword in question_lower for keyword in position_keywords)
+        
+        if is_position_question:
+            # Pour les questions de postes, vérifier l'âge hypothétique du mandat
+            # Si c'est la faculté des sciences, supposer que si > 4 ans → dynamique
+            time_since_reference = current_time - reference_date
+            if time_since_reference.days > (4 * 365):  # Plus de 4 ans
+                return {
+                    'question': question,
+                    'type': 'dynamic',
+                    'reason': f'Position question older than 4 years (reference: {reference_date.strftime("%Y-%m-%d")})'
+                }
+            else:
+                return {
+                    'question': question,
+                    'type': 'static',
+                    'reason': f'Position question within 4 years (reference: {reference_date.strftime("%Y-%m-%d")})'
+                }
+        
+        # 3. VÉRIFICATION DES EMPLOIS DU TEMPS / HORAIRES
+        schedule_keywords = ['emploi du temps', 'schedule', 'timetable', 'جدول', 'horaire', 'planning']
+        is_schedule_question = any(keyword in question_lower for keyword in schedule_keywords)
+        
+        if is_schedule_question:
+            # Chercher des années spécifiques dans la question
+            year_matches = re.findall(year_pattern, question)
+            semester_matches = re.findall(semester_pattern, question, re.IGNORECASE)
+            academic_year_matches = re.findall(academic_year_pattern, question)
+            
+            if year_matches or semester_matches or academic_year_matches:
+                # Extraire l'année la plus récente mentionnée
+                years = []
+                for match in year_matches:
+                    years.append(int(match))
+                
+                for match in semester_matches:
+                    if len(match) >= 3 and match[2]:  # Année dans le match
+                        years.append(int(match[2]))
+                
+                for match in academic_year_matches:
+                    years.extend([int(match[0]), int(match[1])])
+                
+                if years:
+                    latest_year = max(years)
+                    mentioned_date = datetime(latest_year, 9, 1)  # Supposer septembre comme début d'année académique
+                    
+                    # Si plus de 5 mois (environ un semestre)
+                    if (current_time - mentioned_date).days > 150:
+                        return {
+                            'question': self._update_question_with_current_time(question, current_time),
+                            'type': 'dynamic',
+                            'reason': f'Schedule from {latest_year} is more than 5 months old'
+                        }
+                    else:
+                        return {
+                            'question': question,
+                            'type': 'static',
+                            'reason': f'Schedule from {latest_year} is still current'
+                        }
+            else:
+                # Pas d'année spécifique → probablement actuel
+                return {
+                    'question': question,
+                    'type': 'dynamic',
+                    'reason': 'Current schedule question without specific year'
+                }
+        
+        # 4. AUTRES INDICATEURS TEMPORELS
+        dynamic_indicators = [
+            'actuellement', 'currently', 'حالياً', 'tura',
+            'récent', 'recent', 'حديث', 'amaynu',
+            'nouveau', 'new', 'جديد', 'amaynu',
+            'dernière', 'latest', 'آخر', 'aneggaru',
+            'maintenant', 'now', 'الآن', 'tura',
+            "aujourd'hui", 'today', 'اليوم', 'ass-a',
+            'cette année', 'this year', 'هذه السنة',
+            'disponible', 'available', 'متوفر', 'yella'
+        ]
+        
+        static_indicators = [
+            'comment', 'how', 'كيف', 'amek',
+            "qu'est-ce que", 'what is', 'ما هو', 'd acu id',
+            'définition', 'definition', 'تعريف', 'asbadu',
+            'histoire', 'history', 'تاريخ', 'amezruy',
+            'procédure', 'procedure', 'إجراء', 'tarrayt'
+        ]
+        
+        # Compter les indicateurs
+        dynamic_count = sum(1 for indicator in dynamic_indicators if indicator in question_lower)
+        static_count = sum(1 for indicator in static_indicators if indicator in question_lower)
+        
+        # 5. DÉCISION FINALE
+        if dynamic_count > static_count:
+            return {
+                'question': question,
+                'type': 'dynamic',
+                'reason': f'Dynamic indicators detected: {dynamic_count} vs static: {static_count}'
+            }
+        elif static_count > 0:
+            return {
+                'question': question,
+                'type': 'static',
+                'reason': f'Static indicators detected: {static_count} vs dynamic: {dynamic_count}'
+            }
+        else:
+            # Par défaut, considérer comme statique pour les questions générales
+            return {
+                'question': question,  
+                'type': 'static',
+                'reason': 'No clear temporal indicators, defaulting to static'
+            }
+
+    def _update_question_with_current_time(self, question: str, current_time: datetime) -> str:
+        """
+        Met à jour une question avec l'année/période actuelle
+        """
+        import re
+        
+        current_year = current_time.year
+        current_academic_year = f"{current_year}-{current_year + 1}" if current_time.month >= 9 else f"{current_year - 1}-{current_year}"
+        
+        # Remplacer les années spécifiques par l'année académique actuelle
+        question = re.sub(r'\b20\d{2}[-/]20\d{2}\b', current_academic_year, question)
+        question = re.sub(r'\b(semestre?|semester)\s*\d+\s*20\d{2}[-/]?20\d{2}?\b', 
+                        f'semestre actuel {current_academic_year}', question, flags=re.IGNORECASE)
+        
+        return question
+
+    def _format_comprehensive_qa_pairs(self, question_answer_pairs: List[Dict], lang: str) -> str:
+        """Format question-answer pairs for comprehensive processing"""
+        formatted_pairs = []
+        
+        for i, pair in enumerate(question_answer_pairs, 1):
+            question = pair['question']
+            documents = pair['documents']
+            
+            # Format documents for this question
+            if documents:
+                answers = []
+                for doc in documents:
+                    answer_text = doc.get('answer', 'N/A')
+                    confidence = doc.get('confidence', 0.0)
+                    date = doc.get('date', 'N/A')
+                    answers.append(f"  • {answer_text} (Confiance: {confidence:.2f}, Date: {date})")
+                
+                formatted_pair = f"""Question {i}: {question}
+    Réponses disponibles:
+    {chr(10).join(answers)}"""
+            else:
+                formatted_pair = f"""Question {i}: {question}
+    Réponses disponibles: Aucune réponse trouvée"""
+            
+            formatted_pairs.append(formatted_pair)
+        
+        return "\n\n".join(formatted_pairs)
     
+    def _calculate_comprehensive_confidence(self, question_answer_pairs: List[Dict], all_documents: List[Dict]) -> float:
+        """Calculate confidence for comprehensive response"""
+        if not question_answer_pairs:
+            return 0.0
+        
+        total_confidence = 0.0
+        total_weight = 0.0
+        
+        for pair in question_answer_pairs:
+            documents = pair['documents']
+            if documents:
+                # Calculate average confidence for this question's documents
+                doc_confidences = [doc.get('confidence', 0.0) for doc in documents]
+                avg_confidence = sum(doc_confidences) / len(doc_confidences)
+                
+                # Weight by number of documents (more documents = higher weight)
+                weight = min(len(documents), 3)  # Cap at 3 for diminishing returns
+                
+                total_confidence += avg_confidence * weight
+                total_weight += weight
+        
+        if total_weight == 0:
+            return 0.0
+        
+        base_confidence = total_confidence / total_weight
+        
+        # Boost confidence if we have good coverage of questions
+        coverage_bonus = len([p for p in question_answer_pairs if p['documents']]) / len(question_answer_pairs)
+        
+        final_confidence = min(base_confidence * (0.7 + 0.3 * coverage_bonus), 1.0)
+        
+        return final_confidence
+
+    def _analyze_question_coverage(self, question_answer_pairs: List[Dict], response: str) -> Dict[str, Any]:
+        """Analyze how well the response covers each question"""
+        coverage_analysis = {
+            'total_questions': len(question_answer_pairs),
+            'questions_with_data': len([p for p in question_answer_pairs if p['documents']]),
+            'coverage_percentage': 0.0,
+            'question_details': []
+        }
+        
+        for pair in question_answer_pairs:
+            question_coverage = {
+                'question': pair['question'],
+                'has_documents': bool(pair['documents']),
+                'num_documents': len(pair['documents']),
+                'intent': pair['intent'],
+                'appears_answered': len(pair['question'].split()) > 2 and any(
+                    word.lower() in response.lower() 
+                    for word in pair['question'].split()[:3]
+                )
+            }
+            coverage_analysis['question_details'].append(question_coverage)
+        
+        if coverage_analysis['total_questions'] > 0:
+            coverage_analysis['coverage_percentage'] = (
+                coverage_analysis['questions_with_data'] / coverage_analysis['total_questions']
+            ) * 100
+        
+        return coverage_analysis
+
+    def _parse_validation_response(self, validation_response: str) -> Dict[str, Any]:
+        """Parse LLM validation response into structured format"""
+        # This is a simplified parser - you'd want to make this more robust
+        # based on your LLM's actual output format
+        
+        try:
+            # Look for key indicators in the response
+            response_lower = validation_response.lower()
+            
+            # Simple heuristic validation
+            is_valid = "valid: 1" in response_lower or "satisfactory" in response_lower
+            
+            return {
+                "is_valid": is_valid,
+                "coverage_score": 0.8 if is_valid else 0.3,
+                "missing_aspects": [],
+                "irrelevant_content": [],
+                "raw_response": validation_response
+            }
+            
+        except Exception as e:
+            return {
+                "is_valid": False,
+                "coverage_score": 0.0,
+                "missing_aspects": ["parsing_error"],
+                "irrelevant_content": [],
+                "error": str(e)
+            }
+
+    def generate_comprehensive_response_optimized(self, original_question: str, question_answer_pairs: List[Dict], 
+                                                all_documents: List[Dict], lang: str, validate_and_fallback: bool = True) -> Dict[str, Any]:
+        """
+        OPTIMIZED: Single LLM call that generates response AND validates AND handles fallback
+        """
+        try:
+            start_time = datetime.now()
+            
+            # Enhanced prompt that does EVERYTHING in one call
+            optimized_prompts = {
+                'fr': {
+                    'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
+    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive.
+
+    INSTRUCTIONS IMPORTANTES:
+    1. Analyse TOUTES les questions et leurs réponses
+    2. Si les réponses ne sont PAS pertinentes pour les questions, indique "IRRELEVANT_CONTENT" au début
+    3. Génère une réponse cohérente qui traite tous les aspects
+    4. Combine les informations de différentes sources (base de données + internet)
+    5. Résous les conflits entre réponses
+    6. Indique clairement les sources d'information
+    7. Pour les informations temporelles, précise la période
+
+    FORMAT DE RÉPONSE:
+    - Si contenu non pertinent: commence par "IRRELEVANT_CONTENT"
+    - Sinon: génère directement la réponse comprehensive
+
+    CONTEXTE FSO: Faculté des Sciences Oujda, Université Mohammed Premier""",
+
+                    'user': """QUESTION ORIGINALE: {original_question}
+
+    QUESTIONS ET RÉPONSES DISPONIBLES:
+    {formatted_qa_pairs}
+
+    CONTEXTE: {num_questions} questions, {num_sources} sources (base de données + internet)
+
+    GÉNÈRE une réponse comprehensive qui traite tous les aspects. Si les réponses ne sont pas pertinentes aux questions, commence par "IRRELEVANT_CONTENT"."""
+                },
+                
+                'en': {
+                    'system': """You are an expert information synthesizer for the Faculty of Sciences Oujda (FSO). 
+    Your task is to analyze multiple question-answer pairs and generate a comprehensive response.
+
+    IMPORTANT INSTRUCTIONS:
+    1. Analyze ALL questions and their answers
+    2. If answers are NOT relevant to questions, indicate "IRRELEVANT_CONTENT" at the beginning
+    3. Generate a coherent response addressing all aspects
+    4. Combine information from different sources (database + internet)
+    5. Resolve conflicts between answers
+    6. Clearly indicate information sources
+    7. For temporal information, specify the time period
+
+    RESPONSE FORMAT:
+    - If irrelevant content: start with "IRRELEVANT_CONTENT"
+    - Otherwise: generate comprehensive response directly
+
+    FSO CONTEXT: Faculty of Sciences Oujda, Mohammed First University""",
+
+                    'user': """ORIGINAL QUESTION: {original_question}
+
+    AVAILABLE QUESTIONS AND ANSWERS:
+    {formatted_qa_pairs}
+
+    CONTEXT: {num_questions} questions, {num_sources} sources (database + internet)
+
+    GENERATE a comprehensive response addressing all aspects. If answers are not relevant to questions, start with "IRRELEVANT_CONTENT"."""
+                }
+            }
+            
+            prompt_config = optimized_prompts.get(lang, optimized_prompts['fr'])
+            
+            # Format question-answer pairs efficiently
+            formatted_pairs = self._format_comprehensive_qa_pairs_optimized(question_answer_pairs, lang)
+            
+            # Create the comprehensive prompt
+            user_prompt = prompt_config['user'].format(
+                original_question=original_question,
+                formatted_qa_pairs=formatted_pairs,
+                num_questions=len(question_answer_pairs),
+                num_sources=len(all_documents)
+            )
+            
+            # SINGLE LLM CALL that does everything
+            comprehensive_response = self._call_ollama(
+                prompt=user_prompt,
+                system_prompt=prompt_config['system']
+            )
+            
+            processing_time = (datetime.now() - start_time).total_seconds()
+            
+            # Check if LLM detected irrelevant content
+            used_fallback = False
+            if comprehensive_response.startswith("IRRELEVANT_CONTENT"):
+                if validate_and_fallback:
+                    logger.info("LLM detected irrelevant content, performing internet fallback")
+                    # Perform internet search for questions that had poor database results
+                    fallback_response = self._perform_internet_fallback(question_answer_pairs, lang)
+                    if fallback_response:
+                        comprehensive_response = fallback_response
+                        used_fallback = True
+                    else:
+                        comprehensive_response = comprehensive_response.replace("IRRELEVANT_CONTENT", "").strip()
+                else:
+                    comprehensive_response = comprehensive_response.replace("IRRELEVANT_CONTENT", "").strip()
+            
+            # Calculate confidence efficiently
+            confidence = self._calculate_confidence_fast(question_answer_pairs, all_documents)
+            
+            logger.info(f"Optimized comprehensive response generated with confidence: {confidence}")
+            
+            return {
+                'response': comprehensive_response,
+                'confidence': confidence,
+                'sources_used': len(all_documents),
+                'questions_addressed': len(question_answer_pairs),
+                'processing_time': processing_time,
+                'used_fallback': used_fallback,
+                'scope': 'optimized_comprehensive'
+            }
+            
+        except Exception as e:
+            logger.error(f"Error generating optimized comprehensive response: {str(e)}")
+            return {
+                'response': self.no_results_messages.get(lang, 'Erreur lors du traitement.'),
+                'confidence': 0.0,
+                'sources_used': 0,
+                'questions_addressed': 0,
+                'processing_time': 0,
+                'used_fallback': False,
+                'error': str(e),
+                'scope': 'error'
+            }
+    
+    def _perform_internet_fallback(self, question_answer_pairs: List[Dict], lang: str) -> str:
+        """
+        Perform internet search fallback for questions with poor database results
+        """
+        try:
+            fallback_questions = []
+            
+            # Identify questions that need internet fallback
+            for pair in question_answer_pairs:
+                if pair['source'] == 'database' and len(pair['documents']) < 2:
+                    # Database results are sparse, try internet
+                    fallback_questions.append(pair['question'])
+            
+            if not fallback_questions:
+                return None
+            
+            logger.info(f"Performing internet fallback for {len(fallback_questions)} questions")
+            
+            # Get internet results for these questions
+            all_internet_results = []
+            for question in fallback_questions:
+                internet_results = get_internet_results_for_question(question, lang)
+                all_internet_results.extend(internet_results)
+            
+            if not all_internet_results:
+                return None
+            
+            # Use existing internet function to generate response
+            internet_response = internet(fallback_questions, lang)
+            return internet_response.get('structured_response', '')
+            
+        except Exception as e:
+            logger.error(f"Error in internet fallback: {str(e)}")
+            return None
+
+    def _format_comprehensive_qa_pairs_optimized(self, question_answer_pairs: List[Dict], lang: str) -> str:
+        """Optimized formatting that's more concise"""
+        formatted_pairs = []
+        
+        for i, pair in enumerate(question_answer_pairs, 1):
+            question = pair['question']
+            documents = pair['documents']
+            source = pair['source']
+            
+            if documents:
+                # Take only top 2 documents per question to reduce prompt size
+                top_docs = documents[:2]
+                answers_text = " | ".join([doc.get('answer', '')[:200] + "..." if len(doc.get('answer', '')) > 200 else doc.get('answer', '') for doc in top_docs])
+                formatted_pair = f"Q{i} ({source}): {question}\nA{i}: {answers_text}"
+            else:
+                formatted_pair = f"Q{i}: {question}\nA{i}: Aucune réponse trouvée"
+            
+            formatted_pairs.append(formatted_pair)
+        
+        return "\n\n".join(formatted_pairs)
+
+    def _calculate_confidence_fast(self, question_answer_pairs: List[Dict], all_documents: List[Dict]) -> float:
+        """Fast confidence calculation without complex logic"""
+        if not question_answer_pairs:
+            return 0.0
+        
+        # Simple confidence based on coverage and document count
+        questions_with_docs = len([p for p in question_answer_pairs if p['documents']])
+        coverage_ratio = questions_with_docs / len(question_answer_pairs)
+        
+        # Average confidence from documents
+        doc_confidences = [doc.get('confidence', 0.5) for doc in all_documents if 'confidence' in doc]
+        avg_doc_confidence = sum(doc_confidences) / len(doc_confidences) if doc_confidences else 0.5
+        
+        # Combine coverage and document confidence
+        final_confidence = (coverage_ratio * 0.6) + (avg_doc_confidence * 0.4)
+        
+        return min(final_confidence, 1.0)
+
 llm_service = LLMService()
 
