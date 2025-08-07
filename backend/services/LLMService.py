@@ -1368,16 +1368,18 @@ class LLMService:
 
     def simplify_question(self, question: str, lang: str = 'fr', date: datetime = None) -> list:
         """
-        Simplifie une question complexe en extrayant les questions principales.
-        Si la question contient plusieurs sous-questions non relatives, les sépare.
-        Détermine si chaque question est statique ou dynamique selon des critères temporels.
+        Simplifies a complex question by extracting the main questions.
+        If the question contains multiple unrelated sub-questions, separates them.
+        Determines if each question is static or dynamic according to temporal criteria.
+        Determines if a date in the question is greater than the reference date. if yes type = dynamic otherwise type = static.
         
         Args:
-            question: Question à simplifier
-            lang: Langue ('fr', 'en', 'ar', 'amz')
-            date: Date de référence des connaissances (défaut: datetime.now())
+            question: Question to simplify
+            lang: Language ('fr', 'en', 'ar', 'amz')
+            date: Reference date for knowledge (default: datetime.now())
         
-        Returns: List of dict with 'question', 'type', and 'reason' keys
+        Important:
+            - Returns: List of dict with 'question', 'type', and 'reason' keys
         """
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         if date is None:
@@ -1386,39 +1388,40 @@ class LLMService:
         simplification_prompts = {
             'fr': f"""Tu es un expert en analyse de questions qui simplifie les questions complexes.
 
-                TEMPS SYSTÈME: {current_time}
+            TEMPS SYSTÈME: {current_time}
 
-                TÂCHE: Analyse cette question et détermine s'il s'agit d'une question unique complexe ou de plusieurs questions distinctes.
+            TÂCHE: 
+            Analyse cette question et détermine s'il s'agit d'une question unique complexe ou de plusieurs questions distinctes.
+            maximum 6 mots par question simplifiée.
 
-                RÈGLES IMPORTANTES:
-                1. Si c'est UNE SEULE question complexe avec des détails supplémentaires sur le MÊME sujet → Simplifie en une question TRÈS COURTE (maximum 8 mots)
-                2. Si ce sont PLUSIEURS questions distinctes sur des sujets DIFFÉRENTS → Sépare chaque question et simplifie-les en questions TRÈS COURTES (maximum 8 mots chacune)
+            RÈGLES:
+            1. Si c'est UNE SEULE question complexe avec des détails supplémentaires sur le MÊME sujet → Simplifie en une question courte
+            2. Si ce sont PLUSIEURS questions distinctes sur des sujets DIFFÉRENTS → Sépare chaque question et simplifie-les
 
-                EXEMPLES:
+            EXEMPLES:
 
-                Question complexe unique:
-                "Je voudrais savoir qui occupe actuellement le poste de Doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda. Pourriez-vous me fournir son nom complet, son parcours académique et professionnel, la date de prise de fonction, ainsi qu'une description de ses responsabilités, réalisations et sa vision pour la faculté?"
-                → RÉSULTAT: ["Qui est le doyen FSO ?"]
+            Question complexe unique:
+            "Je voudrais savoir qui occupe actuellement le poste de Doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda. Pourriez-vous me fournir son nom complet, son parcours académique et professionnel, la date de prise de fonction, ainsi qu'une description de ses responsabilités, réalisations et sa vision pour la faculté?"
+            → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda ?"]
 
-                Plusieurs questions distinctes:
-                "Qui est le doyen de la Faculté des Sciences d'Oujda ? Aussi, quels sont les derniers résultats de l'équipe de football de Barcelona ? Et comment faire un gâteau au chocolat ?"
-                → RÉSULTAT: ["Qui est le doyen FSO ?", "Résultats Barcelona ?", "Recette gâteau chocolat ?"]
+            Plusieurs questions distinctes:
+            "Qui est le doyen de la Faculté des Sciences d'Oujda ? Aussi, quels sont les derniers résultats de l'équipe de football de Barcelona ? Et comment faire un gâteau au chocolat ?"
+            → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences d'Oujda ?", "Quels sont les derniers résultats de Barcelona ?", "Comment faire un gâteau au chocolat ?"]
 
-                INSTRUCTIONS STRICTES:
-                1. Lis attentivement la question
-                2. Identifie s'il y a UN sujet principal ou PLUSIEURS sujets distincts
-                3. Si UN sujet → Simplifie en MAXIMUM 8 MOTS
-                4. Si PLUSIEURS sujets → Sépare et simplifie chaque question en MAXIMUM 8 MOTS
-                5. Utilise des mots-clés essentiels uniquement
-                6. Évite les articles inutiles (le, la, les, de, du, etc.) quand possible
+            INSTRUCTIONS:
+            1. Lis attentivement la question
+            2. Identifie s'il y a UN sujet principal ou PLUSIEURS sujets distincts
+            3. Si UN sujet → Simplifie en gardant l'essentiel
+            4. Si PLUSIEURS sujets → Sépare et simplifie chaque question
+            5. Garde seulement les informations essentielles dans chaque question simplifiée
+            6. reponds en français
+            QUESTION À ANALYSER: "{question}"
 
-                QUESTION À ANALYSER: "{question}"
+            Format de réponse OBLIGATOIRE:
+            ANALYSE: [Une seule question complexe / Plusieurs questions distinctes]
+            RÉSULTAT: ["question simplifiée 1", "question simplifiée 2", ...]
 
-                Format de réponse OBLIGATOIRE:
-                ANALYSE: [Une seule question complexe / Plusieurs questions distinctes]
-                RÉSULTAT: ["question très courte 1", "question très courte 2", ...]
-
-                ANALYSE:""",
+            ANALYSE:""",
 
             'en': f"""You are an expert in question analysis who simplifies complex questions.
 
@@ -1426,33 +1429,32 @@ class LLMService:
 
                 TASK: Analyze this question and determine if it's a single complex question or multiple distinct questions.
 
-                IMPORTANT RULES:
-                1. If it's ONE complex question with additional details about the SAME topic → Simplify into one VERY SHORT question (maximum 8 words)
-                2. If it's MULTIPLE distinct questions about DIFFERENT topics → Separate each question and simplify them into VERY SHORT questions (maximum 8 words each)
+                RULES:
+                1. If it's ONE complex question with additional details about the SAME topic → Simplify into one short question
+                2. If it's MULTIPLE distinct questions about DIFFERENT topics → Separate each question and simplify them
 
                 EXAMPLES:
 
                 Single complex question:
                 "I would like to know who is currently serving as the Dean of the Faculty of Sciences at Mohammed First University in Oujda. Could you please provide their full name, academic and professional background, the date they assumed office, as well as a description of their responsibilities, achievements, and their vision for the faculty?"
-                → RESULT: ["Who is FSO dean?"]
+                → RESULT: ["Who is the Dean of the Faculty of Sciences at Mohammed First University in Oujda?"]
 
                 Multiple distinct questions:
                 "Who is the dean of the Faculty of Sciences in Oujda? Also, what are the latest Barcelona football team results? And how to make a chocolate cake?"
-                → RESULT: ["Who is FSO dean?", "Barcelona latest results?", "Chocolate cake recipe?"]
+                → RESULT: ["Who is the dean of the Faculty of Sciences in Oujda?", "What are Barcelona's latest results?", "How to make a chocolate cake?"]
 
-                STRICT INSTRUCTIONS:
+                INSTRUCTIONS:
                 1. Read the question carefully
                 2. Identify if there's ONE main topic or MULTIPLE distinct topics
-                3. If ONE topic → Simplify to MAXIMUM 8 WORDS
-                4. If MULTIPLE topics → Separate and simplify each question to MAXIMUM 8 WORDS
-                5. Use only essential keywords
-                6. Avoid unnecessary articles (the, a, an, of, etc.) when possible
-
+                3. If ONE topic → Simplify keeping the essential
+                4. If MULTIPLE topics → Separate and simplify each question
+                5. Keep only essential information in each simplified question
+                6. reply in english
                 QUESTION TO ANALYZE: "{question}"
 
                 MANDATORY response format:
                 ANALYSIS: [Single complex question / Multiple distinct questions]
-                RESULT: ["very short question 1", "very short question 2", ...]
+                RESULT: ["simplified question 1", "simplified question 2", ...]
 
                 ANALYSIS:""",
 
@@ -1462,33 +1464,33 @@ class LLMService:
 
                 المهمة: حلل هذا السؤال وحدد ما إذا كان سؤالاً واحداً معقداً أم عدة أسئلة متميزة.
 
-                القواعد المهمة:
-                1. إذا كان سؤالاً واحداً معقداً بتفاصيل إضافية حول نفس الموضوع → بسط إلى سؤال قصير جداً (8 كلمات كحد أقصى)
-                2. إذا كانت عدة أسئلة متميزة حول مواضيع مختلفة → افصل كل سؤال وبسطها إلى أسئلة قصيرة جداً (8 كلمات لكل سؤال)
+                القواعد:
+                1. إذا كان سؤالاً واحداً معقداً بتفاصيل إضافية حول نفس الموضوع → بسط إلى سؤال قصير واحد
+                2. إذا كانت عدة أسئلة متميزة حول مواضيع مختلفة → افصل كل سؤال وبسطها
 
                 أمثلة:
 
                 سؤال معقد واحد:
                 "أريد أن أعرف من يشغل حالياً منصب عميد كلية العلوم في جامعة محمد الأول بوجدة. هل يمكنك تقديم اسمه الكامل، خلفيته الأكاديمية والمهنية، تاريخ توليه المنصب، وكذلك وصف لمسؤولياته وإنجازاته ورؤيته للكلية؟"
-                → النتيجة: ["من عميد كلية العلوم وجدة؟"]
+                → النتيجة: ["من هو عميد كلية العلوم في جامعة محمد الأول بوجدة؟"]
 
                 عدة أسئلة متميزة:
                 "من هو عميد كلية العلوم في وجدة؟ وأيضاً، ما هي آخر نتائج فريق برشلونة؟ وكيف أصنع كيكة الشوكولاتة؟"
-                → النتيجة: ["من عميد كلية العلوم وجدة؟", "نتائج برشلونة الأخيرة؟", "وصفة كيكة الشوكولاتة؟"]
+                → النتيجة: ["من هو عميد كلية العلوم في وجدة؟", "ما هي آخر نتائج برشلونة؟", "كيف أصنع كيكة الشوكولاتة؟"]
 
-                التعليمات الصارمة:
+                التعليمات:
                 1. اقرأ السؤال بعناية
                 2. حدد ما إذا كان هناك موضوع رئيسي واحد أم عدة مواضيع متميزة
-                3. إذا كان موضوع واحد → بسط إلى 8 كلمات كحد أقصى
-                4. إذا كانت عدة مواضيع → افصل وبسط كل سؤال إلى 8 كلمات كحد أقصى
-                5. استخدم الكلمات المفتاحية الأساسية فقط
-                6. تجنب حروف الجر والأدوات غير الضرورية عند الإمكان
+                3. إذا كان موضوع واحد → بسط مع الاحتفاظ بالأساسي
+                4. إذا كانت عدة مواضيع → افصل وبسط كل سؤال
+                5. احتفظ فقط بالمعلومات الأساسية في كل سؤال مبسط
+                6. الرد باللغة العربية
 
                 السؤال المراد تحليله: "{question}"
 
                 تنسيق الإجابة الإجباري:
                 التحليل: [سؤال معقد واحد / عدة أسئلة متميزة]
-                النتيجة: ["سؤال قصير جداً 1", "سؤال قصير جداً 2", ...]
+                النتيجة: ["السؤال المبسط 1", "السؤال المبسط 2", ...]
 
                 التحليل:""",
 
@@ -1498,130 +1500,126 @@ class LLMService:
 
                 Tanbaḍt: Sled asqsi-a u ḥded ma yella d asqsi yiwen iwuɛer neɣ deqs n isqsiyen imgerrden.
 
-                Izerfan imuhimen:
-                1. Ma yella d asqsi yiwen iwuɛer s yifutas nniḍen ɣef yiwet n temsalt → Sɣezf ɣer yiwen wasqsi awezlan aṭas (8 n wawalen d azal unuf)
-                2. Ma llan deqs n isqsiyen imgerrden ɣef yimḍanen imgerrden → Beṭṭu yal asqsi u sɣezf-iten ɣer yisqsiyen iwezlanen aṭas (8 n wawalen i yal yiwen)
+                Izerfan:
+                1. Ma yella d asqsi yiwen iwuɛer s yifutas nniḍen ɣef yiwet n temsalt → Sɣezf ɣer yiwen wasqsi awezlan  
+                2. Ma llan deqs n isqsiyen imgerrden ɣef yimḍanen imgerrden → Beṭṭu yal asqsi u sɣezf-iten
 
                 Imedyaten:
 
                 Asqsi iwuɛer yiwen:
                 "Bɣiɣ ad ssneɣ anwa i yețțusuddut deg wadda n uεemid n teɣdemt n tussniwin deg tesdawit Mohammed Amezwaru n Wejda. Tzemred ad d-tefked azref-is ummid, abrid-is aɣlnaw d umahal, azemz n tuddut, d ugla n txubbiwin, tiɣawsiwin d tanayrt-is i teɣdemt?"
-                → IGMAD: ["Anwa d aεemid FSO?"]
+                → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin deg Wejda?"]
 
                 Deqs n isqsiyen imgerrden:
                 "Anwa id uεemid n teɣdemt n tussniwin n Wejda? Daɣen, d acu id yigmaḍ ineggura n trebbaɛt n tḥarut n Barcelona? D amek ara xdemɣ tikikt n cukula?"
-                → IGMAD: ["Anwa d aεemid FSO?", "Igmaḍ Barcelona ineggura?", "Amek tikikt cukula?"]
+                → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin n Wejda?", "D acu id yigmaḍ ineggura n Barcelona?", "Amek ara xdemɣ tikikt n cukula?"]
 
-                Tinaḍin izuɣren:
+                Tinaḍin:
                 1. Ɣer asqsi s tsserti
                 2. Sulu ma yella yiwen umḍan agejdan neɣ deqs n yimḍanen imgerrden
-                3. Ma yella yiwen umḍan → Sɣezf ɣer 8 n wawalen d azal unuf
-                4. Ma llan deqs n yimḍanen → Beṭṭu u sɣezf yal asqsi ɣer 8 n wawalen d azal unuf
-                5. Seqdec kan awalen igejdanen imuhimen
-                6. Zgel ibenkan ur ilaqen ara mi yezmer
+                3. Ma yella yiwen umḍan → Sɣezf s uḥraz n lmuhim
+                4. Ma llan deqs n yimḍanen → Beṭṭu u sɣezf yal asqsi
+                5. Ḥrez kan talɣut tamuhimt deg yal asqsi yețwasɣezfen
 
                 ASQSI I YEȚWASELDEN: "{question}"
 
                 Talɣa n tririt ilaqen:
                 ASLEḌ: [Asqsi iwuɛer yiwen / Deqs n isqsiyen imgerrden]
-                IGMAD: ["asqsi awezlan aṭas 1", "asqsi awezlan aṭas 2", ...]
+                IGMAD: ["asqsi yețwasɣezfen 1", "asqsi yețwasɣezfen 2", ...]
 
                 ASLEḌ:"""
         }
-        
+
         try:
             prompt = simplification_prompts.get(lang, simplification_prompts['fr'])
             response = self._call_ollama(prompt=prompt)
             
             logger.info(f"Simplification raw response: {response}")
             
-            # Extraire les questions simplifiées de la réponse
+            # Extract simplified questions from response
             simplified_questions = self._extract_simplified_questions(response, lang)
+            logger.info(f"Simplified questions extracted: {simplified_questions}")
             
             if not simplified_questions:
-                # Si l'extraction échoue, retourner la question originale
+                # If extraction fails, return original question
                 simplified_questions = [question.strip()]
+                logger.warning("No simplified questions extracted, returning original question.")
             
-            # Classifier chaque question comme statique ou dynamique
+            # Classify each question as static or dynamic
             classified_questions = []
             for q in simplified_questions:
                 classification = self._classify_question_with_temporal_logic(q, lang, date)
+                logger.info(f"Classified question: {classification}")
                 classified_questions.append(classification)
             
             logger.info(f"Classified questions: {classified_questions}")
             return classified_questions
             
         except Exception as e:
-            logger.error(f"Erreur lors de la simplification: {str(e)}")
-            return [{'question': question.strip(), 'type': 'static', 'reason': 'extraction_error'}]  # Retourner la question originale en cas d'erreur
+            logger.error(f"Error during simplification: {str(e)}")
+            return [{'question': question.strip(), 'type': 'static', 'reason': 'extraction_error'}]  # Return original question in case of error
 
     def _extract_simplified_questions(self, response: str, lang: str = 'fr') -> list:
         """
-        Extrait les questions simplifiées de la réponse du LLM
+        Extracts simplified questions from LLM response
         """
         import re
         
         simplified_questions = []
         
         try:
-            # Patterns pour extraire les questions selon la langue
-            patterns = {
-                'fr': [
-                    r'RÉSULTAT:\s*\[(.*?)\]',
-                    r'résultat:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
-                ],
-                'en': [
-                    r'RESULT:\s*\[(.*?)\]',
-                    r'result:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
-                ],
-                'ar': [
-                    r'النتيجة:\s*\[(.*?)\]',
-                    r'نتيجة:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
-                ],
-                'amz': [
-                    r'IGMAD:\s*\[(.*?)\]',
-                    r'igmad:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
-                ]
-            }
+            # First, try to extract everything after RÉSULTAT/RESULT/النتيجة/IGMAD
+            result_patterns = [
+                r'RÉSULTAT:\s*(.*)',
+                r'résultat:\s*(.*)',
+                r'RESULT:\s*(.*)',
+                r'result:\s*(.*)',
+                r'النتيجة:\s*(.*)',
+                r'نتيجة:\s*(.*)',
+                r'IGMAD:\s*(.*)',
+                r'igmad:\s*(.*)'
+            ]
             
-            current_patterns = patterns.get(lang, patterns['fr'])
-            
-            # Essayer chaque pattern
-            for pattern in current_patterns:
+            result_text = None
+            for pattern in result_patterns:
                 match = re.search(pattern, response, re.DOTALL | re.IGNORECASE)
                 if match:
-                    questions_text = match.group(1)
+                    result_text = match.group(1)
                     break
-            else:
-                # Si aucun pattern ne correspond, essayer d'extraire des guillemets
-                questions_text = response
             
-            # Extraire les questions entre guillemets
-            question_matches = re.findall(r'"([^"]+)"', questions_text)
+            if result_text is None:
+                result_text = response
+            
+            # Extract all questions from quotes in the result text
+            question_matches = re.findall(r'"([^"]+)"', result_text)
             
             if question_matches:
                 simplified_questions = [q.strip() for q in question_matches if q.strip()]
             else:
-                # Fallback: chercher des questions avec des marqueurs de liste
+                # Fallback: try to extract from JSON-like arrays
+                array_matches = re.findall(r'\[([^\]]+)\]', result_text)
+                for array_match in array_matches:
+                    # Extract quotes from each array
+                    quotes_in_array = re.findall(r'"([^"]+)"', array_match)
+                    simplified_questions.extend([q.strip() for q in quotes_in_array if q.strip()])
+            
+            # If still no questions found, try line-by-line extraction
+            if not simplified_questions:
                 lines = response.split('\n')
                 for line in lines:
                     line = line.strip()
                     if any(marker in line.lower() for marker in ['•', '-', '1.', '2.', '3.']) or line.endswith('?'):
-                        # Nettoyer la ligne
+                        # Clean the line
                         clean_line = re.sub(r'^[\s\-•\d\.]+', '', line).strip()
                         if clean_line and len(clean_line) > 5:
                             simplified_questions.append(clean_line)
             
-            return simplified_questions[:5]  # Limiter à 5 questions max
+            return simplified_questions[:5]  # Limit to 5 questions max
             
         except Exception as e:
-            logger.error(f"Erreur lors de l'extraction: {str(e)}")
+            logger.error(f"Error during extraction: {str(e)}")
             return []
-
+    
     def _classify_question_with_temporal_logic(self, question: str, lang: str, reference_date: datetime) -> dict:
         """
         Classifie une question comme statique ou dynamique avec logique temporelle avancée
@@ -1903,9 +1901,6 @@ class LLMService:
 
     def generate_comprehensive_response_optimized(self, original_question: str, question_answer_pairs: List[Dict], 
                                                 all_documents: List[Dict], lang: str, validate_and_fallback: bool = True) -> Dict[str, Any]:
-        """
-        OPTIMIZED: Single LLM call that generates response AND validates AND handles fallback
-        """
         try:
             start_time = datetime.now()
             
@@ -2034,9 +2029,11 @@ class LLMService:
 
             prompt_config = optimized_prompts.get(lang, optimized_prompts['fr'])
 
+
             # Format question-answer pairs efficiently
             formatted_pairs = self._format_comprehensive_qa_pairs_optimized(question_answer_pairs, lang)
             
+
             # Create the comprehensive prompt
             user_prompt = prompt_config['user'].format(
                 original_question=original_question,
@@ -2044,13 +2041,13 @@ class LLMService:
                 num_questions=len(question_answer_pairs),
                 num_sources=len(all_documents)
             )
+
             
             # SINGLE LLM CALL that does everything
             comprehensive_response = self._call_ollama(
                 prompt=user_prompt,
                 system_prompt=prompt_config['system']
             )
-            
             processing_time = (datetime.now() - start_time).total_seconds()
             
             # Check if LLM detected irrelevant content
@@ -2070,9 +2067,7 @@ class LLMService:
             
             # Calculate confidence efficiently
             confidence = self._calculate_confidence_fast(question_answer_pairs, all_documents)
-            
-            logger.info(f"Optimized comprehensive response generated with confidence: {confidence}")
-            
+                        
             return {
                 'response': comprehensive_response,
                 'confidence': confidence,
@@ -2137,13 +2132,12 @@ class LLMService:
         for i, pair in enumerate(question_answer_pairs, 1):
             question = pair['question']
             documents = pair['documents']
-            source = pair['source']
             
             if documents:
                 # Take only top 2 documents per question to reduce prompt size
                 top_docs = documents[:2]
                 answers_text = " | ".join([doc.get('answer', '')[:200] + "..." if len(doc.get('answer', '')) > 200 else doc.get('answer', '') for doc in top_docs])
-                formatted_pair = f"Q{i} ({source}): {question}\nA{i}: {answers_text}"
+                formatted_pair = f"Q{i}: {question}\nA{i}: {answers_text}"
             else:
                 formatted_pair = f"Q{i}: {question}\nA{i}: Aucune réponse trouvée"
             

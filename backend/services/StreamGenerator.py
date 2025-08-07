@@ -113,6 +113,7 @@ class StreamGenerator:
                                 logger.info(f"Question {i+1} - Database results not relevant, will search internet")
                             else:
                                 logger.info(f"Question {i+1} - Database results are relevant, using database only")
+                                need_internet_search = False
                                 
                         except Exception as e:
                             logger.error(f"Question {i+1} - Relevance check failed: {str(e)}")
@@ -164,7 +165,7 @@ class StreamGenerator:
                     "question_index": i + 1,
                     "type": question_type,
                     "reason": res.get('reason', ''),
-                    "source": determine_source_type(question_type, question_documents)
+                    "source": "database" if question_type == 'static' else "internet"
                 })
 
             logger.info(f"Total questions processed: {len(question_answer_pairs)}")
