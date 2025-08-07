@@ -64,6 +64,7 @@ class LLMService:
                 5. Évite les répétitions entre les différents résultats
                 6. Synthétise les informations complémentaires
                 7. Organise les informations par ordre d'importance
+                8. repondre en français
             
                 
                 STRUCTURE DE RÉPONSE :
@@ -96,6 +97,7 @@ class LLMService:
                 5. Avoid repetitions between different results
                 6. Synthesize complementary information
                 7. Organize information by order of importance
+                8. response in english
                 
                 RESPONSE STRUCTURE:
                 - Start with a brief introduction if necessary
@@ -238,57 +240,57 @@ class LLMService:
             'fr': {
                 'system': """Tu es un validateur intelligent de réponses. Ta tâche est d'évaluer si une réponse générée est pertinente et complète pour une question originale et ses sous-questions.
 
-    RÈGLES:
-    1. Évalue si la réponse traite la question originale de manière appropriée
-    2. Vérifie si tous les aspects des sous-questions sont abordés
-    3. Identifie les éléments manquants ou non pertinents
-    4. Considère le contexte FSO (Faculté des Sciences Oujda)
-    5. Retourne un score de validation détaillé
+                RÈGLES:
+                1. Évalue si la réponse traite la question originale de manière appropriée
+                2. Vérifie si tous les aspects des sous-questions sont abordés
+                3. Identifie les éléments manquants ou non pertinents
+                4. Considère le contexte FSO (Faculté des Sciences Oujda)
+                5. Retourne un score de validation détaillé
 
-    FORMAT DE RÉPONSE:
-    - valid: 1 si la réponse est globalement satisfaisante, 0 sinon
-    - coverage_score: score de 0 à 1 indiquant le pourcentage de couverture
-    - missing_aspects: liste des aspects non couverts
-    - irrelevant_content: contenu non pertinent identifié""",
+                FORMAT DE RÉPONSE:
+                - valid: 1 si la réponse est globalement satisfaisante, 0 sinon
+                - coverage_score: score de 0 à 1 indiquant le pourcentage de couverture
+                - missing_aspects: liste des aspects non couverts
+                - irrelevant_content: contenu non pertinent identifié""",
 
                 'user': """QUESTION ORIGINALE:
-    {original_question}
+                {original_question}
 
-    SOUS-QUESTIONS:
-    {simplified_questions}
+                SOUS-QUESTIONS:
+                {simplified_questions}
 
-    RÉPONSE GÉNÉRÉE:
-    {generated_answer}
+                RÉPONSE GÉNÉRÉE:
+                {generated_answer}
 
-    Évalue cette réponse de manière comprehensive."""
+                Évalue cette réponse de manière comprehensive."""
             },
             
             'en': {
                 'system': """You are an intelligent answer validator. Your task is to evaluate if a generated answer is relevant and complete for an original question and its sub-questions.
 
-    RULES:
-    1. Assess if the answer appropriately addresses the original question
-    2. Verify if all aspects of sub-questions are covered
-    3. Identify missing or irrelevant elements
-    4. Consider FSO context (Faculty of Sciences Oujda)
-    5. Return a detailed validation score
+                RULES:
+                1. Assess if the answer appropriately addresses the original question
+                2. Verify if all aspects of sub-questions are covered
+                3. Identify missing or irrelevant elements
+                4. Consider FSO context (Faculty of Sciences Oujda)
+                5. Return a detailed validation score
 
-    RESPONSE FORMAT:
-    - valid: 1 if answer is globally satisfactory, 0 otherwise
-    - coverage_score: score from 0 to 1 indicating coverage percentage
-    - missing_aspects: list of uncovered aspects
-    - irrelevant_content: identified irrelevant content""",
+                RESPONSE FORMAT:
+                - valid: 1 if answer is globally satisfactory, 0 otherwise
+                - coverage_score: score from 0 to 1 indicating coverage percentage
+                - missing_aspects: list of uncovered aspects
+                - irrelevant_content: identified irrelevant content""",
 
                 'user': """ORIGINAL QUESTION:
-    {original_question}
+                {original_question}
 
-    SUB-QUESTIONS:
-    {simplified_questions}
+                SUB-QUESTIONS:
+                {simplified_questions}
 
-    GENERATED ANSWER:
-    {generated_answer}
+                GENERATED ANSWER:
+                {generated_answer}
 
-    Evaluate this answer comprehensively."""
+                Evaluate this answer comprehensively."""
             }
         }
         
@@ -308,7 +310,6 @@ class LLMService:
                 system_prompt=prompt_config['system']
             )
             
-            # Parse validation response (this would need to be implemented based on LLM output format)
             validation_result = self._parse_validation_response(validation_response)
             
             logger.info(f"Comprehensive validation - Original: {original_question[:50]}...")
@@ -371,116 +372,116 @@ class LLMService:
             comprehensive_prompts = {
                 'fr': {
                     'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
-    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive et cohérente.
+                    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive et cohérente.
 
-    RÈGLES IMPORTANTES:
-    1. Analyse TOUTES les questions ensemble pour comprendre le besoin complet d'information de l'utilisateur
-    2. Examine les réponses pour identifier:
-    - Les informations complémentaires qui doivent être combinées
-    - Les contradictions qui nécessitent une résolution
-    - Les lacunes qui doivent être reconnues
-    3. Structure ta réponse pour:
-    - Répondre clairement à chaque question
-    - Montrer les connexions entre questions liées
-    - Résoudre les conflits entre réponses
-    - Maintenir un flux logique
-    4. Pour les questions temporelles, indique clairement la période de chaque information
-    5. Préserve toutes les informations uniques et précieuses tout en éliminant la redondance
-    6. Si les réponses sont en conflit, indique-le et fournis toutes les perspectives
-    7. Utilise un format structuré pour les cas multi-questions complexes
+                    RÈGLES IMPORTANTES:
+                    1. Analyse TOUTES les questions ensemble pour comprendre le besoin complet d'information de l'utilisateur
+                    2. Examine les réponses pour identifier:
+                    - Les informations complémentaires qui doivent être combinées
+                    - Les contradictions qui nécessitent une résolution
+                    - Les lacunes qui doivent être reconnues
+                    3. Structure ta réponse pour:
+                    - Répondre clairement à chaque question
+                    - Montrer les connexions entre questions liées
+                    - Résoudre les conflits entre réponses
+                    - Maintenir un flux logique
+                    4. Pour les questions temporelles, indique clairement la période de chaque information
+                    5. Préserve toutes les informations uniques et précieuses tout en éliminant la redondance
+                    6. Si les réponses sont en conflit, indique-le et fournis toutes les perspectives
+                    7. Utilise un format structuré pour les cas multi-questions complexes
 
-    FORMAT DE SORTIE:
-    1. Réponse synthétique qui traite tous les aspects
-    2. Indication des sources d'information
-    3. Gestion des conflits ou incertitudes si nécessaire""",
+                    FORMAT DE SORTIE:
+                    1. Réponse synthétique qui traite tous les aspects
+                    2. Indication des sources d'information
+                    3. Gestion des conflits ou incertitudes si nécessaire""",
 
                     'user': """QUESTION ORIGINALE DE L'UTILISATEUR:
-    {original_question}
+                    {original_question}
 
-    QUESTIONS SIMPLIFIÉES ET LEURS RÉPONSES:
-    {formatted_qa_pairs}
+                    QUESTIONS SIMPLIFIÉES ET LEURS RÉPONSES:
+                    {formatted_qa_pairs}
 
-    CONTEXTE GLOBAL:
-    - Total des questions: {num_questions}
-    - Total des sources: {num_sources}
+                    CONTEXTE GLOBAL:
+                    - Total des questions: {num_questions}
+                    - Total des sources: {num_sources}
 
-    TÂCHE: Génère une réponse comprehensive qui traite tous les aspects du besoin d'information de l'utilisateur en synthétisant toutes les informations disponibles. Résous les conflits, comble les lacunes si possible, et maintiens toutes les informations précieuses tout en éliminant la redondance."""
+                    TÂCHE: Génère une réponse comprehensive qui traite tous les aspects du besoin d'information de l'utilisateur en synthétisant toutes les informations disponibles. Résous les conflits, comble les lacunes si possible, et maintiens toutes les informations précieuses tout en éliminant la redondance."""
                 },
                 
                 'en': {
                     'system': """You are an expert information synthesizer for the Faculty of Sciences Oujda (FSO). 
-    Your task is to analyze multiple question-answer pairs and generate a comprehensive, coherent response.
+                    Your task is to analyze multiple question-answer pairs and generate a comprehensive, coherent response.
 
-    IMPORTANT RULES:
-    1. Analyze ALL questions together to understand the user's complete information need
-    2. Cross-reference answers to identify:
-    - Complementary information that should be combined
-    - Contradictions that need resolution
-    - Gaps that need to be acknowledged
-    3. Structure your response to:
-    - Address each question clearly
-    - Show connections between related questions
-    - Resolve conflicts between answers
-    - Maintain logical flow
-    4. For temporal questions, clearly indicate the timeframe of each piece of information
-    5. Preserve all unique valuable information while eliminating redundancy
-    6. If answers conflict, indicate this and provide all perspectives
-    7. Use structured format for complex multi-question cases
+                    IMPORTANT RULES:
+                    1. Analyze ALL questions together to understand the user's complete information need
+                    2. Cross-reference answers to identify:
+                    - Complementary information that should be combined
+                    - Contradictions that need resolution
+                    - Gaps that need to be acknowledged
+                    3. Structure your response to:
+                    - Address each question clearly
+                    - Show connections between related questions
+                    - Resolve conflicts between answers
+                    - Maintain logical flow
+                    4. For temporal questions, clearly indicate the timeframe of each piece of information
+                    5. Preserve all unique valuable information while eliminating redundancy
+                    6. If answers conflict, indicate this and provide all perspectives
+                    7. Use structured format for complex multi-question cases
 
-    OUTPUT FORMAT:
-    1. Synthetic response addressing all aspects
-    2. Source information indication
-    3. Conflict or uncertainty management if needed""",
+                    OUTPUT FORMAT:
+                    1. Synthetic response addressing all aspects
+                    2. Source information indication
+                    3. Conflict or uncertainty management if needed""",
 
-                    'user': """USER'S ORIGINAL QUESTION:
-    {original_question}
+                                    'user': """USER'S ORIGINAL QUESTION:
+                    {original_question}
 
-    SIMPLIFIED QUESTIONS AND THEIR ANSWERS:
-    {formatted_qa_pairs}
+                    SIMPLIFIED QUESTIONS AND THEIR ANSWERS:
+                    {formatted_qa_pairs}
 
-    GLOBAL CONTEXT:
-    - Total questions: {num_questions}
-    - Total sources: {num_sources}
+                    GLOBAL CONTEXT:
+                    - Total questions: {num_questions}
+                    - Total sources: {num_sources}
 
-    TASK: Generate a comprehensive response that addresses all aspects of the user's information need by synthesizing all available information. Resolve conflicts, fill gaps where possible, and maintain all valuable information while eliminating redundancy."""
+                    TASK: Generate a comprehensive response that addresses all aspects of the user's information need by synthesizing all available information. Resolve conflicts, fill gaps where possible, and maintain all valuable information while eliminating redundancy."""
                 },
                 
                 'ar': {
                     'system': """أنت خبير في تجميع المعلومات لكلية العلوم وجدة (FSO).
-    مهمتك هي تحليل عدة أزواج من الأسئلة والأجوبة وإنتاج إجابة شاملة ومتماسكة.
+                    مهمتك هي تحليل عدة أزواج من الأسئلة والأجوبة وإنتاج إجابة شاملة ومتماسكة.
 
-    القواعد المهمة:
-    1. حلل كل الأسئلة معاً لفهم حاجة المستخدم الكاملة للمعلومات
-    2. راجع الأجوبة لتحديد:
-    - المعلومات المكملة التي يجب دمجها
-    - التناقضات التي تحتاج حل
-    - الثغرات التي يجب الاعتراف بها
-    3. هيكل إجابتك لـ:
-    - الإجابة بوضوح على كل سؤال
-    - إظهار الروابط بين الأسئلة المترابطة
-    - حل التعارضات بين الأجوبة
-    - الحفاظ على تدفق منطقي
-    4. للأسئلة الزمنية، وضح بوضوح الإطار الزمني لكل معلومة
-    5. اعتن بكل المعلومات القيمة الفريدة مع إزالة التكرار
-    6. إذا تعارضت الأجوبة، وضح ذلك وقدم كل وجهات النظر
-    7. استخدم تنسيق منظم للحالات المتعددة الأسئلة المعقدة
+                    القواعد المهمة:
+                    1. حلل كل الأسئلة معاً لفهم حاجة المستخدم الكاملة للمعلومات
+                    2. راجع الأجوبة لتحديد:
+                    - المعلومات المكملة التي يجب دمجها
+                    - التناقضات التي تحتاج حل
+                    - الثغرات التي يجب الاعتراف بها
+                    3. هيكل إجابتك لـ:
+                    - الإجابة بوضوح على كل سؤال
+                    - إظهار الروابط بين الأسئلة المترابطة
+                    - حل التعارضات بين الأجوبة
+                    - الحفاظ على تدفق منطقي
+                    4. للأسئلة الزمنية، وضح بوضوح الإطار الزمني لكل معلومة
+                    5. اعتن بكل المعلومات القيمة الفريدة مع إزالة التكرار
+                    6. إذا تعارضت الأجوبة، وضح ذلك وقدم كل وجهات النظر
+                    7. استخدم تنسيق منظم للحالات المتعددة الأسئلة المعقدة
 
-    تنسيق المخرجات:
-    1. إجابة تركيبية تتناول كل الجوانب
-    2. إشارة لمصادر المعلومات
-    3. إدارة التعارضات أو عدم اليقين إذا لزم الأمر""",
+                    تنسيق المخرجات:
+                    1. إجابة تركيبية تتناول كل الجوانب
+                    2. إشارة لمصادر المعلومات
+                    3. إدارة التعارضات أو عدم اليقين إذا لزم الأمر""",
 
-                    'user': """السؤال الأصلي للمستخدم:
-    {original_question}
+                                    'user': """السؤال الأصلي للمستخدم:
+                    {original_question}
 
-    الأسئلة المبسطة وأجوبتها:
-    {formatted_qa_pairs}
+                    الأسئلة المبسطة وأجوبتها:
+                    {formatted_qa_pairs}
 
-    السياق العام:
-    - إجمالي الأسئلة: {num_questions}
-    - إجمالي المصادر: {num_sources}
+                    السياق العام:
+                    - إجمالي الأسئلة: {num_questions}
+                    - إجمالي المصادر: {num_sources}
 
-    المهمة: أنتج إجابة شاملة تعالج كل جوانب حاجة المستخدم للمعلومات عبر تجميع كل المعلومات المتاحة. حل التعارضات، املأ الثغرات إن أمكن، واحتفظ بكل المعلومات القيمة مع إزالة التكرار."""
+                    المهمة: أنتج إجابة شاملة تعالج كل جوانب حاجة المستخدم للمعلومات عبر تجميع كل المعلومات المتاحة. حل التعارضات، املأ الثغرات إن أمكن، واحتفظ بكل المعلومات القيمة مع إزالة التكرار."""
                 }
             }
             
@@ -790,8 +791,8 @@ class LLMService:
 
             Réponse précise et factuelle basée sur tes données d'entraînement FSO:""",
 
-                    'en': f"""You are the official virtual assistant of the Faculty of Sciences of Oujda (FSO), 
-                    Mohammed Premier University.
+            'en': f"""You are the official virtual assistant of the Faculty of Sciences of Oujda (FSO), 
+            Mohammed Premier University.
 
             You have been specifically trained on FSO data. Use ONLY your FSO knowledge to respond.
 
@@ -799,12 +800,12 @@ class LLMService:
             - Faculty of Sciences of Oujda, Mohammed Premier University, Morocco  
             - Avoid confusion with other faculties (Letters, Economics, etc.)
             - Answer only about FSO-related matters
-
+            - response in english
             Question: {question}
 
             Precise and factual response based on your FSO training data:""",
 
-                    'ar': f"""أنت المساعد الافتراضي الرسمي لكلية العلوم بوجدة (FSO) بجامعة محمد الأول.
+            'ar': f"""أنت المساعد الافتراضي الرسمي لكلية العلوم بوجدة (FSO) بجامعة محمد الأول.
 
             تم تدريبك خصيصاً على بيانات كلية العلوم. استخدم فقط معرفتك بكلية العلوم للإجابة.
 
@@ -812,12 +813,13 @@ class LLMService:
             - كلية العلوم بوجدة، جامعة محمد الأول، المغرب
             - تجنب الخلط مع كليات أخرى (الآداب، الاقتصاد، إلخ)
             - أجب فقط عما يخص كلية العلوم
+            - الرد باللغة العربية
 
             السؤال: {question}
 
             إجابة دقيقة وواقعية مبنية على بيانات تدريبك لكلية العلوم:""",
 
-                    'amz': f"""Anta d amellal ufrawan unṣib n tesnawalt n tussniwin n Wujda (FSO) n tduklit Mohammed Amezwaru.
+            'amz': f"""Anta d amellal ufrawan unṣib n tesnawalt n tussniwin n Wujda (FSO) n tduklit Mohammed Amezwaru.
 
             Tettwaselmadeḍ s talɣa tusligt ɣef yisefka n FSO. Seqdec kan tamusni-nnek n FSO i tiririt.
 
@@ -837,7 +839,7 @@ class LLMService:
             
             return {
                 'response': response,
-                'confidence': 0.9,  # Plus de confiance avec le modèle fine-tuné
+                'confidence': 0.9,
                 'source': 'finetuned_model',
                 'lang': lang
             }
@@ -893,43 +895,43 @@ class LLMService:
             
             # Template JSON avec validation FSO
             json_template = """{
-        "user_response": "Answer based ONLY on FSO-related SERP data",
-        "validation": {
-            "is_fso_relevant": true,
-            "rejected_content": ["list any non-FSO content found"],
-            "confidence_fso": 0.8
-        },
-        "knowledge_entry": {
-            "intent": "fso_specific_info",
-            "question": {
-                "fr": [
-                    "EXACT ORIGINAL CLIENT QUESTION FOR FSO",
-                    "FSO-focused variation of question",
-                    "another FSO-specific variation"
-                ],
-                "en": [...],
-                "ar": [...], 
-                "amz": [...]
-            },
-            "reponse": {
-                "fr": [
-                    "FSO-specific answer from SERP data",
-                    "variation focusing on FSO only",
-                    "another FSO-focused answer"
-                ],
-                "en": [...],
-                "ar": [...],
-                "amz": [...]
-            },
-            "meta": {
-                "fr": ["FSO source links only"],
-                "en": ["FSO source links only"],
-                "ar": ["FSO source links only"],
-                "amz": ["FSO source links only"]
-            }
-        },
-        "confidence": 0.8
-    }"""
+                "user_response": "Answer based ONLY on FSO-related SERP data",
+                "validation": {
+                    "is_fso_relevant": true,
+                    "rejected_content": ["list any non-FSO content found"],
+                    "confidence_fso": 0.8
+                },
+                "knowledge_entry": {
+                    "intent": "fso_specific_info",
+                    "question": {
+                        "fr": [
+                            "EXACT ORIGINAL CLIENT QUESTION FOR FSO",
+                            "FSO-focused variation of question",
+                            "another FSO-specific variation"
+                        ],
+                        "en": [...],
+                        "ar": [...], 
+                        "amz": [...]
+                    },
+                    "reponse": {
+                        "fr": [
+                            "FSO-specific answer from SERP data",
+                            "variation focusing on FSO only",
+                            "another FSO-focused answer"
+                        ],
+                        "en": [...],
+                        "ar": [...],
+                        "amz": [...]
+                    },
+                    "meta": {
+                        "fr": ["FSO source links only"],
+                        "en": ["FSO source links only"],
+                        "ar": ["FSO source links only"],
+                        "amz": ["FSO source links only"]
+                    }
+                },
+                "confidence": 0.8
+            }"""
             
             # Format SERP data avec pre-filtering
             formatted_serp_data = self._filter_fso_content(serp_data)
@@ -1032,98 +1034,99 @@ class LLMService:
         try:
             base_instructions = {
                 'fr': f"""
-    Tu es un assistant spécialisé dans les informations sur la Faculté des Sciences d'Oujda (FSO).
+                    Tu es un assistant spécialisé dans les informations sur la Faculté des Sciences d'Oujda (FSO).
 
-    Règles STRICTES :
-    - Améliore UNIQUEMENT la réponse en ajoutant des informations NOUVELLES du contexte
-    - INTERDICTION ABSOLUE de répéter des informations déjà présentes dans la réponse
-    - INTERDICTION de créer des doublons, triplications ou répétitions de blocs entiers
-    - Focus PRIORITAIRE sur "FSO", "Faculté des Sciences Oujda", "Université Mohammed Premier"
-    - Évite les références à "CAP-FSO" sauf si directement pertinent à la question
-    - Supprime tous les doublons et répétitions avant de répondre
-    - Garde seulement les informations qui répondent EXACTEMENT à la question posée
-    - Structure claire : UNE SEULE mention par information/personne/détail
-    - Réponse finale naturelle, fluide et SANS RÉPÉTITION
+                    Règles STRICTES :
+                    - Améliore UNIQUEMENT la réponse en ajoutant des informations NOUVELLES du contexte
+                    - INTERDICTION ABSOLUE de répéter des informations déjà présentes dans la réponse
+                    - INTERDICTION de créer des doublons, triplications ou répétitions de blocs entiers
+                    - Focus PRIORITAIRE sur "FSO", "Faculté des Sciences Oujda", "Université Mohammed Premier"
+                    - Évite les références à "CAP-FSO" sauf si directement pertinent à la question
+                    - Supprime tous les doublons et répétitions avant de répondre
+                    - Garde seulement les informations qui répondent EXACTEMENT à la question posée
+                    - Structure claire : UNE SEULE mention par information/personne/détail
+                    - Réponse finale naturelle, fluide et SANS RÉPÉTITION
+                    - reponds en français
+                    EXEMPLE DE CE QUI EST INTERDIT :
+                    - Répéter "Doyen: Professeur El Bekkaye MAAROUF" plusieurs fois
+                    - Dupliquer les coordonnées de contact
+                    - Tripler les mêmes blocs d'informations
 
-    EXEMPLE DE CE QUI EST INTERDIT :
-    - Répéter "Doyen: Professeur El Bekkaye MAAROUF" plusieurs fois
-    - Dupliquer les coordonnées de contact
-    - Tripler les mêmes blocs d'informations
+                    Réponse actuelle :
+                    {response}
 
-    Réponse actuelle :
-    {response}
+                    Contexte disponible :
+                    {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    Contexte disponible :
-    {json.dumps(context, ensure_ascii=False, indent=2)}
-
-    CRITIQUE : Analyse d'abord la réponse actuelle pour identifier les répétitions, puis donne UNIQUEMENT la version finale améliorée, nettoyée de TOUS les doublons.
-    """,
+                    CRITIQUE : Analyse d'abord la réponse actuelle pour identifier les répétitions, puis donne UNIQUEMENT la version finale améliorée, nettoyée de TOUS les doublons.
+                    """,
                 
                 'en': f"""
-    You are an assistant specialized in information about the Faculty of Sciences of Oujda (FSO).
+                    You are an assistant specialized in information about the Faculty of Sciences of Oujda (FSO).
 
-    STRICT Rules:
-    - Improve ONLY the response by adding NEW information from the context
-    - ABSOLUTE PROHIBITION of repeating information already in the response
-    - PRIORITY focus on "FSO", "Faculty of Sciences Oujda", "Mohammed Premier University"
-    - Avoid references to "CAP-FSO" unless directly relevant to the question
-    - Remove all duplicates and repetitions
-    - Keep only information that EXACTLY answers the asked question
-    - Clear structure: single mention per piece of information
-    - Final response natural and fluent
+                    STRICT Rules:
+                    - Improve ONLY the response by adding NEW information from the context
+                    - ABSOLUTE PROHIBITION of repeating information already in the response
+                    - PRIORITY focus on "FSO", "Faculty of Sciences Oujda", "Mohammed Premier University"
+                    - Avoid references to "CAP-FSO" unless directly relevant to the question
+                    - Remove all duplicates and repetitions
+                    - Keep only information that EXACTLY answers the asked question
+                    - Clear structure: single mention per piece of information
+                    - Final response natural and fluent
+                    - reponse in english
+                    Current response:
+                    {response}
 
-    Current response:
-    {response}
+                    Available context:
+                    {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    Available context:
-    {json.dumps(context, ensure_ascii=False, indent=2)}
-
-    IMPORTANT: Give ONLY the final improved version, no duplicates, no repetitions, no commentary.
-    """,
+                    IMPORTANT: Give ONLY the final improved version, no duplicates, no repetitions, no commentary.
+                """,
                 
                 'ar': f"""
-    أنت مساعد متخصص في معلومات كلية العلوم بوجدة (FSO).
+                أنت مساعد متخصص في معلومات كلية العلوم بوجدة (FSO).
 
-    قواعد صارمة:
-    - حسّن الإجابة فقط بإضافة معلومات جديدة من السياق
-    - منع مطلق لتكرار المعلومات الموجودة في الإجابة
-    - تركيز أولوي على "FSO"، "كلية العلوم وجدة"، "جامعة محمد الأول"
-    - تجنب الإشارة إلى "CAP-FSO" إلا إذا كانت متعلقة مباشرة بالسؤال
-    - احذف جميع التكرارات والمضاعفات
-    - احتفظ بالمعلومات التي تجيب بالضبط على السؤال المطروح
-    - هيكل واضح: ذكر واحد لكل معلومة
-    - إجابة نهائية طبيعية وسلسة
+                قواعد صارمة:
+                - حسّن الإجابة فقط بإضافة معلومات جديدة من السياق
+                - منع مطلق لتكرار المعلومات الموجودة في الإجابة
+                - تركيز أولوي على "FSO"، "كلية العلوم وجدة"، "جامعة محمد الأول"
+                - تجنب الإشارة إلى "CAP-FSO" إلا إذا كانت متعلقة مباشرة بالسؤال
+                - احذف جميع التكرارات والمضاعفات
+                - احتفظ بالمعلومات التي تجيب بالضبط على السؤال المطروح
+                - هيكل واضح: ذكر واحد لكل معلومة
+                - إجابة نهائية طبيعية وسلسة
+                - الرد باللغة العربية
 
-    الإجابة الحالية:
-    {response}
+                الإجابة الحالية:
+                {response}
 
-    السياق المتاح:
-    {json.dumps(context, ensure_ascii=False, indent=2)}
+                السياق المتاح:
+                {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    مهم: أعطِ النسخة النهائية المحسنة فقط، بدون تكرار، بدون تعليقات.
-    """,
+                مهم: أعطِ النسخة النهائية المحسنة فقط، بدون تكرار، بدون تعليقات.
+                """,
                 
                 'amz': f"""
-    Anta d amellal i yeẓran ɣef Fakulté des Sciences n Wejda (FSO).
+                Anta d amellal i yeẓran ɣef Fakulté des Sciences n Wejda (FSO).
 
-    Ilugan iǧehden:
-    - Seǧhed kan tiririt s useɣti n yisallen imaynuten seg umnaḍ
-    - Agdel aṭas n useɣti n yisallen i d-yellan yakan deg tiririt
-    - Tazwart tamezwarut i "FSO", "Fakulté des Sciences Oujda", "Tasdawit Mohammed Premier"
-    - Zgel tinmal i "CAP-FSO" ala ma yella yeɛnan srid i usteqsi
-    - Kkes akk inekta d useɣti
-    - Ǧǧ kan isallen i d-yettarran s tṣaḥit i usteqsi
-    - Askil afsus: yiwet n tenna i yal isalan
-    - Tiririt taneggaru tagamant d tafessast
+                Ilugan iǧehden:
+                - Seǧhed kan tiririt s useɣti n yisallen imaynuten seg umnaḍ
+                - Agdel aṭas n useɣti n yisallen i d-yellan yakan deg tiririt
+                - Tazwart tamezwarut i "FSO", "Fakulté des Sciences Oujda", "Tasdawit Mohammed Premier"
+                - Zgel tinmal i "CAP-FSO" ala ma yella yeɛnan srid i usteqsi
+                - Kkes akk inekta d useɣti
+                - Ǧǧ kan isallen i d-yettarran s tṣaḥit i usteqsi
+                - Askil afsus: yiwet n tenna i yal isalan
+                - Tiririt taneggaru tagamant d tafessast
 
-    Tiririt tura:
-    {response}
+                Tiririt tura:
+                {response}
 
-    Amnaḍ i yellan:
-    {json.dumps(context, ensure_ascii=False, indent=2)}
+                Amnaḍ i yellan:
+                {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    Muhim: Efk kan lqem aneggaru yettwaseǧden, ur teɣreḍ ara, ur tečč ara awalen.
-    """
+                Muhim: Efk kan lqem aneggaru yettwaseǧden, ur teɣreḍ ara, ur tečč ara awalen.
+                """
             }
             
             prompt = base_instructions.get(lang, base_instructions['fr'])
@@ -1388,143 +1391,144 @@ class LLMService:
         simplification_prompts = {
             'fr': f"""Tu es un expert en analyse de questions qui simplifie les questions complexes.
 
-    TEMPS SYSTÈME: {current_time}
+            TEMPS SYSTÈME: {current_time}
 
-    TÂCHE: Analyse cette question et détermine s'il s'agit d'une question unique complexe ou de plusieurs questions distinctes.
+            TÂCHE: Analyse cette question et détermine s'il s'agit d'une question unique complexe ou de plusieurs questions distinctes.
 
-    RÈGLES:
-    1. Si c'est UNE SEULE question complexe avec des détails supplémentaires sur le MÊME sujet → Simplifie en une question courte
-    2. Si ce sont PLUSIEURS questions distinctes sur des sujets DIFFÉRENTS → Sépare chaque question et simplifie-les
+            RÈGLES:
+            1. Si c'est UNE SEULE question complexe avec des détails supplémentaires sur le MÊME sujet → Simplifie en une question courte
+            2. Si ce sont PLUSIEURS questions distinctes sur des sujets DIFFÉRENTS → Sépare chaque question et simplifie-les
 
-    EXEMPLES:
+            EXEMPLES:
 
-    Question complexe unique:
-    "Je voudrais savoir qui occupe actuellement le poste de Doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda. Pourriez-vous me fournir son nom complet, son parcours académique et professionnel, la date de prise de fonction, ainsi qu'une description de ses responsabilités, réalisations et sa vision pour la faculté?"
-    → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda ?"]
+            Question complexe unique:
+            "Je voudrais savoir qui occupe actuellement le poste de Doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda. Pourriez-vous me fournir son nom complet, son parcours académique et professionnel, la date de prise de fonction, ainsi qu'une description de ses responsabilités, réalisations et sa vision pour la faculté?"
+            → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences à l'Université Mohammed Premier d'Oujda ?"]
 
-    Plusieurs questions distinctes:
-    "Qui est le doyen de la Faculté des Sciences d'Oujda ? Aussi, quels sont les derniers résultats de l'équipe de football de Barcelona ? Et comment faire un gâteau au chocolat ?"
-    → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences d'Oujda ?", "Quels sont les derniers résultats de Barcelona ?", "Comment faire un gâteau au chocolat ?"]
+            Plusieurs questions distinctes:
+            "Qui est le doyen de la Faculté des Sciences d'Oujda ? Aussi, quels sont les derniers résultats de l'équipe de football de Barcelona ? Et comment faire un gâteau au chocolat ?"
+            → RÉSULTAT: ["Qui est le doyen de la Faculté des Sciences d'Oujda ?", "Quels sont les derniers résultats de Barcelona ?", "Comment faire un gâteau au chocolat ?"]
 
-    INSTRUCTIONS:
-    1. Lis attentivement la question
-    2. Identifie s'il y a UN sujet principal ou PLUSIEURS sujets distincts
-    3. Si UN sujet → Simplifie en gardant l'essentiel
-    4. Si PLUSIEURS sujets → Sépare et simplifie chaque question
-    5. Garde seulement les informations essentielles dans chaque question simplifiée
+            INSTRUCTIONS:
+            1. Lis attentivement la question
+            2. Identifie s'il y a UN sujet principal ou PLUSIEURS sujets distincts
+            3. Si UN sujet → Simplifie en gardant l'essentiel
+            4. Si PLUSIEURS sujets → Sépare et simplifie chaque question
+            5. Garde seulement les informations essentielles dans chaque question simplifiée
+            6. reponds en français
+            QUESTION À ANALYSER: "{question}"
 
-    QUESTION À ANALYSER: "{question}"
+            Format de réponse OBLIGATOIRE:
+            ANALYSE: [Une seule question complexe / Plusieurs questions distinctes]
+            RÉSULTAT: ["question simplifiée 1", "question simplifiée 2", ...]
 
-    Format de réponse OBLIGATOIRE:
-    ANALYSE: [Une seule question complexe / Plusieurs questions distinctes]
-    RÉSULTAT: ["question simplifiée 1", "question simplifiée 2", ...]
-
-    ANALYSE:""",
+            ANALYSE:""",
 
             'en': f"""You are an expert in question analysis who simplifies complex questions.
 
-    SYSTEM TIME: {current_time}
+                SYSTEM TIME: {current_time}
 
-    TASK: Analyze this question and determine if it's a single complex question or multiple distinct questions.
+                TASK: Analyze this question and determine if it's a single complex question or multiple distinct questions.
 
-    RULES:
-    1. If it's ONE complex question with additional details about the SAME topic → Simplify into one short question
-    2. If it's MULTIPLE distinct questions about DIFFERENT topics → Separate each question and simplify them
+                RULES:
+                1. If it's ONE complex question with additional details about the SAME topic → Simplify into one short question
+                2. If it's MULTIPLE distinct questions about DIFFERENT topics → Separate each question and simplify them
 
-    EXAMPLES:
+                EXAMPLES:
 
-    Single complex question:
-    "I would like to know who is currently serving as the Dean of the Faculty of Sciences at Mohammed First University in Oujda. Could you please provide their full name, academic and professional background, the date they assumed office, as well as a description of their responsibilities, achievements, and their vision for the faculty?"
-    → RESULT: ["Who is the Dean of the Faculty of Sciences at Mohammed First University in Oujda?"]
+                Single complex question:
+                "I would like to know who is currently serving as the Dean of the Faculty of Sciences at Mohammed First University in Oujda. Could you please provide their full name, academic and professional background, the date they assumed office, as well as a description of their responsibilities, achievements, and their vision for the faculty?"
+                → RESULT: ["Who is the Dean of the Faculty of Sciences at Mohammed First University in Oujda?"]
 
-    Multiple distinct questions:
-    "Who is the dean of the Faculty of Sciences in Oujda? Also, what are the latest Barcelona football team results? And how to make a chocolate cake?"
-    → RESULT: ["Who is the dean of the Faculty of Sciences in Oujda?", "What are Barcelona's latest results?", "How to make a chocolate cake?"]
+                Multiple distinct questions:
+                "Who is the dean of the Faculty of Sciences in Oujda? Also, what are the latest Barcelona football team results? And how to make a chocolate cake?"
+                → RESULT: ["Who is the dean of the Faculty of Sciences in Oujda?", "What are Barcelona's latest results?", "How to make a chocolate cake?"]
 
-    INSTRUCTIONS:
-    1. Read the question carefully
-    2. Identify if there's ONE main topic or MULTIPLE distinct topics
-    3. If ONE topic → Simplify keeping the essential
-    4. If MULTIPLE topics → Separate and simplify each question
-    5. Keep only essential information in each simplified question
+                INSTRUCTIONS:
+                1. Read the question carefully
+                2. Identify if there's ONE main topic or MULTIPLE distinct topics
+                3. If ONE topic → Simplify keeping the essential
+                4. If MULTIPLE topics → Separate and simplify each question
+                5. Keep only essential information in each simplified question
+                6. reply in english
+                QUESTION TO ANALYZE: "{question}"
 
-    QUESTION TO ANALYZE: "{question}"
+                MANDATORY response format:
+                ANALYSIS: [Single complex question / Multiple distinct questions]
+                RESULT: ["simplified question 1", "simplified question 2", ...]
 
-    MANDATORY response format:
-    ANALYSIS: [Single complex question / Multiple distinct questions]
-    RESULT: ["simplified question 1", "simplified question 2", ...]
-
-    ANALYSIS:""",
+                ANALYSIS:""",
 
             'ar': f"""أنت خبير في تحليل الأسئلة وتبسيط الأسئلة المعقدة.
 
-    وقت النظام: {current_time}
+                وقت النظام: {current_time}
 
-    المهمة: حلل هذا السؤال وحدد ما إذا كان سؤالاً واحداً معقداً أم عدة أسئلة متميزة.
+                المهمة: حلل هذا السؤال وحدد ما إذا كان سؤالاً واحداً معقداً أم عدة أسئلة متميزة.
 
-    القواعد:
-    1. إذا كان سؤالاً واحداً معقداً بتفاصيل إضافية حول نفس الموضوع → بسط إلى سؤال قصير واحد
-    2. إذا كانت عدة أسئلة متميزة حول مواضيع مختلفة → افصل كل سؤال وبسطها
+                القواعد:
+                1. إذا كان سؤالاً واحداً معقداً بتفاصيل إضافية حول نفس الموضوع → بسط إلى سؤال قصير واحد
+                2. إذا كانت عدة أسئلة متميزة حول مواضيع مختلفة → افصل كل سؤال وبسطها
 
-    أمثلة:
+                أمثلة:
 
-    سؤال معقد واحد:
-    "أريد أن أعرف من يشغل حالياً منصب عميد كلية العلوم في جامعة محمد الأول بوجدة. هل يمكنك تقديم اسمه الكامل، خلفيته الأكاديمية والمهنية، تاريخ توليه المنصب، وكذلك وصف لمسؤولياته وإنجازاته ورؤيته للكلية؟"
-    → النتيجة: ["من هو عميد كلية العلوم في جامعة محمد الأول بوجدة؟"]
+                سؤال معقد واحد:
+                "أريد أن أعرف من يشغل حالياً منصب عميد كلية العلوم في جامعة محمد الأول بوجدة. هل يمكنك تقديم اسمه الكامل، خلفيته الأكاديمية والمهنية، تاريخ توليه المنصب، وكذلك وصف لمسؤولياته وإنجازاته ورؤيته للكلية؟"
+                → النتيجة: ["من هو عميد كلية العلوم في جامعة محمد الأول بوجدة؟"]
 
-    عدة أسئلة متميزة:
-    "من هو عميد كلية العلوم في وجدة؟ وأيضاً، ما هي آخر نتائج فريق برشلونة؟ وكيف أصنع كيكة الشوكولاتة؟"
-    → النتيجة: ["من هو عميد كلية العلوم في وجدة؟", "ما هي آخر نتائج برشلونة؟", "كيف أصنع كيكة الشوكولاتة؟"]
+                عدة أسئلة متميزة:
+                "من هو عميد كلية العلوم في وجدة؟ وأيضاً، ما هي آخر نتائج فريق برشلونة؟ وكيف أصنع كيكة الشوكولاتة؟"
+                → النتيجة: ["من هو عميد كلية العلوم في وجدة؟", "ما هي آخر نتائج برشلونة؟", "كيف أصنع كيكة الشوكولاتة؟"]
 
-    التعليمات:
-    1. اقرأ السؤال بعناية
-    2. حدد ما إذا كان هناك موضوع رئيسي واحد أم عدة مواضيع متميزة
-    3. إذا كان موضوع واحد → بسط مع الاحتفاظ بالأساسي
-    4. إذا كانت عدة مواضيع → افصل وبسط كل سؤال
-    5. احتفظ فقط بالمعلومات الأساسية في كل سؤال مبسط
+                التعليمات:
+                1. اقرأ السؤال بعناية
+                2. حدد ما إذا كان هناك موضوع رئيسي واحد أم عدة مواضيع متميزة
+                3. إذا كان موضوع واحد → بسط مع الاحتفاظ بالأساسي
+                4. إذا كانت عدة مواضيع → افصل وبسط كل سؤال
+                5. احتفظ فقط بالمعلومات الأساسية في كل سؤال مبسط
+                6. الرد باللغة العربية
 
-    السؤال المراد تحليله: "{question}"
+                السؤال المراد تحليله: "{question}"
 
-    تنسيق الإجابة الإجباري:
-    التحليل: [سؤال معقد واحد / عدة أسئلة متميزة]
-    النتيجة: ["السؤال المبسط 1", "السؤال المبسط 2", ...]
+                تنسيق الإجابة الإجباري:
+                التحليل: [سؤال معقد واحد / عدة أسئلة متميزة]
+                النتيجة: ["السؤال المبسط 1", "السؤال المبسط 2", ...]
 
-    التحليل:""",
+                التحليل:""",
 
             'amz': f"""Anta d amussnaw deg usleḍ n isqsiyen i yesseflayen isqsiyen iwuɛren.
 
-    Akud n unagraw: {current_time}
+                Akud n unagraw: {current_time}
 
-    Tanbaḍt: Sled asqsi-a u ḥded ma yella d asqsi yiwen iwuɛer neɣ deqs n isqsiyen imgerrden.
+                Tanbaḍt: Sled asqsi-a u ḥded ma yella d asqsi yiwen iwuɛer neɣ deqs n isqsiyen imgerrden.
 
-    Izerfan:
-    1. Ma yella d asqsi yiwen iwuɛer s yifutas nniḍen ɣef yiwet n temsalt → Sɣezf ɣer yiwen wasqsi awezlan  
-    2. Ma llan deqs n isqsiyen imgerrden ɣef yimḍanen imgerrden → Beṭṭu yal asqsi u sɣezf-iten
+                Izerfan:
+                1. Ma yella d asqsi yiwen iwuɛer s yifutas nniḍen ɣef yiwet n temsalt → Sɣezf ɣer yiwen wasqsi awezlan  
+                2. Ma llan deqs n isqsiyen imgerrden ɣef yimḍanen imgerrden → Beṭṭu yal asqsi u sɣezf-iten
 
-    Imedyaten:
+                Imedyaten:
 
-    Asqsi iwuɛer yiwen:
-    "Bɣiɣ ad ssneɣ anwa i yețțusuddut deg wadda n uεemid n teɣdemt n tussniwin deg tesdawit Mohammed Amezwaru n Wejda. Tzemred ad d-tefked azref-is ummid, abrid-is aɣlnaw d umahal, azemz n tuddut, d ugla n txubbiwin, tiɣawsiwin d tanayrt-is i teɣdemt?"
-    → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin deg Wejda?"]
+                Asqsi iwuɛer yiwen:
+                "Bɣiɣ ad ssneɣ anwa i yețțusuddut deg wadda n uεemid n teɣdemt n tussniwin deg tesdawit Mohammed Amezwaru n Wejda. Tzemred ad d-tefked azref-is ummid, abrid-is aɣlnaw d umahal, azemz n tuddut, d ugla n txubbiwin, tiɣawsiwin d tanayrt-is i teɣdemt?"
+                → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin deg Wejda?"]
 
-    Deqs n isqsiyen imgerrden:
-    "Anwa id uεemid n teɣdemt n tussniwin n Wejda? Daɣen, d acu id yigmaḍ ineggura n trebbaɛt n tḥarut n Barcelona? D amek ara xdemɣ tikikt n cukula?"
-    → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin n Wejda?", "D acu id yigmaḍ ineggura n Barcelona?", "Amek ara xdemɣ tikikt n cukula?"]
+                Deqs n isqsiyen imgerrden:
+                "Anwa id uεemid n teɣdemt n tussniwin n Wejda? Daɣen, d acu id yigmaḍ ineggura n trebbaɛt n tḥarut n Barcelona? D amek ara xdemɣ tikikt n cukula?"
+                → IGMAD: ["Anwa id uεemid n teɣdemt n tussniwin n Wejda?", "D acu id yigmaḍ ineggura n Barcelona?", "Amek ara xdemɣ tikikt n cukula?"]
 
-    Tinaḍin:
-    1. Ɣer asqsi s tsserti
-    2. Sulu ma yella yiwen umḍan agejdan neɣ deqs n yimḍanen imgerrden
-    3. Ma yella yiwen umḍan → Sɣezf s uḥraz n lmuhim
-    4. Ma llan deqs n yimḍanen → Beṭṭu u sɣezf yal asqsi
-    5. Ḥrez kan talɣut tamuhimt deg yal asqsi yețwasɣezfen
+                Tinaḍin:
+                1. Ɣer asqsi s tsserti
+                2. Sulu ma yella yiwen umḍan agejdan neɣ deqs n yimḍanen imgerrden
+                3. Ma yella yiwen umḍan → Sɣezf s uḥraz n lmuhim
+                4. Ma llan deqs n yimḍanen → Beṭṭu u sɣezf yal asqsi
+                5. Ḥrez kan talɣut tamuhimt deg yal asqsi yețwasɣezfen
 
-    ASQSI I YEȚWASELDEN: "{question}"
+                ASQSI I YEȚWASELDEN: "{question}"
 
-    Talɣa n tririt ilaqen:
-    ASLEḌ: [Asqsi iwuɛer yiwen / Deqs n isqsiyen imgerrden]
-    IGMAD: ["asqsi yețwasɣezfen 1", "asqsi yețwasɣezfen 2", ...]
+                Talɣa n tririt ilaqen:
+                ASLEḌ: [Asqsi iwuɛer yiwen / Deqs n isqsiyen imgerrden]
+                IGMAD: ["asqsi yețwasɣezfen 1", "asqsi yețwasɣezfen 2", ...]
 
-    ASLEḌ:"""
+                ASLEḌ:"""
         }
         
         try:
@@ -1551,7 +1555,7 @@ class LLMService:
             
         except Exception as e:
             logger.error(f"Erreur lors de la simplification: {str(e)}")
-            return [{'question': question.strip(), 'type': 'static', 'reason': 'extraction_error'}]  # Retourner la question originale en cas d'erreur
+            return [{'question': question.strip(), 'type': 'static', 'reason': 'extraction_error'}]
 
     def _extract_simplified_questions(self, response: str, lang: str = 'fr') -> list:
         """
@@ -1798,11 +1802,11 @@ class LLMService:
                     answers.append(f"  • {answer_text} (Confiance: {confidence:.2f}, Date: {date})")
                 
                 formatted_pair = f"""Question {i}: {question}
-    Réponses disponibles:
-    {chr(10).join(answers)}"""
+                                Réponses disponibles:
+                                {chr(10).join(answers)}"""
             else:
                 formatted_pair = f"""Question {i}: {question}
-    Réponses disponibles: Aucune réponse trouvée"""
+                                Réponses disponibles: Aucune réponse trouvée"""
             
             formatted_pairs.append(formatted_pair)
         
@@ -1899,8 +1903,7 @@ class LLMService:
                 "error": str(e)
             }
 
-    def generate_comprehensive_response_optimized(self, original_question: str, question_answer_pairs: List[Dict], 
-                                                all_documents: List[Dict], lang: str, validate_and_fallback: bool = True) -> Dict[str, Any]:
+    def generate_comprehensive_response_optimized(self, original_question: str, question_answer_pairs: List[Dict], all_documents: List[Dict], lang: str, validate_and_fallback: bool = True) -> Dict[str, Any]:
         """
         OPTIMIZED: Single LLM call that generates response AND validates AND handles fallback
         """
@@ -1911,60 +1914,89 @@ class LLMService:
             optimized_prompts = {
                 'fr': {
                     'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
-    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive.
+                    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive.
 
-    INSTRUCTIONS IMPORTANTES:
-    1. Analyse TOUTES les questions et leurs réponses
-    2. Si les réponses ne sont PAS pertinentes pour les questions, indique "IRRELEVANT_CONTENT" au début
-    3. Génère une réponse cohérente qui traite tous les aspects
-    4. Combine les informations de différentes sources (base de données + internet)
-    5. Résous les conflits entre réponses
-    6. Indique clairement les sources d'information
-    7. Pour les informations temporelles, précise la période
+                    INSTRUCTIONS IMPORTANTES:
+                    1. Analyse TOUTES les questions et leurs réponses
+                    2. Si les réponses ne sont PAS pertinentes pour les questions, indique "IRRELEVANT_CONTENT" au début
+                    3. Génère une réponse cohérente qui traite tous les aspects
+                    4. Combine les informations de différentes sources (base de données + internet)
+                    5. Résous les conflits entre réponses
+                    6. Indique clairement les sources d'information
+                    7. Pour les informations temporelles, précise la période
+                    8. reponds en français
+                    FORMAT DE RÉPONSE:
+                    - Si contenu non pertinent: commence par "IRRELEVANT_CONTENT"
+                    - Sinon: génère directement la réponse comprehensive
 
-    FORMAT DE RÉPONSE:
-    - Si contenu non pertinent: commence par "IRRELEVANT_CONTENT"
-    - Sinon: génère directement la réponse comprehensive
-
-    CONTEXTE FSO: Faculté des Sciences Oujda, Université Mohammed Premier""",
+                    CONTEXTE FSO: Faculté des Sciences Oujda, Université Mohammed Premier""",
 
                     'user': """QUESTION ORIGINALE: {original_question}
 
-    QUESTIONS ET RÉPONSES DISPONIBLES:
-    {formatted_qa_pairs}
+                    QUESTIONS ET RÉPONSES DISPONIBLES:
+                    {formatted_qa_pairs}
 
-    CONTEXTE: {num_questions} questions, {num_sources} sources (base de données + internet)
+                    CONTEXTE: {num_questions} questions, {num_sources} sources (base de données + internet)
 
-    GÉNÈRE une réponse comprehensive qui traite tous les aspects. Si les réponses ne sont pas pertinentes aux questions, commence par "IRRELEVANT_CONTENT"."""
+                    GÉNÈRE une réponse comprehensive qui traite tous les aspects. Si les réponses ne sont pas pertinentes aux questions, commence par "IRRELEVANT_CONTENT"."""
                 },
                 
                 'en': {
                     'system': """You are an expert information synthesizer for the Faculty of Sciences Oujda (FSO). 
-    Your task is to analyze multiple question-answer pairs and generate a comprehensive response.
+                    Your task is to analyze multiple question-answer pairs and generate a comprehensive response.
 
-    IMPORTANT INSTRUCTIONS:
-    1. Analyze ALL questions and their answers
-    2. If answers are NOT relevant to questions, indicate "IRRELEVANT_CONTENT" at the beginning
-    3. Generate a coherent response addressing all aspects
-    4. Combine information from different sources (database + internet)
-    5. Resolve conflicts between answers
-    6. Clearly indicate information sources
-    7. For temporal information, specify the time period
+                    IMPORTANT INSTRUCTIONS:
+                    1. Analyze ALL questions and their answers
+                    2. If answers are NOT relevant to questions, indicate "IRRELEVANT_CONTENT" at the beginning
+                    3. Generate a coherent response addressing all aspects
+                    4. Combine information from different sources (database + internet)
+                    5. Resolve conflicts between answers
+                    6. Clearly indicate information sources
+                    7. For temporal information, specify the time period
+                    8. response in english
+                    RESPONSE FORMAT:
+                    - If irrelevant content: start with "IRRELEVANT_CONTENT"
+                    - Otherwise: generate comprehensive response directly
 
-    RESPONSE FORMAT:
-    - If irrelevant content: start with "IRRELEVANT_CONTENT"
-    - Otherwise: generate comprehensive response directly
+                    FSO CONTEXT: Faculty of Sciences Oujda, Mohammed First University""",
 
-    FSO CONTEXT: Faculty of Sciences Oujda, Mohammed First University""",
+                                    'user': """ORIGINAL QUESTION: {original_question}
 
-                    'user': """ORIGINAL QUESTION: {original_question}
+                    AVAILABLE QUESTIONS AND ANSWERS:
+                    {formatted_qa_pairs}
 
-    AVAILABLE QUESTIONS AND ANSWERS:
-    {formatted_qa_pairs}
+                    CONTEXT: {num_questions} questions, {num_sources} sources (database + internet)
 
-    CONTEXT: {num_questions} questions, {num_sources} sources (database + internet)
+                    GENERATE a comprehensive response addressing all aspects. If answers are not relevant to questions, start with "IRRELEVANT_CONTENT"."""
+                },
+                'ar': {
+                    'system': """أنت مُركّب خبير للمعلومات بكلية العلوم وجدة (FSO). 
+                    مهمتك هي تحليل أزواج متعددة من الأسئلة والأجوبة وإنشاء رد شامل.
 
-    GENERATE a comprehensive response addressing all aspects. If answers are not relevant to questions, start with "IRRELEVANT_CONTENT"."""
+                    تعليمات مهمة:
+                    1. حلل جميع الأسئلة والأجوبة الخاصة بها
+                    2. إذا كانت الأجوبة غير مرتبطة بالأسئلة، اذكر "IRRELEVANT_CONTENT" في البداية
+                    3. أنشئ ردًا مترابطًا يتناول جميع الجوانب
+                    4. اجمع المعلومات من مصادر مختلفة (قاعدة البيانات + الإنترنت)
+                    5. حل التعارضات بين الأجوبة
+                    6. حدد مصادر المعلومات بوضوح
+                    7. بالنسبة للمعلومات الزمنية، حدد الفترة الزمنية
+                    8. الرد باللغة العربية
+
+                    تنسيق الرد:
+                    - إذا كان المحتوى غير مرتبط: ابدأ بـ "IRRELEVANT_CONTENT"
+                    - وإلا: أنشئ ردًا شاملًا مباشرةً
+
+                    سياق كلية العلوم وجدة: كلية العلوم وجدة، جامعة محمد الأول""",
+
+                    'user': """السؤال الأصلي: {original_question}
+
+                    الأسئلة والأجوبة المتاحة:
+                    {formatted_qa_pairs}
+
+                    السياق: {num_questions} أسئلة، {num_sources} مصادر (قاعدة البيانات + الإنترنت)
+
+                    أنشئ ردًا شاملًا يتناول جميع الجوانب. إذا كانت الأجوبة غير مرتبطة بالأسئلة، ابدأ بـ "IRRELEVANT_CONTENT"."""
                 }
             }
             

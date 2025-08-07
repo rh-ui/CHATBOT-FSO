@@ -276,6 +276,7 @@ function Home() {
                 <CountTotal />
                 <Gallerie />
                 <MSOChatUI />
+                
             </main>
 
             <footer className="relative text-white mt-20 p-6 sm:p-8 lg:p-12 bg-footer">

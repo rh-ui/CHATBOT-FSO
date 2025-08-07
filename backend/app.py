@@ -78,7 +78,7 @@ def root():
 """
 
 @app.post("/search-stream")
-async def search_stream(query: Query) :
+def search_stream(query: Query) :
     generator = StreamGenerator(query)
     return StreamingResponse(
         generator.stream_search(),

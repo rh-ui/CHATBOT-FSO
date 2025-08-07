@@ -25,7 +25,7 @@ class StreamGenerator :
         self.query = query
         
     
-    async def stream_search(self):
+    def stream_search(self):
         """
             etape 1 : detect lang 
 
@@ -47,19 +47,19 @@ class StreamGenerator :
 
 
         yield f"data: {json.dumps({'type': 'status', 'message': 'Détection de la langue en cours...'})}\n\n"
-        await asyncio.sleep(0.1)  
+        asyncio.sleep(0.1)  
         self.query.lang = detect_custom_language(self.query.question)
 
 
         yield f"data: {json.dumps({'type': 'status', 'message': 'Veuillez pateinter je suis entrain de verifier la pertinence de votre question'})}\n\n"
-        await asyncio.sleep(0.5)
+        asyncio.sleep(0.5)
         logger.info('--> Checking question relation with FSO')
         if not llm_service.is_faculty_related(self.query.question, self.query.lang):
             yield f"data: {json.dumps({'type': 'final', 'data': {'detected_lang': self.query.lang, 'structured_response': is_not_defined(self.query.lang), 'llm_used': False, 'search_source': 'none'}})}\n\n"
             return
             
         yield f"data: {json.dumps({'type': 'status', 'message': 'Classification du type de question...'})}\n\n"
-        await asyncio.sleep(0.3)
+        asyncio.sleep(0.3)
         
         try:
             classifier = MultilingualIntentClassifier()
@@ -70,7 +70,7 @@ class StreamGenerator :
             logger.info(f"Simplified questions: {list_results}")
 
             yield f"data: {json.dumps({'type': 'status', 'message': 'Recherche dans la base de connaissances...'})}\n\n"
-            await asyncio.sleep(0.7)
+            asyncio.sleep(0.7)
             
             
             question_answer_pairs = []
@@ -106,7 +106,7 @@ class StreamGenerator :
                     if not question_documents:
                         logger.info(f"Question {i+1} - No database documents found, searching internet")
                         yield f"data: {json.dumps({'type': 'status', 'message': 'Réponse non pertinente détectée, recherche sur le web...'})}\n\n"
-                        await asyncio.sleep(0.3)
+                        asyncio.sleep(0.3)
                         internet_results = get_internet_results_for_question(question_text, self.query.lang)
                         question_documents.extend(internet_results)
                         logger.info(f"Question {i+1} - Internet documents found: {len(internet_results)}")
@@ -114,7 +114,7 @@ class StreamGenerator :
                 elif question_type == 'dynamic':
                     logger.info(f"Question {i+1} - Dynamic question, using internet search")
                     yield f"data: {json.dumps({'type': 'status', 'message': 'Réponse non pertinente détectée, recherche sur le web...'})}\n\n"
-                    await asyncio.sleep(0.3)
+                    asyncio.sleep(0.3)
                     internet_results = get_internet_results_for_question(question_text, self.query.lang)
                     question_documents.extend(internet_results)
                     logger.info(f"Question {i+1} - Internet documents found: {len(internet_results)}")
@@ -165,7 +165,7 @@ class StreamGenerator :
                     yield f"data: {json.dumps({'type': 'final', 'data': final_result})}\n\n"
                 
                 yield f"data: {json.dumps({'type': 'status', 'message': 'Je suis en train de structurer votre réponse...'})}\n\n"
-                await asyncio.sleep(1.0)
+                asyncio.sleep(1.0)
                 
                 llm_response = llm_service.generate_comprehensive_response_optimized(
                     original_question=self.query.question,
@@ -177,7 +177,6 @@ class StreamGenerator :
                 
                 
                 if llm_response.get('used_fallback', False):
-                    
                     logger.info("LLM detected irrelevant content, fallback to internet was used")
                 
                 
@@ -223,6 +222,6 @@ class StreamGenerator :
             
             
             
-            
+              
     
   

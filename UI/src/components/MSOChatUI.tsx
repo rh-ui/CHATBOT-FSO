@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react';
-import { Minus, Mic, Paperclip, ArrowUp, Send } from 'lucide-react'
+import { useEffect, useState, useCallback, useRef } from 'react';
+import { Minus, Mic, MicOff, Paperclip, Send } from 'lucide-react'
 import '@/style/master.css';
 import ROBOT from '@/assets/robot.png';
 import CPU_AVATAR from '@/assets/Cpu.png';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
+
+
+
 
 
 
@@ -42,9 +45,30 @@ import * as THREE from 'three';
 
 
 
+// Déclaration TypeScript pour la Web Speech API
+type SpeechRecognition = typeof window.SpeechRecognition;
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: SpeechRecognition;
+  }
+}
 
+interface SpeechRecognitionEvent extends Event {
+  results: SpeechRecognitionResultList;
+  resultIndex: number;
+}
 
+interface SpeechRecognitionErrorEvent extends Event {
+  error: string;
+  message: string;
+}
 
+interface Language {
+  code: string;
+  label: string;
+  speechLang: string;
+}
 
 function Model() {
   const gltf = useGLTF('/models/file.glb');
@@ -52,16 +76,14 @@ function Model() {
 
   useFrame((state) => {
     const { mouse } = state;
-    // Make model rotate slowly based on mouse X/Y position
     if (ref.current) {
-      ref.current.rotation.y = mouse.x * Math.PI;    // left/right
-      ref.current.rotation.x = -mouse.y * Math.PI * 0.2; // up/down, smaller effect
+      ref.current.rotation.y = mouse.x * Math.PI;
+      ref.current.rotation.x = -mouse.y * Math.PI * 0.2;
     }
   });
 
   return <primitive ref={ref} object={gltf.scene} />;
 }
-
 
 useGLTF.preload('/models/file.glb');
 
@@ -77,7 +99,6 @@ function GLBViewer() {
     </Canvas>
   );
 }
-
 
 interface Message {
   id: string;
@@ -106,8 +127,7 @@ interface ApiResponse {
   }[];
 }
 
-export default function MSOChatUI() {
-
+export default function MSOChatUI_test() {
   const useTypewriter = (text: string, speed: number = 50) => {
     const [displayText, setDisplayText] = useState('');
     const [isTyping, setIsTyping] = useState(false);
@@ -135,21 +155,121 @@ export default function MSOChatUI() {
     return { displayText, isTyping };
   };
 
+  // Langues disponibles pour la reconnaissance vocale
+  const availableLanguages: Language[] = [
+    { code: 'fr', label: 'Français', speechLang: 'fr-FR' },
+    { code: 'en', label: 'English', speechLang: 'en-US' },
+    { code: 'ar', label: 'العربية', speechLang: 'ar-SA' }
+  ];
+
   const [typingMessageId, setTypingMessageId] = useState<string | null>(null);
-
-  const [dynamicLoadingMessage, setDynamicLoadingMessage] = useState('');
-
   const [isVisible, setIsVisible] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
-
   const [isLoading, setIsLoading] = useState(false);
+
+  // États pour la reconnaissance vocale
+  const [isListening, setIsListening] = useState(false);
+  const [speechSupported, setSpeechSupported] = useState(false);
+  const [speechError, setSpeechError] = useState<string | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>(availableLanguages[0]);
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const quickActions = [
     "Doyen ?",
     "Comment m'inscrire ?",
     "Où voir les notes ?"
   ];
+
+  // Fermer le dropdown quand on clique ailleurs
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowLanguageDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Vérification du support de la Web Speech API
+  useEffect(() => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      setSpeechSupported(true);
+      recognitionRef.current = new SpeechRecognition();
+
+      // Configuration de la reconnaissance vocale
+      recognitionRef.current.continuous = false;
+      recognitionRef.current.interimResults = false;
+      recognitionRef.current.maxAlternatives = 1;
+
+      // Gestionnaires d'événements
+      recognitionRef.current.onstart = () => {
+        setIsListening(true);
+        setSpeechError(null);
+        setShowLanguageDropdown(false);
+      };
+
+      recognitionRef.current.onresult = (event: SpeechRecognitionEvent) => {
+        const transcript = event.results[0][0].transcript;
+        setMessage(transcript);
+        setIsListening(false);
+      };
+
+      recognitionRef.current.onerror = (event: SpeechRecognitionErrorEvent) => {
+        console.error('Erreur de reconnaissance vocale:', event.error);
+        setIsListening(false);
+
+        let errorMessage = '';
+        switch (event.error) {
+          case 'no-speech':
+            errorMessage = 'Aucune parole détectée. Réessayez.';
+            break;
+          case 'audio-capture':
+            errorMessage = 'Microphone non accessible.';
+            break;
+          case 'not-allowed':
+            errorMessage = 'Permission microphone refusée.';
+            break;
+          case 'network':
+            errorMessage = 'Erreur réseau lors de la reconnaissance.';
+            break;
+          default:
+            errorMessage = 'Erreur de reconnaissance vocale.';
+        }
+        setSpeechError(errorMessage);
+
+        // Effacer l'erreur après 3 secondes
+        setTimeout(() => setSpeechError(null), 3000);
+      };
+
+      recognitionRef.current.onend = () => {
+        setIsListening(false);
+      };
+    } else {
+      console.warn('Web Speech API non supportée par ce navigateur');
+      setSpeechSupported(false);
+    }
+
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.abort();
+      }
+    };
+  }, []);
+
+  // Mettre à jour la langue de reconnaissance quand elle change
+  useEffect(() => {
+    if (recognitionRef.current) {
+      recognitionRef.current.lang = selectedLanguage.speechLang;
+    }
+  }, [selectedLanguage]);
 
   useEffect(() => {
     const welcomeMessage: Message = {
@@ -161,27 +281,8 @@ export default function MSOChatUI() {
     setMessages([welcomeMessage]);
   }, []);
 
-  // const askQuestion = async (question: string, lang = "fr") => {
-  //   try {
-  //     const response = await fetch('http://localhost:8000/search', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({ question, lang }),
-  //     });
-
-  //     if (!response.ok) throw new Error('Erreur lors de la requête');
-
-  //     return await response.json() as ApiResponse;
-  //   } catch (error) {
-  //     console.error('API Error:', error);
-  //     throw error;
-  //   }
-  // };
-
-
   const MessageWithTyping = ({ message, shouldType }: { message: Message, shouldType: boolean }) => {
     const { displayText, isTyping } = useTypewriter(shouldType ? message.text : '', 30);
-
     const textToShow = shouldType ? displayText : message.text;
 
     return (
@@ -194,7 +295,6 @@ export default function MSOChatUI() {
 
   const askQuestion = (question: string, lang = "fr", onStatusUpdate: (message: string) => void): Promise<ApiResponse> => {
     return new Promise((resolve, reject) => {
-
       fetch('http://localhost:8000/search-stream', {
         method: 'POST',
         headers: {
@@ -225,18 +325,15 @@ export default function MSOChatUI() {
                 }
 
                 buffer += decoder.decode(value, { stream: true });
-
-
                 const lines = buffer.split('\n');
                 buffer = lines.pop() || '';
 
                 for (const line of lines) {
                   if (line.trim() === '') continue;
 
-                  // Les lignes SSE commencent par "data: "
                   if (line.startsWith('data: ')) {
                     try {
-                      const jsonStr = line.substring(6); // Enlever "data: "
+                      const jsonStr = line.substring(6);
                       const eventData = JSON.parse(jsonStr);
 
                       if (eventData.type === 'status') {
@@ -259,7 +356,6 @@ export default function MSOChatUI() {
                 }
               }
 
-              // Stream terminé sans réponse finale
               reader.releaseLock();
               reject(new Error('Stream ended without final response'));
 
@@ -278,6 +374,42 @@ export default function MSOChatUI() {
     });
   };
 
+  // Fonction pour gérer le clic sur le microphone
+  const handleMicrophoneClick = useCallback(() => {
+    if (!speechSupported) {
+      setSpeechError('Reconnaissance vocale non supportée');
+      return;
+    }
+
+    if (isListening) {
+      // Arrêter l'écoute
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+      setIsListening(false);
+      setShowLanguageDropdown(false);
+    } else {
+      // Afficher/masquer la liste des langues
+      setShowLanguageDropdown(!showLanguageDropdown);
+    }
+  }, [isListening, speechSupported, showLanguageDropdown]);
+
+  // Fonction pour démarrer la reconnaissance vocale avec une langue spécifique
+  const startVoiceRecognition = useCallback((language: Language) => {
+    if (!recognitionRef.current) return;
+
+    setSelectedLanguage(language);
+    setShowLanguageDropdown(false);
+
+    try {
+      recognitionRef.current.lang = language.speechLang;
+      recognitionRef.current.start();
+    } catch (error) {
+      console.error('Erreur lors du démarrage de la reconnaissance:', error);
+      setSpeechError('Erreur lors du démarrage de la reconnaissance vocale');
+    }
+  }, []);
+
   const handleSendMessage = async () => {
     if (message.trim() === '' || isLoading) return;
 
@@ -288,7 +420,6 @@ export default function MSOChatUI() {
       timestamp: new Date()
     };
     setMessages(prev => [...prev, userMessage]);
-    setMessage('');
 
     const tempResponse: Message = {
       id: (Date.now() + 1).toString(),
@@ -298,15 +429,15 @@ export default function MSOChatUI() {
     };
     setMessages(prev => [...prev, tempResponse]);
     setTypingMessageId(tempResponse.id);
+
     const currentQuestion = message;
     setMessage('');
-
     setIsLoading(true);
 
     try {
       const response = await askQuestion(
         currentQuestion,
-        "fr",
+        selectedLanguage.code,
         (statusMessage: string) => {
           setMessages(prev => prev.map(msg =>
             msg.id === tempResponse.id
@@ -325,14 +456,12 @@ export default function MSOChatUI() {
 
       if (response.llm_used && response.structured_response) {
         let text = response.structured_response;
-
         botResponses.push({
           id: `${Date.now() + 2}`,
           text,
           isUser: false,
           timestamp: new Date()
         });
-
       } else if (response.results && response.results.length > 0) {
         botResponses.push(...response.results.map((result, index) => ({
           id: `${Date.now() + index + 2}`,
@@ -357,9 +486,7 @@ export default function MSOChatUI() {
         msg.id === tempResponse.id
           ? {
             ...msg,
-            text: error instanceof Error
-              ? `Erreur: ${error.message}`
-              : "Erreur de connexion avec le serveur",
+            text: "Erreur de connexion avec le serveur",
             timestamp: new Date()
           }
           : msg
@@ -380,12 +507,9 @@ export default function MSOChatUI() {
     setMessage(action);
   };
 
-
-
   const toggleChat = () => {
     setIsVisible(!isVisible);
   };
-
 
   function formatMessageText(text: string) {
     const parts = text.split(/(https?:\/\/[^\s]+)/g);
@@ -407,7 +531,6 @@ export default function MSOChatUI() {
       )
     );
   }
-
 
   return (
     <div className="relative">
@@ -444,6 +567,13 @@ export default function MSOChatUI() {
 
           <hr />
 
+          {/* Affichage des erreurs de reconnaissance vocale */}
+          {speechError && (
+            <div className="mx-4 mt-2 p-2 bg-red-100 border border-red-300 text-red-700 rounded-md text-sm">
+              {speechError}
+            </div>
+          )}
+
           {/* Zone de chat */}
           <div className="flex-1 p-4 space-y-4 overflow-y-auto bg-gray-50 min-h-0">
             {messages.map((msg) => (
@@ -465,7 +595,6 @@ export default function MSOChatUI() {
                       <p className="text-sm whitespace-pre-wrap">
                         {formatMessageText(msg.text.split('\n\n').slice(1).join('\n\n'))}
                       </p>
-
                     </>
                   ) : (
                     <p className={`text-sm leading-relaxed ${msg.isUser ? 'text-gray-50' : 'text-gray-800'}`}>
@@ -474,7 +603,6 @@ export default function MSOChatUI() {
                         shouldType={msg.id === typingMessageId && !msg.isUser}
                       />
                     </p>
-
                   )}
                 </div>
                 {msg.isUser && (
@@ -505,33 +633,96 @@ export default function MSOChatUI() {
 
           {/* Zone d'entrée */}
           <div className="p-4 bg-transparent border-t border-gray-100 flex-shrink-0">
-            <div className="flex items-center gap-3 bg-gray-50 rounded-full px-4 py-3 border border-gray-200">
-              <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
-                <Paperclip className="w-5 h-5" />
-              </Button>
-              <Input
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Posez votre question..."
-                className="flex-1 border-none bg-transparent text-sm placeholder:text-gray-500 focus-visible:ring-0 focus-visible:ring-offset-0"
-                disabled={isLoading}
-              />
-              <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
-                <Mic className="w-5 h-5" />
-              </Button>
-              <Button
-                onClick={handleSendMessage}
-                size="icon"
-                className="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-8 h-8"
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                ) : (
-                  <Send className="w-4 h-4" />
-                )}
-              </Button>
+            <div className="relative">
+              {/* Dropdown de sélection de langue */}
+              {showLanguageDropdown && (
+                <div
+                  ref={dropdownRef}
+                  className="absolute w-30 bottom-full mr-7 right-0 bg-white border border-gray-200 rounded-xl z-50 overflow-hidden"
+                >
+                  <div className="py-1">
+                    {availableLanguages.map((language) => (
+                      <button
+                        key={language.code}
+                        className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors flex items-center justify-between ${selectedLanguage.code === language.code ? 'bg-blue-50 text-blue-500' : 'text-gray-700'
+                          }`}
+                        onClick={() => startVoiceRecognition(language)}
+                      >
+                        <span className="text-sm font-medium">{language.label}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-400">{language.code.toUpperCase()}</span>
+                          {selectedLanguage.code === language.code && (
+                            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                          )}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="flex items-center gap-3 bg-gray-50 rounded-full px-4 py-3 border border-gray-200">
+                <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-700">
+                  <Paperclip className="w-5 h-5" />
+                </Button>
+                <Input
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder={isListening ? `Écoute en cours (${selectedLanguage.label})...` : "Posez votre question..."}
+                  className="flex-1 border-none bg-transparent text-sm placeholder:text-gray-500 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  disabled={isLoading}
+                />
+
+                {/* Bouton microphone avec indicateur de langue */}
+                <div className="relative">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className={`transition-all duration-200 ${isListening
+                      ? 'text-red-500 hover:text-red-600 bg-red-50'
+                      : showLanguageDropdown
+                        ? 'text-blue-500 hover:text-blue-400 bg-blue-50'
+                        : speechSupported
+                          ? 'text-gray-500 hover:text-gray-700'
+                          : 'text-gray-300 cursor-not-allowed'
+                      }`}
+                    onClick={handleMicrophoneClick}
+                    disabled={!speechSupported || isLoading}
+                    title={
+                      !speechSupported
+                        ? 'Reconnaissance vocale non supportée'
+                        : isListening
+                          ? 'Cliquez pour arrêter l\'écoute'
+                          : 'Cliquez pour choisir la langue et parler'
+                    }
+                  >
+                    {isListening ? (
+                      <MicOff className="w-5 h-5 animate-pulse" />
+                    ) : (
+                      <Mic className="w-5 h-5" />
+                    )}
+                  </Button>
+                  {!isListening && (
+                    <div className="absolute -bottom-1 -right-1 bg-orange-50 text-white text-xs px-1 rounded text-[10px] leading-tight">
+                      {selectedLanguage.code.toUpperCase()}
+                    </div>
+                  )}
+                </div>
+
+                <Button
+                  onClick={handleSendMessage}
+                  size="icon"
+                  className="bg-blue-500 hover:bg-blue-400 text-white rounded-full w-8 h-8"
+                  disabled={isLoading || message.trim() === ''}
+                >
+                  {isLoading ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
