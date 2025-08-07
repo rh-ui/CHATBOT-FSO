@@ -47,7 +47,7 @@ def extract_key_entities(question: str) -> List[str]:
         r'(?:formation\s+)([a-z0-9]+)',                 # "formation SMI"
         r'(?:licence\s+)([a-z0-9\s]+)',                 # "licence informatique"
         r'(?:master\s+)([a-z0-9\s]+)',                  # "master data science"
-        r'(?:doctorat\s+)([a-z0-9\s]+)',               # "doctorat physique"
+        r'(?:doctorat\s+)([a-z0-9\s]+)',                # "doctorat physique"
         r'\b([a-z]{2,4}[0-9]*)\b',                      # Short codes like SMI, SMA, M1, etc.
     ]
     
