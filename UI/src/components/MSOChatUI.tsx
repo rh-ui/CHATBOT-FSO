@@ -1,18 +1,50 @@
 import { useEffect, useState } from 'react';
-import { Minus, Mic, Paperclip, ArrowUp, Send } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
+import { Minus, Mic, Paperclip, ArrowUp, Send } from 'lucide-react'
 import '@/style/master.css';
 import ROBOT from '@/assets/robot.png';
 import CPU_AVATAR from '@/assets/Cpu.png';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-
-
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-
 import * as THREE from 'three';
+
+
+
+/**
+ *      COTE FRONTEND : bach nrj3 loading state dynamic
+ * 
+ *      Etapes : 
+ *          - Etape 1 :
+ *              1) remplacer fetch b EventSource for listening SSE
+ *              2) Créer une connexion vers /search-stream
+ *          - Etape 2 : 
+ *              1) Ajouter un state pour le message de loading actuel
+ *              2) update message in each received msg
+ *              3) Afficher ce message dynamique au lieu du message statique
+ *          - Etape 3 :  --> cycle de vie de la cnx
+ *              1) ouvrir EventSource au debut de l'envoi
+ *              2) listening les événements et mettre à jour l'UI
+ *              3) fermer la connexion quand la reponse finale arrive
+ *          - Etape 4 : 
+ *              1) remplacer le msg : "je traite votre demande ..." par le msg dynamic
+ *              3) ajouter des animations
+ * 
+ * 
+ * 
+ *        n.b: Types d'événements :
+ *                -> 'status' → Appelle onStatusUpdate(message)
+ *                -> 'final' → Résout la Promise avec les données
+ *                -> 'error' → Rejette la Promisex²
+ */
+
+
+
+
+
+
+
 
 function Model() {
   const gltf = useGLTF('/models/file.glb');
@@ -30,7 +62,7 @@ function Model() {
   return <primitive ref={ref} object={gltf.scene} />;
 }
 
-// Preload the model
+
 useGLTF.preload('/models/file.glb');
 
 function GLBViewer() {
@@ -46,9 +78,6 @@ function GLBViewer() {
   );
 }
 
-
-
-// ... tous les imports en haut restent inchangés ...
 
 interface Message {
   id: string;
@@ -78,16 +107,48 @@ interface ApiResponse {
 }
 
 export default function MSOChatUI() {
+
+  const useTypewriter = (text: string, speed: number = 50) => {
+    const [displayText, setDisplayText] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+
+    useEffect(() => {
+      if (!text) return;
+
+      setIsTyping(true);
+      setDisplayText('');
+
+      let index = 0;
+      const timer = setInterval(() => {
+        setDisplayText(text.slice(0, index + 1));
+        index++;
+
+        if (index >= text.length) {
+          clearInterval(timer);
+          setIsTyping(false);
+        }
+      }, speed);
+
+      return () => clearInterval(timer);
+    }, [text, speed]);
+
+    return { displayText, isTyping };
+  };
+
+  const [typingMessageId, setTypingMessageId] = useState<string | null>(null);
+
+  const [dynamicLoadingMessage, setDynamicLoadingMessage] = useState('');
+
   const [isVisible, setIsVisible] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
-  const [splineScene, setSplineScene] = useState<string | null>(null);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const quickActions = [
+    "Doyen ?",
     "Comment m'inscrire ?",
-    "Où voir les notes ?",
-    "FAQs"
+    "Où voir les notes ?"
   ];
 
   useEffect(() => {
@@ -100,21 +161,121 @@ export default function MSOChatUI() {
     setMessages([welcomeMessage]);
   }, []);
 
-  const askQuestion = async (question: string, lang = "fr") => {
-    try {
-      const response = await fetch('http://localhost:8000/search', {
+  // const askQuestion = async (question: string, lang = "fr") => {
+  //   try {
+  //     const response = await fetch('http://localhost:8000/search', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({ question, lang }),
+  //     });
+
+  //     if (!response.ok) throw new Error('Erreur lors de la requête');
+
+  //     return await response.json() as ApiResponse;
+  //   } catch (error) {
+  //     console.error('API Error:', error);
+  //     throw error;
+  //   }
+  // };
+
+
+  const MessageWithTyping = ({ message, shouldType }: { message: Message, shouldType: boolean }) => {
+    const { displayText, isTyping } = useTypewriter(shouldType ? message.text : '', 30);
+
+    const textToShow = shouldType ? displayText : message.text;
+
+    return (
+      <span>
+        {formatMessageText(textToShow)}
+        {shouldType && isTyping && <span className="animate-pulse">|</span>}
+      </span>
+    );
+  };
+
+  const askQuestion = (question: string, lang = "fr", onStatusUpdate: (message: string) => void): Promise<ApiResponse> => {
+    return new Promise((resolve, reject) => {
+
+      fetch('http://localhost:8000/search-stream', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ question, lang }),
-      });
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
 
-      if (!response.ok) throw new Error('Erreur lors de la requête');
+          const reader = response.body?.getReader();
+          if (!reader) {
+            throw new Error('No response body reader available');
+          }
 
-      return await response.json() as ApiResponse;
-    } catch (error) {
-      console.error('API Error:', error);
-      throw error;
-    }
+          const decoder = new TextDecoder();
+          let buffer = '';
+
+          const readStream = async () => {
+            try {
+              while (true) {
+                const { done, value } = await reader.read();
+
+                if (done) {
+                  break;
+                }
+
+                buffer += decoder.decode(value, { stream: true });
+
+
+                const lines = buffer.split('\n');
+                buffer = lines.pop() || '';
+
+                for (const line of lines) {
+                  if (line.trim() === '') continue;
+
+                  // Les lignes SSE commencent par "data: "
+                  if (line.startsWith('data: ')) {
+                    try {
+                      const jsonStr = line.substring(6); // Enlever "data: "
+                      const eventData = JSON.parse(jsonStr);
+
+                      if (eventData.type === 'status') {
+                        onStatusUpdate(eventData.message);
+                      }
+                      else if (eventData.type === 'final') {
+                        reader.releaseLock();
+                        resolve(eventData.data as ApiResponse);
+                        return;
+                      }
+                      else if (eventData.type === 'error') {
+                        reader.releaseLock();
+                        reject(new Error(eventData.message));
+                        return;
+                      }
+                    } catch (parseError) {
+                      console.warn('Failed to parse SSE data:', line, parseError);
+                    }
+                  }
+                }
+              }
+
+              // Stream terminé sans réponse finale
+              reader.releaseLock();
+              reject(new Error('Stream ended without final response'));
+
+            } catch (streamError) {
+              reader.releaseLock();
+              reject(streamError);
+            }
+          };
+
+          readStream();
+
+        })
+        .catch(fetchError => {
+          reject(fetchError);
+        });
+    });
   };
 
   const handleSendMessage = async () => {
@@ -131,15 +292,34 @@ export default function MSOChatUI() {
 
     const tempResponse: Message = {
       id: (Date.now() + 1).toString(),
-      text: "Je traite votre demande...",
+      text: "Initialisation...",
       isUser: false,
       timestamp: new Date()
     };
     setMessages(prev => [...prev, tempResponse]);
+    setTypingMessageId(tempResponse.id);
+    const currentQuestion = message;
+    setMessage('');
 
     setIsLoading(true);
+
     try {
-      const response = await askQuestion(message);
+      const response = await askQuestion(
+        currentQuestion,
+        "fr",
+        (statusMessage: string) => {
+          setMessages(prev => prev.map(msg =>
+            msg.id === tempResponse.id
+              ? {
+                ...msg,
+                text: statusMessage,
+                timestamp: new Date()
+              }
+              : msg
+          ));
+          setTypingMessageId(tempResponse.id);
+        }
+      );
 
       const botResponses: Message[] = [];
 
@@ -152,6 +332,7 @@ export default function MSOChatUI() {
           isUser: false,
           timestamp: new Date()
         });
+
       } else if (response.results && response.results.length > 0) {
         botResponses.push(...response.results.map((result, index) => ({
           id: `${Date.now() + index + 2}`,
@@ -169,16 +350,21 @@ export default function MSOChatUI() {
       }
 
       setMessages(prev => [...prev.filter(msg => msg.id !== tempResponse.id), ...botResponses]);
+      setTypingMessageId(tempResponse.id);
+
     } catch (error) {
       setMessages(prev => prev.map(msg =>
         msg.id === tempResponse.id
           ? {
             ...msg,
-            text: "Erreur de connexion avec le serveur",
+            text: error instanceof Error
+              ? `Erreur: ${error.message}`
+              : "Erreur de connexion avec le serveur",
             timestamp: new Date()
           }
           : msg
       ));
+      setTypingMessageId(tempResponse.id);
     } finally {
       setIsLoading(false);
     }
@@ -194,9 +380,7 @@ export default function MSOChatUI() {
     setMessage(action);
   };
 
-  useEffect(() => {
-    setSplineScene("https://prod.spline.design/l1R44eHGk3Qq8SAI/scene.splinecode");
-  }, []);
+
 
   const toggleChat = () => {
     setIsVisible(!isVisible);
@@ -285,7 +469,10 @@ export default function MSOChatUI() {
                     </>
                   ) : (
                     <p className={`text-sm leading-relaxed ${msg.isUser ? 'text-gray-50' : 'text-gray-800'}`}>
-                      {formatMessageText(msg.text)}
+                      <MessageWithTyping
+                        message={msg}
+                        shouldType={msg.id === typingMessageId && !msg.isUser}
+                      />
                     </p>
 
                   )}

@@ -6,11 +6,10 @@ from typing import List, Dict, Any, Union
 from pydantic import BaseModel
 import json
 import os
-import uuid
-from pathlib import Path
 from datetime import datetime
 import psutil
 import GPUtil
+from .SerpService import get_internet_results_for_question
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -2061,7 +2060,7 @@ class LLMService:
                 return None
             
             # Use existing internet function to generate response
-            internet_response = internet(fallback_questions, lang)
+            internet_response = get_internet_results_for_question(fallback_questions, lang)
             return internet_response.get('structured_response', '')
             
         except Exception as e:
@@ -2107,5 +2106,5 @@ class LLMService:
         
         return min(final_confidence, 1.0)
 
-llm_service = LLMService()
 
+llm_service = LLMService()

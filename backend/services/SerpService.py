@@ -1,14 +1,14 @@
 import logging
-from typing import Dict, List, Union
+from typing import Dict, List
 from playwright.sync_api import sync_playwright
 import time
 import re
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from collections import Counter
-import numpy as np
-from LLMService import llm_service
+# from ..services.LLMService import llm_service
+
+
 
 logger = logging.getLogger(__name__)
 

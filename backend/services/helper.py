@@ -1,6 +1,7 @@
+import json
 import re
-from typing import Dict, List, Set
-from opensearchpy import OpenSearch, exceptions
+from typing import Dict, List
+from opensearchpy import OpenSearch
 import logging
 
 
@@ -143,3 +144,38 @@ def determine_source_type(question_type: str, documents: List[Dict]) -> str:
         return "internet"
     else:
         return "database"
+    
+def index_faq_data(dict_file, intent_val, lang, confidence):
+    # Load the dict structure
+    with open(dict_file, "r", encoding="utf-8") as f:
+        dataset = json.load(f)
+
+    # Get the exact entry in O(1)
+    entry = dataset.get(intent_val)
+    if not entry:
+        print(f"No entry found for intent: {intent_val}")
+        return []
+
+    reponses = entry.get("reponse", {})
+    metas = entry.get("meta", {})  # Some entries may not have this
+    date = entry.get("data", str)
+
+    if lang not in reponses:
+        print(f"No responses found for lang: {lang}")
+        return []
+
+    docs = []
+    for answer in reponses[lang]:
+        doc = {
+            "answer": answer,
+            "lang": lang,
+            "intent": intent_val,
+            "confidence": confidence,
+            "date": date
+        }
+        if metas and lang in metas and metas[lang]:
+            doc["meta"] = metas[lang][0]
+
+        docs.append(doc)
+
+    return docs

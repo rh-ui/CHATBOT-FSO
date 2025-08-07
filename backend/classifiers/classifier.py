@@ -1,19 +1,14 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
-from sklearn.pipeline import Pipeline
 import re
-import pickle
 import joblib
-from collections import Counter
-import matplotlib.pyplot as plt
-import seaborn as sns
 import csv
 import warnings
 warnings.filterwarnings('ignore')
@@ -448,7 +443,7 @@ class MultilingualIntentClassifier:
         except Exception as e:
             print(f"Error saving model: {str(e)}")
     
-    def load_model(self, model_path='intent_classifier_model.pkl'):
+    def load_model(self, model_path):
         try:
             model_data = joblib.load(model_path)
             self.best_vectorizer = model_data['vectorizer']
@@ -592,7 +587,7 @@ def main_example():
     
     try:
         # Step 1: Initialize the classifier with your CSV file
-        classifier = MultilingualIntentClassifier('cleaned_dataset.csv')
+        classifier = MultilingualIntentClassifier('../data/cleaned_dataset.csv')
         
         # Step 2: Load and preprocess data
         data = classifier.load_and_preprocess_data()
