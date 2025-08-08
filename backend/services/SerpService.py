@@ -129,7 +129,11 @@ def filter_snippets_by_semantic_relevance(snippets, query, top_k=5, min_score=0.
     return scored_snippets[:top_k]
 
 def google_search_and_extract(query, lang, max_results=10):
+    logger.info("enter google_search_and_extract")
     with sync_playwright() as p:
+        
+        logger.info("enter sync_playwright")
+
         browser = p.chromium.launch(
             headless=False,
             args=[
@@ -163,11 +167,11 @@ def google_search_and_extract(query, lang, max_results=10):
                 query = query.replace('fso', 'la faculté des science oujda')
         elif lang == 'en':
             if 'fso' in query.lower():
-                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
+                query['fso'] = query.get('fso', '').replace('faculty of science oujda', '')
 
         elif lang == 'ar':
             if 'fso' in query.lower():
-                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
+                query['fso'] = query.get('fso', '').replace('كلية العلوم وجدة', '')
 
         elif lang == 'amz':
             if 'fso' in query.lower():
@@ -180,6 +184,7 @@ def google_search_and_extract(query, lang, max_results=10):
             page.goto(search_url, wait_until="domcontentloaded", timeout=60000)
             
         except Exception as e:
+            logger.error(e)
             browser.close()
             return []
 
@@ -208,6 +213,7 @@ def google_search_and_extract(query, lang, max_results=10):
                 except:
                     continue
         except Exception:
+            logger.error(Exception)
             pass
 
         # Wait a bit and add random mouse movement
@@ -255,16 +261,16 @@ def google_search_and_extract(query, lang, max_results=10):
         try:
             page.wait_for_selector('div#search', timeout=10000)
         except Exception:
-            print("div#search not found, trying div#rso")
+            logger.info("div#search not found, trying div#rso")
             try:
                 page.wait_for_selector('div#rso', timeout=5000)
             except Exception:
-                print("No search results found, checking page content...")
+                logger.info("No search results found, checking page content...")
 
         # Optional extra wait for page to stabilize
         time.sleep(2)
 
-        print("🔍 Recherche des sélecteurs possibles...")
+        logger.info("🔍 Recherche des sélecteurs possibles...")
         
         possible_selectors = [
             "div.g",                           # Sélecteur classique
@@ -280,7 +286,7 @@ def google_search_and_extract(query, lang, max_results=10):
         for selector in possible_selectors:
             test_results = page.locator(selector)
             count = test_results.count()
-            print(f"   🔍 {selector}: {count} éléments trouvés")
+            logger.info(f"  🔍 {selector}: {count} éléments trouvés")
             
             if count > 0:
                 results = test_results
@@ -290,7 +296,8 @@ def google_search_and_extract(query, lang, max_results=10):
         if not results or results.count() == 0:
             try:
                 page.screenshot(path="debug_google_results.png")
-            except:
+            except e:
+                logger.info(e)
                 pass
             
             # Essayer de trouver tous les liens
@@ -346,6 +353,7 @@ def google_search_and_extract(query, lang, max_results=10):
                 titles.append(title)
                     
             except Exception as e:
+                logger.info(e)
                 continue
 
         if len(snippets) == 0:
@@ -364,13 +372,13 @@ def google_search_and_extract(query, lang, max_results=10):
                         for i in range(min(3, test_results.count())):
                             try:
                                 example_text = test_results.nth(i).inner_text()[:100]
-                                print(f"   Exemple {i+1}: {example_text}...")
+                                logger.info(f"   Exemple {i+1}: {example_text}...")
                             except:
                                 pass
                         break
                         
             except Exception as e:
-                print(f"Recherche large échouée: {e}")
+                logger.info(f"Recherche large échouée: {e}")
         
         browser.close()
         
@@ -402,6 +410,7 @@ def google_search_and_extract(query, lang, max_results=10):
                 resultats_formates.append(resultat)
                 
             except ValueError:
+                logger.info(ValueError)
                 continue
 
         return resultats_formates
@@ -413,9 +422,9 @@ def afficher_resultats(resultats):
     
     for i, resultat in enumerate(resultats, 1):
         for metric, score in resultat['scores_detailles'].items():
-            print(f"   • {metric}: {score}")
+            logger.info(f"   • {metric}: {score}")
         
-        print("-" * 80)
+        logger.info("-" * 80)
 
 def get_no_results_message(lang: str) -> str:
     """Get appropriate no results message based on language"""
@@ -434,10 +443,8 @@ def get_internet_results_for_question(question: str, lang: str) -> List[Dict]:
     """
     try:
         logger.info(f"Searching internet for: {question}")
-        
-        # Use the existing internet search function
-        search_results = google_search_and_extract(question, lang, max_results=10)  # Reduced from 15 to 10
-        
+        search_results = google_search_and_extract(question, lang, max_results=15)
+        logger.info(f"Serp-search_results-> {search_results}")
         formatted_results = []
         for i, result in enumerate(search_results, 1):
             formatted_result = {
@@ -460,5 +467,5 @@ def get_internet_results_for_question(question: str, lang: str) -> List[Dict]:
         return formatted_results
         
     except Exception as e:
-        logger.error(f"Error in internet search: {str(e)}")
+        logger.error(f"Error in internet search: {str(e)}", exc_info=True)
         return []

@@ -2,26 +2,22 @@ import asyncio
 import os
 if hasattr(asyncio, 'WindowsProactorEventLoopPolicy'):
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
-
-
+   
 from Models.query import Query
-
-import numpy as np
 import logging
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from services.StreamGenerator import StreamGenerator
+from config import core
 
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
 os.environ['PYTHONASYNCIODEBUG'] = '1'
 
-LANG_MAP = {
-    'fr': 'fr',
-    'en': 'en',
-    'ar': 'ar',    
-    'amz': 'amz'
-}
+LANG_MAP = core.LANG_MAP
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

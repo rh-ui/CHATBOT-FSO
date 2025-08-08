@@ -1,5 +1,3 @@
-# -------------------------------  GPU ------------------------------- #
-
 import requests
 import logging
 from typing import List, Dict, Any, Union
@@ -11,45 +9,42 @@ import psutil
 import GPUtil
 from .SerpService import get_internet_results_for_question
 
-# Configuration du logging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class LLMService:
     def __init__(self):
+        os.environ['CUDA_VISIBLE_DEVICES'] = '1' 
+        os.environ['OLLAMA_GPU_LAYERS'] = '999'
+        os.environ['OLLAMA_NUM_PARALLEL'] = '1'
+        os.environ['OLLAMA_MAX_LOADED_MODELS'] = '1'
+        os.environ['OLLAMA_KEEP_ALIVE'] = '10m'
         
-        # Configuration GPU optimisée pour RTX 3050 (4GB VRAM)
-        # IMPORTANT: Forcer l'utilisation de la RTX 3050 (GPU 1)
-        os.environ['CUDA_VISIBLE_DEVICES'] = '1'  # RTX 3050 est le GPU 1
-        os.environ['OLLAMA_GPU_LAYERS'] = '999'  # Toutes les couches sur GPU
-        os.environ['OLLAMA_NUM_PARALLEL'] = '1'  # Une seule inférence à la fois
-        os.environ['OLLAMA_MAX_LOADED_MODELS'] = '1'  # Un seul modèle en mémoire
-        os.environ['OLLAMA_KEEP_ALIVE'] = '10m'  # Garde le modèle en mémoire plus longtemps
         
-        # Configuration spécifique NVIDIA
         os.environ['NVIDIA_VISIBLE_DEVICES'] = '1'
         os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
         
-        # Configuration pour Ollama
+        
         self.base_url = "http://localhost:11434"
         self.model_name = "llama3:8b"
         
-        # Paramètres optimisés pour GPU
+        
         self.gpu_optimized_options = {
-            "num_ctx": 2048,  # Contexte réduit pour économiser VRAM
-            "num_batch": 512,  # Batch size optimisé
-            "num_gqa": 8,      # Grouped Query Attention
-            "num_gpu": 999,    # Toutes les couches sur GPU
-            "num_thread": 4,   # Threads CPU pour les ops non-GPU
+            "num_ctx": 2048, 
+            "num_batch": 512,  
+            "num_gqa": 8,     
+            "num_gpu": 999,  
+            "num_thread": 4,   
             "temperature": 0.1,
             "top_p": 0.9,
             "repeat_penalty": 1.2,
             "num_predict": 1200,
-            "use_mmap": True,   # Memory mapping pour efficacité
-            "use_mlock": True,  # Lock memory pour performance
+            "use_mmap": True,   
+            "use_mlock": True,
         }
 
-        # Prompts optimisés pour la structuration de réponses
+        
         self.prompts = {
             'fr': {
                 'system': """Tu es l'assistant virtuel officiel de la Faculté des Sciences d'Oujda (FSO). 
@@ -189,7 +184,7 @@ class LLMService:
     def _call_ollama(self, prompt: str, system_prompt: str = None) -> str:
         """Appelle l'API Ollama avec optimisations GPU"""
         try:
-            # Payload optimisé pour GPU
+            
             payload = {
                 "model": self.model_name,
                 "prompt": prompt,
@@ -197,18 +192,17 @@ class LLMService:
                 "options": self.gpu_optimized_options.copy()
             }
             
-            # Ajouter le system prompt si fourni
             if system_prompt:
                 payload["system"] = system_prompt
             
-            # Log avant l'appel
+            
             start_time = datetime.now()
             logger.info(f"Appel Ollama GPU - Prompt: {len(prompt)} caractères")
             
             response = requests.post(
                 f"{self.base_url}/api/generate",
                 json=payload,
-                timeout=60000  # Timeout réduit car GPU est plus rapide
+                timeout=60000
             )
             
             processing_time = (datetime.now() - start_time).total_seconds()
@@ -217,7 +211,7 @@ class LLMService:
                 result = response.json()
                 response_text = result.get('response', '').strip()
                 
-                # Log des performances
+                
                 logger.info(f"Réponse générée en {processing_time:.2f}s")
                 logger.info(f"Tokens évalués: {result.get('eval_count', 'N/A')}")
                 logger.info(f"Vitesse: {result.get('eval_count', 0) / processing_time:.1f} tokens/s")
@@ -368,32 +362,31 @@ class LLMService:
         try:
             start_time = datetime.now()
             
-            # Enhanced prompt configuration for comprehensive processing
             comprehensive_prompts = {
                 'fr': {
                     'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
                     Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive et cohérente.
 
                     RÈGLES IMPORTANTES:
-                    1. Analyse TOUTES les questions ensemble pour comprendre le besoin complet d'information de l'utilisateur
-                    2. Examine les réponses pour identifier:
-                    - Les informations complémentaires qui doivent être combinées
-                    - Les contradictions qui nécessitent une résolution
-                    - Les lacunes qui doivent être reconnues
-                    3. Structure ta réponse pour:
-                    - Répondre clairement à chaque question
-                    - Montrer les connexions entre questions liées
-                    - Résoudre les conflits entre réponses
-                    - Maintenir un flux logique
-                    4. Pour les questions temporelles, indique clairement la période de chaque information
-                    5. Préserve toutes les informations uniques et précieuses tout en éliminant la redondance
-                    6. Si les réponses sont en conflit, indique-le et fournis toutes les perspectives
-                    7. Utilise un format structuré pour les cas multi-questions complexes
+                        1. Analyse TOUTES les questions ensemble pour comprendre le besoin complet d'information de l'utilisateur
+                        2. Examine les réponses pour identifier:
+                            - Les informations complémentaires qui doivent être combinées
+                            - Les contradictions qui nécessitent une résolution
+                            - Les lacunes qui doivent être reconnues
+                        3. Structure ta réponse pour:
+                            - Répondre clairement à chaque question
+                            - Montrer les connexions entre questions liées
+                            - Résoudre les conflits entre réponses
+                            - Maintenir un flux logique
+                        4. Pour les questions temporelles, indique clairement la période de chaque information
+                        5. Préserve toutes les informations uniques et précieuses tout en éliminant la redondance
+                        6. Si les réponses sont en conflit, indique-le et fournis toutes les perspectives
+                        7. Utilise un format structuré pour les cas multi-questions complexes
 
                     FORMAT DE SORTIE:
-                    1. Réponse synthétique qui traite tous les aspects
-                    2. Indication des sources d'information
-                    3. Gestion des conflits ou incertitudes si nécessaire""",
+                        1. Réponse synthétique qui traite tous les aspects
+                        2. Indication des sources d'information
+                        3. Gestion des conflits ou incertitudes si nécessaire""",
 
                     'user': """QUESTION ORIGINALE DE L'UTILISATEUR:
                     {original_question}
@@ -405,7 +398,8 @@ class LLMService:
                     - Total des questions: {num_questions}
                     - Total des sources: {num_sources}
 
-                    TÂCHE: Génère une réponse comprehensive qui traite tous les aspects du besoin d'information de l'utilisateur en synthétisant toutes les informations disponibles. Résous les conflits, comble les lacunes si possible, et maintiens toutes les informations précieuses tout en éliminant la redondance."""
+                    TÂCHE: Génère une réponse comprehensive qui traite tous les aspects du besoin d'information de l'utilisateur en synthétisant toutes les informations disponibles.
+                    Résous les conflits, comble les lacunes si possible, et maintiens toutes les informations précieuses tout en éliminant la redondance."""
                 },
                 
                 'en': {
@@ -433,7 +427,7 @@ class LLMService:
                     2. Source information indication
                     3. Conflict or uncertainty management if needed""",
 
-                                    'user': """USER'S ORIGINAL QUESTION:
+                    'user': """USER'S ORIGINAL QUESTION:
                     {original_question}
 
                     SIMPLIFIED QUESTIONS AND THEIR ANSWERS:
@@ -552,10 +546,10 @@ class LLMService:
             
             avg_score = sum(scores) / len(scores)
             
-            # Bonus pour plusieurs sources
+            # pour plusieurs sources
             source_bonus = min(len(results) * 0.05, 0.2)
             
-            # Bonus si les scores sont élevés
+            # si les scores sont élevés
             high_score_bonus = 0.1 if avg_score > 0.8 else 0.0
             
             final_confidence = min(avg_score + source_bonus + high_score_bonus, 1.0)
@@ -593,7 +587,6 @@ class LLMService:
                 }
             }
             
-            # Ajouter info GPU si disponible
             try:
                 gpus = GPUtil.getGPUs()
                 if gpus:
@@ -621,7 +614,7 @@ class LLMService:
                 if isinstance(value, (str, int, float)):
                     formatted_parts.append(f"- {key}: {value}")
                 elif isinstance(value, list):
-                    if len(value) <= 5:  # Limit list items to avoid overwhelming the model
+                    if len(value) <= 5:
                         formatted_parts.append(f"- {key}: {', '.join(map(str, value))}")
                     else:
                         formatted_parts.append(f"- {key}: {', '.join(map(str, value[:5]))} (et {len(value)-5} autres)")
@@ -864,11 +857,63 @@ class LLMService:
         }
 
     def process_serp_to_response(self, question: str, serp_data: str, lang: str, 
-                    store_to_file: bool = True, filename: str = "test.json") -> Dict[str, Any]:
-        """Process SERP avec validation FSO et integration du modèle fine-tuné"""
-        
+                    store_to_file: bool = True, filename: str = "test.json") -> Dict[str, Any]:        
+        """
+            1. Analyse des résultats SERP :
+                - Convertir le texte SERP en minuscules.
+                - Compter les occurrences d’indicateurs FSO.
+
+            2. Vérification du score FSO :
+                - Si indicators_score < 2 → considérer les résultats comme insuffisamment pertinents.
+                - Action : utiliser directement generate_faculty_response (fallback).
+
+            3. Préparation du prompt système :
+                - Répondre uniquement sur la FSO.
+                - Ignorer toute autre faculté ou établissement.
+                - Maintenir la question utilisateur intacte.
+                - Produire un JSON structuré avec knowledge_entry.
+
+            4. Filtrage des données SERP :
+                - Appeler _filter_fso_content pour nettoyer les résultats.
+                - Supprimer tout contenu hors FSO avant envoi au LLM.
+
+            5. Construction du user_prompt :
+            - Inclure :
+                - Question originale de l’utilisateur.
+                - Résultats SERP filtrés.
+                - Instructions pour format JSON attendu.
+
+            6. Appel API LLM :
+                - Envoyer le system_prompt et le user_prompt à l’API LLM (GPU activé).
+                - Enregistrer le temps de réponse.
+
+            7. Extraction de la réponse LLM :
+                - Extraire le JSON de la réponse.
+                - Charger en objet Python (json.loads).
+
+            8. Validation du JSON :
+                - Si is_fso_relevant est false → fallback vers generate_faculty_response.
+                - Vérifier que la question FR correspond bien à celle posée.
+
+            9. Stockage :
+            - Si store_to_file=True et knowledge_entry existe → sauvegarder le JSON via store_to_json_file.
+
+            10. Retour des données finales :
+                - Retourner un dictionnaire contenant :
+                    {
+                        - display : réponse textuelle pour l’utilisateur.
+                        - storage : données structurées.
+                        - confidence : niveau de confiance.
+                        - file_path : chemin du fichier si stocké.
+                        - processing_time : temps total de traitement.
+                        - indicators : score et détails.
+                        - rejected_content : contenu supprimé.
+                    }
+            11. Gestion des erreurs :
+                - Si exception levée → fallback vers generate_faculty_response --> reponse par LLM lui meme.
+        """
+
         try:
-            # Validation FSO dans les données SERP
             fso_indicators = [
                 "faculté des sciences", "fso", "sciences oujda", 
                 "mohammed premier", "ump.ac.ma", "fso.ump.ma"
@@ -877,12 +922,11 @@ class LLMService:
             serp_text = str(serp_data).lower()
             fso_score = sum(1 for indicator in fso_indicators if indicator in serp_text)
             
-            # Si peu d'indicateurs FSO, utiliser le modèle fine-tuné directement
             if fso_score < 2:
                 logger.warning("SERP data contains little FSO content, using fine-tuned model instead")
                 return self.generate_faculty_response(question, lang)
             
-            # System prompt amélioré pour traitement SERP
+            
             system_prompt = (
                 "TASK: Process SERP data for Faculty of Sciences Oujda (FSO) ONLY\n"
                 "CRITICAL: Filter out any content from other faculties (Letters, Economics, EST, etc.)\n"
@@ -893,7 +937,7 @@ class LLMService:
                 "Language: " + str(lang) + "\n"
             )
             
-            # Template JSON avec validation FSO
+            
             json_template = """{
                 "user_response": "Answer based ONLY on FSO-related SERP data",
                 "validation": {
@@ -933,7 +977,7 @@ class LLMService:
                 "confidence": 0.8
             }"""
             
-            # Format SERP data avec pre-filtering
+            
             formatted_serp_data = self._filter_fso_content(serp_data)
             
             user_prompt = (
@@ -951,9 +995,9 @@ class LLMService:
                 "Generate the FSO-validated JSON response:"
             )
             
-            # Call Ollama avec votre modèle fine-tuné
+            
             payload = {
-                "model": self.model_name,  # Votre modèle fine-tuné
+                "model": self.model_name,
                 "prompt": user_prompt,
                 "system": system_prompt,
                 "stream": False,
@@ -975,7 +1019,7 @@ class LLMService:
                 result = response.json()
                 llm_output = result.get('response', '').strip()
                 
-                # Parse et validate JSON
+                
                 json_start = llm_output.find('{')
                 json_end = llm_output.rfind('}') + 1
                 
@@ -983,7 +1027,7 @@ class LLMService:
                     json_str = llm_output[json_start:json_end]
                     processed = json.loads(json_str)
                     
-                    # Validation FSO
+                    
                     validation = processed.get('validation', {})
                     if not validation.get('is_fso_relevant', False):
                         logger.warning("SERP content not FSO-relevant, falling back to fine-tuned model")
@@ -991,13 +1035,13 @@ class LLMService:
                     
                     knowledge_entry = processed.get('knowledge_entry', {})
                     
-                    # Force original question preservation
+                    
                     questions = knowledge_entry.get('question', {})
                     if questions.get('fr') and isinstance(questions['fr'], list):
                         if questions['fr'][0] != question:
                             questions['fr'][0] = question
                     
-                    # Store to file if requested
+                    
                     storage_success = False
                     if store_to_file and knowledge_entry:
                         storage_success = self.store_to_json_file(knowledge_entry, filename)
@@ -1021,7 +1065,6 @@ class LLMService:
                 
         except Exception as e:
             logger.error(f"Error in FSO SERP processing: {str(e)}")
-            # Fallback to fine-tuned model
             logger.info("Falling back to fine-tuned model due to SERP processing error")
             return self.generate_faculty_response(question, lang)
 
@@ -1132,12 +1175,10 @@ class LLMService:
             prompt = base_instructions.get(lang, base_instructions['fr'])
             
             enhanced_response = self._call_ollama(prompt=prompt)
-            
-            # Post-traitement pour s'assurer qu'il n'y a pas de doublons
             enhanced_response = self._remove_duplicates(enhanced_response)
             
             return enhanced_response
-            
+        
         except Exception as e:
             logger.error(f"Erreur lors de l'amélioration avec contexte: {str(e)}")
             return response
@@ -1147,10 +1188,7 @@ class LLMService:
         Supprime les phrases et blocs dupliqués dans le texte
         """
         try:
-            # D'abord, supprimer les blocs complets dupliqués
             text = self._remove_block_duplicates(text)
-            
-            # Ensuite, supprimer les phrases dupliquées
             sentences = text.split('.')
             unique_sentences = []
             seen = set()
@@ -1172,7 +1210,6 @@ class LLMService:
         Supprime les blocs de texte identiques répétés
         """
         try:
-            # Diviser par paragraphes ou sections
             paragraphs = text.split('\n\n')
             unique_paragraphs = []
             seen_paragraphs = set()
@@ -1180,7 +1217,6 @@ class LLMService:
             for paragraph in paragraphs:
                 paragraph = paragraph.strip()
                 if paragraph:
-                    # Normaliser pour comparaison (sans espaces multiples, minuscules)
                     normalized = ' '.join(paragraph.lower().split())
                     if normalized not in seen_paragraphs:
                         seen_paragraphs.add(normalized)
@@ -1194,12 +1230,11 @@ class LLMService:
 
     def _filter_context_for_fso(self, context: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Filtre le contexte pour se concentrer sur FSO plutôt que CAP-FSO
+        Filtre le contexte pour se concentrer sur FSO 
         """
         try:
             filtered_context = {}
             
-            # Mots-clés prioritaires pour FSO
             fso_keywords = [
                 'faculté des sciences',
                 'faculty of sciences',
@@ -1210,7 +1245,7 @@ class LLMService:
                 'ump'
             ]
             
-            # Mots-clés à éviter ou minimiser
+            
             avoid_keywords = [
                 'cap-fso',
                 'cap fso',
@@ -1219,13 +1254,10 @@ class LLMService:
             
             for key, value in context.items():
                 if isinstance(value, str):
-                    # Priorité aux contenus mentionnant FSO
                     if any(keyword in value.lower() for keyword in fso_keywords):
-                        # Éviter les contenus trop centrés sur CAP-FSO
                         if not any(avoid in value.lower() for avoid in avoid_keywords):
                             filtered_context[key] = value
                         elif any(fso_kw in value.lower() for fso_kw in fso_keywords[:3]):
-                            # Garde le contenu s'il mentionne aussi FSO directement
                             filtered_context[key] = value
                 else:
                     filtered_context[key] = value
@@ -1239,26 +1271,26 @@ class LLMService:
     def build_enhanced_serp_query(self, question: str, lang: str = 'fr') -> str:
         """Construit une requête SERP améliorée pour éviter les autres facultés"""
         
-        # Sites spécifiques FSO + exclusion explicite des autres facultés
+        
         fso_sites = [
             "site:fso.ump.ma",
             "site:ump.ac.ma/fso", 
             "site:sciences.ump.ac.ma"
         ]
         
-        # Exclusions explicites pour éviter autres facultés
+        
         exclude_sites = [
-            "-site:flsh.ump.ac.ma",     # Faculté Lettres
-            "-site:est.ump.ac.ma",      # EST
-            "-site:encg.ump.ac.ma",     # ENCG
-            "-site:fsjes.ump.ac.ma",    # Économie/Droit
+            "-site:flsh.ump.ac.ma",     
+            "-site:est.ump.ac.ma",     
+            "-site:encg.ump.ac.ma",     
+            "-site:fsjes.ump.ac.ma",   
             "-inurl:lettres",
             "-inurl:economie", 
             "-inurl:droit",
             "-inurl:est"
         ]
         
-        # Mots-clés de renforcement FSO
+        
         fso_keywords = {
             'fr': ['"faculté sciences"', '"FSO"', '"sciences oujda"'],
             'en': ['"faculty sciences"', '"FSO"', '"sciences oujda"'],
@@ -1266,12 +1298,12 @@ class LLMService:
             'amz': ['"tasnawalt tussniwin"']
         }
         
-        # Construction de la requête
+        
         sites_part = " OR ".join(fso_sites)
         exclude_part = " ".join(exclude_sites)
         keywords = " ".join(fso_keywords.get(lang, fso_keywords['fr']))
         
-        # Requête finale optimisée
+        
         enhanced_query = f"({sites_part}) {keywords} {question} {exclude_part}"
         
         logger.info(f"Enhanced SERP query: {enhanced_query}")
@@ -1283,13 +1315,12 @@ class LLMService:
         if isinstance(serp_data, dict):
             serp_data = str(serp_data)
         
-        # Indicateurs positifs FSO
+        
         fso_positive = [
             "faculté des sciences", "fso", "sciences oujda", 
             "ump.ac.ma", "fso.ump.ma", "mohammed premier"
         ]
         
-        # Indicateurs négatifs (autres facultés)
         fso_negative = [
             "faculté des lettres", "flsh", "économie", "fsjes",
             "est oujda", "encg", "droit", "lettres"
@@ -1301,19 +1332,19 @@ class LLMService:
         for line in lines:
             line_lower = line.lower()
             
-            # Vérifier indicateurs négatifs
+            
             has_negative = any(neg in line_lower for neg in fso_negative)
             if has_negative:
                 continue
                 
-            # Vérifier indicateurs positifs ou ligne neutre
+            
             has_positive = any(pos in line_lower for pos in fso_positive)
             if has_positive or len(line.strip()) < 50:  # Lignes courtes probablement neutres
                 filtered_lines.append(line)
         
         filtered_content = '\n'.join(filtered_lines)
         
-        # Limite la taille pour éviter les timeouts
+        
         if len(filtered_content) > 2000:
             filtered_content = filtered_content[:2000] + "... [filtered and truncated]"
         
@@ -1323,14 +1354,14 @@ class LLMService:
     def get_hybrid_response(self, question: str, lang: str = 'fr') -> Dict[str, Any]:
         """Méthode hybride: modèle fine-tuné d'abord, SERP en fallback"""
         
-        # 1. Essayer d'abord le modèle fine-tuné
+        
         logger.info("Trying fine-tuned model first...")
         finetuned_response = self.generate_faculty_response(question, lang)
         
-        # 2. Vérifier la qualité de la réponse
+        
         response_text = finetuned_response.get('response', '').lower()
         
-        # Indicateurs de réponse faible
+        
         weak_indicators = [
             "je ne sais pas", "don't know", "لا أعرف", "ur ẓriɣ ara",
             "pas d'information", "no information", "لا توجد معلومات",
@@ -1340,19 +1371,18 @@ class LLMService:
         has_weak_response = any(indicator in response_text for indicator in weak_indicators)
         is_too_short = len(response_text.strip()) < 50
         
-        # 3. Si réponse faible, utiliser SERP en complément
+        
         if has_weak_response or is_too_short:
             logger.info("Fine-tuned response weak, trying SERP enhancement...")
             
             try:
-                # Construire requête SERP améliorée
                 enhanced_query = self.build_enhanced_serp_query(question, lang)
-                serp_data = self.search_web(enhanced_query)  # Votre méthode de recherche
+                serp_data = self.search_web(enhanced_query)
                 
                 if serp_data:
                     serp_response = self.process_serp_to_response(question, serp_data, lang)
                     
-                    # Combiner les deux réponses si SERP apporte du contenu
+                    
                     if serp_response.get('confidence', 0) > 0.5:
                         return {
                             **serp_response,
@@ -1363,7 +1393,7 @@ class LLMService:
             except Exception as e:
                 logger.warning(f"SERP fallback failed: {str(e)}")
         
-        # 4. Retourner la réponse du modèle fine-tuné
+        
         return {
             **finetuned_response,
             'fallback_used': False
@@ -1537,14 +1567,12 @@ class LLMService:
             
             logger.info(f"Simplification raw response: {response}")
             
-            # Extraire les questions simplifiées de la réponse
+            
             simplified_questions = self._extract_simplified_questions(response, lang)
             
             if not simplified_questions:
-                # Si l'extraction échoue, retourner la question originale
                 simplified_questions = [question.strip()]
             
-            # Classifier chaque question comme statique ou dynamique
             classified_questions = []
             for q in simplified_questions:
                 classification = self._classify_question_with_temporal_logic(q, lang, date)
@@ -1566,49 +1594,73 @@ class LLMService:
         simplified_questions = []
         
         try:
-            # Patterns pour extraire les questions selon la langue
             patterns = {
                 'fr': [
                     r'RÉSULTAT:\s*\[(.*?)\]',
                     r'résultat:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
-                ],
-                'en': [
+                    r'\[(.*?)\]',
                     r'RESULT:\s*\[(.*?)\]',
                     r'result:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
-                ],
-                'ar': [
+                    r'\[(.*?)\]',
                     r'النتيجة:\s*\[(.*?)\]',
                     r'نتيجة:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
-                ],
-                'amz': [
                     r'IGMAD:\s*\[(.*?)\]',
                     r'igmad:\s*\[(.*?)\]',
-                    r'\[(.*?)\]'
+                ],
+                'en': [
+                    r'RÉSULTAT:\s*\[(.*?)\]',
+                    r'résultat:\s*\[(.*?)\]',
+                    r'\[(.*?)\]',
+                    r'RESULT:\s*\[(.*?)\]',
+                    r'result:\s*\[(.*?)\]',
+                    r'\[(.*?)\]',
+                    r'النتيجة:\s*\[(.*?)\]',
+                    r'نتيجة:\s*\[(.*?)\]',
+                    r'IGMAD:\s*\[(.*?)\]',
+                    r'igmad:\s*\[(.*?)\]',
+                ],
+                'ar': [
+                    r'RÉSULTAT:\s*\[(.*?)\]',
+                    r'résultat:\s*\[(.*?)\]',
+                    r'\[(.*?)\]',
+                    r'RESULT:\s*\[(.*?)\]',
+                    r'result:\s*\[(.*?)\]',
+                    r'\[(.*?)\]',
+                    r'النتيجة:\s*\[(.*?)\]',
+                    r'نتيجة:\s*\[(.*?)\]',
+                    r'IGMAD:\s*\[(.*?)\]',
+                    r'igmad:\s*\[(.*?)\]',
+                ],
+                'amz': [
+                    r'RÉSULTAT:\s*\[(.*?)\]',
+                    r'résultat:\s*\[(.*?)\]',
+                    r'\[(.*?)\]',
+                    r'RESULT:\s*\[(.*?)\]',
+                    r'result:\s*\[(.*?)\]',
+                    r'\[(.*?)\]',
+                    r'النتيجة:\s*\[(.*?)\]',
+                    r'نتيجة:\s*\[(.*?)\]',
+                    r'IGMAD:\s*\[(.*?)\]',
+                    r'igmad:\s*\[(.*?)\]',
                 ]
             }
             
             current_patterns = patterns.get(lang, patterns['fr'])
             
-            # Essayer chaque pattern
             for pattern in current_patterns:
                 match = re.search(pattern, response, re.DOTALL | re.IGNORECASE)
                 if match:
                     questions_text = match.group(1)
                     break
             else:
-                # Si aucun pattern ne correspond, essayer d'extraire des guillemets
                 questions_text = response
             
-            # Extraire les questions entre guillemets
+            
             question_matches = re.findall(r'"([^"]+)"', questions_text)
             
             if question_matches:
                 simplified_questions = [q.strip() for q in question_matches if q.strip()]
             else:
-                # Fallback: chercher des questions avec des marqueurs de liste
                 lines = response.split('\n')
                 for line in lines:
                     line = line.strip()
@@ -1629,12 +1681,9 @@ class LLMService:
         Classifie une question comme statique ou dynamique avec logique temporelle avancée
         """
         import re
-        from dateutil import parser
-        from datetime import timedelta
         
         current_time = datetime.now()
         
-        # Patterns pour extraire des dates et années
         year_pattern = r'\b(20\d{2})[^\d]'
         semester_pattern = r'\b(semestre?|semester)\s*(\d+)?\s*(20\d{2})[-/]?(20\d{2})?\b'
         academic_year_pattern = r'\b(20\d{2})[-/](20\d{2})\b'
@@ -1716,14 +1765,12 @@ class LLMService:
                             'reason': f'Schedule from {latest_year} is still current'
                         }
             else:
-                # Pas d'année spécifique → probablement actuel
                 return {
                     'question': question,
                     'type': 'dynamic',
                     'reason': 'Current schedule question without specific year'
                 }
         
-        # 4. AUTRES INDICATEURS TEMPORELS
         dynamic_indicators = [
             'actuellement', 'currently', 'حالياً', 'tura',
             'récent', 'recent', 'حديث', 'amaynu',
@@ -1876,9 +1923,6 @@ class LLMService:
 
     def _parse_validation_response(self, validation_response: str) -> Dict[str, Any]:
         """Parse LLM validation response into structured format"""
-        # This is a simplified parser - you'd want to make this more robust
-        # based on your LLM's actual output format
-        
         try:
             # Look for key indicators in the response
             response_lower = validation_response.lower()
@@ -1910,7 +1954,6 @@ class LLMService:
         try:
             start_time = datetime.now()
             
-            # Enhanced prompt that does EVERYTHING in one call
             optimized_prompts = {
                 'fr': {
                     'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
@@ -1960,7 +2003,7 @@ class LLMService:
 
                     FSO CONTEXT: Faculty of Sciences Oujda, Mohammed First University""",
 
-                                    'user': """ORIGINAL QUESTION: {original_question}
+                    'user': """ORIGINAL QUESTION: {original_question}
 
                     AVAILABLE QUESTIONS AND ANSWERS:
                     {formatted_qa_pairs}
@@ -2109,7 +2152,6 @@ class LLMService:
             source = pair['source']
             
             if documents:
-                # Take only top 2 documents per question to reduce prompt size
                 top_docs = documents[:2]
                 answers_text = " | ".join([doc.get('answer', '')[:200] + "..." if len(doc.get('answer', '')) > 200 else doc.get('answer', '') for doc in top_docs])
                 formatted_pair = f"Q{i} ({source}): {question}\nA{i}: {answers_text}"
@@ -2125,15 +2167,12 @@ class LLMService:
         if not question_answer_pairs:
             return 0.0
         
-        # Simple confidence based on coverage and document count
         questions_with_docs = len([p for p in question_answer_pairs if p['documents']])
         coverage_ratio = questions_with_docs / len(question_answer_pairs)
         
-        # Average confidence from documents
         doc_confidences = [doc.get('confidence', 0.5) for doc in all_documents if 'confidence' in doc]
         avg_doc_confidence = sum(doc_confidences) / len(doc_confidences) if doc_confidences else 0.5
         
-        # Combine coverage and document confidence
         final_confidence = (coverage_ratio * 0.6) + (avg_doc_confidence * 0.4)
         
         return min(final_confidence, 1.0)

@@ -2,15 +2,11 @@ import random
 from langdetect import detect, DetectorFactory
 from langdetect.lang_detect_exception import LangDetectException
 
-# Set seed for consistent language detection
+from config import core
+
 DetectorFactory.seed = 0
 
-LANG_MAP = {
-    'fr': 'fr',
-    'en': 'en',
-    'ar': 'ar',    
-    'amz': 'amz',
-}
+LANG_MAP = core.LANG_MAP
 
 def is_not_defined(lang: str):
     output = {
@@ -92,13 +88,11 @@ def detect_custom_language(text: str) -> str:
         
         return 'fr'
     
-    # For longer text, use langdetect
     try:
         detected_lang = detect(text)
         mapped_lang = LANG_MAP.get(detected_lang, 'fr')
         return mapped_lang
     except LangDetectException:
-        # Fallback: character-based detection
         if any('\u0600' <= char <= '\u06FF' for char in text):
             return 'ar'
         elif any('\u2D30' <= char <= '\u2D7F' for char in text):

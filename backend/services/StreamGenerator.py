@@ -1,7 +1,6 @@
 
 from asyncio.log import logger
 from http.client import HTTPException
-import os
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 import json
@@ -12,11 +11,13 @@ from .polite import is_not_defined, detect_custom_language
 from .SerpService import get_internet_results_for_question, get_no_results_message
 from classifiers.classifier import MultilingualIntentClassifier
 from .helper import determine_source_type, index_faq_data
-import pickle
-from pathlib import Path
+# from pathlib import Path
+from config import core
 
-CLASSIFIER_MODEL = Path(__file__).parent.parent / 'classifiers' / 'intent_classifier.pkl'
-DATASET = Path(__file__).parent.parent / 'data' / 'dataset_dict_date.json'
+
+
+CLASSIFIER_MODEL = core.CLASSIFIER_MODEL
+DATASET = core.DATASET
 
 
 
@@ -33,12 +34,19 @@ class StreamGenerator :
 
             etape 3 : classify intent
             
-            etape 4 : determine if question is <dynamic | static>
+            etape 4 : simplification de la question (extract tous les de sous questions si la question est composée ) --> retourne un pair {question i , responses}
+            
+            etape 5 : boucler sur la liste des question/reponses
+            
             |
-            |--> if(dynamic) -> etape 5 : serp on internet
+            |--> Si type === "static" --> Etape 6   : prediction d'intent à l'aide du classifier ,  
+            |                             Etape 6.1 : si probabilité > 0.05 alors rechercher les documents lié à l'intent dans dataset, 
+            |                                       sinon lancer une recherche sur internet
             |
-            |--> if(static) -> etape 5 :  serach for question in local file based on its intent
-            etape 6 : restructure response based on the returned results
+            |--> Si type === "dynamic" --> Etape 6 : lancer une recherche sur internet 
+            |
+            
+            etape 7 : verifier si les reponses sont relevance aux questions et structure une réponse pour l'user 
         """
         
         if not self.query.question.strip():
@@ -47,31 +55,27 @@ class StreamGenerator :
 
 
         yield f"data: {json.dumps({'type': 'status', 'message': 'Détection de la langue en cours...'})}\n\n"
-        asyncio.sleep(0.1)  
         self.query.lang = detect_custom_language(self.query.question)
 
 
         yield f"data: {json.dumps({'type': 'status', 'message': 'Veuillez pateinter je suis entrain de verifier la pertinence de votre question'})}\n\n"
-        asyncio.sleep(0.5)
         logger.info('--> Checking question relation with FSO')
         if not llm_service.is_faculty_related(self.query.question, self.query.lang):
             yield f"data: {json.dumps({'type': 'final', 'data': {'detected_lang': self.query.lang, 'structured_response': is_not_defined(self.query.lang), 'llm_used': False, 'search_source': 'none'}})}\n\n"
             return
             
         yield f"data: {json.dumps({'type': 'status', 'message': 'Classification du type de question...'})}\n\n"
-        asyncio.sleep(0.3)
         
         try:
             classifier = MultilingualIntentClassifier()
             classifier.load_model(CLASSIFIER_MODEL)
 
-            
+            yield f"data: {json.dumps({'type': 'status', 'message': 'Analyse de la question...'})}\n\n"
             list_results = llm_service.simplify_question(self.query.question, self.query.lang)
             logger.info(f"Simplified questions: {list_results}")
 
             yield f"data: {json.dumps({'type': 'status', 'message': 'Recherche dans la base de connaissances...'})}\n\n"
-            asyncio.sleep(0.7)
-            
+           
             
             question_answer_pairs = []
             all_documents = []
@@ -106,7 +110,7 @@ class StreamGenerator :
                     if not question_documents:
                         logger.info(f"Question {i+1} - No database documents found, searching internet")
                         yield f"data: {json.dumps({'type': 'status', 'message': 'Réponse non pertinente détectée, recherche sur le web...'})}\n\n"
-                        asyncio.sleep(0.3)
+                        
                         internet_results = get_internet_results_for_question(question_text, self.query.lang)
                         question_documents.extend(internet_results)
                         logger.info(f"Question {i+1} - Internet documents found: {len(internet_results)}")
@@ -114,7 +118,7 @@ class StreamGenerator :
                 elif question_type == 'dynamic':
                     logger.info(f"Question {i+1} - Dynamic question, using internet search")
                     yield f"data: {json.dumps({'type': 'status', 'message': 'Réponse non pertinente détectée, recherche sur le web...'})}\n\n"
-                    asyncio.sleep(0.3)
+                
                     internet_results = get_internet_results_for_question(question_text, self.query.lang)
                     question_documents.extend(internet_results)
                     logger.info(f"Question {i+1} - Internet documents found: {len(internet_results)}")
@@ -165,7 +169,7 @@ class StreamGenerator :
                     yield f"data: {json.dumps({'type': 'final', 'data': final_result})}\n\n"
                 
                 yield f"data: {json.dumps({'type': 'status', 'message': 'Je suis en train de structurer votre réponse...'})}\n\n"
-                asyncio.sleep(1.0)
+
                 
                 llm_response = llm_service.generate_comprehensive_response_optimized(
                     original_question=self.query.question,
@@ -178,6 +182,7 @@ class StreamGenerator :
                 
                 if llm_response.get('used_fallback', False):
                     logger.info("LLM detected irrelevant content, fallback to internet was used")
+                    
                 
                 
                 if self.query.context:
