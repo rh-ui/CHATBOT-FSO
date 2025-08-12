@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -173,7 +174,7 @@ class MultilingualIntentClassifier:
                 ngram_range=(1, 1),
                 min_df=2,
                 max_df=0.95,
-                strip_accents=None,  # Keep accents for multilingual
+                strip_accents=None,
                 lowercase=True
             ),
             'tfidf_bigram': TfidfVectorizer(
@@ -466,12 +467,11 @@ class MultilingualIntentClassifier:
         
         # Define test examples in multiple languages
         test_examples = [
-            # English examples
+                # English examples
                 ("When was the current FSO dean appointed ?","la date de nomination du doyen FSO"),
                 
                 # French examples
-                ("smi s3 ?","la date de nomination du doyen FSO")
-                
+                ("les modules de smi s3 ?","programme_licence_fondamentale_smi_modules_s3")
         ]
         
         correct_predictions = 0
@@ -586,8 +586,11 @@ class MultilingualIntentClassifier:
 def main_example():
     
     try:
+        
+        DATASET = Path(__file__).parent.parent / 'data' / 'clean_dataset_completed_no_duplicates.csv'
+        
         # Step 1: Initialize the classifier with your CSV file
-        classifier = MultilingualIntentClassifier('../data/cleaned_dataset.csv')
+        classifier = MultilingualIntentClassifier(DATASET)
         
         # Step 2: Load and preprocess data
         data = classifier.load_and_preprocess_data()

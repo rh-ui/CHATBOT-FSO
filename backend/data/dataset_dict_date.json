@@ -16253,5 +16253,1337 @@
       ]
     },
     "data": "2025-04-28"
+  },
+  "tronc_commun_mip": {
+    "intent": "tronc_commun_mip",
+    "question": {
+      "fr": [
+        "Qu'est-ce que le tronc commun MIP à la FSO ?",
+        "Pouvez-vous expliquer le tronc commun Mathématiques-Informatique-Physique ?",
+        "C'est quoi MIP à la Faculté des Sciences d'Oujda ?"
+      ],
+      "en": [
+        "What is the MIP common core at FSO?",
+        "Can you explain the Mathematics-Computer Science-Physics common core?",
+        "What is MIP at the Faculty of Sciences of Oujda?"
+      ],
+      "ar": [
+        "ما هو الجذع المشترك MIP في كلية العلوم بوجدة؟",
+        "هل يمكنك شرح الجذع المشترك رياضيات-معلوماتية-فيزياء؟",
+        "ما هو MIP في FSO؟"
+      ],
+      "amz": [
+        "Ma d ajdɛi amsamal MIP deg FSO?",
+        "Tzemreḍ ad tesnifleḍ ajdɛi amsamal Tusnakt-Tignit-Tafizikt?",
+        "Ma d MIP deg Taddart n Tussna n Oujda?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le tronc commun MIP (Mathématiques-Informatique-Physique) à la FSO est une formation scientifique pluridisciplinaire d’une durée d’un an. Il combine un enseignement approfondi en mathématiques (analyse, algèbre, statistiques), en informatique (algorithmique, structures de données, programmation) et en physique (mécanique, électricité, optique). Ce parcours vise à former des étudiants capables de résoudre des problèmes complexes, de modéliser des phénomènes scientifiques et de manipuler des outils informatiques avancés.\n\nÀ l’issue de cette année, les étudiants peuvent se spécialiser en Génie Informatique, Mathématiques Appliquées ou Sciences de Données."
+      ],
+      "en": [
+        "The MIP (Mathematics-Computer Science-Physics) common core at FSO is a one-year multidisciplinary scientific program. It combines in-depth teaching in mathematics (analysis, algebra, statistics), computer science (algorithms, data structures, programming), and physics (mechanics, electricity, optics). The goal is to train students to solve complex problems, model scientific phenomena, and use advanced computing tools.\n\nAfter this year, students can specialize in Computer Engineering, Applied Mathematics, or Data Science."
+      ],
+      "ar": [
+        "الجذع المشترك MIP (رياضيات-معلوماتية-فيزياء) في FSO هو برنامج علمي متعدد التخصصات لمدة سنة. يجمع بين تدريس معمق في الرياضيات (التحليل، الجبر، الإحصاء)، والمعلوماتية (الخوارزميات، هياكل البيانات، البرمجة)، والفيزياء (الميكانيك، الكهرباء، البصريات). يهدف هذا المسار إلى تكوين طلبة قادرين على حل المشكلات المعقدة، ونمذجة الظواهر العلمية، واستخدام أدوات حاسوبية متقدمة.\n\nبعد هذه السنة، يمكن للطلبة التخصص في هندسة المعلوماتية، أو الرياضيات التطبيقية، أو علوم البيانات."
+      ],
+      "amz": [
+        "Ajdɛi amsamal MIP (Tusnakt-Tignit-Tafizikt) deg FSO d uselkim n tussna n yifuyla, i yeddun yiwen useggas. Yettwaslem ɣef tusnakt (taslelt, ajebṛ, tasnalt), tignit (algoritmat, tɣuriwin n yisefka, aseɣzef), akked tafizikt (amekkan, tadist, tafukt). Iswi ines d ad issnufeg yilmiden i wakken ad s-ḥalun uguren iḥemmlen, ad s-sneflen timuddimin tusnaktin, daɣen ad ssnufuyent iɣfawen n tignit.\n\nSeld useggas-a, yzemren ad tfrunt di Genie n tignit, Tusnakt yettwasen, neɣ Tussna n isefka."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "tronc_commun_informatique_appliquee": {
+    "intent": "tronc_commun_informatique_appliquee",
+    "question": {
+      "fr": [
+        "Qu'est-ce que le tronc commun Informatique Appliquée à la FSO ?",
+        "Pouvez-vous expliquer le tronc commun en informatique appliquée ?",
+        "C'est quoi Informatique Appliquée à la FSO ?"
+      ],
+      "en": [
+        "What is the Applied Computer Science common core at FSO?",
+        "Can you explain the Applied Computer Science common core?",
+        "What is Applied Computer Science at FSO?"
+      ],
+      "ar": [
+        "ما هو الجذع المشترك للمعلوماتية التطبيقية في FSO؟",
+        "هل يمكنك شرح الجذع المشترك للمعلوماتية التطبيقية؟",
+        "ما هي المعلوماتية التطبيقية في FSO؟"
+      ],
+      "amz": [
+        "Ma d ajdɛi amsamal n tignit yettwasen deg FSO?",
+        "Tzemreḍ ad tesnifleḍ ajdɛi amsamal n tignit yettwasen?",
+        "Ma d tignit yettwasen deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le tronc commun Informatique Appliquée à la FSO est une formation d'un an axée sur l'apprentissage des bases de l’informatique, de la programmation et des systèmes. Les étudiants y apprennent les langages de programmation courants, la conception de bases de données, le développement web, ainsi que des notions d’algorithmique et de réseaux informatiques.\n\nCe tronc commun prépare principalement à la spécialisation en Développement Informatique, où les étudiants approfondiront leurs compétences pour créer et maintenir des logiciels, applications et sites web."
+      ],
+      "en": [
+        "The Applied Computer Science common core at FSO is a one-year program focused on learning the basics of computing, programming, and systems. Students learn common programming languages, database design, web development, as well as algorithms and computer networking.\n\nThis common core mainly prepares students for specialization in Software Development, where they will deepen their skills to create and maintain software, applications, and websites."
+      ],
+      "ar": [
+        "الجذع المشترك للمعلوماتية التطبيقية في FSO هو برنامج لمدة سنة يركز على تعلم أساسيات الحاسوب، البرمجة، والأنظمة. يتعلم الطلاب لغات البرمجة الشائعة، تصميم قواعد البيانات، تطوير الويب، بالإضافة إلى الخوارزميات وشبكات الحاسوب.\n\nهذا الجذع المشترك يهيئ بالأساس للتخصص في تطوير المعلوماتية، حيث يعمق الطلاب مهاراتهم لإنشاء وصيانة البرمجيات، التطبيقات، والمواقع الإلكترونية."
+      ],
+      "amz": [
+        "Ajdɛi amsamal n tignit yettwasen deg FSO d uselkim n yiwen useggas i yessurfeɣ ɣef uselkim n tignit, aseɣzef, akked inagrawen. Yilmiden ssnen tutlayin n tɣuri i d-yellan, asnulfu n isefka n yisefka, taneflit n web, akked algoritmat akked izdayen n tignit.\n\nAjdɛi-a yessir i yilmiden i wakken ad tfrunt di tneflit n tignit, anda ad ssnerfayen tifratin nnsen i tneflit d useɣzef n iseɣzifen, isnasen, akked isemlalen web."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "tronc_commun_pc": {
+    "intent": "tronc_commun_pc",
+    "question": {
+      "fr": [
+        "Qu'est-ce que le tronc commun Physique-Chimie à la FSO ?",
+        "Pouvez-vous expliquer le tronc commun PC ?",
+        "C'est quoi PC à la Faculté des Sciences d'Oujda ?"
+      ],
+      "en": [
+        "What is the Physics-Chemistry common core at FSO?",
+        "Can you explain the PC common core?",
+        "What is PC at the Faculty of Sciences of Oujda?"
+      ],
+      "ar": [
+        "ما هو الجذع المشترك فيزياء-كيمياء في FSO؟",
+        "هل يمكنك شرح الجذع المشترك PC؟",
+        "ما هو PC في كلية العلوم بوجدة؟"
+      ],
+      "amz": [
+        "Ma d ajdɛi amsamal PC deg FSO?",
+        "Tzemreḍ ad tesnifleḍ ajdɛi amsamal PC?",
+        "Ma d PC deg Taddart n Tussna n Oujda?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le tronc commun Physique-Chimie (PC) à la FSO est une formation scientifique d'un an axée sur la physique fondamentale (mécanique, électricité, optique, thermodynamique) et la chimie générale et organique. Les étudiants y développent à la fois des compétences expérimentales en laboratoire et une solide base théorique.\n\nAprès ce tronc commun, les principales spécialisations sont : Matériaux et Applications, Ondes-Matériaux-Énergie, Génie des Procédés Industriels, Radiophysique Médicale et Mécanique Énergétique."
+      ],
+      "en": [
+        "The Physics-Chemistry (PC) common core at FSO is a one-year scientific program focused on fundamental physics (mechanics, electricity, optics, thermodynamics) and general and organic chemistry. Students develop both experimental skills in laboratories and a solid theoretical foundation.\n\nAfter this common core, main specializations include: Materials and Applications, Waves-Materials-Energy, Industrial Process Engineering, Medical Radiophysics, and Mechanical Energy."
+      ],
+      "ar": [
+        "الجذع المشترك فيزياء-كيمياء (PC) في FSO هو برنامج علمي لمدة سنة يركز على الفيزياء الأساسية (الميكانيك، الكهرباء، البصريات، الديناميكا الحرارية) والكيمياء العامة والعضوية. يطور الطلاب مهاراتهم التجريبية في المختبرات بالإضافة إلى قاعدة نظرية قوية.\n\nبعد هذا الجذع المشترك، تشمل التخصصات الرئيسية: المواد وتطبيقاتها، الموجات-المواد-الطاقة، هندسة العمليات الصناعية، الفيزياء الطبية الإشعاعية، والهندسة الميكانيكية الطاقية."
+      ],
+      "amz": [
+        "Ajdɛi amsamal PC (Tafizikt-Takimya) deg FSO d uselkim n yiwen useggas i yessurfeɣ ɣef tafizikt tazwart (amekkan, tadist, tafukt, tawuninamiqt tissas) akked takimya tamatut d tazwart. Yilmiden ssnerfayen tiwzatin tgerzint deg yixef umuɣ akked asefruɣ tusnakt.\n\nSeld ajdɛi-a, tisekla timqqranin d: Imeḍkaren d isnasen, Tigejda-Timɣar-Muzdɣa, Tagnit n usenfar n tmyellit, Tifizikt tamunent n isemlal, akked Tagnit tamkanit n tzmert."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "tronc_commun_bcg": {
+    "intent": "tronc_commun_bcg",
+    "question": {
+      "fr": [
+        "Qu'est-ce que le tronc commun BCG à la FSO ?",
+        "Pouvez-vous expliquer le tronc commun Biologie-Chimie-Géologie ?",
+        "C'est quoi BCG à la Faculté des Sciences d'Oujda ?"
+      ],
+      "en": [
+        "What is the BCG common core at FSO?",
+        "Can you explain the Biology-Chemistry-Geology common core?",
+        "What is BCG at the Faculty of Sciences of Oujda?"
+      ],
+      "ar": [
+        "ما هو الجذع المشترك BCG في كلية العلوم بوجدة؟",
+        "هل يمكنك شرح الجذع المشترك بيولوجيا-كيمياء-جيولوجيا؟",
+        "ما هو BCG في FSO؟"
+      ],
+      "amz": [
+        "Ma d ajdɛi amsamal BCG deg FSO?",
+        "Tzemreḍ ad tesnifleḍ ajdɛi amsamal Tussnant-Takimya-Tamurt n idurar?",
+        "Ma d BCG deg Taddart n Tussna n Oujda?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le tronc commun BCG (Biologie-Chimie-Géologie) à la FSO est une formation scientifique d’un an couvrant la biologie cellulaire et moléculaire, la chimie générale et organique, ainsi que la géologie structurale et sédimentaire. Les étudiants participent à des travaux pratiques en laboratoire et à des sorties de terrain pour appliquer les notions apprises.\n\nAprès ce tronc commun, les spécialisations possibles incluent : Agrosciences et Biotechnologie, Biologie et Santé, Écologie et Environnement, Géosciences et Exploration Minière, et Géomatique et Géologie Appliquée."
+      ],
+      "en": [
+        "The BCG (Biology-Chemistry-Geology) common core at FSO is a one-year scientific program covering cell and molecular biology, general and organic chemistry, as well as structural and sedimentary geology. Students participate in laboratory practicals and field trips to apply learned concepts.\n\nAfter this common core, possible specializations include: Agrosciences and Biotechnology, Biology and Health, Ecology and Environment, Geosciences and Mining Exploration, and Geomatics and Applied Geology."
+      ],
+      "ar": [
+        "الجذع المشترك BCG (بيولوجيا-كيمياء-جيولوجيا) في FSO هو برنامج علمي لمدة سنة يغطي علم الأحياء الخلوي والجزيئي، الكيمياء العامة والعضوية، وكذلك الجيولوجيا التركيبية والرسوبية. يشارك الطلاب في أعمال تطبيقية بالمختبر ورحلات ميدانية لتطبيق المفاهيم المكتسبة.\n\nبعد هذا الجذع المشترك، تشمل التخصصات الممكنة: العلوم الزراعية والتكنولوجيا الحيوية، البيولوجيا والصحة، البيئة والإيكولوجيا، علوم الأرض والاستكشاف المعدني، والجيوماتيك والجيولوجيا التطبيقية."
+      ],
+      "amz": [
+        "Ajdɛi amsamal BCG (Tussnant-Takimya-Tamurt n idurar) deg FSO d uselkim n yiwen useggas i yessurfeɣ ɣef tussnant n tcelli d tiswiyin, takimya tamatut d tazwart, akked tmurt n idurar tuddistin d tisɣin. Yilmiden tteddun deg umahil amuɣ d tirga n tmurt i wakken ad ssnerfayen tiɣmertin i d-yessnufen.\n\nSeld ajdɛi-a, tisekla i yellan d: Tusnakt n iɣfawen akked tatiknulujit n tudert, Tussnant d tgeddit, Amkan n tmurt akked amatu, Tussna n tmurt akked tifzizt n tɣzut, akked Tagemmayt d Tmurt n idurar yettwasen."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "tron_communs_fso": {
+    "intent": "tron_communs_fso",
+    "question": {
+      "fr": [
+        "Quels sont les troncs communs de licence à la Faculté des Sciences d'Oujda ?",
+        "Peux-tu me donner les filières communes en licence à la FSO ?",
+        "Quelles sont les options disponibles dans les licences scientifiques à Oujda ?",
+        "Quels sont les parcours offerts en licence à la faculté des sciences ?",
+        "Quels troncs communs peut-on trouver en licence à la FSO ?"
+      ],
+      "en": [
+        "What are the common core license tracks at the Faculty of Sciences in Oujda?",
+        "Can you list the license streams available at FSO?",
+        "What common license options are offered at the Faculty of Sciences Oujda?",
+        "What study tracks are available in the science license at FSO?",
+        "Which common cores exist in the bachelor's programs at FSO?"
+      ],
+      "ar": [
+        "ما هي المسارات المشتركة في رخصة كلية العلوم بوجدة؟",
+        "هل يمكنك ذكر الخيارات المتاحة في الليسانس بالكلية؟",
+        "ما هي التخصصات المشتركة في رخصة العلوم بوجدة؟",
+        "ما هي المسارات الدراسية في رخصة العلوم؟",
+        "ما هي الفروع المشتركة في برامج الليسانس بالكلية؟"
+      ],
+      "amz": [
+        "Ma delliḍ ad s-ttwafaq deg iḥedran n yissas i Faculty n Sciences Oujda?",
+        "Tzemreḍ ad tsnulfed iḥedran n wigi deg l-faculté?",
+        "Anwa iḥedran yettwasnen deg trun commun n licence?",
+        "Anwa iḍewwen yellan deg trun commun n la faculté n sciences?",
+        "Anwa iḥedran n licence yellan deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La Faculté des Sciences d’Oujda propose plusieurs troncs communs en licence, incluant l’informatique appliquée, la physique et chimie, les mathématiques, ainsi que la biologie, chimie et géologie.",
+        "Parmi les options, on trouve le développement informatique, les matériaux et applications, l’écologie et l’environnement, et bien d’autres.",
+        "Chaque tronc commun offre des spécialisations variées comme la radiophysique médicale, l’électronique embarquée, ou les sciences des données."
+      ],
+      "en": [
+        "The Faculty of Sciences in Oujda offers several common license tracks, including applied computer science, physics and chemistry, mathematics, as well as biology, chemistry, and geology.",
+        "Options include software development, materials and applications, ecology and environment, among others.",
+        "Each core offers diverse specializations such as medical radiophysics, embedded electronics, or data science."
+      ],
+      "ar": [
+        "تقدم كلية العلوم بوجدة عدة مسارات مشتركة في الليسانس مثل المعلوماتية التطبيقية، الفيزياء والكيمياء، الرياضيات، وكذلك الأحياء والكيمياء والجيولوجيا.",
+        "تشمل الخيارات تطوير البرمجيات، المواد والتطبيقات، البيئة والإيكولوجيا، وغيرها.",
+        "كل مسار يوفر تخصصات متنوعة مثل الفيزياء الطبية الإشعاعية، الإلكترونيات المدمجة، وعلوم البيانات."
+      ],
+      "amz": [
+        "Faculty n Sciences Oujda tzemreḍ iḥedran n licence amaynut, am win iḥedran n informatique appliquée, physique dchemie, maths, d amenzu n biologie, chimie, d géologie.",
+        "D igan di tura: développement informatique, matériaux d ttwaklt, écologie d l’environnement, akken.",
+        "Imi iḥedran yellan d akalef iḍewwen akken radiophysique médicale, électronique embarquée, neɣ sciences des données."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-08-12"
+  },
+  "filieres_sans_tronc_fso": {
+    "intent": "filieres_sans_tronc_fso",
+    "question": {
+      "fr": [
+        "Quelles sont les filières de licence sans tronc commun à la FSO ?",
+        "Peux-tu me donner les options de licence sans tronc commun à Oujda ?",
+        "Quelles licences sont proposées sans parcours commun à la Faculté des Sciences ?",
+        "Quels sont les cursus en licence sans tronc commun à la FSO ?",
+        "Quels diplômes sans tronc commun existent à la faculté des sciences d’Oujda ?"
+      ],
+      "en": [
+        "What are the license majors without common core at FSO?",
+        "Can you list license programs without shared tracks at Oujda?",
+        "Which bachelor majors are offered without common core at the Faculty of Sciences?",
+        "What are the license courses without common tracks at FSO?",
+        "Which degrees are available without common core at Oujda Faculty of Sciences?"
+      ],
+      "ar": [
+        "ما هي التخصصات في الليسانس بدون مسار مشترك في FSO؟",
+        "هل يمكنك ذكر خيارات الليسانس بدون مسار مشترك في وجدة؟",
+        "ما هي التخصصات التي تُدرس بدون مسار مشترك في كلية العلوم؟",
+        "ما هي التخصصات بدون مسار مشترك في الليسانس؟",
+        "ما هي الدرجات التي لا تحتوي على مسار مشترك في FSO؟"
+      ],
+      "amz": [
+        "Anwa iḥedran n licence ur yellan ara deg trun commun deg FSO?",
+        "Tzemreḍ ad tsnulfed iḥedran n licence ur yellan ara deg trun commun deg Oujda?",
+        "Anwa iḥedran n licence ur yettwasnen ara deg trun commun deg faculté n sciences?",
+        "Anwa iḥedran ur yettwasnen ara deg trun commun deg FSO?",
+        "Anwa iḥedran n diplômes ur yellan ara deg trun commun deg Oujda?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Les filières sans tronc commun à la FSO incluent Actuariat et Mathématiques appliquées à la finance, Chimie analytique et management de la qualité, Électronique et Systèmes Embarqués, Environnement et Génie Civil, ainsi que Sciences de l’Information et Communication Stratégique.",
+        "Ces cursus sont spécialisés et ne passent pas par un tronc commun, offrant une formation ciblée dès la première année.",
+        "Chaque filière propose un enseignement approfondi pour préparer les étudiants aux défis spécifiques de leur domaine."
+      ],
+      "en": [
+        "The majors without common core at FSO include Actuarial Science and Applied Mathematics in Finance, Analytical Chemistry and Quality Management, Electronics and Embedded Systems, Environment and Civil Engineering, as well as Strategic Information and Communication Sciences.",
+        "These programs are specialized and don’t follow a common core, offering targeted education from the first year.",
+        "Each major provides in-depth teaching to prepare students for the specific challenges of their field."
+      ],
+      "ar": [
+        "التخصصات بدون مسار مشترك في FSO تشمل الاكتواري والرياضيات التطبيقية في المالية، الكيمياء التحليلية وإدارة الجودة، الإلكترونيات والأنظمة المدمجة، البيئة والهندسة المدنية، وكذلك علوم الإعلام والتواصل الإستراتيجي.",
+        "هذه البرامج متخصصة ولا تتبع مسارًا مشتركًا، مما يوفر تعليماً مركزاً منذ السنة الأولى.",
+        "كل تخصص يقدم تعليمًا متعمقًا لإعداد الطلاب لتحديات مجالاتهم."
+      ],
+      "amz": [
+        "Iḥedran ur yellan ara deg trun commun deg FSO d: Actuariat d Mathématiques appliquées di finance, Chimie analytique d management n la qualité, Electronique d Systèmes Embarqués, Environnement d Génie Civil, d Sciences n l’Information d Communication Stratégique.",
+        "Iḥedran-agi ur yettwasnen ara deg trun commun, d amkan i tessefru deg usenfaḍ n tmurt nniḍen.",
+        "Imi iḥedran i d-yettwessnen i ttruḥ n usenfaḍ n wayen ur yeččaṛ ara."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-08-12"
+  },
+  "architecture_pedagogique_ump": {
+    "intent": "architecture_pedagogique_ump",
+    "question": {
+      "fr": [
+        "Peux-tu m'expliquer l'architecture pédagogique à l'Université Mohammed Premier ?",
+        "Comment fonctionne le système LMD à la FSO ?",
+        "Quelles sont les étapes des diplômes à l'UMP ?",
+        "Quels diplômes délivre l'Université Mohammed Premier ?",
+        "Comment se déroule le parcours universitaire à la FSO ?"
+      ],
+      "en": [
+        "Can you explain the educational structure at Mohammed Premier University?",
+        "How does the LMD system work at FSO?",
+        "What are the diploma stages at UMP?",
+        "What degrees are awarded by Mohammed Premier University?",
+        "How is the university path structured at FSO?"
+      ],
+      "ar": [
+        "هل يمكنك شرح الهيكلة التعليمية في جامعة محمد الأول؟",
+        "كيف يعمل نظام LMD في كلية العلوم؟",
+        "ما هي مراحل الشهادات في جامعة محمد الأول؟",
+        "ما هي الدرجات التي تمنحها جامعة محمد الأول؟",
+        "كيف يتم تنظيم المسار الجامعي في كلية العلوم؟"
+      ],
+      "amz": [
+        "Tzemreḍ ad tneẓẓiḍ tazwarut n tmargit deg Université Mohammed Premier?",
+        "Amek i d-yettwassnen system LMD deg FSO?",
+        "Anwa iṭṭij n ddiplômes deg UMP?",
+        "Anwa iḥedran yettawiḍen s Université Mohammed Premier?",
+        "Amek i d-yetṭut tafsut n tmargit deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "L'Université Mohammed Premier suit le système LMD : DEUG/DEUP (Bac+2), Licence (Bac+3), Master (Bac+5), Doctorat (Bac+8).",
+        "Chaque diplôme correspond à un certain nombre de semestres, par exemple, la Licence dure 2 semestres après le DEUG.",
+        "Le parcours est structuré avec des semestres et des prérequis pour passer d’un niveau à un autre.",
+        "Le Master spécialisé et le Doctorat comprennent des cours, des recherches et des séminaires.",
+        "Ce système facilite la mobilité et la reconnaissance des diplômes au niveau international."
+      ],
+      "en": [
+        "Mohammed Premier University follows the LMD system: DEUG/DEUP (Bac+2), Licence (Bac+3), Master (Bac+5), Doctorate (Bac+8).",
+        "Each degree corresponds to a specific number of semesters, for example, the Licence lasts 2 semesters after DEUG.",
+        "The curriculum is structured with semesters and prerequisites to move from one level to another.",
+        "Specialized Masters and Doctorates include courses, research, and seminars.",
+        "This system facilitates international mobility and degree recognition."
+      ],
+      "ar": [
+        "تتبع جامعة محمد الأول نظام LMD: DEUG/DEUP (بكالوريا +2)، إجازة (بكالوريا +3)، الماستر (بكالوريا +5)، الدكتوراه (بكالوريا +8).",
+        "كل شهادة تتطلب عددًا معينًا من الفصول الدراسية، على سبيل المثال، تستمر الليسانس لمدة فصلين دراسيين بعد DEUG.",
+        "البرنامج منظم بفصول دراسية ومتطلبات مسبقة للانتقال من مستوى إلى آخر.",
+        "يشمل الماستر المتخصص والدكتوراه دورات وأبحاث وندوات.",
+        "يسهل هذا النظام التنقل والاعتراف بالشهادات على المستوى الدولي."
+      ],
+      "amz": [
+        "Université Mohammed Premier tettezm system LMD: DEUG/DEUP (Bac+2), Licence (Bac+3), Master (Bac+5), Doctorat (Bac+8).",
+        "Amezwaru yellan d ussemmas n semestre, am Licence i d ttezmer 2 semestre snat DEUG.",
+        "Tasnalit yettwasnen s semestre akked tatrayt n uswas n uɣilif.",
+        "Master spécialisé d Doctorat yellan d tazzayt, lqarayen, d seminares.",
+        "Ameddu n system-agi i yesɛaḍ deg usekka akked tasdawt n uḥedranen di tmurt n tallit."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-08-12"
+  },
+  "inscription_etudiants_etrangers": {
+    "intent": "inscription_etudiants_etrangers",
+    "question": {
+      "fr": [
+        "Comment s'inscrire à la FSO en tant qu'étudiant étranger ?",
+        "Quelles sont les procédures d'inscription pour les étudiants internationaux ?",
+        "Quels documents sont nécessaires pour l'inscription des étudiants étrangers ?",
+        "Comment fonctionne l'inscription des étudiants étrangers à l'Université Mohammed Premier ?",
+        "Quels sont les critères d'admission pour les étudiants étrangers à la FSO ?"
+      ],
+      "en": [
+        "How to enroll at FSO as a foreign student?",
+        "What are the registration procedures for international students?",
+        "What documents are required for foreign student registration?",
+        "How does foreign student registration work at Mohammed Premier University?",
+        "What are the admission criteria for foreign students at FSO?"
+      ],
+      "ar": [
+        "كيف يمكن التسجيل في كلية العلوم كطالب أجنبي؟",
+        "ما هي إجراءات التسجيل للطلاب الدوليين؟",
+        "ما هي الوثائق المطلوبة لتسجيل الطلاب الأجانب؟",
+        "كيف تتم عملية تسجيل الطلاب الأجانب في جامعة محمد الأول؟",
+        "ما هي معايير القبول للطلاب الأجانب في كلية العلوم؟"
+      ],
+      "amz": [
+        "Amek ad tssnulfed deg FSO am taleb agerruj?",
+        "Anwa tazwara n tssnulfid i taleb n tmeddurt?",
+        "Anwa tizeggawt i d-yellan ɣer tssnulfid n taleb agerruj?",
+        "Amek i d-yettwassnen tssnulfid n taleb agerruj deg Université Mohammed Premier?",
+        "Anwa tazwara n taɛlimt i taleb agerruj deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "L'inscription des étudiants étrangers à la FSO se fait uniquement sur présentation d'une autorisation délivrée par le Ministère de l'Éducation Nationale via l'Agence Marocaine de Coopération Internationale (AMCI).",
+        "Les dossiers doivent être transmis par voie diplomatique dans le cadre de la coopération entre le Maroc et le pays d'origine de l'étudiant. Les dossiers non transmis par l’AMCI ne sont pas pris en considération.",
+        "Le cycle de master est ouvert aux candidats titulaires d’un diplôme universitaire de niveau Bac+4 au minimum, avec autorisation délivrée après avis favorable de l’établissement demandé.",
+        "Le doctorat est accessible aux étudiants ayant un diplôme supérieur (DES, DESA, DESS, Master, etc.) désirant préparer un Doctorat National, avec autorisation délivrée après avis favorable.",
+        "L’hébergement dans les cités universitaires est possible sur demande de l’AMCI et sous réserve de places disponibles.",
+        "Les demandes de stages de recherche doivent également passer par voie diplomatique et nécessitent un avis favorable de l’établissement.",
+        "L’AMCI est l’organisme marocain responsable de l’attribution des bourses d’études ou de stage aux étudiants étrangers.",
+        "Le CIOVE (Centre d’Information, d’Orientation et de la Vie Estudiantine) accompagne les étudiants étrangers pour leur accueil, l’aide aux procédures d’inscription, d’hébergement, de bourses, et facilite leur intégration sociale ainsi que leur participation aux activités para-universitaires (culturelles et sportives)."
+      ],
+      "en": [
+        "Foreign student registration at FSO requires authorization issued by the Ministry of National Education through the Moroccan Agency for International Cooperation (AMCI).",
+        "Applications must be submitted diplomatically as part of cooperation between Morocco and the student's home country. Applications not transmitted by AMCI are not considered.",
+        "The master cycle is open to candidates with at least a Bac+4 university degree, with enrollment authorization after positive institutional approval.",
+        "Doctorate enrollment is open to students with higher degrees (DES, DESA, DESS, Master, etc.) aiming to pursue a National Doctorate, subject to institutional approval.",
+        "Housing in university residences is granted upon AMCI request and subject to availability.",
+        "Research internship requests must also be submitted diplomatically and require institutional approval.",
+        "AMCI is the Moroccan agency responsible for awarding scholarships or internships to foreign students.",
+        "CIOVE (Information, Orientation and Student Life Center) supports foreign students by welcoming them, assisting with enrollment, housing, scholarships, social integration, and sponsoring cultural and sports activities."
+      ],
+      "ar": [
+        "يتم تسجيل الطلاب الأجانب في كلية العلوم فقط بتقديم تصريح صادر عن وزارة التعليم الوطني عبر الوكالة المغربية للتعاون الدولي (AMCI).",
+        "يجب تقديم الطلبات عبر القنوات الدبلوماسية في إطار التعاون بين المغرب وبلد الطالب. الطلبات غير المقدمة عبر AMCI غير معترف بها.",
+        "دورة الماستر مفتوحة للمرشحين الحاصلين على شهادة جامعية بمستوى بكالوريا +4 على الأقل، مع تصريح تسجيل بعد موافقة المؤسسة.",
+        "دورة الدكتوراه متاحة للطلاب الحاصلين على شهادات أعلى (DES، DESA، DESS، ماستر، إلخ) الراغبين في متابعة الدكتوراه الوطنية، ويشترط موافقة المؤسسة.",
+        "السكن في المهاجع الجامعية ممكن بناءً على طلب AMCI ووفقًا لتوفر الأماكن.",
+        "يجب تقديم طلبات التدريب البحثي أيضًا عبر القنوات الدبلوماسية مع موافقة المؤسسة.",
+        "AMCI هي الوكالة المغربية المسؤولة عن منح المنح الدراسية أو التدريبات للطلاب الأجانب.",
+        "CIOVE (مركز المعلومات والتوجيه والحياة الطلابية) يدعم الطلاب الأجانب من خلال استقبالهم، والمساعدة في إجراءات التسجيل، والسكن، والمنح، والتكامل الاجتماعي، ورعاية الأنشطة الثقافية والرياضية."
+      ],
+      "amz": [
+        "Tssnulfid n taleb agerruj deg FSO yella s idduklen n wili n ṭṭebqit n l-Agence Marocaine de Coopération Internationale (AMCI).",
+        "Iṛuzz-nniḍen yessnulfaden s usenfaḍ n taẓuriḍt deg tmeddurt n Marocco d tigzawin n taleb. Iṛuzz ur yettnawad s AMCI ur yettḥaddar ara.",
+        "Cycle n master yella i wakken i texdem s ddiplôme n université (Bac+4) s usali n tkerkin n l'établissement.",
+        "Cycle n doctorat yella i wakken i texdem s ddiplômes n usali (DES, DESA, DESS, Master,..) s usali n tkerkin.",
+        "Lḥujra deg lmadaris yella s tazwara n AMCI d agi i yesɛaḍ deg tazzayt n leɛdil.",
+        "Tazwara n stages n tazwart yellan d amkan n usenfaḍ akked tkerkin n l'établissement.",
+        "AMCI d usenteḍ n Marocco i yesɛaḍ ɣer tbursat d stages i taleb agerruj.",
+        "CIOVE i yesɛaḍ taleb agerruj ɣer lqbel, tssnulfid, lḥujra, tbursat, d igerzen n usegga, akked tafsut n tudert d tiwlisin."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "Agence Marocaine de Coopération Internationale",
+        "Adresse: 6, rue Tamsloht Rabat.",
+        "Site web : http://www.amci.ma"
+      ],
+      "en": [
+        "Agence Marocaine de Coopération Internationale",
+        "Address: 6, rue Tamsloht Rabat.",
+        "Website: http://www.amci.ma"
+      ],
+      "ar": [
+        "وكالة مغربية للتعاون الدولي",
+        "العنوان: 6, شارع تامسلوت رباط.",
+        "الموقع الإلكتروني: http://www.amci.ma"
+      ],
+      "amz": [
+        "Agence Marocaine de Coopération Internationale",
+        "Adresse: 6, rue Tamsloht Rabat.",
+        "Site web : http://www.amci.ma"
+      ]
+    },
+    "data": "2025-08-12"
+  },
+  "etudiants_besoins_specifiques": {
+    "intent": "etudiants_besoins_specifiques",
+    "question": {
+      "fr": [
+        "Quelles aides la FSO offre-t-elle aux étudiants à besoins spécifiques ?",
+        "Comment fonctionne la Mission Handicap à l'Université Mohammed Premier ?",
+        "Quels sont les services pour les étudiants en situation de handicap ?",
+        "Comment bénéficier de l'accompagnement personnalisé pour handicap à la FSO ?",
+        "Où puis-je contacter la Mission Handicap à la FSO ?"
+      ],
+      "en": [
+        "What support does FSO provide for students with special needs?",
+        "How does the Disability Mission work at Mohammed Premier University?",
+        "What services are available for students with disabilities?",
+        "How to get personalized support for disability at FSO?",
+        "Where can I contact the Disability Mission at FSO?"
+      ],
+      "ar": [
+        "ما هي المساعدات التي تقدمها كلية العلوم للطلاب ذوي الاحتياجات الخاصة؟",
+        "كيف تعمل مهمة الإعاقة في جامعة محمد الأول؟",
+        "ما هي الخدمات المتاحة للطلاب ذوي الإعاقة؟",
+        "كيف يمكن الحصول على الدعم الشخصي للإعاقة في كلية العلوم؟",
+        "أين يمكنني التواصل مع مهمة الإعاقة في كلية العلوم؟"
+      ],
+      "amz": [
+        "Anwa i yesɛaḍ deg FSO ɣer taleb n tmuddurt i d-yellan ɣer needs nnsen?",
+        "Amek i d-yettwasnen Mission Handicap deg Université Mohammed Premier?",
+        "Anwa imdanen i d-yettwasnen i taleb agerruj i d-yellan ɣer needs nnsen?",
+        "Amek ad sselleḍ ad yesɛaḍ d imeslayen s wul n handicap deg FSO?",
+        "Win ad ssnulfed s Mission Handicap deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La Mission Handicap de l'Université Mohammed Premier accompagne les étudiants à besoins spécifiques permanents et temporaires avec un accueil personnalisé, un suivi adapté, des aides sociales et techniques, ainsi que des aménagements d’examens.",
+        "Cette mission fait partie du Service de la Vie Universitaire et coordonne les actions autour du handicap, incluant sensibilisation, partenariats, et soutien pour l’insertion professionnelle.",
+        "Le dispositif spécifique du CIOVE offre un accompagnement adapté à chaque étudiant, quel que soit son domaine d’étude ou son campus.",
+        "Pour bénéficier de ces aides, il est important de prendre rendez-vous dès que possible avec le CIOVE référent du service de personnes en difficulté.",
+        "Contact Mission Handicap : Tél. +212 5 36 50 29 79, Fax +212 5 36 50 06 09, Quartier Al Qods BP 524 Oujda 60000 Maroc."
+      ],
+      "en": [
+        "The Disability Mission at Mohammed Premier University supports students with permanent or temporary special needs by offering personalized reception, tailored follow-up, social and technical aids, and exam accommodations.",
+        "This mission is part of the University Life Service and coordinates disability-related actions, including awareness, partnerships, and support for professional integration.",
+        "The CIOVE’s specific program provides adapted support to each student regardless of their study field or campus.",
+        "To benefit from these services, it is important to make an appointment as soon as possible with the CIOVE contact for persons with difficulties.",
+        "Disability Mission Contact: Tel. +212 5 36 50 29 79, Fax +212 5 36 50 06 09, Quartier Al Qods BP 524 Oujda 60000 Morocco."
+      ],
+      "ar": [
+        "تدعم مهمة الإعاقة في جامعة محمد الأول الطلاب ذوي الاحتياجات الخاصة الدائمة والمؤقتة من خلال استقبال شخصي، متابعة مخصصة، مساعدات اجتماعية وتقنية، وتسهيلات في الامتحانات.",
+        "هذه المهمة جزء من خدمة الحياة الجامعية وتنسق الإجراءات المتعلقة بالإعاقة، بما في ذلك التوعية، الشراكات، ودعم الاندماج المهني.",
+        "يوفر برنامج CIOVE دعمًا مخصصًا لكل طالب بغض النظر عن مجال دراسته أو الحرم الجامعي.",
+        "للاستفادة من هذه الخدمات، من المهم تحديد موعد في أقرب وقت مع مسؤول CIOVE عن الأشخاص ذوي الصعوبات.",
+        "اتصل بمهمة الإعاقة: هاتف +212 5 36 50 29 79، فاكس +212 5 36 50 06 09، حي القدس BP 524 وجدة 60000 المغرب."
+      ],
+      "amz": [
+        "Mission Handicap deg Université Mohammed Premier tessefk i taleb n tmuddurt i d-yellan ɣer needs nnsen ɣer tmara d takka, s ussekni n uzday, tazwara yesɛaḍ, akked imeddukalen n teqvaylit, d tazwart n imettawal.",
+        "Ayenna d uẓar n Service n Tudert n tmargit, d-yemmeslay asmektiwin ɣer handicap, tazwara, tnekra n igemmunen, akked tessekka i tament d umḍiq.",
+        "Dispositif n CIOVE i yesɛaḍ deg wezzu n taleb s wayen i d-yellan d usentid, ur teqqim ara asirem neɣ tikciwin n tmargit.",
+        "I meddukal n wid i d-yellan d tayri nniḍen, yella d ayen ara tzekkiḍ ad tessnulfed s waqmat s waman n CioVe.",
+        "Awiḍ n Mission Handicap: Tél. +212 5 36 50 29 79, Fax +212 5 36 50 06 09, Quartier Al Qods BP 524 Oujda 60000 Maroc."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "Mission Handicap FSO",
+        "Aide étudiants besoins spécifiques",
+        "Intégration handicap université"
+      ],
+      "en": [
+        "Disability Mission FSO",
+        "Support for students with special needs",
+        "University disability inclusion"
+      ],
+      "ar": [
+        "مهمة الإعاقة كلية العلوم",
+        "دعم الطلاب ذوي الاحتياجات الخاصة",
+        "دمج الإعاقة في الجامعة"
+      ],
+      "amz": [
+        "Mission Handicap FSO",
+        "Yesɛaḍ i taleb n tmuddurt",
+        "Tasnalt n handicap deg tmargit"
+      ]
+    },
+    "data": "2025-08-12"
+  },
+  "cellule_tutorat": {
+    "intent": "cellule_tutorat",
+    "question": {
+      "fr": [
+        "Qu'est-ce que la cellule tutorat à l'Université Mohammed Premier ?",
+        "Comment fonctionne le dispositif de tutorat pour les étudiants de première année ?",
+        "Qui sont les tuteurs à la FSO et quel est leur rôle ?",
+        "Comment puis-je bénéficier du tutorat pour réussir ma licence ?",
+        "Y a-t-il une cellule d’écoute pour les étudiants à la FSO ?"
+      ],
+      "en": [
+        "What is the tutoring unit at Mohammed Premier University?",
+        "How does the tutoring program work for first-year students?",
+        "Who are the tutors at FSO and what do they do?",
+        "How can I benefit from tutoring to succeed in my bachelor's degree?",
+        "Is there a listening/support unit for students at FSO?"
+      ],
+      "ar": [
+        "ما هي خلية التوجيه في جامعة محمد الأول؟",
+        "كيف يعمل نظام التوجيه للطلاب في السنة الأولى؟",
+        "من هم المرشدون في كلية العلوم وما دورهم؟",
+        "كيف يمكنني الاستفادة من التوجيه للنجاح في البكالوريوس؟",
+        "هل توجد خلية استماع ودعم للطلاب في كلية العلوم؟"
+      ],
+      "amz": [
+        "D acu d cellule tutorat deg Université Mohammed Premier?",
+        "Amek i d-yeslay tutorat i taleb n wass n wayen ad ssenkar awal?",
+        "Anwa imdanen i d-yettwasnen tuteur deg FSO akked ma yeddu?",
+        "Amek ad sselleḍ ad yesɛaḍ deg tutorat i ssnen tamghart?",
+        "Yella-d cellule n tazwara i taleb deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La cellule tutorat est un dispositif d’aide pédagogique destiné aux étudiants de première année du cycle licence à l’Université Mohammed Premier.",
+        "Les tuteurs sont des étudiants en Master ou Doctorat, formés et sélectionnés, qui accompagnent les étudiants volontaires pour les conseiller et les aider à mieux réussir.",
+        "Le tuteur est un animateur et médiateur, pas un enseignant, qui écoute les étudiants et facilite leur relation avec les enseignants si besoin.",
+        "Une cellule d’écoute au CIOVE est aussi disponible pour aider les étudiants en cas de problème.",
+        "Ce dispositif vise à améliorer les chances de réussite et à offrir un soutien personnalisé."
+      ],
+      "en": [
+        "The tutoring unit is a pedagogical support system for first-year bachelor’s students at Mohammed Premier University.",
+        "Tutors are selected and trained Master or Doctorate students who support volunteers by advising and helping them succeed.",
+        "A tutor acts as a facilitator and mediator, not a teacher, listening to students and bridging communication with professors when needed.",
+        "A listening/support unit at CIOVE is also available to help students with any issues.",
+        "This program aims to improve success rates and provide personalized support."
+      ],
+      "ar": [
+        "خلية التوجيه هي نظام دعم تربوي موجه لطلاب السنة الأولى في البكالوريوس بجامعة محمد الأول.",
+        "المرشدون هم طلاب ماجستير أو دكتوراه يتم اختيارهم وتدريبهم لمساعدة الطلاب المتطوعين على النجاح.",
+        "المرشد هو ميسر ووسيط وليس مدرسًا، يستمع للطلاب ويسهل تواصلهم مع الأساتذة عند الحاجة.",
+        "توجد أيضًا خلية استماع ودعم في CIOVE لمساعدة الطلاب في حالة وجود مشاكل.",
+        "يهدف هذا النظام إلى تحسين معدلات النجاح وتقديم دعم شخصي."
+      ],
+      "amz": [
+        "Cellule tutorat ddis dispositif n tazwara i taleb n wass n wayen ad ssnkar awal deg Université Mohammed Premier.",
+        "Tuteurs d imdanen n Master neɣ Doctorat i yesqedcen d yisemlayen s wayen i yesɛaḍen ad yessefk awid i sḥeb.",
+        "Tuteur ur yella ara d muallim, maca d animatur akked mediatur, i yesɛaḍ taleb d-aseggwas s lmuallimin ma yella ayen ara d-yeqqimen.",
+        "Yella-d cellule n tazwara deg CIOVE i yesɛaḍ taleb ma yella ayen ara d-yeqqimen.",
+        "Ayenna yella ad yessefk usnefḍu n tazwara akked yesɛaḍ s webrid n uselkim."
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-08-12"
+  },
+  "laboratoires_fs_oujda": {
+    "intent": "laboratoires_fs_oujda",
+    "question": {
+      "fr": [
+        "Quels sont les laboratoires de recherche de la Faculté des Sciences d’Oujda ?",
+        "Peux-tu me donner la liste des laboratoires à la FS d’Oujda ?",
+        "Quelles unités de recherche existent à la Faculté des Sciences d’Oujda ?",
+        "Quels sont les laboratoires scientifiques de l’Université Mohammed Premier à Oujda ?",
+        "Y a-t-il un laboratoire d’informatique à la FS d’Oujda ?"
+      ],
+      "en": [
+        "What are the research laboratories at the Faculty of Sciences in Oujda?",
+        "Can you give me the list of laboratories at FS Oujda?",
+        "Which research units exist at the Faculty of Sciences in Oujda?",
+        "What scientific laboratories are at Mohammed First University in Oujda?",
+        "Is there a computer science lab at FS Oujda?"
+      ],
+      "ar": [
+        "ما هي مختبرات البحث في كلية العلوم بوجدة؟",
+        "هل يمكنك إعطائي قائمة المختبرات في كلية العلوم بوجدة؟",
+        "ما هي وحدات البحث الموجودة في كلية العلوم بوجدة؟",
+        "ما هي المختبرات العلمية في جامعة محمد الأول بوجدة؟",
+        "هل يوجد مختبر معلوماتية في كلية العلوم بوجدة؟"
+      ],
+      "amz": [
+        "ⴰⵎⴰⵔⵔⴰⵔ ⵏ ⵍⵓⵍⴰⵎⴰⵏ ⵏ ⵜⴰⵎⴳⵔⵉⴱⵜ ⴷ ⵓⵊⴷⴰ?",
+        "ⴰⵔⴰⵔ ⵉⵎⵔⵙⵏⵉⵏ ⵉⵙⵙⴰⴽⴽⴰⵏ ⵏ ⵍⵓⵍⴰⵎⴰⵏ ⴷ ⵓⵊⴷⴰ?",
+        "ⵎⴰⵔⵓⵎⵎⴰⵏ ⵏ ⵜⴰⵎⴳⵔⵉⴱⵜ ⴰⴷ ⵓⵊⴷⴰ ⵉⵣⵣⵓⵍⵍⵉⵏ?",
+        "ⵎⴰⵔⵓⵎⵎⴰⵏ ⵏ ⵍⵓⵍⴰⵎⴰⵏ ⵙ ⵓⵎⴰⵣⵉⴷ ⵎⵓⵃⴰⵎⴷ ⴰⵍⵎⵓⵍ?",
+        "ⴰⵔⴰⵔ ⴰⵎⴰⵎⵓⵔ ⵉⵙⵓⵏⴳⵉⵎⵓⴽⴰⵏ ⵙ ⵓⵊⴷⴰ?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Voici la liste des laboratoires de recherche de la Faculté des Sciences d’Oujda :",
+        "- Laboratoire des Géosciences Appliquées (LGA)",
+        "- Laboratoire de Géopatrimoine, Géoenvironnement & Prospection Minière et Hydrique (2GPMH)",
+        "- Laboratoire d’Amélioration de la Production Agricole, Biotechnologie et Environnement (LAPABE)",
+        "- Laboratoire de Bio-ressources, Biotechnologies, Ethnopharmacologie et Santé (LBBES)",
+        "- Laboratoire de Chimie Appliquée et Environnement (LCAE)",
+        "- Laboratoire d’Arithmétique Calcul Scientifique et Applications (ACSA)",
+        "- Laboratoire des Mathématiques Appliquées de l'Oriental (LaMAO)",
+        "- Laboratoire Ibn Al-Banna de Mathématiques (LIABM)",
+        "- Laboratoire d’Analyse Numérique et Optimisation (LANO)",
+        "- Laboratoire de Modélisation Stochastique et Déterministe (LaMSD)",
+        "- Laboratoire de Recherche en Informatique (LaRI)",
+        "- Laboratoire des Matériaux, Ondes, Energie et Environnement (LaMON2E)",
+        "- Laboratoire de Physique de la Matière et de Rayonnements (LPMR)",
+        "- Laboratoire de Mécanique et Energétique (LME)",
+        "- Laboratoire d’Electromagnétisme, Traitement de Signal et Energies Renouvelables (LETSER)",
+        "- Laboratoire de Physique Théorique, des Particules, Modélisation et Energies (LPTPME)",
+        "- Laboratoire d’Electronique et Systèmes (LES)"
+      ],
+      "en": [
+        "Here is the list of research laboratories at the Faculty of Sciences in Oujda:",
+        "- Laboratory of Applied Geosciences (LGA)",
+        "- Laboratory of Geoheritage, Geoenvironment & Mineral and Water Prospecting (2GPMH)",
+        "- Laboratory for the Improvement of Agricultural Production, Biotechnology and Environment (LAPABE)",
+        "- Laboratory of Bio-resources, Biotechnologies, Ethnopharmacology and Health (LBBES)",
+        "- Laboratory of Applied Chemistry and Environment (LCAE)",
+        "- Laboratory of Arithmetic, Scientific Computing and Applications (ACSA)",
+        "- Laboratory of Applied Mathematics of the Oriental (LaMAO)",
+        "- Ibn Al-Banna Laboratory of Mathematics (LIABM)",
+        "- Laboratory of Numerical Analysis and Optimization (LANO)",
+        "- Laboratory of Stochastic and Deterministic Modeling (LaMSD)",
+        "- Laboratory of Computer Science Research (LaRI)",
+        "- Laboratory of Materials, Waves, Energy and Environment (LaMON2E)",
+        "- Laboratory of Physics of Matter and Radiation (LPMR)",
+        "- Laboratory of Mechanics and Energy (LME)",
+        "- Laboratory of Electromagnetism, Signal Processing and Renewable Energies (LETSER)",
+        "- Laboratory of Theoretical Physics, Particles, Modeling and Energy (LPTPME)",
+        "- Laboratory of Electronics and Systems (LES)"
+      ],
+      "ar": [
+        "فيما يلي قائمة مختبرات البحث في كلية العلوم بوجدة:",
+        "- مختبر علوم الأرض التطبيقية (LGA)",
+        "- مختبر التراث الجيولوجي والجيوبئة والاستكشاف المعدني والمائي (2GPMH)",
+        "- مختبر تحسين الإنتاج الزراعي والتكنولوجيا الحيوية والبيئة (LAPABE)",
+        "- مختبر الموارد البيولوجية والتكنولوجيا الحيوية والإيثنوفارماكولوجيا والصحة (LBBES)",
+        "- مختبر الكيمياء التطبيقية والبيئة (LCAE)",
+        "- مختبر الحساب العلمي والحسابيات التطبيقية (ACSA)",
+        "- مختبر الرياضيات التطبيقية للشرق (LaMAO)",
+        "- مختبر ابن البنّا للرياضيات (LIABM)",
+        "- مختبر التحليل العددي والتحسين (LANO)",
+        "- مختبر النمذجة الاحتمالية والحتمية (LaMSD)",
+        "- مختبر البحث في علوم الحاسوب (LaRI)",
+        "- مختبر المواد والأمواج والطاقة والبيئة (LaMON2E)",
+        "- مختبر فيزياء المادة والإشعاع (LPMR)",
+        "- مختبر الميكانيك والطاقة (LME)",
+        "- مختبر الكهرومغناطيسية ومعالجة الإشارات والطاقة المتجددة (LETSER)",
+        "- مختبر الفيزياء النظرية والجسيمات والنمذجة والطاقة (LPTPME)",
+        "- مختبر الإلكترونيات والأنظمة (LES)"
+      ],
+      "amz": [
+        "ⴰⵙⵏⵓⵔ ⴷⴰ ⵏⵉⵖ ⵏ ⵍⵓⵍⴰⵎⴰⵏ ⵏ ⵜⴰⵎⴳⵔⵉⴱⵜ ⴷ ⵓⵊⴷⴰ:",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⵉⵖⵓⵙⵉⵏⵙ ⵏ ⵜⴰⵙⵉⴱⴰⵍⴰ (LGA)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⵓⵍⴰⵍⵓⵔⵉⵜ ⴷ ⵍⵓⵍⵉⵖⵓⵙⵉⵏⵙ ⴷ ⵍⵓⵏⴳⴳⴰⵎ ⵏ ⵎⴰⴷⵉⵏ ⴷ ⴰⴷⵔⵉ (2GPMH)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵉⵎⵔⵙⵏ ⴷ ⵜⴰⵜⵓⵏⵉⵣⵉⵔⵜ ⴷ ⵜⴰⴱⵓⵔⵉⵙⵉⵜ (LAPABE)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵜⴰⵙⵉⴱⴰⵍⵜ ⴷ ⵜⵜⴰⵜⵓⵏⵉⵣⵉⵔⵜ ⴷ ⵍⵓⵍⴰⵎⴰⵏ ⵏ ⵍⵓⵙⵏⵉⵣⵉⴱ (LBBES)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⴰⴽⵉⵎⵢⴰ ⵜⵓⴱⵉⵇⵜ ⴷ ⵍⵓⵍⵉⵖⵓⵙⵉⵏⵙ (LCAE)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⵉⴳⵔⵉⵎⵉⵜ ⴷ ⵍⵉⴳⵓⵏⴰ ⵉⵙⵙⴰⴽⴽⴰⵏ (ACSA)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵜⴰⵙⵉⴱⴰⵍⵜ ⵏ ⵍⵓⵣⵔⴰⵔ (LaMAO)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵉⴱⵏ ⴰⵍⴱⴰⵏⴰ ⵏ ⵜⴰⵙⵉⴱⴰⵍⵜ (LIABM)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵜⴰⴼⵉⵙⵉⵜ ⵏ ⵜⴰⵙⵉⵎⵓⵔⵜ (LANO)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵜⴰⵎⴷⵍⵉⵙⵉⵜ ⵜⵓⴼⵔⵉⵙⵜ ⴷ ⵜⴰⵎⴷⵍⵉⵙⵉⵜ ⵜⵓⴷⵔⵉⵙⵜ (LaMSD)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⵓⵙⵏⵉⵣⵉⴱ (LaRI)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵜⴰⵎⴰⵔⵜⵓⵏⵉⵢⵉⵜ ⴷ ⵓⵎⴰⵣⵉⴷ ⴷ ⵍⵓⵍⵉⵖⵓⵙⵉⵏⵙ (LaMON2E)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵜⴰⴼⵉⵙⵉⵜ ⴷ ⵜⵜⴰⵜⴰⵔⴰ (LPMR)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⵓⵎⵉⴽⴰⵏⵉⴽ ⴷ ⵜⵜⴰⵜⵓⵏⵉⴷⵜ (LME)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⴰⴽⵀⵓⵔⵓⵎⴰⵏⵉⵣⵉⵜ ⴷ ⵜⵓⴼⵔⵉⵙⵜ ⵏ ⵓⵙⵉⴳⵍⴰⵏ ⴷ ⵜⴰⵜⵓⵏⵉⴷⵜ (LETSER)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵜⴰ⵼ⵉⴳⵓⵏⵉⵜ ⵜⵓⴷⵔⵉⵙⵜ ⴷ ⵍⵓⵎⴰⵣⵉⴷ ⴷ ⵜⴰⵜⵓⵏⵉⴷⵜ (LPTPME)",
+        "- ⵍⴰⴱⵓⵔⴰⵜⵓⵔ ⵏ ⵍⵉⴽⵜⵓⵏⵉⵢⵉⵜ ⴷ ⵙⵓⵙⵜⵉⵎⵉⵏ (LES)"
+      ]
+    },
+    "meta": {
+      "fr": [
+        "Liste officielle des laboratoires de la Faculté des Sciences d’Oujda"
+      ],
+      "en": [
+        "Official list of laboratories at the Faculty of Sciences in Oujda"
+      ],
+      "ar": [
+        "القائمة الرسمية لمختبرات كلية العلوم بوجدة"
+      ],
+      "amz": [
+        "ⵜⴰⵙⵏⵓⵔⵜ ⵜⴰⵔⵙⵉⵎⵉⵜ ⵏ ⵍⵓⵍⴰⵎⴰⵏ ⴷ ⵓⵊⴷⴰ"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_info_fs": {
+    "intent": "doctorat_info_fs",
+    "question": {
+      "fr": [
+        "Quelles sont les informations générales sur le doctorat à la Faculté des Sciences d'Oujda ?",
+        "Qui est le directeur du pôle des études doctorales à la FSO ?",
+        "Quels sont les établissements liés au CEDoc-ST de la FSO ?",
+        "Quelles sont les formations doctorales proposées par la FSO ?",
+        "Comment contacter le CEDoc de la FSO ?"
+      ],
+      "en": [
+        "What are the general details about the PhD program at the Faculty of Sciences of Oujda?",
+        "Who is the director of the doctoral studies center at FSO?",
+        "Which institutions are linked to the CEDoc-ST at FSO?",
+        "What doctoral programs are offered by FSO?",
+        "How can I contact the CEDoc at FSO?"
+      ],
+      "ar": [
+        "ما هي المعلومات العامة حول الدكتوراه في كلية العلوم بوجدة؟",
+        "من هو مدير مركز الدراسات الدكتوراه في كلية العلوم؟",
+        "ما هي المؤسسات المرتبطة بـ CEDoc-ST في كلية العلوم؟",
+        "ما هي برامج الدكتوراه المقدمة من كلية العلوم؟",
+        "كيف يمكنني التواصل مع CEDoc في كلية العلوم؟"
+      ],
+      "amz": [
+        "Man i d isnasen imussanen ɣef uddukkan n teddukturat deg Taddart n Tussna n Oujda?",
+        "Anwa d amezwaru n usentel n uskar n teddukturat deg FSO?",
+        "Mani d yiddn uselkim d CEDoc-ST n FSO?",
+        "Mani d isenfal n teddukturat i yellan deg FSO?",
+        "Amek ghili rad sgn CEDoc deg FSO?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Directeur du pôle des Etudes Doctorales : Pr. Abdelmalek Azizi. Établissement d’attache : Faculté des Sciences. Coordonnateur du pôle STIS : Pr. Khalid Chaabane. Date d’accréditation : 2008. Coordonnées : Faculté des Sciences, Université Mohammed Premier, BV Mohamed VI, BP 717, Oujda 60000, MAROC. Tél : (212)536500601/02. Fax : (212)536500603. Mail : cedocst@ump.ac.ma. Site : www.fso.ump.ma. Établissements liés : Faculté des Sciences, Faculté Pluridisciplinaire de Nador, École Supérieure de Technologie, École Nationale des Sciences Appliquées Oujda, Faculté de Médecine et de Pharmacie. Formations doctorales : Physique et Ingénierie, Mathématiques et Informatique, Chimie Appliquée et Environnement, Sciences de la Vie et Environnement, Géosciences et Applications, Sciences de la Santé."
+      ],
+      "en": [
+        "Director of the Doctoral Studies Center: Prof. Abdelmalek Azizi. Main institution: Faculty of Sciences. STIS Pole Coordinator: Prof. Khalid Chaabane. Accreditation date: 2008. Address: Faculty of Sciences, Mohammed Premier University, BV Mohamed VI, BP 717, Oujda 60000, Morocco. Tel: (212)536500601/02. Fax: (212)536500603. Email: cedocst@ump.ac.ma. Website: www.fso.ump.ma. Linked institutions: Faculty of Sciences, Multidisciplinary Faculty of Nador, Higher School of Technology, National School of Applied Sciences Oujda, Faculty of Medicine and Pharmacy. Doctoral programs: Physics and Engineering, Mathematics and Computer Science, Applied Chemistry and Environment, Life and Environmental Sciences, Geosciences and Applications, Health Sciences."
+      ],
+      "ar": [
+        "مدير مركز الدراسات الدكتوراه: الأستاذ عبد المالك عزيزي. المؤسسة الرئيسية: كلية العلوم. منسق قطب STIS: الأستاذ خالد شعبان. تاريخ الاعتماد: 2008. العنوان: كلية العلوم، جامعة محمد الأول، شارع محمد السادس، صندوق بريد 717، وجدة 60000، المغرب. الهاتف: (212)536500601/02. الفاكس: (212)536500603. البريد الإلكتروني: cedocst@ump.ac.ma. الموقع: www.fso.ump.ma. المؤسسات المرتبطة: كلية العلوم، الكلية متعددة التخصصات بالناظور، المدرسة العليا للتكنولوجيا، المدرسة الوطنية للعلوم التطبيقية بوجدة، كلية الطب والصيدلة. برامج الدكتوراه: الفيزياء والهندسة، الرياضيات وعلوم الحاسوب، الكيمياء التطبيقية والبيئة، علوم الحياة والبيئة، علوم الأرض والتطبيقات، علوم الصحة."
+      ],
+      "amz": [
+        "Amezwaru n usentel n uskar n teddukturat: Bab Abdelmalek Azizi. Taddart n tseddukt: Taddart n Tussna. Amekfay n taddart STIS: Bab Khalid Chaabane. Azemz n useqdec: 2008. Tansa: Taddart n Tussna, Taddart n L'université Mohammed Premier, BV Mohamed VI, BP 717, Oujda 60000, Amurakuc. Tilifun: (212)536500601/02. Fax: (212)536500603. Email: cedocst@ump.ac.ma. Asmel: www.fso.ump.ma. Tiddukla yeddn: Taddart n Tussna, Taddart Pluridisciplinaire n Nador, Tasdawit Tameqqrant n Teknulujit, Tasdawit Tamurt n Tussna Usnasen n Ujda, Taddart n Tbib d Pharmacie. Isegnfal n teddukturat: Tussna d Usnari, Tusna n Uslin d Informatique, Tikmiya Tasgunt d Tawenna, Tusna n tudert d Tawenna, Tussna n Aglam d Isnasen, Tusna n Tasehhit."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "https://www.ump.ma/fr/informations"
+      ],
+      "en": [
+        "https://www.ump.ma/fr/informations"
+      ],
+      "ar": [
+        "https://www.ump.ma/fr/informations"
+      ],
+      "amz": [
+        "https://www.ump.ma/fr/informations"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_inscription": {
+    "intent": "doctorat_inscription",
+    "question": {
+      "fr": [
+        "Comment s'inscrire au doctorat à la Faculté des Sciences d'Oujda ?",
+        "Quelles sont les étapes pour confirmer une inscription en doctorat ?",
+        "Quels documents sont nécessaires pour l'inscription au doctorat ?",
+        "Où et quand déposer le dossier d'inscription au doctorat ?"
+      ],
+      "en": [
+        "How to register for a PhD at the Faculty of Sciences in Oujda?",
+        "What are the steps to confirm PhD enrollment?",
+        "Which documents are needed for PhD registration?",
+        "Where and when to submit the PhD registration file?"
+      ],
+      "ar": [
+        "كيف يمكن التسجيل في الدكتوراه في كلية العلوم بوجدة؟",
+        "ما هي خطوات تأكيد التسجيل في الدكتوراه؟",
+        "ما هي الوثائق المطلوبة للتسجيل في الدكتوراه؟",
+        "أين ومتى يتم تقديم ملف التسجيل للدكتوراه؟"
+      ],
+      "amz": [
+        "Amek ara tzemreḍ i teddukturat deg Taddart n Tussna n Oujda?",
+        "Mani d useggas n uselkim i tefk ed ufus n teddukturat?",
+        "Mani d tizdat i d-ttwaclin i tzemreḍ n teddukturat?",
+        "Anik d wagi ad tefk ed ufus n tizdat n teddukturat?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le candidat accepté doit accéder à son espace sur http://ped.ump.ma/AccesDoctorant, remplir le formulaire de confirmation et télécharger la fiche de pré-inscription. Il doit imprimer, signer cette fiche et la joindre au dossier. Ensuite, se présenter au bureau d'inscription avec : formulaire d'inscription, CV, copie numérique du mémoire de Master, diplôme original, copies certifiées conformes des diplômes, relevés de notes, photocopie de la carte d'identité, 2 photos récentes, attestation d'assurance, attestation de non-emploi (si non salarié), et chartes signées. La demande de bourse doit être déposée avec l'attestation dans une grande enveloppe. Le dépôt se fait du 18 au 31 octobre au Pôle Sciences."
+      ],
+      "en": [
+        "The accepted candidate must access their application space at http://ped.ump.ma/AccesDoctorant, fill out the confirmation form, and download the pre-registration sheet. They must print and sign this sheet and attach it to their file. Then, present themselves at the registration office with: registration form, CV, digital copy of the Master's thesis, original diploma, certified copies of diplomas, transcripts, ID card copy, 2 recent photos, insurance certificate, unemployment certificate (if unemployed), and signed charters. Scholarship requests must be submitted with the certificate in a large envelope. Submission is from October 18 to 31 at the Sciences Pole."
+      ],
+      "ar": [
+        "يجب على المرشح المقبول الدخول إلى مساحة الترشيح على http://ped.ump.ma/AccesDoctorant، ملء استمارة التأكيد وتنزيل استمارة التسجيل المسبق. يجب عليه طباعة وتوقيع الاستمارة وإرفاقها بالملف. بعد ذلك، يجب التوجه إلى مكتب التسجيل مع: استمارة التسجيل، السيرة الذاتية، نسخة رقمية من مذكرة الماستر، الشهادة الأصلية، نسخ مصدقة من الشهادات، كشف الدرجات، نسخة من بطاقة الهوية، صورتان حديثتان، شهادة تأمين، شهادة عدم تشغيل (لغير الموظفين)، والمواثيق الموقعة. يجب تقديم طلبات المنح مع شهادة عدم التشغيل في ظرف كبير. التقديم يكون من 18 إلى 31 أكتوبر في قطب العلوم."
+      ],
+      "amz": [
+        "Ameẓru n usnifel i d-yesɛaṛ ad yefka afus n uselkim deg http://ped.ump.ma/AccesDoctorant, ad yezmer ṭṭabrat n useggas, d ad yeɛmel tafukt n tazeqqimt. Yessefru-d, yessekcem, yewwi tafukt ɣer uselkim n useggas. Iḍebben deg uselkim n tizdat: tafukt n tzemreḍ, CV, tajmaat n tafukt n Master deg CD, tafukt amenzu, tafukt imedyazen, tizeqqimt, taqect n id, 2 taswira tamdint, takwalt n tazwart, takwalt n ur nezmir ara (ma yekssar ara), d tisediwen tazrawin. Isemnalen n bursa ad yeẓraren d afus n umkmay. Imdukal ad yettwadi seg 18 ɣer 31 uktubr deg Pôle Sciences."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "https://www.ump.ma/fr/inscriptions-6",
+        "http://ped.ump.ma/AccesDoctorant"
+      ],
+      "en": [
+        "https://www.ump.ma/fr/inscriptions-6",
+        "http://ped.ump.ma/AccesDoctorant"
+      ],
+      "ar": [
+        "https://www.ump.ma/fr/inscriptions-6",
+        "http://ped.ump.ma/AccesDoctorant"
+      ],
+      "amz": [
+        "https://www.ump.ma/fr/inscriptions-6",
+        "http://ped.ump.ma/AccesDoctorant"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_reinscription": {
+    "intent": "doctorat_reinscription",
+    "question": {
+      "fr": [
+        "Quelles sont les démarches pour la réinscription en doctorat ?",
+        "Quels documents faut-il pour la réinscription à une année de thèse ?",
+        "Comment faire un rapport d’avancement pour la réinscription ?",
+        "Quels sont les éléments à inclure dans le rapport d’avancement de la thèse ?"
+      ],
+      "en": [
+        "What are the steps for PhD re-enrollment?",
+        "What documents are required for re-enrollment in a thesis year?",
+        "How to write a progress report for PhD re-enrollment?",
+        "What should be included in the PhD thesis progress report?"
+      ],
+      "ar": [
+        "ما هي إجراءات إعادة التسجيل في الدكتوراه؟",
+        "ما هي الوثائق المطلوبة لإعادة التسجيل في سنة الدكتوراه؟",
+        "كيف أكتب تقرير تقدم لإعادة التسجيل؟",
+        "ما هي العناصر التي يجب تضمينها في تقرير تقدم أطروحة الدكتوراه؟"
+      ],
+      "amz": [
+        "Mani d uselkim n uselkim n teddukturat i d-yettwaḍi?",
+        "Mani d tizdat i d-ttwaclin i tzemreḍ n uselkim deg annar n usnas?",
+        "Amek ara ttwaliḍ tafukt n uselkim i uselkim n teddukturat?",
+        "Mani d imir n tafukt n uselkim n teddukturat?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Pour la réinscription, il faut apporter : la fiche de réinscription en ième année de thèse, et le rapport sur l’état d’avancement de l’année précédente. Le rapport doit contenir :\n- Identité du doctorant, nom du directeur, laboratoire, établissement, formation doctorale.\n- Avancement de la thèse : titre, projet et planning global, synthèse bibliographique avec références, résultats obtenus ou description du travail effectué.\n- Formations complémentaires suivies et souhaitées.\n- Remarques générales.\nLe rapport fait entre 5 et 10 pages. Il doit être daté et signé par le doctorant et le directeur."
+      ],
+      "en": [
+        "For re-enrollment, you need to bring: the re-enrollment form for the thesis year, and the progress report from the previous year. The report should include:\n- Identity of the PhD candidate, supervisor's name, lab, institution, doctoral program.\n- Thesis progress: title, project overview and timeline, bibliographic summary with references, results or description of work done.\n- Complementary trainings taken and planned.\n- General remarks.\nThe report should be 5 to 10 pages long and signed by both candidate and supervisor."
+      ],
+      "ar": [
+        "لإعادة التسجيل، يجب إحضار: استمارة إعادة التسجيل للسنة الحالية، وتقرير عن تقدم السنة السابقة. يجب أن يحتوي التقرير على:\n- هوية الطالب، اسم المشرف، المختبر، المؤسسة، البرنامج الدكتوراه.\n- تقدم الأطروحة: العنوان، ملخص المشروع والجدول الزمني، ملخص ببليوغرافي مع المراجع، النتائج أو وصف العمل المنجز.\n- الدورات التدريبية المكملة التي تم حضورها والمخطط لها.\n- ملاحظات عامة.\nيجب أن يكون التقرير بين 5 إلى 10 صفحات وموقع من الطالب والمشرف."
+      ],
+      "amz": [
+        "I d-yettwaḍi ad tefk: tafukt n uselkim n uselkim deg annar n usnas, d tafukt n uselkim n annar n uɛeddar. Tafukt ad yessefk: \n- Asmek n usnifel, asmek n amezwaru, tasdawit, tadart, tazwart n teddukturat.\n- Usnifel n teddukturat: asmek, tazwart n usnifel d tilugwa, tazwara n tizewwrin s takulawt, imezdaɣen neɣ ɣer taggalt n wassel.\n- Isegnfal n tazwara tettwasnen d iɣallen.\n- Isemnalen n usenfaḍ.\nTafukt ad yezmer 5-10 afaḍi, yessuḥked s uzzu n usnifel d amezwaru."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "https://www.ump.ma/fr/reinscription/2eme-annee"
+      ],
+      "en": [
+        "https://www.ump.ma/fr/reinscription/2eme-annee"
+      ],
+      "ar": [
+        "https://www.ump.ma/fr/reinscription/2eme-annee"
+      ],
+      "amz": [
+        "https://www.ump.ma/fr/reinscription/2eme-annee"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_directeur_responsabilites": {
+    "intent": "doctorat_directeur_responsabilites",
+    "question": {
+      "fr": [
+        "Quelles sont les responsabilités du directeur de thèse ?",
+        "Quels sont les devoirs du directeur de thèse en doctorat ?",
+        "Quel est le rôle du directeur de thèse ?"
+      ],
+      "en": [
+        "What are the responsibilities of the thesis supervisor?",
+        "What duties does a doctoral thesis director have?",
+        "What is the role of the thesis supervisor?"
+      ],
+      "ar": [
+        "ما هي مسؤوليات مدير الأطروحة؟",
+        "ما هي واجبات مدير أطروحة الدكتوراه؟",
+        "ما هو دور مدير الأطروحة؟"
+      ],
+      "amz": [
+        "Ma yennk aselmed n udrar n thèse?",
+        "Ma d assa n tazwara n udrar n thèse n doctorat?",
+        "Ma d aseggas n udrar n thèse?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le directeur de thèse gère les moyens nécessaires à la réalisation de la thèse, assure un suivi régulier du travail, garantit l’originalité du sujet, propose une feuille de route, accompagne le doctorant jusqu’à la soutenance, et veille à la qualité des publications issues du travail de recherche."
+      ],
+      "en": [
+        "The thesis supervisor manages the resources necessary for the thesis, regularly monitors the progress, ensures the originality of the subject, proposes a roadmap, supports the doctoral candidate until defense, and oversees the quality of publications derived from the research work."
+      ],
+      "ar": [
+        "يقوم مدير الأطروحة بإدارة الموارد اللازمة لإعداد الأطروحة، ويتابع التقدم بانتظام، ويضمن أصالة الموضوع، ويقترح خطة عمل، ويرافق الباحث حتى المناقشة، ويحرص على جودة المنشورات الناتجة عن البحث."
+      ],
+      "amz": [
+        "Udrar n thèse yessefk ad yefka-d imdukaln i d-yenna-d i tezgi n thèse, yeddu s umggar n imalu, yesnuf ifen n usegwas, yettawi afaylu n umidag, yernu amezwaru ɣer wudem n wassn, d yernu tafat n tefsut i webrid n tezgi."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "Responsabilités du directeur de thèse, encadrement doctoral"
+      ],
+      "en": [
+        "Thesis supervisor responsibilities, doctoral supervision"
+      ],
+      "ar": [
+        "مسؤوليات مدير الأطروحة، الإشراف على الدكتوراه"
+      ],
+      "amz": [
+        "Tasiremt n udrar n thèse, tazwara n doctorat"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_devoirs_doctorant": {
+    "intent": "doctorat_devoirs_doctorant",
+    "question": {
+      "fr": [
+        "Quels sont les devoirs du doctorant ?",
+        "Quelles sont les responsabilités du doctorant en thèse ?",
+        "Que doit faire un doctorant pendant sa thèse ?"
+      ],
+      "en": [
+        "What are the duties of a doctoral student?",
+        "What responsibilities does a doctoral candidate have during their thesis?",
+        "What should a PhD student do during their thesis?"
+      ],
+      "ar": [
+        "ما هي واجبات طالب الدكتوراه؟",
+        "ما هي مسؤوليات طالب الدكتوراه خلال إعداد الأطروحة؟",
+        "ماذا يجب أن يفعل طالب الدكتوراه أثناء الأطروحة؟"
+      ],
+      "amz": [
+        "Ma d assa n tazwara n doctorant?",
+        "Ma yennk aselmed n doctorant deg wayen i d-yenna di thèse?",
+        "Ma d yettwaslen doctorant deg usegwas n thèse?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le doctorant doit respecter la feuille de route définie avec son directeur, participer aux formations doctorales, avancer régulièrement dans ses travaux, respecter la confidentialité, rédiger ses résultats, obtenir l'accord pour publier, et présenter au moins deux publications indexées pendant sa thèse."
+      ],
+      "en": [
+        "The doctoral student must follow the roadmap set with their supervisor, attend doctoral trainings, regularly progress in their work, respect confidentiality, write up results, get approval for publications, and produce at least two indexed publications during their thesis."
+      ],
+      "ar": [
+        "يجب على طالب الدكتوراه اتباع خطة العمل مع المشرف، حضور التدريبات، التقدم بانتظام في العمل، احترام السرية، كتابة النتائج، الحصول على موافقة للنشر، وتقديم منشورتين على الأقل أثناء الأطروحة."
+      ],
+      "amz": [
+        "Doctorant yessefk ad yebda afaylu n usidra s udrar-is, yessefk ad yeddu s iɣerzan n tazwara, ad yessefk ad yessawal deg usegwas-is, ad yezri tafat, ad yeddu tayriwin, ad yefka lwali n medden i tefsut, d ad yerr idammen n usidra amkan deg umidag n tezgi."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "Devoirs doctorant, responsabilités doctorat"
+      ],
+      "en": [
+        "Doctoral student duties, thesis responsibilities"
+      ],
+      "ar": [
+        "واجبات طالب الدكتوراه، مسؤوليات الأطروحة"
+      ],
+      "amz": [
+        "Tasiremt n doctorant, tazwara n thèse"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_plagiat_normes": {
+    "intent": "doctorat_plagiat_normes",
+    "question": {
+      "fr": [
+        "Quelles sont les normes anti-plagiat pour la thèse ?",
+        "Y a-t-il une tolérance au plagiat dans le doctorat ?",
+        "Comment fonctionne le contrôle de plagiat à l'université ?"
+      ],
+      "en": [
+        "What are the anti-plagiarism standards for a thesis?",
+        "Is there a plagiarism tolerance for PhD theses?",
+        "How does plagiarism checking work at the university?"
+      ],
+      "ar": [
+        "ما هي معايير مكافحة الانتحال في الرسالة؟",
+        "هل هناك تسامح مع الانتحال في الدكتوراه؟",
+        "كيف يتم فحص الانتحال في الجامعة؟"
+      ],
+      "amz": [
+        "Anida d tusna n tugharzit n plagiat di tese?",
+        "Ila d taddart n plagiat di doctorat?",
+        "Amek ad d-yerr tugharzit n plagiat di université?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le CEDoc soumet chaque thèse à un programme anti-plagiat avec une tolérance ne dépassant pas 25% selon les champs disciplinaires. Tout dépassement peut entraîner des sanctions."
+      ],
+      "en": [
+        "The CEDoc subjects each thesis to an anti-plagiarism program with a tolerance not exceeding 25%, depending on the discipline. Exceeding this limit may lead to sanctions."
+      ],
+      "ar": [
+        "يقوم مركز الدراسات الدكتوراه بفحص كل رسالة باستخدام برنامج مكافحة الانتحال مع تسامح لا يتجاوز 25٪ حسب التخصص. تجاوز هذا الحد قد يؤدي إلى عقوبات."
+      ],
+      "amz": [
+        "CEDoc yesnem asefru n tese s wargaz n tugharzit n plagiat s taddart ur tzemmer ara 25%, seg wakal n taɛlimt. Imbeddel ay ttagzut ad yessefk asefru."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "plagiat, thèse, normes, CEDoc"
+      ],
+      "en": [
+        "plagiarism, thesis, standards, CEDoc"
+      ],
+      "ar": [
+        "الانتحال، الرسالة، المعايير، مركز الدراسات الدكتوراه"
+      ],
+      "amz": [
+        "plagiat, tese, tusna, CEDoc"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_charte_signature": {
+    "intent": "doctorat_charte_signature",
+    "question": {
+      "fr": [
+        "Qu'est-ce que la charte des thèses pour le doctorat ?",
+        "Qui doit signer la charte de thèse ?",
+        "Quand dois-je signer la charte de doctorat ?"
+      ],
+      "en": [
+        "What is the thesis charter for the PhD?",
+        "Who needs to sign the thesis charter?",
+        "When should I sign the PhD charter?"
+      ],
+      "ar": [
+        "ما هي ميثاق الأطروحة للدكتوراه؟",
+        "من يجب أن يوقع ميثاق الأطروحة؟",
+        "متى يجب علي توقيع ميثاق الدكتوراه؟"
+      ],
+      "amz": [
+        "Anida d tazwara n tesis i doctorat?",
+        "Anwa yella ad yessem tazwara n tesis?",
+        "Anwa amek ad assem tazwara n doctorat?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La charte des thèses est un document qui définit les responsabilités et engagements du doctorant, du directeur de thèse, du responsable de la structure d’accueil, du responsable de la formation doctorale et du coordonnateur du CEDoc. Elle doit être signée lors de la première inscription en doctorat."
+      ],
+      "en": [
+        "The thesis charter defines the responsibilities and commitments of the doctoral student, thesis supervisor, head of the host structure, doctoral training coordinator, and CEDoc coordinator. It must be signed at the first PhD registration."
+      ],
+      "ar": [
+        "ميثاق الأطروحة يحدد مسؤوليات والتزامات الطالب والدكتور والمشرف ورئيس الهيكل ومشرف التدريب الدكتوراه ومنسق مركز الدراسات. يجب توقيعه عند التسجيل الأول."
+      ],
+      "amz": [
+        "Tazwara n tesis tazwara i tefra n yedles doctorat, amddakul n tesis, amddakul n tazwara, amddakul n tazwara n doctorat d wargaz n CEDoc. Yella ad yessem deg umyad n uselmad n doctorat."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "charte, thèse, doctorat, signature, engagements"
+      ],
+      "en": [
+        "charter, thesis, doctorate, signature, commitments"
+      ],
+      "ar": [
+        "ميثاق، أطروحة، دكتوراه، توقيع، التزامات"
+      ],
+      "amz": [
+        "tazwara, tesis, doctorat, ussem, tawla"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_publications_exigences": {
+    "intent": "doctorat_publications_exigences",
+    "question": {
+      "fr": [
+        "Quelles sont les exigences en matière de publications pour le doctorat ?",
+        "Combien de publications dois-je faire pendant ma thèse ?",
+        "Quels types de publications sont nécessaires pour valider la thèse ?"
+      ],
+      "en": [
+        "What are the publication requirements for the PhD?",
+        "How many publications do I need during my thesis?",
+        "What types of publications are needed to validate the thesis?"
+      ],
+      "ar": [
+        "ما هي متطلبات النشر للدكتوراه؟",
+        "كم عدد المنشورات التي أحتاجها خلال رسالة الدكتوراه؟",
+        "ما أنواع المنشورات المطلوبة لاعتماد الرسالة؟"
+      ],
+      "amz": [
+        "Anida d taqsiwin n tazwara i doctorat?",
+        "Amek ad asen ixxamen n taqsiwin di tezga n tesis?",
+        "Anwa n taqsiwin yettwasnen i wezzen n tesis?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Le doctorant doit produire au moins deux publications indexées dans des bases reconnues comme Scopus ou Web of Science, portant sur les travaux réalisés durant les années d’inscription. Une des publications peut être remplacée par deux communications dans des congrès internationaux. Il doit aussi présenter au moins deux communications, dont au moins une orale."
+      ],
+      "en": [
+        "The doctoral student must produce at least two indexed publications in recognized databases such as Scopus or Web of Science, based on work done during the enrollment years. One publication can be replaced by two conference presentations at international congresses. The student must also present at least two communications, with at least one oral presentation."
+      ],
+      "ar": [
+        "يجب على الطالب إنتاج منشورتين على الأقل في قواعد معترف بها مثل Scopus أو Web of Science عن الأعمال المنجزة خلال سنوات التسجيل. يمكن استبدال إحدى المنشورات بعرضين في مؤتمرات دولية. يجب أيضًا تقديم عرضين على الأقل، واحد منهم شفهي."
+      ],
+      "amz": [
+        "Yella ad yezmer yedles doctorat min sin tazwara n taqsiwin deg usenfaru n Scopus neɣ Web of Science, i d-yennan di ussan n tezga. Yella ad yettwabdel asen taqsiwin s sin n ttaqdimin deg iḥedran n lemqarn. Yella ad yečč ayen sin n ttaqdimin, kra nnsen d wayen amgar."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "publications, doctorat, exigences, thèse, articles, conférences"
+      ],
+      "en": [
+        "publications, doctorate, requirements, thesis, articles, conferences"
+      ],
+      "ar": [
+        "منشورات، دكتوراه، متطلبات، رسالة، مقالات، مؤتمرات"
+      ],
+      "amz": [
+        "taqsiwin, doctorat, tawla, tesis, aselkim, iḥedran"
+      ]
+    },
+    "data": "2025-04-28"
+  },
+  "doctorat_soutenance_procedure": {
+    "intent": "doctorat_soutenance_procedure",
+    "question": {
+      "fr": [
+        "Quelle est la procédure pour la soutenance de thèse ?",
+        "Comment se passe la soutenance de doctorat ?",
+        "Quelles sont les étapes pour défendre ma thèse ?"
+      ],
+      "en": [
+        "What is the procedure for the thesis defense?",
+        "How does the PhD defense work?",
+        "What are the steps to defend my thesis?"
+      ],
+      "ar": [
+        "ما هي إجراءات مناقشة الرسالة؟",
+        "كيف تتم مناقشة الدكتوراه؟",
+        "ما هي خطوات الدفاع عن الرسالة؟"
+      ],
+      "amz": [
+        "D acu d usenfadu n tasawsa n tesis?",
+        "Amek ara yettwaseq doctorat?",
+        "Anwa imziznen n usenfadu n tesis?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "La soutenance de thèse est un moment solennel qui doit se dérouler dans les locaux de l’établissement d’attache ou de la structure de recherche. Le jury est composé d'au moins quatre membres, incluant le président et le directeur de thèse. La thèse doit être soumise à trois rapporteurs au moins, dont deux externes, avant la soutenance. La soutenance est publique, sauf cas exceptionnel, et doit permettre un débat scientifique constructif."
+      ],
+      "en": [
+        "The thesis defense is a formal event that usually takes place at the host institution or research center. The jury must have at least four members, including the president and thesis supervisor. The thesis must be reviewed by at least three referees, two of whom are external, prior to the defense. The defense is public unless exceptional circumstances apply and should allow for constructive scientific discussion."
+      ],
+      "ar": [
+        "تعد مناقشة الرسالة حدثًا رسميًا يتم عادةً في المؤسسة المضيفة أو مركز البحث. يجب أن يتكون لجنة المناقشة من أربعة أعضاء على الأقل، بما في ذلك الرئيس والمشرف على الرسالة. يجب مراجعة الرسالة من قبل ثلاثة مراجعين على الأقل، اثنان منهم خارجيان، قبل المناقشة. المناقشة علنية إلا في حالات استثنائية ويجب أن تسمح بنقاش علمي بناء."
+      ],
+      "amz": [
+        "Tasawsa n tesis d usenfadu amaynut i d yettwadger deg uselkim n tameṭṭut neɣ umedya n lemqarn. Aslem d wayen sin n umezwaru, yan di themselt neɣ uɛewwi n tesis. Tesis ad tessefk yas n sin n usrar, sin diwen diwen, s umɣar ur yettwaɛmil ara, s walu. Tasawsa d amezwaru amaynut ma yella d umdan."
+      ]
+    },
+    "meta": {
+      "fr": [
+        "soutenance, thèse, doctorat, jury, procédure, défense"
+      ],
+      "en": [
+        "defense, thesis, doctorate, jury, procedure"
+      ],
+      "ar": [
+        "مناقشة، رسالة، دكتوراه، لجنة، إجراء، دفاع"
+      ],
+      "amz": [
+        "usenfadu, tesis, doctorat, aslem, tazwara"
+      ]
+    },
+    "data": "2025-04-28"
   }
 }

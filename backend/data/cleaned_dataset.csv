@@ -1,3 +1,4 @@
+question,intent
 Qui est le doyen de la faculté des Sciences?,fso doyen nom mot-du-doyen
 Pouvez-vous me dire le nom du doyen de la FSO?,fso doyen nom mot-du-doyen
 Qui dirige la faculté des Sciences de l'UMP?,fso doyen nom mot-du-doyen
@@ -8,6 +9,13 @@ Quel est le nom du doyen de la faculté des Sciences?,fso doyen nom mot-du-doyen
 Qui représente officiellement la faculté des Sciences comme doyen?,fso doyen nom mot-du-doyen
 Quelle est la personne à contacter pour le mot du doyen?,fso doyen nom mot-du-doyen
 Qui est à la tête de la FSO?,fso doyen nom mot-du-doyen
+Qui est actuellement le doyen de la faculté des Sciences?,fso doyen nom mot-du-doyen
+Pouvez-vous me donner le nom complet du doyen de la FSO?,fso doyen nom mot-du-doyen
+Qui dirige actuellement la faculté des Sciences de l'UMP?,fso doyen nom mot-du-doyen
+Quel professeur occupe le poste de doyen à la FSO cette année?,fso doyen nom mot-du-doyen
+Je cherche les coordonnées du doyen de la faculté des Sciences.,fso doyen nom mot-du-doyen
+Quel est le nom du doyen actuel de la faculté des Sciences?,fso doyen nom mot-du-doyen
+Comment s'appelle le doyen en fonction cette année académique?,fso doyen nom mot-du-doyen
 Who is the dean of the Faculty of Science?,fso doyen nom mot-du-doyen
 Can you tell me the name of the FSO dean?,fso doyen nom mot-du-doyen
 Who leads the Faculty of Science at UMP?,fso doyen nom mot-du-doyen
@@ -18,6 +26,13 @@ What is the dean's name at the Faculty of Science?,fso doyen nom mot-du-doyen
 Who officially represents the Faculty of Science as dean?,fso doyen nom mot-du-doyen
 Who is the person to contact for the dean's message?,fso doyen nom mot-du-doyen
 Who heads the FSO?,fso doyen nom mot-du-doyen
+Who is currently the dean of the Faculty of Science?,fso doyen nom mot-du-doyen
+Can you provide the full name of the FSO dean?,fso doyen nom mot-du-doyen
+Who is currently leading the Faculty of Science at UMP?,fso doyen nom mot-du-doyen
+Which professor holds the dean position at FSO this year?,fso doyen nom mot-du-doyen
+I'm looking for the contact details of the Faculty of Science dean.,fso doyen nom mot-du-doyen
+What is the name of the current Faculty of Science dean?,fso doyen nom mot-du-doyen
+What is the name of the dean in office this academic year?,fso doyen nom mot-du-doyen
 من هو عميد كلية العلوم؟,fso doyen nom mot-du-doyen
 هل يمكنك إخباري باسم عميد كلية العلوم؟,fso doyen nom mot-du-doyen
 من يقود كلية العلوم في جامعة محمد الأول؟,fso doyen nom mot-du-doyen
@@ -28,30 +43,6 @@ Who heads the FSO?,fso doyen nom mot-du-doyen
 من يمثل كلية العلوم رسمياً كعميد؟,fso doyen nom mot-du-doyen
 من هو الشخص الذي يجب الاتصال به لكلمة العميد؟,fso doyen nom mot-du-doyen
 من يرأس كلية العلوم؟,fso doyen nom mot-du-doyen
-Anwa i d amenzu n temdint n Tussna?,fso doyen nom mot-du-doyen
-Tzemreḍ ad iyi-d-tiniḍ isem n umenzu n FSO?,fso doyen nom mot-du-doyen
-Anwa i iḥekkmen temdint n Tussna deg UMP?,fso doyen nom mot-du-doyen
-Anwa aselmad i yeṭṭef udɣar n umenzu deg FSO?,fso doyen nom mot-du-doyen
-Amek isem umenzu n temdint n Tussna?,fso doyen nom mot-du-doyen
-Anwa i d ameqqran anedbal amezwaru n FSO?,fso doyen nom mot-du-doyen
-Ayɣer d isem n umenzu n temdint n Tussna?,fso doyen nom mot-du-doyen
-Anwa i imettalen temdint n Tussna s ursmay d umenzu?,fso doyen nom mot-du-doyen
-Anwa i d amdan ara nermes i wawal n umenzu?,fso doyen nom mot-du-doyen
-Anwa i d ixef n FSO?,fso doyen nom mot-du-doyen
-Qui est actuellement le doyen de la faculté des Sciences?,fso doyen nom mot-du-doyen
-Pouvez-vous me donner le nom complet du doyen de la FSO?,fso doyen nom mot-du-doyen
-Qui dirige actuellement la faculté des Sciences de l'UMP?,fso doyen nom mot-du-doyen
-Quel professeur occupe le poste de doyen à la FSO cette année?,fso doyen nom mot-du-doyen
-Je cherche les coordonnées du doyen de la faculté des Sciences.,fso doyen nom mot-du-doyen
-Quel est le nom du doyen actuel de la faculté des Sciences?,fso doyen nom mot-du-doyen
-Comment s'appelle le doyen en fonction cette année académique?,fso doyen nom mot-du-doyen
-Who is currently the dean of the Faculty of Science?,fso doyen nom mot-du-doyen
-Can you provide the full name of the FSO dean?,fso doyen nom mot-du-doyen
-Who is currently leading the Faculty of Science at UMP?,fso doyen nom mot-du-doyen
-Which professor holds the dean position at FSO this year?,fso doyen nom mot-du-doyen
-I'm looking for the contact details of the Faculty of Science dean.,fso doyen nom mot-du-doyen
-What is the name of the current Faculty of Science dean?,fso doyen nom mot-du-doyen
-What is the name of the dean in office this academic year?,fso doyen nom mot-du-doyen
 من هو عميد كلية العلوم الحالي؟,fso doyen nom mot-du-doyen
 هل يمكنك تقديم الاسم الكامل لعميد كلية العلوم؟,fso doyen nom mot-du-doyen
 من هو المسؤول عن كلية العلوم في جامعة محمد الأول حالياً؟,fso doyen nom mot-du-doyen
@@ -59,16 +50,26 @@ What is the name of the dean in office this academic year?,fso doyen nom mot-du-
 أبحث عن تفاصيل الاتصال بعميد الكلية.,fso doyen nom mot-du-doyen
 ما اسم عميد كلية العلوم الحالي؟,fso doyen nom mot-du-doyen
 كيف يسمى العميد في هذه السنة الدراسية؟,fso doyen nom mot-du-doyen
-Anwa i d amenzu n temdint n Tussna akka tura?,fso doyen nom mot-du-doyen
-Tzemreḍ ad d-tesεiḍ isem ummid n FSO?,fso doyen nom mot-du-doyen
-Anwa i d anebdaḍ n temdint n Tussna deg UMP akka tura?,fso doyen nom mot-du-doyen
-Anwa aselmad i yeṭṭef uḥuddu n umenzu deg FSO aseggas-a?,fso doyen nom mot-du-doyen
-Laq ad d-afeɣ inermisen n umenzu n temdint n Tussna.,fso doyen nom mot-du-doyen
-Anwa i d anermas anabaḍan amenzu deg FSO?,fso doyen nom mot-du-doyen
-D acu isem n umenzu n temdint n Tussna akka tura?,fso doyen nom mot-du-doyen
-Amek i semman umenzu deg useggas-a n tsenselkimt?,fso doyen nom mot-du-doyen
-Anwa i d win yettekka s umata i temdint n Tussna d amenzu?,fso doyen nom mot-du-doyen
-Anwa i d win ilaq ad nermes i wawal n umenzu?,fso doyen nom mot-du-doyen
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵎⴻⵏⵣⵓ ⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ?,fso doyen nom mot-du-doyen  
+ⵜⵣⵎⵔⴻⴹ ⴰⴷ ⵉⵢⵉ-ⴷ-ⵜⵉⵏⵉⴹ ⵉⵙⴻⵎ ⵏ ⵓⵎⴻⵏⵣⵓ ⵏ FSO?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⵉⵃⴻⴽⴽⵎⴻⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ ⴷⴻⴳ UMP?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⴰⵙⴻⵍⵎⴰⴷ ⵉ ⵢⴻṭṭⴻⴼ ⵓⴷɣⴰⵔ ⵏ ⵓⵎⴻⵏⵣⵓ ⴷⴻⴳ FSO?,fso doyen nom mot-du-doyen  
+ⴰⵎⴻⴽ ⵉⵙⴻⵎ ⵓⵎⴻⵏⵣⵓ ⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵎⴻqqⵔⴰⵏ ⴰⵏⴻⴷⴱⴰⵍ ⴰⵎⴻⵣⵡⴰⵔⵓ ⵏ FSO?,fso doyen nom mot-du-doyen  
+ⴰⵢɣⴻⵔ ⴷ ⵉⵙⴻⵎ ⵏ ⵓⵎⴻⵏⵣⵓ ⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⵉⵎⴻⵜⵜⴰⵍⴻⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ ⵙ ⵓⵔⵙⵎⴰⵢ ⴷ ⵓⵎⴻⵏⵣⵓ?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵎⴷⴰⵏ ⴰⵔⴰ ⵏⴻⵔⵎⴻⵙ ⵉ ⵡⴰⵡⴰⵍ ⵏ ⵓⵎⴻⵏⵣⵓ?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⵉⵅⴻⴼ ⵏ FSO?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵎⴻⵏⵣⵓ ⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ ⴰⴽⴽⴰ ⵜⵓⵔⴰ?,fso doyen nom mot-du-doyen  
+ⵜⵣⵎⵔⴻⴹ ⴰⴷ ⴷ-ⵜⴻⵙεⵉḍ ⵉⵙⴻⵎ ⵓⵎⵎⵉⴷ ⵏ FSO?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⴱⴷⴰḍ ⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ ⴷⴻⴳ UMP ⴰⴽⴽⴰ ⵜⵓⵔⴰ?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⴰⵙⴻⵍⵎⴰⴷ ⵉ ⵢⴻṭṭⴻⴼ ⵓⵃⵓⴷⴷⵓ ⵏ ⵓⵎⴻⵏⵣⵓ ⴷⴻⴳ FSO ⴰⵙⴻⴳⴳⴰⵙ-ⴰ?,fso doyen nom mot-du-doyen  
+ⵍⴰⵇ ⴰⴷ ⴷ-ⴰⴼⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵓⵎⴻⵏⵣⵓ ⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ.,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⴰⵏⴰⴱⴰḍⴰⵏ ⴰⵎⴻⵏⵣⵓ ⴷⴻⴳ FSO?,fso doyen nom mot-du-doyen  
+ⴷ ⴰⵛⵓ ⵉⵙⴻⵎ ⵏ ⵓⵎⴻⵏⵣⵓ ⵏ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ ⴰⴽⴽⴰ ⵜⵓⵔⴰ?,fso doyen nom mot-du-doyen  
+ⴰⵎⴻⴽ ⵉ ⵙⵎⵎⴰⵏ ⵓⵎⴻⵏⵣⵓ ⴷⴻⴳ ⵓⵙⴻⴳⴳⴰⵙ-ⴰ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⵡⵉⵏ ⵢⴻⵜⵜⴻⴽⴽⴰ ⵙ ⵓⵎⴰⵜⴰ ⵉ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵜⵓⵙⵙⵏⴰ ⴷ ⴰⵎⴻⵏⵣⵓ?,fso doyen nom mot-du-doyen  
+ⴰⵏⵡⴰ ⵉ ⴷ ⵡⵉⵏ ⵉⵍⴰⵇ ⴰⴷ ⵏⴻⵔⵎⴻⵙ ⵉ ⵡⴰⵡⴰⵍ ⵏ ⵓⵎⴻⵏⵣⵓ?,fso doyen nom mot-du-doyen  
 Quelle est la description officielle de la faculté des Sciences de l'UMP?,faculty_general_info
 Pouvez-vous me donner un aperçu général de la FSO?,faculty_general_info
 Quelles sont les informations de base sur la faculté des Sciences?,faculty_general_info
@@ -79,6 +80,16 @@ Quelle est l'histoire de la création de la faculté des Sciences?,faculty_gener
 Quels sont les services principaux offerts par la FSO?,faculty_general_info
 Comment obtenir une brochure d'information sur la faculté?,faculty_general_info
 Qui sont les fondateurs de la faculté des Sciences de l'UMP?,faculty_general_info
+Peux-tu me présenter la faculté des Sciences de l’UMP ?,faculty_general_info
+Quelle est la mission principale de la FSO ?,faculty_general_info
+Quels sont les domaines d’enseignement proposés par la faculté des Sciences ?,faculty_general_info
+Depuis quand existe la faculté des Sciences de l’UMP ?,faculty_general_info
+Comment fonctionne la faculté des Sciences au quotidien ?,faculty_general_info
+Quels sont les atouts de la FSO par rapport aux autres facultés ?,faculty_general_info
+Où puis-je consulter les statistiques ou rapports annuels de la faculté ?,faculty_general_info
+Quels sont les objectifs éducatifs de la faculté des Sciences?,faculty_general_info
+Comment la faculté des Sciences soutient-elle ses étudiants?,faculty_general_info
+Où puis-je trouver le calendrier académique de la faculté des Sciences?,faculty_general_info
 What is the official description of the Faculty of Science at UMP?,faculty_general_info
 Can you give me a general overview of FSO?,faculty_general_info
 What are the basic information about the Faculty of Science?,faculty_general_info
@@ -89,6 +100,16 @@ What is the history of the Faculty of Science's creation?,faculty_general_info
 What are the main services offered by FSO?,faculty_general_info
 How to get an information brochure about the faculty?,faculty_general_info
 Who are the founders of UMP's Faculty of Science?,faculty_general_info
+Can you give me an overview of the Faculty of Sciences at UMP?,faculty_general_info
+What is the main mission of the Faculty of Sciences?,faculty_general_info
+What fields of study are offered by the Faculty of Sciences?,faculty_general_info
+Since when has the Faculty of Sciences at UMP existed?,faculty_general_info
+How does the Faculty of Sciences operate on a daily basis?,faculty_general_info
+What are the strengths of the Faculty of Sciences compared to other faculties?,faculty_general_info
+Where can I find statistics or annual reports of the faculty?,faculty_general_info
+What are the educational goals of the Faculty of Science?,faculty_general_info
+How does the Faculty of Science support its students?,faculty_general_info
+Where can I find the academic calendar of the Faculty of Science?,faculty_general_info
 ما هو الوصف الرسمي لكلية العلوم بجامعة محمد الأول؟,faculty_general_info
 هل يمكنك إعطائي نظرة عامة عن كلية العلوم؟,faculty_general_info
 ما هي المعلومات الأساسية عن كلية العلوم؟,faculty_general_info
@@ -99,16 +120,36 @@ Who are the founders of UMP's Faculty of Science?,faculty_general_info
 ما هي الخدمات الرئيسية التي تقدمها الكلية؟,faculty_general_info
 كيف يمكن الحصول على كتيب معلومات عن الكلية؟,faculty_general_info
 من هم مؤسسو كلية العلوم بجامعة محمد الأول؟,faculty_general_info
-D acu i d asefru uslig n Tamazirt n Tussna deg UMP?,faculty_general_info
-Tzemreḍ ad iyi-d-tesεeḍ tasna n tezmert ɣef FSO?,faculty_general_info
-D acu llan talɣutin timaynutin ɣef Tamazirt n Tussna?,faculty_general_info
-Amek i tettwasekcem Tamazirt n Tussna deg Temdint n Mohammed Premier?,faculty_general_info
-D acu llan timacin imenzan n FSO?,faculty_general_info
-Anida ara d-afɣeɣ talɣutin timaynutin ɣef Tamazirt n Tussna?,faculty_general_info
-D acu i d azal n tmerna n Tamazirt n Tussna?,faculty_general_info
-D acu llan iḥedran imenzan i d-yettunefken sɣur FSO?,faculty_general_info
-Amek ara d-nelliɣ i tferkit n telɣut ɣef temdint?,faculty_general_info
-Anwa i d imsedden n Tamazirt n Tussna deg UMP?,faculty_general_info
+هل يمكنك تقديم لمحة عن كلية العلوم بجامعة محمد الأول؟,faculty_general_info
+ما هي المهمة الرئيسية لكلية العلوم؟,faculty_general_info
+ما هي مجالات التعليم التي تقدمها كلية العلوم؟,faculty_general_info
+منذ متى توجد كلية العلوم بجامعة محمد الأول؟,faculty_general_info
+كيف تعمل كلية العلوم في حياتها اليومية؟,faculty_general_info
+ما هي مميزات كلية العلوم مقارنة بالكليات الأخرى؟,faculty_general_info
+أين يمكنني الاطلاع على الإحصائيات أو التقارير السنوية للكلية؟,faculty_general_info
+ما هي الأهداف التعليمية لكلية العلوم؟,faculty_general_info
+كيف تدعم كلية العلوم طلابها؟,faculty_general_info
+أين يمكنني العثور على التقويم الأكاديمي لكلية العلوم؟,faculty_general_info
+ⴷ ⴰⵛⵛⵉ ⵉ ⴷ ⴰⵙⴼⵔⵓ ⵓⵙⵍⵉⴳ ⵏ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⴽⵏⴰ ⴷ ⵎⵓⵀⴰⵎⴷ ⴰⵍⴰⵎ?,faculty_general_info
+ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵉⵢⵉ-ⴷ-ⵜⴻⵙⵄⴻⴹ ⵜⴰⵙⵏⴰ ⵏ ⵜⴻⵣⵎⴻⵔⵜ ⵖⴻⴼ FSO?,faculty_general_info
+ⴷ ⴰⵛⵛⵉ ⵍⵍⴰⵏ ⵜⴰⵍⵖⵓⵜⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵖⴻⴼ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⴽⵏⴰ?,faculty_general_info
+ⴰⵎⴻⴽ ⵉ ⵜⴻⵜⵜⵡⴰⵙⴽⴻⵎ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⴽⵏⴰ ⴷ ⵜⴻⵎⴷⵉⵏⵜ ⵏ ⵎⵓⵀⴰⵎⴷ ⴱⵔⵉⵎⵉⵔ?,faculty_general_info
+ⴷ ⴰⵛⵛⵉ ⵍⵍⴰⵏ ⵜⵉⵎⴰⵛⵉⵏ ⵉⵎⴻⵏⵣⴰⵏ ⵏ FSO?,faculty_general_info
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼⵖⴻⵖ ⵜⴰⵍⵖⵓⵜⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵖⴻⴼ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⴽⵏⴰ?,faculty_general_info
+ⴷ ⴰⵛⵛⵉ ⵉ ⴷ ⴰⵣⴰⵍ ⵏ ⵜⵎⴻⵔⵏⴰ ⵏ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⴽⵏⴰ?,faculty_general_info
+ⴷ ⴰⵛⵛⵉ ⵍⵍⴰⵏ ⵉⵃⴻⴷⵔⴰⵏ ⵉⵎⴻⵏⵣⴰⵏ ⵉ ⴷ-ⵢⴻⵜⵜⵓⵏⴻⴼⴽⴻⵏ ⵙⵖⵓⵔ FSO?,faculty_general_info
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⵏⴻⵍⵍⵉⵖ ⵉ ⵜⴼⴻⵔⴽⵉⵜ ⵏ ⵜⴻⵍⵖⵓⵜ ⵖⴻⴼ ⵜⴻⵎⴷⵉⵏⵜ?,faculty_general_info
+ⴰⵏⵡⴰ ⵉ ⴷ ⵉⵎⵙⴻⴷⴷⴻⵏ ⵏ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⴽⵏⴰ ⴷ ⵎⵓⵀⴰⵎⴷ ⴰⵍⴰⵎ?,faculty_general_info
+ⴰⵣⵡⴼ ⵏⵉⵖ ⵜⵙⵏⵎⵓⵔⵜ ⵉⵏⴼⵓⵙⵉⵙ ⵏ ⵜⴼⴰⵙⴰ ⵏ ⵜⵙⴳⴰ ⵏ ⵎⵓⵀⴰⵎⴷ ⴰⵍⴰⵎ?,faculty_general_info
+ⵎⴰ ⵏⵓⴳⵍⴰ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵏ ⵜⴼⴰⵙⴰ ⵏ ⵜⵙⴳⴰ?,faculty_general_info
+ⵎⴰ ⵍⴽⴰ ⵏⵏⵙⴳⴰⵏ ⵏ ⵓⵙⵎⵎⴰⵙ ⵏⵜⵜ ⵜⵙⴳⴰ?,faculty_general_info
+ⵎⵉⵏⵣⵉ ⵎⴰⵏⵜⵉ ⵓⵙⵙⴳⴰⵏ ⵏ ⵜⴼⴰⵙⴰ ⵏ ⵜⵙⴳⴰ ⵏ ⵎⵓⵀⴰⵎⴷ ⴰⵍⴰⵎ?,faculty_general_info
+ⵎⴰ ⴷⴷⴰⵢⵏ ⵜⴼⴰⵙⴰ ⵏ ⵜⵙⴳⴰ ⵜⵙⵔⴰⵙ ⴷ ⵜⵉⵍⵍⴰⵏⵜ?,faculty_general_info
+ⵎⴰ ⵏⵓⴳⵍⴰ ⵉⵙⵙⵎⵎⴰⵙⵏ ⵏ ⵜⴼⴰⵙⴰ ⵏ ⵜⵙⴳⴰ ⵏ ⵉⵎⵎⴰⵔⴰⵙ ⴷ ⵜⴼⴰⵙⵉⵙⵏ ⵉⵎⵎⴰⵔⵏ?,faculty_general_info
+ⴰⵏⴰ ⵜⵉⵖⵍⵉ ⵜⴰⵎⵎⴰⴹⵉⵜ ⵉⵎⵙⵙⵉⴳⵏ ⵏ ⵓⵙⵙⴳⴰⵏ ⴷ ⵓⵙⵎⵎⴰⵙ ⴰⵏⵓⴼⵍⴰⵙ ⵏ ⵜⵙⴳⴰ?,faculty_general_info
+ⵎⴰⵏⵉ ⴷ ⵉⴼⴽⴰⵔⴻⵏ ⵏ ⵜⵎⴻⵙⵍⴰⵢⵏ ⵏ ⵍ-ⴼⴰⵇⵓⵍⵜⴻ ⵏ ⵜⵎⴻⵙⵍⴰⵢⵏ?,faculty_general_info  
+ⴰⵎⴻⴽ ⵜⵣⵎⴻⵔⴹ ⵍ-ⴼⴰⵇⵓⵍⵜⴻ ⵏ ⵜⵎⴻⵙⵍⴰⵢⵏ ⴰⴷ ⵜⴻⵙⵙⵓⵔⵇⴻⵏ ⵉⵎⴻⴷⵢⴰⵣⴻⵏ?,faculty_general_info  
+ⴰⵏⵡⴰ ⴰⴷ ⵜⵙⵏɣ ⵙ ⵏⵏⴻⴽⵏⵉ ⵏ ⵜⵎⴻⵙⵍⴰⵢⵏ?,faculty_general_info  
 Quel est le numéro principal pour joindre la faculté des Sciences?,faculty_main_contact
 Par quel moyen puis-je appeler le secrétariat de la FSO?,faculty_main_contact
 Quel est le standard téléphonique de la faculté?,faculty_main_contact
@@ -119,6 +160,13 @@ Quel est le numéro à composer pour les renseignements généraux?,faculty_main
 Comment joindre l'accueil de la faculté par téléphone?,faculty_main_contact
 Quel est le numéro de l'opératrice de la FSO?,faculty_main_contact
 Puis-je avoir le central téléphonique de la faculté?,faculty_main_contact
+Quel est le numéro principal pour contacter la faculté des Sciences?,faculty_main_contact
+Comment puis-je joindre la FSO par téléphone?,faculty_main_contact
+Quel est le numéro du secrétariat de la faculté?,faculty_main_contact
+Quel est le contact téléphonique officiel de la FSO?,faculty_main_contact
+Par quel numéro puis-je obtenir des renseignements à la faculté?,faculty_main_contact
+Comment joindre l'accueil de la FSO par téléphone?,faculty_main_contact
+Puis-je avoir le standard téléphonique de la faculté?,faculty_main_contact
 What is the main number to reach the Faculty of Science?,faculty_main_contact
 How can I call the FSO secretariat?,faculty_main_contact
 What is the faculty's telephone switchboard?,faculty_main_contact
@@ -129,6 +177,13 @@ What number should I dial for general information?,faculty_main_contact
 How to reach the faculty's reception by phone?,faculty_main_contact
 What is the FSO operator's number?,faculty_main_contact
 Can I have the faculty's phone exchange?,faculty_main_contact
+What is the main phone number for the Faculty of Science?,faculty_main_contact
+How do I contact the faculty secretariat by phone?,faculty_main_contact
+Is there a single contact number for the faculty?,faculty_main_contact
+What is the official telephone number of the faculty?,faculty_main_contact
+How can I reach the faculty reception by phone?,faculty_main_contact
+Can I get the faculty’s switchboard number?,faculty_main_contact
+Which number should I dial for general inquiries?,faculty_main_contact
 ما هو الرقم الرئيسي للاتصال بكلية العلوم؟,faculty_main_contact
 ما هي وسيلة الاتصال الهاتفي بسكرتارية الكلية؟,faculty_main_contact
 ما هو رقم السنترال الخاص بالكلية؟,faculty_main_contact
@@ -139,16 +194,30 @@ Can I have the faculty's phone exchange?,faculty_main_contact
 كيف يمكن الوصول إلى الاستقبال عن طريق الهاتف؟,faculty_main_contact
 ما هو رقم موظف الاستقبال في الكلية؟,faculty_main_contact
 هل يمكنني الحصول على السنترال الهاتفي للكلية؟,faculty_main_contact
-Mani tga tiliɣri tamenzut i wakken ad nermes Tamazirt n Tussna?,faculty_main_contact
-Amek ara ssawleɣ anermas n FSO?,faculty_main_contact
-D acu i d udris n tiliɣri n temdint?,faculty_main_contact
-Amek ara d-nelliɣ aswir n tiliɣri n temdint?,faculty_main_contact
-D acu i d unermas uslig n tiliɣri n FSO?,faculty_main_contact
-Yella-d udris n tiliɣri yiwen i wakken ad nermes temdint?,faculty_main_contact
-D acu udris ara ssawleɣ i talɣut timaynutin?,faculty_main_contact
-Amek ara awḍeɣ ar uselkim n tamsult s tiliɣri?,faculty_main_contact
-D acu i d udris n unermas n tiliɣri n FSO?,faculty_main_contact
-Tzemreɣ ad d-awiɣ aswir n tiliɣri n temdint?,faculty_main_contact
+ما هو الرقم الرئيسي للاتصال بكلية العلوم؟,faculty_main_contact
+كيف يمكنني الاتصال بكلية العلوم عبر الهاتف؟,faculty_main_contact
+ما هو رقم أمانة كلية العلوم؟,faculty_main_contact
+ما هو رقم الاتصال الرسمي لكلية العلوم؟,faculty_main_contact
+بأي رقم يمكنني الحصول على معلومات من الكلية؟,faculty_main_contact
+كيف يمكنني الاتصال بالاستقبال في كلية العلوم؟,faculty_main_contact
+هل يمكنني الحصول على رقم السنترال الخاص بالكلية؟,faculty_main_contact
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉⵖⵔⵉ ⵜⴰⵎⵏⵣⵓⵜ ⵉ ⵡⴰⴽⴽⴻⵏ ⴰⴷ ⵏⴻⵔⵎⴻⵙ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⵙⵏⴰ?,faculty_main_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⴰⵡⵍⴻⵖ ⴰⵏⴻⵔⵎⴰⵙ ⵏ FSO?,faculty_main_contact  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵓⴷⵔⵉⵙ ⵏ ⵜⵉⵍⵉⵖⵔⵉ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,faculty_main_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⵏⴻⵍⵍⵉⵖ ⴰⵙⵡⵉⵔ ⵏ ⵜⵉⵍⵉⵖⵔⵉ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,faculty_main_contact  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵓⵏⴻⵔⵎⴰⵙ ⵓⵙⵍⵉⴳ ⵏ ⵜⵉⵍⵉⵖⵔⵉ ⵏ FSO?,faculty_main_contact  
+ⵢⴻⵍⵍⴰ-ⴷ ⵓⴷⵔⵉⵙ ⵏ ⵜⵉⵍⵉⵖⵔⵉ ⵢⵉⵡⴻⵏ ⵉ ⵡⴰⴽⴽⴻⵏ ⴰⴷ ⵏⴻⵔⵎⴻⵙ ⵜⴻⵎⴷⵉⵏⵜ?,faculty_main_contact  
+ⴷ ⴰⵛⵓ ⵓⴷⵔⵉⵙ ⴰⵔⴰ ⵙⵙⴰⵡⵍⴻⵖ ⵉ ⵜⴰⵍⵖⵓⵜ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ?,faculty_main_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴰⵡḍⴻⵖ ⴰⵔ ⵓⵙⴻⵍⴽⵉⵎ ⵏ ⵜⴰⵎⵙⵓⵍⵜ ⵙ ⵜⵉⵍⵉⵖⵔⵉ?,faculty_main_contact  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵓⴷⵔⵉⵙ ⵏ ⵓⵏⴻⵔⵎⴰⵙ ⵏ ⵜⵉⵍⵉⵖⵔⵉ ⵏ FSO?,faculty_main_contact  
+ⵜⵣⵎⵔⴻⵖ ⴰⴷ ⴷ-ⴰⵡⵉⵖ ⴰⵙⵡⵉⵔ ⵏ ⵜⵉⵍⵉⵖⵔⵉ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,faculty_main_contact  
+ⴰⵎⴰⵣⵉⵖ ⵏⵏⵓⵎⵉⵔ ⴰⵎⵔⴰⵔ ⴰⵔⴰ ⴰⴷ ⵉⵙⴻⵔⴷ ⵏ ⵜⴰⵎⴰⵣⵉⵔⵜ ⵏ ⵜⵓⵙⵙⴰⵏⵜ?,faculty_main_contact
+ⴰⵎⴰⵣⵉⵖ ⴰⵔⴰ ⴰⴷ ⵉⵙⴻⵔⴷⵉⵏⵓⵔ ⵜⴰⵎⴰⵣⵉⵖⵉⵏⵓⵔ ⵏ ⴼⵓⵙⵓ?,faculty_main_contact
+ⴰⵎⴰⵣⵉⵖ ⵏⵏⵓⵎⵉⵔ ⴰⵎⵔⴰⵔ ⵏ ⵙⵏⴻⵔⵜⵔⴰⵍ ⵏ ⵜⴰⵎⴰⵣⵉⵔⵜ?,faculty_main_contact
+ⴰⵎⴰⵣⵉⵖ ⴰⵔⴰ ⵉⵙⴻⵔⴷ ⵏⵏⵓⵎⵉⵔ ⴰⵎⵔⴰⵔ ⵏ ⵜⴰⵎⴰⵣⵉⵔⵜ ⴰⵙⵎⵓⴷⴻⵏ?,faculty_main_contact
+ⵎⴰⵏⵏⴰ ⴰⵔⴰ ⴰⴷ ⵜⵉⵔⴻⵏⵓⵔ ⴰⵎⵔⴰⵔ ⵏ ⵉⵣⵡⴰⵔⵏⴻⵏ ⵏ ⵜⴰⵎⴰⵣⵉⵔⵜ?,faculty_main_contact
+ⴰⵎⴰⵣⵉⵖ ⴰⵔⴰ ⴰⴷ ⵉⵙⴻⵔⴷ ⵏ ⵜⵓⵙⵙⴰⵏⵜ ⵏ ⴼⵓⵙⵓ ⵏⵏⵓⵎⵉⵔ?,faculty_main_contact
+ⴰⵎⴰⵣⵉⵖ ⴰⵔⴰ ⴰⴷ ⵜⵉⵔⴻⵏⵓⵔ ⴰⵎⵔⴰⵔ ⵏ ⵙⵏⴻⵔⵜⵔⴰⵍ ⵏ ⴼⵓⵙⵓ?,faculty_main_contact
 Comment contacter le bureau des inscriptions?,registrar_office_contact
 Quel est l'email du service de scolarité?,registrar_office_contact
 Où se trouve le bureau des inscriptions de la FSO?,registrar_office_contact
@@ -163,6 +232,12 @@ Quelle est l'adresse du bureau de la scolarité?,registrar_office_contact
 Comment communiquer avec le service de scolarité?,registrar_office_contact
 Où est situé le bureau des inscriptions?,registrar_office_contact
 Quel est le contact du service administratif?,registrar_office_contact
+Comment envoyer un document au service des inscriptions?,registrar_office_contact
+Qui est le responsable du service de scolarité?,registrar_office_contact
+Comment prendre rendez-vous avec la scolarité?,registrar_office_contact
+Quel est le numéro interne du bureau des inscriptions?,registrar_office_contact
+Comment faire une demande écrite à la scolarité?,registrar_office_contact
+Quelle est l'adresse postale du service des inscriptions?,registrar_office_contact
 How to contact the registrar's office?,registrar_office_contact
 What is the registrar's office phone number?,registrar_office_contact
 Where can I find the FSO registrar's office?,registrar_office_contact
@@ -173,6 +248,15 @@ What time does the registrar's office open?,registrar_office_contact
 How to communicate with the registrar's office?,registrar_office_contact
 Where is the registrar's office located?,registrar_office_contact
 What is the contact for the administrative service?,registrar_office_contact
+What is the email of the admissions office?,registrar_office_contact
+Where is the FSO registrar's office located?,registrar_office_contact
+What are the opening hours of the registrar's office?,registrar_office_contact
+How to send a document to the admissions office?,registrar_office_contact
+Who is the head of the registrar's office?,registrar_office_contact
+How to make an appointment with the registrar?,registrar_office_contact
+What is the internal number of the admissions office?,registrar_office_contact
+How to submit a written request to the registrar?,registrar_office_contact
+What is the mailing address of the admissions office?,registrar_office_contact
 كيف أتصل بمكتب التسجيل؟,registrar_office_contact
 ما هو رقم هاتف مصلحة الدراسة؟,registrar_office_contact
 أين يمكنني العثور على مكتب التسجيل في كلية العلوم؟,registrar_office_contact
@@ -183,31 +267,6 @@ What is the contact for the administrative service?,registrar_office_contact
 كيف أتواصل مع مصلحة الدراسة؟,registrar_office_contact
 أين يقع مكتب التسجيل؟,registrar_office_contact
 ما هو الاتصال للمصلحة الإدارية؟,registrar_office_contact
-Amek ara nermes lbiru n usekles?,registrar_office_contact
-Ayɣer d uṭṭun n tiliɣri n lxidma n tɣuri?,registrar_office_contact
-Anda zemreɣ ad afeɣ lbiru n usekles n FSO?,registrar_office_contact
-Ayɣer d akuden n lxedma n tɣuri?,registrar_office_contact
-Amek zemreɣ ad awḍeɣ ɣer lbiru n usekles?,registrar_office_contact
-Ayɣer d tansa n lbiru n tɣuri?,registrar_office_contact
-Deg manwa akud yeldi lbiru n usekles?,registrar_office_contact
-Amek ara mmeslayeɣ d lxidma n tɣuri?,registrar_office_contact
-Anda yella lbiru n usekles?,registrar_office_contact
-Ayɣer d unermis n lxidma tanedbalit?,registrar_office_contact
-Comment envoyer un document au service des inscriptions?,registrar_office_contact
-Qui est le responsable du service de scolarité?,registrar_office_contact
-Comment prendre rendez-vous avec la scolarité?,registrar_office_contact
-Quel est le numéro interne du bureau des inscriptions?,registrar_office_contact
-Comment faire une demande écrite à la scolarité?,registrar_office_contact
-Quelle est l'adresse postale du service des inscriptions?,registrar_office_contact
-What is the email of the admissions office?,registrar_office_contact
-Where is the FSO registrar's office located?,registrar_office_contact
-What are the opening hours of the registrar's office?,registrar_office_contact
-How to send a document to the admissions office?,registrar_office_contact
-Who is the head of the registrar's office?,registrar_office_contact
-How to make an appointment with the registrar?,registrar_office_contact
-What is the internal number of the admissions office?,registrar_office_contact
-How to submit a written request to the registrar?,registrar_office_contact
-What is the mailing address of the admissions office?,registrar_office_contact
 كيف يمكن الاتصال بمكتب التسجيل؟,registrar_office_contact
 ما هو البريد الإلكتروني لمكتب القبول؟,registrar_office_contact
 أين يقع مكتب التسجيل في كلية العلوم؟,registrar_office_contact
@@ -218,16 +277,26 @@ What is the mailing address of the admissions office?,registrar_office_contact
 ما هو الرقم الداخلي لمكتب القبول؟,registrar_office_contact
 كيف يمكن تقديم طلب كتابي إلى المسجل؟,registrar_office_contact
 ما هو العنوان البريدي لمكتب التسجيل؟,registrar_office_contact
-Amek ara ɣeɣ uḥuddu n unermas n yinscriptionen?,registrar_office_contact
-D acu i d email n uḥuddu n unermas?,registrar_office_contact
-Anida i tezga tamsult n unermas n yinscriptionen deg FSO?,registrar_office_contact
-Melli llan imik n unermas n yinscriptionen?,registrar_office_contact
-Amek ara tazneḍ asebter i uḥuddu n unermas?,registrar_office_contact
-Anwa i d anebdaḍ n uḥuddu n unermas?,registrar_office_contact
-Amek ara ttreḍeɣ imik akked unermas?,registrar_office_contact
-D acu i d udris n tiliɣri n uḥuddu n unermas?,registrar_office_contact
-Amek ara tazneḍ asuter n uḍris i uḥuddu n unermas?,registrar_office_contact
-D acu i d tansa n uḥuddu n unermas?,registrar_office_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵏⴻⵔⵎⴻⵙ ⵍⴱⵉⵔⵓ ⵏ ⵓⵙⴽⵍⴻⵙ?,registrar_office_contact  
+ⴰⵢɣⴻⵔ ⴷ ⵓṭṭⵓⵏ ⵏ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵍⵅⵉⴷⵎⴰ ⵏ ⵜɣⵓⵔⵉ?,registrar_office_contact  
+ⴰⵏⴷⴰ ⵣⴻⵎⵔⴻɣ ⴰⴷ ⴰⴼⴻɣ ⵍⴱⵉⵔⵓ ⵏ ⵓⵙⴽⵍⴻⵙ ⵏ FSO?,registrar_office_contact  
+ⴰⵢɣⴻⵔ ⴷ ⴰⴽⵓⴷⴻⵏ ⵏ ⵍⴽⵅⴷⵎⴰ ⵏ ⵜɣⵓⵔⵉ?,registrar_office_contact  
+ⴰⵎⴻⴽ ⵣⴻⵎⵔⴻɣ ⴰⴷ ⴰⵡḍⴻɣ ɣⴻⵔ ⵍⴱⵉⵔⵓ ⵏ ⵓⵙⴽⵍⴻⵙ?,registrar_office_contact  
+ⴰⵢɣⴻⵔ ⴷ ⵜⴰⵏⵙⴰ ⵏ ⵍⴱⵉⵔⵓ ⵏ ⵜɣⵓⵔⵉ?,registrar_office_contact  
+ⴷⴻⴳ ⵎⴰⵏⵡⴰ ⴰⴽⵓⴷ ⵢⴻⵍⴷⵉ ⵍⴱⵉⵔⵓ ⵏ ⵓⵙⴽⵍⴻⵙ?,registrar_office_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵎⵙⵍⴰⵢⴻɣ ⴷ ⵍⵅⵉⴷⵎⴰ ⵏ ⵜɣⵓⵔⵉ?,registrar_office_contact  
+ⴰⵏⴷⴰ ⵢⴻⵍⵍⴰ ⵍⴱⵉⵔⵓ ⵏ ⵓⵙⴽⵍⴻⵙ?,registrar_office_contact  
+ⴰⵢɣⴻⵔ ⴷ ⵓⵏⴻⵔⵎⵉⵙ ⵏ ⵍⵅⵉⴷⵎⴰ ⵜⴰⵏⴻⴷⴱⴰⵍⵉⵜ?,registrar_office_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻɣ ⵓḥⵓⴷⴷⵓ ⵏ ⵓⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵏⵙⴽⵔɪpⵏⴻⵏ?,registrar_office_contact  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵉⵎⴰ𝖎𝖑 ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵓⵏⴻⵔⵎⴰⵙ?,registrar_office_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰⵎⵙⵓⵍⵜ ⵏ ⵓⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵏⵙⴽⵔɪpⵏⴻⵏ ⴷⴻⴳ FSO?,registrar_office_contact  
+ⵎⴻⵍⵍⵉ ⵍⵍⴰⵏ ⵉⵎⵉⴽ ⵏ ⵓⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵏⵙⴽⵔɪpⵏⴻⵏ?,registrar_office_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻḍ ⴰⵙⴻⴱⵜⴻⵔ ⵉ ⵓḥⵓⴷⴷⵓ ⵏ ⵓⵏⴻⵔⵎⴰⵙ?,registrar_office_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⴱⴷⴰḍ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵓⵏⴻⵔⵎⴰⵙ?,registrar_office_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⵜⵔⴻḍⴻɣ ⵉⵎⵉⴽ ⴰⴽⴻⴷ ⵓⵏⴻⵔⵎⴰⵙ?,registrar_office_contact  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵓⴷⵔⵉⵙ ⵏ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵓⵏⴻⵔⵎⴰⵙ?,registrar_office_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻḍ ⴰⵙⵓⵜⴻⵔ ⵏ ⵓḍⵔⵉⵙ ⵉ ⵓḥⵓⴷⴷⵓ ⵏ ⵓⵏⴻⵔⵎⴰⵙ?,registrar_office_contact  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵜⴰⵏⵙⴰ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵓⵏⴻⵔⵎⴰⵙ?,registrar_office_contact  
 Quand commence la période d'examens du printemps 2024-2025?,examen_du_semestre_de_printemps_2024_2025
 Quelle est la date précise du début des examens?,examen_du_semestre_de_printemps_2024_2025
 Comment connaître le calendrier des examens?,examen_du_semestre_de_printemps_2024_2025
@@ -238,6 +307,13 @@ Quand se terminent les examens du printemps?,examen_du_semestre_de_printemps_202
 Y a-t-il des changements prévus dans le calendrier des examens?,examen_du_semestre_de_printemps_2024_2025
 Comment seront organisés les examens cette année?,examen_du_semestre_de_printemps_2024_2025
 Quelles sont les modalités des examens du printemps?,examen_du_semestre_de_printemps_2024_2025
+Quand aura lieu la session d'examens de printemps 2024-2025 ?,examen_du_semestre_de_printemps_2024_2025
+Peux-tu me donner la date du premier examen ?,examen_du_semestre_de_printemps_2024_2025
+Comment consulter le programme complet des examens ?,examen_du_semestre_de_printemps_2024_2025
+À quelle heure commencent généralement les examens ?,examen_du_semestre_de_printemps_2024_2025
+Où puis-je vérifier les horaires des examens ?,examen_du_semestre_de_printemps_2024_2025
+Combien de jours durent les épreuves ?,examen_du_semestre_de_printemps_2024_2025
+Y aura-t-il des pauses entre les examens ?,examen_du_semestre_de_printemps_2024_2025
 When does the spring 2024-2025 exam period begin?,examen_du_semestre_de_printemps_2024_2025
 What is the exact start date of exams?,examen_du_semestre_de_printemps_2024_2025
 How to know the exam schedule?,examen_du_semestre_de_printemps_2024_2025
@@ -248,6 +324,13 @@ When do spring exams end?,examen_du_semestre_de_printemps_2024_2025
 Are there any expected changes to the exam schedule?,examen_du_semestre_de_printemps_2024_2025
 How will exams be organized this year?,examen_du_semestre_de_printemps_2024_2025
 What are the modalities of spring exams?,examen_du_semestre_de_printemps_2024_2025
+When will the spring 2024-2025 exams take place?,examen_du_semestre_de_printemps_2024_2025
+What is the first subject in the exam schedule?,examen_du_semestre_de_printemps_2024_2025
+How can I check the complete exam timetable?,examen_du_semestre_de_printemps_2024_2025
+What time do the exams usually start?,examen_du_semestre_de_printemps_2024_2025
+Where can I find the official exam dates?,examen_du_semestre_de_printemps_2024_2025
+How many days will the exams last?,examen_du_semestre_de_printemps_2024_2025
+Will there be breaks between exams?,examen_du_semestre_de_printemps_2024_2025
 متى تبدأ فترة امتحانات الربيع 2024-2025؟,examen_du_semestre_de_printemps_2024_2025
 ما هو التاريخ الدقيق لبداية الامتحانات؟,examen_du_semestre_de_printemps_2024_2025
 كيف يمكن معرفة جدول الامتحانات؟,examen_du_semestre_de_printemps_2024_2025
@@ -258,16 +341,30 @@ What are the modalities of spring exams?,examen_du_semestre_de_printemps_2024_20
 هل هناك أي تغييرات متوقعة في جدول الامتحانات؟,examen_du_semestre_de_printemps_2024_2025
 كيف سيتم تنظيم الامتحانات هذا العام؟,examen_du_semestre_de_printemps_2024_2025
 ما هي شروط امتحانات الربيع؟,examen_du_semestre_de_printemps_2024_2025
-Melmi i d-yebda uger n tzemzemt n tafsut 2024-2025?,examen_du_semestre_de_printemps_2024_2025
-D acu i d azemz n tmerna n tzemzemt?,examen_du_semestre_de_printemps_2024_2025
-Amek ara d-afɣeɣ amsagar n tzemzemt?,examen_du_semestre_de_printemps_2024_2025
-Anida ara d-afɣeɣ imalasen n tzemzemt n tafsut?,examen_du_semestre_de_printemps_2024_2025
-D acu i d tallit n tzemzemt?,examen_du_semestre_de_printemps_2024_2025
-Tzemzemt tettwasekcem deg yimalas neɣ snat n yimalasen?,examen_du_semestre_de_printemps_2024_2025
-Melmi ara tfak tzemzemt n tafsut?,examen_du_semestre_de_printemps_2024_2025
-Yella-d asnifel deg amsagar n tzemzemt?,examen_du_semestre_de_printemps_2024_2025
-Amek ara tettwasekcem tzemzemt aseggas-a?,examen_du_semestre_de_printemps_2024_2025
-D acu llan timacin n tzemzemt n tafsut?,examen_du_semestre_de_printemps_2024_2025
+متى تبدأ امتحانات الفصل الربيعي 2024-2025؟,examen_du_semestre_de_printemps_2024_2025
+ما هي أول مادة سيتم اختبارها؟,examen_du_semestre_de_printemps_2024_2025
+كيف يمكنني الاطلاع على جدول الامتحانات بالكامل؟,examen_du_semestre_de_printemps_2024_2025
+في أي وقت تبدأ الامتحانات عادةً؟,examen_du_semestre_de_printemps_2024_2025
+أين أجد مواعيد الامتحانات الرسمية؟,examen_du_semestre_de_printemps_2024_2025
+كم عدد الأيام التي تستغرقها الامتحانات؟,examen_du_semestre_de_printemps_2024_2025
+هل توجد فترات استراحة بين الامتحانات؟,examen_du_semestre_de_printemps_2024_2025
+ⵎⵍⵎⵉ ⵉ ⴷ-ⵢⴻⴱⴷⴰ ⵓⴳⴻⵔ ⵏ ⵜⵣⵎⵣⴻⵎⵜ ⵏ ⵜⴰⴼⵙⵓⵜ 2024-2025?,examen_du_semestre_de_printemps_2024_2025  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⴰⵣⵎⵣ ⵏ ⵜⵎⴻⵔⵏⴰ ⵏ ⵜⵣⵎⵣⴻⵎⵜ?,examen_du_semestre_de_printemps_2024_2025  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⴰⵎⵙⴰⴳⴰⵔ ⵏ ⵜⵣⵎⵣⴻⵎⵜ?,examen_du_semestre_de_printemps_2024_2025  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵎⴰⵍⴰⵙⴻⵏ ⵏ ⵜⵣⵎⵣⴻⵎⵜ ⵏ ⵜⴰⴼⵙⵓⵜ?,examen_du_semestre_de_printemps_2024_2025  
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵜⴰⵍⵍⵉⵜ ⵏ ⵜⵣⵎⵣⴻⵎⵜ?,examen_du_semestre_de_printemps_2024_2025  
+ⵜⵣⵎⵣⴻⵎⵜ ⵜⴻⵜⵜⵡⴰⵙⴻⴽⵙⴻⵎ ⴷⴻⴳ ⵢⵉⵎⴰⵍⴰⵙ ⵏⴻɣ ⵙⵏⴰⵜ ⵏ ⵢⵉⵎⴰⵍⴰⵙⵏ?,examen_du_semestre_de_printemps_2024_2025  
+ⵎⵍⵎⵉ ⴰⵔⴰ ⵜⴼⴰⴽ ⵜⵣⵎⵣⴻⵎⵜ ⵏ ⵜⴰⴼⵙⵓⵜ?,examen_du_semestre_de_printemps_2024_2025  
+ⵢⴻⵍⵍⴰ-ⴷ ⴰⵙⵏⵉⴼⴻⵍ ⴷⴻⴳ ⴰⵎⵙⴰⴳⴰⵔ ⵏ ⵜⵣⵎⵣⴻⵎⵜ?,examen_du_semestre_de_printemps_2024_2025  
+ⰰⵎⴻⴽ ⴰⵔⴰ ⵜⴻⵜⵜⵡⴰⵙⴻⴽⵙⴻⵎ ⵜⵣⵎⵣⴻⵎⵜ ⴰⵙⴻⴳⴳⴰⵙ-ⴰ?,examen_du_semestre_de_printemps_2024_2025  
+ⴷ ⴰⵛⵓ ⵍⵍⴰⵏ ⵜⵉⵎⴰⵙⵉⵏ ⵏ ⵜⵣⵎⵣⴻⵎⵜ ⵏ ⵜⴰⴼⵙⵓⵜ?,examen_du_semestre_de_printemps_2024_2025  
+ⵎⴰⵜⴰ ⴰⵙⴳⴰⵙ ⵉⵙⵙⴰⵎⴰⵏ ⵏ ⵓⵙⴳⴰⵙ ⵏⵏⵙⵎⵉⵔ 2024-2025 ?,examen_du_semestre_de_printemps_2024_2025
+ⴰⵎⴰⵢⴰ ⴰⵣⵎⵉⴳⴰⵏ ⴰⵎⵓⵙⵙⴰⵏ ⵏⵏⵙⴽⵓⵜⵉⵏⴰⵏⵜ ?,examen_du_semestre_de_printemps_2024_2025
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵜⵉⵎⵉⴷⵉⵍⵉⵏ ⵏ ⵓⵙⵙⴳⴰⵙⵏ ?,examen_du_semestre_de_printemps_2024_2025
+ⴰⵎⴰⵢⴰ ⴰⵏⴽⵓⵔ ⵜⵉⵙⵙⴰ ⴰⵔ ⵓⵙⵙⴳⴰⵙⵏ ?,examen_du_semestre_de_printemps_2024_2025
+ⴰⵎⴰⵢⴰ ⴰⵏⴽⵓⵔ ⵓⴳⴰⵏ ⵉⵎⵙⴰⵏ ⵏⵏⵙⵎⵉⵔ ?,examen_du_semestre_de_printemps_2024_2025
+ⴰⵎⴰⵢⴰ ⵓⵎⴰⴽⵓⵔ ⵉⵍⵍⵉⵏ ⵓⵙⵙⴳⴰⵙⵏ ?,examen_du_semestre_de_printemps_2024_2025
+ⴰⵎⴰⵢⴰ ⴰⵏⴽⵓⵔ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵏ ⵓⵙⵙⴳⴰⵙⵏ ?,examen_du_semestre_de_printemps_2024_2025
 Quels sont les clubs sportifs disponibles à la FSO?,clubs_et_activites
 Comment participer aux activités culturelles?,clubs_et_activites
 Y a-t-il un club de débat en anglais?,clubs_et_activites
@@ -278,6 +375,16 @@ Existe-t-il un club d'échecs à la FSO?,clubs_et_activites
 Qui contacter pour rejoindre un club?,clubs_et_activites
 Quels sont les horaires des activités sportives?,clubs_et_activites
 Y a-t-il des compétitions inter-facultés?,clubs_et_activites
+Quels clubs artistiques sont disponibles à la FSO ?,clubs_et_activites
+Comment s'inscrire à un club de musique ?,clubs_et_activites
+Où puis-je trouver la liste complète des clubs ?,clubs_et_activites
+Y a-t-il des ateliers de théâtre organisés cette année ?,clubs_et_activites
+Le club de photographie est-il ouvert aux débutants ?,clubs_et_activites
+Quels événements culturels sont prévus ce semestre ?,clubs_et_activites
+Comment savoir si un club recrute de nouveaux membres ?,clubs_et_activites
+Peut-on participer à plusieurs clubs en même temps ?,clubs_et_activites
+Existe-t-il un club dédié aux voyages ou randonnées ?,clubs_et_activites
+Qui est responsable de la coordination des clubs ?,clubs_et_activites
 What sports clubs are available at FSO?,clubs_et_activites
 How to participate in cultural activities?,clubs_et_activites
 Is there an English debate club?,clubs_et_activites
@@ -285,9 +392,16 @@ When does the science club meet?,clubs_et_activites
 How to create a new student club?,clubs_et_activites
 What extracurricular activities are offered?,clubs_et_activites
 Is there a chess club at FSO?,clubs_et_activites
-Who to contact to join a club?,clubs_et_activites
-What are the sports activities schedules?,clubs_et_activites
-Are there inter-faculty competitions?,clubs_et_activites
+What artistic clubs are available at the FSO?,clubs_et_activites
+How can I register for the music club?,clubs_et_activites
+Where can I find the full list of clubs?,clubs_et_activites
+Are there any theater workshops this year?,clubs_et_activites
+Is the photography club open to beginners?,clubs_et_activites
+What cultural events are planned this semester?,clubs_et_activites
+How can I know if a club is recruiting new members?,clubs_et_activites
+Can I join multiple clubs at the same time?,clubs_et_activites
+Is there a club for travel or hiking?,clubs_et_activites
+Who is in charge of coordinating the clubs?,clubs_et_activites
 ما هي الأندية الرياضية المتاحة في الكلية؟,clubs_et_activites
 كيف يمكن المشاركة في الأنشطة الثقافية؟,clubs_et_activites
 هل يوجد نادي للمناظرات باللغة الإنجليزية؟,clubs_et_activites
@@ -298,16 +412,33 @@ Are there inter-faculty competitions?,clubs_et_activites
 من أتصل للانضمام إلى نادي؟,clubs_et_activites
 ما هي أوقات الأنشطة الرياضية؟,clubs_et_activites
 هل هناك مسابقات بين الكليات؟,clubs_et_activites
-D acu llan ikluben n urar i yellan deg FSO?,clubs_et_activites
-Amek ara kemmleɣ deg yiruran timazinin?,clubs_et_activites
-Yella-d aklub n mmeslay s tanglizit?,clubs_et_activites
-Melmi i d-yettemlilen ikluben n tussna?,clubs_et_activites
-Amek ara d-nerr aklub amaynut n yilemmas?,clubs_et_activites
-D acu llan yiruran n tmezgida?,clubs_et_activites
-Yella-d aklub n ticriktet deg FSO?,clubs_et_activites
-Anwa ara ssawleɣ akken ad kemmleɣ deg aklub?,clubs_et_activites
-D acu llan imalasen n yiruran n urar?,clubs_et_activites
-Yella-d amecwar gar yidelsen?,clubs_et_activites
+ما هي الأندية الفنية المتوفرة في الكلية؟,clubs_et_activites
+كيف يمكنني التسجيل في نادي الموسيقى؟,clubs_et_activites
+أين أجد القائمة الكاملة للأندية؟,clubs_et_activites
+هل يتم تنظيم ورش مسرح هذا العام؟,clubs_et_activites
+هل نادي التصوير الفوتوغرافي مفتوح للمبتدئين؟,clubs_et_activites
+ما هي الأنشطة الثقافية المقررة هذا الفصل؟,clubs_et_activites
+كيف أعرف إذا كان النادي يستقبل أعضاء جدد؟,clubs_et_activites
+هل يمكن الانضمام إلى أكثر من نادٍ في نفس الوقت؟,clubs_et_activites
+هل يوجد نادٍ خاص بالسفر أو الرحلات؟,clubs_et_activites
+من المسؤول عن تنسيق أنشطة الأندية؟,clubs_et_activites
+ⴷ ⴰⵛⵓ ⵍⵍⴰⵏ ⵉⴽⵍⵓⴱⴻⵏ ⵏ ⵓⵔⴰⵔ ⵉ ⵢⴻⵍⵍⴰⵏ ⴷⴻⴳ FSO?,clubs_et_activites  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴽⴻmmⵍⴻɣ ⴷⴻⴳ ⵢⵉⵔⵓⵔⴰⵏ ⵜⵉⵎⴰⵣⵉⵏⵉⵏ?,clubs_et_activites  
+ⵢⴻⵍⵍⴰ-ⴷ ⴰⴽⵍⵓⴱ ⵏ ⵎⵎⵙⵍⴰⵢ ⵙ ⵜⴰⵏⴳⵍⵉⵣⵉⵜ?,clubs_et_activites  
+ⵎⵍⵎⵉ ⵉ ⴷ-ⵢⴻⵜⵜⵎⵍⵉⵍⴻⵏ ⵉⴽⵍⵓⴱⴻⵏ ⵏ ⵜⵓⵙⵙⵏⴰ?,clubs_et_activites  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⵏⴻⵔⵔ ⴰⴽⵍⵓⴱ ⴰⵎⴰⵢⵏⵓⵜ ⵏ ⵢⵉⵍⴻⵎⵎⴰⵙ?,clubs_et_activites  
+ⴷ ⴰⵛⵓ ⵍⵍⴰⵏ ⵢⵉⵔⵓⵔⴰⵏ ⵏ ⵜⵎⴻⵣⴳⵉⴷⴰ?,clubs_et_activites  
+ⵢⴻⵍⵍⴰ-ⴷ ⴰⴽⵍⵓⴱ ⵏ ⵜⵉⴽⵔⵉⴽⵜⴻⵜ ⴷⴻⴳ FSO?,clubs_et_activites  
+ⵎⴰ ⵍⵍⵓⵙⵉⴷⵉⵏ ⴰⴽⵔⵙⵉⵜⵉⴽ ⵉⵎⵙⵉⵏ ⴷ ⵉⵏⴼⵓⵙⵉⵏⵏ ⴷ ⴼⵙⵓ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⴰⵣⵎⵉⴳⴰⵏ ⴰⴳⵔⵉⴼ ⵏ ⵓⵙⵉⵏⵉⵡ ⵏ ⵜⵓⵏⵙⵉⴽⵉ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵜⵓⵙⵉⵍⵉⵜ ⵏ ⵓⵙⵉⵏⵉⵡⵏ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵙⵙⴽⵓⵜⴰⵏ ⵜⵓⵏⵙⵉⵔⵉⵢⵉⵏ ⴷ ⵜⵉⵡⴰⴽⵓⵏⵏⵜ ⵏ ⵓⵙⵙⴰⵏⵓ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵙⵙⴽⵓⵜⴰⵏ ⵓⵙⵙⴰⵏⵓ ⵏ ⵓⵣⵔⴰⵏ ⵏ ⵜⴰⵍⴰⵙⵜⵉⵏⵜ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵎⴰ ⵍⵍⵉⵏ ⵉⵏⴰⴽⵓⵏ ⵏ ⵜⵎⴰⵣⵉⵖⵜ ⵏⵏⵙⵎⵉⵔ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⴷ ⵉⵙⴰⴳⵓⵏ ⵉⵏⵙⵙⴰ ⴰⵙⵏⴼⴰⵔⵏ ⵏⵏⵙⵎⵉⵔ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵓⵙⵎⵓⵏ ⵓⵙⵎⵔⵉⵔ ⴷ ⵉⵙⵙⵏⵎⵏ ⵏⴽⴽⵓⵔⵏ ⵏⵏⵙⵎⵉⵔ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵙⵙⴽⵓⵜⴰⵏ ⵏ ⵜⴰⵙⵙⴰ ⵏ ⵜⵉⵎⵎⴰⵣⵔⵜ ⴷ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,clubs_et_activites
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵓⵙⵎⵓⵏ ⵏ ⵜⵉⴽⵓⵏⵏⵉⵙ ⵏ ⵓⵙⵉⵏⵉⵡⵏ ?,clubs_et_activites
 Comment puis-je contacter le bureau administratif de la faculté?,administration_contact
 Quels sont les moyens disponibles pour joindre l'administration de la FSO?,administration_contact
 Où trouver les coordonnées complètes du service administratif?,administration_contact
@@ -318,6 +449,16 @@ Y a-t-il un accueil physique pour l'administration de la faculté?,administratio
 Qui contacter en cas de problème administratif à la faculté?,administration_contact
 Comment obtenir une réponse rapide de l'administration universitaire?,administration_contact
 Existe-t-il un formulaire en ligne pour contacter l'administration?,administration_contact
+Comment joindre le secrétariat de la faculté ?,administration_contact
+Où puis-je trouver l’adresse e-mail officielle de l’administration ?,administration_contact
+Peut-on contacter l’administration via WhatsApp ?,administration_contact
+Y a-t-il un guichet d’information pour les étudiants ?,administration_contact
+Comment demander un rendez-vous avec l’administration ?,administration_contact
+À qui s’adresser pour une question administrative urgente ?,administration_contact
+Quels sont les horaires d’ouverture de l’administration ?,administration_contact
+Comment contacter le service des étudiants ?,administration_contact
+Existe-t-il une permanence téléphonique pour les étudiants ?,administration_contact
+Peut-on envoyer ses documents par e-mail à l’administration ?,administration_contact
 What's the procedure to reach the faculty's administrative office?,administration_contact
 Where can I find the complete admin contact details?,administration_contact
 Is there a dedicated email for faculty administration inquiries?,administration_contact
@@ -328,6 +469,16 @@ Can I contact faculty administration through social media?,administration_contac
 What's the response time for admin email inquiries?,administration_contact
 Are there different contacts for various admin services?,administration_contact
 How to reach admin staff during holidays?,administration_contact
+How can I reach the faculty’s secretary office?,administration_contact
+Where can I find the official administration email address?,administration_contact
+Can I contact the administration via WhatsApp?,administration_contact
+Is there an information desk for students?,administration_contact
+How can I request an appointment with the administration?,administration_contact
+Who should I contact for urgent administrative matters?,administration_contact
+What are the administration’s working hours?,administration_contact
+How can I get in touch with the student affairs office?,administration_contact
+Is there a dedicated phone line for students?,administration_contact
+Can I send my documents to the administration by email?,administration_contact
 ما هي قنوات التواصل مع الإدارة الجامعية؟,administration_contact
 هل يوجد رقم هاتف مباشر لشؤون الطلاب؟,administration_contact
 أين يقع مكتب الشؤون الإدارية في الكلية؟,administration_contact
@@ -338,16 +489,36 @@ How to reach admin staff during holidays?,administration_contact
 كيف أتقدم بشكوى إدارية؟,administration_contact
 ما هي الوثائق المطلوبة للمعاملات الإدارية؟,administration_contact
 هل توجد خدمة محادثة فورية مع الإدارة؟,administration_contact
-Mani tga tansa n uselkim n unabaḍ n temdint?,administration_contact
-Amek ara kcemɣ ɣer uḥuddu anabaḍan?,administration_contact
-Mani ttilin imaylen n unabaḍ n FSO?,administration_contact
-Melli ara smeɣteɣ i uḥuddu anabaḍan?,administration_contact
-Anwa i d anermas n yisallen anabaḍan?,administration_contact
-Is ttilin tarrayt n usuter n unabaḍ?,administration_contact
-Amek ara tazneɣ tuzna ɣer unabaḍ?,administration_contact
-Anwa i d anermas n yisallen n uselkim?,administration_contact
-Mani ara d-afeɣ isalen n unabaḍ?,administration_contact
-Is yella usuter n unabaḍ s yimayl?,administration_contact
+كيف يمكنني التواصل مع أمانة الكلية؟,administration_contact
+أين أجد البريد الإلكتروني الرسمي للإدارة؟,administration_contact
+هل يمكن التواصل مع الإدارة عبر واتساب؟,administration_contact
+هل يوجد مكتب استقبال للطلاب؟,administration_contact
+كيف يمكن طلب موعد مع الإدارة؟,administration_contact
+إلى من أتوجه في حال وجود مسألة إدارية عاجلة؟,administration_contact
+ما هي أوقات عمل الإدارة؟,administration_contact
+كيف أتواصل مع مصلحة شؤون الطلبة؟,administration_contact
+هل هناك خط هاتفي مخصص للطلاب؟,administration_contact
+هل يمكن إرسال الوثائق عبر البريد الإلكتروني للإدارة؟,administration_contact
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⴰⵏⵙⴰ ⵏ ⵓⵙⵍⴽⵉⵎ ⵏ ⵓⵏⴰⴱⴰḍ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,administration_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴽⴻmmɣ ɣⴻⵔ ⵓḥⵓⴷⴷⵓ ⴰⵏⴰⴱⴰḍⴰⵏ?,administration_contact  
+ⵎⴰⵏⵉ ⵜⵜⵉⵍⵉⵏ ⵉⵎⴰⵢⵍⴻⵏ ⵏ ⵓⵏⴰⴱⴰḍ ⵏ FSO?,administration_contact  
+ⵎⴻⵍⵍⵉ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ ⵓḥⵓⴷⴷⵓ ⴰⵏⴰⴱⴰḍⴰⵏ?,administration_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵙⴰⵍⵍⴻⵏ ⴰⵏⴰⴱⴰḍⴰⵏ?,administration_contact  
+ⵉⵙ ⵜⵜⵉⵍⵉⵏ ⵜⵔⴰⵔⴰⵢⵜ ⵏ ⵓⵙⵓⵜⴻⵔ ⵏ ⵓⵏⴰⴱⴰḍ?,administration_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⵜⵓⵣⵏⴰ ɣⴻⵔ ⵓⵏⴰⴱⴰḍ?,administration_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵙⴰⵍⵍⴻⵏ ⵏ ⵓⵙⵍⴽⵉⵎ?,administration_contact  
+ⵎⴰⵏⵉ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵙⴰⵍⵏ ⵏ ⵓⵏⴰⴱⴰḍ?,administration_contact  
+ⵉⵙ ⵢⴻⵍⵍⴰ ⵓⵙⵓⵜⴻⵔ ⵏ ⵓⵏⴰⴱⴰḍ ⵙ ⵢⵉⵎⴰⵢⵍ?,administration_contact  
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵉⵙⴰⵍⵍⵉ ⵏ ⵜⵉⵙⵏⵉⵔⵉⵜ ⵏ ⵜⴰⵙⵙⴰ ⵏ ⴼⴰⵙⵓⵏⵜ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵜⵉⵎⴰⵍⵉⵏ ⵏ ⵓⵎⴰⴹⵉⵏ ⵓⵙⵏⵉⵎⵉ ⵏ ⵜⴰⵙⵙⴰ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵓⵙⵎⵓⵏ ⵓⵙⵏⵉⵎⵉ ⴷ ⵡⴰⵜⵙⵙⴰⴱ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵉⵏⴰⵔ ⴷ ⵓⵏⵙⵏⵉⵔ ⵏ ⵓⵙⵎⵓⵔ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵜⵓⵙⵏⵉⵔⵉⵜ ⵏ ⵓⵎⴰⵍⵍⴰⵏ ⵏ ⵜⴰⵙⵙⴰ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵓⵙⵎⵓⵏ ⵏ ⵜⴰⵙⵙⴰ ⴰⵏⴼⴰⵎⵉⵔ ⵏⵏⵙⵎⵉⵔ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵎⴰ ⵍⵍⵉⵏ ⵓⴷⵔⴰⵏ ⵏ ⵜⴰⵙⵙⴰ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵓⵙⵎⵓⵏ ⵏ ⵜⴰⵙⵙⴰ ⵏ ⵉⵎⵙⴰⵏ ⵏ ⵓⵙⵎⵓⵔ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵉⵏⴰⵔ ⵉⵎⵙⴰⵏⵏ ⵏⵏⵙⵎⵉⵔ ?,administration_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵙⵙⴽⵓⵜⴰⵏ ⵜⴰⵏⵎⵎⴰⵔⵜ ⴷ ⵓⵎⴰⴹⵉⵏ ⵏ ⵜⴰⵙⵙⴰ ?,administration_contact
 Où trouver le numéro de la bibliothèque universitaire?,library_contact
 Comment puis-je appeler la bibliothèque?,library_contact
 Quel contact pour les services de prêt?,library_contact
@@ -358,36 +529,6 @@ Comment contacter l'accueil de la bibliothèque?,library_contact
 Où puis-je trouver les coordonnées de la bibliothèque?,library_contact
 Comment signaler un problème à la bibliothèque?,library_contact
 Quel numéro pour les questions bibliographiques?,library_contact
-What's the library helpdesk number?,library_contact
-How do I call the university library?,library_contact
-Where to find library contact information?,library_contact
-What's the phone for library services?,library_contact
-How to reach library staff?,library_contact
-What's the contact for document services?,library_contact
-How to contact library reception?,library_contact
-Where can I find library coordinates?,library_contact
-How to report library issues?,library_contact
-What number for bibliographic questions?,library_contact
-ما هو رقم مكتبة الجامعة؟,library_contact
-كيف يمكنني الاتصال بالمكتبة؟,library_contact
-ما هو الاتصال لخدمات الإعارة؟,library_contact
-هل يوجد دعم هاتفي في المكتبة؟,library_contact
-كيف أصل إلى أمناء المكتبة؟,library_contact
-ما هو اتصال الخدمة الوثائقية؟,library_contact
-كيف أتصل باستقبال المكتبة؟,library_contact
-أين يمكنني العثور على معلومات المكتبة؟,library_contact
-كيف أبلغ عن مشكلة في المكتبة؟,library_contact
-ما الرقم للأسئلة البيبليوغرافية؟,library_contact
-Ayɣer d uṭṭun n temkarḍit n temdint?,library_contact
-Amek zemreɣ ad siwleɣ temkarḍit?,library_contact
-Ayɣer d unermis i lxedmat n usumer?,library_contact
-Yella tallalt s tiliɣri deg temkarḍit?,library_contact
-Amek ara awḍeɣ ɣer yimkarḍen?,library_contact
-Ayɣer d unermis n lxidma n isemliyen?,library_contact
-Amek ara nermes urmas n temkarḍit?,library_contact
-Anda zemreɣ ad afeɣ talɣut n temkarḍit?,library_contact
-Amek ara qqareɣ ɣef ugur deg temkarḍit?,library_contact
-Anwa uṭṭun i yisteqsiyen n tebiblyuɣrafya?,library_contact
 Quel est le numéro de téléphone principal de la bibliothèque universitaire?,library_contact
 Comment contacter le responsable du prêt à la bibliothèque?,library_contact
 Y a-t-il un chat en ligne pour poser des questions à la bibliothèque?,library_contact
@@ -398,6 +539,16 @@ Existe-t-il un numéro WhatsApp pour la bibliothèque universitaire?,library_con
 Comment signaler un livre perdu ou endommagé?,library_contact
 Quel est le contact pour les demandes d'achat de livres?,library_contact
 Comment contacter le service de référence de la bibliothèque?,library_contact
+What's the library helpdesk number?,library_contact
+How do I call the university library?,library_contact
+Where to find library contact information?,library_contact
+What's the phone for library services?,library_contact
+How to reach library staff?,library_contact
+What's the contact for document services?,library_contact
+How to contact library reception?,library_contact
+Where can I find library coordinates?,library_contact
+How to report library issues?,library_contact
+What number for bibliographic questions?,library_contact
 What's the main contact number for the university library?,library_contact
 How to reach the library's interloan service?,library_contact
 Is there a dedicated email for research assistance?,library_contact
@@ -408,6 +559,16 @@ How to report technical issues with digital resources?,library_contact
 Who to contact about library workshops?,library_contact
 What's the phone number for group study rooms?,library_contact
 How to reach the library director's office?,library_contact
+ما هو رقم مكتبة الجامعة؟,library_contact
+كيف يمكنني الاتصال بالمكتبة؟,library_contact
+ما هو الاتصال لخدمات الإعارة؟,library_contact
+هل يوجد دعم هاتفي في المكتبة؟,library_contact
+كيف أصل إلى أمناء المكتبة؟,library_contact
+ما هو اتصال الخدمة الوثائقية؟,library_contact
+كيف أتصل باستقبال المكتبة؟,library_contact
+أين يمكنني العثور على معلومات المكتبة؟,library_contact
+كيف أبلغ عن مشكلة في المكتبة؟,library_contact
+ما الرقم للأسئلة البيبليوغرافية؟,library_contact
 ما هو رقم الاتصال المباشر بقسم المراجع؟,library_contact
 كيف أتواصل مع قسم التزويد بالمكتبة؟,library_contact
 هل يوجد خط ساخن لاستفسارات المكتبة؟,library_contact
@@ -418,16 +579,26 @@ How to reach the library director's office?,library_contact
 كيف أبلغ عن مشكلة في المنصة الإلكترونية؟,library_contact
 هل يوجد رقم للشكاوى والمقترحات؟,library_contact
 ما هي قناة التواصل السريع مع المكتبة؟,library_contact
-Mani tga tiliɣri n tamsult n temdint?,library_contact
-Amek ara ɣeɣ anermas n usuter n yidlisen?,library_contact
-Is yella email i yisallen ɣef yisefka n tamsult?,library_contact
-Anwa i d anermas n yidlisen iɣallen?,library_contact
-Mani ara d-afeɣ inermisen n tamsult n temdint?,library_contact
-Amek ara smeɣteɣ i tamsult ɣef yisallen n uselkim?,library_contact
-Is ttilin tarrayt n usuter s WhatsApp?,library_contact
-Amek ara mlayeɣ ɣef uḥuddu n yidlisen iɣallen?,library_contact
-Anwa i d anermas n tamsult n yisefka?,library_contact
-Mani ara d-afeɣ inermisen n uḥuddu n tira n tamsult?,library_contact
+ⴰⵢɣⴻⵔ ⴷ ⵓṭṭⵓⵏ ⵏ ⵜⴻⵎⴽⴰⵔḍⵉⵜ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,library_contact  
+ⴰⵎⴻⴽ ⵣⴻⵎⵔⴻɣ ⴰⴷ ⵙⵉⵡⵍⴻɣ ⵜⴻⵎⴽⴰⵔḍⵉⵜ?,library_contact  
+ⴰⵢɣⴻⵔ ⴷ ⵓⵏⴻⵔⵎⵉⵙ ⵉ ⵍⵅⵉⴷⵎⴰ ⵏ ⵓⵙⵓⵎⴻⵔ?,library_contact  
+ⵢⴻⵍⵍⴰ ⵜⴰⵍⵍⴰⵍⵜ ⵙ ⵜⵉⵍⵉɣⵔⵉ ⴷⴻⴳ ⵜⴻⵎⴽⴰⵔḍⵉⵜ?,library_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴰⵡḍⴻɣ ɣⴻⵔ ⵢⵉⵎⴽⴰⵔḍⴻⵏ?,library_contact  
+ⴰⵢɣⴻⵔ ⴷ ⵓⵏⴻⵔⵎⵉⵙ ⵏ ⵍⵅⵉⴷⵎⴰ ⵏ ⵉⵙⴻⵎⵍⵉⵢⴻⵏ?,library_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵏⴻⵔⵎⴻⵙ ⵓⵔⵎⴰⵙ ⵏ ⵜⴻⵎⴽⴰⵔḍⵉⵜ?,library_contact  
+ⴰⵏⴷⴰ ⵣⴻⵎⵔⴻɣ ⴰⴷ ⴰⴼⴻɣ ⵜⴰⵍɣⵓⵜ ⵏ ⵜⴻⵎⴽⴰⵔḍⵉⵜ?,library_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵇⵇⴰⵔⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⴷⴻⴳ ⵜⴻⵎⴽⴰⵔḍⵉⵜ?,library_contact  
+ⴰⵏⵡⴰ ⵓṭṭⵓⵏ ⵉ ⵢⵉⵙⵜⴻⵇⵙⵉⵢⴻⵏ ⵏ ⵜⴻⴱⵉⴱⵍⵢⵓɣⵔⴰⴼⵢⴰ?,library_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵜⴰⵎⵙⵓⵍⵜ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,library_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵓⵙⵓⵜⴻⵔ ⵏ ⵢⵉⴷⵍⵉⵙⴻⵏ?,library_contact  
+ⵉⵙ ⵢⴻⵍⵍⴰ ⵉⵎⴰ𝖎𝖑 ⵉ ⵢⵉⵙⴰⵍⵍⴻⵏ ɣⴻⴼ ⵢⵉⵙⴻ𝖋𝖐ⴰ ⵏ ⵜⴰⵎⵙⵓⵍⵜ?,library_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⴷⵍⵉⵙⴻⵏ ⵉɣⴰⵍⵍⴻⵏ?,library_contact  
+ⵎⴰⵏⵉ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵜⴰⵎⵙⵓⵍⵜ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,library_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ ⵜⴰⵎⵙⵓⵍⵜ ɣⴻⴼ ⵢⵉⵙⴰⵍⵍ⵻ⵏ ⵏ ⵓⵙⵍⴽⵉⵎ?,library_contact  
+ⵉⵙ ⵜⵜⵉⵍⵉⵏ ⵜⵔⴰⵔⴰⵢⵜ ⵏ ⵓⵙⵓⵜⴻⵔ ⵙ WhatsApp?,library_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓḥⵓⴷⴷⵓ ⵏ ⵢⵉⴷⵍⵉⵙⴻⵏ ⵉɣⴰⵍⵍⴻⵏ?,library_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵜⴰⵎⵙⵓⵍⵜ ⵏ ⵢⵉⵙⴻ𝖋𝖐ⴰ?,library_contact  
+ⵎⴰⵏⵉ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵜɪⵔⴰ ⵏ ⵜⴰⵎⵙⵓⵍⵜ?,library_contact  
 Comment contacter le support technique en cas de problème réseau?,it_support_contact
 Quel est le numéro d'urgence pour les pannes informatiques?,it_support_contact
 Où se trouve le bureau d'assistance informatique?,it_support_contact
@@ -438,6 +609,16 @@ Y a-t-il un chat en direct avec le support informatique?,it_support_contact
 Qui contacter pour les problèmes de plateforme pédagogique?,it_support_contact
 Comment réinitialiser mon mot de passe universitaire?,it_support_contact
 Quel est le délai de réponse du support technique?,it_support_contact
+Quels sont les horaires d’ouverture du support informatique ?,it_support_contact
+Peut-on demander de l’aide à distance pour un problème technique ?,it_support_contact
+Comment prendre rendez-vous avec un technicien informatique ?,it_support_contact
+Le support technique peut-il réparer un ordinateur personnel ?,it_support_contact
+Y a-t-il un numéro WhatsApp pour joindre l’assistance ?,it_support_contact
+Où trouver la FAQ du support informatique ?,it_support_contact
+Comment signaler une panne sur la plateforme des cours ?,it_support_contact
+Qui est responsable du réseau internet à la FSO ?,it_support_contact
+Est-il possible de suivre l’avancement d’un ticket de support ?,it_support_contact
+Le support technique aide-t-il pour l’installation de logiciels ?,it_support_contact
 How to report a campus network outage?,it_support_contact
 What's the contact for classroom tech support?,it_support_contact
 Where to call for email account issues?,it_support_contact
@@ -448,6 +629,16 @@ Where to report phishing emails?,it_support_contact
 How to get help with online exam platforms?,it_support_contact
 What's the contact for printer problems?,it_support_contact
 How to request VPN access?,it_support_contact
+What are the IT support office hours?,it_support_contact
+Can I request remote help for a technical problem?,it_support_contact
+How can I book an appointment with an IT technician?,it_support_contact
+Does the IT support repair personal computers?,it_support_contact
+Is there a WhatsApp number for contacting the help desk?,it_support_contact
+Where can I find the IT support FAQ?,it_support_contact
+How can I report an issue on the course platform?,it_support_contact
+Who is responsible for the internet network at the FSO?,it_support_contact
+Can I track the progress of my support ticket?,it_support_contact
+Does the IT support help with software installation?,it_support_contact
 كيف أبلغ عن عطل في النظام المعلوماتي؟,it_support_contact
 ما هو رقم الدعم الفني للطوارئ؟,it_support_contact
 أين يوجد مكتب خدمة تقنية المعلومات؟,it_support_contact
@@ -458,16 +649,36 @@ How to request VPN access?,it_support_contact
 من المسؤول عن صيانة أجهزة الكمبيوتر؟,it_support_contact
 كيف أغير كلمة مرور البريد الجامعي؟,it_support_contact
 ما هي مدة استجابة الدعم الفني؟,it_support_contact
-Amek ara ɣeɣ tallalt tignitin ɣef yiwet n teɣawsa?,it_support_contact
-Mani tga tiliɣri n lḥal n uḥuddu n tetiknulujit?,it_support_contact
-Anida i tezga taɣult n tetiknulujit?,it_support_contact
-Amek ara mlayeɣ ɣef wugur n unekcum?,it_support_contact
-Mani tga imayl n uḥuddu n WiFi?,it_support_contact
-Amek ara d-awiɣ tallelt ɣef yisnasen n uselkim?,it_support_contact
-Is yella usuter s usrid i tallalt tignitin?,it_support_contact
-Anwa i d anermas n usnas n uselkim?,it_support_contact
-Amek ara awḍeɣ i wawal uffir n yimayl?,it_support_contact
-Mik ara d-ttuɣal tallalt tignitin?,it_support_contact
+ما هي أوقات عمل الدعم التقني؟,it_support_contact
+هل يمكن طلب المساعدة عن بُعد في حال وجود مشكلة تقنية؟,it_support_contact
+كيف يمكن حجز موعد مع فني المعلوماتية؟,it_support_contact
+هل يقوم الدعم التقني بإصلاح الحواسيب الشخصية؟,it_support_contact
+هل يوجد رقم واتساب للتواصل مع الدعم؟,it_support_contact
+أين أجد صفحة الأسئلة الشائعة الخاصة بالدعم؟,it_support_contact
+كيف أبلغ عن عطل في منصة الدروس؟,it_support_contact
+من المسؤول عن شبكة الإنترنت في الكلية؟,it_support_contact
+هل يمكن متابعة حالة طلب المساعدة؟,it_support_contact
+هل يقدم الدعم مساعدة في تثبيت البرامج؟,it_support_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵜⴰⵍⵍⴰⵜ ⵜⵉɣⵏⵉⵜ ɣⴻⴼ ⵢⵉⵡⴻⵜ ⵏ ⵜⴻɣⴰⵡⵙⴰ?,it_support_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵍⵃⴰⵍ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵜⴻⵜɪⴽⵏⵓⵍⵓⵊⵉⵜ?,it_support_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵜⴻⵜɪⴽⵏⵓⵍⵓⵊⵉⵜ?,it_support_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵡⵓⴳⵓⵔ ⵏ ⵓⵏⴻⴽⵙⵓⵎ?,it_support_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ WiFi?,it_support_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⴰⵡⵉɣ ⵜⴰⵍⵍⴰⵜ ɣⴻⴼ ⵢⵉⵙⵏⴰⵙⴻⵏ ⵏ ⵓⵙⵍⴽⵉⵎ?,it_support_contact  
+ⵉⵙ ⵢⴻⵍⵍⴰ ⵓⵙⵓⵜⴻⵔ ⵙ ⵓⵙⵔɪⴷ ⵉ ⵜⴰⵍⵍⴰⵜ ⵜɪɣⵏⵉⵜ?,it_support_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵓⵙⵏⴰⵙ ⵏ ⵓⵙⵍⴽⵉⵎ?,it_support_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴰⵡḍⴻɣ ⵉ ⵡⴰⵡⴰⵍ ⵓⴼⴼɪⵔ ⵏ ⵢⵉⵎⴰⵢⵍ?,it_support_contact  
+ⵎⵉⴽ ⴰⵔⴰ ⴷ-ⵜⵟⵓɣⴰⵍ ⵜⴰⵍⵍⴰⵜ ⵜɪɣⵏⵉⵜ?,it_support_contact  
+ⵎⴰ ⵍⵍⵉⵏ ⵓⴷⵔⴰⵏ ⵏ ⵜⵓⵙⵙⴰ ⵏ ⵓⵙⵙⵏⵓⴳⵉⵎ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵓⵙⵎⵓⵏ ⵓⵙⵏⵉⵎⵉ ⴷ ⵓⴼⴰⴹ ⵏ ⵜⵓⵙⵏⵉⵔⵜ ⵏⵏⵙⵎⵉⵔ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵜⵓⵙⵏⵉⵔⵉⵜ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵏ ⵓⵙⵏⵓⴳⵉⵎ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵓⵙⵎⵓⵏ ⵓⵙⵏⵉⵎⵉ ⵉⵙⵙⵏⵏⵉⵔ ⵉⵎⵉⴷⵉⵏ ⵏⵏⵙⵎⵉⵔ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵉⵏⴰⵔ ⵡⴰⵜⵙⵙⴰⴱ ⵏ ⵓⵙⵏⵓⴳⵉⵎ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵜⵓⵙⵏⵉⵔⵉⵜ ⵏ ⵜⵎⴰⵣⵉⵖⵜ ⵏ ⵓⵙⵙⵏⵓⴳⵉⵎ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵏⵉⵖ ⵉⵙⵏⵎ ⵓⵍⵉⴳⵉⵏ ⵏ ⵓⵙⵎⵓⵔ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵏⵉⵖ ⵓⵙⵎⵓⵏ ⵏ ⵓⴳⴰⵏ ⵏ ⵓⵙⵙⴰ ⵏⵏⵙⵎⵉⵔ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵏⵉⵖ ⵉⵙⴰⴳⵓⵏ ⴰⵙⵏⵎⵎⵔⵓⴳⵉⵏ ⵏⵏⵙⵎⵉⵔ ?,it_support_contact
+ⴰⵎⴰⵢⴰ ⵍⴰ ⵓⵙⵎⵓⵏ ⵓⵙⵏⵉⵎⵉ ⵉⵙⵏⵎⵎⵔ ⵏ ⵜⵉⵎⵎⴰⵣⵔⵜ ?,it_support_contact
 Comment prendre rendez-vous avec le directeur de la faculté?,director_contact
 Quel est le protocole pour contacter le directeur?,director_contact
 Où envoyer un courrier officiel au directeur?,director_contact
@@ -478,6 +689,16 @@ Y a-t-il des heures de réception publiques?,director_contact
 Quel est l'email professionnel du directeur?,director_contact
 Comment adresser une demande exceptionnelle?,director_contact
 Qui remplace le directeur en son absence?,director_contact
+Puis-je rencontrer le directeur sans rendez-vous ?,director_contact
+Comment savoir si le directeur est disponible ?,director_contact
+À qui dois-je m’adresser pour parler au directeur ?,director_contact
+Quel est le bureau du directeur de la faculté ?,director_contact
+Comment fixer un rendez-vous avec le directeur ?,director_contact
+Où puis-je trouver l’emploi du temps du directeur ?,director_contact
+Comment envoyer un message urgent au directeur ?,director_contact
+Le directeur reçoit-il les étudiants en fin de semaine ?,director_contact
+Qui contacter pour confirmer un rendez-vous avec le directeur ?,director_contact
+Le directeur a-t-il une permanence hebdomadaire ?,director_contact
 How to schedule a meeting with the faculty dean?,director_contact
 What's the proper channel to contact the director?,director_contact
 Where to send official correspondence for the dean?,director_contact
@@ -488,6 +709,16 @@ Are there open office hours with the dean?,director_contact
 What's the official email for the director?,director_contact
 How to submit an urgent request to the dean?,director_contact
 Who acts as director when they're unavailable?,director_contact
+Can I meet the dean without an appointment?,director_contact
+How can I know if the dean is available?,director_contact
+Who should I contact to speak to the dean?,director_contact
+Where is the dean’s office located?,director_contact
+How do I schedule a meeting with the dean?,director_contact
+Where can I find the dean’s timetable?,director_contact
+How can I send an urgent message to the dean?,director_contact
+Does the dean meet students on weekends?,director_contact
+Who should I call to confirm a meeting with the dean?,director_contact
+Does the dean have weekly office hours?,director_contact
 كيف أحصل على موعد مع عميد الكلية؟,director_contact
 ما هي القناة الرسمية للتواصل مع المدير؟,director_contact
 أين أرسل خطابًا رسميًا للعميد؟,director_contact
@@ -498,15 +729,35 @@ Who acts as director when they're unavailable?,director_contact
 ما هو البريد الإلكتروني الرسمي للعميد؟,director_contact
 كيف أتقدم بطلب استثنائي للإدارة؟,director_contact
 من ينوب عن العميد في غيابه؟,director_contact
-Amek ara smeɣteɣ i unebḍaḍ n temdint?,director_contact
-Mani ara tazneɣ tuzna i unebḍaḍ?,director_contact
-Amek ara ssutreɣ aṭṭas i unebḍaḍ?,director_contact
-Mani tga tiliɣri n tɣawsi n unebḍaḍ?,director_contact
-Amek ara ɣeɣ amsaɣ n unebḍaḍ?,director_contact
-Melli ara d-ttuɣal unebḍaḍ i yimdanen?,director_contact
-Mani tga imayl uslig n unebḍaḍ?,director_contact
-Amek ara ssutreɣ aṭṭas n lḥal i unebḍaḍ?,director_contact
-Anwa i d anermas n unebḍaḍ ma yella ur yelli?,director_contact
+كيف يمكنني مقابلة المدير مباشرة؟,director_contact
+كيف أعرف إذا كان المدير متاحًا؟,director_contact
+إلى من أتوجه للتحدث مع المدير؟,director_contact
+أين مكتب مدير الكلية؟,director_contact
+كيف أحجز موعدًا مع المدير؟,director_contact
+أين أجد جدول مواعيد المدير؟,director_contact
+كيف أرسل رسالة عاجلة للمدير؟,director_contact
+هل يستقبل المدير الطلاب في عطلة نهاية الأسبوع؟,director_contact
+من أتواصل معه لتأكيد موعد مع المدير؟,director_contact
+هل للمدير ساعات استقبال محددة كل أسبوع؟,director_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ ⵓⵏⴻⴱḍⴰḍ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,director_contact  
+ⵎⴰⵏⵉ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⵜⵓⵣⵏⴰ ⵉ ⵓⵏⴻⴱḍⴰḍ?,director_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⵓⵜⵔⴻɣ ⴰṭṭⴰⵙ ⵉ ⵓⵏⴻⴱḍⴰḍ?,director_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵜɣⴰⵡⵙⵉ ⵏ ⵓⵏⴻⴱḍⴰḍ?,director_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰⵎⵙⴰɣ ⵏ ⵓⵏⴻⴱḍⴰḍ?,director_contact  
+ⵎⴻⵍⵍⵉ ⴰⵔⴰ ⴷ-ⵜⵟⵓɣⴰⵍ ⵓⵏⴻⴱḍⴰḍ ⵉ ⵢⵉⵎⴷⴰⵏⴻⵏ?,director_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵓⵙⵍɪⴳ ⵏ ⵓⵏⴻⴱḍⴰḍ?,director_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⵓⵜⵔⴻɣ ⴰṭṭⴰⵙ ⵏ ⵍⵃⴰⵍ ⵉ ⵓⵏⴻⴱḍⴰḍ?,director_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵓⵏⴻⴱḍⴰḍ ⵎⴰ ⵢⴻⵍⵍⴰ ⵓⵔ ⵢⴻⵍⵍⵉ?,director_contact  
+ⴰⵣⵓⵍ ⵉⵙⵙⴰⵔ ⵎⴰ ⵓⵙⵏⴰⴽ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ?,director_contact
+ⵎⴰⵅ ⴼⵉⵔⵏ ⴼⵉⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⵉⴷⴰ ⵏⴻⵜⴻⵎⵎⴰⵍ ?,director_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏⴻⵜⵎⵎⴰⵍ ⴰⴷ ⵙⵏⴰⵙ ⵏ ⴰⵎⵎⴻⵔⵙⴰⵏ ?,director_contact
+ⵎⴰⵏⴰ ⴰⴷ ⴽⴻⵎⵎⴰⵔ ⵜⵉⵏⴰⵎⵎⴻⵔⵜ ⵏ ⴰⵎⵎⴻⵔⵙⴰⵏ ?,director_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ?,director_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⴰⵎⵎⴻⵔⵙⴰⵏ ?,director_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ?,director_contact
+ⴷⵉⵙ ⴰⵎⵎⴻⵔⵙⴰⵏ ⵙⵉⴹⴻⵏ ⴰⵎⴰⵙⵙⵓⵏ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵓⵎⴰⵏⴻⵙ ?,director_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏⴻⵜⵎⵎⴰⵍ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ?,director_contact
+ⴰⵎⵎⴻⵔⵙⴰⵏ ⵉⵙⵉ ⵙⵉⴹⴻⵏ ⵜⵉⵏⴰⵎⵎⴻⵔⵜ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵓⵎⴰⵏⴻⵙ ?,director_contact
 Qui est le responsable pédagogique cette année?,pedagogical_responsible_contact
 Comment contacter le service des enseignements?,pedagogical_responsible_contact
 Quel est le bureau du responsable pédagogique?,pedagogical_responsible_contact
@@ -517,6 +768,16 @@ Quel est l'email du service pédagogique?,pedagogical_responsible_contact
 Où trouver les horaires de permanence?,pedagogical_responsible_contact
 Comment contacter le conseiller pédagogique?,pedagogical_responsible_contact
 Qui supervise les programmes d'études?,pedagogical_responsible_contact
+À qui m’adresser pour des questions sur les cours ?,pedagogical_responsible_contact
+Comment obtenir le programme détaillé des matières ?,pedagogical_responsible_contact
+Qui peut valider mes choix de cours ?,pedagogical_responsible_contact
+Où déposer une demande de changement de groupe ?,pedagogical_responsible_contact
+Comment savoir qui coordonne ma filière ?,pedagogical_responsible_contact
+Qui répond aux questions sur le contenu des modules ?,pedagogical_responsible_contact
+Comment connaître le responsable pédagogique de ma promotion ?,pedagogical_responsible_contact
+Où se trouve le service chargé des emplois du temps ?,pedagogical_responsible_contact
+Qui contacter pour un problème d’affectation de salle ?,pedagogical_responsible_contact
+Le responsable pédagogique reçoit-il les étudiants chaque semaine ?,pedagogical_responsible_contact
 Who is the current academic affairs officer?,pedagogical_responsible_contact
 How to reach the curriculum department?,pedagogical_responsible_contact
 Where is the academic counseling office?,pedagogical_responsible_contact
@@ -527,6 +788,16 @@ What's the education office email?,pedagogical_responsible_contact
 Where to find academic advising hours?,pedagogical_responsible_contact
 How to contact a learning specialist?,pedagogical_responsible_contact
 Who oversees degree requirements?,pedagogical_responsible_contact
+Who should I contact for questions about courses?,pedagogical_responsible_contact
+How can I get the detailed syllabus?,pedagogical_responsible_contact
+Who can approve my course selections?,pedagogical_responsible_contact
+Where can I submit a group change request?,pedagogical_responsible_contact
+How do I know who coordinates my program?,pedagogical_responsible_contact
+Who answers questions about course content?,pedagogical_responsible_contact
+How can I find the academic advisor for my year?,pedagogical_responsible_contact
+Where is the office in charge of timetables?,pedagogical_responsible_contact
+Who should I contact for a classroom assignment problem?,pedagogical_responsible_contact
+Does the academic coordinator meet students weekly?,pedagogical_responsible_contact
 من هو المسؤول التربوي الحالي؟,pedagogical_responsible_contact
 كيف أتواصل مع قسم الشؤون التعليمية؟,pedagogical_responsible_contact
 أين يقع مكتب الشؤون الأكاديمية؟,pedagogical_responsible_contact
@@ -537,16 +808,36 @@ Who oversees degree requirements?,pedagogical_responsible_contact
 أين أجد أوقات استقبال المستشارين؟,pedagogical_responsible_contact
 كيف أحصل على إرشاد أكاديمي؟,pedagogical_responsible_contact
 من يشرف على الخطط الدراسية؟,pedagogical_responsible_contact
-Anwa i d anermas n tsenselkimt tura?,pedagogical_responsible_contact
-Amek ara ɣeɣ uḥuddu n tsenselkimt?,pedagogical_responsible_contact
-Anida i tezga taɣult n tsenselkimt?,pedagogical_responsible_contact
-Amek ara ssutreɣ tsenselkimt?,pedagogical_responsible_contact
-Anwa i d anermas n wudem n wakud n tsenselkimt?,pedagogical_responsible_contact
-Amek ara mlayeɣ ɣef ugur n tsenselkimt?,pedagogical_responsible_contact
-Mani tga imayl n uḥuddu n tsenselkimt?,pedagogical_responsible_contact
-Melli ara d-ttuɣal imsaɣen n tsenselkimt?,pedagogical_responsible_contact
-Amek ara ɣeɣ amsaɣ n tsenselkimt?,pedagogical_responsible_contact
-Anwa i d anermas n tsaratin n tsenselkimt?,pedagogical_responsible_contact
+إلى من أتوجه للاستفسار عن الدروس؟,pedagogical_responsible_contact
+كيف أحصل على البرنامج التفصيلي للمقررات؟,pedagogical_responsible_contact
+من يمكنه الموافقة على اختياراتي الدراسية؟,pedagogical_responsible_contact
+أين أقدم طلب تغيير المجموعة؟,pedagogical_responsible_contact
+كيف أعرف منسق تخصصي؟,pedagogical_responsible_contact
+من يجيب على الأسئلة المتعلقة بمحتوى المواد؟,pedagogical_responsible_contact
+كيف أعرف المسؤول البيداغوجي عن دفعتي؟,pedagogical_responsible_contact
+أين يوجد المكتب المكلف بجداول الحصص؟,pedagogical_responsible_contact
+من أتواصل معه بشأن مشكلة في قاعة الدراسة؟,pedagogical_responsible_contact
+هل يستقبل المسؤول البيداغوجي الطلاب كل أسبوع؟,pedagogical_responsible_contact
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ ⵜⵓⵔⴰ?,pedagogical_responsible_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵓḥⵓⴷⴷⵓ ⵏ ⵜⵙⴻⵏⵙⴻ⍰ⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⵓⵜⵔⴻɣ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵡⵓⴷⴻⵎ ⵏ ⵡⴰⴽⵓⴷ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⵎⴻⵍⵍⵉ ⴰⵔⴰ ⴷ-ⵜⵟⵓɣⴰⵍ ⵉⵎⵙⴰɣⴻⵏ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰⵎⵙⴰɣ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵜⵙⴰⵔⴰⵜⵉⵏ ⵏ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ?,pedagogical_responsible_contact  
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴰⴽⴽⴻⵙⵏ ⵏ ⵉⵎⴻⵙⴰⵏ ?,pedagogical_responsible_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵉⴳⴻⵎ ⵏ ⵜⵉⵙⵙⵓⵍⵉⴱⵙ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ?,pedagogical_responsible_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵉⵙⴻⵍⵍⵉⵢⴰⵏ ⵏ ⵉⵎⴻⵙⴰⵏ ?,pedagogical_responsible_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⴰⵙⴻⵏⵎⵎⴰⵍ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵜⵉⴳⵔⵓⴱⵉⵢⵏ ?,pedagogical_responsible_contact
+ⵎⴰⵅ ⴼⵉⵔⵏ ⴰⵎⴻⵎⴻⵔ ⵏ ⵜⵓⴷⵉⵙⵜ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ?,pedagogical_responsible_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵙⵏⴰⵙ ⵏ ⵜⵉⵎⴰⵍⵉⴷⵉⵢⴰⵏ ?,pedagogical_responsible_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵓⵙⵏⴻⵡⴻⵏ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ?,pedagogical_responsible_contact
+ⵎⴰⵏⴰ ⴽⴻⵎⵎⴰⵔ ⵜⵉⵏⴰⵎⵎⴻⵔⵜ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵉⵎⴻⵍⴻⵏ ⵏ ⵓⴼⴰⵍⵉⵢⵏ ?,pedagogical_responsible_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵙⵏⴰⵙ ⵏ ⵓⵎⴰⵏⴻⵙ ⵏ ⵉⵎⴻⵍⴻⵏ ?,pedagogical_responsible_contact
+ⴰⵎⴻⵙⴻⵔ ⴱⵉⴷⴰⴳⵓⵊⵉ ⵉⵙⵉ ⵙⵉⴹⴻⵏ ⵏ ⵜⵓⵙⴻⵎⵜ ⴷ ⵜⵓⵙⵏⴻⵡⴻⵏ ⵏ ⵓⵎⴰⵏⴻⵙ ?,pedagogical_responsible_contact
 Comment joindre le secrétariat du département de mathématiques?,math_department_contact
 Quel est l'horaire d'ouverture du bureau de mathématiques?,math_department_contact
 Où envoyer un mail pour les questions de licence en maths?,math_department_contact
@@ -557,6 +848,16 @@ Où trouver les contacts des enseignants de maths?,math_department_contact
 Quel est l'email pour les stages en mathématiques?,math_department_contact
 Comment signaler un problème dans un cours de maths?,math_department_contact
 Qui contacter pour les doubles diplômes en maths?,math_department_contact
+Qui est le chef du département de mathématiques ?,math_department_contact
+Comment obtenir la liste des professeurs de maths ?,math_department_contact
+À qui s’adresser pour des informations sur le doctorat en maths ?,math_department_contact
+Comment contacter le coordinateur des cours de maths ?,math_department_contact
+Quel est le bureau du secrétariat de mathématiques ?,math_department_contact
+Comment envoyer un document officiel au département de maths ?,math_department_contact
+Qui peut m’aider pour une inscription en master de maths ?,math_department_contact
+Où trouver l’emploi du temps des cours de maths ?,math_department_contact
+Comment joindre le service des examens en maths ?,math_department_contact
+À qui signaler un problème technique pendant un TP de maths ?,math_department_contact
 How to reach the math department office?,math_department_contact
 What's the math department's phone extension?,math_department_contact
 Where to email about math undergraduate programs?,math_department_contact
@@ -567,6 +868,16 @@ Where to find math faculty contacts?,math_department_contact
 What's the email for math internships?,math_department_contact
 How to report issues in math courses?,math_department_contact
 Who to contact about math joint degrees?,math_department_contact
+Who is the head of the Mathematics Department?,math_department_contact
+How can I get the list of math professors?,math_department_contact
+Who should I contact for PhD information in mathematics?,math_department_contact
+How do I reach the coordinator of math courses?,math_department_contact
+Where is the Mathematics Department office located?,math_department_contact
+How can I send an official document to the math department?,math_department_contact
+Who can assist me with a master’s registration in mathematics?,math_department_contact
+Where can I find the math course schedule?,math_department_contact
+How can I contact the exams office for mathematics?,math_department_contact
+Who should I report a technical issue to during a math lab?,math_department_contact
 كيف أتواصل مع سكرتارية قسم الرياضيات؟,math_department_contact
 ما هي أوقات العمل في قسم الرياضيات؟,math_department_contact
 أين أرسل استفسارات الإجازة في الرياضيات؟,math_department_contact
@@ -577,16 +888,36 @@ Who to contact about math joint degrees?,math_department_contact
 ما هو بريد التداريب في الرياضيات؟,math_department_contact
 كيف أبلغ عن مشكلة في مادة رياضيات؟,math_department_contact
 من أتصل بخصوص الشهادات المزدوجة في الرياضيات؟,math_department_contact
-Amek ara ɣeɣ aḥuddu n tusnakt?,math_department_contact
-Mani tga tiliɣri n uḥuddu n tusnakt?,math_department_contact
-Anida ara tazneɣ imayl ɣef tsaratin n tusnakt?,math_department_contact
-Amek ara ɣeɣ anermas n master n tusnakt?,math_department_contact
-Mani tga tiliɣri n laboratoire n tusnakt?,math_department_contact
-Amek ara smeɣteɣ i yemsaɣ n tusnakt?,math_department_contact
-Anida ara d-afeɣ inermisen n imawlan n tusnakt?,math_department_contact
-Mani tga imayl n stage n tusnakt?,math_department_contact
-Amek ara mlayeɣ ɣef ugur deg tsenselkimt n tusnakt?,math_department_contact
-Anwa i d anermas n tsaratin du double deg tusnakt?,math_department_contact
+من هو رئيس قسم الرياضيات؟,math_department_contact
+كيف أحصل على قائمة أساتذة الرياضيات؟,math_department_contact
+إلى من أتوجه للاستفسار عن الدكتوراه في الرياضيات؟,math_department_contact
+كيف أتواصل مع منسق مقررات الرياضيات؟,math_department_contact
+أين مكتب أمانة قسم الرياضيات؟,math_department_contact
+كيف أرسل وثيقة رسمية لقسم الرياضيات؟,math_department_contact
+من يمكنه مساعدتي في التسجيل في ماستر الرياضيات؟,math_department_contact
+أين أجد جدول محاضرات الرياضيات؟,math_department_contact
+كيف أتواصل مع مصلحة الامتحانات في الرياضيات؟,math_department_contact
+إلى من أبلغ عن مشكلة تقنية أثناء حصة تطبيقية في الرياضيات؟,math_department_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰḥⵓⴷⴷⵓ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⵉⵎⴰⵢⵍ ɣⴻⴼ ⵜⵙⴰⵔⴰⵜⵉⵏ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵎⴰⵙⵜⴻⵔ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵍⴰⴱⵓⵔⴰⵟⵓⵔⵉ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ ⵢⴻⵎⵙⴰɣ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵉⵎⴰⵡⵍⴰⵏ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⵙⵜⴰⴳⴻ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⴷⴻⴳ ⵜⵙⴻⵏⵙⴻⵍⴽⵉⵎⵜ ⵏ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵜⵙⴰⵔⴰⵜⵉⵏ ⴷⵓ ⴷⵓ𝖇𝖑𝖊 ⴷⴻⴳ ⵜⵓⵙⵏⴰⴽⵜ?,math_department_contact  
+ⵎⴰⵏⴰ ⴰⵎⴻⵎⴻⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵉⵙⵎⵎⵓⵔⵜ ⵏ ⵉⵙⴻⵜⴰⵏⵉⵢⵏ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⵏ ⵉⴼⵉⵙⵉⵔ ⵏ ⵜⴻⵎⴰⵙⵜⵉⵔ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⴽⴽⴻⵙⵏ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴰⵏⴻⵙⵏⵙ ⵏ ⵉⵎⴻⵙⴰⵏ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵎⴰⵏⴰ ⴽⴻⵎⵎⴰⵔ ⵜⵉⵏⴰⵎⵎⴻⵔⵜ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵓⵙⴻⵏⵓ ⴷ ⵓⵙⵏⴰⵄ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⴻⵎⵔⵔⴻⵙⵜⵉⵔ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵙⵏⴰⵙ ⵏ ⵜⵓⵙⵏⴻⵡⴻⵏ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏⴻⵜⵎⵎⴰⵍ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⴰⴳⵏⵓⵙⵉⵔ ⵏ ⵓⵎⴻⵙⴰⵏ ⵏ ⵎⴰⵜⵉⵎⴰⵜⵉⴽⵙ ?,math_department_contact
 Comment contacter le responsable du département de physique?,physics_department_contact
 Où se trouve le secrétariat de physique?,physics_department_contact
 Quel est l'email pour les TP de physique?,physics_department_contact
@@ -597,6 +928,16 @@ Comment signaler un problème en labo de physique?,physics_department_contact
 Où envoyer une demande de stage en physique?,physics_department_contact
 Quel est le contact pour les conférences de physique?,physics_department_contact
 Comment prendre rdv avec un enseignant de physique?,physics_department_contact
+Qui est le chef du département de physique ?,physics_department_contact
+Comment obtenir la liste des professeurs de physique ?,physics_department_contact
+Où puis-je trouver le planning des cours de physique ?,physics_department_contact
+À qui s’adresser pour des informations sur le master de physique ?,physics_department_contact
+Comment envoyer un document officiel au département de physique ?,physics_department_contact
+Qui coordonne les travaux dirigés en physique ?,physics_department_contact
+Comment contacter le responsable des stages en physique ?,physics_department_contact
+Où trouver les horaires des laboratoires de physique ?,physics_department_contact
+Qui organise les séminaires et colloques de physique ?,physics_department_contact
+Comment signaler un problème lors d’un TP de physique ?,physics_department_contact
 How to reach the physics department head?,physics_department_contact
 Where is the physics office located?,physics_department_contact
 What's the email for physics lab sessions?,physics_department_contact
@@ -607,6 +948,16 @@ How to report physics lab equipment issues?,physics_department_contact
 Where to send physics internship requests?,physics_department_contact
 What's the contact for physics seminars?,physics_department_contact
 How to schedule with a physics professor?,physics_department_contact
+Who is the head of the Physics Department?,physics_department_contact
+How can I get the list of physics professors?,physics_department_contact
+Where can I find the physics course schedule?,physics_department_contact
+Who should I contact for information about the physics master’s program?,physics_department_contact
+How do I send an official document to the physics department?,physics_department_contact
+Who coordinates the physics lab sessions?,physics_department_contact
+How do I contact the internship coordinator in physics?,physics_department_contact
+Where can I find the physics lab hours?,physics_department_contact
+Who organizes physics seminars and conferences?,physics_department_contact
+How do I report a problem during a physics lab?,physics_department_contact
 كيف أتواصل مع رئيس قسم الفيزياء؟,physics_department_contact
 أين يوجد مكتب الفيزياء؟,physics_department_contact
 ما هو بريد الأعمال التطبيقية في الفيزياء؟,physics_department_contact
@@ -617,16 +968,36 @@ How to schedule with a physics professor?,physics_department_contact
 أين أرسل طلب تدريب في الفيزياء؟,physics_department_contact
 ما هو اتصال ندوات الفيزياء؟,physics_department_contact
 كيف أحصل على موعد مع أستاذ الفيزياء؟,physics_department_contact
-Amek ara ɣeɣ anermas n uḥuddu n tafizikt?,physics_department_contact
-Anida i tezga taɣult n tafizikt?,physics_department_contact
-Mani tga imayl i TP n tafizikt?,physics_department_contact
-Amek ara ɣeɣ laboratoire n tafizikt quantique?,physics_department_contact
-Anwa i d anermas n yisalan n uswir n tafizikt?,physics_department_contact
-Mani tga tiliɣri n master n tafizikt?,physics_department_contact
-Amek ara mlayeɣ ɣef ugur deg laboratoire n tafizikt?,physics_department_contact
-Anida ara tazneɣ asuter n stage n tafizikt?,physics_department_contact
-Mani tga tiliɣri n yimsefrak n tafizikt?,physics_department_contact
-Amek ara smeɣteɣ i yemsaɣ n tafizikt?,physics_department_contact
+من هو رئيس قسم الفيزياء؟,physics_department_contact
+كيف أحصل على قائمة أساتذة الفيزياء؟,physics_department_contact
+أين أجد جدول محاضرات الفيزياء؟,physics_department_contact
+إلى من أتوجه للاستفسار عن ماستر الفيزياء؟,physics_department_contact
+كيف أرسل وثيقة رسمية لقسم الفيزياء؟,physics_department_contact
+من ينسق الدروس التطبيقية في الفيزياء؟,physics_department_contact
+كيف أتواصل مع مسؤول التدريبات في الفيزياء؟,physics_department_contact
+أين أجد مواعيد المختبرات في الفيزياء؟,physics_department_contact
+من ينظم الندوات والمؤتمرات في الفيزياء؟,physics_department_contact
+كيف أبلغ عن مشكلة أثناء حصة تطبيقية في الفيزياء؟,physics_department_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵉ TP ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵍⴰⴱⵓⵔⴰⵜⵓⵔⵉ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ ⵇⵓⴰⵏⵜ𝖚𝖊?,physics_department_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵙⴰⵍⴰⵏ ⵏ ⵓⵙⵡⵉⵔ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵎⴰⵙⵜⴻⵔ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⴷⴻⴳ ⵍⴰⴱⵓⵔⴰⵜⵓⵔⵉ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⴰⵙⵓⵜⴻⵔ ⵏ ⵙⵜⴰɣⴻ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵢⵉⵎⵙⴻ𝖋ⵔⴰⴽ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ ⵢⵎⵙⴰɣ ⵏ ⵜⴰⴼⵉⵣⵉⴽⵜ?,physics_department_contact  
+ⵎⴰⵏⴰ ⴰⵎⴻⵎⴻⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⴼⵉⵣⵉⵇⵢⴰ?,physics_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵉⵙⵎⵎⵓⵔⵜ ⵏ ⵉⵙⴻⵜⴰⵏⵉⵢⵏ ⵏ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⵏ ⵜⵉⵎⴰⵙⴳⵉⵔⵜ ⵏ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴰⵏⴻⵙⵏⵙ ⵏ ⵜⵎⴰⵙⵜⴻⵔ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵓⵙⴻⵏⵓ ⴷ ⵓⵙⵏⴰⵄ ⵏ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵉⵎⴰⵙⵖⵉⵔⵜ ⵏ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵓⵙⴻⵎⵜ ⵏ ⵓⵎⴰⵙⵜⴻⵔ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ⵏ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵙⵏⴰⵙ ⵏ ⵜⵓⵙⵏⴻⵡⴻⵏ ⵏ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏⴻⵜⵎⵎⴰⵍ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⴰⴳⵏⵓⵙⵉⵔ ⵏ ⵓⵎⴻⵙⴰⵏ ⵏ ⴼⵉⵣⵉⵇⵢⴰ ?,physics_department_contact
 Comment joindre le responsable du département de chimie?,chemistry_department_contact
 Où envoyer les demandes de labo de chimie?,chemistry_department_contact
 Quel est le numéro du secrétariat de chimie?,chemistry_department_contact
@@ -637,6 +1008,16 @@ Quel est l'email pour les stages en chimie?,chemistry_department_contact
 Comment prendre rdv avec un prof de chimie?,chemistry_department_contact
 Où trouver les contacts des chercheurs en chimie?,chemistry_department_contact
 Quel est le bureau des masters en chimie?,chemistry_department_contact
+Qui est le chef du département de chimie ?,chemistry_department_contact
+Comment obtenir la liste des professeurs de chimie ?,chemistry_department_contact
+Où trouver le planning des cours de chimie ?,chemistry_department_contact
+À qui s’adresser pour des informations sur le master de chimie ?,chemistry_department_contact
+Comment envoyer un document officiel au département de chimie ?,chemistry_department_contact
+Qui coordonne les travaux pratiques en chimie ?,chemistry_department_contact
+Comment contacter le responsable des stages en chimie ?,chemistry_department_contact
+Où trouver les horaires des laboratoires de chimie ?,chemistry_department_contact
+Qui organise les séminaires et conférences en chimie ?,chemistry_department_contact
+Comment signaler un problème lors d’un TP de chimie ?,chemistry_department_contact
 How to contact the chemistry department chair?,chemistry_department_contact
 Where to submit chemistry lab requests?,chemistry_department_contact
 What's the chemistry office phone number?,chemistry_department_contact
@@ -647,6 +1028,16 @@ What's the email for chemistry internships?,chemistry_department_contact
 How to schedule with a chemistry professor?,chemistry_department_contact
 Where to find chemistry researchers' contacts?,chemistry_department_contact
 What's the location of chemistry grad office?,chemistry_department_contact
+Who is the head of the Chemistry Department?,chemistry_department_contact
+How can I get the list of chemistry professors?,chemistry_department_contact
+Where can I find the chemistry course schedule?,chemistry_department_contact
+Who should I contact for information about the chemistry master’s program?,chemistry_department_contact
+How do I send an official document to the chemistry department?,chemistry_department_contact
+Who coordinates the chemistry lab sessions?,chemistry_department_contact
+How do I contact the internship coordinator in chemistry?,chemistry_department_contact
+Where can I find the chemistry lab hours?,chemistry_department_contact
+Who organizes chemistry seminars and conferences?,chemistry_department_contact
+How do I report a problem during a chemistry lab?,chemistry_department_contact
 كيف أتواصل مع رئيس قسم الكيمياء؟,chemistry_department_contact
 أين أرسل طلبات مختبر الكيمياء؟,chemistry_department_contact
 ما هو رقم سكرتارية الكيمياء؟,chemistry_department_contact
@@ -657,16 +1048,36 @@ What's the location of chemistry grad office?,chemistry_department_contact
 كيف أحصل على موعد مع أستاذ الكيمياء؟,chemistry_department_contact
 أين أجد اتصالات باحثي الكيمياء؟,chemistry_department_contact
 أين يوجد مكتب ماستر الكيمياء؟,chemistry_department_contact
-Amek ara ɣeɣ anermas n uḥuddu n takimya?,chemistry_department_contact
-Anida ara tazneɣ isalan n laboratoire n takimya?,chemistry_department_contact
-Mani tga tiliɣri n uḥuddu n takimya?,chemistry_department_contact
-Amek ara ɣeɣ uḥuddu n TP n takimya?,chemistry_department_contact
-Anwa i d anermas n tifka n imudar n takimya?,chemistry_department_contact
-Anida ara mlayeɣ ɣef ugur deg laboratoire n takimya?,chemistry_department_contact
-Mani tga imayl n stage n takimya?,chemistry_department_contact
-Amek ara smeɣteɣ i yemsaɣ n takimya?,chemistry_department_contact
-Anida ara d-afeɣ inermisen n imeslayen n takimya?,chemistry_department_contact
-Anida i tezga taɣult n master n takimya?,chemistry_department_contact
+من هو رئيس قسم الكيمياء؟,chemistry_department_contact
+كيف أحصل على قائمة أساتذة الكيمياء؟,chemistry_department_contact
+أين أجد جدول محاضرات الكيمياء؟,chemistry_department_contact
+إلى من أتوجه للاستفسار عن ماستر الكيمياء؟,chemistry_department_contact
+كيف أرسل وثيقة رسمية لقسم الكيمياء؟,chemistry_department_contact
+من ينسق الدروس التطبيقية في الكيمياء؟,chemistry_department_contact
+كيف أتواصل مع مسؤول التدريبات في الكيمياء؟,chemistry_department_contact
+أين أجد مواعيد المختبرات في الكيمياء؟,chemistry_department_contact
+من ينظم الندوات والمؤتمرات في الكيمياء؟,chemistry_department_contact
+كيف أبلغ عن مشكلة أثناء حصة تطبيقية في الكيمياء؟,chemistry_department_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⵉⵙⴰⵍⴰⵏ ⵏ ⵍⴰⴱⵓⵔⴰⵜⵓⵔⵉ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵓḥⵓⴷⴷⵓ ⵏ TP ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵜⵉⴼⴽⴰ ⵏ ⵉⵎⵓⴷⴰⵔ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⴷⴻⴳ ⵍⴰⴱⵓⵔⴰⵜⵓⵔⵉ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⵙⵜⴰɣⴻ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ ⵢⵎⵙⴰɣ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵉⵎⴻⵙⵍⴰⵢⵏ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵎⴰⵙⵜⴻⵔ ⵏ ⵜⴰⴽⵉⵎⵢⴰ?,chemistry_department_contact  
+ⵎⴰⵏⴰ ⴰⵎⴻⵎⴻⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⴽⵉⵎⵉⵢⵉ?,chemistry_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵉⵙⵎⵎⵓⵔⵜ ⵏ ⵉⵙⴻⵜⴰⵏⵉⵢⵏ ⵏ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⵏ ⵜⵉⵎⴰⵙⴳⵉⵔⵜ ⵏ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴰⵏⴻⵙⵏⵙ ⵏ ⵜⵎⴰⵙⵜⴻⵔ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵓⵙⴻⵏⵓ ⴷ ⵓⵙⵏⴰⵄ ⵏ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵉⵎⴰⵙⵖⵉⵔⵜ ⵏ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵓⵙⴻⵎⵜ ⵏ ⵓⵎⴰⵙⵜⴻⵔ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ⵏ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵙⵏⴰⵙ ⵏ ⵜⵓⵙⵏⴻⵡⴻⵏ ⵏ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏⴻⵜⵎⵎⴰⵍ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⴰⴳⵏⵓⵙⵉⵔ ⵏ ⵓⵎⴻⵙⴰⵏ ⵏ ⴽⵉⵎⵉⵢⵉ ?,chemistry_department_contact
 Comment contacter le département de biologie?,biology_department_contact
 Où se trouve le secrétariat de biologie?,biology_department_contact
 Quel est le numéro pour les travaux pratiques de bio?,biology_department_contact
@@ -677,6 +1088,16 @@ Quel est l'email du responsable de licence bio?,biology_department_contact
 Comment signaler un problème en labo de bio?,biology_department_contact
 Où trouver les contacts des enseignants de bio?,biology_department_contact
 Quel est le bureau des masters en biologie?,biology_department_contact
+Qui est le chef du département de biologie ?,biology_department_contact
+Comment obtenir la liste des professeurs de biologie ?,biology_department_contact
+Où trouver le planning des cours de biologie ?,biology_department_contact
+À qui s’adresser pour des informations sur le master de biologie ?,biology_department_contact
+Comment envoyer un document officiel au département de biologie ?,biology_department_contact
+Qui coordonne les travaux pratiques en biologie ?,biology_department_contact
+Comment contacter le responsable des stages en biologie ?,biology_department_contact
+Où trouver les horaires des laboratoires de biologie ?,biology_department_contact
+Qui organise les séminaires et conférences en biologie ?,biology_department_contact
+Comment signaler un problème lors d’un TP de biologie ?,biology_department_contact
 How to reach the biology department office?,biology_department_contact
 Where is the biology secretariat located?,biology_department_contact
 What's the number for biology lab sessions?,biology_department_contact
@@ -687,6 +1108,16 @@ What's the email for bio undergrad advisor?,biology_department_contact
 How to report biology lab equipment issues?,biology_department_contact
 Where to find biology faculty contacts?,biology_department_contact
 What's the location of biology grad office?,biology_department_contact
+Who is the head of the Biology Department?,biology_department_contact
+How can I get the list of biology professors?,biology_department_contact
+Where can I find the biology course schedule?,biology_department_contact
+Who should I contact for information about the biology master’s program?,biology_department_contact
+How do I send an official document to the biology department?,biology_department_contact
+Who coordinates the biology lab sessions?,biology_department_contact
+How do I contact the internship coordinator in biology?,biology_department_contact
+Where can I find the biology lab hours?,biology_department_contact
+Who organizes biology seminars and conferences?,biology_department_contact
+How do I report a problem during a biology lab?,biology_department_contact
 كيف أتواصل مع قسم البيولوجيا؟,biology_department_contact
 أين يوجد مكتب البيولوجيا؟,biology_department_contact
 ما هو رقم الأعمال التطبيقية للبيولوجيا؟,biology_department_contact
@@ -697,16 +1128,36 @@ What's the location of biology grad office?,biology_department_contact
 كيف أبلغ عن مشكلة في مختبر البيولوجيا؟,biology_department_contact
 أين أجد اتصالات أساتذة البيولوجيا؟,biology_department_contact
 أين يوجد مكتب ماستر البيولوجيا؟,biology_department_contact
-Amek ara ɣeɣ aḥuddu n tussna?,biology_department_contact
-Anida i tezga taɣult n tussna?,biology_department_contact
-Mani tga tiliɣri n TP n tussna?,biology_department_contact
-Amek ara ɣeɣ laboratoire n tussna moléculaire?,biology_department_contact
-Anwa i d anermas n yisalan n uswir deg tussna?,biology_department_contact
-Anida ara tazneɣ asuter n stage n tussna?,biology_department_contact
-Mani tga imayl n anermas n licence n tussna?,biology_department_contact
-Amek ara mlayeɣ ɣef ugur deg laboratoire n tussna?,biology_department_contact
-Anida ara d-afeɣ inermisen n imawlan n tussna?,biology_department_contact
-Anida i tezga taɣult n master n tussna?,biology_department_contact
+من هو رئيس قسم البيولوجيا؟,biology_department_contact
+كيف أحصل على قائمة أساتذة البيولوجيا؟,biology_department_contact
+أين أجد جدول محاضرات البيولوجيا؟,biology_department_contact
+إلى من أتوجه للاستفسار عن ماستر البيولوجيا؟,biology_department_contact
+كيف أرسل وثيقة رسمية لقسم البيولوجيا؟,biology_department_contact
+من ينسق الدروس التطبيقية في البيولوجيا؟,biology_department_contact
+كيف أتواصل مع مسؤول التدريبات في البيولوجيا؟,biology_department_contact
+أين أجد مواعيد المختبرات في البيولوجيا؟,biology_department_contact
+من ينظم الندوات والمؤتمرات في البيولوجيا؟,biology_department_contact
+كيف أبلغ عن مشكلة أثناء حصة تطبيقية في البيولوجيا؟,biology_department_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰḥⵓⴷⴷⵓ ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ TP ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵍⴰⴱⵓⵔⴰⵜⵓⵔⵉ ⵏ ⵜⵓⵙⵙⵏⴰ ⵎⵓⵍⴻⴽⵓⵍⴰɣ?,biology_department_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵙⴰⵍⴰⵏ ⵏ ⵓⵙⵡⵉⵔ ⴷⴻⴳ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⴰⵙⵓⵜⴻⵔ ⵏ ⵙⵜⴰɣⴻ ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵍⵉⵙⵙⵉⵏⵙ ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⴷⴻⴳ ⵍⴰⴱⵓⵔⴰⵜⵓⵔⵉ ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵉⵎⴰⵡⵍⴰⵏ ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵎⴰⵙⵜⴻⵔ ⵏ ⵜⵓⵙⵙⵏⴰ?,biology_department_contact  
+ⵎⴰⵏⴰ ⴰⵎⴻⵎⴻⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ?,biology_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵉⵙⵎⵎⵓⵔⵜ ⵏ ⵉⵙⴻⵜⴰⵏⵉⵢⵏ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⵏ ⵜⵉⵎⴰⵙⴳⵉⵔⵜ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵏⴻⵙⵏⵙ ⴷ ⵜⵎⴰⵙⵜⴻⵔ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵓⵙⴻⵏⵓ ⴷ ⵓⵙⵏⴰⵄ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵉⵎⴰⵙⵖⵉⵔⵜ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵓⵙⴻⵎⵜ ⵏ ⵓⵎⴰⵙⵜⴻⵔ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵙⵏⴰⵙ ⵏ ⵜⵓⵙⵏⴻⵡⴻⵏ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏⴻⵜⵎⵎⴰⵍ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⴰⴳⵏⵓⵙⵉⵔ ⵏ ⵓⵎⴻⵙⴰⵏ ⵏ ⴱⵉⵓⵍⵓⵊⵉⴰ ?,biology_department_contact
 Comment contacter le département d'informatique?,computer_science_department_contact
 Où se trouve le bureau du responsable informatique?,computer_science_department_contact
 Quel est le numéro pour les questions de programmation?,computer_science_department_contact
@@ -717,6 +1168,16 @@ Quel est l'email du responsable de master info?,computer_science_department_cont
 Comment signaler un problème en salle machines?,computer_science_department_contact
 Où trouver les contacts des profs d'informatique?,computer_science_department_contact
 Quel est le secrétariat des licences en info?,computer_science_department_contact
+Qui est le chef du département d'informatique ?,computer_science_department_contact
+Comment obtenir la liste des professeurs d'informatique ?,computer_science_department_contact
+Où trouver le planning des cours d'informatique ?,computer_science_department_contact
+À qui s’adresser pour des informations sur le master d'informatique ?,computer_science_department_contact
+Comment envoyer un document officiel au département d'informatique ?,computer_science_department_contact
+Qui coordonne les travaux pratiques en informatique ?,computer_science_department_contact
+Comment contacter le responsable des stages en informatique ?,computer_science_department_contact
+Où trouver les horaires des laboratoires d'informatique ?,computer_science_department_contact
+Qui organise les séminaires et conférences en informatique ?,computer_science_department_contact
+Comment signaler un problème en salle machines ?,computer_science_department_contact
 How to reach the computer science department?,computer_science_department_contact
 Where is the CS department head's office?,computer_science_department_contact
 What's the number for programming questions?,computer_science_department_contact
@@ -727,6 +1188,16 @@ What's the email for CS grad advisor?,computer_science_department_contact
 How to report computer lab issues?,computer_science_department_contact
 Where to find CS faculty contacts?,computer_science_department_contact
 What's the undergrad CS office location?,computer_science_department_contact
+Who is the head of the Computer Science Department?,computer_science_department_contact
+How can I get the list of computer science professors?,computer_science_department_contact
+Where can I find the computer science course schedule?,computer_science_department_contact
+Who should I contact for information about the computer science master’s program?,computer_science_department_contact
+How do I send an official document to the computer science department?,computer_science_department_contact
+Who coordinates the computer science lab sessions?,computer_science_department_contact
+How do I contact the internship coordinator in computer science?,computer_science_department_contact
+Where can I find the computer science lab hours?,computer_science_department_contact
+Who organizes computer science seminars and conferences?,computer_science_department_contact
+How do I report a problem in the computer lab?,computer_science_department_contact
 كيف أتواصل مع قسم المعلوماتية؟,computer_science_department_contact
 أين يوجد مكتب رئيس قسم المعلوماتية؟,computer_science_department_contact
 ما هو رقم استفسارات البرمجة؟,computer_science_department_contact
@@ -737,16 +1208,36 @@ What's the undergrad CS office location?,computer_science_department_contact
 كيف أبلغ عن مشكلة في قاعة الحاسوب؟,computer_science_department_contact
 أين أجد اتصالات أساتذة المعلوماتية؟,computer_science_department_contact
 أين يوجد سكرتارية إجازة المعلوماتية؟,computer_science_department_contact
-Amek ara ɣeɣ aḥuddu n tignit?,computer_science_department_contact
-Anida i tezga taɣult n anermas n tignit?,computer_science_department_contact
-Mani tga tiliɣri n yisallen ɣef programmation?,computer_science_department_contact
-Amek ara ɣeɣ laboratoire n intelligence artificielle?,computer_science_department_contact
-Anwa i d anermas n yisalan n tignit?,computer_science_department_contact
-Anida ara tazneɣ asuter n stage n tignit?,computer_science_department_contact
-Mani tga imayl n anermas n master n tignit?,computer_science_department_contact
-Amek ara mlayeɣ ɣef ugur deg salle n ordinaturs?,computer_science_department_contact
-Anida ara d-afeɣ inermisen n imawlan n tignit?,computer_science_department_contact
-Anida i tezga taɣult n licence n tignit?,computer_science_department_contact
+من هو رئيس قسم علوم الحاسوب؟,computer_science_department_contact
+كيف أحصل على قائمة أساتذة علوم الحاسوب؟,computer_science_department_contact
+أين أجد جدول محاضرات علوم الحاسوب؟,computer_science_department_contact
+إلى من أتوجه للاستفسار عن ماستر علوم الحاسوب؟,computer_science_department_contact
+كيف أرسل وثيقة رسمية لقسم علوم الحاسوب؟,computer_science_department_contact
+من ينسق الدروس التطبيقية في علوم الحاسوب؟,computer_science_department_contact
+كيف أتواصل مع مسؤول التدريبات في علوم الحاسوب؟,computer_science_department_contact
+أين أجد مواعيد المختبرات في علوم الحاسوب؟,computer_science_department_contact
+من ينظم الندوات والمؤتمرات في علوم الحاسوب؟,computer_science_department_contact
+كيف أبلغ عن مشكلة في قاعة الحواسيب؟,computer_science_department_contact
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴰḥⵓⴷⴷⵓ ⵏ ⵜⵉⵏⴳⵉⵜ?,computer_science_department_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵜⵉⵏⴳⵉⵜ?,computer_science_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵢⵉⵙⴰⵍⵍⴻⵏ ɣⴻⴼ programmation?,computer_science_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵍⴰⴱⵓⵔⴰⵜⵓⵔⵉ ⵏ intelligence artificielle?,computer_science_department_contact  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵢⵉⵙⴰⵍⴰⵏ ⵏ ⵜⵉⵏⴳⵉⵜ?,computer_science_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⴰⵙⵓⵜⴻⵔ ⵏ ⵙⵜⴰɣⴻ ⵏ ⵜⵉⵏⴳⵉⵜ?,computer_science_department_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵎⴰⵙⵜⴻⵔ ⵏ ⵜⵉⵏⴳⵉⵜ?,computer_science_department_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⴷⴻⴳ ⵙⴰⵍⵍⴻ ⵏ ⵓⵔⴷⵉⵏⴰⵜⵓⵔⵙ?,computer_science_department_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵉⵎⴰⵡⵍⴰⵏ ⵏ ⵜⵉⵏⴳⵉⵜ?,computer_science_department_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵍⵉⵙⵙⵉⵏⵙ ⵏ ⵜⵉⵏⴳⵉⵜ?,computer_science_department_contact  
+ⵎⴰⵏⴰ ⴰⵎⴻⵎⴻⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ?,computer_science_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵉⵙⵎⵎⵓⵔⵜ ⵏ ⵉⵙⴻⵜⴰⵏⵉⵢⵏ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⵏ ⵜⵉⵎⴰⵙⴳⵉⵔⵜ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵏⴻⵙⵏⵙ ⴷ ⵜⵎⴰⵙⵜⴻⵔ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⴷ ⵜⵓⵙⴻⵏⵓ ⴷ ⵓⵙⵏⴰⵄ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵉⵎⴰⵙⵖⵉⵔⵜ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵜⵓⵙⴻⵎⵜ ⵏ ⵜⵓⵙⴻⵎⵜ ⵏ ⵓⵎⴰⵙⵜⴻⵔ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⵓⵙⵏⴰⵄ ⵏ ⵜⵎⴻⵔⵉⵙⵜ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵎⴰⵅ ⵓⵙⵏⴰⴽ ⴰⵎⴻⵙⴻⵔ ⴷ ⵙⵏⴰⵙ ⵏ ⵜⵓⵙⵏⴻⵡⴻⵏ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴰⵏⵏⴰⵣⵉⵖ ?,computer_science_department_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏⴻⵜⵎⵎⴰⵍ ⴰⴷ ⵜⴻⵙⵏⴰⵡ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⴰⴳⵏⵓⵙⵉⵔ ⵏ ⵓⵎⴻⵙⴰⵏ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ?,computer_science_department_contact
 Quel est le numéro d'urgence pour la sécurité sur le campus?,emergency_security_contact
 Comment alerter la sécurité en cas d'intrusion?,emergency_security_contact
 Où appeler si on voit un comportement suspect?,emergency_security_contact
@@ -757,6 +1248,16 @@ Où signaler une lumière défectueuse?,emergency_security_contact
 Quel est le numéro des vigiles?,emergency_security_contact
 Comment prévenir la sécurité rapidement?,emergency_security_contact
 Où trouver les bornes d'urgence?,emergency_security_contact
+Qui appeler en cas d'urgence sur le campus ?,emergency_security_contact
+Comment signaler une intrusion suspecte ?,emergency_security_contact
+Où trouver le poste de sécurité le plus proche ?,emergency_security_contact
+Quel est le numéro pour les secours médicaux sur le campus ?,emergency_security_contact
+Comment contacter la sécurité en cas d'incendie ?,emergency_security_contact
+Qui joindre en cas de menace ou de danger ?,emergency_security_contact
+Où signaler un comportement dangereux ?,emergency_security_contact
+Quel est le numéro pour l'assistance rapide ?,emergency_security_contact
+Comment alerter la police universitaire ?,emergency_security_contact
+Où sont situées les caméras de surveillance ?,emergency_security_contact
 What's the campus emergency security number?,emergency_security_contact
 How to report a security breach?,emergency_security_contact
 Where to call for suspicious activity?,emergency_security_contact
@@ -767,6 +1268,16 @@ Where to report broken lighting?,emergency_security_contact
 What's the security guards' number?,emergency_security_contact
 How to quickly alert security?,emergency_security_contact
 Where are emergency call boxes located?,emergency_security_contact
+Who do I call in case of emergency on campus?,emergency_security_contact
+How to report a suspicious intrusion?,emergency_security_contact
+Where is the nearest security post?,emergency_security_contact
+What is the medical emergency number on campus?,emergency_security_contact
+How do I contact security in case of fire?,emergency_security_contact
+Who to contact in case of threat or danger?,emergency_security_contact
+Where to report dangerous behavior?,emergency_security_contact
+What is the quick assistance number?,emergency_security_contact
+How to alert campus police?,emergency_security_contact
+Where are the surveillance cameras located?,emergency_security_contact
 ما هو رقم أمن الحرم الجامعي؟,emergency_security_contact
 كيف أبلغ عن خرق أمني؟,emergency_security_contact
 من أتصل بخصوص نشاط مشبوه؟,emergency_security_contact
@@ -777,16 +1288,36 @@ Where are emergency call boxes located?,emergency_security_contact
 ما هو رقم حراس الأمن؟,emergency_security_contact
 كيف أنبه الأمن بسرعة؟,emergency_security_contact
 أين توجد أجهزة الاستغاثة؟,emergency_security_contact
-Mani tga tiliɣri n laman n temdint?,emergency_security_contact
-Amek ara mlayeɣ ɣef ugur n laman?,emergency_security_contact
-Anwa ara ssawleɣ ma ẓeɣ aḥidus?,emergency_security_contact
-Mani tga tiliɣri n yisefka yettwaneɣfen?,emergency_security_contact
-Amek ara ɣeɣ laman deg id?,emergency_security_contact
-Anwa ara ssawleɣ ma ttwanselɣ?,emergency_security_contact
-Anida ara mlayeɣ ɣef tafat ur tettemɣi?,emergency_security_contact
-Mani tga tiliɣri n igorasen n laman?,emergency_security_contact
-Amek ara ssɣeɣ laman s zzerb?,emergency_security_contact
-Anida llan tiliɣriwin n laman?,emergency_security_contact
+من أتصل في حالة طارئة في الحرم الجامعي؟,emergency_security_contact
+كيف أبلغ عن تسلل مشبوه؟,emergency_security_contact
+أين أجد مركز الأمن الأقرب؟,emergency_security_contact
+ما هو رقم الطوارئ الطبية في الحرم الجامعي؟,emergency_security_contact
+كيف أتواصل مع الأمن في حالة حريق؟,emergency_security_contact
+من أتصل في حالة تهديد أو خطر؟,emergency_security_contact
+أين أبلغ عن سلوك خطير؟,emergency_security_contact
+ما هو رقم المساعدة السريعة؟,emergency_security_contact
+كيف أبلغ الشرطة الجامعية؟,emergency_security_contact
+أين توجد كاميرات المراقبة؟,emergency_security_contact
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵍⴰⵎⴰⵏ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,emergency_security_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵓⴳⵓⵔ ⵏ ⵍⴰⵎⴰⵏ?,emergency_security_contact  
+ⴰⵏⵡⴰ ⴰⵔⴰ ⵙⵙⴰⵡⵍⴻɣ ⵎⴰ ẓⴻɣ ⴰḥⵉⴷⵓⵙ?,emergency_security_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵢⵉⵙⴻⴼⴽⴰ ⵢⴻⵜⵜⵡⴰⵏⴻɣⴼⴻⵏ?,emergency_security_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵍⴰⵎⴰⵏ ⴷⴻⴳ ⵉⴷ?,emergency_security_contact  
+ⴰⵏⵡⴰ ⴰⵔⴰ ⵙⵙⴰⵡⵍⴻɣ ⵎⴰ ⵜⵜⵡⴰⵏⵙⴻⵍɣ?,emergency_security_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ ⵜⴰⴼⴰⵜ ⵓⵔ ⵜⴻⵜⵜⵎɣⵉ?,emergency_security_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵉⴳⵓⵔⴰⵙⴻⵏ ⵏ ⵍⴰⵎⴰⵏ?,emergency_security_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙɣⴻɣ ⵍⴰⵎⴰⵏ ⵙ ⵣⵣⴻⵔⴱ?,emergency_security_contact  
+ⴰⵏⵉⴷⴰ ⵍⵍⴰⵏ ⵜⵉⵍⵉɣⵔⵉⵡⵉⵏ ⵏ ⵍⴰⵎⴰⵏ?,emergency_security_contact 
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⴷⵓ ⴰⵎⴰⵙⵙ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_security_contact
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⵎⴻⵙⴳⵓⴷ ⴰⵎⵔⴰⵣ?,emergency_security_contact
+ⴰⵢⵢ ⵏ ⵓⵙⵏⴰⴽ ⵏ ⵜⴰⴳⵔⴰⵙ ⴰⵏⵏⴰⵣⵉⵖ?,emergency_security_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_security_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⵙⵙⴰⴷ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⵏ ⵓⵙⵏⴰⵄ?,emergency_security_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⴷ ⴰⵎⵔⴰⵣ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_security_contact
+ⴰⵢⵢ ⴷ ⵙⵉⵏⴰⵙ ⴰⵎⵣⵣⵉⵖ?,emergency_security_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⴰⵎⵎⴰⵣⵉⵖⵜ?,emergency_security_contact
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⴰⵙⵍⵉⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_security_contact
+ⵉⴷⵔⴰⵙ ⵏ ⵙⵓⵔⵉⵙ ⵏ ⵉⵎⵎⵓⵔⵓⵙⴻⵏ?,emergency_security_contact
 Quel est le numéro de l'infirmerie universitaire?,emergency_medical_contact
 Comment appeler une ambulance sur le campus?,emergency_medical_contact
 Où contacter les secours médicaux?,emergency_medical_contact
@@ -797,6 +1328,16 @@ Où trouver la trousse de premiers secours?,emergency_medical_contact
 Quel est le contact pour les urgences médicales?,emergency_medical_contact
 Comment signaler une allergie grave?,emergency_medical_contact
 Où sont les défibrillateurs sur le campus?,emergency_medical_contact
+Qui contacter en cas d'urgence médicale sur le campus ?,emergency_medical_contact
+Comment obtenir une aide médicale rapidement ?,emergency_medical_contact
+Où se trouve la clinique universitaire ?,emergency_medical_contact
+Quel est le numéro du service des urgences ?,emergency_medical_contact
+Comment demander une ambulance universitaire ?,emergency_medical_contact
+Qui est le médecin de garde sur le campus ?,emergency_medical_contact
+Où trouver les soins médicaux en cas d'accident ?,emergency_medical_contact
+Comment signaler un accident grave ?,emergency_medical_contact
+Quel est le protocole pour les premiers secours ?,emergency_medical_contact
+Où sont situés les équipements médicaux d'urgence ?,emergency_medical_contact
 What's the university clinic number?,emergency_medical_contact
 How to call campus ambulance?,emergency_medical_contact
 Where to contact medical responders?,emergency_medical_contact
@@ -807,6 +1348,16 @@ Where's the first aid kit located?,emergency_medical_contact
 What's the medical emergency contact?,emergency_medical_contact
 How to report severe allergies?,emergency_medical_contact
 Where are campus defibrillators?,emergency_medical_contact
+Who do I contact in case of a medical emergency on campus?,emergency_medical_contact
+How can I get medical help quickly?,emergency_medical_contact
+Where is the university clinic located?,emergency_medical_contact
+What is the emergency medical service number?,emergency_medical_contact
+How do I request a university ambulance?,emergency_medical_contact
+Who is the on-call doctor on campus?,emergency_medical_contact
+Where can I find medical care in case of an accident?,emergency_medical_contact
+How do I report a serious accident?,emergency_medical_contact
+What is the protocol for first aid?,emergency_medical_contact
+Where are the emergency medical equipment located?,emergency_medical_contact
 ما هو رقم المستوصف الجامعي؟,emergency_medical_contact
 كيف أستدعي الإسعاف داخل الحرم؟,emergency_medical_contact
 من أتصل بخصوص الطوارئ الطبية؟,emergency_medical_contact
@@ -817,16 +1368,36 @@ Where are campus defibrillators?,emergency_medical_contact
 ما هو اتصال الطوارئ الصحية؟,emergency_medical_contact
 كيف أبلغ عن حساسية خطيرة؟,emergency_medical_contact
 أين توجد أجهزة إنعاش القلب؟,emergency_medical_contact
-Mani tga tiliɣri n tinfirmerit n temdint?,emergency_medical_contact
-Amek ara ssawleɣ ambulance deg temdint?,emergency_medical_contact
-Anwa ara ɣeɣ ma yella lḥal n tussna?,emergency_medical_contact
-Mani tga tarrayt ma yella ugur n tussna?,emergency_medical_contact
-Amek ara ɣeɣ dakter n temdint?,emergency_medical_contact
-Anwa ara mlayeɣ ma yella ugur deg laboratoire?,emergency_medical_contact
-Anida ara d-afeɣ taborḍa n lḥal n tussna?,emergency_medical_contact
-Mani tga tiliɣri n lḥal n tussna?,emergency_medical_contact
-Amek ara mlayeɣ ɣef allergies tizmamin?,emergency_medical_contact
-Anida llan yisefka n defibrillateurs?,emergency_medical_contact
+من أتصل في حالة طوارئ طبية في الحرم الجامعي؟,emergency_medical_contact
+كيف أحصل على مساعدة طبية بسرعة؟,emergency_medical_contact
+أين تقع العيادة الجامعية؟,emergency_medical_contact
+ما هو رقم خدمة الطوارئ الطبية؟,emergency_medical_contact
+كيف أطلب سيارة إسعاف جامعية؟,emergency_medical_contact
+من هو الطبيب المناوب في الحرم الجامعي؟,emergency_medical_contact
+أين أجد الرعاية الطبية في حالة حادث؟,emergency_medical_contact
+كيف أبلغ عن حادث خطير؟,emergency_medical_contact
+ما هو البروتوكول للإسعافات الأولية؟,emergency_medical_contact
+أين توجد معدات الطوارئ الطبية؟,emergency_medical_contact
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵜⵉⵏⴼⵉⵔⵎⴻⵔⵉⵜ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,emergency_medical_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⴰⵡⵍⴻɣ ambulance ⴷⴻⴳ ⵜⴻⵎⴷⵉⵏⵜ?,emergency_medical_contact  
+ⴰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ⵎⴰ ⵢⴻⵍⵍⴰ ⵍⵃⴰⵍ ⵏ ⵜⵓⵙⵙⵏⴰ?,emergency_medical_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵔⴰⵢⵢⴰⵜ ⵎⴰ ⵢⴻⵍⵍⴰ ⵓⴳⵓⵔ ⵏ ⵜⵓⵙⵙⵏⴰ?,emergency_medical_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⴷⴰⴽⵜⴻⵔ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,emergency_medical_contact  
+ⴰⵏⵡⴰ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ⵎⴰ ⵢⴻⵍⵍⴰ ⵓⴳⵓⵔ ⴷⴻⴳ laboratoire?,emergency_medical_contact  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ taborḍa ⵏ ⵍⵃⴰⵍ ⵏ ⵜⵓⵙⵙⵏⴰ?,emergency_medical_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵍⵃⴰⵍ ⵏ ⵜⵓⵙⵙⵏⴰ?,emergency_medical_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵎⵍⴰⵢⴻɣ ɣⴻⴼ allergies tizmamin?,emergency_medical_contact  
+ⴰⵏⵉⴷⴰ ⵍⵍⴰⵏ ⵢⵉⵙⴻⴼⴽⴰ ⵏ defibrillateurs?,emergency_medical_contact  
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⴷⵓ ⴰⵎⴰⵙⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵏ ⵉⵎⴻⴷⵉⵙ?,emergency_medical_contact
+ⵅⴼ ⴰⵙⵏⴰⵡ ⵏ ⵎⴻⴷⵉⴽⵉ ⵏ ⵓⵎⴻⵙⴰⵏ?,emergency_medical_contact
+ⴰⵢⵢ ⵏ ⴰⵙⴳⴳⴰⵔ ⴰⵏⵏⴰⵣⵉⵖ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_medical_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⴰⵏⴻⵙⵏⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_medical_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⵙⵙⴰⴷ ⴷ ⴰⵎⵎⴻⵔⵙⴰⵏ ⵏ ⵓⵙⵏⴰⵄ?,emergency_medical_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⴰⵙⴳⴳⴰⵔ ⴰⵏⵏⴰⵣⵉⵖ?,emergency_medical_contact
+ⴰⵢⵢ ⴷ ⵙⵉⵏⴰⵙ ⴰⵎⵣⵣⵉⵖ?,emergency_medical_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⴰⵎⵎⴰⵣⵉⵖⵜ?,emergency_medical_contact
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⴰⵙⵙⴰⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_medical_contact
+ⵉⴷⵔⴰⵙ ⵏ ⵓⵎⵎⴰⵙⵙⵉⵏ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,emergency_medical_contact
 Quel est le numéro de fax principal de la faculté?,faculty_fax_number
 Comment envoyer un fax au secrétariat général?,faculty_fax_number
 Où trouver le fax du service scolarité?,faculty_fax_number
@@ -837,6 +1408,16 @@ Où obtenir une confirmation de réception?,faculty_fax_number
 Quel est le fax pour les demandes administratives?,faculty_fax_number
 Comment envoyer un fax international?,faculty_fax_number
 Où trouver le modèle d'en-tête de fax?,faculty_fax_number
+Quel est le numéro de fax du secrétariat ?,faculty_fax_number
+Comment puis-je envoyer un fax à la faculté ?,faculty_fax_number
+Où trouver le fax du service administratif ?,faculty_fax_number
+Quel est le numéro pour les fax urgents ?,faculty_fax_number
+Comment savoir si un fax a été reçu ?,faculty_fax_number
+Qui est responsable des fax à la faculté ?,faculty_fax_number
+Où obtenir un accusé de réception de fax ?,faculty_fax_number
+Quel fax utiliser pour les documents officiels ?,faculty_fax_number
+Comment envoyer un fax à l’étranger ?,faculty_fax_number
+Existe-t-il un modèle de fax à utiliser ?,faculty_fax_number
 What's the main faculty fax number?,faculty_fax_number
 How to fax the general secretariat?,faculty_fax_number
 Where to find student office fax?,faculty_fax_number
@@ -847,6 +1428,16 @@ Where to get fax confirmation?,faculty_fax_number
 What's the fax for admin requests?,faculty_fax_number
 How to send an international fax?,faculty_fax_number
 Where to find fax header template?,faculty_fax_number
+What is the faculty’s main fax number?,faculty_fax_number
+How can I send a fax to the faculty?,faculty_fax_number
+Where can I find the fax number for the administrative office?,faculty_fax_number
+What is the fax number for urgent documents?,faculty_fax_number
+How do I confirm a fax was received?,faculty_fax_number
+Who is responsible for fax communications at the faculty?,faculty_fax_number
+Where can I get a fax receipt confirmation?,faculty_fax_number
+Which fax number should I use for official documents?,faculty_fax_number
+How do I send an international fax?,faculty_fax_number
+Is there a fax template to use?,faculty_fax_number
 ما هو رقم الفاكس الرئيسي للكلية؟,faculty_fax_number
 كيف أرسل فاكسًا للسكرتارية العامة؟,faculty_fax_number
 أين أجد فاكس شؤون الطلاب؟,faculty_fax_number
@@ -857,16 +1448,36 @@ Where to find fax header template?,faculty_fax_number
 ما هو فاكس الطلبات الإدارية؟,faculty_fax_number
 كيف أرسل فاكسًا دوليًا؟,faculty_fax_number
 أين أجد نموذج رأس صفحة الفاكس؟,faculty_fax_number
-Mani tga tiliɣri n fax n temdint?,faculty_fax_number
-Amek ara tazneɣ fax i sekretariat amatay?,faculty_fax_number
-Anida ara d-afeɣ fax n uḥuddu n yiselmaden?,faculty_fax_number
-Mani tga tarrayt n uzna n fax uslig?,faculty_fax_number
-Amek ara senqeḍ ma yusa fax?,faculty_fax_number
-Anwa ara ɣeɣ ma yella ugur n fax?,faculty_fax_number
-Anida ara d-awiɣ aselken n usireg n fax?,faculty_fax_number
-Mani tga fax n yisalan anabaḍan?,faculty_fax_number
-Amek ara tazneɣ fax ɣer beṛṛa?,faculty_fax_number
-Anida ara d-afeɣ tamudemt n fax?,faculty_fax_number
+ما هو رقم الفاكس للأمانة العامة؟,faculty_fax_number
+كيف أرسل فاكس إلى الكلية؟,faculty_fax_number
+أين أجد فاكس القسم الإداري؟,faculty_fax_number
+ما هو رقم الفاكس للحالات العاجلة؟,faculty_fax_number
+كيف أتأكد من استلام الفاكس؟,faculty_fax_number
+من المسؤول عن الفاكس في الكلية؟,faculty_fax_number
+أين أجد تأكيد استلام الفاكس؟,faculty_fax_number
+أي فاكس يجب استخدامه للوثائق الرسمية؟,faculty_fax_number
+كيف أرسل فاكس دولي؟,faculty_fax_number
+هل يوجد نموذج فاكس معتمد؟,faculty_fax_number
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⴼⴰⵅ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,faculty_fax_number  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⴼⴰⵅ ⵉ ⵙⴽⴻⵔⴰⵜⵉⴰⵜ ⴰⵎⴰⵜⴰⵢ?,faculty_fax_number  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⴼⴰⵅ ⵏ ⵓḥⵓⴷⴷⵓ ⵏ ⵢⵉⵙⵍⵎⴰⴷⴻⵏ?,faculty_fax_number  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵔⴰⵢⵢⴰⵜ ⵏ ⵓⵣⵏⴰ ⵏ ⴼⴰⵅ ⵓⵙⵍⵉⴳ?,faculty_fax_number  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⴻⵏⵇⴻḍ ⵎⴰ ⵢⵓⵙⴰ ⴼⴰⵅ?,faculty_fax_number  
+ⴰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ⵎⴰ ⵢⴻⵍⵍⴰ ⵓⴳⵓⵔ ⵏ ⴼⴰⵅ?,faculty_fax_number  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⵡⵉɣ ⴰⵙⴻⵍⴽⴻⵏ ⵏ ⵓⵙⵉⵔⴻⴳ ⵏ ⴼⴰⵅ?,faculty_fax_number  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⴼⴰⵅ ⵏ ⵢⵉⵙⴰⵍⴰⵏ ⴰⵏⴰⴱⴰḍⴰⵏ?,faculty_fax_number  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⴼⴰⵅ ɣⴻⵔ ⴱⴻṛṛⴰ?,faculty_fax_number  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵜⴰⵎⵓⴷⴻⵎⵜ ⵏ ⴼⴰⵅ?,faculty_fax_number  
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⴰⵏ ⴰⵎⵙⵙⴰⴷ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⴰⵙⵙⴰⴷ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⴰⵢⵢ ⵏ ⴰⵙⴳⴳⴰⵔ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⴰⵏⴻⵙⵏⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⵙⵙⴰⴷ ⴷ ⴰⵙⵙⴰⴷ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⴰⵙⴳⴳⴰⵔ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⴰⵢⵢ ⴷ ⵙⵉⵏⴰⵙ ⴰⵎⵣⵣⵉⵖ?,faculty_fax_number
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⴰⵙⵙⴰⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
+ⴰⵙⵍⵉⵙ ⵏ ⵎⴻⵣⵣⵓⵍ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,faculty_fax_number
 Quels sont les autres téléphones de la faculté?,faculty_alternative_phones
 Comment atteindre le bureau des candidatures?,faculty_alternative_phones
 Quel est le contact du département des internats?,faculty_alternative_phones
@@ -877,36 +1488,6 @@ Quel est le lien pour les requêtes de certificats?,faculty_alternative_phones
 Comment atteindre le bureau comptable?,faculty_alternative_phones
 Quel est le contact du département excellence?,faculty_alternative_phones
 Comment rejoindre le bureau information?,faculty_alternative_phones
-What are the faculty's other phone numbers?,faculty_alternative_phones
-How to reach the admissions department?,faculty_alternative_phones
-What is the internship office contact?,faculty_alternative_phones
-How to connect with international partnerships service?,faculty_alternative_phones
-Who to call for academic matters?,faculty_alternative_phones
-Where to find contacts of various departments?,faculty_alternative_phones
-What is the link for certificate requests?,faculty_alternative_phones
-How to reach the accounting office?,faculty_alternative_phones
-What is the quality department contact?,faculty_alternative_phones
-How to connect with information office?,faculty_alternative_phones
-ما هي الهواتف الأخرى للكلية؟,faculty_alternative_phones
-كيف أصل إلى قسم القبول؟,faculty_alternative_phones
-ما هو اتصال مكتب التدريب؟,faculty_alternative_phones
-كيف أتواصل مع خدمة الشراكات الدولية؟,faculty_alternative_phones
-من أتصل به للمسائل الأكاديمية؟,faculty_alternative_phones
-أين أجد اتصالات الأقسام المختلفة؟,faculty_alternative_phones
-ما هو الرابط لطلبات الشهادات؟,faculty_alternative_phones
-كيف أصل إلى المكتب المحاسبي؟,faculty_alternative_phones
-ما هو اتصال قسم الجودة؟,faculty_alternative_phones
-كيف أتواصل مع مكتب المعلومات؟,faculty_alternative_phones
-Ayɣer d tiliɣriyin nniḍen n temdint?,faculty_alternative_phones
-Amek ara awḍeɣ ɣer lqism n uqbel?,faculty_alternative_phones
-Ayɣer d unermis n lbiru n usileɣ?,faculty_alternative_phones
-Amek ara mmeslayeɣ d lxidma n tmeɛawanin tiɣerfanin?,faculty_alternative_phones
-Anwa ara siwleɣ i tmeslayin tiɣriyin?,faculty_alternative_phones
-Anda ara afeɣ inmernisen n yiqsimen yemgaraden?,faculty_alternative_phones
-Ayɣer d aseɣwen i yisuturen n yiselkinen?,faculty_alternative_phones
-Amek ara awḍeɣ ɣer lbiru n tusnakt?,faculty_alternative_phones
-Ayɣer d unermis n lqism n tɣara?,faculty_alternative_phones
-Amek ara mmeslayeɣ d lbiru n yisalli?,faculty_alternative_phones
 Quels sont les numéros secondaires de la faculté?,faculty_alternative_phones
 Comment contacter le service des admissions?,faculty_alternative_phones
 Quel est le numéro du bureau des stages?,faculty_alternative_phones
@@ -917,6 +1498,16 @@ Quel est le contact pour les demandes de diplômes?,faculty_alternative_phones
 Comment contacter le service financier?,faculty_alternative_phones
 Quel est le numéro du service qualité?,faculty_alternative_phones
 Comment joindre le service communication?,faculty_alternative_phones
+What are the faculty's other phone numbers?,faculty_alternative_phones
+How to reach the admissions department?,faculty_alternative_phones
+What is the internship office contact?,faculty_alternative_phones
+How to connect with international partnerships service?,faculty_alternative_phones
+Who to call for academic matters?,faculty_alternative_phones
+Where to find contacts of various departments?,faculty_alternative_phones
+What is the link for certificate requests?,faculty_alternative_phones
+How to reach the accounting office?,faculty_alternative_phones
+What is the quality department contact?,faculty_alternative_phones
+How to connect with information office?,faculty_alternative_phones
 What are the alternative faculty numbers?,faculty_alternative_phones
 How to reach admissions office?,faculty_alternative_phones
 What's the internship office number?,faculty_alternative_phones
@@ -927,6 +1518,16 @@ What's the contact for diploma requests?,faculty_alternative_phones
 How to reach financial services?,faculty_alternative_phones
 What's the quality assurance number?,faculty_alternative_phones
 How to contact communications office?,faculty_alternative_phones
+ما هي الهواتف الأخرى للكلية؟,faculty_alternative_phones
+كيف أصل إلى قسم القبول؟,faculty_alternative_phones
+ما هو اتصال مكتب التدريب؟,faculty_alternative_phones
+كيف أتواصل مع خدمة الشراكات الدولية؟,faculty_alternative_phones
+من أتصل به للمسائل الأكاديمية؟,faculty_alternative_phones
+أين أجد اتصالات الأقسام المختلفة؟,faculty_alternative_phones
+ما هو الرابط لطلبات الشهادات؟,faculty_alternative_phones
+كيف أصل إلى المكتب المحاسبي؟,faculty_alternative_phones
+ما هو اتصال قسم الجودة؟,faculty_alternative_phones
+كيف أتواصل مع مكتب المعلومات؟,faculty_alternative_phones
 ما هي الأرقام البديلة للكلية؟,faculty_alternative_phones
 كيف أتواصل مع مكتب القبول؟,faculty_alternative_phones
 ما هو رقم مكتب التداريب؟,faculty_alternative_phones
@@ -937,6 +1538,16 @@ How to contact communications office?,faculty_alternative_phones
 كيف أتواصل بالمصلحة المالية؟,faculty_alternative_phones
 ما هو رقم خدمة الجودة؟,faculty_alternative_phones
 كيف أتصل بمكتب الاتصال؟,faculty_alternative_phones
+Ayɣer d tiliɣriyin nniḍen n temdint?,faculty_alternative_phones
+Amek ara awḍeɣ ɣer lqism n uqbel?,faculty_alternative_phones
+Ayɣer d unermis n lbiru n usileɣ?,faculty_alternative_phones
+Amek ara mmeslayeɣ d lxidma n tmeɛawanin tiɣerfanin?,faculty_alternative_phones
+Anwa ara siwleɣ i tmeslayin tiɣriyin?,faculty_alternative_phones
+Anda ara afeɣ inmernisen n yiqsimen yemgaraden?,faculty_alternative_phones
+Ayɣer d aseɣwen i yisuturen n yiselkinen?,faculty_alternative_phones
+Amek ara awḍeɣ ɣer lbiru n tusnakt?,faculty_alternative_phones
+Ayɣer d unermis n lqism n tɣara?,faculty_alternative_phones
+Amek ara mmeslayeɣ d lbiru n yisalli?,faculty_alternative_phones
 Mani llan idrisen nniḍen n temdint?,faculty_alternative_phones
 Amek ara ɣeɣ uḥuddu n uselkem?,faculty_alternative_phones
 Mani tga tiliɣri n taɣult n yistages?,faculty_alternative_phones
@@ -957,6 +1568,16 @@ Qui contacter pour les questions institutionnelles?,university_presidency_info
 Comment obtenir une audience présidentielle?,university_presidency_info
 Quel est le numéro du cabinet présidentiel?,university_presidency_info
 Où trouver les contacts de la vice-présidence?,university_presidency_info
+Qui est le président de l'université cette année ?,university_presidency_info
+Comment joindre le cabinet de la présidence ?,university_presidency_info
+Où puis-je trouver les horaires du président ?,university_presidency_info
+Comment envoyer un mail au président de l'université ?,university_presidency_info
+Quel est le numéro de téléphone de la présidence ?,university_presidency_info
+Qui gère les relations institutionnelles à la présidence ?,university_presidency_info
+Comment soumettre une requête officielle à la présidence ?,university_presidency_info
+Où se situent les bureaux de la présidence ?,university_presidency_info
+Quel est le contact de l'assistant du président ?,university_presidency_info
+Comment demander une audience avec la vice-présidence ?,university_presidency_info
 How to reach university presidency?,university_presidency_info
 Where is the president's office located?,university_presidency_info
 What's the presidency secretariat email?,university_presidency_info
@@ -967,6 +1588,16 @@ Who to contact about institutional matters?,university_presidency_info
 How to request a presidential meeting?,university_presidency_info
 What's the president's cabinet number?,university_presidency_info
 Where to find vice-presidency contacts?,university_presidency_info
+Who is the university president this year?,university_presidency_info
+How can I contact the presidency office?,university_presidency_info
+Where can I find the president’s schedule?,university_presidency_info
+How do I send an email to the university president?,university_presidency_info
+What is the phone number for the presidency?,university_presidency_info
+Who manages institutional relations at the presidency?,university_presidency_info
+How do I submit an official request to the presidency?,university_presidency_info
+Where are the presidency offices located?,university_presidency_info
+What is the contact for the president’s assistant?,university_presidency_info
+How do I request an appointment with the vice-president?,university_presidency_info
 كيف أتواصل مع رئاسة الجامعة؟,university_presidency_info
 أين يوجد مكتب الرئيس؟,university_presidency_info
 ما هو بريد سكرتارية الرئاسة؟,university_presidency_info
@@ -977,16 +1608,36 @@ Where to find vice-presidency contacts?,university_presidency_info
 كيف أحصل على مقابلة رئاسية؟,university_presidency_info
 ما هو رقم المكتب الرئاسي؟,university_presidency_info
 أين أجد اتصالات النائب؟,university_presidency_info
-Amek ara ɣeɣ tneglit n temdint?,university_presidency_info
-Anida i tezga taɣult n unegglam?,university_presidency_info
-Mani tga imayl n sekretariat n tneglit?,university_presidency_info
-Amek ara smeɣteɣ i unegglam?,university_presidency_info
-Mani tga tarrayt n yisalan usligen?,university_presidency_info
-Anida ara tazneɣ tuzna i tneglit?,university_presidency_info
-Anwa ara ɣeɣ ɣef yisallen n temsalit?,university_presidency_info
-Amek ara ssutreɣ timlilit d unegglam?,university_presidency_info
-Mani tga tiliɣri n tɣawsi n unegglam?,university_presidency_info
-Anida ara d-afeɣ inermisen n uneggaru?,university_presidency_info
+من هو رئيس الجامعة هذا العام؟,university_presidency_info
+كيف أتواصل مع مكتب الرئاسة؟,university_presidency_info
+أين أجد مواعيد الرئيس؟,university_presidency_info
+كيف أرسل بريدًا إلكترونيًا إلى رئيس الجامعة؟,university_presidency_info
+ما هو رقم هاتف الرئاسة؟,university_presidency_info
+من يدير العلاقات المؤسسية في الرئاسة؟,university_presidency_info
+كيف أقدم طلبًا رسميًا للرئاسة؟,university_presidency_info
+أين تقع مكاتب الرئاسة؟,university_presidency_info
+ما هو اتصال مساعد الرئيس؟,university_presidency_info
+كيف أطلب موعدًا مع نائب الرئيس؟,university_presidency_info
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵜⵏⴻⴳⵍⵉⵜ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,university_presidency_info  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ ⵓⵏⴻⴳⴳⵍⴰⵎ?,university_presidency_info  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⵙⴽⴻⵔⴰⵜⵉⴰⵔⵜ ⵏ ⵜⵏⴻⴳⵍⵉⵜ?,university_presidency_info  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ ⵓⵏⴻⴳⴳⵍⴰⵎ?,university_presidency_info  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵔⴰⵢⵢⴰⵜ ⵏ ⵢⵉⵙⴰⵍⴰⵏ ⵓⵙⵍⵉⴳⴻⵏ?,university_presidency_info  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⵜⵓⵣⵏⴰ ⵉ ⵜⵏⴻⴳⵍⵉⵜ?,university_presidency_info  
+ⴰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ɣⴻⴼ ⵢⵉⵙⴰⵍⵍⴻⵏ ⵏ ⵜⵎⵙⴰⵍⵉⵜ?,university_presidency_info  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⵓⵜⵔⴻɣ ⵜⵉⵎⵍⵉⵍⵉⵜ ⴷ ⵓⵏⴻⴳⴳⵍⴰⵎ?,university_presidency_info  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⵜⵖⴰⵡⵙⵉ ⵏ ⵓⵏⴻⴳⴳⵍⴰⵎ?,university_presidency_info  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵉⵏⴻⵔⵎⵉⵙⴻⵏ ⵏ ⵓⵏⴻⴳⴳⴰⵔⵓ?,university_presidency_info  
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ ⵓⵙⵏⴰⵄ ⵜⴰⵎⵣⵉⵖⵜ ?,university_presidency_info
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵏ ⴰⵙⵎⴰⵙⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,university_presidency_info
+ⴰⵢⵢ ⵏ ⵙⵉⵏⴰⵙ ⴷ ⵓⵙⵏⴰⵄ ?,university_presidency_info
+ⵅⴼ ⴰⵙⵏⴰⴽ ⴰⵣⵓⵍ ⵏ ⴰⵙⵎⴰⵙⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,university_presidency_info
+ⵅⴼ ⵉⵙⴻⵔⵏ ⵏ ⵜⵏⴰⵡⵉⵏ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,university_presidency_info
+ⵎⴰⵏⴰ ⵓⵙⵏⴰⴽ ⴷ ⴰⵙⵎⵎⴰⵙⵙⴰⵏ ⵏ ⵜⵉⵙⵏⴰⵡⴻⵏ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,university_presidency_info
+ⵅⴼ ⴰⵙⵏⴰⴽ ⴰⵣⵓⵍ ⵏ ⴰⴷⵔⴰⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,university_presidency_info
+ⵉⵏⴰⵡⵉⵏ ⴷ ⵜⵓⵙⵏⴰⵄ ⴷ ⵓⵙⵏⴰⵄ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,university_presidency_info
+ⵎⴰⵏⴰ ⵓⵙⵏⴰⴽ ⴰⵙⵎⴰⵙⵙ ⵏ ⵓⵙⵏⴰⵄ ⵜⴰⵎⴰⵣⵉⵖⵜ ?,university_presidency_info
+ⵅⴼ ⴰⵙⵏⴰⴽ ⴰⵣⵓⵍ ⴰⵙⴳⵉⵔ ⵏ ⴰⵙⵎⴰⵙⵙⴰⵏ ?,university_presidency_info
 Quel est le numéro de fax de la présidence?,university_presidency_fax
 Comment envoyer un fax au président?,university_presidency_fax
 Où trouver le fax du secrétariat général?,university_presidency_fax
@@ -997,6 +1648,16 @@ Où obtenir un accusé de réception?,university_presidency_fax
 Quel est le fax pour les demandes urgentes?,university_presidency_fax
 Comment envoyer un fax confidentiel?,university_presidency_fax
 Où trouver les instructions d'envoi?,university_presidency_fax
+Quel est le numéro de fax du président ?,university_presidency_fax
+Comment envoyer un fax à la présidence ?,university_presidency_fax
+Où puis-je trouver le fax officiel ?,university_presidency_fax
+Quel est le protocole d'envoi de fax à la présidence ?,university_presidency_fax
+Comment savoir si mon fax a été reçu ?,university_presidency_fax
+Qui gérer les problèmes de fax à la présidence ?,university_presidency_fax
+Où demander un reçu de fax ?,university_presidency_fax
+Quel fax utiliser pour les documents urgents ?,university_presidency_fax
+Comment envoyer un fax confidentiel ?,university_presidency_fax
+Où trouver les directives pour l'envoi de fax ?,university_presidency_fax
 What's the presidency fax number?,university_presidency_fax
 How to fax the university president?,university_presidency_fax
 Where to find general secretariat fax?,university_presidency_fax
@@ -1007,6 +1668,16 @@ Where to get delivery confirmation?,university_presidency_fax
 What's the fax for urgent requests?,university_presidency_fax
 How to send confidential faxes?,university_presidency_fax
 Where to find sending instructions?,university_presidency_fax
+What is the president’s fax number?,university_presidency_fax
+How do I send a fax to the presidency?,university_presidency_fax
+Where can I find the official fax?,university_presidency_fax
+What is the fax sending protocol for the presidency?,university_presidency_fax
+How can I confirm my fax was received?,university_presidency_fax
+Who handles fax issues at the presidency?,university_presidency_fax
+Where can I request a fax receipt?,university_presidency_fax
+Which fax number to use for urgent documents?,university_presidency_fax
+How do I send a confidential fax?,university_presidency_fax
+Where can I find fax sending instructions?,university_presidency_fax
 ما هو رقم فاكس الرئاسة؟,university_presidency_fax
 كيف أرسل فاكسًا للرئيس؟,university_presidency_fax
 أين أجد فاكس السكرتارية العامة؟,university_presidency_fax
@@ -1017,15 +1688,35 @@ Where to find sending instructions?,university_presidency_fax
 ما هو فاكس الطلبات العاجلة؟,university_presidency_fax
 كيف أرسل فاكسًا سريًا؟,university_presidency_fax
 أين أجد تعليمات الإرسال؟,university_presidency_fax
-Mani tga tiliɣri n fax n tneglit?,university_presidency_fax
-Amek ara tazneɣ fax i unegglam?,university_presidency_fax
-Anida ara d-afeɣ fax n sekretariat amatay?,university_presidency_fax
-Mani tga tamudemt n fax uslig?,university_presidency_fax
-Anwa ara ɣeɣ ma yella fax ur yusi?,university_presidency_fax
-Anida ara d-awiɣ aselken n usireg?,university_presidency_fax
-Mani tga fax n yisalan n lḥal?,university_presidency_fax
-Amek ara tazneɣ fax s tuffra?,university_presidency_fax
-Anida ara d-afeɣ talɣut n uzna?,university_presidency_fax
+ما هو رقم فاكس الرئيس؟,university_presidency_fax
+كيف أرسل فاكسًا إلى الرئاسة؟,university_presidency_fax
+أين أجد الفاكس الرسمي؟,university_presidency_fax
+ما هو بروتوكول إرسال الفاكس إلى الرئاسة؟,university_presidency_fax
+كيف أعرف أن الفاكس وصل؟,university_presidency_fax
+من يدير مشاكل الفاكس في الرئاسة؟,university_presidency_fax
+أين أطلب إيصال فاكس؟,university_presidency_fax
+أي فاكس أستخدم للوثائق العاجلة؟,university_presidency_fax
+كيف أرسل فاكسًا سريًا؟,university_presidency_fax
+أين أجد تعليمات إرسال الفاكس؟,university_presidency_fax
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵏ ⴼⴰⵅ ⵏ ⵜⵏⴻⴳⵍⵉⵜ?,university_presidency_fax  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⴼⴰⵅ ⵉ ⵓⵏⴻⴳⴳⵍⴰⵎ?,university_presidency_fax  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⴼⴰⵅ ⵏ ⵙⴽⴻⵔⴰⵜⵉⴰⵔⵜ ⴰⵎⴰⵜⴰⵢ?,university_presidency_fax  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⴰⵎⵓⴷⴻⵎⵜ ⵏ ⴼⴰⵅ ⵓⵙⵍⵉⴳ?,university_presidency_fax  
+ⴰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ⵎⴰ ⵢⴻⵍⵍⴰ ⴼⴰⵅ ⵓⵔ ⵢⵓⵙⵉ?,university_presidency_fax  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⵡⵉɣ ⴰⵙⴻⵍⴽⴻⵏ ⵏ ⵓⵙⵉⵔⴻⴳ?,university_presidency_fax  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⴼⴰⵅ ⵏ ⵢⵉⵙⴰⵍⴰⵏ ⵏ ⵍⵃⴰⵍ?,university_presidency_fax  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⴼⴰⵅ ⵙ ⵜⵓⴼⴼⵔⴰ?,university_presidency_fax  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻɣ ⵜⴰⵍɣⵓⵜ ⵏ ⵓⵣⵏⴰ?,university_presidency_fax  
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⴰⵏ ⴰⵙⵎⴰⵙⵙ ⵏ ⵓⵙⵏⴰⵄ?,university_presidency_fax
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⴰⵙⵙⴰⴷ ⴰⵏ ⴰⵙⵎⴰⵙⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
+ⴰⵢⵢ ⵏ ⴰⵙⴳⴳⴰⵔ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⴰⵏⴻⵙⵏⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴰⵎⵙⵙⴰⴷ ⴷ ⵉⵙⵙⴰⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
+ⵎⴰⵏⴰ ⵓⵙⵏⴰⴽ ⴷ ⵎⴻⵔⴰⵣ ⴰⵙⵙⴰⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
+ⴰⵢⵢ ⴷ ⵙⵉⵏⴰⵙ ⴰⵎⵣⵣⵉⵖ?,university_presidency_fax
+ⵅⴼ ⵉⵙⴻⵔⵏ ⴰⴷ ⵎⴻⵔⴰⵣ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⴰⵙⵙⴰⵙ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
+ⴰⵙⵍⵉⵙ ⵏ ⴰⵙⴳⴳⴰⵔ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,university_presidency_fax
 Qu'est-ce que le CIOVE exactement?,ciove_contact
 Comment contacter le centre CIOVE?,ciove_contact
 Quel est le rôle du CIOVE?,ciove_contact
@@ -1036,6 +1727,16 @@ Qui contacter pour les projets CIOVE?,ciove_contact
 Quels sont les horaires d'ouverture?,ciove_contact
 Comment soumettre une demande au CIOVE?,ciove_contact
 Quel est le numéro de téléphone principal?,ciove_contact
+Quels services offre le CIOVE ?,ciove_contact
+Comment joindre le CIOVE par téléphone ?,ciove_contact
+Où puis-je trouver les informations du CIOVE ?,ciove_contact
+Quel est le responsable du CIOVE cette année ?,ciove_contact
+Comment contacter le support du CIOVE ?,ciove_contact
+Quels sont les moyens de communication avec le CIOVE ?,ciove_contact
+Où se situe le centre CIOVE sur le campus ?,ciove_contact
+Quels documents faut-il pour contacter le CIOVE ?,ciove_contact
+Comment obtenir un rendez-vous rapide avec le CIOVE ?,ciove_contact
+Qui gère les projets au CIOVE ?,ciove_contact
 What exactly is CIOVE?,ciove_contact
 How to contact CIOVE center?,ciove_contact
 What's CIOVE's purpose?,ciove_contact
@@ -1046,6 +1747,16 @@ Who to contact about CIOVE projects?,ciove_contact
 What are the opening hours?,ciove_contact
 How to submit a request to CIOVE?,ciove_contact
 What's the main phone number?,ciove_contact
+What services does CIOVE provide?,ciove_contact
+How can I contact CIOVE by phone?,ciove_contact
+Where can I find CIOVE information?,ciove_contact
+Who is the CIOVE manager this year?,ciove_contact
+How do I reach CIOVE support?,ciove_contact
+What are the communication methods with CIOVE?,ciove_contact
+Where is the CIOVE center located on campus?,ciove_contact
+What documents are needed to contact CIOVE?,ciove_contact
+How can I get a quick appointment with CIOVE?,ciove_contact
+Who manages projects at CIOVE?,ciove_contact
 ما هو CIOVE بالضبط؟,ciove_contact
 كيف أتواصل مع مركز CIOVE؟,ciove_contact
 ما هو دور CIOVE؟,ciove_contact
@@ -1056,16 +1767,36 @@ What's the main phone number?,ciove_contact
 ما هي أوقات العمل؟,ciove_contact
 كيف أقدم طلبًا لـCIOVE؟,ciove_contact
 ما هو رقم الهاتف الرئيسي؟,ciove_contact
-D acu i d CIOVE s tidet?,ciove_contact
-Amek ara ɣeɣ CIOVE?,ciove_contact
-Ma yella akken i d role n CIOVE?,ciove_contact
-Anida i tezga taɣult n CIOVE?,ciove_contact
-Mani tga imayl n anermas n CIOVE?,ciove_contact
-Amek ara smeɣteɣ i CIOVE?,ciove_contact
-Anwa ara ɣeɣ ɣef yisalan n CIOVE?,ciove_contact
-Melli ara d-ttuɣal CIOVE?,ciove_contact
-Amek ara ssutreɣ aṭṭas i CIOVE?,ciove_contact
-Mani tga tiliɣri tameqqrant?,ciove_contact
+ما هي الخدمات التي يقدمها CIOVE؟,ciove_contact
+كيف أتواصل مع CIOVE عبر الهاتف؟,ciove_contact
+أين أجد معلومات CIOVE؟,ciove_contact
+من هو المسؤول عن CIOVE هذا العام؟,ciove_contact
+كيف أتواصل مع دعم CIOVE؟,ciove_contact
+ما هي طرق الاتصال مع CIOVE؟,ciove_contact
+أين يقع مركز CIOVE في الحرم الجامعي؟,ciove_contact
+ما هي الوثائق المطلوبة للاتصال بـ CIOVE؟,ciove_contact
+كيف أحصل على موعد سريع مع CIOVE؟,ciove_contact
+من يدير المشاريع في CIOVE؟,ciove_contact
+ⴷ ⴰⵙⵓ ⵉ ⴷ CIOVE ⵙ ⵜⵉⴷⴻⵜ?,ciove_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ CIOVE?,ciove_contact  
+ⵎⴰ ⵢⴻⵍⵍⴰ ⴰⴽⴽⴻⵏ ⵉ ⴷ role ⵏ CIOVE?,ciove_contact  
+ⴰⵏⵉⴷⴰ ⵉ ⵜⴻⵣⴳⴰ ⵜⴰɣⵓⵍⵜ ⵏ CIOVE?,ciove_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵉⵎⴰⵢⵍ ⵏ ⴰⵏⴻⵔⵎⴰⵙ ⵏ CIOVE?,ciove_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻɣⵜⴻɣ ⵉ CIOVE?,ciove_contact  
+ⴰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ɣⴻⴼ ⵢⵉⵙⴰⵍⴰⵏ ⵏ CIOVE?,ciove_contact  
+ⵎⴻⵍⵍⵉ ⴰⵔⴰ ⴷ-ⵜⵟⵓɣⴰⵍ CIOVE?,ciove_contact  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⵓⵜⵔⴻɣ ⴰṭṭⴰⵙ ⵉ CIOVE?,ciove_contact  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵉⵍⵉɣⵔⵉ ⵜⴰⵎⴻⵇⵇⵔⴰⵏⵜ?,ciove_contact  
+ⵎⴰ ⵉⵙⵎⵎⵓⵔ ⵜⴰⵙⴳⴰⵔⵜ ⵏ CIOVE?,ciove_contact
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ CIOVE ⴷ ⵜⴰⵎⵣⵔⵉⵏⵜ?,ciove_contact
+ⴰⵢⵢ ⴷ ⴰⵙⴳⴳⴰⵔ ⵏ CIOVE?,ciove_contact
+ⵎⴰⵏⴰ ⵉⵙⵎⵎⵓⵔ ⵏ CIOVE ⵜⴰⵎⴰⵣⵉⵖⵜ ?,ciove_contact
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴷ CIOVE ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,ciove_contact
+ⵎⴰ ⵉⵙⵎⵎⵓⵔ ⴷ ⵜⴰⵎⵙⵙⴰⵏⵜ ⵏ CIOVE?,ciove_contact
+ⴰⵢⵢ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ CIOVE ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,ciove_contact
+ⵎⴰ ⵙⵙⵓⵏⵏⴰⵙ ⴰⵙⵎⴰⵙⵙ ⴰⵏ CIOVE?,ciove_contact
+ⵅⴼ ⴰⵙⵏⴰⵡ ⵓⵙⵙⴰⵙ ⵏ CIOVE?,ciove_contact
+ⵎⴰ ⵙⵎⵎⴰⵙⵙ ⵏ ⵓⵙⵏⴰⵄ ⵏ CIOVE?,ciove_contact
 Comment consulter les thèses soutenues à la FSO ?,theses_soutenues
 Où trouver la liste complète des thèses ?,theses_soutenues
 Quel est le délai de disponibilité après soutenance ?,theses_soutenues
@@ -1076,6 +1807,16 @@ Comment obtenir une copie de thèse ?,theses_soutenues
 Quelles thèses sont disponibles en libre accès ?,theses_soutenues
 Où sont archivées les thèses papier ?,theses_soutenues
 Comment rechercher une thèse par discipline ?,theses_soutenues
+Comment trouver les thèses de doctorat à la faculté ?,theses_soutenues
+Où puis-je consulter les thèses archivées ?,theses_soutenues
+Quel est le processus pour accéder aux thèses ?,theses_soutenues
+Comment contacter le service des thèses ?,theses_soutenues
+Les thèses sont-elles disponibles en version numérique ?,theses_soutenues
+Où sont publiées les soutenances de thèses ?,theses_soutenues
+Comment savoir si une thèse est disponible en ligne ?,theses_soutenues
+Qui est responsable des archives des thèses ?,theses_soutenues
+Peut-on emprunter une copie papier d’une thèse ?,theses_soutenues
+Quels critères pour rechercher une thèse spécifique ?,theses_soutenues
 Where can I find defended theses at FSO?,theses_soutenues
 How to access the thesis repository?,theses_soutenues
 What's the availability delay after defense?,theses_soutenues
@@ -1086,6 +1827,16 @@ How to get a thesis copy?,theses_soutenues
 Which theses are open access?,theses_soutenues
 Where are print theses archived?,theses_soutenues
 How to search theses by subject?,theses_soutenues
+How can I find doctoral theses at the faculty?,theses_soutenues
+Where can I consult archived theses?,theses_soutenues
+What is the process to access theses?,theses_soutenues
+How do I contact the theses department?,theses_soutenues
+Are theses available in digital format?,theses_soutenues
+Where are thesis defenses published?,theses_soutenues
+How do I know if a thesis is available online?,theses_soutenues
+Who is responsible for thesis archives?,theses_soutenues
+Can I borrow a paper copy of a thesis?,theses_soutenues
+What criteria are used to search for a specific thesis?,theses_soutenues
 أين يمكن الاطلاع على الأطروحات المناقشة؟,theses_soutenues
 كيف أصل إلى مستودع الأطروحات؟,theses_soutenues
 ما هي مدة الانتظار بعد المناقشة؟,theses_soutenues
@@ -1096,16 +1847,36 @@ How to search theses by subject?,theses_soutenues
 ما هي الأطروحات المتاحة للجميع؟,theses_soutenues
 أين تحفظ الأطروحات الورقية؟,theses_soutenues
 كيف أبحث عن أطروحات حسب التخصص؟,theses_soutenues
-Anida ad d-afɣ tezrawin yettwasseknen?,theses_soutenues
-Amek ara kcemɣ ɣer umahil n tezrawin?,theses_soutenues
-Mik ara ttilin tezrawin seld n usenqed?,theses_soutenues
-Is ttilin tezrawin s unelkim?,theses_soutenues
-Is yella usefky n tezrawin srid?,theses_soutenues
-Anwa ara ɣeɣ i wakken ad ẓreɣ tazrawt?,theses_soutenues
-Amek ara d-awiɣ tansa n tazrawt?,theses_soutenues
-Mani llan tezrawin yeldin i meṛṛa?,theses_soutenues
-Anida ttwaskelsen tezrawin n uḍris?,theses_soutenues
-Amek ara nadi tezrawin ɣef tsenselkimt?,theses_soutenues
+كيف أجد رسائل الدكتوراه في الكلية؟,theses_soutenues
+أين يمكنني الاطلاع على الرسائل المؤرشفة؟,theses_soutenues
+ما هي إجراءات الوصول إلى الرسائل؟,theses_soutenues
+كيف أتواصل مع قسم الرسائل؟,theses_soutenues
+هل الرسائل متاحة بنسخة رقمية؟,theses_soutenues
+أين تُنشر مناقشات الرسائل؟,theses_soutenues
+كيف أعرف إذا كانت الرسالة متاحة على الإنترنت؟,theses_soutenues
+من المسؤول عن أرشيف الرسائل؟,theses_soutenues
+هل يمكن استعارة نسخة ورقية من الرسالة؟,theses_soutenues
+ما هي معايير البحث عن رسالة محددة؟,theses_soutenues
+ⴰⵏⵉⴷⴰ ⴰⴷ ⴷ-ⴰⴼɣⴻɣ ⵜⴻⵣⵔⴰⵡⵉⵏ ⵢⴻⵜⵜⵡⴰⵙⵙⴻⴽⵏⴻⵏ?,theses_soutenues  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴽⴻⵎɣ ɣⴻⵔ ⵓⵎⴰⵃⵉⵍ ⵏ ⵜⴻⵣⵔⴰⵡⵉⵏ?,theses_soutenues  
+ⵎⵉⴽ ⴰⵔⴰ ⵜⵜⵉⵍⵉⵏ ⵜⴻⵣⵔⴰⵡⵉⵏ ⵙⵍⴻⴷ ⵏ ⵓⵙⵏⵇⴻⴷ?,theses_soutenues  
+ⵉⵙ ⵜⵜⵉⵍⵉⵏ ⵜⴻⵣⵔⴰⵡⵉⵏ ⵙ ⵓⵏⴻⵍⴽⵉⵎ?,theses_soutenues  
+ⵉⵙ ⵢⴻⵍⵍⴰ ⵓⵙⴼⴽⵢ ⵏ ⵜⴻⵣⵔⴰⵡⵉⵏ ⵙⵔⵉⴷ?,theses_soutenues  
+ⴰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ⵉ ⵓⴰⴽⴽⴻⵏ ⴰⴷ ẓⵔⴻⵖ ⵜⴰⵣⵔⴰⵡⵜ?,theses_soutenues  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⴰⵡɣⵉⵖ ⵜⴰⵏⵙⴰ ⵏ ⵜⴰⵣⵔⴰⵡⵜ?,theses_soutenues  
+ⵎⴰⵏⵉ ⵍⵍⴰⵏ ⵜⴻⵣⵔⴰⵡⵉⵏ ⵢⴻⵍⴷⵉⵏ ⵉ ⵎⴻṛṛⴰ?,theses_soutenues  
+ⴰⵏⵉⴷⴰ ⵜⵜⵡⴰⵙⴽⴻⵍⵙⴻⵏ ⵜⴻⵣⵔⴰⵡⵉⵏ ⵏ ⵓḍⵔⵉⵙ?,theses_soutenues  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵏⴰⴷⵉ ⵜⴻⵣⵔⴰⵡⵉⵏ ɣⴻⴼ ⵜⵙⵏⵙⴻⵍⴽⵉⵎⵜ?,theses_soutenues  
+ⴰⴷⵔⴰⵙ ⴷ ⵓⵙⵏⴰⵄ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⴰⵢⵢ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⴰⵎⵙⵙⴰⴷ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⵅⴼ ⴰⵙⵏⴰⵡ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⵙⵉⵏⴰⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⴰⵙⵙⴰⵙ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⴰⵢⵢ ⵏ ⴰⵙⴳⴳⴰⵔ ⴰⵙⵙⴰⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⵅⴼ ⴰⵙⵏⴰⵡ ⵏ ⵓⵙⵏⴰⵄ?,theses_soutenues
+ⵎⴰⵏⴰ ⵓⵙⵏⴰⴽ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⴰⵙⵍⵉⵙ ⴷ ⴰⵙⵎⵎⴰⵙⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,theses_soutenues
+ⵅⴼ ⴰⵙⵏⴰⵡ ⵏ ⴰⵙⴳⴳⴰⵔ ⵓⵙⵏⴰⵄ?,theses_soutenues
 Quel est le rôle principal du CEDOCST ?,cedocst
 Comment bénéficier des services du CEDOCST ?,cedocst
 Qui peut utiliser les ressources du CEDOCST ?,cedocst
@@ -1115,6 +1886,16 @@ Qui contacter pour des questions spécifiques ?,cedocst
 Quels services supplémentaires sont offerts ?,cedocst
 Comment accéder aux ressources à distance ?,cedocst
 Où trouver le règlement intérieur ?,cedocst
+Quels sont les horaires d'ouverture du CEDOCST ?,cedocst
+Comment contacter le responsable du CEDOCST ?,cedocst
+Où se trouve le CEDOCST sur le campus ?,cedocst
+Quels documents sont disponibles au CEDOCST ?,cedocst
+Comment réserver une salle au CEDOCST ?,cedocst
+Le CEDOCST propose-t-il des formations ?,cedocst
+Quelles sont les modalités d'inscription ?,cedocst
+Comment obtenir un accès aux archives ?,cedocst
+Qui gère le catalogue des ressources ?,cedocst
+Quels sont les services en ligne du CEDOCST ?,cedocst
 What is the main purpose of CEDOCST?,cedocst
 How to use CEDOCST services?,cedocst
 Who can access CEDOCST resources?,cedocst
@@ -1124,6 +1905,16 @@ Who to contact for specific queries?,cedocst
 What additional services are provided?,cedocst
 How to access resources remotely?,cedocst
 Where to find internal regulations?,cedocst
+What are the opening hours of CEDOCST?,cedocst
+How do I contact the CEDOCST manager?,cedocst
+Where is CEDOCST located on campus?,cedocst
+What documents are available at CEDOCST?,cedocst
+How do I book a room at CEDOCST?,cedocst
+Does CEDOCST offer training sessions?,cedocst
+What are the registration requirements?,cedocst
+How do I access the archives?,cedocst
+Who manages the resource catalog?,cedocst
+What online services does CEDOCST provide?,cedocst
 ما هو الدور الرئيسي لـCEDOCST؟,cedocst
 كيف أستفيد من خدمات CEDOCST؟,cedocst
 من يمكنه استخدام موارد CEDOCST؟,cedocst
@@ -1133,16 +1924,36 @@ Where to find internal regulations?,cedocst
 ما هي الخدمات الإضافية المقدمة؟,cedocst
 كيف أصل للموارد عن بعد؟,cedocst
 أين أجد النظام الداخلي؟,cedocst
-Ma yella akken i d uṣeggem n CEDOCST?,cedocst
-Amek ara faṛeɣ i tezmert n CEDOCST?,cedocst
-Anwa i yezmer ad iseqdec CEDOCST?,cedocst
-Mani llan turrifin n usireg?,cedocst
-Amek ad ttreḍeɣ deg CEDOCST?,cedocst
-Anwa ara ɣeɣ ɣef yisallen usligen?,cedocst
-D acu n tezmert nniḍen i d-yettunefken?,cedocst
-Amek ara kcemɣ i yisefka s uẓeṭṭa?,cedocst
-Melli ara d-ttuɣal CEDOCST?,cedocst
-Anida ara d-afeɣ anekcum?,cedocst
+ما هي مواعيد عمل CEDOCST؟,cedocst
+كيف أتواصل مع مسؤول CEDOCST؟,cedocst
+أين يقع CEDOCST في الحرم الجامعي؟,cedocst
+ما هي الوثائق المتاحة في CEDOCST؟,cedocst
+كيف أحجز قاعة في CEDOCST؟,cedocst
+هل يقدم CEDOCST دورات تدريبية؟,cedocst
+ما هي شروط التسجيل؟,cedocst
+كيف أحصل على الوصول إلى الأرشيف؟,cedocst
+من يدير كتالوج الموارد؟,cedocst
+ما هي الخدمات الإلكترونية في CEDOCST؟,cedocst
+ⵎⴰ ⵢⴻⵍⵍⴰ ⴰⴽⴽⴻⵏ ⵉ ⴷ ⵓṣⴻⴳⴳⴻⵎ ⵏ CEDOCST?,cedocst  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴼⴰṛⴻɣ ⵉ ⵜⴻⵣⵎⴻⵔⵜ ⵏ CEDOCST?,cedocst  
+ⴰⵏⵡⴰ ⵉ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵉⵙⵇⴷⴻⵛ CEDOCST?,cedocst  
+ⵎⴰⵏⵉ ⵍⵍⴰⵏ ⵜⵓⵔⵔⵉⴼⵉⵏ ⵏ ⵓⵙⵉⵔⴻⴳ?,cedocst  
+ⴰⵎⴻⴽ ⴰⴷ ⵜⵜⵔⴻḍⴻɣ ⴷⴻⴳ CEDOCST?,cedocst  
+ⰰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ɣⴻⴼ ⵢⵉⵙⴰⵍⴻⵏ ⵓⵙⵍⵉⴳⴻⵏ?,cedocst  
+ⴷ ⴰⵙⵓ ⵏ ⵜⴻⵣⵎⴻⵔⵜ ⵏⵏⵉḍⴻⵏ ⵉ ⴷ-ⵢⴻⵜⵜⵓⵏⴻⴼⴽⴻⵏ?,cedocst  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴽⴻⵎɣ ⵉ ⵢⵉⵙⴼⴽⴰ ⵙ ⵓẓⴻṭṭⴰ?,cedocst  
+ⵎⴻⵍⵍⵉ ⴰⵔⴰ ⴷ-ⵜⵟⵓɣⴰⵍ CEDOCST?,cedocst  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻⵖ ⴰⵏⴻⴽⵇⵓⵎ?,cedocst  
+ⵙⵙⴰⵙ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ ⴷ CEDOCST?,cedocst
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⵎⵙⵙⴰⵙ ⴰⵏ CEDOCST?,cedocst
+ⴰⵢⵢ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵏ CEDOCST?,cedocst
+ⵎⴰ ⴰⵙⵎⴰⵙⵙⴰⵏ ⴷ CEDOCST?,cedocst
+ⵅⴼ ⴰⵙⵏⴰⵡ ⵏ ⵜⵓⵙⵏⴰⵄ ⴷ CEDOCST?,cedocst
+ⵓⵙⵙⴰⵙ ⵏ ⵜⴰⵎⵙⵙⴰⵏⵜ?,cedocst
+ⵎⴰ ⵙⵙⵓⵏⵏⴰⵙ ⵏ ⵜⴰⵎⵙⵙⴰⵏⵜ?,cedocst
+ⵅⴼ ⴰⵙⵏⴰⵡ ⴷ ⵜⵉⵙⵏⴰⵡⴻⵏ?,cedocst
+ⵎⴰⵏⴰ ⵓⵙⵏⴰⴽ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ CEDOCST?,cedocst
+ⵙⵙⴰⵙⴰⵙ ⵏ ⵓⵙⵙⴰⵙⴰⵏⵜ ⵏ CEDOCST?,cedocst
 Comment fonctionne le conseil de faculté ?,conseil_de_la_faculte
 Qui sont les membres du conseil actuel ?,conseil_de_la_faculte
 Quelles décisions relèvent du conseil ?,conseil_de_la_faculte
@@ -1153,6 +1964,16 @@ Comment proposer un point à l'ordre du jour ?,conseil_de_la_faculte
 Qui représente les étudiants au conseil ?,conseil_de_la_faculte
 Comment contacter les membres du conseil ?,conseil_de_la_faculte
 Quel est le processus de vote ?,conseil_de_la_faculte
+Quels sont les rôles du conseil de faculté ?,conseil_de_la_faculte
+Comment sont élus les membres du conseil ?,conseil_de_la_faculte
+Où puis-je consulter l'ordre du jour ?,conseil_de_la_faculte
+Qui préside les réunions du conseil ?,conseil_de_la_faculte
+Comment suivre les décisions du conseil ?,conseil_de_la_faculte
+Quelles sont les règles de participation ?,conseil_de_la_faculte
+Comment demander la tenue d'une réunion extraordinaire ?,conseil_de_la_faculte
+Qui assure le secrétariat du conseil ?,conseil_de_la_faculte
+Comment soumettre des propositions au conseil ?,conseil_de_la_faculte
+Quel est le rôle des enseignants au conseil ?,conseil_de_la_faculte
 What is the faculty council's role?,conseil_de_la_faculte
 Who are current council members?,conseil_de_la_faculte
 Which decisions does the council make?,conseil_de_la_faculte
@@ -1163,6 +1984,16 @@ How to propose agenda items?,conseil_de_la_faculte
 Who represents students on the council?,conseil_de_la_faculte
 How to contact council members?,conseil_de_la_faculte
 What's the voting procedure?,conseil_de_la_faculte
+What are the roles of the faculty council?,conseil_de_la_faculte
+How are council members elected?,conseil_de_la_faculte
+Where can I find the agenda?,conseil_de_la_faculte
+Who chairs the council meetings?,conseil_de_la_faculte
+How can I follow council decisions?,conseil_de_la_faculte
+What are the participation rules?,conseil_de_la_faculte
+How do I request an extraordinary meeting?,conseil_de_la_faculte
+Who handles the council secretariat?,conseil_de_la_faculte
+How do I submit proposals to the council?,conseil_de_la_faculte
+What is the role of faculty members in the council?,conseil_de_la_faculte
 ما هي آلية عمل مجلس الكلية؟,conseil_de_la_faculte
 من هم أعضاء المجلس الحاليون؟,conseil_de_la_faculte
 ما هي القرارات التي يتخذها المجلس؟,conseil_de_la_faculte
@@ -1173,16 +2004,36 @@ What's the voting procedure?,conseil_de_la_faculte
 من يمثل الطلاب في المجلس؟,conseil_de_la_faculte
 كيف أتواصل مع أعضاء المجلس؟,conseil_de_la_faculte
 ما هي عملية التصويت؟,conseil_de_la_faculte
-Amek i teddu tawenza n temdint?,conseil_de_la_faculte
-Anwa llan imḍanen n tawenza tura?,conseil_de_la_faculte
-D acu n yisalkan i d-yettunefken?,conseil_de_la_faculte
-Amek ara d-ttuɣaleɣ i tɣawsiwin?,conseil_de_la_faculte
-Anida ara d-afeɣ isemres n tɣawsiwin?,conseil_de_la_faculte
-Mik ara d-ttemɣalen imḍanen?,conseil_de_la_faculte
-Amek ara ssutreɣ ad d-ḍer tazwart?,conseil_de_la_faculte
-Anwa i d anemsal n yilemmas?,conseil_de_la_faculte
-Amek ara ɣeɣ imḍanen n tawenza?,conseil_de_la_faculte
-Mani tga tarrayt n wemɣi?,conseil_de_la_faculte
+ما هي مهام مجلس الكلية؟,conseil_de_la_faculte
+كيف يتم انتخاب أعضاء المجلس؟,conseil_de_la_faculte
+أين يمكنني الاطلاع على جدول الأعمال؟,conseil_de_la_faculte
+من يرأس اجتماعات المجلس؟,conseil_de_la_faculte
+كيف أتابع قرارات المجلس؟,conseil_de_la_faculte
+ما هي قواعد المشاركة؟,conseil_de_la_faculte
+كيف أطلب عقد اجتماع استثنائي؟,conseil_de_la_faculte
+من يدير أمانة المجلس؟,conseil_de_la_faculte
+كيف أقدم اقتراحات للمجلس؟,conseil_de_la_faculte
+ما هو دور الأساتذة في المجلس؟,conseil_de_la_faculte
+ⴰⵎⴻⴽ ⵉ ⵜⴻⴷⴷⵓ ⵜⴰⵡⴻⵏⵣⴰ ⵏ ⵜⴻⵎⴷⵉⵏⵜ?,conseil_de_la_faculte  
+ⴰⵏⵡⴰ ⵍⵍⴰⵏ ⵉⵎḍⴰⵏⴻⵏ ⵏ ⵜⴰⵡⴻⵏⵣⴰ ⵜⵓⵔⴰ?,conseil_de_la_faculte  
+ⴷ ⴰⵙⵓ ⵏ ⵢⵉⵙⴰⵍⴽⴰⵏ ⵉ ⴷ-ⵢⴻⵜⵜⵓⵏⴻⴼⴽⴻⵏ?,conseil_de_la_faculte  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⵜⵟⵓɣⴰⵍⴻⵖ ⵉ ⵜⵖⴰⵡⵙⵉⵡⵏ?,conseil_de_la_faculte  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼɣⴻⵖ ⵉⵙⴻⵎⵔⴻⵙ ⵏ ⵜⵖⴰⵡⵙⵉⵡⵏ?,conseil_de_la_faculte  
+ⵎⵉⴽ ⴰⵔⴰ ⴷ-ⵜⵜⵎɣⴰⵍⴻⵏ ⵉⵎḍⴰⵏⴻⵏ?,conseil_de_la_faculte  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⵓⵜⵔⴻⴳ ⴰⴷ ⴷ-ⵍⴻⵔ ⵜⴰⵣⵡⴰⵔⵜ?,conseil_de_la_faculte  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵎⵙⴰⵍ ⵏ ⵢⵉⵍⴻⵎⵎⴰⵙ?,conseil_de_la_faculte  
+ⴰⵎⴻⴽ ⴰⵔⴰ ɣⴻⵖ ⵉⵎḍⴰⵏⴻⵏ ⵏ ⵜⴰⵡⴻⵏⵣⴰ?,conseil_de_la_faculte  
+ⵎⴰⵏⵉ ⵜⴳⴰ ⵜⵔⴰⵔⴰⵢⵜ ⵏ ⵡⴻⵎɣⵉ?,conseil_de_la_faculte  
+ⵎⴰ ⵉⵙⵎⵎⵓⵔⵜ ⴷ ⵙⵙⵓⵙ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⴰⵙⴳⴳⴰⵔ ⵏ ⵓⵙⵏⴰⵄ ⴰⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⴰⵢⵢ ⵏ ⴰⵙⵎⴰⵙⵙ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⵎⴰ ⵉⵙⴻⵔⵏ ⵏ ⵜⴰⵎⵣⵉⵖⵜ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴷ ⵜⴰⵎⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⵙⵙⴰⵙ ⴷ ⵜⴰⵎⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⵅⴼ ⵓⵙⵏⴰⴽ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⵎⴰ ⵓⵙⵏⴰⵄ ⵏ ⵜⴰⵎⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴷ ⵜⵉⵙⵏⴰⵡⴻⵏ ⵏ ⵜⴰⵎⴰⵣⵉⵖⵜ?,conseil_de_la_faculte
+ⵎⴰ ⵙⵙⵓⵏⵏⴰⵙ ⵏ ⵓⵙⵏⴰⵄ?,conseil_de_la_faculte
 Quelle est la date de la conférence sur les trois principes ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 Comment s'inscrire à cet événement ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 Qui sont les intervenants principaux ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
@@ -1193,6 +2044,16 @@ Quel est le public cible de cette conférence ?,conference_the_three_principles_
 Existe-t-il des frais d'inscription ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 Où se déroulera l'événement précisément ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 Comment proposer une question aux panélistes ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Qui organise la conférence sur les trois principes ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Quels sont les thèmes abordés lors de la conférence ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Comment accéder aux documents de la conférence ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Y aura-t-il un enregistrement disponible ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Quels sont les horaires des sessions ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Comment recevoir les informations mises à jour ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Peut-on participer à distance ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Qui contacter pour plus d'informations ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Quels sont les intervenants internationaux ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Y a-t-il des ateliers parallèles ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 When is the conference about the three principles?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 How to register for this event?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 Who are the keynote speakers?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
@@ -1203,6 +2064,16 @@ Who is the target audience?,conference_the_three_principles_of_mutuality_interde
 Are there registration fees?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 What's the exact venue location?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 How to submit questions to panelists?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Who is organizing the conference on the three principles?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+What topics will be discussed at the conference?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+How can I access the conference documents?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Will there be a recording available?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+What are the session times?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+How can I receive updates?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Can I participate remotely?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Who to contact for more information?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Who are the international speakers?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+Are there parallel workshops?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 ما هو موعد مؤتمر المبادئ الثلاثة؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 كيف أسجل في هذا الحدث؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 من هم المحاضرون الرئيسيون؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
@@ -1213,16 +2084,36 @@ How to submit questions to panelists?,conference_the_three_principles_of_mutuali
 هل توجد رسوم تسجيل؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 أين سيعقد الحدث بالضبط؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 كيف أرسل أسئلة للمشاركين؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Melli ara yili walleq ɣef tlata yibeddilen?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Amek ad ttreḍeɣ i wadrar?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Anwa llan imeslayen imeqqranen?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Is yella umedru srid?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Is ara yili usawal s usrid?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Amek ara d-awiɣ aselken n tmezgida?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Anwa i d aselkim aqibbu?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Is ttilin tefrin n tqerṭit?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Anida ara yili wadrar s tidet?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
-Amek ara tazneɣ yisallen i yimsefrak?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+من ينظم المؤتمر حول المبادئ الثلاثة؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ما هي المواضيع التي ستناقش في المؤتمر؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+كيف يمكنني الوصول إلى مستندات المؤتمر؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+هل سيكون هناك تسجيل متاح؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ما هي أوقات الجلسات؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+كيف أتلقى التحديثات؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+هل يمكن المشاركة عن بعد؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+من أتواصل معه لمزيد من المعلومات؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+من هم المتحدثون الدوليون؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+هل هناك ورش عمل موازية؟,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⵎⴻⵍⵍⵉ ⴰⵔⴰ ⵢⵉⵍⵉ ⵡⴰⵍⵍⴻⵇ ɣⴻⴼ ⵜⵍⴰⵜⴰ ⵢⵉⴱⴻⴷⴷⵉⵍⴻⵏ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⴰⵎⴻⴽ ⴰⴷ ⵜⵜⵔⴻḍⴻɣ ⵉ ⵡⴰⴷⵔⴰⵔ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⴰⵏⵡⴰ ⵍⵍⴰⵏ ⵉⵎⴻⵙⵍⴰⵢⴻⵏ ⵉⵎⴻqqⵔⴰⵏⴻⵏ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⵉⵙ ⵢⴻⵍⵍⴰ ⵓⵎⴻⴷⵔⵓ ⵙⵔⵉⴷ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⵉⵙ ⴰⵔⴰ ⵢⵉⵍⵉ ⵓⵙⴰⵡⴰⵍ ⵙ ⵓⵙⵔⵉⴷ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⴰⵡⵉɣ ⴰⵙⴻⵍⴽⴻⵏ ⵏ ⵜⵎⴻⵣⴳⵉⴷⴰ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵙⴻⵍⴽⵉⵎ ⴰⵇⵉⴱⴱⵓ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⵉⵙ ⵜⵜⵉⵍⵉⵏ ⵜⴻⴼⵔⵉⵏ ⵏ ⵜⵇⴻṛⵟⵉⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵢⵉⵍⵉ ⵡⴰⴷⵔⴰⵔ ⵙ ⵜⵉⴷⴻⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⴰⵣⵏⴻɣ ⵢⵉⵙⴰⵍⴻⵏ ⵉ ⵢⵉⵎⵙⴻⴼⵔⴰⴽ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values  
+ⵎⴰ ⵙⵙⴰⵙ ⴰⵏ ⵜⵎⵙⵙⴰⵏⵜ ⴷ ⵜⵉⵎⴰⵣⵉⵖⵜ ⵓⵙⵏⴰⵄ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⵎⴰ ⵉⵙⵎⵎⵓⵔ ⴷ ⵜⵎⵙⵙⴰⵏⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⴰⵢⵢ ⵏ ⴰⵙⴳⴳⴰⵔ ⵏ ⵜⵎⵙⵙⴰⵏⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⴰⵙⵙⴰⵙ ⴷ ⵜⵎⵙⵙⴰⵏⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⴰⵙⵍⵉⵙ ⵏ ⵜⵉⵎⴰⵣⵉⵖⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⴰⵙⵙⴰⵙ ⴷ ⵜⵎⵙⵙⴰⵏⵜ ⵏ ⵓⵙⵙⴰⵙⴰⵏⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⵅⴼ ⵓⵙⵏⴰⴽ ⴷ ⵜⵉⵎⴰⵣⵉⵖⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⵎⴰ ⵙⵙⴰⵙ ⴷ ⵓⵙⵙⴰⵙⴰⵏⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⵎⴰ ⵙⵙⵓⵏⵏⴰⵙ ⵏ ⵜⵎⵙⵙⴰⵏⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+ⴰⵙⵍⵉⵙ ⵏ ⵜⵎⵙⵙⴰⵏⵜ?,conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
 Quel est l'objectif principal de l'étude sur les polyphénols ?,characterization_of_the_polyphenolic_fraction
 Comment participer à cette recherche ?,characterization_of_the_polyphenolic_fraction
 Qui sont les chercheurs responsables ?,characterization_of_the_polyphenolic_fraction
@@ -1233,6 +2124,16 @@ Comment accéder aux résultats préliminaires ?,characterization_of_the_polyphe
 Qui contacter pour plus d'informations ?,characterization_of_the_polyphenolic_fraction
 Existe-t-il des publications disponibles ?,characterization_of_the_polyphenolic_fraction
 Quelle est la durée prévue de l'étude ?,characterization_of_the_polyphenolic_fraction
+Quels sont les composés principaux analysés ?,characterization_of_the_polyphenolic_fraction
+Comment sont extraits les polyphénols ?,characterization_of_the_polyphenolic_fraction
+Quel est l'impact des polyphénols sur la santé ?,characterization_of_the_polyphenolic_fraction
+Quels outils sont utilisés pour l’analyse ?,characterization_of_the_polyphenolic_fraction
+Comment participer aux collectes d’échantillons ?,characterization_of_the_polyphenolic_fraction
+Qui finance cette étude ?,characterization_of_the_polyphenolic_fraction
+Quels laboratoires collaborent ?,characterization_of_the_polyphenolic_fraction
+Comment consulter les données expérimentales ?,characterization_of_the_polyphenolic_fraction
+Y a-t-il des stages disponibles ?,characterization_of_the_polyphenolic_fraction
+Quels sont les résultats attendus ?,characterization_of_the_polyphenolic_fraction
 What's the main goal of polyphenol research?,characterization_of_the_polyphenolic_fraction
 How to participate in this study?,characterization_of_the_polyphenolic_fraction
 Who are the lead researchers?,characterization_of_the_polyphenolic_fraction
@@ -1243,6 +2144,16 @@ How to access preliminary results?,characterization_of_the_polyphenolic_fraction
 Who to contact for more details?,characterization_of_the_polyphenolic_fraction
 Are there published papers available?,characterization_of_the_polyphenolic_fraction
 What's the expected duration?,characterization_of_the_polyphenolic_fraction
+What are the main objectives of the study?,characterization_of_the_polyphenolic_fraction
+How can I participate in the research?,characterization_of_the_polyphenolic_fraction
+Who are the responsible researchers?,characterization_of_the_polyphenolic_fraction
+What are the potential applications?,characterization_of_the_polyphenolic_fraction
+Where are the experiments conducted?,characterization_of_the_polyphenolic_fraction
+Which plants are being studied?,characterization_of_the_polyphenolic_fraction
+How to access preliminary results?,characterization_of_the_polyphenolic_fraction
+Who to contact for more information?,characterization_of_the_polyphenolic_fraction
+Are there any publications available?,characterization_of_the_polyphenolic_fraction
+What is the expected duration of the study?,characterization_of_the_polyphenolic_fraction
 ما هو الهدف الرئيسي من دراسة البوليفينول؟,characterization_of_the_polyphenolic_fraction
 كيف أشارك في هذا البحث؟,characterization_of_the_polyphenolic_fraction
 من هم الباحثون المسؤولون؟,characterization_of_the_polyphenolic_fraction
@@ -1253,15 +2164,35 @@ What's the expected duration?,characterization_of_the_polyphenolic_fraction
 من أتصل للمزيد من المعلومات؟,characterization_of_the_polyphenolic_fraction
 هل توجد منشورات متاحة؟,characterization_of_the_polyphenolic_fraction
 ما هي المدة المتوقعة؟,characterization_of_the_polyphenolic_fraction
-Mani tga tayuga tameqqrant n uswir ɣef polyphenols?,characterization_of_the_polyphenolic_fraction
-Amek ara ttreḍeɣ i uswir-a?,characterization_of_the_polyphenolic_fraction
-D acu n yisnasen i zemren ad ilin?,characterization_of_the_polyphenolic_fraction
-Anida ara ttwaslalen tizrawin?,characterization_of_the_polyphenolic_fraction
-Mani llan yiẓuran yettwaɣranen?,characterization_of_the_polyphenolic_fraction
-Amek ara d-afeɣ isefka n tazwara?,characterization_of_the_polyphenolic_fraction
-Anwa ara ɣeɣ i wugar n telɣut?,characterization_of_the_polyphenolic_fraction
-Is ttilin timennayin?,characterization_of_the_polyphenolic_fraction
-Mik ara yili uswir?,characterization_of_the_polyphenolic_fraction
+ما هي الأهداف الرئيسية للدراسة؟,characterization_of_the_polyphenolic_fraction
+كيف يمكنني المشاركة في البحث؟,characterization_of_the_polyphenolic_fraction
+من هم الباحثون المسؤولون؟,characterization_of_the_polyphenolic_fraction
+ما هي التطبيقات المحتملة؟,characterization_of_the_polyphenolic_fraction
+أين تُجرى التجارب؟,characterization_of_the_polyphenolic_fraction
+ما هي النباتات التي تتم دراستها؟,characterization_of_the_polyphenolic_fraction
+كيف يمكن الوصول إلى النتائج الأولية؟,characterization_of_the_polyphenolic_fraction
+من يمكن الاتصال به لمزيد من المعلومات؟,characterization_of_the_polyphenolic_fraction
+هل توجد منشورات متاحة؟,characterization_of_the_polyphenolic_fraction
+ما هي مدة الدراسة المتوقعة؟,characterization_of_the_polyphenolic_fraction
+⛣ⴰⵏⵉ ⵜⴳⴰ ⵜⴰⵢⵓⴳⴰ ⵜⴰⵎⴻⵇⵇⵔⴰⵏⵜ ⵏ ⵓⵙⵡⵉⵔ ɣⴻⴼ polyphenols?,characterization_of_the_polyphenolic_fraction  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⵜⵔⴻḍⴻɣ ⵉ ⵓⵙⵡⵉⵔ-ⴰ?,characterization_of_the_polyphenolic_fraction  
+ⴷ ⴰⵛⵓ ⵏ ⵢⵉⵙⵏⴰⵙⴻⵏ ⵉ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⵉⵍⵉⵏ?,characterization_of_the_polyphenolic_fraction  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⵜⵜⵡⴰⵙⵍⴰⵍⴻⵏ ⵜⵉⵣⵔⴰⵡⵉⵏ?,characterization_of_the_polyphenolic_fraction  
+⛣ⴰⵏⵉ ⵍⵍⴰⵏ ⵢⵉⵥⵓⵔⴰⵏ ⵢⴻⵜⵜⵡⴰɣⵔⴰⵏⴻⵏ?,characterization_of_the_polyphenolic_fraction  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⴰⴼⴻɣ ⵉⵙⴻⴼⴽⴰ ⵏ ⵜⴰⵣⵡⴰⵔⴰ?,characterization_of_the_polyphenolic_fraction  
+ⴰⵏⵡⴰ ⴰⵔⴰ ɣⴻⵖ ⵉ ⵡⵓⴳⴰⵔ ⵏ ⵜⴻⵍɣⵓⵜ?,characterization_of_the_polyphenolic_fraction  
+ⵉⵙ ⵜⵜⵉⵍⵉⵏ ⵜⵉⵎⴻⵏⵏⴰⵢⵏ?,characterization_of_the_polyphenolic_fraction  
+ⵎⵉⴽ ⴰⵔⴰ ⵢⵉⵍⵉ ⵓⵙⵡⵉⵔ?,characterization_of_the_polyphenolic_fraction  
+ⴰⵔⴰⴹ ⴰⵏⵏⴰⵡⵉ ⵏ ⵜⴰⵎⵙⵙⴰⵡⵜ ?,characterization_of_the_polyphenolic_fraction
+ⴰⴷⴳⴳⵯⴰ ⵢⵉⵏⴰⵢ ⵏ ⵜⴰⵎⵙⴻⵍⵜ ?,characterization_of_the_polyphenolic_fraction
+ⵉⵎⵙⵙⴰⵡⵉⵏ ⵏⵉⵎⴰⵔⴰⵣ ⴰⵎⴰⵣⵉⵖⴻⵏ ?,characterization_of_the_polyphenolic_fraction
+ⴰⵎⵎⴰⵣⵉⵖ ⵏⴰⵎⵎⵔⴰⵙ ?,characterization_of_the_polyphenolic_fraction
+ⴰⵎⵙⵙⴰⵡⴻⵏ ⵏ ⵜⴰⵎⵙⵙⴰⵡⵜ ?,characterization_of_the_polyphenolic_fraction
+ⴰⴷⴰⵎⵏ ⵏⴰ ⵜⵉⴼⵉⴷⵉⵏ ⵢⵉⵏⴰⵢⵉⵏ ?,characterization_of_the_polyphenolic_fraction
+ⴰⵎⴰⵣⵉⵖ ⵏ ⵜⴰⵙⵙⴰⵍⵍⵉⵏ ⵏⵜⴰⴼⴰⵎⵙⵜ ?,characterization_of_the_polyphenolic_fraction
+ⴰⵢⵢⵓ ⵢⵉⵏ ⵜⵙⴳⵯⵯⴰⵏ ?,characterization_of_the_polyphenolic_fraction
+ⴰⵢⴰ ⴷⴰ ⵎⵙⵙⵓⴼ?,characterization_of_the_polyphenolic_fraction
+ⴰⴷⵔⵓⵙ ⴰⵙⴳⵯⴰⵏ ⵏ ⵜⴰⴳⵍⵍⴰⵍⵉⵏ ?,characterization_of_the_polyphenolic_fraction
 En quoi consiste l'évaluation interne à la FSO ?,evaluation_interne_et_formation_continue
 Qui est responsable du processus ?,evaluation_interne_et_formation_continue
 Quels sont les critères d'évaluation ?,evaluation_interne_et_formation_continue
@@ -1272,6 +2203,16 @@ Qui peut participer aux formations continues ?,evaluation_interne_et_formation_c
 Comment s'inscrire aux formations ?,evaluation_interne_et_formation_continue
 Quels sont les thèmes disponibles ?,evaluation_interne_et_formation_continue
 Où trouver le calendrier des formations ?,evaluation_interne_et_formation_continue
+Quels sont les objectifs de l’évaluation interne ?,evaluation_interne_et_formation_continue
+Qui coordonne le programme de formation continue ?,evaluation_interne_et_formation_continue
+Comment sont évalués les enseignants ?,evaluation_interne_et_formation_continue
+Quelles sont les étapes du processus d’évaluation ?,evaluation_interne_et_formation_continue
+Comment accéder aux résultats des évaluations précédentes ?,evaluation_interne_et_formation_continue
+Quels outils sont utilisés pour l’évaluation ?,evaluation_interne_et_formation_continue
+Comment donner un retour sur la formation ?,evaluation_interne_et_formation_continue
+Qui peut proposer des formations ?,evaluation_interne_et_formation_continue
+Comment se déroulent les formations continues ?,evaluation_interne_et_formation_continue
+Quels sont les critères d’admission aux formations ?,evaluation_interne_et_formation_continue
 What does internal evaluation involve?,evaluation_interne_et_formation_continue
 Who oversees the process?,evaluation_interne_et_formation_continue
 What are the assessment criteria?,evaluation_interne_et_formation_continue
@@ -1282,6 +2223,16 @@ Who can attend training sessions?,evaluation_interne_et_formation_continue
 How to register for courses?,evaluation_interne_et_formation_continue
 What topics are offered?,evaluation_interne_et_formation_continue
 Where to find training schedule?,evaluation_interne_et_formation_continue
+What is the purpose of internal evaluation at FSO?,evaluation_interne_et_formation_continue
+Who is responsible for the evaluation process?,evaluation_interne_et_formation_continue
+What are the evaluation criteria?,evaluation_interne_et_formation_continue
+How to access evaluation reports?,evaluation_interne_et_formation_continue
+How often are evaluations conducted?,evaluation_interne_et_formation_continue
+How to propose improvements?,evaluation_interne_et_formation_continue
+Who can participate in continuing education?,evaluation_interne_et_formation_continue
+How to register for training?,evaluation_interne_et_formation_continue
+What training topics are available?,evaluation_interne_et_formation_continue
+Where to find the training schedule?,evaluation_interne_et_formation_continue
 ماذا تشمل التقييم الداخلي؟,evaluation_interne_et_formation_continue
 من المسؤول عن العملية؟,evaluation_interne_et_formation_continue
 ما هي معايير التقييم؟,evaluation_interne_et_formation_continue
@@ -1292,16 +2243,36 @@ Where to find training schedule?,evaluation_interne_et_formation_continue
 كيف أسجل في الدورات؟,evaluation_interne_et_formation_continue
 ما هي المواضيع المتاحة؟,evaluation_interne_et_formation_continue
 أين أجد جدول التكوينات؟,evaluation_interne_et_formation_continue
-D acu i d usenker adigan deg FSO?,evaluation_interne_et_formation_continue
-Anwa i d anermas n uswir?,evaluation_interne_et_formation_continue
-Mani llan imezwura n usenker?,evaluation_interne_et_formation_continue
-Amek ara d-afeɣ inɣmisen n usenker?,evaluation_interne_et_formation_continue
-Mik ara ttwaslalen isenker?,evaluation_interne_et_formation_continue
-Amek ara ssutreɣ isleḥyu?,evaluation_interne_et_formation_continue
-Anwa i yezmer ad yemmeslay tigawsiwin?,evaluation_interne_et_formation_continue
-Amek ad ttreḍeɣ i tigawsiwin?,evaluation_interne_et_formation_continue
-D acu n yisental i d-yettunefken?,evaluation_interne_et_formation_continue
-Anida ara d-afeɣ wudem n tigawsiwin?,evaluation_interne_et_formation_continue
+ما هو هدف التقييم الداخلي في FSO؟,evaluation_interne_et_formation_continue
+من المسؤول عن عملية التقييم؟,evaluation_interne_et_formation_continue
+ما هي معايير التقييم؟,evaluation_interne_et_formation_continue
+كيف يمكن الوصول إلى تقارير التقييم؟,evaluation_interne_et_formation_continue
+كم مرة تتم عمليات التقييم؟,evaluation_interne_et_formation_continue
+كيف يمكن اقتراح تحسينات؟,evaluation_interne_et_formation_continue
+من يمكنه المشاركة في الدورات المستمرة؟,evaluation_interne_et_formation_continue
+كيف يمكن التسجيل في الدورات؟,evaluation_interne_et_formation_continue
+ما هي المواضيع المتاحة للدورات؟,evaluation_interne_et_formation_continue
+أين يمكن العثور على جدول الدورات؟,evaluation_interne_et_formation_continue
+ⴷ ⴰⵛⵓ ⵉ ⴷ ⵓⵙⴻⵏⴽⴻⵔ ⴰⴷⵉⴳⴰⵏ ⴷⴻⴳ FSO?,evaluation_interne_et_formation_continue  
+ⴰⵏⵡⴰ ⵉ ⴷ ⴰⵏⴻⵔⵎⴰⵙ ⵏ ⵓⵙⵡⵉⵔ?,evaluation_interne_et_formation_continue  
+⛣ⴰⵏⵉ ⵍⵍⴰⵏ ⵉⵎⴻⵣⵣⵡⵔⴰ ⵏ ⵓⵙⴻⵏⴽⴻⵔ?,evaluation_interne_et_formation_continue  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⴰⴼⴻɣ ⵉⵏɣⵎⵉⵙⴻⵏ ⵏ ⵓⵙⴻⵏⴽⴻⵔ?,evaluation_interne_et_formation_continue  
+ⵎⵉⴽ ⴰⵔⴰ ⵜⵜⵡⴰⵙⵍⴰⵍⴻⵏ ⵉⵙⴻⵏⴽⴻⵔ?,evaluation_interne_et_formation_continue  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵙⵓⵜⵔⴻɣ ⵉⵙⵍⴻⵃⵢⵓ?,evaluation_interne_et_formation_continue  
+ⴰⵏⵡⴰ ⵉ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵎⵎⵙⵍⴰⵢ ⵜⵉⴳⴰⵡⵙⵉⵡⵏ?,evaluation_interne_et_formation_continue  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⵜⵔⴻḍⴻɣ ⵉ ⵜⵉⴳⴰⵡⵙⵉⵡⵏ?,evaluation_interne_et_formation_continue  
+ⴷ ⴰⵛⵓ ⵏ ⵢⵉⵙⴻⵏⵜⴰⵍ ⵉ ⴷ-ⵢⴻⵜⵜⵓⵏⴻⴼⴽⴻⵏ?,evaluation_interne_et_formation_continue  
+ⴰⵏⵉⴷⴰ ⴰⵔⴰ ⴷ-ⴰⴼⴻɣ ⵓⴷⴻⵎ ⵏ ⵜⵉⴳⴰⵡⵙⵉⵡⵏ?,evaluation_interne_et_formation_continue  
+ⴰⵏⴰ ⵏ ⵜⴰⵙⵙⴰⵡⵜ ⵜⵉⵏⴰⵡⵉ ⵏ FSO ?,evaluation_interne_et_formation_continue
+ⵉⵎⵙⵙⴰⵡⵉ ⵏ ⵙⵙⴰⵡⵉⵏ ?,evaluation_interne_et_formation_continue
+ⴰⵏⴰ ⴷⵔⴰⵔⴻⵏ ⵏ ⵜⵉⵏⴰⵡⵉ?,evaluation_interne_et_formation_continue
+ⴰⵙⴳⵯⴰⵏ ⵏ ⵜⴰⵙⵙⴰⵡⵜ?,evaluation_interne_et_formation_continue
+ⴰⵎⴰⵢⵢⵓⵔ ⵏ ⵜⵉⵏⴰⵡⵉ ?,evaluation_interne_et_formation_continue
+ⴰⴷⴰⵎⵏ ⵢⴰⵏ ⵜⵎⵙⵙⵓⴼⵜ?,evaluation_interne_et_formation_continue
+ⴰⵙⴳⵯⴰⵏ ⵢⵏⴰⵏ ⵜⵉⵏⴰⵡⵉ?,evaluation_interne_et_formation_continue
+ⴰⵏⴰ ⵢⵏⴰⵏ ⵜⵎⵙⵙⵓⴼⵜ?,evaluation_interne_et_formation_continue
+ⴰⵎⴰⵣⵉⵖ ⵏ ⵜⵉⵏⴰⵡⵉ ⵢⵏⴰⵏ?,evaluation_interne_et_formation_continue
+ⴰⵎⵙⵙⴰⵡⵜ ⵏ ⵜⵉⵏⴰⵡⵉ ⴰⵙⴳⴰⵎⴰ?,evaluation_interne_et_formation_continue
 Qu'est-ce que le portail IMIST exactement ?,portail_des_revues_scientifiques_marocaines_imist
 Comment obtenir un accès au portail ?,portail_des_revues_scientifiques_marocaines_imist
 Quelles revues sont disponibles ?,portail_des_revues_scientifiques_marocaines_imist
@@ -1312,6 +2283,16 @@ Comment citer des articles du portail ?,portail_des_revues_scientifiques_marocai
 Qui contacter pour des problèmes techniques ?,portail_des_revues_scientifiques_marocaines_imist
 Peut-on accéder au portail hors campus ?,portail_des_revues_scientifiques_marocaines_imist
 Comment créer des alertes thématiques ?,portail_des_revues_scientifiques_marocaines_imist
+Quels types de revues sont indexés ?,portail_des_revues_scientifiques_marocaines_imist
+Comment accéder aux archives ?,portail_des_revues_scientifiques_marocaines_imist
+Y a-t-il un accès réservé aux étudiants ?,portail_des_revues_scientifiques_marocaines_imist
+Comment télécharger un article ?,portail_des_revues_scientifiques_marocaines_imist
+Quels sont les critères d’inclusion des revues ?,portail_des_revues_scientifiques_marocaines_imist
+Peut-on soumettre un article au portail ?,portail_des_revues_scientifiques_marocaines_imist
+Comment consulter les dernières publications ?,portail_des_revues_scientifiques_marocaines_imist
+Quels sont les avantages du portail ?,portail_des_revues_scientifiques_marocaines_imist
+Comment signaler une erreur dans un article ?,portail_des_revues_scientifiques_marocaines_imist
+Qui gère la plateforme IMIST ?,portail_des_revues_scientifiques_marocaines_imist
 What exactly is IMIST portal?,portail_des_revues_scientifiques_marocaines_imist
 How to get access to the portal?,portail_des_revues_scientifiques_marocaines_imist
 Which journals are included?,portail_des_revues_scientifiques_marocaines_imist
@@ -1322,6 +2303,16 @@ How to cite articles from the portal?,portail_des_revues_scientifiques_marocaine
 Who to contact for technical issues?,portail_des_revues_scientifiques_marocaines_imist
 Can I access it off-campus?,portail_des_revues_scientifiques_marocaines_imist
 How to set up topic alerts?,portail_des_revues_scientifiques_marocaines_imist
+What exactly is the IMIST portal?,portail_des_revues_scientifiques_marocaines_imist
+How to get access to the portal?,portail_des_revues_scientifiques_marocaines_imist
+Which journals are available?,portail_des_revues_scientifiques_marocaines_imist
+How to perform an advanced search?,portail_des_revues_scientifiques_marocaines_imist
+Who can use this service?,portail_des_revues_scientifiques_marocaines_imist
+Is there a user guide?,portail_des_revues_scientifiques_marocaines_imist
+How to cite articles from the portal?,portail_des_revues_scientifiques_marocaines_imist
+Who to contact for technical issues?,portail_des_revues_scientifiques_marocaines_imist
+Can the portal be accessed off-campus?,portail_des_revues_scientifiques_marocaines_imist
+How to create thematic alerts?,portail_des_revues_scientifiques_marocaines_imist
 ما هو بوابة IMIST بالضبط؟,portail_des_revues_scientifiques_marocaines_imist
 كيف أحصل على دخول للبوابة؟,portail_des_revues_scientifiques_marocaines_imist
 ما هي المجلات المتوفرة؟,portail_des_revues_scientifiques_marocaines_imist
@@ -1332,16 +2323,45 @@ How to set up topic alerts?,portail_des_revues_scientifiques_marocaines_imist
 من أتصل بخصوص مشاكل تقنية？,portail_des_revues_scientifiques_marocaines_imist
 هل يمكن الولوج خارج الحرم الجامعي？,portail_des_revues_scientifiques_marocaines_imist
 كيف أحدث تنبيهات مواضيعية？,portail_des_revues_scientifiques_marocaines_imist
-D acu i d IMIST s tidet?,portail_des_revues_scientifiques_marocaines_imist
-Amek ara d-awiɣ anekcum?,portail_des_revues_scientifiques_marocaines_imist
-Mani llan timenḍiwt yettwaskelsen?,portail_des_revues_scientifiques_marocaines_imist
-Amek ara nadi s tarrayt tussna?,portail_des_revues_scientifiques_marocaines_imist
-Anwa i yezmer ad iseqdec?,portail_des_revues_scientifiques_marocaines_imist
-Is yella umedru n useqdec?,portail_des_revues_scientifiques_marocaines_imist
-Amek ara smedyeɣ imenḍiwen?,portail_des_revues_scientifiques_marocaines_imist
-Anwa ara ɣeɣ ɣef uguren n tetiknulujit?,portail_des_revues_scientifiques_marocaines_imist
-Is yella anekcum s uẓeṭṭa?,portail_des_revues_scientifiques_marocaines_imist
-Amek ara sbaduɣ ilɣa n yisental?,portail_des_revues_scientifiques_marocaines_imist
+ما هو بوابة IMIST بالضبط؟,portail_des_revues_scientifiques_marocaines_imist
+كيف يمكنني الحصول على الوصول إلى البوابة؟,portail_des_revues_scientifiques_marocaines_imist
+ما هي المجلات المتاحة؟,portail_des_revues_scientifiques_marocaines_imist
+كيف يمكن إجراء بحث متقدم؟,portail_des_revues_scientifiques_marocaines_imist
+من يمكنه استخدام هذه الخدمة؟,portail_des_revues_scientifiques_marocaines_imist
+هل يوجد دليل للاستخدام؟,portail_des_revues_scientifiques_marocaines_imist
+كيف يمكن الاستشهاد بالمقالات؟,portail_des_revues_scientifiques_marocaines_imist
+من يمكن الاتصال به للمشاكل التقنية؟,portail_des_revues_scientifiques_marocaines_imist
+هل يمكن الوصول إلى البوابة خارج الحرم الجامعي؟,portail_des_revues_scientifiques_marocaines_imist
+كيف يمكن إنشاء تنبيهات موضوعية؟,portail_des_revues_scientifiques_marocaines_imist
+ⴷ ⴰⵛⵓ ⵉ ⴷ IMIST ⵙ ⵜⵉⴷⴻⵜ?,portail_des_revues_scientifiques_marocaines_imist  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⴷ-ⴰⵡⴻɣ ⴰⵏⴻⴽⴽⵓⵎ?,portail_des_revues_scientifiques_marocaines_imist  
+⛣ⴰⵏⵉ ⵍⵍⴰⵏ ⵜⵉⵎⴻⵏⴹⵉⵡⵜ ⵢⴻⵜⵜⵡⴰⵙⴽⴻⵍⵙⴻⵏ?,portail_des_revues_scientifiques_marocaines_imist  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵏⴰⴷⵉ ⵙ ⵜⵟⴰⵔⴰⵢⵜ ⵜⵓⵙⵏⴰ?,portail_des_revues_scientifiques_marocaines_imist  
+ⴰⵏⵡⴰ ⵉ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵉⵙⵇⴷⴻⵛ?,portail_des_revues_scientifiques_marocaines_imist  
+ⵉⵙ ⵢⴻⵍⵍⴰ ⵓⵎⴻⴷⵔⵓ ⵏ ⵓⵙⵇⴷⴻⵛ?,portail_des_revues_scientifiques_marocaines_imist  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⵎⴻⴷⵢⴻⵖ ⵉⵎⴻⵏḍⵉⵡⴻⵏ?,portail_des_revues_scientifiques_marocaines_imist  
+ⴰⵏⵡⴰ ⴰⵔⴰ ⵖⴻⵖ ⵖⴻⵖ ⵉⴼ ⵓⴳⵓⵔⴻⵏ ⵏ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵜ?,portail_des_revues_scientifiques_marocaines_imist  
+ⵉⵙ ⵢⴻⵍⵍⴰ ⴰⵏⴻⴽⴽⵓⵎ ⵙ ⵓẓⴻⵟⵜⴰ?,portail_des_revues_scientifiques_marocaines_imist  
+ⴰⵎⴻⴽ ⴰⵔⴰ ⵙⴱⴰⴷⵓⵖ ⵉⵍɣⴰ ⵏ ⵢⵉⵙⴻⵏⵜⴰⵍ?,portail_des_revues_scientifiques_marocaines_imist  
+ⴰⵙⵙⴰⵡⴻⵜ ⵏ IMIST ⴰⵏⴳⴰⵡⴰⵙⵜ?,portail_des_revues_scientifiques_marocaines_imist
+ⴰⴷⴳⴳⵯⴰ ⵢⵉⵏⴰⵢ ⵏ ⴰⵙⵙⵉⵏⵏⴰ?,portail_des_revues_scientifiques_marocaines_imist
+ⴰⵎⵙⵙⴰⵡⴻⵏ ⵏ ⴰⵙⵙⴰⵏⴳⵉⵏ?,portail_des_revues_scientifiques_marocaines_imist
+ⴰⵎⵙⵙⴰⵡⴻⵏ ⵏ ⴰⵙⵙⵉⵍⴰⵏ ⵜⴰⴼⵓⵙⵜ?,portail_des_revues_scientifiques_marocaines_imist
+ⵉⵎⵙⵙⴰⵡⵉⵏ ⵏ ⴰⴷⵓⵔⴰⵙ?,portail_des_revues_scientifiques_marocaines_imist
+ⵉⵙⴳⵯⴰⵏ ⵏ ⵜⴰⵙⵙⴰⵡⵜ ⵓⵙⴳⴰⵎⴰ?,portail_des_revues_scientifiques_marocaines_imist
+ⴰⵎⴰⵣⵉⵖ ⵏ ⵙⴳⵯⵯⴰⵏ?,portail_des_revues_scientifiques_marocaines_imist
+ⴰⵢⵢⵓ ⵢⵉⵏ ⵏⵜⵙⵉⴽⵔⴰⵏⵜ?,portail_des_revues_scientifiques_marocaines_imist
+ⴰⵢⴰ ⴷⴰ ⵎⵙⵙⵓⴼ?,portail_des_revues_scientifiques_marocaines_imist
+ⴰⵎⵙⵙⴰⵡⵜ ⵏ ⵉⵙⵏⵙⵏ?,portail_des_revues_scientifiques_marocaines_imist
+
+
+
+
+
+
+
+
+
 Quelles sont les conditions d'accès à la bibliothèque ?,acces_a_la_bibliotheque
 Faut-il une carte spéciale pour entrer ?,acces_a_la_bibliotheque
 Peut-on accéder le week-end ?,acces_a_la_bibliotheque
@@ -1380,6 +2400,8 @@ Is yemmeslayen imdanen n beṛṛa?,acces_a_la_bibliotheque
 Anida ara d-afeɣ anekcum meṛṛa?,acces_a_la_bibliotheque
 Amek ara ẓreɣ amkan n uselkim?,acces_a_la_bibliotheque
 Anwa ara ɣeɣ ma yella ugur n ukcem?,acces_a_la_bibliotheque
+
+
 Comment obtenir un relevé de notes officiel ?,demande_de_releve_de_notes
 Quel est le délai de traitement ?,demande_de_releve_de_notes
 Peut-on le recevoir par email ?,demande_de_releve_de_notes
@@ -1418,6 +2440,16 @@ Amek ara senqeḍ etat n usuter?,demande_de_releve_de_notes
 Is yella tazwart srid?,demande_de_releve_de_notes
 Anwa ara ɣeɣ ma yella ugur?,demande_de_releve_de_notes
 Is tzemreɣ ad d-awiɣ tazwart n uḍris?,demande_de_releve_de_notes
+
+
+
+
+
+
+
+
+
+
 Quand faut-il s'inscrire aux examens ?,inscription_aux_examens
 Comment s'inscrire en ligne ?,inscription_aux_examens
 Quels sont les documents nécessaires ?,inscription_aux_examens
@@ -12069,7 +13101,7 @@ Isekelsen yelhan ttusirgen?,Inscription et Réinscription
 Comment puis-je m'inscrire en première année ?,Inscription et Réinscription
 Quelles sont les démarches pour un nouvel étudiant ?,Inscription et Réinscription
 Comment faire sa première inscription à l'université ?,Inscription et Réinscription
-Je suis nouveau,comment m'inscrire ?,Inscription et Réinscription
+"Je suis nouveau,comment m'inscrire ?",Inscription et Réinscription
 Première inscription : quelles sont les étapes ?,Inscription et Réinscription
 Comment un bachelier peut-il s'inscrire ?,Inscription et Réinscription
 Procédure d'inscription pour les nouveaux étudiants ?,Inscription et Réinscription
@@ -12077,23 +13109,23 @@ Je viens d'avoir mon bac,comment m'inscrire ?
 Inscription en L1 : comment procéder ?,Inscription et Réinscription
 Étapes d'inscription pour un étudiant débutant ?,Inscription et Réinscription
 Comment s'inscrire quand on sort du lycée ?,Inscription et Réinscription
-Première fois à l'université,comment m'inscrire ?,Inscription et Réinscription
-Je débute mes études supérieures,comment faire ?,Inscription et Réinscription
+"Première fois à l'université,comment m'inscrire ?",Inscription et Réinscription
+"Je débute mes études supérieures,comment faire ?",Inscription et Réinscription
 Comment m'inscrire en tant que primo-arrivant ?,Inscription et Réinscription
 Inscription initiale à l'université : mode d'emploi ?,Inscription et Réinscription
 How do I enroll as a first-year student?,Inscription et Réinscription
 What are the steps for new student registration?,Inscription et Réinscription
 How can I register for my first year at university?,Inscription et Réinscription
-I'm new here,how do I enroll?,Inscription et Réinscription
+"I'm new here,how do I enroll?",Inscription et Réinscription
 First-time enrollment: what are the procedures?,Inscription et Réinscription
 How does a high school graduate register?,Inscription et Réinscription
 Registration process for new students?,Inscription et Réinscription
-I just graduated high school,how do I enroll?,Inscription et Réinscription
+"I just graduated high school,how do I enroll?",Inscription et Réinscription
 How to register for freshman year?,Inscription et Réinscription
 Enrollment steps for beginning students?,Inscription et Réinscription
 How do I register coming from high school?,Inscription et Réinscription
-First time at university,how to enroll?,Inscription et Réinscription
-I'm starting higher education,how do I register?,Inscription et Réinscription
+"First time at university,how to enroll?",Inscription et Réinscription
+"I'm starting higher education,how do I register?",Inscription et Réinscription
 How do I enroll as a newcomer?,Inscription et Réinscription
 Initial university registration: how does it work?,Inscription et Réinscription
 كيف أسجل كطالب في السنة الأولى؟,Inscription et Réinscription
@@ -12114,16 +13146,16 @@ Initial university registration: how does it work?,Inscription et Réinscription
 Amek ara sekleseɣ d anemhel amezwaru?,Inscription et Réinscription
 Ayɣer n iḥricen n usekles i ynemhel imaynuten?,Inscription et Réinscription
 Amek zemreɣ ad sekleseɣ deg useggas-iw amezwaru n temdint?,Inscription et Réinscription
-D amaynut-iw da,amek ara sekleseɣ?,Inscription et Réinscription
+"D amaynut-iw da,amek ara sekleseɣ?",Inscription et Réinscription
 Asekles n tikkelt tamezwarut: ayɣer n imecwaṛ?,Inscription et Réinscription
 Amek isekles win i d-yeffeɣen seg uɣerbaz?,Inscription et Réinscription
 Akud n usekles i ynemhel imaynuten?,Inscription et Réinscription
-Akken kan ffeɣeɣ seg uɣerbaz,amek ara sekleseɣ?,Inscription et Réinscription
+"Akken kan ffeɣeɣ seg uɣerbaz,amek ara sekleseɣ?",Inscription et Réinscription
 Amek ara sekleseɣ deg useggas amezwaru?,Inscription et Réinscription
 Iḥricen n usekles i ynemhel ibeddayen?,Inscription et Réinscription
 Amek ara sekleseɣ yewweḍ-d seg uɣerbaz?,Inscription et Réinscription
-Tikelt tamezwarut deg temdint,amek ara sekleseɣ?,Inscription et Réinscription
-Beddreɣ tizrawin n ufella,amek ara xedmeɣ?,Inscription et Réinscription
+"Tikelt tamezwarut deg temdint,amek ara sekleseɣ?",Inscription et Réinscription
+"Beddreɣ tizrawin n ufella,amek ara xedmeɣ?",Inscription et Réinscription
 Amek ara sekleseɣ d win iwewḍen imaynuten?,Inscription et Réinscription
 Asekles amezwaru n temdint: amek iteddu?,Inscription et Réinscription
 Où dois-je aller pour ma première inscription ?,Inscription et Réinscription
@@ -12914,7 +13946,6 @@ Acu d wakud ara yettwakkes i tarrirt n iThenticate?,activation_compte_ithenticat
 Ilaq ad tazdeɣ i iThenticate?,activation_compte_ithenticate_doctorants
 Yezmer ad tesqedceɣ i iThenticate bla tarrirt?,activation_compte_ithenticate_doctorants
 Ami n iThenticate ilaq ad yili d-mazal?,activation_compte_ithenticate_doctorants
-
 Quels sont les cours proposés au semestre 2 en Licence SMI ?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2
 Peut-on avoir la liste des matières du S2 en SMI ?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2
 Y a-t-il des options au choix en S2 pour la Licence SMI ?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2
@@ -13011,7 +14042,6 @@ Anida zemreɣ ad d-afeɣ aglam n yisekkilen n semestṛ 1 deg tsertit SMI?,progr
 Issekkilen n semestṛ 1 deg SMI llant kan deg yisalasn?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1
 Acḥal n yisragen n uselmed i tusnakt deg semestṛ 1 n tsertit SMI?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1
 Yella uselmed n tallelt i yisekkilen n semestṛ 1 deg SMI?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1
-
 Quels sont les cours proposés au semestre 2 en Licence sma ?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2
 Peut-on avoir la liste des matières du S2 en sma ?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2
 Y a-t-il des options au choix en S2 pour la Licence sma ?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s2
@@ -13108,7 +14138,6 @@ Anida zemreɣ ad d-afeɣ aglam n yisekkilen n semestṛ 1 deg tsertit sma?,progr
 Issekkilen n semestṛ 1 deg sma llant kan deg yisalasn?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1
 Acḥal n yisragen n uselmed i tusnakt deg semestṛ 1 n tsertit sma?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1
 Yella uselmed n tallelt i yisekkilen n semestṛ 1 deg sma?,programme_licence_fondamentale_smi_et_sma_et_smia_modules_s1
-
 Quel est le contenu du programme de la Licence GPI ?,programme_licence_gpi
 Pouvez-vous détailler les cours de la Licence Génie des Procédés Industriels ?,programme_licence_gpi
 Y a-t-il des stages obligatoires en Licence GPI ?,programme_licence_gpi

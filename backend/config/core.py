@@ -1,7 +1,7 @@
 
 from pathlib import Path
 
-CLASSIFIER_MODEL = Path(__file__).parent.parent / 'classifiers' / 'intent_classifier.pkl'
+CLASSIFIER_MODEL = Path(__file__).parent.parent / 'classifiers' / 'advanced_multilingual_intent_classifier.pkl'
 DATASET = Path(__file__).parent.parent / 'data' / 'dataset_dict_date.json'
 
 
