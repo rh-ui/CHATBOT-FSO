@@ -6,6 +6,7 @@ import re
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from .helper import filter_fso_content
 # from ..services.LLMService import llm_service
 
 
@@ -14,10 +15,7 @@ logger = logging.getLogger(__name__)
 
 WHITELIST_DOMAINS = ["fso.ump.ma", ".gov.ma"]
 
-def is_domain_allowed(url):
-    return any(domain in url for domain in WHITELIST_DOMAINS)
-
-def extract_keywords(text):
+def extract_keywords(text): #using this
     cleaned = re.sub(r'[^\w\s]', ' ', text.lower())
     words = cleaned.split()
     
@@ -32,7 +30,7 @@ def extract_keywords(text):
     
     return [word for word in words if len(word) > 2 and word not in stop_words]
 
-def calculate_semantic_score(snippet, query):
+def calculate_semantic_score(snippet, query): #using this
 
     scores = {}
     
@@ -96,7 +94,7 @@ def calculate_semantic_score(snippet, query):
     
     return final_score, scores
 
-def filter_snippets_by_semantic_relevance(snippets, query, top_k=5, min_score=0.01):
+def filter_snippets_by_semantic_relevance(snippets, query, top_k=10, min_score=0.1): #using this
     if not snippets:
         return []
     
@@ -128,7 +126,7 @@ def filter_snippets_by_semantic_relevance(snippets, query, top_k=5, min_score=0.
     # Retourner les top_k meilleurs
     return scored_snippets[:top_k]
 
-def google_search_and_extract(query, lang, max_results=10):
+def google_search_and_extract(query, lang, max_results=10): #using this
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=False,
@@ -158,20 +156,30 @@ def google_search_and_extract(query, lang, max_results=10):
             });
         """)
 
-        if (lang == 'fr'):
+        if lang == 'fr':
             if 'fso' in query.lower():
-                query = query.replace('fso', 'la faculté des science oujda')
+                query = query.replace('fso', 'la faculté des sciences oujda')
+            elif not any(term in query.lower() for term in ['la faculté des sciences oujda', 'faculté des sciences', 'faculté oujda']):
+                query = query + ' faculté des sciences oujda'
+
         elif lang == 'en':
             if 'fso' in query.lower():
-                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
-
+                query = query.replace('fso', 'faculty of sciences oujda')
+            elif not any(term in query.lower() for term in ['faculty of sciences oujda', 'faculty of sciences', 'faculty oujda']):
+                query = query + ' faculty of sciences oujda'
+                    
         elif lang == 'ar':
             if 'fso' in query.lower():
-                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
+                query = query.replace('fso', 'كلية العلوم وجدة')
+            elif not any(term in query for term in ['كلية العلوم وجدة', 'كلية العلوم', 'وجدة']):
+                query = query + ' كلية العلوم وجدة'
 
         elif lang == 'amz':
             if 'fso' in query.lower():
-                query['fso'] = query.get('fso', '').replace('la faculté des science oujda', '')
+                query = query.replace('fso', 'tasdawit n tmusniwin ujda')
+            elif not any(term in query.lower() for term in ['tasdawit n tmusniwin ujda', 'tmusniwin ujda', 'ujda']):
+                query = query + ' tasdawit n tmusniwin ujda'
+
         filtered_query = f"site:fso.ump.ma OR site:cg.gov.ma {query}"
 
         search_url = f"https://www.google.com/search?q={filtered_query}&num={max_results}&hl={lang}"
@@ -363,7 +371,7 @@ def google_search_and_extract(query, lang, max_results=10):
                         # Prendre quelques exemples pour voir la structure
                         for i in range(min(3, test_results.count())):
                             try:
-                                example_text = test_results.nth(i).inner_text()[:100]
+                                example_text = test_results.nth(i).inner_text()[:200]
                                 print(f"   Exemple {i+1}: {example_text}...")
                             except:
                                 pass
@@ -377,7 +385,7 @@ def google_search_and_extract(query, lang, max_results=10):
         if len(snippets) == 0:
             return []
         
-        top_snippets = filter_snippets_by_semantic_relevance(snippets, query, top_k=5)
+        top_snippets = filter_snippets_by_semantic_relevance(snippets, query, top_k=10)
 
         # Formatter les résultats
         resultats_formates = []
@@ -406,18 +414,8 @@ def google_search_and_extract(query, lang, max_results=10):
 
         return resultats_formates
 
-def afficher_resultats(resultats):
 
-    if not resultats:
-        return
-    
-    for i, resultat in enumerate(resultats, 1):
-        for metric, score in resultat['scores_detailles'].items():
-            print(f"   • {metric}: {score}")
-        
-        print("-" * 80)
-
-def get_no_results_message(lang: str) -> str:
+def get_no_results_message(lang: str) -> str: #using this
     """Get appropriate no results message based on language"""
     messages = {
         'fr': "Désolé, je n'ai pas trouvé d'informations pertinentes pour répondre à votre question. Pouvez-vous reformuler votre question ou être plus spécifique?",
@@ -427,38 +425,136 @@ def get_no_results_message(lang: str) -> str:
     }
     return messages.get(lang, messages['fr'])
 
-def get_internet_results_for_question(question: str, lang: str) -> List[Dict]:
-    """
-    Get internet search results for a specific question and format them consistently
-    NO LLM CALLS HERE - Just data formatting
-    """
+def get_internet_results_for_question(question: str, lang: str) -> List[Dict]: #using this
     try:
         logger.info(f"Searching internet for: {question}")
         
         # Use the existing internet search function
-        search_results = google_search_and_extract(question, lang, max_results=10)  # Reduced from 15 to 10
+        search_results_t = google_search_and_extract(question, lang, max_results=10)
+        
+        # Debug: Check what we got from the search
+        print(f"DEBUG: google_search_and_extract returned: {type(search_results_t)}")
+        if search_results_t:
+            print(f"DEBUG: First search result: {search_results_t[0] if search_results_t else 'None'}")
+        
+        # Filter FSO content
+        search_results = filter_fso_content(search_results_t)
         
         formatted_results = []
         for i, result in enumerate(search_results, 1):
-            formatted_result = {
-                'question': question,
-                'answer': f"{result['titre']}\n{result['snippet']}",
-                'lang': lang,
-                'intent': 'internet_search',
-                'confidence': result['score_final'],
-                'date': 'recent',
-                'source': 'internet',
-                'meta': {
-                    'url': result['url'],
-                    'detailed_scores': result['scores_detailles'],
-                    'title': result['titre']
+            try:
+                # Safely get values with defaults and type conversion
+                title = result.get('titre', result.get('title', 'No Title'))
+                snippet = result.get('snippet', '')
+                url = result.get('url', '')
+                score = result.get('score_final', 0.0)
+                detailed_scores = result.get('scores_detailles', {})
+                
+                # Ensure title and snippet are strings
+                if isinstance(title, list):
+                    title = " ".join(str(item) for item in title)
+                elif not isinstance(title, str):
+                    title = str(title) if title is not None else "No Title"
+                
+                if isinstance(snippet, list):
+                    snippet = " ".join(str(item) for item in snippet)
+                elif not isinstance(snippet, str):
+                    snippet = str(snippet) if snippet is not None else ""
+                
+                # Clean and extract meaningful content from snippet
+                clean_snippet = _clean_search_snippet(snippet, title, url)
+                
+                # Ensure score is a number
+                try:
+                    score = float(score) if score is not None else 0.0
+                except (ValueError, TypeError):
+                    score = 0.0
+                
+                formatted_result = {
+                    'question': question,
+                    'answer': clean_snippet,  # Use cleaned snippet only
+                    'lang': lang,
+                    'intent': 'internet_search',
+                    'confidence': score,
+                    'date': 'recent',
+                    'source': 'internet',
+                    'meta': url if url and url.startswith('http') else None  # Only valid URLs
                 }
-            }
-            formatted_results.append(formatted_result)
+                formatted_results.append(formatted_result)
+            
+            except Exception as e:
+                print(f"DEBUG: Error processing result {i}: {str(e)}")
+                print(f"DEBUG: Problematic result: {result}")
+                continue
         
         logger.info(f"Internet search returned {len(formatted_results)} results")
         return formatted_results
-        
+    
     except Exception as e:
         logger.error(f"Error in internet search: {str(e)}")
+        print(f"DEBUG: Full error details: {e}")
+        import traceback
+        traceback.print_exc()
         return []
+    
+def _clean_search_snippet(snippet: str, title: str, url: str) -> str: #using this
+
+    if not snippet:
+        return "No content available"
+    
+    # Remove common Google search artifacts
+    lines_to_remove = [
+        'ترجم هذه الصفحة',  # Arabic "translate this page"
+        'Translate this page',
+        'المفقودة:',  # "Missing:"
+        '› actualite ›',
+        'http://',
+        'https://',
+        '...',
+        '·'
+    ]
+    
+    # Split snippet into lines and clean them
+    lines = snippet.split('\n')
+    cleaned_lines = []
+    
+    for line in lines:
+        line = line.strip()
+        
+        # Skip empty lines
+        if not line:
+            continue
+            
+        # Skip lines that are just URLs or URL fragments
+        if line.startswith('http') or '›' in line or line == title:
+            continue
+            
+        # Skip translation and artifact lines
+        skip_line = False
+        for artifact in lines_to_remove:
+            if artifact in line:
+                skip_line = True
+                break
+        
+        if skip_line:
+            continue
+            
+        # Keep meaningful content lines
+        if len(line) > 10:  # Only keep lines with substantial content
+            cleaned_lines.append(line)
+    
+    # Join cleaned lines and limit length
+    cleaned_content = ' '.join(cleaned_lines)
+    
+    # If no meaningful content found, try to extract from title
+    if not cleaned_content or len(cleaned_content) < 20:
+        if title and title != "No Title" and not title.startswith('http'):
+            cleaned_content = f"Information found about: {title}"
+        else:
+            cleaned_content = "Relevant information found but content not clearly extractable"
+    
+    # Limit length to prevent overly long responses
+    if len(cleaned_content) > 300:
+        cleaned_content = cleaned_content[:300] + "..."
+    
+    return cleaned_content

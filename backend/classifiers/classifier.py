@@ -13,7 +13,7 @@ import csv
 import warnings
 warnings.filterwarnings('ignore')
 
-class MultilingualIntentClassifier:
+class MultilingualIntentClassifier: #using this
     
     def __init__(self, csv_file_path = None):
 
@@ -28,7 +28,7 @@ class MultilingualIntentClassifier:
         self.best_model = None
         self.best_vectorizer = None
         
-    def load_and_preprocess_data(self):
+    def load_and_preprocess_data(self): #using this
         try:
             self.data = pd.read_csv(self.csv_file_path, encoding='utf-8')
             
@@ -146,7 +146,7 @@ class MultilingualIntentClassifier:
         
         return self.data
     
-    def clean_text(self, text):
+    def clean_text(self, text): #using this
         """
         Clean and preprocess text
         """
@@ -165,7 +165,7 @@ class MultilingualIntentClassifier:
         
         return text
     
-    def prepare_features(self):
+    def prepare_features(self): #using this
         # TF-IDF with different n-gram ranges
         self.vectorizers = {
             'tfidf_unigram': TfidfVectorizer(
@@ -202,7 +202,7 @@ class MultilingualIntentClassifier:
             )
         }
         
-    def split_data(self, test_size=0.2, random_state=42):
+    def split_data(self, test_size=0.2, random_state=42): #using this
         
         X = self.data['question_clean']
         y = self.data['intent']
@@ -268,7 +268,7 @@ class MultilingualIntentClassifier:
             
         return True
         
-    def train_models(self):
+    def train_models(self): #using this
         # Define classifiers
         classifiers = {
             'naive_bayes': MultinomialNB(alpha=0.1),
@@ -326,7 +326,7 @@ class MultilingualIntentClassifier:
         
         return best_combo, best_score
     
-    def create_ensemble_model(self):
+    def create_ensemble_model(self): #using this
 
         
         if len(self.models) < 2:
@@ -372,7 +372,7 @@ class MultilingualIntentClassifier:
             print(f"Error creating ensemble: {str(e)}")
             return None, 0
     
-    def evaluate_best_model(self):
+    def evaluate_best_model(self): #using this
 
         
         try:
@@ -400,7 +400,7 @@ class MultilingualIntentClassifier:
         except Exception as e:
             print(f"Error in evaluation: {str(e)}")
     
-    def predict_intent(self, question, return_probabilities=False):
+    def predict_intent(self, question, return_probabilities=False): #using this
         """
         Predict intent for a new question
         """
@@ -428,7 +428,7 @@ class MultilingualIntentClassifier:
         
         return predicted_intent
     
-    def save_model(self, model_path='intent_classifier_model.pkl'):
+    def save_model(self, model_path='intent_classifier_model.pkl'): #using this
 
         try:
             model_data = {
@@ -443,7 +443,7 @@ class MultilingualIntentClassifier:
         except Exception as e:
             print(f"Error saving model: {str(e)}")
     
-    def load_model(self, model_path):
+    def load_model(self, model_path): #using this
         try:
             model_data = joblib.load(model_path)
             self.best_vectorizer = model_data['vectorizer']
@@ -453,7 +453,7 @@ class MultilingualIntentClassifier:
             print(f"Error loading model: {str(e)}")
             raise
     
-    def test_multilingual_examples(self):
+    def test_multilingual_examples(self): #using this
         """
         Test the model with multilingual examples to demonstrate its capabilities
         """

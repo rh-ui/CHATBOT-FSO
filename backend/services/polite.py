@@ -12,7 +12,7 @@ LANG_MAP = {
     'amz': 'amz',
 }
 
-def is_not_defined(lang: str):
+def is_not_defined(lang: str): #using this
     output = {
         "fr": [
             "Désolé, je n'ai pas trouvé de réponse pertinente.",
@@ -67,7 +67,7 @@ def is_not_defined(lang: str):
     return output[lang][random.randint(0, 9)]
 
 
-def detect_custom_language(text: str) -> str:
+def detect_custom_language(text: str) -> str: # using fct
     if not text or not text.strip():
         return 'fr'  
     

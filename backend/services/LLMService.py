@@ -3,12 +3,10 @@
 import requests
 import logging
 from typing import List, Dict, Any, Union
-from pydantic import BaseModel
 import json
 import os
 from datetime import datetime
 import psutil
-import GPUtil
 from .SerpService import get_internet_results_for_question
 
 # Configuration du logging
@@ -32,7 +30,7 @@ class LLMService:
         
         # Configuration pour Ollama
         self.base_url = "http://localhost:11434"
-        self.model_name = "llama3:8b"
+        self.model_name = "gpt-oss:latest"
         
         # Paramètres optimisés pour GPU
         self.gpu_optimized_options = {
@@ -184,7 +182,7 @@ class LLMService:
             'amz': "Nekk d amellal ufrawan n tesnawalt n tussniwin n Wujda. Ur ufiɣ ara talɣut tazribt ɣef usqsi-nnek deg taffa n yisefka. I wugar n telɣut, nermes tanbaḍt taneggarut n tesnawalt neɣ rzu asmel unṣib."
         }
 
-    def _call_ollama(self, prompt: str, system_prompt: str = None) -> str:
+    def _call_ollama(self, prompt: str, system_prompt: str = None) -> str: #using this
         """Appelle l'API Ollama avec optimisations GPU"""
         try:
             # Payload optimisé pour GPU
@@ -227,417 +225,7 @@ class LLMService:
         except requests.exceptions.RequestException as e:
             raise Exception(f"Erreur lors de l'appel à Ollama: {str(e)}")
 
-    def validate_comprehensive_answer(self, original_question: str, simplified_questions: List[str], 
-                                    generated_answer: str, lang: str) -> Dict[str, Any]:
-        """
-        Enhanced validation that considers the relationship between original question,
-        simplified questions, and the comprehensive answer
-        """
-        
-        validation_prompts = {
-            'fr': {
-                'system': """Tu es un validateur intelligent de réponses. Ta tâche est d'évaluer si une réponse générée est pertinente et complète pour une question originale et ses sous-questions.
-
-    RÈGLES:
-    1. Évalue si la réponse traite la question originale de manière appropriée
-    2. Vérifie si tous les aspects des sous-questions sont abordés
-    3. Identifie les éléments manquants ou non pertinents
-    4. Considère le contexte FSO (Faculté des Sciences Oujda)
-    5. Retourne un score de validation détaillé
-
-    FORMAT DE RÉPONSE:
-    - valid: 1 si la réponse est globalement satisfaisante, 0 sinon
-    - coverage_score: score de 0 à 1 indiquant le pourcentage de couverture
-    - missing_aspects: liste des aspects non couverts
-    - irrelevant_content: contenu non pertinent identifié""",
-
-                'user': """QUESTION ORIGINALE:
-    {original_question}
-
-    SOUS-QUESTIONS:
-    {simplified_questions}
-
-    RÉPONSE GÉNÉRÉE:
-    {generated_answer}
-
-    Évalue cette réponse de manière comprehensive."""
-            },
-            
-            'en': {
-                'system': """You are an intelligent answer validator. Your task is to evaluate if a generated answer is relevant and complete for an original question and its sub-questions.
-
-    RULES:
-    1. Assess if the answer appropriately addresses the original question
-    2. Verify if all aspects of sub-questions are covered
-    3. Identify missing or irrelevant elements
-    4. Consider FSO context (Faculty of Sciences Oujda)
-    5. Return a detailed validation score
-
-    RESPONSE FORMAT:
-    - valid: 1 if answer is globally satisfactory, 0 otherwise
-    - coverage_score: score from 0 to 1 indicating coverage percentage
-    - missing_aspects: list of uncovered aspects
-    - irrelevant_content: identified irrelevant content""",
-
-                'user': """ORIGINAL QUESTION:
-    {original_question}
-
-    SUB-QUESTIONS:
-    {simplified_questions}
-
-    GENERATED ANSWER:
-    {generated_answer}
-
-    Evaluate this answer comprehensively."""
-            }
-        }
-        
-        try:
-            prompt_config = validation_prompts.get(lang, validation_prompts['fr'])
-            
-            simplified_questions_text = "\n".join([f"- {q}" for q in simplified_questions])
-            
-            user_prompt = prompt_config['user'].format(
-                original_question=original_question,
-                simplified_questions=simplified_questions_text,
-                generated_answer=generated_answer
-            )
-            
-            validation_response = self._call_ollama(
-                prompt=user_prompt,
-                system_prompt=prompt_config['system']
-            )
-            
-            # Parse validation response (this would need to be implemented based on LLM output format)
-            validation_result = self._parse_validation_response(validation_response)
-            
-            logger.info(f"Comprehensive validation - Original: {original_question[:50]}...")
-            logger.info(f"Comprehensive validation - Sub-questions: {len(simplified_questions)}")
-            logger.info(f"Comprehensive validation - Result: {validation_result}")
-            
-            return validation_result
-            
-        except Exception as e:
-            logger.error(f"Error in comprehensive validation: {str(e)}")
-            return {
-                "is_valid": False,
-                "coverage_score": 0.0,
-                "missing_aspects": ["validation_error"],
-                "irrelevant_content": [],
-                "error": str(e)
-            }       
-    
-    def format_search_results_for_structuring(self, results: List[Dict[str, Union[str, float]]]) -> str:
-        """Formate tous les résultats pour permettre au LLM de les structurer"""
-        if not results:
-            return "Aucun résultat trouvé."
-        
-        formatted_results = []
-        
-        for i, result in enumerate(results, 1):
-            # Ensure we have the required fields
-            answer = result.get('answer', 'N/A')
-            confidence = result.get('confidence', result.get('score', 'N/A'))
-            
-            formatted_result = f"""
-            ═══ RÉSULTAT {i} ═══
-            Réponse: {answer}
-            Score de pertinence: {confidence}"""
-            
-            # Optional: Add metadata if available
-            if result.get('meta'):
-                formatted_result += f"\nMétadonnées: {result['meta']}"
-            
-            # Optional: Add intent information if available
-            if result.get('intent'):
-                formatted_result += f"\nIntention détectée: {result['intent']}"
-                
-            formatted_results.append(formatted_result)
-        
-        # Log the formatted results for debugging
-        logger.info(f"Formatted {len(formatted_results)} results for LLM processing")
-        
-        return "\n\n".join(formatted_results)
-
-    def generate_comprehensive_response(self, original_question: str, question_answer_pairs: List[Dict], 
-                                    all_documents: List[Dict], lang: str) -> Dict[str, Any]:
-        """
-        Generate a comprehensive response that synthesizes all question-answer relationships
-        """
-        try:
-            start_time = datetime.now()
-            
-            # Enhanced prompt configuration for comprehensive processing
-            comprehensive_prompts = {
-                'fr': {
-                    'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
-    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive et cohérente.
-
-    RÈGLES IMPORTANTES:
-    1. Analyse TOUTES les questions ensemble pour comprendre le besoin complet d'information de l'utilisateur
-    2. Examine les réponses pour identifier:
-    - Les informations complémentaires qui doivent être combinées
-    - Les contradictions qui nécessitent une résolution
-    - Les lacunes qui doivent être reconnues
-    3. Structure ta réponse pour:
-    - Répondre clairement à chaque question
-    - Montrer les connexions entre questions liées
-    - Résoudre les conflits entre réponses
-    - Maintenir un flux logique
-    4. Pour les questions temporelles, indique clairement la période de chaque information
-    5. Préserve toutes les informations uniques et précieuses tout en éliminant la redondance
-    6. Si les réponses sont en conflit, indique-le et fournis toutes les perspectives
-    7. Utilise un format structuré pour les cas multi-questions complexes
-
-    FORMAT DE SORTIE:
-    1. Réponse synthétique qui traite tous les aspects
-    2. Indication des sources d'information
-    3. Gestion des conflits ou incertitudes si nécessaire""",
-
-                    'user': """QUESTION ORIGINALE DE L'UTILISATEUR:
-    {original_question}
-
-    QUESTIONS SIMPLIFIÉES ET LEURS RÉPONSES:
-    {formatted_qa_pairs}
-
-    CONTEXTE GLOBAL:
-    - Total des questions: {num_questions}
-    - Total des sources: {num_sources}
-
-    TÂCHE: Génère une réponse comprehensive qui traite tous les aspects du besoin d'information de l'utilisateur en synthétisant toutes les informations disponibles. Résous les conflits, comble les lacunes si possible, et maintiens toutes les informations précieuses tout en éliminant la redondance."""
-                },
-                
-                'en': {
-                    'system': """You are an expert information synthesizer for the Faculty of Sciences Oujda (FSO). 
-    Your task is to analyze multiple question-answer pairs and generate a comprehensive, coherent response.
-
-    IMPORTANT RULES:
-    1. Analyze ALL questions together to understand the user's complete information need
-    2. Cross-reference answers to identify:
-    - Complementary information that should be combined
-    - Contradictions that need resolution
-    - Gaps that need to be acknowledged
-    3. Structure your response to:
-    - Address each question clearly
-    - Show connections between related questions
-    - Resolve conflicts between answers
-    - Maintain logical flow
-    4. For temporal questions, clearly indicate the timeframe of each piece of information
-    5. Preserve all unique valuable information while eliminating redundancy
-    6. If answers conflict, indicate this and provide all perspectives
-    7. Use structured format for complex multi-question cases
-
-    OUTPUT FORMAT:
-    1. Synthetic response addressing all aspects
-    2. Source information indication
-    3. Conflict or uncertainty management if needed""",
-
-                    'user': """USER'S ORIGINAL QUESTION:
-    {original_question}
-
-    SIMPLIFIED QUESTIONS AND THEIR ANSWERS:
-    {formatted_qa_pairs}
-
-    GLOBAL CONTEXT:
-    - Total questions: {num_questions}
-    - Total sources: {num_sources}
-
-    TASK: Generate a comprehensive response that addresses all aspects of the user's information need by synthesizing all available information. Resolve conflicts, fill gaps where possible, and maintain all valuable information while eliminating redundancy."""
-                },
-                
-                'ar': {
-                    'system': """أنت خبير في تجميع المعلومات لكلية العلوم وجدة (FSO).
-    مهمتك هي تحليل عدة أزواج من الأسئلة والأجوبة وإنتاج إجابة شاملة ومتماسكة.
-
-    القواعد المهمة:
-    1. حلل كل الأسئلة معاً لفهم حاجة المستخدم الكاملة للمعلومات
-    2. راجع الأجوبة لتحديد:
-    - المعلومات المكملة التي يجب دمجها
-    - التناقضات التي تحتاج حل
-    - الثغرات التي يجب الاعتراف بها
-    3. هيكل إجابتك لـ:
-    - الإجابة بوضوح على كل سؤال
-    - إظهار الروابط بين الأسئلة المترابطة
-    - حل التعارضات بين الأجوبة
-    - الحفاظ على تدفق منطقي
-    4. للأسئلة الزمنية، وضح بوضوح الإطار الزمني لكل معلومة
-    5. اعتن بكل المعلومات القيمة الفريدة مع إزالة التكرار
-    6. إذا تعارضت الأجوبة، وضح ذلك وقدم كل وجهات النظر
-    7. استخدم تنسيق منظم للحالات المتعددة الأسئلة المعقدة
-
-    تنسيق المخرجات:
-    1. إجابة تركيبية تتناول كل الجوانب
-    2. إشارة لمصادر المعلومات
-    3. إدارة التعارضات أو عدم اليقين إذا لزم الأمر""",
-
-                    'user': """السؤال الأصلي للمستخدم:
-    {original_question}
-
-    الأسئلة المبسطة وأجوبتها:
-    {formatted_qa_pairs}
-
-    السياق العام:
-    - إجمالي الأسئلة: {num_questions}
-    - إجمالي المصادر: {num_sources}
-
-    المهمة: أنتج إجابة شاملة تعالج كل جوانب حاجة المستخدم للمعلومات عبر تجميع كل المعلومات المتاحة. حل التعارضات، املأ الثغرات إن أمكن، واحتفظ بكل المعلومات القيمة مع إزالة التكرار."""
-                }
-            }
-            
-            prompt_config = comprehensive_prompts.get(lang, comprehensive_prompts['fr'])
-            
-            # Format question-answer pairs in a structured way
-            formatted_pairs = self._format_comprehensive_qa_pairs(question_answer_pairs, lang)
-            
-            # Create the comprehensive prompt
-            user_prompt = prompt_config['user'].format(
-                original_question=original_question,
-                formatted_qa_pairs=formatted_pairs,
-                num_questions=len(question_answer_pairs),
-                num_sources=len(all_documents)
-            )
-            
-            # Generate comprehensive response
-            comprehensive_response = self._call_ollama(
-                prompt=user_prompt,
-                system_prompt=prompt_config['system']
-            )
-            
-            processing_time = (datetime.now() - start_time).total_seconds()
-            
-            # Calculate comprehensive confidence
-            confidence = self._calculate_comprehensive_confidence(question_answer_pairs, all_documents)
-            
-            # Analyze question coverage
-            question_coverage = self._analyze_question_coverage(question_answer_pairs, comprehensive_response)
-            
-            logger.info(f"Comprehensive response generated with confidence: {confidence}")
-            
-            return {
-                'response': comprehensive_response,
-                'confidence': confidence,
-                'sources_used': len(all_documents),
-                'questions_addressed': len(question_answer_pairs),
-                'processing_time': processing_time,
-                'question_coverage': question_coverage,
-                'scope': 'comprehensive_fso'
-            }
-            
-        except Exception as e:
-            logger.error(f"Error generating comprehensive response: {str(e)}")
-            return {
-                'response': self.no_results_messages.get(lang, 'Erreur lors du traitement.'),
-                'confidence': 0.0,
-                'sources_used': 0,
-                'questions_addressed': 0,
-                'processing_time': 0,
-                'error': str(e),
-                'scope': 'error'
-            }      
-    
-    def _calculate_confidence(self, results: List[Dict[str, Any]]) -> float:
-            """Calcule un score de confiance basé sur les résultats"""
-            if not results:
-                return 0.0
-            
-            # Normaliser les scores entre 0 et 1 si nécessaire
-            scores = []
-            for r in results:
-                score = r.get('score', 0)
-                # Si les scores sont élevés (comme dans votre exemple 23.21), normalisez-les
-                if score > 1.0:
-                    score = score / 100  # Ajustez ce facteur selon votre échelle de score
-                scores.append(score)
-            
-            avg_score = sum(scores) / len(scores)
-            
-            # Bonus pour plusieurs sources
-            source_bonus = min(len(results) * 0.05, 0.2)
-            
-            # Bonus si les scores sont élevés
-            high_score_bonus = 0.1 if avg_score > 0.8 else 0.0
-            
-            final_confidence = min(avg_score + source_bonus + high_score_bonus, 1.0)
-            logger.info(f"Confidence = {round(final_confidence, 2)}")
-            return round(final_confidence, 2)
-    
-    def get_model_info(self) -> Dict[str, Any]:
-        """Récupère les informations sur le modèle utilisé"""
-        try:
-            response = requests.get(f"{self.base_url}/api/show", 
-                                  json={"name": self.model_name}, 
-                                  timeout=5)
-            if response.status_code == 200:
-                return response.json()
-            else:
-                return {"error": f"Erreur HTTP {response.status_code}"}
-        except Exception as e:
-            return {"error": str(e)}
-
-    def get_performance_stats(self) -> Dict[str, Any]:
-        """Récupère les statistiques de performance"""
-        try:
-            stats = {
-                "model": self.model_name,
-                "gpu_config": {
-                    "cuda_device": os.environ.get('CUDA_VISIBLE_DEVICES'),
-                    "gpu_layers": os.environ.get('OLLAMA_GPU_LAYERS'),
-                    "parallel_requests": os.environ.get('OLLAMA_NUM_PARALLEL'),
-                    "max_models": os.environ.get('OLLAMA_MAX_LOADED_MODELS')
-                },
-                "system_info": {
-                    "cpu_count": psutil.cpu_count(),
-                    "memory_total": f"{psutil.virtual_memory().total / (1024**3):.1f}GB",
-                    "memory_available": f"{psutil.virtual_memory().available / (1024**3):.1f}GB"
-                }
-            }
-            
-            # Ajouter info GPU si disponible
-            try:
-                gpus = GPUtil.getGPUs()
-                if gpus:
-                    stats["gpu_info"] = [
-                        {
-                            "name": gpu.name,
-                            "memory_total": f"{gpu.memoryTotal}MB",
-                            "memory_used": f"{gpu.memoryUsed}MB",
-                            "load": f"{gpu.load*100:.1f}%"
-                        } for gpu in gpus
-                    ]
-            except:
-                pass
-            
-            return stats
-        except Exception as e:
-            return {"error": str(e)}
-
-    def _format_context_for_llama(self, context: Dict[str, Any]) -> str:
-        """Formate le contexte de manière optimale pour Llama3:8b"""
-        try:
-            formatted_parts = []
-            
-            for key, value in context.items():
-                if isinstance(value, (str, int, float)):
-                    formatted_parts.append(f"- {key}: {value}")
-                elif isinstance(value, list):
-                    if len(value) <= 5:  # Limit list items to avoid overwhelming the model
-                        formatted_parts.append(f"- {key}: {', '.join(map(str, value))}")
-                    else:
-                        formatted_parts.append(f"- {key}: {', '.join(map(str, value[:5]))} (et {len(value)-5} autres)")
-                elif isinstance(value, dict):
-                    # Flatten nested dicts to avoid complexity
-                    sub_items = []
-                    for sub_key, sub_value in list(value.items())[:3]:  # Limit to 3 sub-items
-                        sub_items.append(f"{sub_key}: {sub_value}")
-                    formatted_parts.append(f"- {key}: {'; '.join(sub_items)}")
-            
-            return '\n'.join(formatted_parts[:10])  # Limit to 10 context items max
-            
-        except Exception as e:
-            logger.error(f"Erreur lors du formatage du contexte: {str(e)}")
-            return json.dumps(context, ensure_ascii=False, indent=2)[:500]  # Fallback with length limit
-
-    def is_faculty_related(self, question: str, lang: str = 'fr') -> bool:
+    def is_faculty_related(self, question: str, lang: str = 'fr') -> bool: #using this
         """Détermine si une question est liée à la faculté des sciences d'Oujda"""
         
         faculty_prompts = {
@@ -772,258 +360,7 @@ class LLMService:
             logger.error(f"Erreur lors de la vérification de pertinence: {str(e)}")
             return False
 
-    def generate_faculty_response(self, question: str, lang: str = 'fr') -> Dict[str, Any]:
-        """Génère une réponse basée sur le modèle fine-tuné avec vos données FSO"""
-        
-        # Prompts optimisés pour votre modèle fine-tuné
-        finetuned_prompts = {
-            'fr': f"""Tu es l'assistant virtuel officiel de la Faculté des Sciences d'Oujda (FSO) de l'Université Mohammed Premier.
-
-            Tu as été entraîné spécifiquement sur les données de la FSO. Utilise UNIQUEMENT tes connaissances sur la FSO pour répondre.
-
-            STRICTEMENT FSO SEULEMENT:
-            - Faculté des Sciences d'Oujda, Université Mohammed Premier, Maroc
-            - Évite toute confusion avec d'autres facultés (Lettres, Économie, etc.)
-            - Réponds uniquement sur ce qui concerne la FSO
-
-            Question: {question}
-
-            Réponse précise et factuelle basée sur tes données d'entraînement FSO:""",
-
-                    'en': f"""You are the official virtual assistant of the Faculty of Sciences of Oujda (FSO), 
-                    Mohammed Premier University.
-
-            You have been specifically trained on FSO data. Use ONLY your FSO knowledge to respond.
-
-            STRICTLY FSO ONLY:
-            - Faculty of Sciences of Oujda, Mohammed Premier University, Morocco  
-            - Avoid confusion with other faculties (Letters, Economics, etc.)
-            - Answer only about FSO-related matters
-
-            Question: {question}
-
-            Precise and factual response based on your FSO training data:""",
-
-                    'ar': f"""أنت المساعد الافتراضي الرسمي لكلية العلوم بوجدة (FSO) بجامعة محمد الأول.
-
-            تم تدريبك خصيصاً على بيانات كلية العلوم. استخدم فقط معرفتك بكلية العلوم للإجابة.
-
-            كلية العلوم فقط:
-            - كلية العلوم بوجدة، جامعة محمد الأول، المغرب
-            - تجنب الخلط مع كليات أخرى (الآداب، الاقتصاد، إلخ)
-            - أجب فقط عما يخص كلية العلوم
-
-            السؤال: {question}
-
-            إجابة دقيقة وواقعية مبنية على بيانات تدريبك لكلية العلوم:""",
-
-                    'amz': f"""Anta d amellal ufrawan unṣib n tesnawalt n tussniwin n Wujda (FSO) n tduklit Mohammed Amezwaru.
-
-            Tettwaselmadeḍ s talɣa tusligt ɣef yisefka n FSO. Seqdec kan tamusni-nnek n FSO i tiririt.
-
-            FSO KAN:
-            - Tasnawalt n tussniwin n Wujda, tduklit Mohammed Amezwaru, Meṛṛuk
-            - Ur ttexleḍ ara d tesnawalt-nniḍen (Adlis, Tadamsa, atg.)
-            - Rrar kan ɣef wayen yeɛnan FSO
-
-            Asqsi: {question}
-
-            Tiririt d tameɣtut d tameɣnut s talɣa n yisefka n useɣɣef-nnek FSO:"""
-        }
-        
-        try:
-            prompt = finetuned_prompts.get(lang, finetuned_prompts['fr'])
-            response = self._call_ollama(prompt=prompt)
-            
-            return {
-                'response': response,
-                'confidence': 0.9,  # Plus de confiance avec le modèle fine-tuné
-                'source': 'finetuned_model',
-                'lang': lang
-            }
-            
-        except Exception as e:
-            logger.error(f"Erreur lors de la génération de réponse fine-tunée: {str(e)}")
-            return {
-                'response': self.no_results_messages.get(lang, self.no_results_messages['fr']),
-                'confidence': 0.0,
-                'source': 'error',
-                'lang': lang,
-                'error': str(e)
-            }
-
-    def format_for_database(self, question: str, response: str, lang: str = 'fr') -> Dict[str, Any]:
-        """Formate la question et la réponse pour l'insertion dans la base de données"""
-        
-        return {
-            'question': {lang: [question]},
-            'reponse': {lang: [response]},
-            'meta': {lang: ['Généré par LLM - Connaissances générales FSO']}
-        }
-
-    def process_serp_to_response(self, question: str, serp_data: str, lang: str, 
-                    store_to_file: bool = True, filename: str = "test.json") -> Dict[str, Any]:
-        """Process SERP avec validation FSO et integration du modèle fine-tuné"""
-        
-        try:
-            # Validation FSO dans les données SERP
-            fso_indicators = [
-                "faculté des sciences", "fso", "sciences oujda", 
-                "mohammed premier", "ump.ac.ma", "fso.ump.ma"
-            ]
-            
-            serp_text = str(serp_data).lower()
-            fso_score = sum(1 for indicator in fso_indicators if indicator in serp_text)
-            
-            # Si peu d'indicateurs FSO, utiliser le modèle fine-tuné directement
-            if fso_score < 2:
-                logger.warning("SERP data contains little FSO content, using fine-tuned model instead")
-                return self.generate_faculty_response(question, lang)
-            
-            # System prompt amélioré pour traitement SERP
-            system_prompt = (
-                "TASK: Process SERP data for Faculty of Sciences Oujda (FSO) ONLY\n"
-                "CRITICAL: Filter out any content from other faculties (Letters, Economics, EST, etc.)\n"
-                "1. Use EXACT client question - DO NOT rephrase\n"
-                "2. Extract ONLY FSO-relevant facts from SERP data\n"
-                "3. Reject any information about other faculties\n"
-                "4. If no FSO-specific info, indicate clearly\n"
-                "Language: " + str(lang) + "\n"
-            )
-            
-            # Template JSON avec validation FSO
-            json_template = """{
-        "user_response": "Answer based ONLY on FSO-related SERP data",
-        "validation": {
-            "is_fso_relevant": true,
-            "rejected_content": ["list any non-FSO content found"],
-            "confidence_fso": 0.8
-        },
-        "knowledge_entry": {
-            "intent": "fso_specific_info",
-            "question": {
-                "fr": [
-                    "EXACT ORIGINAL CLIENT QUESTION FOR FSO",
-                    "FSO-focused variation of question",
-                    "another FSO-specific variation"
-                ],
-                "en": [...],
-                "ar": [...], 
-                "amz": [...]
-            },
-            "reponse": {
-                "fr": [
-                    "FSO-specific answer from SERP data",
-                    "variation focusing on FSO only",
-                    "another FSO-focused answer"
-                ],
-                "en": [...],
-                "ar": [...],
-                "amz": [...]
-            },
-            "meta": {
-                "fr": ["FSO source links only"],
-                "en": ["FSO source links only"],
-                "ar": ["FSO source links only"],
-                "amz": ["FSO source links only"]
-            }
-        },
-        "confidence": 0.8
-    }"""
-            
-            # Format SERP data avec pre-filtering
-            formatted_serp_data = self._filter_fso_content(serp_data)
-            
-            user_prompt = (
-                "ORIGINAL CLIENT QUESTION FOR FSO: '" + str(question) + "'\n\n" +
-                "IMPORTANT: This question is specifically about Faculty of Sciences Oujda (FSO)\n" +
-                "REJECT any content about other faculties (Letters, Economics, EST, etc.)\n\n" +
-                "FSO-FILTERED SERP DATA:\n" + formatted_serp_data + "\n\n" +
-                "INSTRUCTIONS:\n" +
-                "1. Use exact original question: '" + str(question) + "'\n" +
-                "2. Extract ONLY FSO-relevant information\n" +
-                "3. Mark is_fso_relevant as false if no FSO content found\n" +
-                "4. List any rejected non-FSO content\n\n" +
-                "OUTPUT FORMAT (JSON):\n" + 
-                json_template + "\n\n" +
-                "Generate the FSO-validated JSON response:"
-            )
-            
-            # Call Ollama avec votre modèle fine-tuné
-            payload = {
-                "model": self.model_name,  # Votre modèle fine-tuné
-                "prompt": user_prompt,
-                "system": system_prompt,
-                "stream": False,
-                "options": self.gpu_optimized_options.copy()
-            }
-            
-            start_time = datetime.now()
-            logger.info(f"Processing FSO-validated SERP for: {question[:50]}...")
-            
-            response = requests.post(
-                self.base_url + "/api/generate",
-                json=payload,
-                timeout=60000
-            )
-            
-            processing_time = (datetime.now() - start_time).total_seconds()
-            
-            if response.status_code == 200:
-                result = response.json()
-                llm_output = result.get('response', '').strip()
-                
-                # Parse et validate JSON
-                json_start = llm_output.find('{')
-                json_end = llm_output.rfind('}') + 1
-                
-                if json_start != -1 and json_end > json_start:
-                    json_str = llm_output[json_start:json_end]
-                    processed = json.loads(json_str)
-                    
-                    # Validation FSO
-                    validation = processed.get('validation', {})
-                    if not validation.get('is_fso_relevant', False):
-                        logger.warning("SERP content not FSO-relevant, falling back to fine-tuned model")
-                        return self.generate_faculty_response(question, lang)
-                    
-                    knowledge_entry = processed.get('knowledge_entry', {})
-                    
-                    # Force original question preservation
-                    questions = knowledge_entry.get('question', {})
-                    if questions.get('fr') and isinstance(questions['fr'], list):
-                        if questions['fr'][0] != question:
-                            questions['fr'][0] = question
-                    
-                    # Store to file if requested
-                    storage_success = False
-                    if store_to_file and knowledge_entry:
-                        storage_success = self.store_to_json_file(knowledge_entry, filename)
-                    
-                    return {
-                        'display': processed.get('user_response', 'No FSO response generated'),
-                        'storage': knowledge_entry,
-                        'confidence': processed.get('confidence', 0.7),
-                        'stored_to_file': storage_success,
-                        'file_path': filename if storage_success else None,
-                        'original_question': question,
-                        'processing_time': processing_time,
-                        'fso_validated': True,
-                        'rejected_content': validation.get('rejected_content', [])
-                    }
-                else:
-                    raise ValueError("No valid JSON in LLM response")
-                    
-            else:
-                raise Exception(f"Ollama API error: {response.status_code}")
-                
-        except Exception as e:
-            logger.error(f"Error in FSO SERP processing: {str(e)}")
-            # Fallback to fine-tuned model
-            logger.info("Falling back to fine-tuned model due to SERP processing error")
-            return self.generate_faculty_response(question, lang)
-
-    def enhance_response_with_context(self, response: str, context: Dict[str, Any], lang: str = 'fr') -> str:
+    def enhance_response_with_context(self, response: str, context: Dict[str, Any], lang: str = 'fr') -> str: #using this
         """
         Améliore la réponse en ajoutant du contexte pertinent sans modifier les faits,
         sans répéter ce qui est déjà présent, et en gardant la réponse claire et structurée.
@@ -1032,98 +369,98 @@ class LLMService:
         try:
             base_instructions = {
                 'fr': f"""
-    Tu es un assistant spécialisé dans les informations sur la Faculté des Sciences d'Oujda (FSO).
+                    Tu es un assistant spécialisé dans les informations sur la Faculté des Sciences d'Oujda (FSO).
 
-    Règles STRICTES :
-    - Améliore UNIQUEMENT la réponse en ajoutant des informations NOUVELLES du contexte
-    - INTERDICTION ABSOLUE de répéter des informations déjà présentes dans la réponse
-    - INTERDICTION de créer des doublons, triplications ou répétitions de blocs entiers
-    - Focus PRIORITAIRE sur "FSO", "Faculté des Sciences Oujda", "Université Mohammed Premier"
-    - Évite les références à "CAP-FSO" sauf si directement pertinent à la question
-    - Supprime tous les doublons et répétitions avant de répondre
-    - Garde seulement les informations qui répondent EXACTEMENT à la question posée
-    - Structure claire : UNE SEULE mention par information/personne/détail
-    - Réponse finale naturelle, fluide et SANS RÉPÉTITION
+                    Règles STRICTES :
+                    - Améliore UNIQUEMENT la réponse en ajoutant des informations NOUVELLES du contexte
+                    - INTERDICTION ABSOLUE de répéter des informations déjà présentes dans la réponse
+                    - INTERDICTION de créer des doublons, triplications ou répétitions de blocs entiers
+                    - Focus PRIORITAIRE sur "FSO", "Faculté des Sciences Oujda", "Université Mohammed Premier"
+                    - Évite les références à "CAP-FSO" sauf si directement pertinent à la question
+                    - Supprime tous les doublons et répétitions avant de répondre
+                    - Garde seulement les informations qui répondent EXACTEMENT à la question posée
+                    - Structure claire : UNE SEULE mention par information/personne/détail
+                    - Réponse finale naturelle, fluide et SANS RÉPÉTITION
 
-    EXEMPLE DE CE QUI EST INTERDIT :
-    - Répéter "Doyen: Professeur El Bekkaye MAAROUF" plusieurs fois
-    - Dupliquer les coordonnées de contact
-    - Tripler les mêmes blocs d'informations
+                    EXEMPLE DE CE QUI EST INTERDIT :
+                    - Répéter "Doyen: Professeur El Bekkaye MAAROUF" plusieurs fois
+                    - Dupliquer les coordonnées de contact
+                    - Tripler les mêmes blocs d'informations
 
-    Réponse actuelle :
-    {response}
+                    Réponse actuelle :
+                    {response}
 
-    Contexte disponible :
-    {json.dumps(context, ensure_ascii=False, indent=2)}
+                    Contexte disponible :
+                    {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    CRITIQUE : Analyse d'abord la réponse actuelle pour identifier les répétitions, puis donne UNIQUEMENT la version finale améliorée, nettoyée de TOUS les doublons.
-    """,
-                
+                    CRITIQUE : Analyse d'abord la réponse actuelle pour identifier les répétitions, puis donne UNIQUEMENT la version finale améliorée, nettoyée de TOUS les doublons.
+                    """,
+                                
                 'en': f"""
-    You are an assistant specialized in information about the Faculty of Sciences of Oujda (FSO).
+                    You are an assistant specialized in information about the Faculty of Sciences of Oujda (FSO).
 
-    STRICT Rules:
-    - Improve ONLY the response by adding NEW information from the context
-    - ABSOLUTE PROHIBITION of repeating information already in the response
-    - PRIORITY focus on "FSO", "Faculty of Sciences Oujda", "Mohammed Premier University"
-    - Avoid references to "CAP-FSO" unless directly relevant to the question
-    - Remove all duplicates and repetitions
-    - Keep only information that EXACTLY answers the asked question
-    - Clear structure: single mention per piece of information
-    - Final response natural and fluent
+                    STRICT Rules:
+                    - Improve ONLY the response by adding NEW information from the context
+                    - ABSOLUTE PROHIBITION of repeating information already in the response
+                    - PRIORITY focus on "FSO", "Faculty of Sciences Oujda", "Mohammed Premier University"
+                    - Avoid references to "CAP-FSO" unless directly relevant to the question
+                    - Remove all duplicates and repetitions
+                    - Keep only information that EXACTLY answers the asked question
+                    - Clear structure: single mention per piece of information
+                    - Final response natural and fluent
 
-    Current response:
-    {response}
+                    Current response:
+                    {response}
 
-    Available context:
-    {json.dumps(context, ensure_ascii=False, indent=2)}
+                    Available context:
+                    {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    IMPORTANT: Give ONLY the final improved version, no duplicates, no repetitions, no commentary.
-    """,
-                
+                    IMPORTANT: Give ONLY the final improved version, no duplicates, no repetitions, no commentary.
+                    """,
+                                
                 'ar': f"""
-    أنت مساعد متخصص في معلومات كلية العلوم بوجدة (FSO).
+                    أنت مساعد متخصص في معلومات كلية العلوم بوجدة (FSO).
 
-    قواعد صارمة:
-    - حسّن الإجابة فقط بإضافة معلومات جديدة من السياق
-    - منع مطلق لتكرار المعلومات الموجودة في الإجابة
-    - تركيز أولوي على "FSO"، "كلية العلوم وجدة"، "جامعة محمد الأول"
-    - تجنب الإشارة إلى "CAP-FSO" إلا إذا كانت متعلقة مباشرة بالسؤال
-    - احذف جميع التكرارات والمضاعفات
-    - احتفظ بالمعلومات التي تجيب بالضبط على السؤال المطروح
-    - هيكل واضح: ذكر واحد لكل معلومة
-    - إجابة نهائية طبيعية وسلسة
+                    قواعد صارمة:
+                    - حسّن الإجابة فقط بإضافة معلومات جديدة من السياق
+                    - منع مطلق لتكرار المعلومات الموجودة في الإجابة
+                    - تركيز أولوي على "FSO"، "كلية العلوم وجدة"، "جامعة محمد الأول"
+                    - تجنب الإشارة إلى "CAP-FSO" إلا إذا كانت متعلقة مباشرة بالسؤال
+                    - احذف جميع التكرارات والمضاعفات
+                    - احتفظ بالمعلومات التي تجيب بالضبط على السؤال المطروح
+                    - هيكل واضح: ذكر واحد لكل معلومة
+                    - إجابة نهائية طبيعية وسلسة
 
-    الإجابة الحالية:
-    {response}
+                    الإجابة الحالية:
+                    {response}
 
-    السياق المتاح:
-    {json.dumps(context, ensure_ascii=False, indent=2)}
+                    السياق المتاح:
+                    {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    مهم: أعطِ النسخة النهائية المحسنة فقط، بدون تكرار، بدون تعليقات.
-    """,
-                
+                    مهم: أعطِ النسخة النهائية المحسنة فقط، بدون تكرار، بدون تعليقات.
+                    """,
+                                
                 'amz': f"""
-    Anta d amellal i yeẓran ɣef Fakulté des Sciences n Wejda (FSO).
+                    Anta d amellal i yeẓran ɣef Fakulté des Sciences n Wejda (FSO).
 
-    Ilugan iǧehden:
-    - Seǧhed kan tiririt s useɣti n yisallen imaynuten seg umnaḍ
-    - Agdel aṭas n useɣti n yisallen i d-yellan yakan deg tiririt
-    - Tazwart tamezwarut i "FSO", "Fakulté des Sciences Oujda", "Tasdawit Mohammed Premier"
-    - Zgel tinmal i "CAP-FSO" ala ma yella yeɛnan srid i usteqsi
-    - Kkes akk inekta d useɣti
-    - Ǧǧ kan isallen i d-yettarran s tṣaḥit i usteqsi
-    - Askil afsus: yiwet n tenna i yal isalan
-    - Tiririt taneggaru tagamant d tafessast
+                    Ilugan iǧehden:
+                    - Seǧhed kan tiririt s useɣti n yisallen imaynuten seg umnaḍ
+                    - Agdel aṭas n useɣti n yisallen i d-yellan yakan deg tiririt
+                    - Tazwart tamezwarut i "FSO", "Fakulté des Sciences Oujda", "Tasdawit Mohammed Premier"
+                    - Zgel tinmal i "CAP-FSO" ala ma yella yeɛnan srid i usteqsi
+                    - Kkes akk inekta d useɣti
+                    - Ǧǧ kan isallen i d-yettarran s tṣaḥit i usteqsi
+                    - Askil afsus: yiwet n tenna i yal isalan
+                    - Tiririt taneggaru tagamant d tafessast
 
-    Tiririt tura:
-    {response}
+                    Tiririt tura:
+                    {response}
 
-    Amnaḍ i yellan:
-    {json.dumps(context, ensure_ascii=False, indent=2)}
+                    Amnaḍ i yellan:
+                    {json.dumps(context, ensure_ascii=False, indent=2)}
 
-    Muhim: Efk kan lqem aneggaru yettwaseǧden, ur teɣreḍ ara, ur tečč ara awalen.
-    """
+                    Muhim: Efk kan lqem aneggaru yettwaseǧden, ur teɣreḍ ara, ur tečč ara awalen.
+                    """
             }
             
             prompt = base_instructions.get(lang, base_instructions['fr'])
@@ -1139,7 +476,8 @@ class LLMService:
             logger.error(f"Erreur lors de l'amélioration avec contexte: {str(e)}")
             return response
 
-    def _remove_duplicates(self, text: str) -> str:
+    
+    def _remove_duplicates(self, text: str) -> str: #using this
         """
         Supprime les phrases et blocs dupliqués dans le texte
         """
@@ -1164,7 +502,7 @@ class LLMService:
             logger.error(f"Erreur lors de la suppression des doublons: {str(e)}")
             return text
 
-    def _remove_block_duplicates(self, text: str) -> str:
+    def _remove_block_duplicates(self, text: str) -> str: #using this
         """
         Supprime les blocs de texte identiques répétés
         """
@@ -1189,184 +527,7 @@ class LLMService:
             logger.error(f"Erreur lors de la suppression des blocs dupliqués: {str(e)}")
             return text
 
-    def _filter_context_for_fso(self, context: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Filtre le contexte pour se concentrer sur FSO plutôt que CAP-FSO
-        """
-        try:
-            filtered_context = {}
-            
-            # Mots-clés prioritaires pour FSO
-            fso_keywords = [
-                'faculté des sciences',
-                'faculty of sciences',
-                'fso',
-                'oujda',
-                'université mohammed premier',
-                'mohammed first university',
-                'ump'
-            ]
-            
-            # Mots-clés à éviter ou minimiser
-            avoid_keywords = [
-                'cap-fso',
-                'cap fso',
-                'commission académique'
-            ]
-            
-            for key, value in context.items():
-                if isinstance(value, str):
-                    # Priorité aux contenus mentionnant FSO
-                    if any(keyword in value.lower() for keyword in fso_keywords):
-                        # Éviter les contenus trop centrés sur CAP-FSO
-                        if not any(avoid in value.lower() for avoid in avoid_keywords):
-                            filtered_context[key] = value
-                        elif any(fso_kw in value.lower() for fso_kw in fso_keywords[:3]):
-                            # Garde le contenu s'il mentionne aussi FSO directement
-                            filtered_context[key] = value
-                else:
-                    filtered_context[key] = value
-            
-            return filtered_context if filtered_context else context
-            
-        except Exception as e:
-            logger.error(f"Erreur lors du filtrage du contexte: {str(e)}")
-            return context
-
-    def build_enhanced_serp_query(self, question: str, lang: str = 'fr') -> str:
-        """Construit une requête SERP améliorée pour éviter les autres facultés"""
-        
-        # Sites spécifiques FSO + exclusion explicite des autres facultés
-        fso_sites = [
-            "site:fso.ump.ma",
-            "site:ump.ac.ma/fso", 
-            "site:sciences.ump.ac.ma"
-        ]
-        
-        # Exclusions explicites pour éviter autres facultés
-        exclude_sites = [
-            "-site:flsh.ump.ac.ma",     # Faculté Lettres
-            "-site:est.ump.ac.ma",      # EST
-            "-site:encg.ump.ac.ma",     # ENCG
-            "-site:fsjes.ump.ac.ma",    # Économie/Droit
-            "-inurl:lettres",
-            "-inurl:economie", 
-            "-inurl:droit",
-            "-inurl:est"
-        ]
-        
-        # Mots-clés de renforcement FSO
-        fso_keywords = {
-            'fr': ['"faculté sciences"', '"FSO"', '"sciences oujda"'],
-            'en': ['"faculty sciences"', '"FSO"', '"sciences oujda"'],
-            'ar': ['"كلية العلوم"', '"العلوم وجدة"'],
-            'amz': ['"tasnawalt tussniwin"']
-        }
-        
-        # Construction de la requête
-        sites_part = " OR ".join(fso_sites)
-        exclude_part = " ".join(exclude_sites)
-        keywords = " ".join(fso_keywords.get(lang, fso_keywords['fr']))
-        
-        # Requête finale optimisée
-        enhanced_query = f"({sites_part}) {keywords} {question} {exclude_part}"
-        
-        logger.info(f"Enhanced SERP query: {enhanced_query}")
-        return enhanced_query
-
-    def _filter_fso_content(self, serp_data: str) -> str:
-        """Filtre le contenu SERP pour garder seulement les données FSO"""
-        
-        if isinstance(serp_data, dict):
-            serp_data = str(serp_data)
-        
-        # Indicateurs positifs FSO
-        fso_positive = [
-            "faculté des sciences", "fso", "sciences oujda", 
-            "ump.ac.ma", "fso.ump.ma", "mohammed premier"
-        ]
-        
-        # Indicateurs négatifs (autres facultés)
-        fso_negative = [
-            "faculté des lettres", "flsh", "économie", "fsjes",
-            "est oujda", "encg", "droit", "lettres"
-        ]
-        
-        lines = serp_data.split('\n')
-        filtered_lines = []
-        
-        for line in lines:
-            line_lower = line.lower()
-            
-            # Vérifier indicateurs négatifs
-            has_negative = any(neg in line_lower for neg in fso_negative)
-            if has_negative:
-                continue
-                
-            # Vérifier indicateurs positifs ou ligne neutre
-            has_positive = any(pos in line_lower for pos in fso_positive)
-            if has_positive or len(line.strip()) < 50:  # Lignes courtes probablement neutres
-                filtered_lines.append(line)
-        
-        filtered_content = '\n'.join(filtered_lines)
-        
-        # Limite la taille pour éviter les timeouts
-        if len(filtered_content) > 2000:
-            filtered_content = filtered_content[:2000] + "... [filtered and truncated]"
-        
-        logger.info(f"Filtered SERP content: {len(serp_data)} -> {len(filtered_content)} chars")
-        return filtered_content
-
-    def get_hybrid_response(self, question: str, lang: str = 'fr') -> Dict[str, Any]:
-        """Méthode hybride: modèle fine-tuné d'abord, SERP en fallback"""
-        
-        # 1. Essayer d'abord le modèle fine-tuné
-        logger.info("Trying fine-tuned model first...")
-        finetuned_response = self.generate_faculty_response(question, lang)
-        
-        # 2. Vérifier la qualité de la réponse
-        response_text = finetuned_response.get('response', '').lower()
-        
-        # Indicateurs de réponse faible
-        weak_indicators = [
-            "je ne sais pas", "don't know", "لا أعرف", "ur ẓriɣ ara",
-            "pas d'information", "no information", "لا توجد معلومات",
-            "désolé", "sorry", "آسف", "suref"
-        ]
-        
-        has_weak_response = any(indicator in response_text for indicator in weak_indicators)
-        is_too_short = len(response_text.strip()) < 50
-        
-        # 3. Si réponse faible, utiliser SERP en complément
-        if has_weak_response or is_too_short:
-            logger.info("Fine-tuned response weak, trying SERP enhancement...")
-            
-            try:
-                # Construire requête SERP améliorée
-                enhanced_query = self.build_enhanced_serp_query(question, lang)
-                serp_data = self.search_web(enhanced_query)  # Votre méthode de recherche
-                
-                if serp_data:
-                    serp_response = self.process_serp_to_response(question, serp_data, lang)
-                    
-                    # Combiner les deux réponses si SERP apporte du contenu
-                    if serp_response.get('confidence', 0) > 0.5:
-                        return {
-                            **serp_response,
-                            'source': 'hybrid_finetuned_serp',
-                            'fallback_used': True
-                        }
-            
-            except Exception as e:
-                logger.warning(f"SERP fallback failed: {str(e)}")
-        
-        # 4. Retourner la réponse du modèle fine-tuné
-        return {
-            **finetuned_response,
-            'fallback_used': False
-        }
-
-    def simplify_question(self, question: str, lang: str = 'fr', date: datetime = None) -> list:
+    def simplify_question(self, question: str, lang: str = 'fr', date: datetime = None) -> list: #using this
         """
         Simplifies a complex question by extracting the main questions.
         If the question contains multiple unrelated sub-questions, separates them.
@@ -1559,7 +720,7 @@ class LLMService:
             logger.error(f"Error during simplification: {str(e)}")
             return [{'question': question.strip(), 'type': 'static', 'reason': 'extraction_error'}]  # Return original question in case of error
 
-    def _extract_simplified_questions(self, response: str, lang: str = 'fr') -> list:
+    def _extract_simplified_questions(self, response: str, lang: str = 'fr') -> list: #using this
         """
         Extracts simplified questions from LLM response
         """
@@ -1620,7 +781,7 @@ class LLMService:
             logger.error(f"Error during extraction: {str(e)}")
             return []
     
-    def _classify_question_with_temporal_logic(self, question: str, lang: str, reference_date: datetime) -> dict:
+    def _classify_question_with_temporal_logic(self, question: str, lang: str, reference_date: datetime) -> dict: #using this
         """
         Classifie une question comme statique ou dynamique avec logique temporelle avancée
         """
@@ -1764,7 +925,7 @@ class LLMService:
                 'reason': 'No clear temporal indicators, defaulting to static'
             }
 
-    def _update_question_with_current_time(self, question: str, current_time: datetime) -> str:
+    def _update_question_with_current_time(self, question: str, current_time: datetime) -> str: #using this
         """
         Met à jour une question avec l'année/période actuelle
         """
@@ -1780,7 +941,7 @@ class LLMService:
         
         return question
 
-    def _format_comprehensive_qa_pairs(self, question_answer_pairs: List[Dict], lang: str) -> str:
+    def _format_comprehensive_qa_pairs(self, question_answer_pairs: List[Dict], lang: str) -> str: #using this
         """Format question-answer pairs for comprehensive processing"""
         formatted_pairs = []
         
@@ -1808,109 +969,18 @@ class LLMService:
         
         return "\n\n".join(formatted_pairs)
     
-    def _calculate_comprehensive_confidence(self, question_answer_pairs: List[Dict], all_documents: List[Dict]) -> float:
-        """Calculate confidence for comprehensive response"""
-        if not question_answer_pairs:
-            return 0.0
-        
-        total_confidence = 0.0
-        total_weight = 0.0
-        
-        for pair in question_answer_pairs:
-            documents = pair['documents']
-            if documents:
-                # Calculate average confidence for this question's documents
-                doc_confidences = [doc.get('confidence', 0.0) for doc in documents]
-                avg_confidence = sum(doc_confidences) / len(doc_confidences)
-                
-                # Weight by number of documents (more documents = higher weight)
-                weight = min(len(documents), 3)  # Cap at 3 for diminishing returns
-                
-                total_confidence += avg_confidence * weight
-                total_weight += weight
-        
-        if total_weight == 0:
-            return 0.0
-        
-        base_confidence = total_confidence / total_weight
-        
-        # Boost confidence if we have good coverage of questions
-        coverage_bonus = len([p for p in question_answer_pairs if p['documents']]) / len(question_answer_pairs)
-        
-        final_confidence = min(base_confidence * (0.7 + 0.3 * coverage_bonus), 1.0)
-        
-        return final_confidence
-
-    def _analyze_question_coverage(self, question_answer_pairs: List[Dict], response: str) -> Dict[str, Any]:
-        """Analyze how well the response covers each question"""
-        coverage_analysis = {
-            'total_questions': len(question_answer_pairs),
-            'questions_with_data': len([p for p in question_answer_pairs if p['documents']]),
-            'coverage_percentage': 0.0,
-            'question_details': []
-        }
-        
-        for pair in question_answer_pairs:
-            question_coverage = {
-                'question': pair['question'],
-                'has_documents': bool(pair['documents']),
-                'num_documents': len(pair['documents']),
-                'intent': pair['intent'],
-                'appears_answered': len(pair['question'].split()) > 2 and any(
-                    word.lower() in response.lower() 
-                    for word in pair['question'].split()[:3]
-                )
-            }
-            coverage_analysis['question_details'].append(question_coverage)
-        
-        if coverage_analysis['total_questions'] > 0:
-            coverage_analysis['coverage_percentage'] = (
-                coverage_analysis['questions_with_data'] / coverage_analysis['total_questions']
-            ) * 100
-        
-        return coverage_analysis
-
-    def _parse_validation_response(self, validation_response: str) -> Dict[str, Any]:
-        """Parse LLM validation response into structured format"""
-        # This is a simplified parser - you'd want to make this more robust
-        # based on your LLM's actual output format
-        
-        try:
-            # Look for key indicators in the response
-            response_lower = validation_response.lower()
-            
-            # Simple heuristic validation
-            is_valid = "valid: 1" in response_lower or "satisfactory" in response_lower
-            
-            return {
-                "is_valid": is_valid,
-                "coverage_score": 0.8 if is_valid else 0.3,
-                "missing_aspects": [],
-                "irrelevant_content": [],
-                "raw_response": validation_response
-            }
-            
-        except Exception as e:
-            return {
-                "is_valid": False,
-                "coverage_score": 0.0,
-                "missing_aspects": ["parsing_error"],
-                "irrelevant_content": [],
-                "error": str(e)
-            }
-
     def generate_comprehensive_response_optimized(self, original_question: str, question_answer_pairs: List[Dict], 
-                                                all_documents: List[Dict], lang: str, validate_and_fallback: bool = True) -> Dict[str, Any]:
+                                                all_documents: List[Dict], lang: str, validate_and_fallback: bool = True) -> Dict[str, Any]: #using this
         try:
             start_time = datetime.now()
             
-            # Enhanced prompt that does EVERYTHING in one call
+            
             optimized_prompts = {
-                'fr': {
-                    'system': """Tu es un expert en synthèse d'informations pour la Faculté des Sciences d'Oujda (FSO). 
-                    Ta tâche est d'analyser plusieurs paires question-réponse et de générer une réponse comprehensive.
 
-                    INSTRUCTIONS IMPORTANTES:
+                'fr': {
+                    'system': """Synthétise les informations pour la Faculté des Sciences d'Oujda (FSO).
+
+                    INSTRUCTIONS:
                     1. Analyse TOUTES les questions et leurs réponses
                     2. Si les réponses ne sont PAS pertinentes pour les questions, indique "IRRELEVANT_CONTENT" au début
                     3. Génère une réponse cohérente qui traite tous les aspects
@@ -1921,8 +991,9 @@ class LLMService:
 
                     FORMAT DE RÉPONSE:
                     - Si contenu non pertinent: commence par "IRRELEVANT_CONTENT"
-                    - Sinon: génère directement la réponse comprehensive
+                    - Sinon: donne directement la réponse finale SANS montrer ton analyse
                     - IMPORTANT: Réponds TOUJOURS en français
+                    - Ne montre JAMAIS ton processus de réflexion ou d'analyse
 
                     CONTEXTE FSO: Faculté des Sciences Oujda, Université Mohammed Premier""",
 
@@ -1931,16 +1002,22 @@ class LLMService:
                     QUESTIONS ET RÉPONSES DISPONIBLES:
                     {formatted_qa_pairs}
 
-                    CONTEXTE: {num_questions} questions, {num_sources} sources (base de données + internet)
+                    meta : En cas de présence de meta n'oublier pas de les mentioner et regrouper dans une section apart.
 
-                    GÉNÈRE une réponse comprehensive qui traite tous les aspects. Si les réponses ne sont pas pertinentes aux questions, commence par "IRRELEVANT_CONTENT"."""
+                    GÉNÈRE une réponse comprehensive qui traite tous les aspects. Si les réponses ne sont pas pertinentes aux questions, commence par "IRRELEVANT_CONTENT". 
+                    
+                    IMPORTANT: Donne UNIQUEMENT la réponse finale, sans montrer ton analyse.
+                    
+                    si vous avez pas de reponse, dit que vous avez pas trouver des reponse.
+                    """
+
+                    
                 },
                 
                 'en': {
-                    'system': """You are an expert information synthesizer for the Faculty of Sciences Oujda (FSO). 
-                    Your task is to analyze multiple question-answer pairs and generate a comprehensive response.
+                    'system': """Synthesize information for the Faculty of Sciences Oujda (FSO).
 
-                    IMPORTANT INSTRUCTIONS:
+                    INSTRUCTIONS:
                     1. Analyze ALL questions and their answers
                     2. If answers are NOT relevant to questions, indicate "IRRELEVANT_CONTENT" at the beginning
                     3. Generate a coherent response addressing all aspects
@@ -1951,8 +1028,9 @@ class LLMService:
 
                     RESPONSE FORMAT:
                     - If irrelevant content: start with "IRRELEVANT_CONTENT"
-                    - Otherwise: generate comprehensive response directly
+                    - Otherwise: give the final answer directly WITHOUT showing your analysis
                     - IMPORTANT: Always respond in English
+                    - NEVER show your thinking process or analysis
 
                     FSO CONTEXT: Faculty of Sciences Oujda, Mohammed First University""",
 
@@ -1963,14 +1041,15 @@ class LLMService:
                 
                     CONTEXT: {num_questions} questions, {num_sources} sources (database + internet)
                 
-                    GENERATE a comprehensive response addressing all aspects. If answers are not relevant to questions, start with "IRRELEVANT_CONTENT"."""
+                    GENERATE a comprehensive response addressing all aspects. If answers are not relevant to questions, start with "IRRELEVANT_CONTENT".
+                    
+                    IMPORTANT: Give ONLY the final answer, without showing your analysis."""
                 },
 
                 'ar': {
-                    'system': """أنت خبير في تلخيص المعلومات لكلية العلوم وجدة (FSO).
-                    مهمتك هي تحليل عدة أزواج من الأسئلة والأجوبة وإنتاج إجابة شاملة.
+                    'system': """اجمع المعلومات لكلية العلوم وجدة (FSO).
 
-                    التعليمات المهمة:
+                    التعليمات:
                     1. حلل جميع الأسئلة وأجوبتها
                     2. إذا لم تكن الأجوبة ذات صلة بالأسئلة، اكتب "IRRELEVANT_CONTENT" في البداية
                     3. أنتج إجابة متماسكة تتناول جميع الجوانب
@@ -1981,8 +1060,9 @@ class LLMService:
 
                     تنسيق الإجابة:
                     - إذا كان المحتوى غير ذي صلة: ابدأ بـ "IRRELEVANT_CONTENT"
-                    - وإلا: أنتج الإجابة الشاملة مباشرة
+                    - وإلا: أعط الإجابة النهائية مباشرة بدون إظهار تحليلك
                     - مهم: أجب دائماً باللغة العربية
+                    - لا تُظهر أبداً عملية التفكير أو التحليل
 
                     سياق FSO: كلية العلوم وجدة، جامعة محمد الأول""",
 
@@ -1993,14 +1073,15 @@ class LLMService:
 
                     السياق: {num_questions} أسئلة، {num_sources} مصادر (قاعدة البيانات + الإنترنت)
 
-                    أنتج إجابة شاملة تتناول جميع الجوانب. إذا لم تكن الأجوبة ذات صلة بالأسئلة، ابدأ بـ "IRRELEVANT_CONTENT"."""
+                    أنتج إجابة شاملة تتناول جميع الجوانب. إذا لم تكن الأجوبة ذات صلة بالأسئلة، ابدأ بـ "IRRELEVANT_CONTENT".
+                    
+                    مهم: أعط الإجابة النهائية فقط، بدون إظهار تحليلك."""
                 },
 
                 'amz': {
-                    'system': """Inek d-amesnakad n usestekl n telɣutin i Tafacult n Tussniwin Ujda (FSO).
-                    Tawhilt-nnek d aḥḍu n ddeqs n tsutlin d trarranin akken ad d-teskareḍ ara ara iggemalen.
+                    'system': """Smekti tilɣutin i Tafacult n Tussniwin Ujda (FSO).
 
-                    TISUTIN IMQQRANEN:
+                    TISUTIN:
                     1. Ḥḍu akk tsutlin d trarranin-nsent
                     2. Ma yella trarranin ur lɣint ara i tsutlin, aru "IRRELEVANT_CONTENT" di tazwara
                     3. Skareḍ ara ara igerrez ara iteddu d akk tferkiyin
@@ -2011,8 +1092,9 @@ class LLMService:
 
                     AMASAL N TRART:
                     - Ma yella agbur ur ilɣi ara: bdu s "IRRELEVANT_CONTENT"
-                    - Ala-t: skareḍ trart tagemmalt srid
+                    - Ala-t: efk trart taneggaru srid ur d-teskaneḍ ara aḥḍu-nnek
                     - IMQQRAN: Err-d yal tikelt s Tamaziɣt
+                    - Ur d-teskaneḍ ara abrid n iswingimen-nnek
 
                     AḤRIC FSO: Tafacult n Tussniwin Ujda, Tasdawit n Muḥend Amezwaru""",
 
@@ -2023,10 +1105,12 @@ class LLMService:
 
                     AḤRIC: {num_questions} tsutlin, {num_sources} iɣbula (tafka n isefka + internet)
 
-                    SKAREḌ ara ara iggemalen ara iteddun d akk tferkiyin. Ma yella trarranin ur lɣint ara i tsutlin, bdu s "IRRELEVANT_CONTENT"."""
+                    SKAREḌ ara ara iggemalen ara iteddun d akk tferkiyin. Ma yella trarranin ur lɣint ara i tsutlin, bdu s "IRRELEVANT_CONTENT".
+                    
+                    IMQQRAN: Efk trart taneggaru kan, ur d-teskaneḍ ara aḥḍu-nnek."""
                 }
             }
-
+            
             prompt_config = optimized_prompts.get(lang, optimized_prompts['fr'])
 
 
@@ -2091,7 +1175,8 @@ class LLMService:
                 'scope': 'error'
             }
     
-    def _perform_internet_fallback(self, question_answer_pairs: List[Dict], lang: str) -> str:
+    
+    def _perform_internet_fallback(self, question_answer_pairs: List[Dict], lang: str) -> str: #using this
         """
         Perform internet search fallback for questions with poor database results
         """
@@ -2116,17 +1201,31 @@ class LLMService:
                 all_internet_results.extend(internet_results)
             
             if not all_internet_results:
+                logger.info("No internet results found for fallback questions")
                 return None
             
-            # Use existing internet function to generate response
-            internet_response = get_internet_results_for_question(fallback_questions, lang)
-            return internet_response.get('structured_response', '')
+            # Generate a structured response from the internet results
+            # Since get_internet_results_for_question returns a list of formatted results,
+            # we need to extract and combine the answers
+            combined_response = []
+            
+            for result in all_internet_results:
+                if isinstance(result, dict) and 'answer' in result:
+                    combined_response.append(f"• {result['answer']}")
+            
+            if combined_response:
+                return "\n\n".join(combined_response)
+            else:
+                logger.warning("Internet results found but no valid answers extracted")
+                return None
             
         except Exception as e:
             logger.error(f"Error in internet fallback: {str(e)}")
+            import traceback
+            logger.error(f"Traceback: {traceback.format_exc()}")
             return None
 
-    def _format_comprehensive_qa_pairs_optimized(self, question_answer_pairs: List[Dict], lang: str) -> str:
+    def _format_comprehensive_qa_pairs_optimized(self, question_answer_pairs: List[Dict], lang: str) -> str: #using this
         formatted_pairs = []
         
         for i, pair in enumerate(question_answer_pairs, 1):
@@ -2136,16 +1235,45 @@ class LLMService:
             if documents:
                 # Take only top 2 documents per question to reduce prompt size
                 top_docs = documents[:2]
-                answers_text = " | ".join([doc.get('answer', '')[:200] + "..." if len(doc.get('answer', '')) > 200 else doc.get('answer', '') for doc in top_docs])
+                
+                # Format each document with answer, date, and meta
+                doc_parts = []
+                for doc in top_docs:
+                    # Get the main answer (truncated if too long)
+                    answer = doc.get('answer', '')
+                    if len(answer) > 200:
+                        answer = answer[:200] + "..."
+                    
+                    # Build document info with date and meta if available
+                    doc_info = answer
+                    
+                    # Add date if available
+                    if doc.get('date'):
+                        doc_info += f" [Date: {doc['date']}]"
+                    
+                    # Add meta (links) if available
+                    if doc.get('meta'):
+                        doc_info += f" [Link: {doc['meta']}]"
+                    
+                    doc_parts.append(doc_info)
+                
+                answers_text = " | ".join(doc_parts)
                 formatted_pair = f"Q{i}: {question}\nA{i}: {answers_text}"
             else:
-                formatted_pair = f"Q{i}: {question}\nA{i}: Aucune réponse trouvée"
+                no_answer_msg = {
+                    'fr': 'Aucune réponse trouvée',
+                    'en': 'No answer found',
+                    'ar': 'لم يتم العثور على إجابة',
+                    'amz': 'Ulac trart i yettwafen'
+                }.get(lang, 'Aucune réponse trouvée')
+                
+                formatted_pair = f"Q{i}: {question}\nA{i}: {no_answer_msg}"
             
             formatted_pairs.append(formatted_pair)
         
         return "\n\n".join(formatted_pairs)
 
-    def _calculate_confidence_fast(self, question_answer_pairs: List[Dict], all_documents: List[Dict]) -> float:
+    def _calculate_confidence_fast(self, question_answer_pairs: List[Dict], all_documents: List[Dict]) -> float: #using this
         """Fast confidence calculation without complex logic"""
         if not question_answer_pairs:
             return 0.0
@@ -2163,7 +1291,7 @@ class LLMService:
         
         return min(final_confidence, 1.0)
 
-    def check_question_answer_relevance(self, question: str, documents: list, lang: str) -> bool:
+    def check_question_answer_relevance(self, question: str, documents: list, lang: str) -> bool: #using this
         try:
             # Prepare documents content for checking
             documents_content = []

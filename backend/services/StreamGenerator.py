@@ -11,29 +11,19 @@ from .LLMService import llm_service
 from .polite import is_not_defined, detect_custom_language
 from .SerpService import get_internet_results_for_question, get_no_results_message
 from classifiers.classifier import MultilingualIntentClassifier
-from .helper import determine_source_type, index_faq_data
+from .helper import index_faq_data
 import pickle
 from pathlib import Path
+from .answer_polisher import polish_answer
 
 CLASSIFIER_MODEL = Path(__file__).parent.parent / 'classifiers' / 'intent_classifier.pkl'
 DATASET = Path(__file__).parent.parent / 'data' / 'dataset_dict_date.json'
 
 class StreamGenerator:
-    def __init__(self, query: Query):
+    def __init__(self, query: Query): #using this
         self.query = query
         
-    def stream_search(self):
-        """
-        etape 1 : detect lang 
-        etape 2 : verify if question is related to fso
-        etape 3 : classify intent
-        etape 4 : determine if question is <dynamic | static>
-        |
-        |--> if(dynamic) -> etape 5 : serp on internet
-        |
-        |--> if(static) -> etape 5 :  search for question in local file based on its intent
-        etape 6 : restructure response based on the returned results
-        """
+    def stream_search(self): #using this
         
         if not self.query.question.strip():
             yield f"data: {json.dumps({'type': 'error', 'message': 'La question ne peut pas etre vide'})}\n\n"
@@ -53,7 +43,7 @@ class StreamGenerator:
         
         try:
             classifier = MultilingualIntentClassifier()
-            classifier.load_model(CLASSIFIER_MODEL)
+            classifier.load_model(CLASSIFIER_MODEL) #classifier.py
             
             list_results = llm_service.simplify_question(self.query.question, self.query.lang)
             logger.info(f"Simplified questions: {list_results}")
@@ -80,11 +70,12 @@ class StreamGenerator:
                     
                     # Try database search first
                     for pred_intent, prob in list(probabilities.items())[:3]:
-                        docs = index_faq_data(DATASET, pred_intent, self.query.lang, prob)
-                        if isinstance(docs, list):
-                            question_documents.extend(docs)
-                        elif isinstance(docs, dict):
-                            question_documents.append(docs)
+                        if prob > 0.2 :
+                            docs = index_faq_data(DATASET, pred_intent, self.query.lang, prob)
+                            if isinstance(docs, list):
+                                question_documents.extend(docs)
+                            elif isinstance(docs, dict):
+                                question_documents.append(docs)
                     
                     logger.info(f"Question {i+1} - Database documents found: {len(question_documents)}")
                     
@@ -221,7 +212,6 @@ class StreamGenerator:
                     yield f"data: {json.dumps({'type': 'status', 'message': 'Utilisation du fallback pour la réponse...'})}\n\n"
 
                 
-                # Enhance with context if provided
                 if self.query.context:
                     try:
                         llm_response['response'] = llm_service.enhance_response_with_context(
@@ -231,11 +221,9 @@ class StreamGenerator:
                         )
                     except Exception as e:
                         logger.error(f"Context enhancement failed: {str(e)}")
-                
-                # Determine sources used
+
                 sources_used = set([pair['source'] for pair in relevant_pairs if pair['source']])
                 search_source = "mixed" if len(sources_used) > 1 else list(sources_used)[0] if sources_used else "none"
-                
                 final_result = {
                     "detected_lang": self.query.lang,
                     "structured_response": llm_response['response'],
@@ -261,25 +249,3 @@ class StreamGenerator:
             logger.error(f"Erreur lors de la recherche: {str(e)}", exc_info=True)
             yield f"data: {json.dumps({'type': 'error', 'data': get_no_results_message(self.query.lang)})}\n\n"
             raise HTTPException(status_code=500, detail=f"Erreur interne: {str(e)}")
-
-
-
-def debug_internet_search_for_question(question_text, lang):
-    """Debug version of internet search to help identify issues"""
-    logger.info(f"DEBUG: Starting internet search for: '{question_text}' in language: {lang}")
-    
-    try:
-        results = get_internet_results_for_question(question_text, lang)
-        logger.info(f"DEBUG: Internet search returned {len(results) if results else 0} results")
-        
-        if results:
-            for i, result in enumerate(results[:3]):  # Log first 3 results
-                logger.info(f"DEBUG: Result {i+1}: {result.get('title', 'No title')[:50]}...")
-        else:
-            logger.warning(f"DEBUG: No internet results found for question: {question_text}")
-            
-        return results
-    except Exception as e:
-        logger.error(f"DEBUG: Internet search failed with error: {str(e)}")
-        return []
-

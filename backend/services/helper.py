@@ -1,151 +1,14 @@
 import json
 import re
-from typing import Dict, List
-from opensearchpy import OpenSearch
 import logging
+from typing import Dict, List
+logging.basicConfig(level=logging.INFO)
+
 
 
 logger = logging.getLogger(__name__)
 
-def extract_key_entities(question: str) -> List[str]:
-    question_lower = question.lower()
-    
-    stop_words = {
-        # French stop words
-        'de', 'le', 'la', 'les', 'du', 'des', 'et', 'ou', 'pour', 'dans', 'sur', 'avec', 'par', 'ce', 'ces', 'cette', 'cet',
-        'un', 'une', 'aux', 'est', 'sont', 'était', 'étaient', 'sera', 'seront', 'avoir', 'être', 'fait', 'faire',
-        'dit', 'dire', 'tout', 'tous', 'toute', 'toutes', 'très', 'plus', 'moins', 'bien', 'mal', 'bon', 'bonne',
-        'grand', 'grande', 'petit', 'petite', 'nouveau', 'nouvelle', 'vieux', 'vieille', 'jeune', 'gros', 'grosse',
-        'que', 'qui', 'quoi', 'où', 'quand', 'comment', 'pourquoi', 'combien', 'quel', 'quelle', 'quels', 'quelles',
-        'il', 'elle', 'ils', 'elles', 'je', 'tu', 'nous', 'vous', 'me', 'te', 'se', 'lui', 'leur', 'leurs',
-        'mon', 'ma', 'mes', 'ton', 'ta', 'tes', 'son', 'sa', 'ses', 'notre', 'nos', 'votre', 'vos',
-        'si', 'mais', 'donc', 'car', 'ni', 'or', 'comme', 'depuis', 'pendant', 'avant', 'après', 'sous', 'devant',
-        'derrière', 'entre', 'parmi', 'selon', 'sans', 'sauf', 'vers', 'chez', 'contre', 'malgré', 'durant',
-        # English stop words  
-        'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were',
-        'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'must',
-        'this', 'that', 'these', 'those', 'what', 'which', 'who', 'when', 'where', 'why', 'how', 'all', 'any', 'both',
-        'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than',
-        'too', 'very', 'just', 'now', 'then', 'here', 'there', 'up', 'down', 'out', 'off', 'over', 'under', 'again',
-        'further', 'once', 'because', 'if', 'while', 'during', 'before', 'after', 'above', 'below', 'between', 'through'
-    }
-    question_words = {
-        'modules', 'module', 'matiere', 'matières', 'cours', 'formation', 'programme', 'enseignement',
-        'filiere', 'filières', 'specialite', 'spécialité', 'niveau', 'année', 'semestre', 'trimestre',
-        'examen', 'examens', 'note', 'notes', 'coefficient', 'credit', 'credits', 'ects',
-        'professeur', 'enseignant', 'etudiant', 'étudiants', 'inscription', 'candidature',
-        'conditions', 'prerequis', 'prérequis', 'objectifs', 'competences', 'compétences'
-    }
-    
-    all_stop_words = stop_words.union(question_words)
-    
-    entities = []
-    
-    patterns = [
-        r'(?:modules?\s+(?:de|du|des)\s+)([a-z0-9]+)',  # "modules de SMI"
-        r'(?:filiere?s?\s+)([a-z0-9]+)',                # "filiere SMI"  
-        r'(?:formation\s+)([a-z0-9]+)',                 # "formation SMI"
-        r'(?:licence\s+)([a-z0-9\s]+)',                 # "licence informatique"
-        r'(?:master\s+)([a-z0-9\s]+)',                  # "master data science"
-        r'(?:doctorat\s+)([a-z0-9\s]+)',                # "doctorat physique"
-        r'\b([a-z]{2,4}[0-9]*)\b',                      # Short codes like SMI, SMA, M1, etc.
-    ]
-    
-    for pattern in patterns:
-        matches = re.findall(pattern, question_lower)
-        for match in matches:
-            if isinstance(match, tuple):
-                entities.extend([m.strip() for m in match if m.strip()])
-            else:
-                entities.append(match.strip())
-    
-    # Strategy 2: Extract words that are likely entity names (not in stop words)
-    words = re.findall(r'\b[a-z][a-z0-9]*\b', question_lower)
-    for word in words:
-        if (word not in all_stop_words and 
-            len(word) >= 2 and 
-            not word.isdigit()):
-            # Additional filters for likely academic entities
-            if (len(word) <= 4 or  # Short codes like SMI, SMA
-                any(char.isdigit() for char in word) or  # Contains numbers like M1, L3
-                word in ['informatique', 'mathematiques', 'physique', 'chimie', 'biologie', 
-                        'economie', 'gestion', 'droit', 'medecine', 'pharmacie']):  # Known subjects
-                entities.append(word)
-    
-    # Remove duplicates and filter
-    entities = list(set(entities))
-    
-    # Final filtering: remove very common words that might have slipped through
-    final_entities = []
-    for entity in entities:
-        if (entity not in all_stop_words and 
-            len(entity) >= 2 and
-            entity not in ['www', 'com', 'org', 'net', 'edu']):  # Remove web-related terms
-            final_entities.append(entity)
-    
-    return final_entities
-
-def validate_entities_in_db(entities: List[str], client: OpenSearch, lang: str) -> float:
-    if not entities:
-        return 1.0  # No specific entities to validate
-    
-    found_entities = 0
-    
-    for entity in entities:
-        # Quick check if entity exists in any document
-        validation_query = {
-            "size": 1,
-            "_source": False,  # We only need to know if it exists
-            "query": {
-                "bool": {
-                    "should": [
-                        {"wildcard": {"question": f"*{entity}*"}},
-                        {"wildcard": {"answer": f"*{entity}*"}},
-                        {"term": {"meta.filier": entity}}
-                    ],
-                    "filter": [{"term": {"lang": lang}}] if lang else []
-                }
-            }
-        }
-        
-        try:
-            response = client.search(index="faq", body=validation_query)
-            if response["hits"]["total"]["value"] > 0:
-                found_entities += 1
-                logger.info(f"Entity '{entity}' found in database")
-            else:
-                logger.info(f"Entity '{entity}' NOT found in database")
-        except Exception as e:
-            logger.warning(f"Error validating entity '{entity}': {e}")
-            continue
-    
-    validation_score = found_entities / len(entities)
-    logger.info(f"Entity validation score: {validation_score} ({found_entities}/{len(entities)})")
-    return validation_score
-
-def determine_source_type(question_type: str, documents: List[Dict]) -> str:
-    """Simple function to determine source type without LLM"""
-    if not documents:
-        return "none"
-    
-    # Check if documents have 'source' field to determine type
-    sources = set()
-    for doc in documents:
-        if 'source' in doc:
-            sources.add(doc['source'])
-        elif 'meta' in doc and 'url' in doc['meta']:
-            sources.add('internet')
-        else:
-            sources.add('database')
-    
-    if len(sources) > 1:
-        return "mixed"
-    elif 'internet' in sources:
-        return "internet"
-    else:
-        return "database"
-    
-def index_faq_data(dict_file, intent_val, lang, confidence):
+def index_faq_data(dict_file, intent_val, lang, confidence): #using this
     # Load the dict structure
     with open(dict_file, "r", encoding="utf-8") as f:
         dataset = json.load(f)
@@ -179,3 +42,84 @@ def index_faq_data(dict_file, intent_val, lang, confidence):
         docs.append(doc)
 
     return docs
+
+def filter_fso_content(serp_data: list[dict]) -> list[dict]: #using this
+    """Filtre le contenu SERP pour garder seulement les données FSO"""
+    
+    # Debug: Print input data
+    print(f"DEBUG: Received {len(serp_data) if serp_data else 0} search results")
+    if serp_data:
+        print(f"DEBUG: First result type: {type(serp_data[0])}")
+        if isinstance(serp_data[0], dict):
+            print(f"DEBUG: First result keys: {list(serp_data[0].keys())}")
+            print(f"DEBUG: First result snippet type: {type(serp_data[0].get('snippet', 'N/A'))}")
+    
+    # Handle empty or invalid input
+    if not serp_data or not isinstance(serp_data, list):
+        print("DEBUG: No valid input data")
+        return []
+    
+    filtered_content = []
+    
+    for i, serp_item in enumerate(serp_data, 1):
+        # Skip if not a dictionary or missing required fields
+        if not isinstance(serp_item, dict):
+            continue
+            
+        # Get snippet text, handle missing snippet or different types
+        snippet = serp_item.get("snippet", "")
+        
+        # Convert snippet to string if it's not already
+        if isinstance(snippet, list):
+            snippet = " ".join(str(item) for item in snippet)
+        elif not isinstance(snippet, str):
+            snippet = str(snippet) if snippet is not None else ""
+            
+        if not snippet.strip():
+            continue
+            
+        # Convert to lowercase for case-insensitive matching
+        snippet_lower = snippet.lower()
+        
+        # Indicateurs négatifs (autres facultés)
+        fso_negative = [
+            "faculté des lettres", "flsh", "économie", "Faculté des Lettres et Sciences Humaines", "National School of Business and Management",
+            "École Supérieure de Technologie", "encg", "droits", "lettres",
+            "esto", "fsjes", "fpn", "flsh", "Sciences Humaines","École nationale de commerce et de gestion",
+            "ensao", "encgo", "est", "eniad", "École Nationale des Sciences Appliquées", 
+            "juridiques", "économiques", "économiques et sociales", "Faculté Pluridisciplinaire",
+            "fmpo", "pluridisciplinaire","nador", "École Nationale de l'Intelligence Artificielle et du Digital",
+            "droit", "Faculté des Sciences Juridiques, Économiques et Sociales",
+
+            #en
+            "National School of Business and Management"
+        ]
+        
+        # Vérifier indicateurs négatifs (case-insensitive)
+        has_negative = any(neg_term in snippet_lower for neg_term in fso_negative)
+        
+        # Debug: Print filtering decision
+        if has_negative:
+            print(f"DEBUG: Filtered out result {i+1}: contains negative terms")
+        else:
+            print(f"DEBUG: Keeping result {i+1}: {snippet[:200]}...")
+        
+        if not has_negative:
+            # Update the snippet in the result to ensure it's a string
+            serp_item_copy = serp_item.copy()
+            serp_item_copy['snippet'] = snippet
+            filtered_content.append(serp_item_copy)
+        
+        # Limite la taille pour éviter les timeouts
+        if len(filtered_content) >= 2000:
+            break
+    
+    # Log the filtering results
+    try:
+        logger.info(f"Filtered SERP content: {len(serp_data)} -> {len(filtered_content)} items")
+    except NameError:
+        # If logger is not available, use print
+        print(f"Filtered SERP content: {len(serp_data)} -> {len(filtered_content)} items")
+    
+    return filtered_content
+
