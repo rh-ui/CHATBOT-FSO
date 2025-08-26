@@ -227,8 +227,7 @@ class MultilingualIntentClassifier:
                 # Check if we can stratify the multi-sample data
                 multi_intent_counts = y_multi.value_counts()
                 if multi_intent_counts.min() >= 2:
-                    X_train_multi, X_test_multi, y_train_multi, y_test_multi = train_test_split(
-                        X_multi, y_multi, test_size=test_size, random_state=random_state, stratify=y_multi
+                    X_train_multi, X_test_multi, y_train_multi, y_test_multi = train_test_split(                        X_multi, y_multi, test_size=test_size, random_state=random_state, stratify=y_multi
                     )
                 else:
                     X_train_multi, X_test_multi, y_train_multi, y_test_multi = train_test_split(
@@ -265,7 +264,7 @@ class MultilingualIntentClassifier:
         
         # Verify no empty sets
         if len(self.X_train) == 0 or len(self.X_test) == 0:
-            raise ValueError("❌ Data split resulted in empty training or test set!")
+            raise ValueError("Data split resulted in empty training or test set!")
             
         return True
         
@@ -582,7 +581,6 @@ class MultilingualIntentClassifier:
         }
 
 
-# Fixed usage example
 def main_example():
     
     try:

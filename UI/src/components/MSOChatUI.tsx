@@ -127,7 +127,7 @@ interface ApiResponse {
   }[];
 }
 
-export default function MSOChatUI_test() {
+export default function MSOChatUI() {
   const useTypewriter = (text: string, speed: number = 50) => {
     const [displayText, setDisplayText] = useState('');
     const [isTyping, setIsTyping] = useState(false);

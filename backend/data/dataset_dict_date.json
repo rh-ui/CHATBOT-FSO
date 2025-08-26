@@ -5843,6 +5843,54 @@
     },
     "data": "2025-04-28"
   },
+  "comment m'inscrire ?": {
+    "intent": "comment m'inscrire ?",
+    "question": {
+      "fr": [
+        "Quels sont les documents nécessaires pour s'inscrire ?",
+        "Comment faire une réinscription en ligne ?",
+        "Peut-on s'inscrire hors délai ?"
+      ],
+      "ar": [
+        "ما هي الوثائق المطلوبة للتسجيل؟",
+        "كيف يمكن إعادة التسجيل عبر الإنترنت؟",
+        "هل يمكن التسجيل خارج الآجال؟"
+      ],
+      "en": [
+        "What documents are needed for registration?",
+        "How to re-register online?",
+        "Can we register after the deadline?"
+      ],
+      "amz": [
+        "Mani isefka ilaqen i wemṣad?",
+        "Amek ara talseḍ amṣad srid?",
+        "Yezmer ad yemṣed deffir lǧal?"
+      ]
+    },
+    "reponse": {
+      "fr": [
+        "Pour s'inscrire, il faut fournir une copie du baccalauréat, une photo, une copie de la CIN et les formulaires remplis.",
+        "La réinscription se fait via la plateforme numérique de la FSO accessible aux étudiants.",
+        "Une inscription hors délai est parfois acceptée avec justification et autorisation du service de scolarité."
+      ],
+      "ar": [
+        "للتسجيل، يجب تقديم نسخة من البكالوريا، صورة، نسخة من البطاقة الوطنية واستمارات مملوءة.",
+        "يتم إعادة التسجيل عبر المنصة الرقمية للفاكس التي يمكن للطلبة الوصول إليها.",
+        "في بعض الأحيان يتم قبول التسجيل خارج الآجال بتبرير وإذن من مصلحة الشؤون الدراسية."
+      ],
+      "en": [
+        "To register, you must provide a copy of the baccalaureate, a photo, a copy of the ID card and completed forms.",
+        "Re-registration is done via the FSO digital platform accessible to students.",
+        "Late registration is sometimes accepted with justification and authorization from the academic department."
+      ],
+      "amz": [
+        "I wemṣad, ilaq ad d-tesεeḍ taneɣruft n ubak, tugna, taneɣruft n CIN d iformulen yemmlen.",
+        "Amṣad n uεawed yettwaxeddem s ufaggag usrid n FSO i yellan i yiselmaden.",
+        "Amṣad deffir lǧal yettwasehlen mara yella yessefk asertu d usentel n tizrawin."
+      ]
+    },
+    "data": "2025-04-28"
+  },
   "master_norms": {
     "intent": "master_norms",
     "question": {
