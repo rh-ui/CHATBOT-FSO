@@ -1,0 +1,914 @@
+| ------------- Objectif pour balance      ------------ |
+| - total lines : 71                                    |
+|                                                       |
+| - total lines--> fr : 20                              |
+| - total lines--> en : 20                              |
+| - total lines--> ar : 20                              |
+| - total lines--> amz : 20                             |
+| ----------------------------------------------------- |
+
+
+PROMPT : 
+
+```
+    - je suis entrain de préparer dataset pour entrainer un classifier d'intent pour mon chatbot multilang (fr, en, ar, amz) de la faculté.   
+    - je vais te donner chaque intent et ces questions je veux que tu complete les questions par langue si l'une d'eux ne contient pas exactement 20 questions 
+
+    - objectif est d'avoir à la fin sélection diversifiée et équilibrée de 20 questions par langue sans duplication
+
+    - donne moi  CSV prêt à copier-coller avec toutes les langues sous forme : question,intent
+    - Attention : tous les langues doivent contenir exctement 20 questions !!!!!!!!!!!
+    voilà le premier intent : 
+
+```
+
+
+----> intents déjà fait : 
+    |--> fso doyen nom mot-du-doyen
+    |
+    |--> faculty_general_info !!!! <-- a reviser
+    |
+    |--> registrar_office_contact !!!! <-- a reviser
+    |
+    |--> clubs_et_activites
+    |
+    |--> administration_contact
+    |
+    |--> library_contact
+    |
+    |--> it_support_contact
+    |
+    |--> director_contact
+    |
+    |--> pedagogical_responsible_contact
+    |
+    |--> math_department_contact
+    |
+    |--> physics_department_contact
+    |
+    |--> chemistry_department_contact
+    |
+    |--> biology_department_contact
+    |
+    |--> computer_science_department_contact
+    |
+    |--> emergency_security_contact
+    |
+    |--> emergency_medical_contact
+    |
+    |--> faculty_fax_number
+    |
+    |--> faculty_alternative_phones
+    |
+    |--> university_presidency_info
+    |
+    |--> university_presidency_fax
+    |
+    |--> ciove_contact
+    |
+    |--> theses_soutenues
+    |
+    |--> cedocst
+    |
+    |--> conseil_de_la_faculte 
+    |
+    |--> conference_the_three_principles_of_mutuality_interdependence_co_prosperity_universal_values
+    |
+    |--> characterization_of_the_polyphenolic_fraction
+    |
+    |--> evaluation_interne_et_formation_continue
+    |
+    |--> portail_des_revues_scientifiques_marocaines_imist
+    |
+    |--> acces_a_la_bibliotheque
+    |
+    |--> 2019_publications
+    |
+    |--> 2019_qualifications
+    |
+    |--> 2020_publications
+    |
+    |--> 2022_publications
+    |
+    |--> academic_notes
+    |
+    |--> academic_programs_licence
+    |
+    |--> Accès à la faculté après le baccalauréat
+    |
+    |--> activation_compte_ithenticate_doctorants
+    |
+    |--> administration_contact
+    |
+    |--> administration_info
+    |
+    |--> ai_conference
+    |
+    |--> all_departments_list
+    |
+    |--> all_faculty_emails
+    |
+    |--> all_faculty_phones
+    |
+    |--> analytical_platform
+    |
+    |--> announcements_access
+    |
+    |--> apogee_information
+    |
+    |--> applied_computer_science
+    |
+    |--> archeology_conference_info
+    |
+    |--> aromatic_medicinal_plants
+    |
+    |--> attestation_scolarite_procedure
+    |
+    |--> biology_department_info
+    |
+    |--> biology_exhibition
+    |
+    |--> biotech_sustainable_development
+    |
+    |--> blood_donation_conference
+    |
+    |--> books_resources
+    |
+    |--> bourses_et_aides
+    |
+    |--> calendar_rentree_universitaire
+    |
+    |--> Calendrier universitaire
+    |
+    |--> cap_club_orientation
+    |
+    |--> cap_presentation
+    |
+    |--> chemical_journal_info
+    |
+    |--> chemistry_department
+    |
+    |--> chemistry_journal
+    |
+    |--> chemistry_matter_science
+    |
+    |--> ciove_center
+    |
+    |--> ciove_fax
+    |
+    |--> ciove_location_details
+    |
+    |--> clay_environment_event
+    |
+    |--> climate_observations
+    |
+    |--> climatology_observations
+    |
+    |--> communiques_fso
+    |
+    |--> computer_science_info
+    |
+    |--> conference_information
+    |
+    |--> conference_mariculture
+    |
+    |--> conference_section_access
+    |
+    |--> connected_campus
+    |
+    |--> consulter_notes_et_inscriptions
+    |
+    |--> contacts_et_services
+    |
+    |--> cooperation_information
+    |
+    |--> council_regulations
+    |
+    |--> Départements de la FSO
+    |
+    |--> demande_de_carte_d_etudiant
+    |
+    |--> demande_de_releve_de_notes
+    |
+    |--> department_contacts_general
+    |
+    |--> departments_info
+    |
+    |--> doctoral_ceremony_info
+    |
+    |--> doctoral_day
+    |
+    |--> doctorat_et_cedocst
+    |
+    |--> earth_sciences_info
+    |
+    |--> eco_anxiety_conference_info
+    |
+    |--> education_award
+    |
+    |--> eid_al_fitr_greetings
+    |
+    |--> electronic_resources_training
+    |
+    |--> email_institutionnel_procedure
+    |
+    |--> emergency_contacts_all
+    |
+    |--> emotional_intelligence_conference
+    |
+    |--> entrepreneurship_event
+    |
+    |--> espace_etudiant_creation_premiere_fois
+    |
+    |--> ethical_charter
+    |
+    |--> evenements_et_colloques
+    |
+    |--> event_cap_launch
+    |
+    |--> event_details
+    |
+    |--> event_participation
+    |
+    |--> events_page_access
+    |
+    |--> exam_schedule_change
+    |
+    |--> examen_du_semestre_de_printemps_2024_2025
+    |
+    |--> faculty_leadership
+    |
+    |--> faculty_main_contact
+    |
+    |--> faculty_website
+    |
+    |--> faq_generale
+    |
+    |--> Filières de la FSO
+    |
+    |--> Fonction des départements universitaires
+    |
+    |--> formations_licence_et_master
+    |
+    |--> fundamental_license
+    |
+    |--> gamma_ray_conference
+    |
+    |--> general_conferences !!!
+    |
+    |--> general_information !!!
+    |
+    |--> geological_archaeological_heritage !!!
+    |
+    |--> geology_department_info !!!
+    |
+    |--> guide_de_l_etudiant
+    |
+    |--> hassan_ii_environment_prize !!!
+    |
+    |--> health_insurance_note
+    |
+    |--> health_insurance_platform
+    |
+    |--> health_insurance
+    |
+    |--> homepage_access
+    |
+    |--> honorary_event
+    |
+    |--> Horaires de travail de la FSO
+    |
+    |--> humboldt_programs
+    |
+    |--> hydrogen_conference
+    |
+    |--> icontech3_symposium_details
+    |
+    |--> information_about_professional_license
+    |
+    |--> information_system
+    |
+    |--> inscription_aux_examens !!!
+    |
+    |--> inscription_doctorants_2025_2026
+    |
+    |--> Inscription et Réinscription
+    |
+    |--> institutional_email_procedure
+    |
+    |--> international_colloquium
+    |
+    |--> international_congress
+    |
+    |--> international_symposium !!!
+    |
+    |--> ithenticate_account_activation
+    |
+    |--> job_fair_event
+    |
+    |--> journals_access
+    |
+    |--> knowledge_economy_conference
+    |
+    |--> la date de nomination du doyen FSO
+    |
+    |--> labs_directory
+    |
+    |--> labs_status !!!
+    |
+    |--> legal_texts
+    |
+    |--> library_alternative_numbers
+    |
+    |--> Licence Géosciences Appliquées à l'Exploration Minière programme information
+    |
+    |--> Licence Ingénierie des Matériaux et Energie programme information
+    |
+    |--> Licence Mécanique Et Energétique programme information !!! 
+    |
+    |--> Licence Matériaux et Applications programme information
+    |
+    |--> Licence Mathématiques Appliqué programme information
+    |
+    |--> Licence Matière et Rayonnement programme information
+    |
+    |--> Licence Radiophysique médicale programme information
+    |
+    |--> Licence Sciences des Données programme information
+    |
+    |--> life_sciences_info
+    |
+    |--> Master Analyse appliquée et calcul scientifique programme information
+    |
+    |--> Master Analyse Numérique et Optimisation programme information
+    |
+    |--> Master Chimie Appliquée programme information
+    |
+    |--> Master Chimie du Solide et Procédés Industriels programme information !!!
+    |
+    |--> Master Environnement et Développement Durable programme information
+    |
+    |--> Master Génie des Matériaux et Métaux Stratégiques programme information
+    |
+    |--> Master in Applied Mathematics and Scientific Computing
+    |
+    |--> Master in Computer Science (IASCD)
+    |
+    |--> Master in Environmental Development (EDD)
+    |
+    |--> Master in Food Safety in the Mediterranean
+    |
+    |--> Master in Materials Chemistry (CHAP Opt MPA)
+    |
+    |--> Master in Mechanics and Energy
+    |
+    |--> Master in Mechanics and Energy
+    |
+    |--> Master in Medical Physics and Radiation Protection !!!
+    |
+    |--> Master in Optical Materials
+    |
+    |--> Master in Organic Chemistry (CHAP Opt CHOR)
+    |
+    |--> Master in Physical Chemistry (CHAP Opt PHCH) !!!
+    |
+    |--> Master in Physics of Matter and Radiation
+    |
+    |--> Master in Physics of Matter and Radiations
+    |
+    |--> Master in Spectral Theory & Application
+    |
+    |--> Master Ingénierie des Matériaux et Energie programme information !!!
+    |
+    |--> Master Intelligence Artificielle et Sciences des Données programme information !!!
+    |
+    |--> Master Mécanique et Energétique programme information !!!
+    |
+    |--> Master Mécanique Mécanique et énergétique programme information !!!
+    |
+    |--> Master Matériaux polymères et chimie organique avancée programme information
+    |
+    |--> Master Modélisation stochastique-Déterministe-data Science programme information !!!
+    |
+    |--> master_norms
+    |
+    |--> Master Physiologie et Santé programme information
+    |
+    |--> master_programs
+    |
+    |--> master_s2_notice
+    |
+    |--> licence_ome_program_info
+    |
+    |--> materials_journal_info
+    |
+    |--> math_sciences_info
+    |
+    |--> mathematics_department
+    |
+    |--> maths_it_doctoral_days
+    |
+    |--> minhaty_card_renewal
+    |
+    |--> mobilite_et_echanges
+    |
+    |--> national_cooperation
+    |
+    |--> natural_sciences_event
+    |
+    |--> neolithic_conference
+    |
+    |--> news_anniversary
+    |
+    |--> news_article_access
+    |
+    |--> news_page_access
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+    |
+    |--> 
+
+
+
+format de l'intent  json : 
+
+intent_name: {
+    "intent": intent_name,
+    "question": {
+      "fr": [
+        
+      ],
+      "en": [
+        
+      ],
+      "ar": [
+       
+      ],
+      "amz": [
+       
+      ]
+    },
+    "reponse": {
+      "fr": [
+      ],
+      "en": [
+      ],
+      "ar": [
+      ],
+      "amz": [
+
+      ]
+    },
+    "meta": {
+      "fr": [
+        ""
+      ],
+      "en": [
+        ""
+      ],
+      "ar": [
+        ""
+      ],
+      "amz": [
+        ""
+      ]
+    },
+    "data": "2025-04-28"
+  }
+
+
+
+les filieres de licence avec tronc commun : 
+  العلوم
+  المعلوميات (المعلوميات التطبيقية)
+  Informatique (Informatique Appliquée)
+  
+  Développement Informatique
+  
+  ----------------------------------------------------------
+  
+  العلوم
+  الفيزياء و الكيمياء (PC)
+  
+  Matériaux et Applications
+  
+  Ondes, Matériaux et Energie
+  
+  Génie des Procédés Industriels
+  
+  Radiophysique médicale
+  
+  Mécanique énergétique
+
+  Chimie Organique et Produits Naturels
+  
+  Matière et Rayonnement
+  
+  Energies renouvelables et efficacité énergétique
+  
+  Électronique et systèmes embarqués
+
+  ----------------------------------------------------------
+  العلوم
+  الرياضيات، المعلوميات و الفيزياء (MIP)
+  
+  Génie Informatique
+  
+  Mathématiques et Applications
+  
+  Sciences des Données
+  ----------------------------------------------------------
+  العلوم
+  البيولوجيا، الكيمياء و الجيولوجيا (BCG)
+  
+  Agrosciences et biotechnologie végétale
+  
+  Biologie et Santé
+  
+  Ecologie & Environnement
+  
+  Géosciences, Géosciences Appliquées à l’Exploration Minière
+  
+  Géomatique et Géologie Appliquée
+
+
+
+
+
+les filieres de licence sans tronc commun : 
+  Actuariat et Mathématiques appliquées à la finance
+  
+  Chimie analytique et management de la qualité
+  
+  Electronique et Systèmes Embarqués
+  
+  Environnement et Génie Civil
+
+  علوم الإعلام و التواصل الإستراتيجي
+  
+  -----------------------------------------------------------------------
+  

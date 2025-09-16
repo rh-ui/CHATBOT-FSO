@@ -1,0 +1,43 @@
+# Web Framework et API
+fastapi
+uvicorn
+pydantic
+
+# Machine Learning et NLP
+scikit-learn
+pandas
+numpy
+sentence-transformers
+langdetect
+
+# Web Scraping et Automation
+playwright
+
+# HTTP et Requêtes
+requests
+python-multipart
+
+# Configuration et Environnement
+python-dotenv
+
+# Utilitaires système
+psutil
+GPUtil
+
+# Sérialisation et Modèles
+joblib
+
+# Parsing de dates
+python-dateutil
+
+# Gestion des types et annotations
+typing-extensions
+
+# Logging et débogage
+colorama
+
+# Gestion des chemins de fichiers
+pathlib2
+
+# Gestion des erreurs et exceptions
+traceback-with-variables
