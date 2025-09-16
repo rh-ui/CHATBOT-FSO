@@ -1,5 +1,0 @@
-fastapi
-uvicorn
-opensearch-py
-sentence-transformers
-langdetect
