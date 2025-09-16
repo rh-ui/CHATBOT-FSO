@@ -290,6 +290,7 @@ Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus
 ## 📞 Contact
 
 - **Email** : [rhouibi.ibti.fst@uhp.ac.ma](mailto:rhouibi.ibti.fst@uhp.ac.ma)
+              [bdaarkangelm@gmail.com](mailto:bdaarkangelm@gmail.com)  
 ---
 
 <div align="center">
