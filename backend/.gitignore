@@ -1,4 +1,26 @@
-.venv/*
+.env
+.env.*
+!.env.example
+!.env.sample
 
-_pycache__/*
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+*.log
+logs/
+*.tmp
+*.temp
 
